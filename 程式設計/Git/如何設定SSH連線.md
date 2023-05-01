@@ -1,10 +1,10 @@
-首先建立RSA金鑰
+首先建立本地端的 `RSA` 金鑰
 
 ~~~shell
 ssh-keygen -t rsa -b 4096 -C "your e-mail"
 ~~~  
 
-拷貝公鑰內容 (注意: 不要複製到私鑰的內容)
+拷貝公鑰內容 (注意 : 不要複製到私鑰的內)
 
 ```shell
 cd ~/.ssh
