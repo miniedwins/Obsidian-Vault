@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/遵守交易原則.md",
+                "file": "投資理財/理財常用公式.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/遵守交易原則.md",
+                "file": "投資理財/理財常用公式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/遵守交易原則.md",
+                "file": "投資理財/理財常用公式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/遵守交易原則.md"
+                "file": "投資理財/理財常用公式.md"
               }
             }
           }
@@ -149,9 +149,9 @@
   },
   "active": "effff3a94a6a2525",
   "lastOpenFiles": [
+    "投資理財/遵守交易原則.md",
     "投資理財/交易日誌.md",
     "投資理財/理財常用公式.md",
-    "投資理財/遵守交易原則.md",
     "閱讀筆記/股票作手回憶錄.md",
     "程式設計/Git/如何設定SSH連線.md",
     "程式設計/Git/修改已提交的紀錄.md",
