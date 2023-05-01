@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/遵守交易原則.md",
+                "file": "程式設計/Git/如何設定SSH連線.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/遵守交易原則.md",
+                "file": "程式設計/Git/如何設定SSH連線.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/遵守交易原則.md",
+                "file": "程式設計/Git/如何設定SSH連線.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/遵守交易原則.md"
+                "file": "程式設計/Git/如何設定SSH連線.md"
               }
             }
           }
@@ -149,9 +149,12 @@
   },
   "active": "effff3a94a6a2525",
   "lastOpenFiles": [
-    "程式設計/如何安裝 NVMe-Cli 套件.md",
-    "投資理財/遵守交易原則.md",
+    "程式設計/Git/常用命令縮寫.md",
+    "程式設計/Git/建立第一個版本控制.md",
+    "程式設計/Git/遠端分支操作方法.md",
     "投資理財/理財常用公式.md",
+    "投資理財/遵守交易原則.md",
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "投資理財/交易日誌.md",
     "自省日記/2023-04-26.md",
     "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
@@ -181,11 +184,8 @@
     "學習筆記/理財/技術分析",
     "學習筆記/程式/LINUXC/可變參數函數、可變參數宏 __VA_ARGS__.md",
     "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
-    "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "程式設計/LINUXC/執行緒 (pthread)",
-    "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/images/github_keys_setting.png",
-    "程式設計/Git/常用命令縮寫.md",
     "閱讀筆記",
     "程式設計",
     "靈感筆記",
