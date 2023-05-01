@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "dcb760f7ff00e973",
+    "type": "split",
+    "children": [
+      {
+        "id": "ad1922534ee5932f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "effff3a94a6a2525",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "投資理財/遵守交易原則.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "309bc6c721728dc2",
+    "type": "split",
+    "children": [
+      {
+        "id": "32c3fa26db898443",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7b78dabe3315ad92",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3195714609b68268",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "34b96aa3f6503c99",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 225.5
+  },
+  "right": {
+    "id": "f8f1861296dce550",
+    "type": "split",
+    "children": [
+      {
+        "id": "fa6ecd15fdf378c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dbab1fff1954e1e6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "投資理財/遵守交易原則.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4db03ae83bf9ad78",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "投資理財/遵守交易原則.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "7c4b41e6da90f12b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4e24df3295ed24a3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "投資理財/遵守交易原則.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false
+    }
+  },
+  "active": "effff3a94a6a2525",
+  "lastOpenFiles": [
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
+    "投資理財/遵守交易原則.md",
+    "投資理財/理財常用公式.md",
+    "投資理財/交易日誌.md",
+    "自省日記/2023-04-26.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
+    "程式設計/Git/修改已提交的紀錄.md",
+    "程式設計/Git/rebase 操作方法.md",
+    "程式設計/LINUXC/function returning type.md",
+    "閱讀筆記/原則 (生活和工作).md",
+    "閱讀筆記/股票作手回憶錄.md",
+    "自省日記",
+    "日誌",
+    "自我",
+    "投資理財/合理計算當前股價 (存股).md",
+    "投資理財/紀律的交易者.md",
+    "Obsidian/如何使用註腳格式.md",
+    "閃存筆記/2023-04-26.md",
+    "Obsidian/測試.md",
+    "閃存筆記/未命名.md",
+    "程式設計/Git/如何設定SSH連線.md",
+    "程式設計/Git/如何移動標籤.md",
+    "學習筆記/理財/attachments/假突破.png",
+    "學習筆記/理財/attachments",
+    "學習筆記/理財/技術分析/M頭假突破.md",
+    "學習筆記/理財/技術分析/attachments/M頭假突破.png",
+    "學習筆記/理財/技術分析/attachments/M頭假突破 1.png",
+    "學習筆記/理財/技術分析/attachments",
+    "學習筆記/理財/技術分析",
+    "學習筆記/程式/LINUXC/可變參數函數、可變參數宏 __VA_ARGS__.md",
+    "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
+    "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "程式設計/LINUXC/執行緒 (pthread)",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/Git/images/github_keys_setting.png",
+    "程式設計/Git/常用命令縮寫.md",
+    "閱讀筆記",
+    "程式設計",
+    "靈感筆記",
+    "未命名.canvas",
+    "未命名 1.canvas"
+  ]
+}

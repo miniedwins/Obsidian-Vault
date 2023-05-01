@@ -1,0 +1,7 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "attachmentFolderPath": "./attachments",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "閃存筆記"
+}
