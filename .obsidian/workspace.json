@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Git/如何設定SSH連線.md",
+                "file": "程式設計/Git/常用命令縮寫.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Git/如何設定SSH連線.md",
+                "file": "程式設計/Git/常用命令縮寫.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Git/如何設定SSH連線.md",
+                "file": "程式設計/Git/常用命令縮寫.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Git/如何設定SSH連線.md"
+                "file": "程式設計/Git/常用命令縮寫.md"
               }
             }
           }
@@ -149,6 +149,7 @@
   },
   "active": "effff3a94a6a2525",
   "lastOpenFiles": [
+    "程式設計/Git/如何設定SSH連線.md",
     "程式設計/Git/常用命令縮寫.md",
     "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Git/遠端分支操作方法.md",
@@ -173,7 +174,6 @@
     "閃存筆記/2023-04-26.md",
     "Obsidian/測試.md",
     "閃存筆記/未命名.md",
-    "程式設計/Git/如何設定SSH連線.md",
     "程式設計/Git/如何移動標籤.md",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/attachments",
