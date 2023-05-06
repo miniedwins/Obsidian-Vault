@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "程式設計/Git/如何移動標籤.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "程式設計/Git/如何移動標籤.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "程式設計/Git/如何移動標籤.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/理財常用公式.md"
+                "file": "程式設計/Git/如何移動標籤.md"
               }
             }
           }
@@ -149,15 +149,16 @@
   },
   "active": "effff3a94a6a2525",
   "lastOpenFiles": [
+    "程式設計/Git/如何設定SSH連線.md",
+    "程式設計/Git/如何移動標籤.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/Git/修改已提交的紀錄.md",
+    "程式設計/Git/rebase 操作方法.md",
+    "投資理財/理財常用公式.md",
     "投資理財/遵守交易原則.md",
     "投資理財/交易日誌.md",
-    "投資理財/理財常用公式.md",
     "閱讀筆記/股票作手回憶錄.md",
-    "程式設計/Git/如何設定SSH連線.md",
-    "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/如何設定命令縮寫.md",
-    "程式設計/Git/rebase 操作方法.md",
-    "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Git/遠端分支操作方法.md",
     "程式設計/如何安裝 NVMe-Cli 套件.md",
@@ -175,7 +176,6 @@
     "閃存筆記/2023-04-26.md",
     "Obsidian/測試.md",
     "閃存筆記/未命名.md",
-    "程式設計/Git/如何移動標籤.md",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/attachments",
     "學習筆記/理財/技術分析/M頭假突破.md",
