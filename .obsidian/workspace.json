@@ -11,8 +11,12 @@
             "id": "4468b9a7919bda62",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "投資理財/交易的成功心態.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "投資理財/交易的成功心態.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "投資理財/交易的成功心態.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "投資理財/交易的成功心態.md"
+              }
             }
           }
         ],
@@ -147,9 +155,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "4468b9a7919bda62",
   "lastOpenFiles": [
+    "Obsidian/測試.md",
+    "閱讀筆記/股票作手回憶錄.md",
     "投資理財/交易日誌.md",
+    "投資理財/理財常用公式.md",
+    "Obsidian/點選文字連結到 URL.md",
+    "投資理財/交易的成功心態.md",
+    "閱讀筆記/原則 (生活和工作).md",
     "doxygen.canvas",
     "投資理財/未命名",
     "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
@@ -157,7 +171,6 @@
     "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
     "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/如何安裝 NVMe-Cli 套件.md",
-    "Obsidian/點選文字連結到 URL.md",
     "程式設計/Git/遠端分支操作方法.md",
     "英文學習/易混淆動詞",
     "程式設計/Git/建立第一個版本控制.md",
@@ -168,17 +181,12 @@
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/rebase 操作方法.md",
     "自省日記/2023-04-26.md",
-    "投資理財/遵守交易原則.md",
-    "Obsidian/測試.md",
-    "投資理財/理財常用公式.md",
     "英文學習/文法",
     "英文學習/片語",
     "英文學習/閱讀文章",
     "英文學習/閱讀文章",
     "Obsidian/如何使用註腳格式.md",
-    "閱讀筆記/股票作手回憶錄.md",
     "程式設計/LINUXC/function returning type.md",
-    "閱讀筆記/原則 (生活和工作).md",
     "自省日記",
     "日誌",
     "自我",
