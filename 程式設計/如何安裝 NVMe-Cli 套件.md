@@ -1,6 +1,6 @@
 相關依賴套件如下 : 
-* libnvme
-* json-c
+* [libnvme](https://github.com/linux-nvme/libnvme)
+* [json-c](https://github.com/json-c/json-c)
 * pkg-config
 * uuid-dev
 
