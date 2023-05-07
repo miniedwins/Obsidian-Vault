@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Git/遠端分支操作方法.md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5
+    "width": 249.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Git/遠端分支操作方法.md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Git/遠端分支操作方法.md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Git/遠端分支操作方法.md"
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md"
               }
             }
           }
@@ -157,6 +157,13 @@
   },
   "active": "4468b9a7919bda62",
   "lastOpenFiles": [
+    "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
+    "Obsidian/點選文字連結到 URL.md",
+    "程式設計/Git/遠端分支操作方法.md",
+    "英文學習/易混淆動詞",
     "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/Git/如何設定SSH連線.md",
@@ -174,16 +181,10 @@
     "英文學習/片語",
     "英文學習/閱讀文章",
     "英文學習/閱讀文章",
-    "Obsidian/點選文字連結到 URL.md",
     "Obsidian/如何使用註腳格式.md",
-    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
-    "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "閱讀筆記/股票作手回憶錄.md",
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/LINUXC/function returning type.md",
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
-    "程式設計/Git/遠端分支操作方法.md",
     "閱讀筆記/原則 (生活和工作).md",
     "自省日記",
     "日誌",
@@ -195,7 +196,6 @@
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破 1.png",
     "學習筆記/理財/技術分析/attachments",
-    "學習筆記/理財/技術分析",
     "程式設計/Git/images/github_keys_setting.png",
     "未命名 1.canvas"
   ]
