@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Git/如何移動標籤.md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "7e644b348da6c9a8",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -64,6 +75,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "3f3692e4abd9b39f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -85,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Git/如何移動標籤.md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Git/如何移動標籤.md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Git/如何移動標籤.md"
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md"
               }
             }
           }
@@ -147,25 +166,27 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "effff3a94a6a2525",
+  "active": "7e644b348da6c9a8",
   "lastOpenFiles": [
-    "程式設計/Git/如何設定SSH連線.md",
+    "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "投資理財/遵守交易原則.md",
+    "閱讀筆記/股票作手回憶錄.md",
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
+    "程式設計/LINUXC/function returning type.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
+    "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離屬性.md",
     "程式設計/Git/如何移動標籤.md",
+    "程式設計/Git/如何設定SSH連線.md",
     "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/rebase 操作方法.md",
     "投資理財/理財常用公式.md",
-    "投資理財/遵守交易原則.md",
     "投資理財/交易日誌.md",
-    "閱讀筆記/股票作手回憶錄.md",
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Git/遠端分支操作方法.md",
-    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "自省日記/2023-04-26.md",
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
-    "程式設計/LINUXC/function returning type.md",
     "閱讀筆記/原則 (生活和工作).md",
     "自省日記",
     "日誌",
@@ -178,12 +199,10 @@
     "閃存筆記/未命名.md",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/attachments",
-    "學習筆記/理財/技術分析/M頭假突破.md",
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破 1.png",
     "學習筆記/理財/技術分析/attachments",
     "學習筆記/理財/技術分析",
-    "學習筆記/程式/LINUXC/可變參數函數、可變參數宏 __VA_ARGS__.md",
     "程式設計/LINUXC/執行緒 (pthread)",
     "程式設計/Git/images/github_keys_setting.png",
     "閱讀筆記",
