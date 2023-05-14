@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
+                "file": "程式設計/如何安裝 NVMe-Cli 套件.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "923f44d4c5ffd3d3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.2.8"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
+                "file": "程式設計/如何安裝 NVMe-Cli 套件.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
+                "file": "程式設計/如何安裝 NVMe-Cli 套件.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md"
+                "file": "程式設計/如何安裝 NVMe-Cli 套件.md"
               }
             }
           }
@@ -155,15 +166,17 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "4468b9a7919bda62",
+  "active": "923f44d4c5ffd3d3",
   "lastOpenFiles": [
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "程式設計/Git/建立第一個版本控制.md",
+    "程式設計/Git/遠端分支操作方法.md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/rebase 操作方法.md",
-    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "投資理財/交易的成功心態.md",
     "Obsidian/測試.md",
     "閱讀筆記/股票作手回憶錄.md",
@@ -174,9 +187,7 @@
     "doxygen.canvas",
     "投資理財/未命名",
     "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
-    "程式設計/Git/遠端分支操作方法.md",
     "英文學習/易混淆動詞",
-    "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/Git/如何設定SSH連線.md",
     "程式設計/Git/如何移動標籤.md",
