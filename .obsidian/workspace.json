@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "英文學習/文法/By or With.md",
+                "file": "英文學習/暫存資料.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "英文學習/文法/By or With.md",
+                "file": "英文學習/暫存資料.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "英文學習/文法/By or With.md",
+                "file": "英文學習/暫存資料.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "英文學習/文法/By or With.md"
+                "file": "英文學習/暫存資料.md"
               }
             }
           }
@@ -170,8 +170,9 @@
   },
   "active": "923f44d4c5ffd3d3",
   "lastOpenFiles": [
-    "程式設計/Git/如何設定命令縮寫.md",
     "英文學習/文法/By or With.md",
+    "英文學習/暫存資料.md",
+    "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
     "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
@@ -205,7 +206,6 @@
     "日誌",
     "自我",
     "投資理財/合理計算當前股價 (存股).md",
-    "投資理財/紀律的交易者.md",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/attachments",
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
