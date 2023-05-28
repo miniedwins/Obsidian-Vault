@@ -182,8 +182,9 @@
   },
   "active": "e697050732cfe69c",
   "lastOpenFiles": [
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
+    "程式設計/LINUXC/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/LINUXC/時間戳轉換 (timestamp).md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/LINUXC/常見問題處理/無法引用 O_DIRECT.md",
     "程式設計/Git/如何移動標籤.md",
     "程式設計/Git/遠端分支操作方法.md",
@@ -211,7 +212,6 @@
     "投資理財/未命名",
     "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
     "英文學習/易混淆動詞",
-    "自省日記/2023-04-26.md",
     "英文學習/文法",
     "英文學習/片語",
     "英文學習/閱讀文章",
