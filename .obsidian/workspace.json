@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUXC/時間戳轉換 (timestamp).md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
                 "mode": "source",
                 "source": false
               }
@@ -118,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUXC/時間戳轉換 (timestamp).md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUXC/時間戳轉換 (timestamp).md",
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUXC/時間戳轉換 (timestamp).md"
+                "file": "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md"
               }
             }
           }
@@ -182,9 +182,9 @@
   },
   "active": "e697050732cfe69c",
   "lastOpenFiles": [
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/LINUXC/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/LINUXC/時間戳轉換 (timestamp).md",
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/LINUXC/常見問題處理/無法引用 O_DIRECT.md",
     "程式設計/Git/如何移動標籤.md",
     "程式設計/Git/遠端分支操作方法.md",
