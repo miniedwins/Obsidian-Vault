@@ -42,9 +42,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "9852bc25eb1b97ab",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.3.5"
+              }
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -180,7 +190,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e697050732cfe69c",
+  "active": "9852bc25eb1b97ab",
   "lastOpenFiles": [
     "程式設計/LINUXC/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/LINUXC/時間戳轉換 (timestamp).md",
