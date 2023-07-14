@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
+                "file": "英文學習/暫存資料.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
+                "file": "英文學習/暫存資料.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
+                "file": "英文學習/暫存資料.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md"
+                "file": "英文學習/暫存資料.md"
               }
             }
           }
@@ -155,21 +155,22 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "4468b9a7919bda62",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "程式設計/Python/計算 MD5 雜湊值.md",
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
+    "程式設計/LINUXC/時間戳轉換 (timestamp).md",
+    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
     "投資理財/交易的成功心態.md",
     "英文學習/暫存資料.md",
     "英文學習/文法/By or With.md",
     "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/rebase 操作方法.md",
     "程式設計/LINUXC/執行緒 (pthread)/執行緒的建立.md",
-    "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
     "程式設計/LINUXC/執行緒 (pthread)/如何接收子執行緒的返回值.md",
-    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/LINUXC/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/LINUXC/時間戳轉換 (timestamp).md",
     "程式設計/LINUXC/執行緒 (pthread)/設定執行緒的分離.md",
     "程式設計/LINUXC/常見問題處理/無法引用 O_DIRECT.md",
     "程式設計/Git/如何移動標籤.md",
@@ -183,7 +184,6 @@
     "投資理財/交易日誌.md",
     "投資理財/理財常用公式.md",
     "Obsidian/點選文字連結到 URL.md",
-    "閱讀筆記/原則 (生活和工作).md",
     "doxygen.canvas",
     "投資理財/未命名",
     "英文學習/易混淆動詞",
