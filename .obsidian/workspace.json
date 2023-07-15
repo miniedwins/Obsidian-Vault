@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "程式設計/Python/hashlib/計算檔案的 MD5 雜湊值.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "程式設計/Python/hashlib/計算檔案的 MD5 雜湊值.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "程式設計/Python/hashlib/計算檔案的 MD5 雜湊值.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "英文學習/暫存資料.md"
+                "file": "程式設計/Python/hashlib/計算檔案的 MD5 雜湊值.md"
               }
             }
           }
@@ -155,14 +155,17 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "4468b9a7919bda62",
   "lastOpenFiles": [
-    "程式設計/Python/計算 MD5 雜湊值.md",
+    "程式設計/Python/hashlib/計算 MD5 雜湊值.md",
+    "程式設計/Python/hashlib/計算檔案的 MD5 雜湊值.md",
+    "程式設計/Python/hashlib",
+    "英文學習/暫存資料.md",
+    "投資理財/理財常用公式.md",
     "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/LINUXC/時間戳轉換 (timestamp).md",
     "程式設計/LINUXC/執行緒 (pthread)/執行緒退出.md",
     "投資理財/交易的成功心態.md",
-    "英文學習/暫存資料.md",
     "英文學習/文法/By or With.md",
     "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/rebase 操作方法.md",
@@ -182,8 +185,6 @@
     "Obsidian/測試.md",
     "閱讀筆記/股票作手回憶錄.md",
     "投資理財/交易日誌.md",
-    "投資理財/理財常用公式.md",
-    "Obsidian/點選文字連結到 URL.md",
     "doxygen.canvas",
     "投資理財/未命名",
     "英文學習/易混淆動詞",
@@ -193,7 +194,6 @@
     "英文學習/閱讀文章",
     "自省日記",
     "日誌",
-    "自我",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破 1.png",
