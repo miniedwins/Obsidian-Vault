@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 261.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -157,13 +157,13 @@
   },
   "active": "4468b9a7919bda62",
   "lastOpenFiles": [
-    "程式設計/Python/檔案操作/建立多個目錄結構.md",
-    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
-    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
+    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
+    "程式設計/Python/檔案操作/建立多個目錄結構.md",
+    "程式設計/如何安裝 NVMe-Cli 套件.md",
     "程式設計/Python/檔案操作",
     "程式設計/Python/未命名.md",
-    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Python/雜湊值",
     "英文學習/暫存資料.md",
     "投資理財/理財常用公式.md",
