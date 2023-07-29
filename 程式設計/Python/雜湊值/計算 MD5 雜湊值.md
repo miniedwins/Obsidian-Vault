@@ -1,3 +1,4 @@
+建立物件，計算雜湊值必須要設定編碼格式
 
 ```python
 import hashlib
