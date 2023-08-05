@@ -29,20 +29,22 @@ sections=()
 
 while (($#)); do
         case "$1" in
-                -s) echo "s=$1"; sections+=("$2"); shift; shift;;
-                -v) echo "v=$1"; sections+=("$2"); shift; shift;;
+                -s) echo "s = $1"; sections+=("$2"); shift; shift;;
+                -v) echo "v = $1"; sections+=("$2"); shift; shift;;
                 -q) quit=1; shift;;
                 -h) usage; break;;
                 *)usage; exit 1;;
         esac
 done
+
+echo ${sections[@]}
 ```
 
 執行結果如下 :
 
 ```shell
 $ ./shift.sh -s 1 -v 2
-s=-s
-v=-v
+s = -s
+v = -v
 1 2
 ```
