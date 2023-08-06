@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Shell/參數移位 Shift.md",
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Shell/參數移位 Shift.md",
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Shell/參數移位 Shift.md",
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Shell/參數移位 Shift.md"
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md"
               }
             }
           }
@@ -170,8 +170,10 @@
   },
   "active": "2eb6498dc0a7f41e",
   "lastOpenFiles": [
-    "閱讀筆記/股票作手回憶錄.md",
+    "程式設計/Python/檔案操作/建立多個目錄結構.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Shell/參數移位 Shift.md",
+    "閱讀筆記/股票作手回憶錄.md",
     "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "程式設計/Shell",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
@@ -182,9 +184,7 @@
     "投資理財/交易的成功心態.md",
     "投資理財/交易日誌.md",
     "英文學習/暫存資料.md",
-    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/多執行程序處理",
-    "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "自省日記/2023-04-26.md",
     "投資理財/理財常用公式.md",
     "英文學習/文法/By or With.md",
