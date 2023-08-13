@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "英文學習/暫存資料.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "英文學習/暫存資料.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "英文學習/暫存資料.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md"
+                "file": "英文學習/暫存資料.md"
               }
             }
           }
@@ -170,11 +170,13 @@
   },
   "active": "2eb6498dc0a7f41e",
   "lastOpenFiles": [
+    "程式設計/CProgram/執行緒 (pthread)/執行緒退出.md",
+    "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
+    "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
-    "程式設計/Shell/取得命令行輸入的參數.md",
     "閱讀筆記/股票作手回憶錄.md",
-    "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "程式設計/Shell",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
     "閱讀筆記/原則 (生活和工作).md",
@@ -199,9 +201,7 @@
     "程式設計/Python/檔案操作",
     "程式設計/Python/未命名.md",
     "程式設計/Python/雜湊值",
-    "程式設計/CProgram/執行緒 (pthread)/執行緒退出.md",
     "程式設計/Git/同步原作專案進度.md",
-    "程式設計/Git/rebase 操作方法.md",
     "程式設計/CProgram/常見問題處理",
     "doxygen.canvas",
     "投資理財/未命名",
