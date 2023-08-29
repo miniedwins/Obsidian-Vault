@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "自省日記/2023-08-29.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "自省日記/2023-08-29.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "自省日記/2023-08-29.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "英文學習/暫存資料.md"
+                "file": "自省日記/2023-08-29.md"
               }
             }
           }
@@ -170,8 +170,10 @@
   },
   "active": "2eb6498dc0a7f41e",
   "lastOpenFiles": [
-    "英文學習/文法/By or With.md",
+    "自省日記/2023-04-26.md",
+    "自省日記/2023-08-29.md",
     "英文學習/暫存資料.md",
+    "英文學習/文法/By or With.md",
     "程式設計/CProgram/執行緒 (pthread)/執行緒退出.md",
     "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
@@ -188,7 +190,6 @@
     "投資理財/交易的成功心態.md",
     "投資理財/交易日誌.md",
     "程式設計/Python/多執行程序處理",
-    "自省日記/2023-04-26.md",
     "投資理財/理財常用公式.md",
     "Obsidian/點選文字連結到 URL.md",
     "Obsidian/測試.md",
@@ -201,7 +202,6 @@
     "程式設計/Python/檔案操作",
     "程式設計/Python/未命名.md",
     "程式設計/Python/雜湊值",
-    "程式設計/Git/同步原作專案進度.md",
     "程式設計/CProgram/常見問題處理",
     "doxygen.canvas",
     "投資理財/未命名",
