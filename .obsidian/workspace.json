@@ -14,8 +14,19 @@
               "type": "empty",
               "state": {}
             }
+          },
+          {
+            "id": "b8b3065d6b609e1c",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.5"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -147,7 +158,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "da27f5f65069a293",
+  "active": "b8b3065d6b609e1c",
   "lastOpenFiles": [
     "程式設計/LINUX/查詢 PCIe 資訊.md",
     "程式設計/Shell/取得命令行輸入的參數.md",
