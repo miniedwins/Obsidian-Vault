@@ -8,25 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "da27f5f65069a293",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
             "id": "b8b3065d6b609e1c",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.4.5"
+                "file": "閱讀筆記/原則 (生活和工作).md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -100,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "閱讀筆記/原則 (生活和工作).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "閱讀筆記/原則 (生活和工作).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +132,19 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "閱讀筆記/原則 (生活和工作).md"
+              }
+            }
+          },
+          {
+            "id": "8773e1b03811d717",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
             }
           }
         ],
