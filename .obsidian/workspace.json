@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自省日記/2023-08-29.md",
+                "file": "投資理財/理財常用公式.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "自省日記/2023-08-29.md",
+                "file": "投資理財/理財常用公式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "自省日記/2023-08-29.md",
+                "file": "投資理財/理財常用公式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自省日記/2023-08-29.md"
+                "file": "投資理財/理財常用公式.md"
               }
             }
           },
@@ -167,9 +167,11 @@
   },
   "active": "b8b3065d6b609e1c",
   "lastOpenFiles": [
-    "投資理財/交易日誌.md",
-    "投資理財/理財常用公式.md",
     "投資理財/交易的成功心態.md",
+    "投資理財/交易日誌.md",
+    "自省日記/2023-04-26.md",
+    "自省日記/2023-08-29.md",
+    "投資理財/理財常用公式.md",
     "英文學習/文法/By or With.md",
     "英文學習/暫存資料.md",
     "Obsidian/測試.md",
@@ -187,8 +189,6 @@
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Git/images/github_keys_setting.png",
-    "自省日記/2023-08-29.md",
-    "自省日記/2023-04-26.md",
     "程式設計/CProgram/執行緒 (pthread)/執行緒退出.md",
     "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
