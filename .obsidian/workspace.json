@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "8eea2523e8564918",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.16"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,7 +176,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "b8b3065d6b609e1c",
+  "active": "8eea2523e8564918",
   "lastOpenFiles": [
     "投資理財/交易的成功心態.md",
     "投資理財/交易日誌.md",
