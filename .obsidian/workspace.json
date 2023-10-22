@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md",
+                "file": "職場工作/敘述型簡報.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md",
+                "file": "職場工作/敘述型簡報.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md",
+                "file": "職場工作/敘述型簡報.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md"
+                "file": "職場工作/敘述型簡報.md"
               }
             }
           },
@@ -167,10 +167,11 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "職場工作/如何上台演說不緊張.md",
+    "職場工作/敘述型簡報.md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
-    "職場工作/如何上台演說不緊張.md",
     "閱讀筆記/股票作手回憶錄.md",
     "閱讀筆記/原則 (生活和工作).md",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
@@ -193,7 +194,6 @@
     "程式設計/LINUX/查詢 PCIe 資訊.md",
     "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Shell",
     "程式設計/Python/多執行程序處理",
