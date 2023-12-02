@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md",
+                "file": "程式設計/CProgram/名詞解釋/function returning type.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md",
+                "file": "程式設計/CProgram/名詞解釋/function returning type.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md",
+                "file": "程式設計/CProgram/名詞解釋/function returning type.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "職場工作/如何上台演說不緊張.md"
+                "file": "程式設計/CProgram/名詞解釋/function returning type.md"
               }
             }
           },
@@ -167,14 +167,15 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
-    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
-    "自省日記/解釋薪傳班報告內容的缺點.md",
-    "職場工作/如何上台演說不緊張.md",
+    "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+    "Obsidian/測試.md",
     "職場工作/敘述型簡報.md",
+    "職場工作/如何上台演說不緊張.md",
+    "自省日記/解釋薪傳班報告內容的缺點.md",
     "閱讀筆記/股票作手回憶錄.md",
     "閱讀筆記/原則 (生活和工作).md",
-    "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
+    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "職場工作/表達能力.md",
     "職場工作",
     "投資理財/理財常用公式.md",
@@ -183,7 +184,6 @@
     "投資理財/交易日誌.md",
     "英文學習/文法/By or With.md",
     "英文學習/暫存資料.md",
-    "Obsidian/測試.md",
     "Obsidian/如何使用註腳格式.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
