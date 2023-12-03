@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "程式設計/Makefile/未命名.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "程式設計/Makefile/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "程式設計/Makefile/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md"
+                "file": "程式設計/Makefile/未命名.md"
               }
             }
           },
@@ -167,8 +167,10 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "職場工作/如何上台演說不緊張.md",
     "程式設計/Makefile/Makefile.md",
+    "程式設計/Makefile/未命名.md",
+    "程式設計/Makefile/如何執行 Makefile.md",
+    "職場工作/如何上台演說不緊張.md",
     "職場工作/敘述型簡報.md",
     "英文學習/暫存資料.md",
     "程式設計/Makefile/語法.md",
@@ -193,8 +195,6 @@
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "程式設計/CProgram/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/CProgram/時間戳轉換 (timestamp).md",
-    "程式設計/Git/同步原作專案進度.md",
-    "Obsidian/點選文字連結到 URL.md",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Shell",
     "程式設計/Python/多執行程序處理",
