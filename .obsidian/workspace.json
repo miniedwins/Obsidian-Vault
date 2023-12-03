@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "職場工作/如何上台演說不緊張.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "職場工作/如何上台演說不緊張.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "英文學習/暫存資料.md",
+                "file": "職場工作/如何上台演說不緊張.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "英文學習/暫存資料.md"
+                "file": "職場工作/如何上台演說不緊張.md"
               }
             }
           },
@@ -167,6 +167,10 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "職場工作/敘述型簡報.md",
+    "英文學習/暫存資料.md",
+    "程式設計/Makefile/語法.md",
+    "程式設計/Makefile",
     "英文學習/文法/By or With.md",
     "投資理財/交易日誌.md",
     "投資理財/交易的成功心態.md",
@@ -174,7 +178,6 @@
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
-    "職場工作/敘述型簡報.md",
     "職場工作/如何上台演說不緊張.md",
     "閱讀筆記/原則 (生活和工作).md",
     "閱讀筆記/股票作手回憶錄.md",
@@ -184,7 +187,6 @@
     "職場工作",
     "投資理財/理財常用公式.md",
     "程式設計/Git/如何設定命令縮寫.md",
-    "英文學習/暫存資料.md",
     "Obsidian/如何使用註腳格式.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
@@ -193,7 +195,6 @@
     "程式設計/Git/同步原作專案進度.md",
     "Obsidian/點選文字連結到 URL.md",
     "程式設計/LINUX/查詢 PCIe 資訊.md",
-    "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Shell",
     "程式設計/Python/多執行程序處理",
@@ -204,7 +205,6 @@
     "程式設計/CProgram/常見問題處理",
     "doxygen.canvas",
     "投資理財/未命名",
-    "英文學習/易混淆動詞",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破 1.png",
