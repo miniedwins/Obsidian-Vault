@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "投資理財/理財常用公式.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "投資理財/理財常用公式.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "投資理財/理財常用公式.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md"
+                "file": "投資理財/理財常用公式.md"
               }
             }
           },
@@ -167,15 +167,15 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "投資理財/交易的成功心態.md",
+    "程式設計/Makefile/Makefile.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "英文學習/暫存資料.md",
-    "投資理財/交易的成功心態.md",
     "Obsidian/如何使用註腳格式.md",
     "投資理財/理財常用公式.md",
     "投資理財/交易日誌.md",
     "英文學習/文法/By or With.md",
     "程式設計/Shell/取得命令行輸入的參數.md",
-    "程式設計/Makefile/Makefile.md",
     "程式設計/Makefile/如何執行 shell 命令.md",
     "程式設計/Makefile/如何執行 Makefile.md",
     "職場工作/如何上台演說不緊張.md",
