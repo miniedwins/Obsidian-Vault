@@ -15,7 +15,7 @@ $ apt install pkg-config uuid-dev libhugetlbfs-dev
 **libnvme** 
 
 ```shell
-$ git clone https://github.com/linux-nvme/nvme-cli.git
+$ git clone https://github.com/linux-nvme/libnvme.git
 $ cd nvme-cli
 $ meson setup .build
 $ meson compile -C .build
