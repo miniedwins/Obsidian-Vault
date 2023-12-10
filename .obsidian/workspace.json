@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+                "file": "程式設計/Makefile/Makefile.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+                "file": "程式設計/Makefile/Makefile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+                "file": "程式設計/Makefile/Makefile.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md"
+                "file": "程式設計/Makefile/Makefile.md"
               }
             }
           },
@@ -167,9 +167,10 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "程式設計/Makefile/Makefile.md",
-    "閱讀筆記/股票作手回憶錄.md",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+    "程式設計/Makefile/Makefile.md",
+    "程式設計/Makefile/特殊符號.md",
+    "閱讀筆記/股票作手回憶錄.md",
     "職場工作/如何上台演說不緊張.md",
     "職場工作/敘述型簡報.md",
     "投資理財/理財常用公式.md",
@@ -194,7 +195,6 @@
     "職場工作",
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
-    "程式設計/CProgram/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Shell",
     "程式設計/Python/多執行程序處理",
