@@ -38,8 +38,6 @@ CFLAGS += -O2
 ```
 SHELL_HACK := $(shell mkdir -p BUILD)
 ```
-PLATFORM_ID = $$( uname -s )
-```
 
 ## 目標
 
