@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+                "file": "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+                "file": "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+                "file": "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md"
+                "file": "程式設計/Python/雜湊值/計算 MD5 雜湊值.md"
               }
             }
           },
@@ -167,21 +167,28 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
+    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
+    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
+    "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "程式設計/Makefile/Makefile.md",
-    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+    "程式設計/CProgram/名詞解釋/function returning type.md",
+    "工作/PCIe",
+    "工作/簡報/如何上台演說不緊張.md",
+    "工作/簡報/敘述型簡報.md",
+    "英文學習/暫存資料.md",
+    "工作",
+    "工作/NVMe",
     "自省日記/解釋薪傳班報告內容的缺點.md",
+    "投資理財/交易的成功心態.md",
+    "投資理財/交易日誌.md",
+    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
     "程式設計/Makefile/特殊符號.md",
     "閱讀筆記/股票作手回憶錄.md",
-    "職場工作/如何上台演說不緊張.md",
-    "職場工作/敘述型簡報.md",
     "投資理財/理財常用公式.md",
-    "投資理財/交易的成功心態.md",
-    "程式設計/Python/檔案操作/建立多個目錄結構.md",
-    "英文學習/暫存資料.md",
     "Obsidian/如何使用註腳格式.md",
-    "投資理財/交易日誌.md",
     "英文學習/文法/By or With.md",
     "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Makefile/如何執行 shell 命令.md",
@@ -189,22 +196,15 @@
     "程式設計/Makefile/語法.md",
     "程式設計/Makefile",
     "閱讀筆記/原則 (生活和工作).md",
-    "程式設計/CProgram/名詞解釋/function returning type.md",
     "Obsidian/測試.md",
-    "職場工作/表達能力.md",
-    "職場工作",
-    "程式設計/Git/如何設定命令縮寫.md",
-    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
+    "工作/簡報",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Shell",
     "程式設計/Python/多執行程序處理",
     "程式設計/CProgram/名詞解釋",
     "程式設計/LINUX",
     "程式設計/Python/檔案操作",
-    "程式設計/Python/雜湊值",
-    "程式設計/CProgram/常見問題處理",
     "doxygen.canvas",
-    "投資理財/未命名",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破 1.png",
