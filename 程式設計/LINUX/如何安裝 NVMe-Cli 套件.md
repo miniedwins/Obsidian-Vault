@@ -3,11 +3,12 @@
 * [json-c](https://github.com/json-c/json-c)
 * pkg-config
 * uuid-dev
+* libssl-dev
 
 首先可以透過 `APT` 安裝發行版本所提供的套件
 
 ```shell
-$ apt install pkg-config uuid-dev libhugetlbfs-dev
+$ apt install git pkg-config uuid-dev libhugetlbfs-dev libssl-dev
 ```
 
 然後接下來另外兩個套件 `libnvme` 以及 `json-c` 需要透過原始碼方式安裝，安裝方法如下 : 

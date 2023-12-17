@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md"
+                "file": "自省日記/介紹 SSD 還原技術 (Coresnapshot).md"
               }
             }
           },
@@ -167,8 +167,11 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "程式設計/Makefile/Makefile.md",
+    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+    "自省日記/解釋薪傳班報告內容的缺點.md",
+    "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
     "程式設計/Makefile/特殊符號.md",
     "閱讀筆記/股票作手回憶錄.md",
     "職場工作/如何上台演說不緊張.md",
@@ -185,9 +188,6 @@
     "程式設計/Makefile/如何執行 Makefile.md",
     "程式設計/Makefile/語法.md",
     "程式設計/Makefile",
-    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
-    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
-    "自省日記/解釋薪傳班報告內容的缺點.md",
     "閱讀筆記/原則 (生活和工作).md",
     "程式設計/CProgram/名詞解釋/function returning type.md",
     "Obsidian/測試.md",
