@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "程式設計/Makefile/Makefile.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "04c9db297fd89a11",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.3"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "程式設計/Makefile/Makefile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "程式設計/Makefile/Makefile.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md"
+                "file": "程式設計/Makefile/Makefile.md"
               }
             }
           },
@@ -143,7 +154,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -165,10 +178,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "855563196e98b942",
+  "active": "04c9db297fd89a11",
   "lastOpenFiles": [
-    "閱讀筆記/原則 (生活和工作).md",
+    "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "閱讀筆記/股票作手回憶錄.md",
+    "閱讀筆記/原則 (生活和工作).md",
     "投資理財/交易日誌.md",
     "投資理財/理財常用公式.md",
     "投資理財/交易的成功心態.md",
@@ -186,7 +200,6 @@
     "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md",
     "程式設計/CProgram/執行緒 (pthread)/執行緒退出.md",
     "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
-    "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
     "程式設計/Python/執行緒",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
