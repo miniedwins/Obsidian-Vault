@@ -5,7 +5,6 @@ typedef struct struct_A {
     char a;
     int b;
     char c;
-
 } __attribute__((__packed__)) struct_t;
 ```
 
