@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md"
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md"
               }
             }
           },
@@ -182,8 +182,9 @@
   },
   "active": "04c9db297fd89a11",
   "lastOpenFiles": [
-    "學習日誌/2024-01-01.md",
     "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+    "工作/NVMe/IEEE EUI, OUI, and CID.md",
+    "學習日誌/2024-01-01.md",
     "學習日誌",
     "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "閱讀筆記/股票作手回憶錄.md",
@@ -209,7 +210,6 @@
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
-    "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "工作/PCIe",
     "工作",
     "工作/NVMe",
