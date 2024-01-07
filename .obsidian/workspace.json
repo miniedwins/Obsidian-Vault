@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Makefile/Makefile.md",
+                "file": "程式設計/Embedded/Makefile.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
+                "file": "程式設計/Embedded/Kernel defconfig.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
+                "file": "程式設計/Embedded/Kernel defconfig.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
+                "file": "程式設計/Embedded/Kernel defconfig.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md"
+                "file": "程式設計/Embedded/Kernel defconfig.md"
               }
             }
           },
@@ -182,8 +182,14 @@
   },
   "active": "04c9db297fd89a11",
   "lastOpenFiles": [
-    "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
+    "程式設計/Embedded/Makefile.md",
+    "程式設計/Embedded/Kernel defconfig.md",
+    "投資理財/交易的成功心態.md",
+    "程式設計/Embedded",
+    "程式設計/Embedded",
+    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "工作/NVMe/IEEE EUI, OUI, and CID.md",
+    "程式設計/LINUX/如何安裝 NVMe-Cli 套件.md",
     "學習日誌/2024-01-01.md",
     "學習日誌",
     "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
@@ -191,8 +197,6 @@
     "閱讀筆記/原則 (生活和工作).md",
     "投資理財/交易日誌.md",
     "投資理財/理財常用公式.md",
-    "投資理財/交易的成功心態.md",
-    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "工作/簡報/敘述型簡報.md",
@@ -208,8 +212,6 @@
     "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/Python/執行緒",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
-    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "工作/PCIe",
     "工作",
     "工作/NVMe",
@@ -217,8 +219,6 @@
     "工作/簡報",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Shell",
-    "程式設計/Python/多執行程序處理",
-    "程式設計/CProgram/名詞解釋",
     "doxygen.canvas",
     "學習筆記/理財/attachments/假突破.png",
     "學習筆記/理財/技術分析/attachments/M頭假突破.png",
