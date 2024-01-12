@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/編譯 QEMU 原始碼.md",
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/編譯 QEMU 原始碼.md",
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/編譯 QEMU 原始碼.md",
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/編譯 QEMU 原始碼.md"
+                "file": "工作/NVMe/IEEE EUI, OUI, and CID.md"
               }
             }
           },
@@ -180,14 +180,14 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "04c9db297fd89a11",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "程式設計/CProgram/Makefile.md",
+    "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
     "程式設計/LINUX/qemu",
     "程式設計/CProgram/時間戳轉換 (timestamp).md",
-    "程式設計/LINUX/編譯 QEMU 原始碼.md",
     "程式設計/LINUX/package/如何安裝 nvme-cli 套件.md",
     "程式設計/CProgram/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/CProgram/Makefile.md",
     "程式設計/LINUX/shell/取得命令行輸入的參數.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
@@ -217,7 +217,6 @@
     "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Python/執行緒",
     "工作/PCIe",
-    "工作",
     "程式設計/Git/images/github_keys_setting.png",
     "doxygen.canvas",
     "學習筆記/理財/attachments/假突破.png",
