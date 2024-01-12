@@ -6,7 +6,7 @@
 $ apt install meson pkg-config uuid-dev libhugetlbfs-dev libssl-dev libdus-dev
 ```
 
-接下來另外兩個套件 `libnvme` 以及 `json-c` 需要透過原始碼方式安裝，安裝方法如下 : 
+然後接下來另外兩個套件 `libnvme` 以及 `json-c` 需要透過原始碼方式安裝，安裝方法如下 : 
 
 **libnvme** 
 
@@ -26,7 +26,6 @@ $ mkdir json-c-build
 $ cd json-c-build
 $ cmake ../json-c
 $ make
-$ make test
 $ make install
 ```
 
