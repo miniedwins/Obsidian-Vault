@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/package/nvmecli.md",
+                "file": "程式設計/LINUX/kernel/Makefile.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/package/nvmecli.md",
+                "file": "程式設計/LINUX/kernel/Makefile.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/package/nvmecli.md",
+                "file": "程式設計/LINUX/kernel/Makefile.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/package/nvmecli.md"
+                "file": "程式設計/LINUX/kernel/Makefile.md"
               }
             }
           },
@@ -182,13 +182,17 @@
   },
   "active": "04c9db297fd89a11",
   "lastOpenFiles": [
+    "程式設計/LINUX/qemu.md",
     "程式設計/LINUX/kernel/Makefile.md",
-    "程式設計/LINUX/kernel",
     "程式設計/LINUX/package/nvmecli.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
+    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
+    "程式設計/Python/檔案操作/建立多個目錄結構.md",
+    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
+    "程式設計/LINUX/kernel",
     "程式設計/LINUX/package",
     "程式設計/LINUX/shell/取得命令行輸入的參數.md",
     "程式設計/LINUX/shell",
-    "程式設計/LINUX/qemu.md",
     "程式設計/LINUX/kernel.md",
     "程式設計/LINUX/qemu",
     "投資理財/交易的成功心態.md",
@@ -210,10 +214,6 @@
     "程式設計/Git/建立第一個版本控制.md",
     "程式設計/Git/同步原作專案進度.md",
     "程式設計/CProgram/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/CProgram/名詞解釋/function returning type.md",
-    "程式設計/CProgram/時間戳轉換 (timestamp).md",
-    "程式設計/CProgram/常見問題處理/無法引用 O_DIRECT.md",
-    "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md",
     "程式設計/Python/執行緒",
     "工作/PCIe",
     "工作",
