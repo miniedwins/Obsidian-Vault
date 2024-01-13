@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/Makefile.md",
+                "file": "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/Makefile.md",
+                "file": "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/Makefile.md",
+                "file": "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/Makefile.md"
+                "file": "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md"
               }
             }
           },
@@ -182,9 +182,9 @@
   },
   "active": "04c9db297fd89a11",
   "lastOpenFiles": [
-    "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
     "程式設計/LINUX/Makefile.md",
+    "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
