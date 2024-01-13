@@ -47,7 +47,7 @@ PLATFORM_ID := $$( uname -s )
 
 ```
 foo.o: common.h
-    gcc -c foo.c 
+	gcc -c foo.c 
 ```
 
 - `foo.o` 是這個專案要建立的檔案; `common.h` 是相依性的項目/檔案; `gcc -c foo.c` 則為要產生這個項目所要執行的命令。
