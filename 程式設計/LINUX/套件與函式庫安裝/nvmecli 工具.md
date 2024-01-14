@@ -1,25 +1,13 @@
-需要先安裝依賴套件如下 : 
-* [libnvme](https://github.com/linux-nvme/libnvme)
-* [json-c](https://github.com/json-c/json-c)
+
 
 ```shell
 $ apt install meson pkg-config uuid-dev libhugetlbfs-dev libssl-dev libdus-dev
 ```
 
-然後接下來另外兩個套件 `libnvme` 以及 `json-c` 需要透過原始碼方式安裝，安裝方法如下 : 
+需要預先安裝依賴套件 : 
 
-**json-c**
-
-```shell
-$ git clone https://github.com/json-c/json-c.git
-$ mkdir json-c-build
-$ cd json-c-build
-$ cmake ../json-c
-$ make
-$ make install
-```
-
-**nvme-cli**
+* [libnvme](https://github.com/linux-nvme/libnvme)
+* [json-c](https://github.com/json-c/json-c)
 
 ```
 $ git clone https://github.com/linux-nvme/nvme-cli.git
