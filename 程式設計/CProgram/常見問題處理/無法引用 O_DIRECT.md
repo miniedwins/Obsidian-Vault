@@ -2,7 +2,7 @@
 問題描述 : 
 error: ‘O_DIRECT’ undeclared (first use in this function); did you mean ‘O_DIRECTORY’?
 
-如何解決 : 
+解決方法 :
 在程式碼最頂端加入 `_GNU_SOURCE`，方法如下
 
 ```
