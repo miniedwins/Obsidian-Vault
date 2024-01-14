@@ -19,6 +19,8 @@ $ meson compile -C .build
 $ meson install -C .build
 ```
 
-編譯加入其它功能參數
+若是編譯需要加入其它功能，例如 : DBUS
 
--Dlibdbus=enabled
+```
+$ meson setup .build -Dlibdbus=enabled
+```
