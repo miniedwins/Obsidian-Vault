@@ -7,7 +7,7 @@ $ git clone https://github.com/linux-nvme/libnvme.git
 安裝 libnvme 編譯所需套件
 
 ```
-$ apt install gcc ninja meson libssl-dev libkeyutils-dev libdbus-dev python3-dev
+$ apt install libssl-dev libkeyutils-dev libdbus-dev python3-dev
 ```
 
 編譯 libnvme 函式庫
