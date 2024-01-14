@@ -1,13 +1,15 @@
-首先獲取 timestamp
+使用 `time.h` 標頭檔
 
-``` c
-time_t timestamp = time(NULL); // 1685268417
-printf("Timestamp: %ld\n", timestamp);
+```
+#include <time.h>
 ```
 
-宣告 `timeinfo` 並且使用函數 `strftime` 將時間複製到 buffer array
+範例程式碼  : 
 
-``` c
+```
+time_t timestamp = time(NULL);
+printf("Timestamp: %ld\n", timestamp); // 1685268417
+
 struct tm *timeinfo;
 timeinfo = localtime(&timestamp);
 

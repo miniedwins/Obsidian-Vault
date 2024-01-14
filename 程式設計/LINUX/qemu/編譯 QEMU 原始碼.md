@@ -1,4 +1,4 @@
-github 下載原始碼
+下載 QEMU 原始碼
 
 ```
 $ git clone https://github.com/qemu/qemu.git

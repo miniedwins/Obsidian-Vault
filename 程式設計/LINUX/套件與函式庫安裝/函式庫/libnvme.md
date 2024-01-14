@@ -1,18 +1,18 @@
-下載原始碼
+下載 libnvme 原始碼
 
 ```
 $ git clone https://github.com/linux-nvme/libnvme.git
 ```
 
-安裝 libnvme 所需要的依賴套件
+安裝 libnvme 編譯所需套件
 
 ```
-
+$ apt install gcc ninja meson libssl-dev libkeyutils-dev libdbus-dev python3-dev
 ```
 
 編譯 libnvme 函式庫
 
-```shell
+```
 $ cd nvme-cli
 $ meson setup .build
 $ meson compile -C .build
