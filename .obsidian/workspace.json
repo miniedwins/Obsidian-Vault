@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/CProgram/時間戳轉換 (timestamp).md",
+                "file": "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/CProgram/時間戳轉換 (timestamp).md",
+                "file": "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/CProgram/時間戳轉換 (timestamp).md",
+                "file": "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/CProgram/時間戳轉換 (timestamp).md"
+                "file": "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md"
               }
             }
           },
@@ -182,25 +182,32 @@
   },
   "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "程式設計/CProgram/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/CProgram/時間戳轉換 (timestamp).md",
-    "程式設計/LINUX/Makefile.md",
-    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
-    "程式設計/LINUX/shell/取得命令行輸入的參數.md",
+    "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
+    "程式設計/LINUX/套件安裝/nvmecli 工具.md",
+    "程式設計/LINUX/套件安裝/使用 mainline 更新核心版本.md",
     "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
-    "程式設計/LINUX/package/如何安裝 nvme-cli 套件.md",
-    "程式設計/CProgram/常見問題處理/無法找到共享函式庫.md",
-    "程式設計/CProgram/常見問題處理/無法引用 O_DIRECT.md",
-    "程式設計/CProgram/執行緒 (pthread)/設定執行緒的分離.md",
-    "程式設計/CProgram/執行緒 (pthread)/如何接收子執行緒的返回值.md",
-    "程式設計/CProgram/執行緒 (pthread)/執行緒的建立.md",
+    "程式設計/LINUX/Makefile.md",
+    "程式設計/LINUX/shell/取得命令行輸入的參數.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/LINUX/linuxc/設定位元組對齊 (Padding aligns structure).md",
+    "程式設計/LINUX/linuxc/時間戳轉換 (timestamp).md",
+    "程式設計/LINUX/linuxc/建立共用程式函式庫.md",
+    "程式設計/LINUX/套件安裝/mainline.md",
+    "程式設計/LINUX/未命名.md",
+    "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
+    "程式設計/LINUX/linuxc/常見問題處理/無法引用 O_DIRECT.md",
+    "程式設計/LINUX/linuxc/名詞解釋/function returning type.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
+    "程式設計/LINUX/linuxc/執行緒 (pthread)/設定執行緒的分離.md",
+    "程式設計/LINUX/linuxc/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "程式設計/LINUX/linuxc/執行緒 (pthread)/執行緒的建立.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "工作/NVMe/IEEE EUI, OUI, and CID.md",
     "程式設計/LINUX/qemu",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/LINUX/kernel",
-    "程式設計/LINUX/package",
+    "程式設計/LINUX/套件安裝",
     "程式設計/LINUX/shell",
     "程式設計/LINUX/kernel.md",
     "程式設計/LINUX/qemu",
@@ -208,14 +215,7 @@
     "程式設計/LINUX/embedded",
     "程式設計/LINUX/embedded",
     "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
-    "學習日誌/2024-01-01.md",
     "學習日誌",
-    "閱讀筆記/股票作手回憶錄.md",
-    "閱讀筆記/原則 (生活和工作).md",
-    "投資理財/交易日誌.md",
-    "投資理財/理財常用公式.md",
-    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
-    "自省日記/解釋薪傳班報告內容的缺點.md",
     "程式設計/Python/執行緒",
     "工作/PCIe",
     "程式設計/Git/images/github_keys_setting.png",
