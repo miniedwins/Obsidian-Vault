@@ -46,8 +46,7 @@ Available Kernels
 - 方法 (1) : 直接更新到最新的版本
 	- `mainline --install-latest`
 - 方法 (2) : 指定特定版本更新
-	- `mainline --install 5.10.60`
-
+	- `mainline --install 5.13.0`
 
 ## 移除 mainline 套件
 
