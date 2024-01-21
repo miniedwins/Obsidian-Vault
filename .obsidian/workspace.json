@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
+                "file": "程式設計/LINUX/linuxc/建立共用函式庫.md",
                 "mode": "source",
                 "source": false
               }
@@ -106,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
+                "file": "程式設計/LINUX/linuxc/建立共用函式庫.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
+                "file": "程式設計/LINUX/linuxc/建立共用函式庫.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md"
+                "file": "程式設計/LINUX/linuxc/建立共用函式庫.md"
               }
             }
           },
@@ -182,8 +182,8 @@
   },
   "active": "04c9db297fd89a11",
   "lastOpenFiles": [
-    "程式設計/LINUX/linuxc/建立共用函式庫.md",
     "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
+    "程式設計/LINUX/linuxc/建立共用函式庫.md",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
     "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/Makefile.md",
