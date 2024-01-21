@@ -57,7 +57,7 @@ Available Kernels
 $ mainline --uninstall-old
 
 # 指定移除核心版本
-$ mainline --uninstall 5.10.60
+$ mainline --uninstall 5.13.0
 ```
 
 最後清除快取檔案
