@@ -182,10 +182,10 @@
   },
   "active": "04c9db297fd89a11",
   "lastOpenFiles": [
-    "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
     "程式設計/LINUX/linuxc/常見問題處理/無法引用 O_DIRECT.md",
-    "程式設計/LINUX/linuxc/名詞解釋/function returning type.md",
     "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
+    "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
+    "程式設計/LINUX/linuxc/名詞解釋/function returning type.md",
     "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
     "程式設計/LINUX/linuxc/設定位元組對齊 (Padding aligns structure).md",
