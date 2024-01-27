@@ -13,8 +13,9 @@ cp -v /boot/config-$(uname -r) /home/user_name/kernel/.config
 開始編譯前檔案需要設定 `.config`，這邊我們使用 `make oldconfig`。
 
 - 核心組態設定檔案 (.config) : 
-	- 如果 `.config` 存在，運行 `make config/menuconfig` 的預設設定是當前 `.config` 設定。
-	- 若對設定進行了修改 `.config` 將被更新。
+	- 如果 `.config` 不存在，運行 `make config/menuconfig` 使用核心預設值。
+	- 如果 `.config` 存在，運行 `make config/menuconfig` 使用當前 `.config` 設定。
+	- 若對設定檔案進行了修改 `.config` 將被更新。
 
 - oldconfig : 
 	- 備份當前 `.config` 檔案為 `.config.old`。
@@ -28,9 +29,13 @@ cp -v /boot/config-$(uname -r) /home/user_name/kernel/.config
 $ make oldconfig
 ```
 
+若是還有要修改核心設定檔案，執行 `make menuconfig`。
 
+```
+$ make menucfonig
+```
 
-執行下列設定，否則編譯核心會失敗
+接下來執行下列設定，否則編譯核心會失敗
 
 ```
 $ scripts/config --disable SYSTEM_TRUSTED_KEYS
@@ -39,16 +44,15 @@ $ scripts/config --set-str CONFIG_SYSTEM_TRUSTED_KEYS ""
 $ scripts/config --set-str CONFIG_SYSTEM_REVOCATION_KEYS ""
 ```
 
-編譯核心以及核心模組 (Modules)
+開始編譯核心以及安裝核心模組 (Modules)
 
 ```
 # 使用雙核心編譯
 $ make -j2 
 
 # 安裝核心模組
-$ make modules_install
+$ sudo make modules_install
 
 # 安裝核心
-$ make install
+$ sudo make install
 ```
-
