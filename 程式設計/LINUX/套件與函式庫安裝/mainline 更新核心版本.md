@@ -1,13 +1,14 @@
 ## 安裝 mainline 套件
 
+加入新的倉庫到系統中
+
 ```
-# 加入新的倉庫到系統中
 $ sudo add-apt-repository ppa:cappelikan/ppa
+```
 
-# 更新套件清單
-$ sudo apt-get update
+使用 APT 安裝 mainline
 
-# 安裝 mainline
+```
 $ sudo apt install mainline
 ```
 
