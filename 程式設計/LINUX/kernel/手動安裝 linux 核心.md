@@ -13,7 +13,7 @@ cp -v /boot/config-$(uname -r) /home/user_name/kernel/.config
 開始編譯前檔案需要設定 `.config`，這邊我們使用 `make oldconfig`。
 
 - 核心組態設定檔案 (.config) : 
-	- 如果 `.config` 不存在，運行 `make config/menuconfig` 使用核心預設值。
+	- 如果 `.config` 不存在，運行 `make config/menuconfig` 使用預設值設定。
 	- 如果 `.config` 存在，運行 `make config/menuconfig` 使用當前 `.config` 設定。
 	- 若對設定檔案進行了修改 `.config` 將被更新。
 
