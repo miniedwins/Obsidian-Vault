@@ -13,26 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/gnu/Makefile.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "04c9db297fd89a11",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "投資理財/銀行基本評估.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "投資理財/銀行基本評估.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "投資理財/銀行基本評估.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/理財常用公式.md"
+                "file": "投資理財/銀行基本評估.md"
               }
             }
           },
@@ -180,11 +167,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "04c9db297fd89a11",
+  "active": "855563196e98b942",
   "lastOpenFiles": [
+    "投資理財/理財常用公式.md",
+    "投資理財/交易的成功心態.md",
+    "投資理財/交易日誌.md",
+    "投資理財/銀行基本評估.md",
+    "程式設計/LINUX/gnu/Makefile.md",
     "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
     "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
-    "程式設計/LINUX/gnu/Makefile.md",
     "工作/NVMe/IEEE EUI, OUI, and CID.md",
     "工作/簡報/如何上台演說不緊張.md",
     "工作/簡報/敘述型簡報.md",
@@ -206,11 +197,7 @@
     "程式設計/LINUX/套件與函式庫安裝/函式庫/libnvme.md",
     "程式設計/LINUX/linuxc/時間戳轉換 (timestamp).md",
     "程式設計/LINUX/套件與函式庫安裝/套件",
-    "程式設計/LINUX/套件與函式庫安裝/未命名.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
-    "程式設計/LINUX/linuxc/執行緒 (pthread)/如何接收子執行緒的返回值.md",
-    "程式設計/LINUX/linuxc/執行緒 (pthread)/執行緒的建立.md",
-    "程式設計/LINUX/linuxc/執行緒 (pthread)/執行緒退出.md",
     "程式設計/LINUX/qemu",
     "程式設計/LINUX/kernel",
     "程式設計/LINUX/套件與函式庫安裝",
