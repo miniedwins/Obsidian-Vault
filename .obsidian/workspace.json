@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "工作/NVMe/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "工作/NVMe/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/理財常用公式.md",
+                "file": "工作/NVMe/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/理財常用公式.md"
+                "file": "工作/NVMe/NVM Subsystem Reset.md"
               }
             }
           },
@@ -169,14 +169,18 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/NVMe/Controller Level Reset.md",
+    "工作/NVMe/NVM Subsystem Reset.md",
+    "工作/NVMe/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/attachments/nvm_subsystem_reset.png",
+    "工作/NVMe/attachments",
+    "投資理財/理財常用公式.md",
     "投資理財/銀行基本評估.md",
     "投資理財/交易日誌.md",
     "投資理財/交易的成功心態.md",
-    "投資理財/理財常用公式.md",
     "程式設計/LINUX/gnu/Makefile.md",
     "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
     "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
-    "工作/NVMe/IEEE EUI, OUI, and CID.md",
     "工作/簡報/如何上台演說不緊張.md",
     "工作/簡報/敘述型簡報.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
@@ -193,9 +197,6 @@
     "程式設計/LINUX/linuxc/名詞解釋/function returning type.md",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
     "程式設計/LINUX/linuxc/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/LINUX/linuxc/建立靜態與共享函式庫.md",
-    "程式設計/LINUX/套件與函式庫安裝/函式庫/libnvme.md",
-    "程式設計/LINUX/linuxc/時間戳轉換 (timestamp).md",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
     "程式設計/LINUX/qemu",
@@ -203,7 +204,6 @@
     "程式設計/LINUX/套件與函式庫安裝",
     "程式設計/LINUX/shell",
     "程式設計/LINUX/qemu",
-    "程式設計/LINUX/embedded",
     "程式設計/LINUX/embedded",
     "程式設計/Git/images/github_keys_setting.png",
     "doxygen.canvas",
