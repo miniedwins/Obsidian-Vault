@@ -1,5 +1,5 @@
 - 這一個可選的屬性，主要提供 `Host` 能夠發起 `NVM Subsytem Reset`
-- 若是沒有支援，則屬性位址範圍就會保留
+- 若是沒有支援，則該屬性位址範圍就會保留
 - 當讀取 `NSSR.NSSRC` 回傳值需為 `0`
 
 ![[nvm_subsystem_reset.png]]
