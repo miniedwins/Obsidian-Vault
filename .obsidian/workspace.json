@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/NVM Subsystem Reset.md",
+                "file": "工作/NVMe/reset/Controller Level Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/NVM Subsystem Reset.md",
+                "file": "工作/NVMe/reset/Controller Level Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/NVM Subsystem Reset.md",
+                "file": "工作/NVMe/reset/Controller Level Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/NVM Subsystem Reset.md"
+                "file": "工作/NVMe/reset/Controller Level Reset.md"
               }
             }
           },
@@ -167,14 +167,19 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "855563196e98b942",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "工作/NVMe/attachments/nvme_subsystem_reset_occurred.png",
+    "工作/NVMe/reset/Queue Level Reset.md",
+    "工作/NVMe/reset/NVM Subsystem Reset.md",
+    "工作/NVMe/reset/Controller Level Reset.md",
+    "工作/NVMe/other/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/other",
+    "工作/NVMe/reset",
+    "工作/NVMe/NVMe 三種 Reset 方式.md",
     "工作/NVMe/attachments/nvme_subsystem_reset_support.png",
-    "工作/NVMe/NVM Subsystem Reset.md",
-    "工作/NVMe/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/attachments/nvm_subsystem_reset.png",
+    "工作/NVMe/attachments/nvme_subsystem_reset_occurred.png",
     "工作/NVMe/attachments/Pasted image 20240207180038.png",
-    "工作/NVMe/Controller Level Reset.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/理財常用公式.md",
     "投資理財/交易日誌.md",
@@ -185,7 +190,6 @@
     "工作/簡報/如何上台演說不緊張.md",
     "工作/NVMe/attachments/Pasted image 20240207114339.png",
     "工作/NVMe/attachments/Pasted image 20240207114349.png",
-    "工作/NVMe/attachments/nvm_subsystem_reset.png",
     "工作/NVMe/attachments/Pasted image 20240207114050.png",
     "工作/NVMe/attachments",
     "程式設計/LINUX/gnu/Makefile.md",
@@ -201,16 +205,12 @@
     "程式設計/Git/遠端分支操作方法.md",
     "程式設計/Git/rebase 操作方法.md",
     "程式設計/LINUX/kernel/未命名.md",
-    "程式設計/LINUX/linuxc/常見問題處理/無法引用 O_DIRECT.md",
-    "程式設計/LINUX/linuxc/常見問題處理/無法找到共享函式庫.md",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
     "程式設計/LINUX/qemu",
     "程式設計/LINUX/kernel",
     "程式設計/LINUX/套件與函式庫安裝",
     "程式設計/LINUX/shell",
-    "程式設計/LINUX/qemu",
-    "程式設計/LINUX/embedded",
     "程式設計/Git/images/github_keys_setting.png",
     "doxygen.canvas",
     "學習筆記/理財/attachments/假突破.png",
