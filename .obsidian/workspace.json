@@ -167,10 +167,10 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/NVMe/reset/Queue Level Reset.md",
     "工作/NVMe/reset/NVM Subsystem Reset.md",
+    "工作/NVMe/reset/Queue Level Reset.md",
     "工作/NVMe/reset/Controller Level Reset.md",
     "工作/NVMe/other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/other",
