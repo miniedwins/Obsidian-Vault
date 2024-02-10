@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/reset/Controller Level Reset.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/reset/Controller Level Reset.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/reset/Controller Level Reset.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/reset/Controller Level Reset.md"
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md"
               }
             }
           },
@@ -169,12 +169,15 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/NVMe/reset/NVM Subsystem Reset.md",
-    "工作/NVMe/reset/Queue Level Reset.md",
-    "工作/NVMe/reset/Controller Level Reset.md",
-    "工作/NVMe/other/IEEE EUI, OUI, and CID.md",
-    "工作/NVMe/other",
-    "工作/NVMe/reset",
+    "工作/NVMe/Reset/Controller Level Reset.md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
+    "工作/NVMe/Reset/Queue Level Reset.md",
+    "工作/PCIe/System Reset/Hot Reset.md",
+    "工作/PCIe/System Reset/Function Level Reset (FLR).md",
+    "工作/PCIe/System Reset",
+    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/Other",
+    "工作/NVMe/Reset",
     "工作/NVMe/NVMe 三種 Reset 方式.md",
     "工作/NVMe/attachments/nvme_subsystem_reset_support.png",
     "工作/NVMe/attachments/nvm_subsystem_reset.png",
@@ -204,13 +207,11 @@
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/遠端分支操作方法.md",
     "程式設計/Git/rebase 操作方法.md",
-    "程式設計/LINUX/kernel/未命名.md",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
     "程式設計/LINUX/qemu",
     "程式設計/LINUX/kernel",
     "程式設計/LINUX/套件與函式庫安裝",
-    "程式設計/LINUX/shell",
     "程式設計/Git/images/github_keys_setting.png",
     "doxygen.canvas",
     "學習筆記/理財/attachments/假突破.png",
