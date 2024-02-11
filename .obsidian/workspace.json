@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/PCIe/System Reset/Hot Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/PCIe/System Reset/Hot Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/PCIe/System Reset/Hot Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md"
+                "file": "工作/PCIe/System Reset/Hot Reset.md"
               }
             }
           },
@@ -169,11 +169,11 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/NVMe/Reset/Controller Level Reset.md",
+    "工作/PCIe/System Reset/Function Level Reset (FLR).md",
     "工作/NVMe/Reset/NVM Subsystem Reset.md",
+    "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/Queue Level Reset.md",
     "工作/PCIe/System Reset/Hot Reset.md",
-    "工作/PCIe/System Reset/Function Level Reset (FLR).md",
     "工作/PCIe/System Reset",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Other",
