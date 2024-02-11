@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/PCIe/System Reset/Hot Reset.md",
+                "file": "工作/PCIe/System Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/PCIe/System Reset/Hot Reset.md",
+                "file": "工作/PCIe/System Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/PCIe/System Reset/Hot Reset.md",
+                "file": "工作/PCIe/System Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/PCIe/System Reset/Hot Reset.md"
+                "file": "工作/PCIe/System Reset.md"
               }
             }
           },
@@ -169,11 +169,12 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/PCIe/System Reset.md",
     "工作/PCIe/System Reset/Function Level Reset (FLR).md",
+    "工作/PCIe/System Reset/Hot Reset.md",
     "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/Queue Level Reset.md",
-    "工作/PCIe/System Reset/Hot Reset.md",
     "工作/PCIe/System Reset",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Other",
@@ -206,7 +207,6 @@
     "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/遠端分支操作方法.md",
-    "程式設計/Git/rebase 操作方法.md",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
     "程式設計/LINUX/qemu",
