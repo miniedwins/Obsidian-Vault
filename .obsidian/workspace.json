@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/PCIe/Conventional Reset.md",
+                "file": "工作/NVMe/Resets.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/PCIe/Conventional Reset.md",
+                "file": "工作/NVMe/Resets.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/PCIe/Conventional Reset.md",
+                "file": "工作/NVMe/Resets.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/PCIe/Conventional Reset.md"
+                "file": "工作/NVMe/Resets.md"
               }
             }
           },
@@ -169,10 +169,10 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/PCIe/Conventional Reset.md",
     "工作/NVMe/Resets.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Reset/Resets.md",
-    "工作/PCIe/Conventional Reset.md",
     "工作/PCIe",
     "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/Queue Level Reset.md",

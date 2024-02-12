@@ -1,4 +1,11 @@
 
+- Resets 
+	- Controller Reset
+	- NVM Subsystem Reset
+	- Controller Level Reset
+	- Queue Level Reset
+
+
 # NVM Subsystem Reset
 
 ## 檢查是否支援 NVM Subsystem Reset
@@ -20,3 +27,6 @@
 ***內容待確認***
 
 ![[nvme_subsystem_reset_occurred.png]]
+
+
+# Controller Level Reset
