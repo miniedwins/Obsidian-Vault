@@ -16,7 +16,7 @@
 
 ## 如何發起 NVM Subsystem Reset
  
- - `NSSR.NSSRC` 寫入 **"4E564D65h"**，這個值表示 `NVMe`。
+ - `NSSR.NSSRC` 寫入 **"4E564D65h"**，這些 `ASCII HEX` 值表示 `NVMe`。
  - 若是寫入其它值則不會有任何影響。
  - 當讀取 `NSSR.NSSRC`，該回傳值則需為 `0`。
  
