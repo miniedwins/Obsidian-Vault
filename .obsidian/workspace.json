@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "英文學習/文法/Since 用法.md",
+                "file": "工作/PCIe/System Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "英文學習/文法/Since 用法.md",
+                "file": "工作/PCIe/System Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "英文學習/文法/Since 用法.md",
+                "file": "工作/PCIe/System Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "英文學習/文法/Since 用法.md"
+                "file": "工作/PCIe/System Reset.md"
               }
             }
           },
@@ -167,11 +167,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "855563196e98b942",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "工作/NVMe/Resets.md",
     "英文學習/文法/Since 用法.md",
-    "工作/PCIe/Conventional Reset.md",
+    "工作/NVMe/Resets.md",
+    "工作/PCIe/System Reset.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Reset/Resets.md",
     "工作/PCIe",
