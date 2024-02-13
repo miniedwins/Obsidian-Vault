@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/交易日誌.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 261.5
+    "width": 284.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/交易日誌.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/交易日誌.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/交易日誌.md"
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md"
               }
             }
           },
@@ -169,20 +169,26 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/NVMe/Reset/Controller Level Reset.md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
+    "工作/NVMe/Reset",
+    "工作/PCIe/System Reset.md",
+    "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
+    "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
+    "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
+    "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
+    "工作/NVMe/attachments/nvme_substem_reset.png",
+    "工作/NVMe/attachments/nvm_subsystem_reset_nssrc.png",
+    "投資理財/交易日誌.md",
     "投資理財/交易的成功心態.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
-    "投資理財/交易日誌.md",
     "英文學習/文法/By or With.md",
     "英文學習/文法/Since.md",
     "英文學習/暫存資料.md",
-    "工作/NVMe/Resets.md",
-    "工作/NVMe/attachments/Pasted image 20240213192100.png",
-    "工作/PCIe/System Reset.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Reset/Resets.md",
     "工作/PCIe",
-    "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/Queue Level Reset.md",
     "工作/PCIe/System Reset/Function Level Reset (FLR).md",
     "工作/PCIe/System Reset/Hot Reset.md",
@@ -190,9 +196,6 @@
     "工作/NVMe/Other",
     "工作/NVMe/Reset",
     "工作/NVMe/NVMe 三種 Reset 方式.md",
-    "工作/NVMe/attachments/nvme_subsystem_reset_support.png",
-    "工作/NVMe/attachments/nvm_subsystem_reset.png",
-    "工作/NVMe/attachments/nvme_subsystem_reset_occurred.png",
     "工作/NVMe/attachments/Pasted image 20240207180038.png",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
@@ -203,16 +206,11 @@
     "工作/NVMe/attachments/Pasted image 20240207114050.png",
     "工作/NVMe/attachments",
     "程式設計/LINUX/gnu/Makefile.md",
-    "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
-    "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
     "工作/簡報/敘述型簡報.md",
-    "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
-    "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/gnu",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
     "程式設計/LINUX/qemu",
-    "程式設計/LINUX/kernel",
     "程式設計/Git/images/github_keys_setting.png",
     "doxygen.canvas",
     "學習筆記/理財/attachments/假突破.png",
