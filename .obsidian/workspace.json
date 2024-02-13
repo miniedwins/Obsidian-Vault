@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/PCIe/System Reset.md",
+                "file": "投資理財/交易日誌.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/PCIe/System Reset.md",
+                "file": "投資理財/交易日誌.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/PCIe/System Reset.md",
+                "file": "投資理財/交易日誌.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/PCIe/System Reset.md"
+                "file": "投資理財/交易日誌.md"
               }
             }
           },
@@ -167,19 +167,23 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "855563196e98b942",
   "lastOpenFiles": [
-    "英文學習/文法/Since 用法.md",
+    "投資理財/交易的成功心態.md",
+    "投資理財/金融股選股基本指標.md",
+    "投資理財/股利計算公式.md",
+    "投資理財/交易日誌.md",
+    "英文學習/文法/By or With.md",
+    "英文學習/文法/Since.md",
+    "英文學習/暫存資料.md",
     "工作/NVMe/Resets.md",
+    "工作/NVMe/attachments/Pasted image 20240213192100.png",
     "工作/PCIe/System Reset.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Reset/Resets.md",
     "工作/PCIe",
     "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/Queue Level Reset.md",
-    "投資理財/理財常用公式.md",
-    "投資理財/交易日誌.md",
-    "投資理財/交易的成功心態.md",
     "工作/PCIe/System Reset/Function Level Reset (FLR).md",
     "工作/PCIe/System Reset/Hot Reset.md",
     "工作/PCIe/System Reset",
@@ -190,7 +194,6 @@
     "工作/NVMe/attachments/nvm_subsystem_reset.png",
     "工作/NVMe/attachments/nvme_subsystem_reset_occurred.png",
     "工作/NVMe/attachments/Pasted image 20240207180038.png",
-    "投資理財/金融股選股基本指標.md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
@@ -206,8 +209,6 @@
     "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
     "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/gnu",
-    "程式設計/LINUX/shell/取得命令行輸入的參數.md",
-    "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "程式設計/LINUX/套件與函式庫安裝/函式庫",
     "程式設計/LINUX/qemu",
