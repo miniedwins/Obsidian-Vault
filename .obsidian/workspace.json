@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/技術分析.md",
+                "file": "投資理財/交易的成功心態.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/技術分析.md",
+                "file": "投資理財/交易的成功心態.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/技術分析.md",
+                "file": "投資理財/交易的成功心態.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/技術分析.md"
+                "file": "投資理財/交易的成功心態.md"
               }
             }
           },
@@ -167,10 +167,12 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "855563196e98b942",
   "lastOpenFiles": [
-    "投資理財/attachments/Pasted image 20240214104847.png",
+    "投資理財/交易日誌.md",
+    "投資理財/交易的成功心態.md",
     "投資理財/技術分析.md",
+    "投資理財/attachments/Pasted image 20240214104847.png",
     "投資理財/attachments/Pasted image 20240214105027.png",
     "投資理財/attachments",
     "工作/NVMe/Reset/NVM Subsystem Reset.md",
@@ -185,8 +187,6 @@
     "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "工作/NVMe/attachments/nvme_substem_reset.png",
     "工作/NVMe/attachments/nvm_subsystem_reset_nssrc.png",
-    "投資理財/交易日誌.md",
-    "投資理財/交易的成功心態.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
     "英文學習/文法/By or With.md",
