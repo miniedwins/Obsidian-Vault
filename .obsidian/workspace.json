@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/PCIe/System Reset.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "56bb586aa444b8fd",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.8"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/PCIe/System Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/PCIe/System Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md"
+                "file": "工作/PCIe/System Reset.md"
               }
             }
           },
@@ -167,18 +178,19 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "855563196e98b942",
+  "active": "56bb586aa444b8fd",
   "lastOpenFiles": [
+    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/Reset/Controller Level Reset.md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "投資理財/技術分析.md",
     "投資理財/交易的成功心態.md",
     "投資理財/交易日誌.md",
     "投資理財/attachments/Pasted image 20240214104847.png",
     "投資理財/attachments/Pasted image 20240214105027.png",
     "投資理財/attachments",
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "投資理財/技術分析圖/未命名.md",
     "投資理財/技術分析圖",
-    "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset",
     "工作/PCIe/System Reset.md",
     "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
@@ -192,7 +204,6 @@
     "英文學習/文法/By or With.md",
     "英文學習/文法/Since.md",
     "英文學習/暫存資料.md",
-    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/Reset/Resets.md",
     "工作/PCIe",
     "工作/NVMe/Reset/Queue Level Reset.md",
