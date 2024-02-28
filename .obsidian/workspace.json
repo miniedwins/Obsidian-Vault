@@ -169,8 +169,9 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
+    "工作/NVMe/attachments/nvme_hmb_attributes_data_structure.png",
     "工作/NVMe/Host Memory Buffer (HMB).md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "工作/NVMe/attachments/nvme_hmb_cq_entry_dword0.png",
     "工作/PCIe/System Reset.md",
     "投資理財/融券買進賣出計算費用.md",
@@ -210,7 +211,6 @@
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "工作/NVMe/attachments/Pasted image 20240207114339.png",
-    "工作/NVMe/attachments/Pasted image 20240207114349.png",
     "工作/NVMe/attachments",
     "程式設計/LINUX/gnu",
     "程式設計/LINUX/套件與函式庫安裝/套件",

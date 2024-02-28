@@ -1,8 +1,8 @@
 ## 取得 HMB 資訊 
 
-nvme-cli 執行後顯示兩個資訊內容，如下 :
-- Completion Queue Entry Dword 0
-- Attributes Data Structure
+nvme-cli 執行後會顯示兩個資訊內容，如下 :
+- `Completion Queue Entry Dword 0`
+- `Attributes Data Structure`
 
 ```
 $ nvme get-feature -f 0x0d /dev/nvme0 -l 64
@@ -15,11 +15,20 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ```
 ### Completion Queue Entry Dword 0
 
-可以從 `CQ Entry` 得到目前 HMB 是否開啟或是關閉，顯示的 `Current value:0x01`，代表 Enable。
+可以從 `CQ Entry` 得到目前 `HMB` 狀態是否開啟或是關閉，目前 `value=0x01` 代表 Enable。
 
 ![[nvme_hmb_cq_entry_dword0.png]]
+### Attributes Data Structure
 
-Attributes Data Structure
+另外則是 `HMB` 資料結構，描述所使用的容量大小以及作業系統所配置給控制器使用的記憶體位址。 
+
+- HSIZE : `0x00004000` 
+	- 16384 * 4k (Page Size) = 64MB
+- HMDAL : `0x12887000`
+- HMDALU : `0x00000001`
+- HMDLEC : `0x00000010`
+
+![[nvme_hmb_attributes_data_structure.png]]
 
 
 
