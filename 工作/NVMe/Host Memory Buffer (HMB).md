@@ -10,7 +10,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
 
-nable HMB
+## 開啟 HMB
 
 經過休眠或是 `D3Hot` 等行為，則是需要重新通知控制器使用剛剛所使用的  `Memory Address`，這個時候的記憶位置的內容並不會是 `Undefined Content`。 
 
@@ -19,7 +19,7 @@ $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000
 Admin Command Set Features is Success and result: 0x00000000
 ```
 
-## Disable HMB
+## 取消 HMB
 
 ```
 $ nvme set-feature -f 0x0d --value=0x00 /dev/nvme0
