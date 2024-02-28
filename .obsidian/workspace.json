@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
+                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
+                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
+                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/LINUX/kernel/如何獨立編譯核心模組.md"
+                "file": "工作/NVMe/Host Memory Buffer (HMB).md"
               }
             }
           },
@@ -169,13 +169,16 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/PCIe/System Reset.md",
+    "工作/NVMe/Host Memory Buffer (HMB).md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
+    "投資理財/融券買進賣出計算費用.md",
+    "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
     "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
     "英文學習/文法/Since.md",
     "投資理財/交易的成功心態.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "工作/NVMe/Reset/Controller Level Reset.md",
-    "工作/PCIe/System Reset.md",
     "投資理財/技術分析.md",
     "投資理財/交易日誌.md",
     "投資理財/attachments/Pasted image 20240214104847.png",
@@ -184,7 +187,6 @@
     "投資理財/技術分析圖/未命名.md",
     "投資理財/技術分析圖",
     "工作/NVMe/Reset",
-    "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
     "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
     "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "工作/NVMe/attachments/nvme_substem_reset.png",
@@ -211,7 +213,6 @@
     "工作/NVMe/attachments/Pasted image 20240207114349.png",
     "工作/NVMe/attachments/Pasted image 20240207114050.png",
     "工作/NVMe/attachments",
-    "程式設計/LINUX/gnu/Makefile.md",
     "程式設計/LINUX/gnu",
     "程式設計/LINUX/套件與函式庫安裝/套件",
     "doxygen.canvas",
