@@ -26,18 +26,22 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 
 - HSIZE : `0x00004000h`
 	- 計算使用的 HMB 大小需要取得 `MPS` 設定
-	- MPS=0，Page Size 使用的大小為 4K
+	- 目前 MPS=0，Page Size 使用的大小為 4K
 	- Host Memory Buffer Size
 		- 16384 * 4k = 64MB
 
 ![[nvme_cc_memory_page_size.png]]
 
-- HMDAL : `0x12887000`
-- HMDALU : `0x00000001`
+作業系統分配的記憶體位址
+- Memory Address : `0x0000000112887000`
+	- HMDAL : `0x12887000`
+	- HMDALU : `0x00000001`
 
-![[Pasted image 20240303105231.png]]
+![[nvme_hmb_cdw13_14.png]]
 
-- HMDLEC : `0x00000010`
+這裡描述配置多少個記憶體數量提供給控制器使用
+- HMDLEC : `0x00000010` 
+	- Default = `0x01`
 
 ![[nvme_hmb_descriptor_list_count.png]]
 
@@ -49,9 +53,6 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
 Admin Command Set Features is Success and result: 0x00000000
 ```
-
-
-
 
 ## 取消 HMB
 
