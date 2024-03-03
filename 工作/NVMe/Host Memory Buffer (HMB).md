@@ -25,17 +25,17 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ![[nvme_hmb_attributes_data_structure.png]]
 
 - HSIZE : `0x00004000h`
+	- 計算使用的 HMB 大小需要取得 `MPS` 設定
+	- MPS=0，Page Size 使用的大小為 4K
+	- Host Memory Buffer Size
+		- 16384 * 4k = 64MB
 
-計算使用的 HMB 大小需要取得 `Memory Page Size`，當前 `MPS` 設定都為 `0`，因此 `Page Size` 使用的大小為 4K，而最終計算得到使用的記憶容量大小如下 : 
-
-**Host Memory Buffer Size :  16384 * 4k = 64MB**
-
-**CC.CAP**
 ![[nvme_cc_memory_page_size.png]]
 
 - HMDAL : `0x12887000`
 - HMDALU : `0x00000001`
 
+![[Pasted image 20240303105231.png]]
 
 - HMDLEC : `0x00000010`
 
@@ -50,7 +50,12 @@ $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000
 Admin Command Set Features is Success and result: 0x00000000
 ```
 
+
+
+
 ## 取消 HMB
+
+一旦取消 HMB，控制器無法再使用 `Host Memory Buffer` 任何資料，直到再一次的 Enable。
 
 ```
 $ nvme set-feature -f 0x0d --value=0x00 /dev/nvme0
