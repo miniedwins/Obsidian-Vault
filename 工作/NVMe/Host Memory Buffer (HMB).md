@@ -1,8 +1,8 @@
 ## 取得 HMB 資訊 
 
-nvme-cli 執行後會顯示兩個資訊內容，如下 :
-- `Completion Queue Entry Dword 0`
-- `Attributes Data Structure`
+- nvme-cli 執行後會顯示兩個資訊內容
+	- `Completion Queue Entry Dword 0`
+	- `Attributes Data Structure`
 
 ```
 $ nvme get-feature -f 0x0d /dev/nvme0 -l 64
@@ -20,17 +20,26 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ![[nvme_hmb_cq_entry_dword0.png]]
 ### Attributes Data Structure
 
-另外則是 `HMB` 資料結構，描述所使用的容量大小以及作業系統所配置給控制器使用的記憶體位址。 
-
-- HSIZE : `0x00004000` 
-	- 16384 * 4k (Page Size) = 64MB
-- HMDAL : `0x12887000`
-- HMDALU : `0x00000001`
-- HMDLEC : `0x00000010`
+另外則是 `HMB` 資料結構，描述所使用的容量大小以及作業系統所配置給控制器使用的記憶體位址。
 
 ![[nvme_hmb_attributes_data_structure.png]]
 
+- HSIZE : `0x00004000h`
 
+計算使用的 HMB 大小需要取得 `Memory Page Size`，當前 `MPS` 設定都為 `0`，因此 `Page Size` 使用的大小為 4K，而最終計算得到使用的記憶容量大小如下 : 
+
+**Host Memory Buffer Size :  16384 * 4k = 64MB**
+
+**CC.CAP**
+![[nvme_cc_memory_page_size.png]]
+
+- HMDAL : `0x12887000`
+- HMDALU : `0x00000001`
+
+
+- HMDLEC : `0x00000010`
+
+![[nvme_hmb_descriptor_list_count.png]]
 
 ## 開啟 HMB
 
