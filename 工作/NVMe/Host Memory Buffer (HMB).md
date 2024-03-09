@@ -39,11 +39,9 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ![[nvme_cc_memory_page_size.png]]
 
 作業系統分配的記憶體位址，分別為一個是高位址 (HMDALU) 一個是低位址 (HMDAL)
- HMDAL : `0x12887000`
- HMDALU : `0x00000001`
-完整的記憶位址 Memory Address : `0x0000000112887000`
-
-
+ - HMDAL : `0x12887000`
+ - HMDALU : `0x00000001`
+ 
 ![[nvme_hmb_cdw13_14.png]]
 
 - HMDLEC : `0x00000010` 
