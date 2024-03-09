@@ -1,13 +1,14 @@
-- 系統會分配一段記憶體空間給控制器使用，記憶體內容無法被系統修改。
-- 使用期間內，控制器需要確保資料內容沒有遺失。
+- 系統會分配一段記憶體空間給控制器使用，該記憶體內容無法被系統修改。
 - 第一次配置 `HMB` 記憶體空間，`Memory Return Bit` 設定為 `0`。
+- 使用期間內，控制器需要確保資料內容沒有遺失。
+- 若是不再使用功能，透過 `Set Feature` 取消  `HMB Feature`。
 - 經過重置或是關機等事件，系統會要求控制器釋放記憶體空間，並且回收已配置的記憶體空間。
 - 休眠 (D3Cold)
 	- 無法保留 `HMB`，系統恢復後需要重新設定記憶體空間。
-	- 系統應該要分配先前的記憶體空間，並且將 `Memory Return Bit` 設定為 `1`。
+	- 系統應該要分配先前的記憶體空間，並且需要將 `Memory Return Bit` 設定為 `1`。
 ## 檢查是否支援 HMB 
 
-可以從 `Identify Controller` 取得 `HMPRE` 屬性
+可以從 `Identify Controller Data Structure` 取得 `HMPRE` 屬性
 - HMPRE = 0 (不支援)
 - HMPRE = non-zone (支援)
 
@@ -59,14 +60,13 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ![[nvme_hmb_descriptor_list_count.png]]
 ## 開啟 HMB
 
-- `Enable HMB`  需要使用 `Set Features` 命令設定
-- 記憶體是由系統所分配，因此若是重新手動再開啟 `HMB`，需要指定先前系統所配置的位址。
-	- 剛剛所分配記憶體位址 `0x0000000112887000`，因此設定也要相同的。
-	- 由於使用先前配置的記憶體空間，`Mmemory Return Bit` 需要設定為 `1`。
+- 記憶體空間是由系統分配，若是關閉後想要再開啟需要手動設定。  
+	- 指定先前系統所配置的位址 `0x0000000112887000`。
+	- 由於是配置先前所指派的記憶體空間，`Mmemory Return Bit` 需要設定為 `1`。
 
 **注意 : 記憶體是系統分配的，不能隨意指定一個記憶體位址。**
 
-![[Pasted image 20240309161301.png]]
+![[nvme_hmb_cdw11.png]]
 
 ```
 $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
