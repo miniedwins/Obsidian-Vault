@@ -16,3 +16,10 @@
   - PCIe Spec 沒有規範下列作法
 	  - 如何產生 `Warm Reset`。
 	  - PCIe 裝置 如何自行觸發 `Warm Reset`。
+
+## Cold Reset
+
+## Hot Reset
+
+## FLR Reset
+

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "工作/PCIe/System Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "工作/PCIe/System Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "工作/PCIe/System Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md"
+                "file": "工作/PCIe/System Reset.md"
               }
             }
           },
@@ -169,10 +169,11 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
-    "工作/NVMe/Host Memory Buffer (HMB).md",
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "工作/NVMe/Reset/Controller Level Reset.md",
+    "工作/PCIe/System Reset.md",
+    "工作/NVMe/Host Memory Buffer (HMB).md",
+    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "程式設計/LINUX/gnu/Makefile.md",
     "工作/NVMe/attachments/nvme_hmb_cdw13_14.png",
     "工作/NVMe/attachments/nvme_hmb_cdw11_12.png",
@@ -182,7 +183,6 @@
     "工作/NVMe/attachments/Pasted image 20240228213015.png",
     "工作/NVMe/attachments/nvme_cc_memory_page_size.png",
     "工作/NVMe/attachments/nvme_cp_memory_page_size.png",
-    "工作/PCIe/System Reset.md",
     "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
     "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "投資理財/融券買進賣出計算費用.md",

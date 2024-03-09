@@ -43,12 +43,12 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 
 - ***待確認 :***
 	- ***尚未了解為什麼每一個 Descriptor 都會有一個 Entry Count 表示***
-	- ***不清楚為什麼要設定 0x10***
+	- ***不清楚系統為什麼要設定 0x10***
 
 ![[nvme_hmb_descriptor_list_count.png]]
 ## 開啟 HMB
 
-經過休眠或是 `D3Hot` 等行為，則是需要重新再設定 `HMB`，然而記憶體配置是由系統所設定，因此重新設定 HMB 記憶體位址需要指定先前配置的記憶體位址。
+經過休眠或是 `D3Hot` 等行為，則是需要重新再設定 `HMB`，然而記憶體配置是由系統所設定，因此重新設定 HMB 記憶體位址需要指定先前系統配置的位址。
 
 ```
 $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
