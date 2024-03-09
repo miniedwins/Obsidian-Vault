@@ -1,8 +1,7 @@
 當發生 `Subsystem Reset`，會間接執行 `Controller Level Reset`，其最後的目的就是重新初始化 PCIe 裝置，此時 PCIe 的狀態會回到 `LTSSM Detect State`，接下來就會重新開始裝置建立起溝通橋梁。
 
-備註 : 
+***備註 :*** 
 - ***待確認 : 尚未了解該 Subsytem Reset，是屬於哪一種 PCIe Reset (Hot or FLR) ?***
-- ***LTSSM : 參考 PCIe SPEC***
 
 ![[nvme_substem_reset.png]]
 ## 檢查是否支援 NVM Subsystem Reset
