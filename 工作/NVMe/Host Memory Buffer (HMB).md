@@ -1,3 +1,7 @@
+
+
+休眠或是 `D3Hot` 等等行為，Host 會要求控制器釋放這些記憶體空間，控制器確認不再使用這些記憶體空間，作業系統會將這些已經分配的記憶體回收。
+
 ## 檢查是否支援 HMB 
 
 可以從 `Identify Controller` 取得 `HMPRE` 屬性
@@ -41,19 +45,20 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 作業系統分配的記憶體位址，分別為一個是高位址 (HMDALU) 一個是低位址 (HMDAL)
  - HMDAL : `0x12887000`
  - HMDALU : `0x00000001`
- 
+ - 完整的記憶體位置 : `0x0000000112887000`
+
 ![[nvme_hmb_cdw13_14.png]]
 
-- HMDLEC : `0x00000010` 
+這個參數是表述 Host 提供給控制器可以使用主機的記憶體範圍，分配支援資源給控制器所使用，因此 Host 不能去修改這些記憶體範圍的內容。
 
-- ***待確認 :***
-	- ***尚未了解為什麼每一個 Descriptor 都會有一個 Entry Count 表示***
-	- ***不清楚系統為什麼要設定 0x10***
+- HMDLEC : `0x00000010` 
 
 ![[nvme_hmb_descriptor_list_count.png]]
 ## 開啟 HMB
 
-經過休眠或是 `D3Hot` 等行為，則是需要重新再設定 `HMB`，然而記憶體配置是由系統所設定，因此重新設定 HMB 記憶體位址需要指定先前系統配置的位址。
+分配的記憶體是由系統所設定，因此若是重新手動再開啟 `HMB`，需要指定先前系統所配置的位址。剛剛所分配的記憶體位置是 `0x0000000112887000`，之後的記憶體設定也必須要相同。
+
+**注意 : 記憶體是系統分配的，不能隨意指定一個記憶體位址。**
 
 ```
 $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
@@ -67,5 +72,3 @@ Admin Command Set Features is Success and result: 0x00000000
 $ nvme set-feature -f 0x0d --value=0x00 /dev/nvme0
 set-feature:0x0d (Host Memory Buffer), value:00000000, cdw12:00000000, save:0
 ```
-
-
