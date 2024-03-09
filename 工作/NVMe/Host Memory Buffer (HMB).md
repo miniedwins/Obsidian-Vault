@@ -1,3 +1,10 @@
+## 檢查是否支援 HMB 
+
+可以從 `Identify Controller` 取得 `HMPRE` 屬性
+- HMPRE = 0 (不支援)
+- HMPRE = non-zone (支援)
+
+![[nvme_identify_ctrl_hmpre.png]]
 ## 取得 HMB 資訊 
 
 - nvme-cli 執行後會顯示兩個資訊內容
@@ -26,16 +33,16 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 
 - HSIZE : `0x00004000h`
 	- 計算使用的 HMB 大小需要取得 `MPS` 設定
-	- 目前 MPS=0，Page Size 使用的大小為 4K
-	- Host Memory Buffer Size
-		- 16384 * 4k = 64MB
+	- 目前取得 MPS=0，Page Size 使用的大小為 4K
+	- Host Memory Buffer Size  =  16384 * 4k = 64MB
 
 ![[nvme_cc_memory_page_size.png]]
 
-作業系統分配的記憶體位址
-- Memory Address : `0x0000000112887000`
-	- HMDAL : `0x12887000`
-	- HMDALU : `0x00000001`
+作業系統分配的記憶體位址，分別為一個是高位址 (HMDALU) 一個是低位址 (HMDAL)
+ HMDAL : `0x12887000`
+ HMDALU : `0x00000001`
+完整的記憶位址 Memory Address : `0x0000000112887000`
+
 
 ![[nvme_hmb_cdw13_14.png]]
 
