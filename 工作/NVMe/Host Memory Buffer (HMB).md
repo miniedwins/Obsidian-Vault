@@ -42,7 +42,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 - HMDLEC : `0x00000010` 
 
 - ***待確認 :***
-	- ***尚未了解為什麼每一個 Entry 都會有一個 Entry Count 表示***
+	- ***尚未了解為什麼每一個 Descriptor 都會有一個 Entry Count 表示***
 	- ***不清楚為什麼要設定 0x10***
 
 ![[nvme_hmb_descriptor_list_count.png]]
