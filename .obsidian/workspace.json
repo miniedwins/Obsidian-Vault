@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "投資理財/融券買進賣出計算費用.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 284.5
+    "width": 451.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "投資理財/融券買進賣出計算費用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "投資理財/融券買進賣出計算費用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md"
+                "file": "投資理財/融券買進賣出計算費用.md"
               }
             }
           },
@@ -169,36 +169,38 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "投資理財/金融股選股基本指標.md",
+    "投資理財/股利計算公式.md",
+    "投資理財/技術分析.md",
+    "投資理財/交易的成功心態.md",
+    "自省日記/解釋薪傳班報告內容的缺點.md",
+    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+    "工作/PCIe/System Reset.md",
+    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
+    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/Host Memory Buffer (HMB).md",
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
+    "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
+    "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
+    "工作/NVMe/attachments/nvme_substem_reset.png",
+    "工作/NVMe/attachments/nvme_identify_ctrl_hmpre.png",
+    "工作/NVMe/attachments/nvme_hmb_descriptor_list.png",
     "工作/NVMe/attachments/nvme_hmb_cdw11.png",
     "工作/NVMe/attachments/nvme_hmb_cdw11_12.png",
-    "工作/NVMe/Host Memory Buffer (HMB).md",
     "工作/NVMe/attachments/Pasted image 20240309161258.png",
     "工作/NVMe/attachments/Pasted image 20240309150913.png",
     "工作/NVMe/attachments/Pasted image 20240309150843.png",
-    "工作/NVMe/attachments/nvme_cc_memory_page_size.png",
-    "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
-    "工作/NVMe/attachments/nvme_identify_ctrl_hmpre.png",
-    "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
-    "工作/NVMe/attachments/nvme_hmb_descriptor_list_count.png",
     "工作/NVMe/Reset/Controller Level Reset.md",
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
-    "工作/PCIe/System Reset.md",
-    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "程式設計/LINUX/gnu/Makefile.md",
-    "工作/NVMe/attachments/nvme_hmb_cdw13_14.png",
     "投資理財/融券買進賣出計算費用.md",
     "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
     "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
     "英文學習/文法/Since.md",
-    "投資理財/交易的成功心態.md",
-    "投資理財/技術分析.md",
     "投資理財/交易日誌.md",
     "投資理財/attachments",
     "投資理財/技術分析圖/未命名.md",
     "投資理財/技術分析圖",
     "工作/NVMe/Reset",
-    "投資理財/金融股選股基本指標.md",
-    "投資理財/股利計算公式.md",
     "英文學習/文法/By or With.md",
     "英文學習/暫存資料.md",
     "工作/NVMe/Reset/Resets.md",
@@ -210,8 +212,6 @@
     "工作/NVMe/Other",
     "工作/NVMe/Reset",
     "工作/NVMe/NVMe 三種 Reset 方式.md",
-    "自省日記/解釋薪傳班報告內容的缺點.md",
-    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "工作/NVMe/attachments",
     "程式設計/LINUX/gnu",
     "程式設計/LINUX/套件與函式庫安裝/套件",

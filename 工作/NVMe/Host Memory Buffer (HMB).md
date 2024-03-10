@@ -3,8 +3,11 @@
 - 使用期間內，控制器需要確保資料內容沒有遺失。
 - 經過重置或是關機等事件，系統會要求控制器釋放記憶體空間，並且回收已配置的記憶體空間。
 - 休眠 (D3Cold)
-	- 無法保留 `HMB`，系統恢復後需要重新設定記憶體空間。
-	- 系統應該要分配先前的記憶體空間，並且需要將 `Memory Return Bit` 設定為 `1`。
+	- 進入休眠
+		- 無法保留 `HMB`。 
+	- 系統恢復
+		- 應該要分配先前所設定的記憶體位址。
+		- `Memory Return Bit` 設定為 `1`。
 ## 檢查是否支援 HMB 
 
 可以從 `Identify Controller Data Structure` 取得 `HMPRE` 屬性
@@ -64,7 +67,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 
 - HMDLEC : `0x00000010` 
 
-![[nvme_hmb_descriptor_list_count.png]]
+![[nvme_hmb_descriptor_list.png]]
 ## Enable HMB
 
 - 記憶體空間是由系統分配，若是關閉後想要再開啟需要手動設定。  
