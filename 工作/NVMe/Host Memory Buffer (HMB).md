@@ -31,11 +31,19 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 
 可以從 `CQ Entry` 得到目前 `HMB` 狀態是否開啟或是關閉，目前 `value=0x01` 代表 Enable。
 
+```
+get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
+```
+
 ![[nvme_hmb_cq_entry_dword0.png]]
 ### Attributes Data Structure
 
 另外則是 `HMB` 資料結構，描述所使用的容量大小以及作業系統所配置給控制器使用的記憶體位址。
 
+```
+       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+0000: 00 40 00 00 00 70 88 12 01 00 00 00 10 00 00 00 ".@...p.........."
+```
 ![[nvme_hmb_attributes_data_structure.png]]
 
 - HSIZE : `0x00004000h`
