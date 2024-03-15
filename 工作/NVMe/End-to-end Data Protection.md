@@ -13,8 +13,8 @@
   - Reference Tag
 
 ## Guard Protection 
-`Guard Filed` 存放 Logic Block Data (CRC)，不過會因為 `PI` 的位置在
-Metadata 前面 (First bytes) 或是後面 (Last Bytes) 會有所不同。
+`Guard Filed` 存放計算 `Logic Block Data` 後的 `CRC` ，不過會因為 `PI` 的位置在
+Metadata 前面 (First bytes) 或是後面 (Last Bytes) 會有所不同，條件如下 :
 
 Metadata Size > PI Size
 - PI 位置在 Meadata 前面 (First bytes)
