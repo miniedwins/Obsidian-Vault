@@ -1,5 +1,3 @@
-# End-to-end Data Protection
-
 ## Metadata 
 - 主要存放的是 `Protection Information (PI)`
 - 傳輸方式分為兩種 
@@ -7,12 +5,14 @@
   - DIX :    
 
 ## PI
-- 組成結構內容
-  - Guard
-  - Application Tag
-  - Reference Tag
+
+組成結構內容 
+- Guard
+- Application Tag
+- Reference Tag
 
 ## Guard Protection 
+
 `Guard Filed` 存放計算 `Logic Block Data` 後的 `CRC` ，不過會因為 `PI` 的位置在
 Metadata 前面 (First bytes) 或是後面 (Last Bytes) 會有所不同，條件如下 :
 

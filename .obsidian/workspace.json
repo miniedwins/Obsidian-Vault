@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "工作/NVMe/End-to-end Data Protection.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "工作/NVMe/End-to-end Data Protection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md",
+                "file": "工作/NVMe/End-to-end Data Protection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/Host Memory Buffer (HMB).md"
+                "file": "工作/NVMe/End-to-end Data Protection.md"
               }
             }
           },
@@ -169,8 +169,9 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/PCIe/System Reset.md",
     "工作/NVMe/Host Memory Buffer (HMB).md",
+    "工作/NVMe/End-to-end Data Protection.md",
+    "工作/PCIe/System Reset.md",
     "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "英文學習/暫存資料.md",
@@ -204,7 +205,6 @@
     "工作/NVMe/attachments/Pasted image 20240309150913.png",
     "工作/NVMe/attachments/Pasted image 20240309150843.png",
     "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
-    "程式設計/LINUX/kernel/手動安裝 linux 核心.md",
     "投資理財/attachments",
     "投資理財/技術分析圖",
     "工作/NVMe/Reset",
