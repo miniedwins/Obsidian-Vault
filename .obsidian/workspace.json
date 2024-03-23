@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md",
+                "file": "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "4e9f7d23b0fc7020",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.5.11"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md",
+                "file": "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md",
+                "file": "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md"
+                "file": "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md"
               }
             }
           },
@@ -167,18 +178,22 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "855563196e98b942",
+  "active": "4e9f7d23b0fc7020",
   "lastOpenFiles": [
-    "工作/NVMe/Host Memory Buffer (HMB).md",
-    "工作/NVMe/End-to-end Data Protection.md",
+    "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
+    "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
+    "閱讀筆記/股票作手回憶錄.md",
+    "自省日記/解釋薪傳班報告內容的缺點.md",
+    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
+    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
+    "英文學習/暫存資料.md",
     "工作/PCIe/System Reset.md",
+    "工作/NVMe/End-to-end Data Protection.md",
+    "工作/NVMe/Host Memory Buffer (HMB).md",
     "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/NVM Subsystem Reset.md",
-    "英文學習/暫存資料.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫/libnvme.md",
-    "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
-    "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
     "程式設計/LINUX/shell/取得命令行輸入的參數.md",
     "程式設計/LINUX/linuxc/設定位元組對齊 (Padding aligns structure).md",
@@ -190,9 +205,6 @@
     "投資理財/股利計算公式.md",
     "投資理財/技術分析.md",
     "投資理財/交易的成功心態.md",
-    "自省日記/解釋薪傳班報告內容的缺點.md",
-    "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
-    "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
@@ -204,7 +216,6 @@
     "工作/NVMe/attachments/Pasted image 20240309161258.png",
     "工作/NVMe/attachments/Pasted image 20240309150913.png",
     "工作/NVMe/attachments/Pasted image 20240309150843.png",
-    "程式設計/LINUX/kernel/如何獨立編譯核心模組.md",
     "投資理財/attachments",
     "投資理財/技術分析圖",
     "工作/NVMe/Reset",
