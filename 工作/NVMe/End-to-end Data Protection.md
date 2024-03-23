@@ -4,40 +4,36 @@
 
 命名空間在格式化並開啟端到端資料保護功能時需要指定PI在中繼資料中的存放位置，要麼位於中繼資料的開頭，要麼位於中繼資料的結尾。根據協議規定，PI需要提供邏輯塊資料以及位於PI前面的中繼資料（如果有）的完整性保護，即
 
-- 端到端資料保護傳輸方式分為兩種
-  - DIX : 
-  - DIF :
+* Metadata 
+	* 常使用在傳遞 PI （Protection Information）
+	- 做為端到端資料保護傳輸方式分為兩種
+		- DIX : ![[metadata_contiguous.png]]
+	
+		- DIF : ![[medata_as_separate.png]]
 
 - 協議規定 PI 所存放的位置
-  - PI 位於 Metadata 開頭 (First of Metadata)
-  - PI 位於 Metadata 結尾 (Last of Metadata)    
+	- PI 位於 Metadata 開頭 (First of Metadata)
+	- PI 位於 Metadata 結尾 (Last of Metadata)    
 
 - 端到端資料格式 (Protection Information Format)
-  - **Guard Field**
-    - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
-  - **Application Tag**
-    - 由主機端應用指定，無需 `NVM` 控製器處理。
-  - **Reference Tag**
-    - 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`
-      則該欄位 (Reference Tag) 就會存放寫入資料的邏輯位址 `0x1234`。
-    - 防止資料被誤用或傳輸亂序情況發生。
+	- **Guard Field**
+	    - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
+	- **Application Tag**
+	    - 由主機端應用指定，無需 `NVM` 控製器處理。
+	- **Reference Tag**
+	    - 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`
+	      則該欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
+	    - 防止資料被誤用或傳輸亂序情況發生。
 
 根據上述 PI 所存放的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 (CRC)
 - 若是 PI 位於 Metadata 開頭
-  - Medata == PI，則校驗資訊只需要計算 (邏輯區塊資料) 即可。
+	- Medata == PI，則校驗資訊只需要計算 (邏輯區塊資料) 即可。
 - 若是 PI 位於 Metadata 結尾
-  - Medata > PI，則校驗資訊則是需要計算 (邏輯區塊資料 + 元資料) 但是不包含 PI 資訊。  
+	- Medata > PI，則校驗資訊則是需要計算 (邏輯區塊資料 + 元資料) 但是不包含 PI 資訊。  
 
-# 如何驗證端對端資料保護功能
+# 如何啟用端對端資料保護功能
 
-- 透過寫入命令 (Write)，可以
-  - 經由控制器收到 `Data` 並且產生 PI 然後將資料以及PI寫入到
-  - 控制器取得上層應用下發的PI訊息，將檢查PI訊息並寫入NAND
-
-## Create PI By Controller
-
-Format NS 
-$ nvme format /dev/nvme0n1 -n 1 -l 2 -i 1 -m 1 -p 1 
+首先列出當前所控制器支援 `Metadata Size` 以及 `Data Size`，可以看到支援許多 `LBA Format`。
 
 ```
 $ nvme id-ns /dev/nvme0n1 -H
@@ -47,6 +43,18 @@ LBA Format  2 : Metadata Size: 0   bytes - Data Size: 4096 bytes - Relative Perf
 LBA Format  3 : Metadata Size: 8   bytes - Data Size: 4096 bytes - Relative Performance: 0 Best 
 LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Performance: 0 Best
 ```
+
+這裡使用 `LBA Format 1 : Metadata Size: 8 bytes - Data Size: 512 bytes`
+
+```
+$ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
+```
+
+
+- 透過寫入命令 (Write)，可以
+  - 經由控制器收到 `Data` 並且產生 PI 然後將資料以及PI寫入到
+  - 控制器取得上層應用下發的PI訊息，將檢查PI訊息並寫入NAND
+
 
 ```
 dd if=/dev/urandom of=512B.bin bs=512 count=1
