@@ -13,7 +13,7 @@
 
 - PI 所存放的位置
 	- PI 位於 Metadata 開頭 （First of Metadata）
-	- PI 位於 Metadata 結尾 ）Last of Metadata）
+	- PI 位於 Metadata 結尾 （Last of Metadata）
 
 - PI 資料格式（Protection Information Format）
 	- **Guard Field**
@@ -31,6 +31,15 @@
 - 若是 PI 位於 Metadata 結尾
 	- Medata > PI，則校驗資訊則是需要計算 （邏輯區塊資料 + 元資料） 但是不包含 PI 資訊。  
 
+另外，端到端資料保護中有不同的 TYPE 1 / 2 / 3，在進行LBA格式化設定就需要指定哪一種類型，代表了不同的 Reference Tag 設定和 PI 檢查方式，如下說明 : 
+- TYPE 1： 
+	- Reference Tag 隨著LBA增加遞增
+	-  Host 必須保證 ILBRT 和 ELBRT 與 LBA 的最後4個Bytes相等。 
+- TYPE 2：
+	- Reference Tag 隨著LBA增加遞增
+	- SSD 檢查 PI 的方式與 TYPE 1 相同，允許 Host 指定任意 ILBRT 和 ELBRT。 
+- TYPE 3：
+	- Reference Tag 保持不變，SSD 不會檢查 ILBRT 和 ELBRT。 
 # 如何使用端對端資料保護功能
 
 首先列出當前所控制器支援 `Metadata Size` 以及 `Data Size`，可以看到支援許多 `LBA Format`。
@@ -58,12 +67,15 @@ LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Perf
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
 ```
 
-## PI 資訊如何建立並且寫入到 NAND
+## 如何建立 PI 資訊並且寫入到 NAND
 
 - 建立 PI 資訊的方法有兩種
 	- 主機端建立 PI 資訊，連同（LBA 資料 + 中繼資料） 傳遞給控制器。
 	- 控制器收到主機端 LBA 資料，然後由控制器建立 PI 資訊。
 	- 以上都需要透過`PRACT` 設定。
+
+
+## 如何從控制器讀取 LBA 資料或是 PI 資訊
 
 
 
