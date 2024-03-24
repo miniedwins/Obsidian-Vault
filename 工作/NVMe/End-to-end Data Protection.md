@@ -1,21 +1,21 @@
-# 端對端資料保護
+端到端資料保護將資料的完整性保護範圍從SSD內部延伸到外部鏈路，以防止靜默錯誤產生——通過對邏輯塊資料（Logical Block Data，通常指使用者資料）新增額外的PI（Protection Information，保護資訊，如CRC），使其作為資料的中繼資料 (Metadata) 被一同傳輸，主機端和NVM控製器都可以在接收到資料後，根據PI的內容對資料完整性進行校驗，以確定這些資料是否真的可用。
 
-端到端資料保護將資料的完整性保護範圍從SSD內部延伸到外部鏈路，以防止靜默錯誤產生——通過對邏輯塊資料（Logical Block Data，通常指使用者資料）新增額外的PI（Protection Information，保護資訊，如CRC），使其作為資料的中繼資料被一同傳輸，主機端和NVM控製器都可以在接收到資料後，根據PI的內容對資料完整性進行校驗，以確定這些資料是否真的可用。
+端到端資料保護的關鍵就在於PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有DIF和DIX兩種方式，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；根據應用場景的需求，設計解決方案時可以適配DIX或DIF格式。
+# 中繼資料 (Metadata)
 
-命名空間在格式化並開啟端到端資料保護功能時需要指定PI在中繼資料中的存放位置，要麼位於中繼資料的開頭，要麼位於中繼資料的結尾。根據協議規定，PI需要提供邏輯塊資料以及位於PI前面的中繼資料（如果有）的完整性保護，即
-
-* Metadata 
-	* 常使用在傳遞 PI （Protection Information）
-	- 做為端到端資料保護傳輸方式分為兩種
-		- DIX : ![[metadata_contiguous.png]]
+ - 資料內容存放的是 PI 資訊，常使用在傳遞 PI 資訊
+ - 做為端到端資料保護傳輸的格式
+	 - DIF :  中繼資料與使用者資料（LBA Data）連續存放![[metadata_contiguous.png]]
 	
-		- DIF : ![[medata_as_separate.png]]
+	- DIX : 中繼資料與使用者資料個別單獨存放![[medata_as_separate.png]]
 
-- 協議規定 PI 所存放的位置
-	- PI 位於 Metadata 開頭 (First of Metadata)
-	- PI 位於 Metadata 結尾 (Last of Metadata)    
+# 端對端資料保護 (Protection Information)
 
-- 端到端資料格式 (Protection Information Format)
+- PI 所存放的位置
+	- PI 位於 Metadata 開頭 （First of Metadata）
+	- PI 位於 Metadata 結尾 ）Last of Metadata）
+
+- PI 資料格式（Protection Information Format）
 	- **Guard Field**
 	    - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
 	- **Application Tag**
@@ -25,11 +25,11 @@
 	      則該欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
 	    - 防止資料被誤用或傳輸亂序情況發生。
 
-根據上述 PI 所存放的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 (CRC)
+根據上述 PI 所存放的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 （CRC）
 - 若是 PI 位於 Metadata 開頭
-	- Medata == PI，則校驗資訊只需要計算 (邏輯區塊資料) 即可。
+	- Medata == PI，則校驗資訊只需要計算 （邏輯區塊資料）即可。
 - 若是 PI 位於 Metadata 結尾
-	- Medata > PI，則校驗資訊則是需要計算 (邏輯區塊資料 + 元資料) 但是不包含 PI 資訊。  
+	- Medata > PI，則校驗資訊則是需要計算 （邏輯區塊資料 + 元資料） 但是不包含 PI 資訊。  
 
 # 如何使用端對端資料保護功能
 
@@ -49,6 +49,12 @@ LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Perf
 - 將8位元組大小的PI資訊放在 `Metadata` 資料的開頭
 - 採用 `DIF` 標準， `Metadata` 位於 LBA 的結尾
 
+ＬＢＡ
+格式化設定參數 :
+- -l（LBA Format 格式）
+- -i（Protection Info Type ：off／1／ 2／ 3）
+- -p（PI在中繼資料中的位置 ：last / off）
+- -m（DIX／ DIF）
 ```
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
 ```
