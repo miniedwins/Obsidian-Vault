@@ -1,6 +1,6 @@
 端到端資料保護將資料的完整性保護範圍從SSD內部延伸到外部鏈路，以防止靜默錯誤產生——通過對邏輯塊資料（Logical Block Data，通常指使用者資料）新增額外的PI（Protection Information，保護資訊，如CRC），使其作為資料的中繼資料 (Metadata) 被一同傳輸，主機端和NVM控製器都可以在接收到資料後，根據PI的內容對資料完整性進行校驗，以確定這些資料是否真的可用。
 
-端到端資料保護的關鍵就在於PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有DIF和DIX兩種方式，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；根據應用場景的需求，設計解決方案時可以適配DIX或DIF格式。
+端到端資料保護的關鍵就在於PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有DIF和DIX兩種方式，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；可以根據應用場景的需求。
 # 中繼資料 (Metadata)
 
  - 資料內容存放的是 PI 資訊，常使用在傳遞 PI 資訊
@@ -44,29 +44,28 @@ LBA Format  3 : Metadata Size: 8   bytes - Data Size: 4096 bytes - Relative Perf
 LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Performance: 0 Best
 ```
 
-這裡使用設定如下 :  
+這裡使用設定功能如下 :  
 - Sector Size : 512B + 8B（8B為PI資訊大小）
 - 將8位元組大小的PI資訊放在 `Metadata` 資料的開頭
 - 採用 `DIF` 標準， `Metadata` 位於 LBA 的結尾
 
-ＬＢＡ
-格式化設定參數 :
-- -l（LBA Format 格式）
-- -i（Protection Info Type ：off／1／ 2／ 3）
-- -p（PI在中繼資料中的位置 ：last / off）
-- -m（DIX／ DIF）
 ```
+-l（LBA Format 格式）
+-i（Protection Info Type ：off／1／ 2／ 3）
+-p（PI在中繼資料中的位置 ：last / off）
+-m（DIX／ DIF）
+
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
 ```
 
-# 如何產生 PI 資訊
+## PI 資訊如何建立並且寫入到 NAND
 
-### 控制器產生 PI 資訊
+- 建立 PI 資訊的方法有兩種
+	- 主機端建立 PI 資訊，連同（LBA 資料 + 中繼資料） 傳遞給控制器。
+	- 控制器收到主機端 LBA 資料，然後由控制器建立 PI 資訊。
+	- 以上都需要透過`PRACT` 設定。
 
-  - 控制器取得上層應用下發的PI訊息，將檢查PI訊息並寫入NAND
-### 主機端建立 PI 資訊
 
- - 經由控制器收到 `Data` 並且產生 PI 然後將資料以及PI寫入到
 
 ```
 dd if=/dev/urandom of=512B.bin bs=512 count=1
