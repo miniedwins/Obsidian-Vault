@@ -53,11 +53,14 @@ LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Perf
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
 ```
 
+# 如何產生 PI 資訊
 
-- 透過寫入命令 (Write)，可以
-  - 經由控制器收到 `Data` 並且產生 PI 然後將資料以及PI寫入到
+### 控制器產生 PI 資訊
+
   - 控制器取得上層應用下發的PI訊息，將檢查PI訊息並寫入NAND
+### 主機端建立 PI 資訊
 
+ - 經由控制器收到 `Data` 並且產生 PI 然後將資料以及PI寫入到
 
 ```
 dd if=/dev/urandom of=512B.bin bs=512 count=1
