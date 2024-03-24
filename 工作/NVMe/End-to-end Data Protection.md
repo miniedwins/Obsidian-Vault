@@ -31,7 +31,7 @@
 - 若是 PI 位於 Metadata 結尾
 	- Medata > PI，則校驗資訊則是需要計算 (邏輯區塊資料 + 元資料) 但是不包含 PI 資訊。  
 
-# 如何啟用端對端資料保護功能
+# 如何使用端對端資料保護功能
 
 首先列出當前所控制器支援 `Metadata Size` 以及 `Data Size`，可以看到支援許多 `LBA Format`。
 
@@ -44,7 +44,10 @@ LBA Format  3 : Metadata Size: 8   bytes - Data Size: 4096 bytes - Relative Perf
 LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Performance: 0 Best
 ```
 
-這裡使用 `LBA Format 1 : Metadata Size: 8 bytes - Data Size: 512 bytes`
+這裡使用設定如下 :  
+- Sector Size : 512B + 8B（8B為PI資訊大小）
+- 將8位元組大小的PI資訊放在 `Metadata` 資料的開頭
+- 採用 `DIF` 標準， `Metadata` 位於 LBA 的結尾
 
 ```
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
