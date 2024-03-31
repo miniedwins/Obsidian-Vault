@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/技術分析.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/技術分析.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/技術分析.md",
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/技術分析.md"
+                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md"
               }
             }
           },
@@ -169,14 +169,17 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/NVMe/Reset/Controller Level Reset.md",
+    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
+    "工作/NVMe/End-to-end Data Protection.md",
+    "投資理財/交易日誌/模板.md",
     "投資理財/交易的成功心態.md",
-    "投資理財/金融股選股基本指標.md",
+    "投資理財/交易日誌",
     "投資理財/技術分析.md",
-    "投資理財/交易日誌.md",
+    "投資理財/金融股選股基本指標.md",
     "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
-    "工作/NVMe/End-to-end Data Protection.md",
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
     "工作/NVMe/Host Memory Buffer (HMB).md",
     "工作/NVMe/attachments/medata_as_separate.png",
@@ -190,7 +193,6 @@
     "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
     "閱讀筆記/股票作手回憶錄.md",
     "英文學習/暫存資料.md",
-    "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫/libnvme.md",
     "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
@@ -213,7 +215,6 @@
     "工作/NVMe/Reset",
     "工作/NVMe/attachments",
     "程式設計/LINUX/gnu",
-    "程式設計/LINUX/套件與函式庫安裝/套件",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
