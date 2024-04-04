@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/NVMe/End-to-end Data Protection.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/NVMe/End-to-end Data Protection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md",
+                "file": "工作/NVMe/End-to-end Data Protection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/Reset/NVM Subsystem Reset.md"
+                "file": "工作/NVMe/End-to-end Data Protection.md"
               }
             }
           },
@@ -169,6 +169,7 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "工作/NVMe/Reset/Controller Level Reset.md",
     "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "工作/NVMe/End-to-end Data Protection.md",
@@ -193,7 +194,6 @@
     "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
     "閱讀筆記/股票作手回憶錄.md",
     "英文學習/暫存資料.md",
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫/libnvme.md",
     "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
     "程式設計/LINUX/shell/取得命令行輸入的參數.md",
