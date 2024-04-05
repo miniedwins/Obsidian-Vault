@@ -6,17 +6,13 @@
 # 中繼資料 (Metadata)
 
  - 中繼資料內容存放的是 PI 資訊，經常使用在傳遞 PI 資訊
- - 它會被做為端對端資料保護傳輸，傳輸的格式分為兩種 : 
+ - 它會被做為端對端資料保護的傳輸的格式，並且分為兩種 : 
 	 - DIF :  中繼資料與使用者資料（LBA Data）連續存放![[metadata_contiguous.png]]
 	
 	- DIX : 中繼資料與使用者資料個別單獨存放![[medata_as_separate.png]]
 
 # 端對端資料保護 (Protection Information)
  
-- PI 所存放的位置
-	- PI 位於 Metadata 開頭 （First of Metadata）
-	- PI 位於 Metadata 結尾 （Last of Metadata）
-
 - PI 資料格式（Protection Information Format）
 	- **Guard Field**
 	    - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
@@ -24,8 +20,12 @@
 	    - 由主機端應用指定，無需 `NVM` 控製器處理。
 	- **Reference Tag**
 	    - 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`
-	      則該欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
+	      則 nvm write 參數所設定的欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
 	    - 防止資料被誤用或傳輸亂序情況發生。
+
+- 根據規範 PI 在中繼資料的位置　
+	- PI 位於 Metadata 開頭 （First of Metadata）
+	- PI 位於 Metadata 結尾 （Last of Metadata）
 
 根據上述 PI 所存放的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 （CRC）
 - 若是 PI 位於 Metadata 開頭

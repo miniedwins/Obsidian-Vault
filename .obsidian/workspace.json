@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md",
+                "file": "技術資料/NVMe/End-to-end Data Protection.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "27f541d020ef5a04",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.5.12"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md",
+                "file": "技術資料/NVMe/End-to-end Data Protection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md",
+                "file": "技術資料/NVMe/End-to-end Data Protection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "工作/NVMe/End-to-end Data Protection.md"
+                "file": "技術資料/NVMe/End-to-end Data Protection.md"
               }
             }
           },
@@ -178,53 +167,53 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "27f541d020ef5a04",
+  "active": "855563196e98b942",
   "lastOpenFiles": [
-    "工作/NVMe/Reset/NVM Subsystem Reset.md",
-    "工作/NVMe/Reset/Controller Level Reset.md",
-    "工作/NVMe/Other/IEEE EUI, OUI, and CID.md",
-    "工作/NVMe/End-to-end Data Protection.md",
-    "投資理財/交易日誌/模板.md",
+    "技術資料/NVMe/Host Memory Buffer (HMB).md",
+    "技術資料/PCIe/System Reset.md",
+    "程式設計/LINUX/shell/取得命令行輸入的參數.md",
+    "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
+    "程式設計/LINUX/linuxc/時間戳轉換 (timestamp).md",
+    "程式設計/LINUX/linuxc/設定位元組對齊 (Padding aligns structure).md",
+    "程式設計/Git/images/github_keys_setting.png",
+    "技術資料/簡報/敘述型簡報.md",
+    "技術資料/簡報/如何上台演說不緊張.md",
     "投資理財/交易的成功心態.md",
-    "投資理財/交易日誌",
-    "投資理財/技術分析.md",
+    "投資理財/交易日誌/模板.md",
+    "投資理財/股利計算公式.md",
     "投資理財/金融股選股基本指標.md",
+    "投資理財/融券買進賣出計算費用.md",
+    "投資理財/技術分析.md",
+    "投資理財/交易日誌/模板 1.md",
+    "技術資料/NVMe/End-to-end Data Protection.md",
+    "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
+    "技術資料/NVMe/Reset/Controller Level Reset.md",
+    "技術資料/NVMe/Other/IEEE EUI, OUI, and CID.md",
+    "投資理財/交易日誌",
     "自省日記/上台說明一個韓劇中口語表達的心得內容.md",
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
-    "工作/NVMe/Host Memory Buffer (HMB).md",
-    "工作/NVMe/attachments/medata_as_separate.png",
+    "技術資料/NVMe/attachments/medata_as_separate.png",
     "工作/NVMe/attachments/Pasted image 20240323214422.png",
-    "工作/NVMe/attachments/metadata_contiguous.png",
-    "工作/PCIe/System Reset.md",
-    "投資理財/股利計算公式.md",
-    "投資理財/融券買進賣出計算費用.md",
+    "技術資料/NVMe/attachments/metadata_contiguous.png",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
     "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
     "閱讀筆記/股票作手回憶錄.md",
-    "英文學習/暫存資料.md",
-    "程式設計/LINUX/套件與函式庫安裝/函式庫/libnvme.md",
-    "程式設計/LINUX/qemu/編譯 QEMU 原始碼.md",
-    "程式設計/LINUX/shell/取得命令行輸入的參數.md",
-    "程式設計/LINUX/linuxc/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/LINUX/linuxc/建立靜態與共享函式庫.md",
-    "程式設計/LINUX/gnu/Makefile.md",
-    "工作/NVMe/attachments/nvme_subsystem_reset_nssro.png",
-    "工作/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
-    "工作/NVMe/attachments/nvme_substem_reset.png",
-    "工作/NVMe/attachments/nvme_identify_ctrl_hmpre.png",
-    "工作/NVMe/attachments/nvme_hmb_descriptor_list.png",
-    "工作/NVMe/attachments/nvme_hmb_cdw11.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset_nssro.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
+    "技術資料/NVMe/attachments/nvme_substem_reset.png",
+    "技術資料/NVMe/attachments/nvme_identify_ctrl_hmpre.png",
+    "技術資料/NVMe/attachments/nvme_hmb_descriptor_list.png",
     "投資理財/attachments",
     "投資理財/技術分析圖",
-    "工作/NVMe/Reset",
-    "工作/PCIe",
+    "技術資料/NVMe/Reset",
+    "技術資料/PCIe",
     "工作/PCIe/System Reset",
-    "工作/NVMe/Other",
-    "工作/NVMe/Reset",
-    "工作/NVMe/attachments",
+    "技術資料/NVMe/Other",
+    "技術資料/NVMe/Reset",
+    "技術資料/NVMe/attachments",
     "程式設計/LINUX/gnu",
     "doxygen.canvas",
     "未命名 1.canvas"
