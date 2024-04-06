@@ -23,11 +23,11 @@
 	      則 nvm write 參數所設定的欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
 	    - 防止資料被誤用或傳輸亂序情況發生。
 
-- 根據規範 PI 在中繼資料的位置　
+- 根據規範 PI 在中繼資料的位置
 	- PI 位於 Metadata 開頭 （First of Metadata）
 	- PI 位於 Metadata 結尾 （Last of Metadata）
 
-根據上述 PI 所存放的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 （CRC）
+根據上述 PI 在中繼資料的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 （CRC）
 - 若是 PI 位於 Metadata 開頭
 	- Medata == PI，則校驗資訊只需要計算 （邏輯區塊資料）即可。
 - 若是 PI 位於 Metadata 結尾
