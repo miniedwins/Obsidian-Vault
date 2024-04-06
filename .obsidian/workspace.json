@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md",
+                "file": "投資理財/金融股選股基本指標.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md",
+                "file": "投資理財/金融股選股基本指標.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md",
+                "file": "投資理財/金融股選股基本指標.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md"
+                "file": "投資理財/金融股選股基本指標.md"
               }
             }
           },
@@ -169,6 +169,7 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/PCIe/System Reset.md",
     "程式設計/LINUX/shell/取得命令行輸入的參數.md",
@@ -185,7 +186,6 @@
     "投資理財/融券買進賣出計算費用.md",
     "投資理財/技術分析.md",
     "投資理財/交易日誌/模板 1.md",
-    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
     "技術資料/NVMe/Reset/Controller Level Reset.md",
     "技術資料/NVMe/Other/IEEE EUI, OUI, and CID.md",
