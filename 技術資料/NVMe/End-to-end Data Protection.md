@@ -13,25 +13,28 @@
 
 # 端對端資料保護 (Protection Information)
  
-- PI 資料格式（Protection Information Format）
-	- **Guard Field**
-	    - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
-	- **Application Tag**
-	    - 由主機端應用指定，無需 `NVM` 控製器處理。
-	- **Reference Tag**
-	    - 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`
-	      則 nvm write 參數所設定的欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
-	    - 防止資料被誤用或傳輸亂序情況發生。
+下列內容是參考 SPEC 1.4.C ，NVME 2.x 有更進一步的加強端對端資料保護功能。
+## PI 資料格式
 
-- 根據規範 PI 在中繼資料的位置
-	- PI 位於 Metadata 開頭 （First of Metadata）
-	- PI 位於 Metadata 結尾 （Last of Metadata）
+ - Guard Field
+	 - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
+- Application Tag
+	- 由主機端應用指定，無需 `NVM` 控製器處理。
+- Reference Tag
+	- 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`	      則 nvm write 參數所設定的欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
+	- 防止資料被誤用或傳輸亂序情況發生。
+## PI 在中繼資料的位置
+
+- PI 位於 Metadata 開頭 （First of Metadata）
+- PI 位於 Metadata 結尾 （Last of Metadata）
 
 根據上述 PI 在中繼資料的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 （CRC）
 - 若是 PI 位於 Metadata 開頭
 	- Medata == PI，則校驗資訊只需要計算 （邏輯區塊資料）即可。
 - 若是 PI 位於 Metadata 結尾
 	- Medata > PI，則校驗資訊則是需要計算 （邏輯區塊資料 + 元資料） 但是不包含 PI 資訊。  
+
+## PI 類型 (檢查方式)
 
 另外，端到端資料保護中有不同的 TYPE 1 / 2 / 3，在進行LBA格式化設定就需要指定哪一種類型，代表了不同的 Reference Tag 設定和 PI 檢查方式，如下說明 : 
 
