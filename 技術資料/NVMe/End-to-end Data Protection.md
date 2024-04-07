@@ -86,16 +86,16 @@ $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1
 
 #### 控制器收到主機寫入請求並且產生 PI 資訊
 
-主機端使用 DD 命令建立寫入的檔案。
+首先主機端使用 DD 命令建立寫入的檔案。
 
 ```
 dd if=/dev/urandom of=512B.bin bs=512 count=1
 ```
 
-使用 nvm write 命令入到 SSD，還需要設定端對端資料參數 PRINFO 以及 ILBRT，若是沒有上述這兩個參數設定還造成寫入失敗。
+使用 nvm write 命令入到 SSD，還需要設定端對端資料參數 PRINFO 以及 ILBRT，若是沒有上述這兩個參數設定會造成寫入失敗。
 
-這裡預計要寫入的 LBA=0x12，並且 PI 資訊需要透過控制器幫我們產生，因此設定 PRACT=0，而 PRCHK
-表示是否要檢查整個 PI 資訊，可以個別選擇檢查 PI 裡的內容結構，這個範例我們設定 PI 所有內容都檢查。另外 ILBRT 需要設定相同寫入位址 0x12，這個參數代表的就是 PI 結構裡的 `Reference Tag`。
+這裡設定寫入的 LBA=0x12，並且 PI 資訊需要透過控制器幫我們產生，因此設定 PRACT=0，而 PRCHK
+表示是否要檢查整個 PI 資訊，也可以個別選擇檢查 PI 裡的內容結構，這個範例我們設定 PI 所有內容都檢查。另外 ILBRT 需要設定相同寫入位址 0x12，這個參數代表的就是 PI 結構裡的 `Reference Tag`。
 
 ```
 $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
