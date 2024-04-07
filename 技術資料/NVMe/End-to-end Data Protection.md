@@ -1,20 +1,23 @@
-# 資料保護說明
+# 端對端資料保護
+
+## 內容說明
 
 端到端資料保護將資料的完整性保護範圍從SSD內部延伸到外部鏈路，以防止靜默錯誤產生——通過對邏輯塊資料（Logical Block Data，通常指使用者資料）新增額外的PI（Protection Information，保護資訊，如CRC），使其作為資料的中繼資料 (Metadata) 被一同傳輸，主機端和NVM控製器都可以在接收到資料後，根據PI的內容對資料完整性進行校驗，以確定這些資料是否真的可用。
 
-端到端資料保護的關鍵就在於PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有DIF和DIX兩種方式，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；可以根據應用場景的需求。
-# 中繼資料 (Metadata)
+端到端資料保護的關鍵就在於 PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有DIF和DIX兩種方式，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；可以根據應用場景的需求。
+## 中繼資料 (Metadata)
 
- - 中繼資料內容存放的是 PI 資訊，經常使用在傳遞 PI 資訊
- - 它會被做為端對端資料保護的傳輸的格式，並且分為兩種 : 
-	 - DIF :  中繼資料與使用者資料（LBA Data）連續存放![[metadata_contiguous.png]]
+什麼是中繼資料 ? 
+- 中繼資料內容存放的是 PI 資訊，經常使用在傳遞 PI 資訊
+- 它會被做為端對端資料保護的傳輸的格式，並且分為 DIF　 
+	DIF :  中繼資料與使用者資料（LBA Data）連續存放![[metadata_contiguous.png]]
 	
 	- DIX : 中繼資料與使用者資料個別單獨存放![[medata_as_separate.png]]
 
-# 端對端資料保護 (Protection Information)
+## PI 資訊（Protection Information）
  
 下列內容是參考 SPEC 1.4.C ，NVME 2.x 有更進一步的加強端對端資料保護功能。
-## PI 資料格式
+### PI 內容結構
 
  - Guard Field
 	 - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
@@ -23,7 +26,7 @@
 - Reference Tag
 	- 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`	      則 nvm write 參數所設定的欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
 	- 防止資料被誤用或傳輸亂序情況發生。
-## PI 在中繼資料的位置
+### PI 存放中繼資料的位置
 
 - PI 位於 Metadata 開頭 （First of Metadata）
 - PI 位於 Metadata 結尾 （Last of Metadata）
@@ -34,7 +37,7 @@
 - 若是 PI 位於 Metadata 結尾
 	- Medata > PI，則校驗資訊則是需要計算 （邏輯區塊資料 + 元資料） 但是不包含 PI 資訊。  
 
-## PI 類型 (檢查方式)
+### PI 類型 (檢查方式)
 
 另外，端到端資料保護中有不同的 TYPE 1 / 2 / 3，在進行LBA格式化設定就需要指定哪一種類型，代表了不同的 Reference Tag 設定和 PI 檢查方式，如下說明 : 
 
