@@ -7,16 +7,18 @@
 端到端資料保護的關鍵就在於 PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有DIF和DIX兩種方式，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；可以根據應用場景的需求。
 ## 中繼資料 (Metadata)
 
-什麼是中繼資料 ? 
-- 中繼資料內容存放的是 PI 資訊，經常使用在傳遞 PI 資訊
-- 它會被做為端對端資料保護的傳輸的格式，並且分為 DIF　 
-	DIF :  中繼資料與使用者資料（LBA Data）連續存放![[metadata_contiguous.png]]
-	
-	- DIX : 中繼資料與使用者資料個別單獨存放![[medata_as_separate.png]]
+- 中繼資料內容存放的是 PI 資訊，經常使用在傳遞 PI 資訊。
+- 它會被做為端對端資料保護的傳輸的格式，並且分為 DIF & DIX。
+
+DIF :  中繼資料與使用者資料（LBA Data）連續存放
+![[metadata_contiguous.png]]
+
+DIX : 中繼資料與使用者資料個別單獨存放
+![[medata_as_separate.png]]
 
 ## PI 資訊（Protection Information）
  
-下列內容是參考 SPEC 1.4.C ，NVME 2.x 有更進一步的加強端對端資料保護功能。
+下列內容是參考 SPEC 1.4.C ，NVMe 2.x 有更進一步加強端對端資料保護功能。
 ### PI 內容結構
 
  - Guard Field
@@ -51,6 +53,12 @@
 	- Reference Tag 保持不變，SSD 不會檢查 ILBRT 和 ELBRT。 
 # 如何使用端對端資料保護功能
 
+- 建立 PI 資訊的方法有兩種
+	- (1) 主機端建立PI 資訊，連同（LBA 資料 + 中繼資料） 傳遞給控制器。
+	- (2) 控制器收到主機端 LBA 資料，然後由控制器建立 PI 資訊。
+	- 以上都需要透過`PRACT` 設定。
+## 啟用端對端資料保護
+
 首先列出當前所控制器支援 `Metadata Size` 以及 `Data Size`，可以看到支援許多 `LBA Format`，因此我們可以針對控制器所支援的 LBA 格式設定。
 
 ```
@@ -72,19 +80,21 @@ LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Perf
 
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
 ```
+## 端對端資料保護範例
 
-## 如何建立 PI 資訊並且寫入到 NAND
+###  (1) 控制器收到主機資料並且產生 PI 資訊
 
-- 建立 PI 資訊的方法有兩種
-	- 主機端建立 PI 資訊，連同（LBA 資料 + 中繼資料） 傳遞給控制器。
-	- 控制器收到主機端 LBA 資料，然後由控制器建立 PI 資訊。
-	- 以上都需要透過`PRACT` 設定。
-
-## 如何從控制器讀取 LBA 資料或是 PI 資訊
+主機端使用 DD 命令建立寫入的檔案
 
 ```
 dd if=/dev/urandom of=512B.bin bs=512 count=1
 ```
+
+
+```
+$ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
+```
+
 
 - PRACT（PI資訊產生的機制）
   - Bit3=1 (控制器生成PI並將其寫入NAND)
@@ -95,9 +105,7 @@ dd if=/dev/urandom of=512B.bin bs=512 count=1
   - Bit1=1，控制器在收到packet時，檢查 App Tag
   - Bit0=1，控制器在收到packet時，檢查 Reference Tagca
 
-```
-$ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
-```
+
 
 - PRACT（讀取資料時控制器是否回傳PI資訊）
   - Bit3=1 (控制器不向 host 傳回 PI 資訊；只回傳 data block)
