@@ -82,7 +82,9 @@ $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1
 ```
 ## 端對端資料保護範例
 
-###  (1) 控制器收到主機資料並且產生 PI 資訊 (Meta 512 ＋　)
+### (1) MD 512B + PI 8B
+
+#### 控制器收到主機寫入請求並且產生 PI 資訊
 
 主機端使用 DD 命令建立寫入的檔案。
 
@@ -90,13 +92,20 @@ $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1
 dd if=/dev/urandom of=512B.bin bs=512 count=1
 ```
 
-使用 nvm write 命令入到 SSD，還必須要設定端對端資料參數 PRINFO 以及 ILBRT （Initial Logical Block Reference）。
+使用 nvm write 命令入到 SSD，還需要設定端對端資料參數 PRINFO 以及 ILBRT，若是沒有上述這兩個參數設定還造成寫入失敗。
+
+這裡預計要寫入的 LBA=0x12，並且 PI 資訊需要透過控制器幫我們產生，因此設定 PRACT=0，而 PRCHK
+表示是否要檢查整個 PI 資訊，可以個別選擇檢查 PI 裡的內容結構，這個範例我們設定 PI 所有內容都檢查。另外 ILBRT 需要設定相同寫入位址 0x12，這個參數代表的就是 PI 結構裡的 `Reference Tag`。
 
 ```
 $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
 ```
 
 ![[nvm_write_prinfo.png]]
+#### 控制器收到主機讀取請求
+
+
+
 
 - PRACT（PI資訊產生的機制）
   - Bit3=1 (控制器生成PI並將其寫入NAND)
@@ -107,8 +116,6 @@ $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
   - Bit1=1，控制器在收到packet時，檢查 App Tag
   - Bit0=1，控制器在收到packet時，檢查 Reference Tagca
 
-
-
 - PRACT（讀取資料時控制器是否回傳PI資訊）
   - Bit3=1 (控制器不向 host 傳回 PI 資訊；只回傳 data block)
   - Bit3=0 (控制器檢查 PI 資訊, 向 host 傳回 PI 資訊以及 data block)
@@ -118,9 +125,6 @@ $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
   - Bit1=1，控制器在收到packet時，檢查 App Tag
   - Bit0=1，控制器在收到packet時，檢查 Reference Tagca
 
-PI = 8 Bytes
-Logic Block Data = 512 Bytes
-Data = (Logic Block Data) + (PI) = 512 + 8 = 520
 
 ```
 $ nvme read /dev/nvme0n1 -s 0x12 -z 520 -d data_read_520B.bin --prinfo=0x7 --ref-tag=0x12
