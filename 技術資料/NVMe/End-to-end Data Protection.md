@@ -88,7 +88,7 @@ $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 0
 
 當主機端發出寫入請求命令，控制器收到命令後會在 `LBA Data` 後面加入 PI 資訊，最後寫入 NAND。
 
-![[nvme_pi_md_eq8_pract_1.png]]
+![[nvme_write_pi_md_eq8_pract_1.png]]
 
 首先主機端使用 DD 命令建立寫入的檔案。
 
@@ -105,10 +105,53 @@ dd if=/dev/urandom of=512B.bin bs=512 count=1
 $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
 ```
 
-![[nvm_write_prinfo.png]]
+![[nvm_write_prinfo_field.png]]
 #### 控制器收到主機讀取請求
 
+當控制器收到主機端的讀取命令請求，主機端可以設定是否需要回傳 PI 資訊或是只回傳 `LBA Data`。
 
+![[Pasted image 20240408145949.png]]
+
+使用 nvm read 命令讀取 `LBA=0x12` 位址的資料，ILBRT 指定相同位址 `--ref-tag=0x12`，並且設定 `PRACT=0`，代表控制器只回傳 `LBA Data`，設定 `PRCHK=111b` 檢查 PI 所有的資訊內容是否正常。
+
+由於 `PRACT` 設定不需要回傳 PI 資訊，因此讀取檔案大小只需要設定 512 Bytes。
+
+```
+$ nvme read /dev/nvme0n1 -s 0x12 -z 512 -d data_read.bin --prinfo=0x7 --ref-tag=0x12
+```
+
+透過 `xxd` 命令可以查看控制器回傳後的資料。
+
+```
+$ xxd -l 512 read_data.bin
+00000000: 050e 3304 6ba0 fdd2 4914 6ca9 d871 c843  ..3.k...I.l..q.C
+00000010: 15cd 4af1 b7be 14a3 124a c58c 8129 1799  ..J......J...)..
+...
+000001e0: 231d 00a9 3802 f120 ccb7 a9e0 3ee3 f9ad  #...8.. ....>...
+000001f0: 5ef3 7c75 7308 4acf cfc8 b1d3 925c c81e  ^.|us.J......\..
+```
+
+若是要控制器回傳 PI 資訊，可以設定 `PRACT=1`，然後設定 `PRCHK=111b` 檢查 PI 所有的資訊內容。
+
+由於 `PRACT` 設定需要回傳 PI 資訊，因此讀取檔案大小需要更改成 520 Bytes。
+
+LBA Data = 520B （512B + 8PI）。
+
+```
+$ nvme read /dev/nvme0n1 -s 0x12 -z 520 -d data_read.bin --prinfo=0xf --ref-tag=0x12
+```
+
+透過 `xxd` 命令可以查看控制器回傳後的 PI　資料。
+
+```
+$ xxd -l 520 read_data.bin
+00000000: 050e 3304 6ba0 fdd2 4914 6ca9 d871 c843  ..3.k...I.l..q.C
+00000010: 15cd 4af1 b7be 14a3 124a c58c 8129 1799  ..J......J...)..
+...
+000001e0: 231d 00a9 3802 f120 ccb7 a9e0 3ee3 f9ad  #...8.. ....>...
+000001f0: 5ef3 7c75 7308 4acf cfc8 b1d3 925c c81e  ^.|us.J......\..
+00000200: 3593 0000 0000 0012                      5.......
+```
 
 
 - PRACT（PI資訊產生的機制）
@@ -129,24 +172,6 @@ $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
   - Bit1=1，控制器在收到packet時，檢查 App Tag
   - Bit0=1，控制器在收到packet時，檢查 Reference Tagca
 
-
-```
-$ nvme read /dev/nvme0n1 -s 0x12 -z 520 -d data_read_520B.bin --prinfo=0x7 --ref-tag=0x12
-```
-
-// TODO
-
-```
-$ xxd -l 520 read_data_with_pi.bin
-00000000: 050e 3304 6ba0 fdd2 4914 6ca9 d871 c843  ..3.k...I.l..q.C
-00000010: 15cd 4af1 b7be 14a3 124a c58c 8129 1799  ..J......J...)..
-...
-000001e0: 231d 00a9 3802 f120 ccb7 a9e0 3ee3 f9ad  #...8.. ....>...
-000001f0: 5ef3 7c75 7308 4acf cfc8 b1d3 925c c81e  ^.|us.J......\..
-00000200: 3593 0000 0000 0012                      5.......
-```
-
-$ nvme write /dev/nvme0n1 -s 0x12 -z 520 -y 8 -d data_with_pi.bin --prinfo=0x7 --ref-tag=0x12
 
 =================================================
      
