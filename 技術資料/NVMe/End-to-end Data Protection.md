@@ -78,13 +78,17 @@ LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Perf
 -p（PI在中繼資料中的位置 ：last/off）
 -m（DIX/DIF）
 
-$ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 1 
+$ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 0
 ```
 ## 端對端資料保護範例
 
-### (1) MD 512B + PI 8B
+### (1) MD 8B + PI 8B
 
 #### 控制器收到主機寫入請求並且產生 PI 資訊
+
+當主機端發出寫入請求命令，控制器收到命令後會在 `LBA Data` 後面加入 PI 資訊，最後寫入 NAND。
+
+![[nvme_pi_md_eq8_pract_1.png]]
 
 首先主機端使用 DD 命令建立寫入的檔案。
 
