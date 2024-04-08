@@ -108,11 +108,11 @@ $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
 ![[nvm_write_prinfo_field.png]]
 #### 控制器收到主機讀取請求
 
-當控制器收到主機端的讀取命令請求，主機端可以設定是否需要回傳 PI 資訊或是只回傳 `LBA Data`。
+當控制器收到主機端的讀取命令請求，主機端可以設定是否需要回傳 PI 資訊或是回傳 `LBA Data`。在這個範例中我們只要求控制器回傳 LBA 資料即可。
 
 ![[nvme_read_pi_md_eq8_pract_1.png]]
 
-使用 nvm read 命令讀取 `LBA=0x12` 位址的資料，ILBRT 指定相同位址 `--ref-tag=0x12`，並且設定 `PRACT=0`，代表控制器只回傳 `LBA Data`，設定 `PRCHK=111b` 檢查 PI 所有的資訊內容是否正常。
+使用 nvm read 命令讀取 `LBA=0x12` 位址的資料，ILBRT 指定相同位址 `--ref-tag=0x12`，並且設定 `PRACT=0`，代表控制器只回傳 `LBA Data`，然後設定 `PRCHK=111b` 檢查 PI 所有的資訊內容是否正常。
 
 由於 `PRACT` 設定不需要回傳 PI 資訊，因此讀取檔案大小只需要設定 512 Bytes。
 
@@ -120,7 +120,7 @@ $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
 $ nvme read /dev/nvme0n1 -s 0x12 -z 512 -d data_read.bin --prinfo=0x7 --ref-tag=0x12
 ```
 
-透過 `xxd` 命令可以查看控制器回傳後的資料。
+接下來透過 `xxd` 命令可以查看控制器回傳後的 LBA 資料。
 
 ```
 $ xxd -l 512 read_data.bin
@@ -131,11 +131,9 @@ $ xxd -l 512 read_data.bin
 000001f0: 5ef3 7c75 7308 4acf cfc8 b1d3 925c c81e  ^.|us.J......\..
 ```
 
-若是要控制器回傳 PI 資訊，可以設定 `PRACT=1`，然後設定 `PRCHK=111b` 檢查 PI 所有的資訊內容。
+若是要控制器回傳 PI 資訊，可以設定 `PRACT=1`，然後相同設定 `PRCHK=111b` 檢查 PI 所有的資訊內容。
 
-由於 `PRACT` 設定需要回傳 PI 資訊，因此讀取檔案大小需要更改成 520 Bytes。
-
-LBA Data = 520B （512B + 8PI）。
+由於 `PRACT` 設定需要回傳 PI 資訊，因此讀取檔案大小需要更改成 520 Bytes（512B + 8PI）。
 
 ```
 $ nvme read /dev/nvme0n1 -s 0x12 -z 520 -d data_read.bin --prinfo=0xf --ref-tag=0x12
@@ -154,26 +152,6 @@ $ xxd -l 520 read_data.bin
 000001f0: 5ef3 7c75 7308 4acf cfc8 b1d3 925c c81e  ^.|us.J......\..
 00000200: 3593 0000 0000 0012                      5.......
 ```
-
-
-- PRACT（PI資訊產生的機制）
-  - Bit3=1 (控制器生成PI並將其寫入NAND)
-  - Bit3=0 (控制器取得上層應用下發的PI訊息，將檢查PI資訊並寫入NAND)
-
-- PRCHK（控制器收到包時檢查的PI資訊）
-  - Bit2=1，控制器收到packet時，檢查 CRC
-  - Bit1=1，控制器在收到packet時，檢查 App Tag
-  - Bit0=1，控制器在收到packet時，檢查 Reference Tagca
-
-- PRACT（讀取資料時控制器是否回傳PI資訊）
-  - Bit3=1 (控制器不向 host 傳回 PI 資訊；只回傳 data block)
-  - Bit3=0 (控制器檢查 PI 資訊, 向 host 傳回 PI 資訊以及 data block)
-    
-- PRCHK（控制器收到包時檢查的PI資訊）
-  - Bit2=1，控制器收到packet時，檢查 CRC
-  - Bit1=1，控制器在收到packet時，檢查 App Tag
-  - Bit0=1，控制器在收到packet時，檢查 Reference Tagca
-
 
 =================================================
      
