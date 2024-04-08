@@ -110,7 +110,7 @@ $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
 
 當控制器收到主機端的讀取命令請求，主機端可以設定是否需要回傳 PI 資訊或是只回傳 `LBA Data`。
 
-![[Pasted image 20240408145949.png]]
+![[nvme_read_pi_md_eq8_pract_1.png]]
 
 使用 nvm read 命令讀取 `LBA=0x12` 位址的資料，ILBRT 指定相同位址 `--ref-tag=0x12`，並且設定 `PRACT=0`，代表控制器只回傳 `LBA Data`，設定 `PRCHK=111b` 檢查 PI 所有的資訊內容是否正常。
 

@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 305.5
+    "width": 311.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -169,11 +169,11 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "技術資料/NVMe/attachments/Pasted image 20240408145949.png",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/attachments/nvme_read_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/attachments/nvme_write_pi_md_eq8_pract_1.png",
     "技術資料/NVMe/attachments/nvm_write_prinfo_field.png",
-    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
     "技術資料/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "技術資料/NVMe/attachments/nvm_write_cdw14.png",
@@ -202,7 +202,6 @@
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
     "技術資料/NVMe/attachments/medata_as_separate.png",
     "工作/NVMe/attachments/Pasted image 20240323214422.png",
-    "技術資料/NVMe/attachments/metadata_contiguous.png",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
     "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
     "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
