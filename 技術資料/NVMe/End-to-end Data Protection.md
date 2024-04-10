@@ -33,11 +33,11 @@ DIX : 中繼資料與使用者資料個別單獨存放
 - PI 位於 Metadata 開頭 （First of Metadata）
 - PI 位於 Metadata 結尾 （Last of Metadata）
 
-根據上述 PI 在中繼資料的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊 （CRC）
+根據上述 PI 在中繼資料的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊（CRC）
 - 若是 PI 位於 Metadata 開頭
-	- Medata == PI，則校驗資訊只需要計算 （邏輯區塊資料）即可。
+	- Medata == PI，則校驗資訊只需要計算（邏輯區塊資料）即可。
 - 若是 PI 位於 Metadata 結尾
-	- Medata > PI，則校驗資訊則是需要計算 （邏輯區塊資料 + 元資料） 但是不包含 PI 資訊。  
+	- Medata > PI，則校驗資訊則是需要計算（邏輯區塊資料 + 元資料）但是不包含 PI 資訊。  
 
 ### PI 類型 (檢查方式)
 
@@ -45,7 +45,7 @@ DIX : 中繼資料與使用者資料個別單獨存放
 
 - TYPE 1： 
 	- Reference Tag 隨著LBA增加遞增
-	-  Host 必須保證 ILBRT 和 ELBRT 與 LBA 的最後4個Bytes相等。 
+	-  Host 必須保證 ILBRT 和 ELBRT 與 LBA 的最後 4 個Bytes相等。 
 - TYPE 2：
 	- Reference Tag 隨著LBA增加遞增
 	- SSD 檢查 PI 的方式與 TYPE 1 相同，允許 Host 指定任意 ILBRT 和 ELBRT。 
@@ -54,7 +54,7 @@ DIX : 中繼資料與使用者資料個別單獨存放
 # 如何使用端對端資料保護功能
 
 - 建立 PI 資訊的方法有兩種
-	- (1) 主機端建立PI 資訊，連同（LBA 資料 + 中繼資料） 傳遞給控制器。
+	- (1) 主機端建立PI 資訊，連同（LBA 資料 + 中繼資料）傳遞給控制器。
 	- (2) 控制器收到主機端 LBA 資料，然後由控制器建立 PI 資訊。
 	- 以上都需要透過`PRACT` 設定。
 ## 啟用端對端資料保護
