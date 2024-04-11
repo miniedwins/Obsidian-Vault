@@ -153,42 +153,7 @@ $ xxd -l 520 read_data.bin
 00000200: 3593 0000 0000 0012                      5.......
 ```
 
-=================================================
-     
-nlbaf   : 4
-flbas   : 0x11
-  [6:5] : 0	Most significant 2 bits of Current LBA Format Selected
-  [4:4] : 0x1	Metadata Transferred at End of Data LBA
-  [3:0] : 0x1	Least significant 4 bits of Current LBA Format Selected
-
-
-mc      : 0x3
-  [1:1] : 0x1	Metadata Pointer Supported
-  [0:0] : 0x1	Metadata as Part of Extended Data LBA Supported
-
-
-dpc     : 0x1b
-  [4:4] : 0x1	Protection Information Transferred as Last Bytes of Metadata Supported
-  [3:3] : 0x1	Protection Information Transferred as First Bytes of Metadata Supported
-  [2:2] : 0	Protection Information Type 3 Not Supported
-  [1:1] : 0x1	Protection Information Type 2 Supported
-  [0:0] : 0x1	Protection Information Type 1 Supported
-
-
-dps     : 0x9
-  [3:3] : 0x1	Protection Information is Transferred as First Bytes of Metadata
-  [2:0] : 0x1	Protection Information Type 1 Enabled
-
-
-```
-LBA Format  0 : Metadata Size: 0   bytes - Data Size: 512 bytes - Relative Performance: 0 Best 
-LBA Format  1 : Metadata Size: 8   bytes - Data Size: 512 bytes - Relative Performance: 0 Best (in use)
-LBA Format  2 : Metadata Size: 0   bytes - Data Size: 4096 bytes - Relative Performance: 0 Best 
-LBA Format  3 : Metadata Size: 8   bytes - Data Size: 4096 bytes - Relative Performance: 0 Best 
-LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Performance: 0 Best 
-```
-
-================================================
+=================================================   
 
 # PI first byte of Metadata
 
