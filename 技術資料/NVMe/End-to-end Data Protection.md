@@ -75,7 +75,7 @@ LBA Format  4 : Metadata Size: 64  bytes - Data Size: 4096 bytes - Relative Perf
 ```
 -l（LBA Format 格式）
 -i（Protection Info Type ：off/1/2/3）
--p（PI在中繼資料中的位置 ：last/off）
+-p（PI在中繼資料中的位置 ：last/first）
 -m（DIX/DIF）
 
 $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 0 -f
