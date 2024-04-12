@@ -157,10 +157,24 @@ $ xxd -l 520 read_data.bin
 
 # PI first byte of Metadata
 
-PI = 8Bytes (f15f 0000 0000 0012)
-
+```
+nvme format /dev/nvme0n1 -n 1 -l 4 -i 1 -m 1 -p 1 -f
+nvme write /dev/nvme0n1 -s 0x12 -z 4096 -d 4k.bin --prinfo=0xf --ref-tag=0x12
+nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64Meta.bin --prinfo=0x7 --ref-tag=0x12
 ```
 
+PI = 00001000: (f15f 0000 0000 0012) c3e2 00f0 f3ee 00f0
+
+```
+$ xxd -l 4160 read_4k_64Meta.bin
+00000000: 8338 2be5 4476 9f4b c7d6 0f94 cec5 2348  .8+.Dv.K......#H
+00000010: 681c 48b2 576e e137 8b97 d0ed 6e9c 3927  h.H.Wn.7....n.9'
+00000020: 5415 05eb 7044 954f ff57 44c8 b6c9 0242  T...pD.O.WD....B
+...
+00001000: f15f 0000 0000 0012 c3e2 00f0 f3ee 00f0  ._..............
+00001010: f3ee 00f0 54ff 00f0 3632 00f0 de31 00f0  ....T...62...1..
+00001020: a5fe 00f0 87e9 00f0 f3ee 00f0 f3ee 00f0  ................
+00001030: f3ee 00f0 f3ee 00f0 57ef 00f0 53ff 00f0  ........W...S...
 ```
 
 # PI last byte of Metadata
@@ -168,12 +182,13 @@ PI = 8Bytes (f15f 0000 0000 0012)
 ```
 nvme format /dev/nvme0n1 -n 1 -l 4 -i 1 -m 1 -p 0 -f
 nvme write /dev/nvme0n1 -s 0x12 -z 4096 -d 4k.bin --prinfo=0xf --ref-tag=0x12
-nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64PI.bin --prinfo=0x7 --ref-tag=0x12
+nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64Meta.bin --prinfo=0x7 --ref-tag=0x12
 ```
 
-Last PI = 8Bytes (6300 0000 0000 0012)
+Last PI = 00001030: f3ee 00f0 f3ee 00f0 (6300 0000 0000 0012)
 
 ```
+$ xxd -l 4160 read_4k_64Meta.bin
 00000000: 8338 2be5 4476 9f4b c7d6 0f94 cec5 2348  .8+.Dv.K......#H
 00000010: 681c 48b2 576e e137 8b97 d0ed 6e9c 3927  h.H.Wn.7....n.9'
 00000020: 5415 05eb 7044 954f ff57 44c8 b6c9 0242  T...pD.O.WD....B
@@ -183,5 +198,3 @@ Last PI = 8Bytes (6300 0000 0000 0012)
 00001020: a5fe 00f0 87e9 00f0 f3ee 00f0 f3ee 00f0  ................
 00001030: f3ee 00f0 f3ee 00f0 6300 0000 0000 0012  ........c.......
 ```
-
-
