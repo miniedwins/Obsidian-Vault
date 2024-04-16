@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/融券買進賣出計算費用.md",
+                "file": "投資理財/技術分析/區間震盪.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/融券買進賣出計算費用.md",
+                "file": "投資理財/技術分析/區間震盪.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/融券買進賣出計算費用.md",
+                "file": "投資理財/技術分析/區間震盪.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/融券買進賣出計算費用.md"
+                "file": "投資理財/技術分析/區間震盪.md"
               }
             }
           },
@@ -169,12 +169,17 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
+    "投資理財/技術分析/attachments/區間震盪 2.png",
+    "投資理財/技術分析/區間震盪.md",
     "投資理財/交易的成功心態.md",
+    "投資理財/技術分析/attachments/區間震盪 1.png",
+    "投資理財/技術分析/attachments",
+    "投資理財/融券買進賣出計算費用.md",
+    "投資理財/技術分析/區間震盪",
+    "投資理財/交易日誌/模板.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
     "技術資料/NVMe/End-to-end Data Protection.md",
-    "投資理財/交易日誌/模板.md",
-    "投資理財/融券買進賣出計算費用.md",
     "投資理財/技術分析.md",
     "投資理財/技術分析",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
@@ -201,19 +206,14 @@
     "自省日記/介紹 SSD 還原技術 (Coresnapshot).md",
     "自省日記/解釋薪傳班報告內容的缺點.md",
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
-    "技術資料/NVMe/attachments/medata_as_separate.png",
-    "工作/NVMe/attachments/Pasted image 20240323214422.png",
     "程式設計/LINUX/套件與函式庫安裝/nvmecli 工具.md",
     "程式設計/LINUX/套件與函式庫安裝/mainline 更新核心版本.md",
-    "程式設計/LINUX/套件與函式庫安裝/函式庫/json-c.md",
     "投資理財/attachments",
     "投資理財/技術分析圖",
     "技術資料/NVMe/Reset",
     "技術資料/PCIe",
     "工作/PCIe/System Reset",
     "技術資料/NVMe/Other",
-    "技術資料/NVMe/Reset",
-    "技術資料/NVMe/attachments",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
