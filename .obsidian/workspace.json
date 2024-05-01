@@ -11,9 +11,11 @@
             "id": "855563196e98b942",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "投資理財/技術分析/attachments/區間震盪 1.png"
+                "file": "投資理財/融券買進賣出計算費用.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -91,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/技術分析/attachments/區間震盪 1.png",
+                "file": "投資理財/融券買進賣出計算費用.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/技術分析/attachments/區間震盪 1.png",
+                "file": "投資理財/融券買進賣出計算費用.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -131,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/技術分析/attachments/區間震盪 1.png"
+                "file": "投資理財/融券買進賣出計算費用.md"
               }
             }
           },
@@ -167,20 +169,20 @@
   },
   "active": "855563196e98b942",
   "lastOpenFiles": [
-    "投資理財/技術分析/attachments/區間震盪 2.png",
-    "投資理財/技術分析/attachments/區間震盪 1.png",
     "投資理財/技術分析/區間震盪.md",
-    "投資理財/交易的成功心態.md",
-    "投資理財/技術分析/attachments",
     "投資理財/融券買進賣出計算費用.md",
-    "投資理財/技術分析/區間震盪",
-    "投資理財/交易日誌/模板.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
     "技術資料/NVMe/End-to-end Data Protection.md",
+    "技術資料/NVMe/Host Memory Buffer (HMB).md",
+    "投資理財/技術分析/attachments/區間震盪 2.png",
+    "投資理財/技術分析/attachments/區間震盪 1.png",
+    "投資理財/交易的成功心態.md",
+    "投資理財/技術分析/attachments",
+    "投資理財/技術分析/區間震盪",
+    "投資理財/交易日誌/模板.md",
     "投資理財/技術分析.md",
     "投資理財/技術分析",
-    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/attachments/nvme_read_pi_md_eq8_pract_1.png",
     "技術資料/NVMe/attachments/nvme_write_pi_md_eq8_pract_1.png",
     "技術資料/NVMe/attachments/nvm_write_prinfo_field.png",
