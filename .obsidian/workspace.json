@@ -11,8 +11,12 @@
             "id": "889dfbbaec3812cb",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "程式設計/Makefile/make.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "程式設計/Makefile/make.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "程式設計/Makefile/make.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "程式設計/Makefile/make.md"
+              }
             }
           },
           {
@@ -161,13 +169,17 @@
   },
   "active": "889dfbbaec3812cb",
   "lastOpenFiles": [
-    "作業系統/Linux/套件與函式庫安裝/函式庫/json-c.md",
-    "作業系統/Linux/套件與函式庫安裝/nvmecli 工具.md",
-    "作業系統/Linux/kernel/更新核心版本.md",
-    "作業系統/Linux/kernel/如何獨立編譯核心模組.md",
-    "程式設計/shell/取得命令行輸入的參數.md",
-    "程式設計/gnu/Makefile.md",
-    "作業系統/Linux/kernel/手動安裝 linux 核心.md",
+    "閱讀筆記/股票作手回憶錄.md",
+    "作業系統/Linux/工具安裝/nvmecli 工具.md",
+    "程式設計/Makefile/make.md",
+    "作業系統/Linux/工具安裝/未命名.md",
+    "程式設計/Makefile",
+    "作業系統/Linux/未命名",
+    "作業系統/Linux/工具安裝/函式庫/json-c.md",
+    "作業系統/Linux/核心/更新核心版本.md",
+    "作業系統/Linux/核心/如何獨立編譯核心模組.md",
+    "程式設計/Shell/取得命令行輸入的參數.md",
+    "作業系統/Linux/核心/手動安裝 linux 核心.md",
     "作業系統/Linux/pcie_command.md",
     "作業系統/Windows",
     "作業系統/Linux",
@@ -194,19 +206,15 @@
     "Obsidian/技術資料/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "技術資料/NVMe/attachments/nvm_write_cdw14.png",
     "Obsidian/技術資料/PCIe/System Reset.md",
-    "作業系統/Linux/qemu/編譯 QEMU 原始碼.md",
-    "程式設計/C語言/時間戳轉換 (timestamp).md",
-    "程式設計/C語言/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/git/images/github_keys_setting.png",
+    "作業系統/Linux/虛擬機/編譯 QEMU 原始碼.md",
+    "程式設計/C 語言/時間戳轉換 (timestamp).md",
+    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
+    "程式設計/Git/images/github_keys_setting.png",
     "技術資料/簡報/敘述型簡報.md",
     "技術資料/簡報/如何上台演說不緊張.md",
-    "投資理財/交易日誌/模板 1.md",
-    "Obsidian/技術資料/NVMe/Reset/NVM Subsystem Reset.md",
     "投資理財/交易日誌",
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
     "投資理財/attachments",
-    "投資理財/技術分析圖",
-    "Obsidian/技術資料/NVMe/Reset",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
