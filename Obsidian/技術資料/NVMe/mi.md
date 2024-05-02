@@ -22,16 +22,14 @@
   - 04 : Optionally Supported Command List
   - 05 : Management Endpoint Buffer Command Support List
 
-NVM Subsystem Information
+### NVM Subsystem Information (DTYP=0x00)
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x00 --nmd1=0x00 --data-len=64
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x00 --nmd1=0x00 --data-len=32
 NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, response: 0x000020)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
 
 
