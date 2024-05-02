@@ -1,5 +1,7 @@
 # Management Interface
 
+// Capture In-Band Command Set Support (PAGE : 77)
+
 ## nvme-mi-recv
 ```
   [  --opcode=<NUM>, -O <NUM> ]         --- opcode (required)
