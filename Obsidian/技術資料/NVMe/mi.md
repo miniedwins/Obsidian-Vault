@@ -52,7 +52,7 @@ Refer Controller List Format from NVM Express Base Specification
   - 05:04 Identifier 1
   - (N*2+3):(N*2+2) Identifier N
 
-We get total numbers IDs and one controller ID.
+We get total numbers IDs and one CTRLID.
 
 ```
 $ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x2000001 --nmd1=0x00 --data-len=32                        
