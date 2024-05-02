@@ -41,3 +41,23 @@ NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, respons
 00f0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff "................"
 ```
 ## Write VPD
+
+// TODO
+
+## NVM Subsystem Health Status Poll
+
+- Uses NVMe Management Dword: 1
+- Response Data: NVM Subsystem Health Data Structure (NSHDS)
+- Data Length: 8byes
+
+```
+nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x01 -nmimt=0x01 --nmd0=0x00 --data-len=32
+```
+
+output
+```
+NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, response: 0x000000)
+       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+0000: 38 ff 32 00 21 03 00 00 00 00 00 00 00 00 00 00 "8.2.!..........."
+0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+```
