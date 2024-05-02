@@ -1,6 +1,6 @@
 # Management Interface
 
-// Capture In-Band Command Set Support (PAGE : 77)
+// TODO : Capture In-Band Command Set Support (PAGE : 77)
 
 ## nvme-mi-recv
 ```
