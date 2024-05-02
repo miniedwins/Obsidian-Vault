@@ -1,8 +1,9 @@
-# Management Interface
+# MI Commands
 
 // TODO : Capture In-Band Command Set Support (PAGE : 77)
 
 ## nvme-mi-recv
+
 ```
   [  --opcode=<NUM>, -O <NUM> ]         --- opcode (required)
   [  --namespace-id=<NUM>, -n <NUM> ]   --- desired namespace
@@ -27,8 +28,11 @@
 ### NVM Subsystem Information (DTYP=0x00)
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x0000001 --nmd1=0x00 --data-len=32
-NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, response: 0x000020)
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 \ 
+--nmd0=0x0000001 --nmd1=0x00 --data-len=32
+
+NVMe-MI Receive Command is Success and result: 0x00002000 
+(status: 0x00, response: 0x000020)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
@@ -37,8 +41,11 @@ NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, respons
 ### Port Information (DTYP=0x01)
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x1000000 --nmd1=0x00 --data-len=32
-NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, response: 0x000020)
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 \
+--nmd0=0x1000000 --nmd1=0x00 --data-len=32
+
+NVMe-MI Receive Command is Success and result: 0x00002000
+(status: 0x00, response: 0x000020)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 00 40 00 00 00 00 00 01 0f 03 04 04 00 00 00 "..@............."
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
@@ -57,8 +64,11 @@ Refer Controller List Format from NVM Express Base Specification
 We get total numbers IDs and one CTRLID.
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x2000001 --nmd1=0x00 --data-len=32
-NVMe-MI Receive Command is Success and result: 0x00000400 (status: 0x00, response: 0x000004)
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 \ 
+--nmd0=0x2000001 --nmd1=0x00 --data-len=32
+
+NVMe-MI Receive Command is Success and result: 0x00000400 
+(status: 0x00, response: 0x000004)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
@@ -67,8 +77,11 @@ NVMe-MI Receive Command is Success and result: 0x00000400 (status: 0x00, respons
 ### Controller Information (DTYP=0x03)
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x3000001 --nmd1=0x00 --data-len=32
-NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, response: 0x000020)
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 \ 
+--nmd0=0x3000001 --nmd1=0x00 --data-len=32
+
+NVMe-MI Receive Command is Success and result: 0x00002000 
+(status: 0x00, response: 0x000020)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 00 00 00 00 00 01 00 02 cd 1b 90 01 cd 1b 90 01 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
@@ -83,8 +96,11 @@ NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, respons
 // TODO : Capature VPD Elements (PAGE: 128)
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -nmimt=0x01 1 --nmd0=0x0 --nmd1= 0x100 --data-len=256
-NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, response: 0x000000)
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -nmimt=0x01 \ 
+--nmd0=0x0 --nmd1=0x100 --data-len=256
+
+NVMe-MI Receive Command is Success and result: 0x00000000 
+(status: 0x00, response: 0x000000)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 00 00 00 01 0f 00 ef 01 0e 19 c8 50 68 69 73 "............Phis"
 0010: 6f 6e 20 20 d8 50 68 69 73 6f 6e 20 20 20 20 20 "on...Phison....."
