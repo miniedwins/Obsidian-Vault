@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "閱讀筆記/股票作手回憶錄.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "閱讀筆記/股票作手回憶錄.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "閱讀筆記/股票作手回憶錄.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md"
+                "file": "閱讀筆記/股票作手回憶錄.md"
               }
             }
           },
@@ -169,6 +169,7 @@
   },
   "active": "889dfbbaec3812cb",
   "lastOpenFiles": [
+    "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "程式設計/Makefile/make.md",
@@ -180,7 +181,6 @@
     "作業系統/Linux/工具安裝/函式庫/json-c.md",
     "作業系統/Linux/核心/更新核心版本.md",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
-    "程式設計/Shell/取得命令行輸入的參數.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
     "作業系統/Linux/pcie_command.md",
     "作業系統/Windows",
