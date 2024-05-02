@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "作業系統/Linux/命令/pcie_command.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "作業系統/Linux/命令/pcie_command.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "作業系統/Linux/命令/pcie_command.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md"
+                "file": "作業系統/Linux/命令/pcie_command.md"
               }
             }
           },
@@ -169,20 +169,23 @@
   },
   "active": "889dfbbaec3812cb",
   "lastOpenFiles": [
+    "作業系統/Windows/未命名.md",
+    "作業系統/Linux/命令/pcie_command.md",
+    "作業系統/Linux/套件安裝/nvmecli.md",
+    "作業系統/Linux/命令",
+    "作業系統/Linux/套件安裝/函式庫/libnvme.md",
+    "作業系統/Linux/套件安裝/函式庫/json-c.md",
+    "閱讀筆記/股票作手回憶錄.md",
+    "Obsidian/技術資料/NVMe/mi.md",
     "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案名稱包含子目錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "程式設計/Makefile/make.md",
-    "閱讀筆記/股票作手回憶錄.md",
-    "作業系統/Linux/工具安裝/nvmecli 工具.md",
     "作業系統/Linux/工具安裝/未命名.md",
     "程式設計/Makefile",
-    "作業系統/Linux/未命名",
-    "作業系統/Linux/工具安裝/函式庫/json-c.md",
     "作業系統/Linux/核心/更新核心版本.md",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
-    "作業系統/Linux/pcie_command.md",
     "作業系統/Windows",
     "作業系統/Linux",
     "未命名.md",
@@ -208,9 +211,6 @@
     "Obsidian/技術資料/NVMe/attachments/nvme_subsystem_reset_nssro.png",
     "技術資料/NVMe/attachments/nvm_write_cdw14.png",
     "Obsidian/技術資料/PCIe/System Reset.md",
-    "作業系統/Linux/虛擬機/編譯 QEMU 原始碼.md",
-    "程式設計/C 語言/時間戳轉換 (timestamp).md",
-    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/Git/images/github_keys_setting.png",
     "投資理財/交易日誌",
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
