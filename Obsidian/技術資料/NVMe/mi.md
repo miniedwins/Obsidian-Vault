@@ -12,13 +12,17 @@
 
 ## Read VPD
 
+- Uses NVMe Management Dword : 0, 1
+- Response Data : VPD Elements
+- Data Length : 256 ~ 4096 Bytes
+
 ```
-nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -m 1 -0 0 -1 0x100 -l 256
+nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -nmimt=0x01 1 --nmd0=0x0 --nmd1= 0x100 --data-len=256
 ```
 
 // TODO : Capature VPD Elements (PAGE: 128)
 
-output result
+output
 
 ```
 NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, response: 0x000000)
