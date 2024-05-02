@@ -15,7 +15,8 @@
 ```
 nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -m 1 -0 0 -1 0x100 -l 256
 ```
-output
+
+output result
 
 ```
 NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, response: 0x000000)
