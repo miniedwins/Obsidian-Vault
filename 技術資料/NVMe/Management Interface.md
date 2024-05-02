@@ -1,7 +1,6 @@
 # MI Commands
 
 // TODO : Capture In-Band Command Set Support (PAGE : 77)
-
 ## nvme-mi-recv
 
 ```
@@ -12,7 +11,6 @@
   [  --nmd0=<NUM>, -0 <NUM> ]           --- nvme management dword 0 value
   [  --nmd1=<NUM>, -1 <NUM> ]           --- nvme management dword 1 value  
 ```
-
 ## Read NVMe-MI Data Structure
 
 - Uses NVMe Management Dword : 0, 1
@@ -37,7 +35,6 @@ NVMe-MI Receive Command is Success and result: 0x00002000
 0000: 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
-
 ### Port Information (DTYP=0x01)
 
 ```
@@ -50,7 +47,6 @@ NVMe-MI Receive Command is Success and result: 0x00002000
 0000: 01 00 40 00 00 00 00 00 01 0f 03 04 04 00 00 00 "..@............."
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
-
 ### Controller List (DTYP=0x02)
 
 Refer Controller List Format from NVM Express Base Specification
@@ -73,7 +69,6 @@ NVMe-MI Receive Command is Success and result: 0x00000400
 0000: 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
-
 ### Controller Information (DTYP=0x03)
 
 ```
@@ -86,7 +81,6 @@ NVMe-MI Receive Command is Success and result: 0x00002000
 0000: 00 00 00 00 00 01 00 02 cd 1b 90 01 cd 1b 90 01 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
-
 ## Read VPD
 
 - Uses NVMe Management Dword : 0, 1
