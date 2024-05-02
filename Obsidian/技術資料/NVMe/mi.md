@@ -55,7 +55,7 @@ Refer Controller List Format from NVM Express Base Specification
 We get total numbers IDs and one CTRLID.
 
 ```
-$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x2000001 --nmd1=0x00 --data-len=32                        
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x2000001 --nmd1=0x00 --data-len=32
 NVMe-MI Receive Command is Success and result: 0x00000400 (status: 0x00, response: 0x000004)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
