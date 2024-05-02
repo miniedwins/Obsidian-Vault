@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/命令/pcie_command.md",
+                "file": "作業系統/Linux/命令/PCIe.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Linux/命令/pcie_command.md",
+                "file": "作業系統/Linux/命令/PCIe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Linux/命令/pcie_command.md",
+                "file": "作業系統/Linux/命令/PCIe.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/命令/pcie_command.md"
+                "file": "作業系統/Linux/命令/PCIe.md"
               }
             }
           },
@@ -170,7 +170,7 @@
   "active": "889dfbbaec3812cb",
   "lastOpenFiles": [
     "作業系統/Windows/未命名.md",
-    "作業系統/Linux/命令/pcie_command.md",
+    "作業系統/Linux/命令/PCIe.md",
     "作業系統/Linux/套件安裝/nvmecli.md",
     "作業系統/Linux/命令",
     "作業系統/Linux/套件安裝/函式庫/libnvme.md",
