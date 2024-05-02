@@ -10,21 +10,42 @@
   [  --nmd1=<NUM>, -1 <NUM> ]           --- nvme management dword 1 value  
 ```
 
+## Read NVMe-MI Data Structure
+
+- Uses NVMe Management Dword : 0, 1
+- Response Data : Data Structure Type (DTYP)
+- Data Structure Type (DTYP)
+  - 00 : NVM Subsystem Information
+  - 01 : Port Information
+  - 02 : Controller List
+  - 03 : Controller Information
+  - 04 : Optionally Supported Command List
+  - 05 : Management Endpoint Buffer Command Support List
+
+NVM Subsystem Information
+
+```
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x00 --nmd1=0x00 --data-len=64
+NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, response: 0x000020)
+       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+0000: 01 01 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+```
+
+
+
 ## Read VPD
 
 - Uses NVMe Management Dword : 0, 1
 - Response Data : VPD Elements
 - Data Length : 256 ~ 4096 Bytes
 
-```
-nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -nmimt=0x01 1 --nmd0=0x0 --nmd1= 0x100 --data-len=256
-```
-
 // TODO : Capature VPD Elements (PAGE: 128)
 
-output
-
 ```
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x05 -nmimt=0x01 1 --nmd0=0x0 --nmd1= 0x100 --data-len=256
 NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, response: 0x000000)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 01 00 00 00 01 0f 00 ef 01 0e 19 c8 50 68 69 73 "............Phis"
@@ -44,6 +65,7 @@ NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, respons
 00e0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff "................"
 00f0: ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff ff "................"
 ```
+
 ## Write VPD
 
 // TODO
@@ -55,11 +77,7 @@ NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, respons
 - Data Length: 8byes
 
 ```
-nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x01 -nmimt=0x01 --nmd0=0x00 --data-len=32
-```
-
-output
-```
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x01 -nmimt=0x01 --nmd0=0x00 --data-len=32
 NVMe-MI Receive Command is Success and result: 0x00000000 (status: 0x00, response: 0x000000)
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 38 ff 32 00 21 03 00 00 00 00 00 00 00 00 00 00 "8.2.!..........."
