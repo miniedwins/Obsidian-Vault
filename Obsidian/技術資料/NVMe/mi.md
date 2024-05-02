@@ -42,6 +42,23 @@ NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, respons
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
 
+### Controller List (DTYP=0x02)
+
+Refer Controller List Format from NVM Express Base Specification
+
+- Controller List Format
+  - 01:00 Number of Identifiers
+  - 03:02 Identifier 0
+  - (N*2+3):(N*2+2) Identifier N
+
+```
+$ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x00 -nmimt=0x01 --nmd0=0x2000001 --nmd1=0x00 --data-len=32                        
+NVMe-MI Receive Command is Success and result: 0x00000400 (status: 0x00, response: 0x000004)
+       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+0000: 01 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+```
+
 ### Controller Information (DTYP=0x03)
 
 ```
@@ -50,7 +67,6 @@ NVMe-MI Receive Command is Success and result: 0x00002000 (status: 0x00, respons
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 00 00 00 00 00 01 00 02 cd 1b 90 01 cd 1b 90 01 "................"
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-
 ```
 
 ## Read VPD
