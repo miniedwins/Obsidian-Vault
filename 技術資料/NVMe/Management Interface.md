@@ -126,9 +126,9 @@ NVMe-MI Receive Command is Success and result: 0x00000000
 
 ## NVM Subsystem Health Status Poll
 
-- Uses NVMe Management Dword: 1
-- Response Data: NVM Subsystem Health Data Structure (NSHDS)
-- Data Length: 8byes
+- Uses NVMe Management Dword : 1
+- Response Data : NVM Subsystem Health Data Structure (NSHDS)
+- Data Length : 8byes
 
 ```
 $ nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x01 -nmimt=0x01 --nmd0=0x00 --data-len=32
