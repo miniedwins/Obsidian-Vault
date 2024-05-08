@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/Management Interface.md",
+                "file": "技術資料/PCIe/System Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/Management Interface.md",
+                "file": "技術資料/PCIe/System Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/Management Interface.md",
+                "file": "技術資料/PCIe/System Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/Management Interface.md"
+                "file": "技術資料/PCIe/System Reset.md"
               }
             }
           },
@@ -169,8 +169,8 @@
   },
   "active": "889dfbbaec3812cb",
   "lastOpenFiles": [
-    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/Management Interface.md",
+    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/PCIe/System Reset.md",
     "閱讀筆記/股票作手回憶錄.md",
     "技術資料/NVMe/End-to-end Data Protection.md",
