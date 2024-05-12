@@ -27,7 +27,7 @@ $ bitbake obmc-phosphor-image
 編譯後的核心會放在下列路徑 
 
 ```shell
-openbmc/build/evb-ast2600/tmp/depoly/evb-ast2600/obmc-phosphor-image-evb-ast2600.static.mtd
+ls -l openbmc/build/evb-ast2600/tmp/depoly/evb-ast2600/obmc-phosphor-image-evb-ast2600.static.mtd
 ```
 
 使用 qemu-system-arm 執行
