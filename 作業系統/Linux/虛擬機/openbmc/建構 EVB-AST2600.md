@@ -23,3 +23,15 @@ $ source setup evb-ast2600
 ```
 $ bitbake obmc-phosphor-image
 ```
+
+編譯後的核心會放在下列路徑 
+
+```shell
+openbmc/build/evb-ast2600/tmp/depoly/evb-ast2600/obmc-phosphor-image-evb-ast2600.static.mtd
+```
+
+使用 qemu-system-arm 執行
+
+```
+$ qemu-system-arm -m 512 -M ast2600-evb -nographic -drive file=./obmc-phosphor-image-evb-ast2600.static.mtd,format=raw,if=mtd -net nic
+```
