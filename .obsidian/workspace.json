@@ -169,9 +169,9 @@
   },
   "active": "11fd5900b1b2b615",
   "lastOpenFiles": [
-    "作業系統/Linux/虛擬機/qemu/參數說明.md",
-    "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
     "作業系統/Linux/虛擬機/qemu/建構編譯環境.md",
+    "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
+    "作業系統/Linux/虛擬機/qemu/參數說明.md",
     "作業系統/Linux/虛擬機/openbmc/問題處理/登入帳號密碼.md",
     "程式設計/C 語言/建立靜態與共享函式庫.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
