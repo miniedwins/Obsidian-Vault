@@ -1,10 +1,10 @@
-安裝 nvmecli 編譯所需套件
+安裝 nvmecli 編譯所需相依套件
 
 ```shell
 $ apt install pkg-config uuid-dev libhugetlbfs-dev libssl-dev libdus-dev
 ```
 
-安裝 nvmecli 需要的函示庫 (需要手動安裝)
+以下相依套件需要手動安裝 
 * [[json-c]]
 * [[libnvme]]
 
