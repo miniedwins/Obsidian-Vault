@@ -4,9 +4,9 @@
 $ apt install pkg-config uuid-dev libhugetlbfs-dev libssl-dev libdus-dev
 ```
 
-以下函式庫需要手動安裝 : 
-* [libnvme](https://github.com/linux-nvme/libnvme)
-* [json-c](https://github.com/json-c/json-c)
+安裝 nvmecli 需要的函示庫 (需要手動安裝)
+* [[]]
+* 
 
 安裝 nvme-cli 工具
 
