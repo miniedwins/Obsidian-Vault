@@ -5,8 +5,8 @@ $ apt install pkg-config uuid-dev libhugetlbfs-dev libssl-dev libdus-dev
 ```
 
 安裝 nvmecli 需要的函示庫 (需要手動安裝)
-* [[]]
-* 
+* [[json-c]]
+* [[libnvme]]
 
 安裝 nvme-cli 工具
 

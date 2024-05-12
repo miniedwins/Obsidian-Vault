@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "51da8d2fa67126bc",
+        "id": "03200505aba7537e",
         "type": "tabs",
         "children": [
           {
-            "id": "889dfbbaec3812cb",
+            "id": "6a56955a7535941d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "作業系統/Linux/package/nvmecli.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Linux/package/nvmecli.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Linux/package/nvmecli.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "作業系統/Linux/package/nvmecli.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,20 +159,27 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "6a56955a7535941d",
   "lastOpenFiles": [
-    "作業系統/Linux/package/函式庫/libnvme.md",
-    "作業系統/Linux/package/函式庫/json-c.md",
     "作業系統/Linux/package/nvmecli.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
+    "程式設計/Makefile/make.md",
+    "程式設計/Shell/取得命令行輸入的參數.md",
+    "程式設計/Python/檔案操作/建立多個目錄結構.md",
+    "技術資料/nvme/Management Interface.md",
+    "技術資料/pcie/System Reset.md",
+    "作業系統/Linux/qemu/原始碼編譯.md",
+    "作業系統/Windows/未命名.md",
     "作業系統/Linux/command/lspci.md",
-    "作業系統/Linux/package/套件",
     "作業系統/Linux/command/i2c-tools.md",
+    "作業系統/Linux/package/函式庫/json-c.md",
+    "作業系統/Linux/package/函式庫/libnvme.md",
+    "作業系統/Linux/package/套件",
     "作業系統/Linux/openbmc/編譯所需套件.md",
     "作業系統/Linux/openbmc/問題處理",
     "作業系統/Linux/openbmc/建構 EVB-AST2600.md",
-    "技術資料/NVMe/End-to-end Data Protection.md",
-    "作業系統/Linux/qemu/編譯 QEMU 原始碼.md",
-    "技術資料/NVMe/Host Memory Buffer (HMB).md",
+    "技術資料/nvme/End-to-end Data Protection.md",
+    "技術資料/nvme/Host Memory Buffer (HMB).md",
     "作業系統/Linux/kernel/手動安裝 linux 核心.md",
     "作業系統/Linux/openbmc",
     "作業系統/Linux/kernel/如何獨立編譯核心模組.md",
@@ -191,13 +190,7 @@
     "程式設計/C 語言/常見問題處理/無法引用 O_DIRECT.md",
     "投資理財/股利計算公式.md",
     "投資理財/交易日誌/模板.md",
-    "投資理財/融券買進賣出計算費用.md",
-    "技術資料/SMBus",
-    "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
-    "技術資料/NVMe/Reset/Controller Level Reset.md",
-    "作業系統/Linux/kernel/更新核心版本.md",
-    "技術資料/PCIe/System Reset.md",
-    "技術資料/NVMe/Management Interface.md",
+    "技術資料/smbus",
     "作業系統/Linux/command",
     "程式設計/Makefile",
     "作業系統/Windows",
@@ -206,11 +199,11 @@
     "投資理財/技術分析/attachments/區間震盪 2.png",
     "投資理財/技術分析/attachments/區間震盪 1.png",
     "投資理財/技術分析/attachments",
-    "技術資料/NVMe/attachments/nvme_read_pi_md_eq8_pract_1.png",
-    "技術資料/NVMe/attachments/nvme_write_pi_md_eq8_pract_1.png",
-    "技術資料/NVMe/attachments/nvm_write_prinfo_field.png",
-    "技術資料/NVMe/attachments/nvme_subsystem_reset_nssrs.png",
-    "技術資料/NVMe/attachments/nvme_subsystem_reset_nssro.png",
+    "技術資料/nvme/attachments/nvme_read_pi_md_eq8_pract_1.png",
+    "技術資料/nvme/attachments/nvme_write_pi_md_eq8_pract_1.png",
+    "技術資料/nvme/attachments/nvm_write_prinfo_field.png",
+    "技術資料/nvme/attachments/nvme_subsystem_reset_nssrs.png",
+    "技術資料/nvme/attachments/nvme_subsystem_reset_nssro.png",
     "技術資料/NVMe/attachments/nvm_write_cdw14.png",
     "程式設計/Git/images/github_keys_setting.png",
     "工作/NVMe/attachments/Pasted image 20240324162220.png",
