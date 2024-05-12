@@ -49,7 +49,7 @@ NVMe-MI Receive Command is Success and result: 0x00002000
 ```
 ### Controller List (DTYP=0x02)
 
-Refer Controller List Format from NVM Express Base Specification
+Refer to Controller List Format from NVM Express Base Specification
 
 - Controller List Format
   - 01:00 Number of Identifiers
