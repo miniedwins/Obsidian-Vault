@@ -1,7 +1,7 @@
-首先安裝編譯所需要的套件。
+首先安裝編譯所需要的套件
 
 ```shell
-$ sudo apt-get install meson libglib2.0-dev python3-venv
+$ sudo apt-get install gcc make meson libglib2.0-dev python3-venv
 ```
 
 下載 QEMU 原始碼
