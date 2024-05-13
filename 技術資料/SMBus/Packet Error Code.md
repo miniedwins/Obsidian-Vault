@@ -6,6 +6,13 @@ Packet Error Code (PEC) 是用來做檢驗傳遞的封包是否有錯誤，針�
   - `Master` 控制端在傳送 PEC 之前，需要確認 `Slave` 目標端是否有支援 PEC。
   - `Slave` 目標端在收到資料後，必須要檢查是否需要回傳 with PEC 或是 Without PEC 給控制端。
 
+- 計算 PEC 不包含以下位元 : 
+  - ACK
+  - NACK
+  - START
+  - STOP
+  - REPEATED START
+
 > 以下圖示簡易說明 PEC 所傳遞的位置。
 
 1. `Master` 傳送資料給 `Slave`，資料傳輸完畢後加入 `PEC` 校驗碼
@@ -15,10 +22,3 @@ Packet Error Code (PEC) 是用來做檢驗傳遞的封包是否有錯誤，針�
 2. `Master` 收到來自 `Slave` 回傳的資料，資料傳輸完畢後加入 `PEC` 校驗碼
 
 // TODO : Capture Receive byte protocol with PEC
-
-計算 PEC 不包含以下位元 : 
-- ACK
-- NACK
-- START
-- STOP
-- REPEATED START
