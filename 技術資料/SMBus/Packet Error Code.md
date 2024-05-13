@@ -2,6 +2,10 @@ Packet Error Code (PEC) 是用來做檢驗傳遞的封包是否有錯誤，針�
 
 當收到的資料的 `Master` 或是 `Slave` 可以透過校驗碼確認資料是否有錯誤，若是傳遞的資料有錯誤則需要重新再發送。
 
+- 傳遞 PEC 前確認事項 : 
+  - `Master` 控制端在傳送 PEC 之前，需要確認 `Slave` 目標端是否有支援 PEC。
+  - `Slave` 目標端在收到資料後，必須要檢查是否需要回傳 with PEC 或是 Without PEC 給控制端。
+
 > 以下圖示簡易說明 PEC 所傳遞的位置。
 
 1. `Master` 傳送資料給 `Slave`，資料傳輸完畢後加入 `PEC` 校驗碼
