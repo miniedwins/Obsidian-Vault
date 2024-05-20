@@ -24,7 +24,9 @@ firmware updates, may cause a device to require a reassignment of its EID
 
 - Bridge
   - Description 
-    - Bridge EIDs of pool 是由 Bus Owner or top buse owner 給予的
+    - Bridge EIDs of pool
+      - Bus Owner or top buse owner assigne to bridge (Using Allocate Endpoint IDs Commad)
+      - Bridge has only one EID Pool
   - Question:
     - Bridge 只接受到 EID Pool Allocation, 但是並沒有說是來自 `static pool of EIDS`
 
