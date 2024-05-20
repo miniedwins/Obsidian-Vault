@@ -36,5 +36,6 @@ firmware updates, may cause a device to require a reassignment of its EID
 - Question:    
     - Bridge 只接受到 EID Pool Allocation, 但是並沒有說是來自 `static pool of EIDS`
     - Bridge 如何知道只接受 EID Pool 所設定的 ID
+    - Bridge 拿到的 EID Pool 範圍 ? 
 
 
