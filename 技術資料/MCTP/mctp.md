@@ -20,3 +20,9 @@ to it as part of the system design.
 Devices should retain their EID assignments for as long as they are in their normal operating state.
 Asynchronous conditions, such as device errors, unexpected power loss, power state changes, resets,
 firmware updates, may cause a device to require a reassignment of its EID
+
+Command Implement
+1. mctp packet filed
+2. nvme-mi message
+3. how to send nvme-mi by SMBus
+
