@@ -21,8 +21,8 @@ Devices should retain their EID assignments for as long as they are in their nor
 Asynchronous conditions, such as device errors, unexpected power loss, power state changes, resets,
 firmware updates, may cause a device to require a reassignment of its EID
 
-Command Implement
-1. mctp packet filed
-2. nvme-mi message
-3. how to send nvme-mi by SMBus
+
+BRIDGE Question:
+- bridge 只接受到 EID Pool Allocation, 但是並沒有說是來自 `static pool of EIDS`
+
 
