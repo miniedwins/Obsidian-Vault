@@ -16,3 +16,7 @@ assignment will be the topmost bus owner.
 If the device functions as an MCTP bridge, it will require `a static pool of EIDs` to be assigned
 to it as part of the system design.
 
+## Endpoint ID retention
+Devices should retain their EID assignments for as long as they are in their normal operating state.
+Asynchronous conditions, such as device errors, unexpected power loss, power state changes, resets,
+firmware updates, may cause a device to require a reassignment of its EID
