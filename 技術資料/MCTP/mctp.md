@@ -22,8 +22,10 @@ Asynchronous conditions, such as device errors, unexpected power loss, power sta
 firmware updates, may cause a device to require a reassignment of its EID
 
 
-Question:
-- Bridge EIDs of pool 是由 Bus Owner or top buse owner 給予的 ?
-- Bridge 只接受到 EID Pool Allocation, 但是並沒有說是來自 `static pool of EIDS`
+- Bridge
+  - Description 
+    - Bridge EIDs of pool 是由 Bus Owner or top buse owner 給予的
+  - Question:
+    - Bridge 只接受到 EID Pool Allocation, 但是並沒有說是來自 `static pool of EIDS`
 
 
