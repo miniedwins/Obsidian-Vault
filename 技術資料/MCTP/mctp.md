@@ -22,7 +22,9 @@ Asynchronous conditions, such as device errors, unexpected power loss, power sta
 firmware updates, may cause a device to require a reassignment of its EID
 
 - Endpoint
+  - 配置的 EID 來自 `Bus owner` 或是 `Top Bus`
   - 取得 EID 配置後, 會儲存 Bus Owner 資訊 (目前得知 : Physical Address)
+  - 不需要知道其他 `Endpoint Address` 位址, 只要知道 `Bus Owner Address`
 
 - Bridge      
     - Bridge would announce the need for EID assignment for the interface
