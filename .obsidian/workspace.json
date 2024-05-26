@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c8a32cb63e6a065f",
+        "id": "d21e66dd70e9a4a4",
         "type": "tabs",
         "children": [
           {
-            "id": "11fd5900b1b2b615",
+            "id": "e7dfc1ae4a46837f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "技術資料/nvme/Host Memory Buffer (HMB).md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "技術資料/nvme/Host Memory Buffer (HMB).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md",
+                "file": "技術資料/nvme/Host Memory Buffer (HMB).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Shell/取得命令行輸入的參數.md"
+                "file": "技術資料/nvme/Host Memory Buffer (HMB).md"
               }
             }
           },
@@ -167,8 +167,22 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "e7dfc1ae4a46837f",
   "lastOpenFiles": [
+    "技術資料/nvme/Management Interface.md",
+    "技術資料/pcie/System Reset.md",
+    "技術資料/nvme/Other/IEEE EUI, OUI, and CID.md",
+    "技術資料/MCTP/mctp.md",
+    "Obsidian/測試.md",
+    "Obsidian/點選文字連結到 URL.md",
+    "Obsidian/如何使用註腳格式.md",
+    "Obsidian/checkbox.md",
+    "技術資料/nvme/attachments/nvme_hmb_cdw11.png",
+    "技術資料/nvme/attachments/nvme_cc_memory_page_size.png",
+    "技術資料/nvme/attachments/nvm_subsystem_reset_nssrc.png",
+    "技術資料/nvme/End-to-end Data Protection.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Meson",
     "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
     "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
@@ -176,9 +190,7 @@
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
     "作業系統/Linux/核心/更新 linux 核心版本.md",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
-    "技術資料/MCTP/mctp.md",
     "技術資料/MCTP",
-    "技術資料/pcie/System Reset.md",
     "技術資料/smbus/Packet Error Code.md",
     "作業系統/Linux/虛擬機/qemu/qemu 參數說明.md",
     "程式設計/C 語言/建立靜態與共享函式庫.md",
@@ -190,21 +202,12 @@
     "作業系統/Linux/虛擬機/docker",
     "作業系統/Linux/虛擬機/qemu",
     "作業系統/Linux/openbmc/編譯所需套件.md",
-    "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
-    "程式設計/Makefile/make.md",
-    "程式設計/Shell/取得命令行輸入的參數.md",
-    "程式設計/Python/檔案操作/建立多個目錄結構.md",
-    "技術資料/nvme/Management Interface.md",
-    "作業系統/Windows/未命名.md",
     "作業系統/Linux/套件/工具",
     "作業系統/Linux/虛擬機/openbmc/問題處理",
-    "技術資料/nvme/End-to-end Data Protection.md",
-    "技術資料/nvme/Host Memory Buffer (HMB).md",
     "作業系統/Linux/虛擬機/openbmc",
     "技術資料/smbus",
     "作業系統/Linux/命令",
     "程式設計/Makefile",
-    "作業系統/Windows",
     "投資理財/技術分析/attachments/區間震盪 2.png",
     "投資理財/技術分析/attachments/區間震盪 1.png",
     "技術資料/nvme/attachments/nvme_read_pi_md_eq8_pract_1.png",
@@ -212,9 +215,6 @@
     "技術資料/nvme/attachments/nvm_write_prinfo_field.png",
     "技術資料/nvme/attachments/nvme_subsystem_reset_nssrs.png",
     "技術資料/nvme/attachments/nvme_subsystem_reset_nssro.png",
-    "技術資料/NVMe/attachments/nvm_write_cdw14.png",
-    "程式設計/Git/images/github_keys_setting.png",
-    "工作/NVMe/attachments/Pasted image 20240324162220.png",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
