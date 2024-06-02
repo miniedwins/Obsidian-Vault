@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/nvme/Host Memory Buffer (HMB).md",
+                "file": "投資理財/交易的成功心態.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/nvme/Host Memory Buffer (HMB).md",
+                "file": "投資理財/交易的成功心態.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/nvme/Host Memory Buffer (HMB).md",
+                "file": "投資理財/交易的成功心態.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/nvme/Host Memory Buffer (HMB).md"
+                "file": "投資理財/交易的成功心態.md"
               }
             }
           },
@@ -169,6 +169,12 @@
   },
   "active": "e7dfc1ae4a46837f",
   "lastOpenFiles": [
+    "閱讀筆記/股票作手回憶錄.md",
+    "投資理財/融券買進賣出計算費用.md",
+    "投資理財/金融股選股基本指標.md",
+    "投資理財/股利計算公式.md",
+    "投資理財/交易的成功心態.md",
+    "技術資料/nvme/Host Memory Buffer (HMB).md",
     "技術資料/nvme/Management Interface.md",
     "技術資料/pcie/System Reset.md",
     "技術資料/nvme/Other/IEEE EUI, OUI, and CID.md",
@@ -194,14 +200,8 @@
     "技術資料/smbus/Packet Error Code.md",
     "作業系統/Linux/虛擬機/qemu/qemu 參數說明.md",
     "程式設計/C 語言/建立靜態與共享函式庫.md",
-    "作業系統/Linux/套件/工具/nvmecli.md",
-    "作業系統/Linux/套件/函示庫/libnvme.md",
-    "作業系統/Linux/套件/函示庫/json-c.md",
-    "作業系統/Linux/命令/lspci.md",
-    "作業系統/Linux/命令/i2c-tools.md",
     "作業系統/Linux/虛擬機/docker",
     "作業系統/Linux/虛擬機/qemu",
-    "作業系統/Linux/openbmc/編譯所需套件.md",
     "作業系統/Linux/套件/工具",
     "作業系統/Linux/虛擬機/openbmc/問題處理",
     "作業系統/Linux/虛擬機/openbmc",
