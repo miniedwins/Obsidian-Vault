@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "投資理財/交易的成功心態.md",
+                "file": "閱讀筆記/股票作手回憶錄.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "投資理財/交易的成功心態.md",
+                "file": "閱讀筆記/股票作手回憶錄.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "投資理財/交易的成功心態.md",
+                "file": "閱讀筆記/股票作手回憶錄.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "投資理財/交易的成功心態.md"
+                "file": "閱讀筆記/股票作手回憶錄.md"
               }
             }
           },
@@ -169,11 +169,11 @@
   },
   "active": "e7dfc1ae4a46837f",
   "lastOpenFiles": [
+    "投資理財/交易的成功心態.md",
     "閱讀筆記/股票作手回憶錄.md",
     "投資理財/融券買進賣出計算費用.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
-    "投資理財/交易的成功心態.md",
     "技術資料/nvme/Host Memory Buffer (HMB).md",
     "技術資料/nvme/Management Interface.md",
     "技術資料/pcie/System Reset.md",
