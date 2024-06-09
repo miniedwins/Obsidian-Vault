@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "技術資料/nvme/Management Interface.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "15314b904b037be6",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.2"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -93,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "技術資料/nvme/Management Interface.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "技術資料/nvme/Management Interface.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md"
+                "file": "技術資料/nvme/Management Interface.md"
               }
             }
           },
@@ -167,14 +178,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e7dfc1ae4a46837f",
+  "active": "15314b904b037be6",
   "lastOpenFiles": [
-    "投資理財/交易的成功心態.md",
+    "技術資料/nvme/Host Memory Buffer (HMB).md",
+    "技術資料/nvme/End-to-end Data Protection.md",
     "閱讀筆記/股票作手回憶錄.md",
+    "投資理財/交易的成功心態.md",
     "投資理財/融券買進賣出計算費用.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
-    "技術資料/nvme/Host Memory Buffer (HMB).md",
     "技術資料/nvme/Management Interface.md",
     "技術資料/pcie/System Reset.md",
     "技術資料/nvme/Other/IEEE EUI, OUI, and CID.md",
@@ -186,7 +198,6 @@
     "技術資料/nvme/attachments/nvme_hmb_cdw11.png",
     "技術資料/nvme/attachments/nvme_cc_memory_page_size.png",
     "技術資料/nvme/attachments/nvm_subsystem_reset_nssrc.png",
-    "技術資料/nvme/End-to-end Data Protection.md",
     "程式設計/Git/同步原作專案進度.md",
     "程式設計/Shell/取得命令行輸入的參數.md",
     "程式設計/Meson",
