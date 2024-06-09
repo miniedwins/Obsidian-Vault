@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/pcie/System Reset.md",
+                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/pcie/System Reset.md",
+                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/pcie/System Reset.md",
+                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/pcie/System Reset.md"
+                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md"
               }
             }
           },
@@ -169,13 +169,14 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
-    "技術資料/smbus/Packet Error Code.md",
-    "技術資料/pcie/System Reset.md",
-    "技術資料/nvme/attachments/nvme_cc_memory_page_size.png",
-    "技術資料/nvme/End-to-end Data Protection.md",
-    "技術資料/nvme/Management Interface.md",
-    "技術資料/nvme/Reset/NVM Subsystem Reset.md",
     "技術資料/nvme/Reset/Controller Level Reset.md",
+    "技術資料/nvme/Management Interface.md",
+    "技術資料/nvme/Host Memory Buffer (HMB).md",
+    "技術資料/nvme/End-to-end Data Protection.md",
+    "技術資料/pcie/System Reset.md",
+    "技術資料/smbus/Packet Error Code.md",
+    "技術資料/nvme/attachments/nvme_cc_memory_page_size.png",
+    "技術資料/nvme/Reset/NVM Subsystem Reset.md",
     "技術資料/nvme/attachments/nvme_data_protection/medata_as_separate.png",
     "技術資料/nvme/attachments/nvme_data_protection/metadata_contiguous.png",
     "技術資料/nvme/attachments/nvme_data_protection/nvm_write_prinfo_field.png",
@@ -186,7 +187,6 @@
     "技術資料/nvme/attachments/nvme_subsystem_reset/未命名",
     "技術資料/nvme/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrc.png",
     "技術資料/nvme/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
-    "技術資料/nvme/Host Memory Buffer (HMB).md",
     "技術資料/nvme/attachments/nvme_subsystem_reset",
     "技術資料/nvme/attachments/nvme_host_mem_buffer/nvme_hmb_attributes_data_structure.png",
     "技術資料/nvme/attachments/nvme_host_mem_buffer",
