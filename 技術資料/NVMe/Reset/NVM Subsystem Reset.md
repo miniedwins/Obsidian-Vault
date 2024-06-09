@@ -16,7 +16,7 @@
  - 若是寫入其它值則不會有任何影響。
  - 當讀取 `NSSR.NSSRC`，該回傳值則需為 `0`。
  
-![[nvm_subsystem_reset_nssrc.png]]
+![[nvme_subsystem_reset_nssrc.png]]
 
 ## 主機端如何知道發生 NVM Subsystem Reset
 
