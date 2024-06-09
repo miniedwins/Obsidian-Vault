@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md",
+                "file": "技術資料/pcie/System Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 402.5
+    "width": 284.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md",
+                "file": "技術資料/pcie/System Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md",
+                "file": "技術資料/pcie/System Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/nvme/Reset/NVM Subsystem Reset.md"
+                "file": "技術資料/pcie/System Reset.md"
               }
             }
           },
@@ -169,6 +169,11 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
+    "程式設計/Python/檔案操作/建立多個目錄結構.md",
+    "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
+    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
+    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
+    "技術資料/nvme/Reset/NVM Subsystem Reset.md",
     "技術資料/nvme/Reset/Controller Level Reset.md",
     "技術資料/nvme/Management Interface.md",
     "技術資料/nvme/Host Memory Buffer (HMB).md",
@@ -176,7 +181,6 @@
     "技術資料/pcie/System Reset.md",
     "技術資料/smbus/Packet Error Code.md",
     "技術資料/nvme/attachments/nvme_cc_memory_page_size.png",
-    "技術資料/nvme/Reset/NVM Subsystem Reset.md",
     "技術資料/nvme/attachments/nvme_data_protection/medata_as_separate.png",
     "技術資料/nvme/attachments/nvme_data_protection/metadata_contiguous.png",
     "技術資料/nvme/attachments/nvme_data_protection/nvm_write_prinfo_field.png",
@@ -206,9 +210,6 @@
     "程式設計/Meson",
     "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
     "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
-    "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
-    "作業系統/Linux/核心/手動安裝 linux 核心.md",
-    "作業系統/Linux/核心/更新 linux 核心版本.md",
     "技術資料/MCTP",
     "作業系統/Linux/虛擬機/docker",
     "作業系統/Linux/虛擬機/qemu",

@@ -1,13 +1,12 @@
-# Fundamental Reset
+# Conventional Reset
 
-一般發生在整個系統重新啟動，但也可以針對單一個裝置執行。 
+一般發生在整個系統重新啟動，主要由硬體控制並且重新初始化狀態，所有的 `hardware logic`、`port status` 以及 `configuration registers`。這裡要注意的是，除了暫存器 `sticky bits` 無法透過 `Fundamental Reset` 清除，若是要將 `sticky bits`清除，則需要完整的將電源 (main power) 以及輔助電源 (Vaux) 移除。
 
-主要由硬體控制並且重設整個裝置回到所有的初始狀態，包含以下 :
-    - hardware logic
-    - port status
-    - configuration registers
+PCI Express Conventional Reset  分為兩種方式 : 
+- `Fundamental Reset` 
+- `Non-Fundamental Reset`
 
-注意 : 除了暫存器 `sticky bits` 無法透過 `Fundamental Reset` 清除，若是要將 `sticky bits`清除，則需要完整的將電源 (main power) 以及輔助電源 (Vaux) 移除
+## Fundamental Reset
 
   - Cold Reset
 	  - 主電源 (main power) 開啟或是重啟電源，都會導致 `Cold Reset`。
@@ -17,8 +16,4 @@
 	  - 如何產生 `Warm Reset`。
 	  - PCIe 裝置 如何自行觸發 `Warm Reset`。
 
-## Cold Reset
-
-## Hot Reset
-
-## FLR Reset
+## Non-Fundamental Reset
