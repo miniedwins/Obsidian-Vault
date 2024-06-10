@@ -21,7 +21,6 @@ Conventional Reset 主要分為下列幾種，如下所示 :
 ### Cold Reset
 
 主電源 (main power) 開啟或是重啟電源，都會導致 Cold Reset。
-
 ### Warm Reset
 
 不用移除裝置或是主電源，只要重新對裝置供電，稱之為 Warm Reset。
@@ -33,5 +32,6 @@ PCIe Spec 沒有規範 Warm Reset 執行方法 :
 
 ### Hot Reset
 
-這是一種 `In-Band` 機制，軟體設定讓鏈結電路進入到 `Electrical Idle` 並且 Disabling Link，造成下游 Downstream 裝置觸發 `Hot Reset`。
+這是一種帶內訊號 ( In-Band ) 機制，橋接器 (Bridge) 又或者是軟體可以設定它們的 `Configuration Space`，重置已配置的鏈路和關聯的下游 (Downsteam) 設備。
+
 ### Function Level Reset（FLR）
