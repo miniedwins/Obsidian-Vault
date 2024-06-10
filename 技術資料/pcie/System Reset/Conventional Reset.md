@@ -33,5 +33,5 @@ PCIe Spec 沒有規範 Warm Reset 執行方法 :
 
 ### Hot Reset
 
-這是一種 `In-Band` 機制，軟體讓鏈結電路進入到 `Electrical Idle` 並且 Disabling Link，造成下游 Downstream 裝置觸發 `Hot Reset`。
+這是一種 `In-Band` 機制，軟體設定讓鏈結電路進入到 `Electrical Idle` 並且 Disabling Link，造成下游 Downstream 裝置觸發 `Hot Reset`。
 ### Function Level Reset（FLR）
