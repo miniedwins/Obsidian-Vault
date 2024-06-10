@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "技術資料/pcie/System Reset/Conventional Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "技術資料/pcie/System Reset/Conventional Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md",
+                "file": "技術資料/pcie/System Reset/Conventional Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "閱讀筆記/股票作手回憶錄.md"
+                "file": "技術資料/pcie/System Reset/Conventional Reset.md"
               }
             }
           },
@@ -169,6 +169,7 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
+    "閱讀筆記/股票作手回憶錄.md",
     "技術資料/pcie/System Reset/如何觸發 Hot Reset 方法.md",
     "技術資料/pcie/System Reset/Conventional Reset.md",
     "技術資料/pcie/System Reset",
@@ -196,7 +197,6 @@
     "技術資料/nvme/attachments/nvme_subsystem_reset",
     "技術資料/nvme/attachments/nvme_host_mem_buffer/nvme_hmb_attributes_data_structure.png",
     "技術資料/nvme/attachments/nvme_host_mem_buffer",
-    "閱讀筆記/股票作手回憶錄.md",
     "投資理財/交易的成功心態.md",
     "投資理財/融券買進賣出計算費用.md",
     "投資理財/金融股選股基本指標.md",
