@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/pcie/System Reset/Conventional Reset.md",
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/pcie/System Reset/Conventional Reset.md",
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/pcie/System Reset/Conventional Reset.md",
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/pcie/System Reset/Conventional Reset.md"
+                "file": "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md"
               }
             }
           },
@@ -169,39 +169,39 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
-    "閱讀筆記/股票作手回憶錄.md",
-    "技術資料/pcie/System Reset/如何觸發 Hot Reset 方法.md",
-    "技術資料/pcie/System Reset/Conventional Reset.md",
-    "技術資料/pcie/System Reset",
-    "技術資料/nvme/Management Interface.md",
-    "技術資料/nvme/Host Memory Buffer (HMB).md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
+    "技術資料/PCIe/System Reset/Conventional Reset.md",
+    "閱讀筆記/股票作手回憶錄.md",
+    "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
+    "技術資料/PCIe/System Reset",
+    "技術資料/NVMe/Management Interface.md",
+    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "程式設計/Python/檔案操作/獲取目錄內所有的檔案.md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "技術資料/nvme/Reset/NVM Subsystem Reset.md",
-    "技術資料/nvme/Reset/Controller Level Reset.md",
-    "技術資料/nvme/End-to-end Data Protection.md",
-    "技術資料/smbus/Packet Error Code.md",
-    "技術資料/nvme/attachments/nvme_cc_memory_page_size.png",
-    "技術資料/nvme/attachments/nvme_data_protection/medata_as_separate.png",
-    "技術資料/nvme/attachments/nvme_data_protection/metadata_contiguous.png",
-    "技術資料/nvme/attachments/nvme_data_protection/nvm_write_prinfo_field.png",
-    "技術資料/nvme/attachments/nvme_host_mem_buffer/nvme_identify_ctrl_hmpre.png",
-    "技術資料/nvme/attachments/nvme_data_protection/nvme_read_pi_md_eq8_pract_1.png",
-    "技術資料/nvme/attachments/nvme_data_protection/nvme_write_pi_md_eq8_pract_1.png",
-    "技術資料/nvme/attachments/nvme_data_protection",
+    "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
+    "技術資料/NVMe/Reset/Controller Level Reset.md",
+    "技術資料/NVMe/End-to-end Data Protection.md",
+    "技術資料/SMBus/Packet Error Code.md",
+    "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/metadata_contiguous.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/nvm_write_prinfo_field.png",
+    "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_identify_ctrl_hmpre.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/nvme_read_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/nvme_write_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/attachments/nvme_data_protection",
     "技術資料/nvme/attachments/nvme_subsystem_reset/未命名",
-    "技術資料/nvme/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrc.png",
-    "技術資料/nvme/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
-    "技術資料/nvme/attachments/nvme_subsystem_reset",
-    "技術資料/nvme/attachments/nvme_host_mem_buffer/nvme_hmb_attributes_data_structure.png",
-    "技術資料/nvme/attachments/nvme_host_mem_buffer",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrc.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset",
+    "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_hmb_attributes_data_structure.png",
+    "技術資料/NVMe/attachments/nvme_host_mem_buffer",
     "投資理財/交易的成功心態.md",
     "投資理財/融券買進賣出計算費用.md",
     "投資理財/金融股選股基本指標.md",
     "投資理財/股利計算公式.md",
-    "技術資料/nvme/Other/IEEE EUI, OUI, and CID.md",
+    "技術資料/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "技術資料/MCTP/mctp.md",
     "Obsidian/測試.md",
     "Obsidian/點選文字連結到 URL.md",
