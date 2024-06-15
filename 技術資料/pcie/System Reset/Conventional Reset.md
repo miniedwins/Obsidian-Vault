@@ -16,7 +16,7 @@ Conventional Reset 主要分為下列幾種，如下所示 :
 
 當訊號 `PERST#` 傳遞給 `Component or Adapter Card`，就會使用訊號作為 `Fundamental Reset`。若是不支援 `PERST#` 訊號，當主電源開啟後，PCIe 裝置需要自動進行 `Fundamental Reset` 或是偵測到電壓後也會進行 Reset（當裝置發現供電超過其標準電壓時，也必須要觸發 Reset）
 
-> 注意 : Conventional Reset (cold, warm, or hot) 都必須要回到初始狀態，除了暫存器 `sticky bits`。
+> 注意 : Conventional Reset ( cold, warm, or hot ) 都必須要回到初始狀態，除了暫存器 `sticky bits`。
 
 ## Fundamental Reset
 

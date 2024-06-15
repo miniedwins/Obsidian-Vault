@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
+                "file": "技術資料/PCIe/System Reset/Conventional Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
+                "file": "技術資料/PCIe/System Reset/Conventional Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
+                "file": "技術資料/PCIe/System Reset/Conventional Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md"
+                "file": "技術資料/PCIe/System Reset/Conventional Reset.md"
               }
             }
           },
@@ -169,6 +169,8 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
+    "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
+    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
@@ -179,10 +181,8 @@
     "閱讀筆記/股票作手回憶錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
     "技術資料/PCIe/System Reset/Conventional Reset.md",
-    "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
     "技術資料/PCIe/System Reset",
     "技術資料/NVMe/Management Interface.md",
-    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
