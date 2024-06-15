@@ -23,6 +23,15 @@ Conventional Reset 主要分為下列幾種，如下所示 :
 ### Cold Reset
 
 主電源 ( Main Power ) 開啟或是重啟電源 ( Power Cycle )，都會導致 Cold Reset。
+
+例如 : 從開啟電源到穩定，IO Controller Hub (ICH) 晶片可能會產生 PERST#，
+
+A central resource device such as a chipset in the PCI Express system provides
+this reset. For example, the IO Controller Hub (ICH) chip in Figure 18‐1 on page
+836 may generate PERST# based on the status of the system power supply
+‘POWERGOOD’ signal, since this indicates that the main power is turned on
+and stable. If power is cycled off, POWERGOOD toggles and causes PERST# to
+assert and deassert., resulting in a Cold Reset.
 ### Warm Reset
 
 不用移除裝置或是主電源 ( 保持電源不變 )，例如 : 改變系統的電源管理狀態，可能會觸發 Warm Reset。 
