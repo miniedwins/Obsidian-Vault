@@ -22,6 +22,6 @@ Switch 接受到來自上游埠 ( Upstream Port ) hot reset，它會廣播給下
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240616162800.png)
 
-當上游阜收到 `TS1s with the Disabled bit set`，Physical Layer signals LinkUp=0 (false)，以及所有的 Lanes 會處於在 `Electrical Idle`，在經過 2ms 時間後，上游阜會回到 `Detect` 狀態，而下游阜會保持在 `Disable LTSSM` 狀態，直到退出這個狀態 ( 例如 : Clearing the Link Disable bit )。因此連結將保持停用 ( Disabled ) 狀態，在此之前都不會嘗試鏈路訓練 ( Linking Training )。
+當上游阜收到 `TS1s with the Disabled bit set`，Physical Layer signals LinkUp=0 (false)，以及所有的 Lanes 會處於在 `Electrical Idle`，在經過 2ms 時間後，上游阜會回到 `Detect` 狀態，而下游阜會保持在 `Disable LTSSM` 狀態，直到退出這個狀態 ( 例如 : Clearing the Link Disable bit )。因此下游阜連結將會一直保持停用 ( Disabled ) 狀態，並且在此之前都不會嘗試鏈路訓練 ( Linking Training )。
 
 # Function Level Reset（FLR）
