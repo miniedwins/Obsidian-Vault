@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Conventional Reset.md",
+                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Conventional Reset.md",
+                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Conventional Reset.md",
+                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Conventional Reset.md"
+                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md"
               }
             }
           },
@@ -169,12 +169,15 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
+    "技術資料/NVMe/End-to-end Data Protection.md",
+    "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
+    "技術資料/PCIe/System Reset/Fundamental Reset.md",
+    "技術資料/PCIe/System Reset/Conventional Reset.md",
+    "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
     "程式設計/Python/視窗操作",
     "程式設計/Python/視窗操作/PyAutoGUI",
     "程式設計/Python/視窗操作/PyAutoit",
-    "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
-    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
     "作業系統/Linux/命令/lspci.md",
@@ -183,7 +186,6 @@
     "投資理財/交易的成功心態.md",
     "閱讀筆記/股票作手回憶錄.md",
     "程式設計/Python/檔案操作/建立多個目錄結構.md",
-    "技術資料/PCIe/System Reset/Conventional Reset.md",
     "技術資料/PCIe/System Reset",
     "技術資料/NVMe/Management Interface.md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
@@ -211,10 +213,8 @@
     "Obsidian/測試.md",
     "Obsidian/點選文字連結到 URL.md",
     "Obsidian/如何使用註腳格式.md",
-    "Obsidian/checkbox.md",
     "程式設計/Meson",
     "技術資料/MCTP",
-    "作業系統/Linux/虛擬機/docker",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
