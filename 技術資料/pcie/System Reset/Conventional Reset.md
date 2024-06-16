@@ -37,7 +37,7 @@ Conventional Reset 主要分為下列幾種，如下所示 :
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240616123757.png)
 
-將該位元 `Secondary Bus Reset Bit` 設定為 `1`，即可以觸發 `Hot Reset` 動作。
+將該位元 `Secondary Bus Reset Bit` 設定為 `1` 然後再設定為 `0`，即可以觸發 `Hot Reset` 動作。
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240615205607.png)
 
@@ -50,4 +50,6 @@ Switch 接受到來自上游埠 ( Upstream Port ) hot reset，它會廣播給下
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240615205048.png)
 
 當下游所有設備重置後，這些 PCIe 裝置的狀態 hardware logic, port states and configuration registers (expect sticky registers) 都會回到它們的初始狀態 ( Default Conditions )。
+
+另外一種也可以透過軟體 `Disable a Link`
 ### Function Level Reset（FLR）
