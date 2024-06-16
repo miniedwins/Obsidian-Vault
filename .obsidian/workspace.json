@@ -169,6 +169,9 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
+    "程式設計/Python/視窗操作",
+    "程式設計/Python/視窗操作/PyAutoGUI",
+    "程式設計/Python/視窗操作/PyAutoit",
     "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/End-to-end Data Protection.md",
@@ -212,8 +215,6 @@
     "程式設計/Meson",
     "技術資料/MCTP",
     "作業系統/Linux/虛擬機/docker",
-    "作業系統/Linux/虛擬機/qemu",
-    "作業系統/Linux/套件/工具",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
