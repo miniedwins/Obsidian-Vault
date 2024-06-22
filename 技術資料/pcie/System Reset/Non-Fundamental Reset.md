@@ -26,10 +26,10 @@
 
 # Function Level Reset（FLR）
 
-FLR 可讓軟體重置有多個功能設備 ( Multi Function Device ) 中的其中一項功能，並且不影響所有人共享的鏈路狀態 ( Link Status )。然而 FLR 功能並非必需支援，不過 SPEC 強烈建議廠商需要實作這項功能。
+FLR 可讓軟體重置有多個功能設備 ( Multi Function Device ) 中的其中一個功能，並且不影響所有人共享的鏈路狀態 ( Link Status )。然而 FLR 功能並非必需支援，不過 SPEC 強烈建議廠商需要實作這項功能。
 
 FLR 會把對應 Function 的內部狀態的暫存器重設，但是以下暫存器不會受到影響 : 
-- Sticky-type registers (ROS, RWS, RW1CS)
+- Sticky-type registers ( ROS, RWS, RW1CS )
 - Registers defined as type HwInit
 - These other fields or registers ( 需要參考 PCIe SPEC )
 
@@ -44,7 +44,5 @@ FLR 會把對應 Function 的內部狀態的暫存器重設，但是以下暫存
 只要將 `Initiate Function Level Reset` 設定為 `1`，即可觸發 FLR 功能。
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240622190547.png)
-
-
 
 
