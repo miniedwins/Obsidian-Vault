@@ -169,10 +169,10 @@
   },
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
-    "技術資料/NVMe/End-to-end Data Protection.md",
-    "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
-    "技術資料/PCIe/System Reset/Fundamental Reset.md",
     "技術資料/PCIe/System Reset/Conventional Reset.md",
+    "技術資料/PCIe/System Reset/Fundamental Reset.md",
+    "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
+    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/PCIe/System Reset/如何觸發 Hot Reset 方法.md",
     "程式設計/Python/視窗操作",
     "程式設計/Python/視窗操作/PyAutoGUI",
