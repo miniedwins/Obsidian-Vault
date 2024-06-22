@@ -14,14 +14,37 @@
 
 此時下游 PCIe 裝置的 LTSSM 會經歷幾個階段 `Recovery -> Hot Reset -> Detect` 狀態，最後開始進行鏈路訓練 ( Link Training )。
 
-![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240615205048.png)
-
 當下游所有設備重置後，這些 PCIe 裝置的狀態 hardware logic, port states and configuration registers (expect sticky registers) 都會回到它們的初始狀態 ( Default Conditions )。
 
-另外一種 `Hot Reset` 方式，僅限操作在下游阜 ( Downstream Port )，透過軟體設定 `Link Disable Bit`，該位元設定的位置在  `Link Control Register`，此時被設定的下游阜狀態也會回到 `Recovery LTSSM` ，並且開始發送 `TS1 with the disable bit set` 給上游阜 ( Upstream Port )。
+![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240615205048.png)
+
+另外一種 `Hot Reset` 方式，僅限操作在下游埠 ( Downstream Port )，透過軟體設定 `Link Disable Bit`，該位元設定的位置在  `Link Control Register`。此時被設定的下游阜狀態也會回到 `Recovery LTSSM` ，並且開始發送 `TS1 with the disable bit set` 給上游阜 ( Upstream Port )。
+
+當上游阜收到 `TS1s with the Disabled bit set`，Physical Layer signals LinkUp=0 (false)，以及所有的 Lanes 會處於在 `Electrical Idle`，在經過 2ms 時間後，上游埠會回到 `Detect` 狀態，而下游埠會保持在 `Disable LTSSM` 狀態，直到退出這個狀態 ( 例如 : Clearing the Link Disable bit )。因此下游埠連結將會一直保持停用 ( Disabled ) 狀態，並且在此之前都不會嘗試鏈路訓練 ( Linking Training )。
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240616162800.png)
 
-當上游阜收到 `TS1s with the Disabled bit set`，Physical Layer signals LinkUp=0 (false)，以及所有的 Lanes 會處於在 `Electrical Idle`，在經過 2ms 時間後，上游阜會回到 `Detect` 狀態，而下游阜會保持在 `Disable LTSSM` 狀態，直到退出這個狀態 ( 例如 : Clearing the Link Disable bit )。因此下游阜連結將會一直保持停用 ( Disabled ) 狀態，並且在此之前都不會嘗試鏈路訓練 ( Linking Training )。
-
 # Function Level Reset（FLR）
+
+FLR 可讓軟體重置有多個功能設備 ( Multi Function Device ) 中的其中一項功能，並且不影響所有人共享的鏈路狀態 ( Link Status )。然而 FLR 功能並非必需支援，不過 SPEC 強烈建議廠商需要實作這項功能。
+
+FLR 會把對應 Function 的內部狀態的暫存器重設，但是以下暫存器不會受到影響 : 
+- Sticky-type registers (ROS, RWS, RW1CS)
+- Registers defined as type HwInit
+- These other fields or registers ( 需要參考 PCIe SPEC )
+
+軟體需要執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
+
+![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240622184929.png)
+
+如果支援 FLR，那麼軟體就可以通過 `Device Control Register Bit15` 來進行 `Function Reset`。
+
+![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240622190428.png)
+
+只要將 `Initiate Function Level Reset` 設定為 `1`，即可觸發 FLR 功能。
+
+![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240622190547.png)
+
+
+
+
