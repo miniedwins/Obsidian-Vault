@@ -36,9 +36,8 @@ FLR 會把對應 Function 的內部狀態的暫存器重設，但以下暫存器
 FLR 執行過程中的基本事項 ( 細節需要參考 PCIe SPEC )
 - 在某些系統中，控制功能的軟體實際可能會停止正常運作。為了防止資料損壞，需要停止所有 PCI Express 和外部 I/O（非 PCI Express）
 - FLR 執行過程中 Device Function 不能被使用
-- 
-- FLR 應該在 100ms 之內完成 
-- 軟體需要等待 FLR100ms 然後初始化 Device Function
+- 啟動 FLR 並且等待 100ms 完成重置 **( FLR 需要在 100ms 內完成)**
+- 軟體等待 FLR 完成，然後才能初始化 Device Function
 - 
  
 系統需要在執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
