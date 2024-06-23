@@ -28,19 +28,21 @@
 
 FLR 可讓軟體重置有多個功能設備 ( Multi Function Device ) 中的其中一個功能，並且不影響所有人共享的鏈路狀態 ( Link Status )。然而 FLR 功能並非必需支援，不過 SPEC 強烈建議廠商需要實作這項功能。
 
-FLR 會把對應 Function 的內部狀態的暫存器重設，但是以下暫存器不會受到影響 : 
+FLR 會把對應 Function 的內部狀態的暫存器重設，但以下暫存器不會受到影響 : 
 - Sticky-type registers ( ROS, RWS, RW1CS )
 - Registers defined as type HwInit
 - These other fields or registers ( 需要參考 PCIe SPEC )
 
 FLR 執行前需要關注的事項 :
-- 在某些系統中，控制功能的軟體實體可能會停止正常運作。為了防止資料損壞，需要停止所有 PCI Express 和外部 I/O（非 PCI Express）。
+- 在某些系統中，控制功能的軟體實際可能會停止正常運作。為了防止資料損壞，需要停止所有 PCI Express 和外部 I/O（非 PCI Express）。
 - 
 
-FLR 執行過程中 :
+FLR 執行過程中 ( 基本事項 ):
 - Devices Function 不能被使用
-- FLR應該在 100ms 之內完成
+- FLR 應該在 100ms 之內完成
 - 
+
+> **由於 FLR 需要注意細節太多，還是需要參考 PCIe SPEC。**
 
 系統需要在執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
 
