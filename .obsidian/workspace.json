@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
+                "file": "技術資料/PCIe/System Reset/觀察 PCIe 如何指向下一個暫存器位址.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
+                "file": "技術資料/PCIe/System Reset/觀察 PCIe 如何指向下一個暫存器位址.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
+                "file": "技術資料/PCIe/System Reset/觀察 PCIe 如何指向下一個暫存器位址.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/PCIe/System Reset/Non-Fundamental Reset.md"
+                "file": "技術資料/PCIe/System Reset/觀察 PCIe 如何指向下一個暫存器位址.md"
               }
             }
           },
@@ -170,8 +170,8 @@
   "active": "ce543950c114fb87",
   "lastOpenFiles": [
     "技術資料/PCIe/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "技術資料/PCIe/System Reset/觀察 PCIe 如何指向下一個暫存器位址.md",
     "技術資料/PCIe/System Reset/Non-Fundamental Reset.md",
-    "技術資料/PCIe/System Reset/未命名.md",
     "技術資料/PCIe/System Reset/Fundamental Reset.md",
     "技術資料/PCIe/System Reset/Conventional Reset.md",
     "技術資料/NVMe/End-to-end Data Protection.md",
