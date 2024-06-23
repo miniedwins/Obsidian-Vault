@@ -36,9 +36,8 @@ FLR 會把對應 Function 的內部狀態的暫存器重設，但以下暫存器
 為了避免發生問題，SPEC 所建議的基本事項 : 
 - 為了防止資料損壞，需要停止所有 PCI Express 和外部 I/O（非 PCI Express）。 
 - 不得保留任何軟體可讀狀態，其中可能包含先前所留下的秘密資訊 ( 例如 : Memory 需要被清除 )。
-- 由於 FLR 是由 `Configuration write` 所完成，因此 Function 必須要回傳一個完成 ( Completion ) 封包，然後才開始進行初始化。
-- 啟動 FLR 並且等待 100ms 完成重置 **( FLR 需要在 100ms 內完成)**。
-- 軟體等待 FLR 完成，然後才能初始化 Device Function。
+- 由於 FLR 是由 `Configuration write` 所完成，因此 Function 必須要回傳一個完成 ( Completion ) TLP 封包，然後才開始進行初始化。
+- FLR 需要在 100ms 內完成
 
 FLR 執行過程中 :
 - Device Function 不能被使用。
@@ -48,7 +47,7 @@ FLR 執行過程中 :
 
 Reste 退出後 : 
 - Reset 狀態退出後，必須在 20ms 內開始 Link Training。
-- 
+- 系統軟體啟動 FLR 至少要等待 100ms 完成重置，然後才能嘗試發送Configuration Requests to them初始化 Device Function。 
 
 系統需要在執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
 
