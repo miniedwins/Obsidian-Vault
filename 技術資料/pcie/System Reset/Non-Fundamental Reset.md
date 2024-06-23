@@ -33,22 +33,18 @@ FLR 會把對應 Function 的內部狀態的暫存器重設，但以下暫存器
 - Registers defined as type HwInit
 - These other fields or registers ( 需要參考 PCIe SPEC )
 
-為了避免發生問題，SPEC 所建議的基本事項
+為了避免發生問題，SPEC 所建議的基本事項 : 
 - 為了防止資料損壞，需要停止所有 PCI Express 和外部 I/O（非 PCI Express）
 - FLR 執行過程中 Device Function 不能被使用
+- 不得保留任何軟體可讀狀態，其中可能包含先前所留下的秘密資訊
 - 啟動 FLR 並且等待 100ms 完成重置 **( FLR 需要在 100ms 內完成)**
 - 軟體等待 FLR 完成，然後才能初始化 Device Function
-- 
 
 FLR 執行過程中 :
-- 
+- 如果有一個請求 ( Regest ) 到發送過來，則允許默默丟棄該請求，並且不記錄或將其標記為錯誤
+- 如果有一個完成 ( Completionple ) 到達，則允許將完成作為意外完成 ( Unexpected Completion ) 進行處理，或默默地丟棄，並且不其記錄或標記為意外完成。
 
-While an FLR is in progress:
-- If a Request arrives, the Request is permitted to be silently discarded (following update of flow
-	control credits) without logging or signaling it as an error.
-	
--  If a Completion arrives, the Completion is permitted to be handled as an Unexpected Completion or to be silently discarded (following update of flow control credits) without logging or signaling it as an error.
--
+
 -  While a Function is required to complete the FLR operation within the time limit described above, the subsequent Function-specific initialization sequence may require additional time. If additional time is required, the Function must return a Configuration Request Retry Status (CRS) Completion Status when a Configuration Request is received after the time limit above. After the Function responds to a Configuration Request with a Completion status other than CRS, it is not permitted to return CRS until it is reset again.
 
 系統需要在執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
