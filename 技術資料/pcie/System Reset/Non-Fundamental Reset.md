@@ -33,7 +33,16 @@ FLR 會把對應 Function 的內部狀態的暫存器重設，但是以下暫存
 - Registers defined as type HwInit
 - These other fields or registers ( 需要參考 PCIe SPEC )
 
-軟體需要執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
+FLR 執行前需要關注的事項 :
+- 在某些系統中，控制功能的軟體實體可能會停止正常運作。為了防止資料損壞，需要停止所有 PCI Express 和外部 I/O（非 PCI Express）。
+- 
+
+FLR 執行過程中 :
+- Devices Function 不能被使用
+- FLR應該在 100ms 之內完成
+- 
+
+系統需要在執行前會檢查 `Device Capacity Register Bit28`  是否設定為 `1` 來確認有無支援 FLR。
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240622184929.png)
 
@@ -44,5 +53,3 @@ FLR 會把對應 Function 的內部狀態的暫存器重設，但是以下暫存
 只要將 `Initiate Function Level Reset` 設定為 `1`，即可觸發 FLR 功能。
 
 ![image.png](https://raw.githubusercontent.com/miniedwins/images/main/obsidian/pcie20240622190547.png)
-
-
