@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "149ee8e491d256b7",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.5"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -167,7 +178,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "ce543950c114fb87",
+  "active": "149ee8e491d256b7",
   "lastOpenFiles": [
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
