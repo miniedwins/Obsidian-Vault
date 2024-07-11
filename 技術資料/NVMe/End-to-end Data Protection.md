@@ -165,8 +165,8 @@ nvme write /dev/nvme0n1 -s 0x12 -z 4096 -d 4k.bin --prinfo=0xf --ref-tag=0x12
 nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64Meta.bin --prinfo=0x7 --ref-tag=0x12
 ```
 
-Metadata = 00001000-00001030
-First PI (00001000): f15f 0000 0000 0012
+Metadata : 00001000-00001030
+First PI (00001000) : f15f 0000 0000 0012
 
 ```
 $ xxd -l 4160 read_4k_64Meta.bin
@@ -190,7 +190,7 @@ nvme format /dev/nvme0n1 -n 1 -l 4 -i 1 -m 1 -p 0 -f
 nvme write /dev/nvme0n1 -s 0x12 -z 4096 -d 4k.bin --prinfo=0xf --ref-tag=0x12
 nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64Meta.bin --prinfo=0x7 --ref-tag=0x12
 ```
-Metadata = 00001000-00001030
+Metadata : 00001000-00001030
 Last PI (00001030) = 6300 0000 0000 0012
 
 ```
