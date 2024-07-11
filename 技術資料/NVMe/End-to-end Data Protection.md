@@ -136,7 +136,7 @@ $ xxd -l 512 read_data.bin
 由於 `PRACT` 設定需要回傳 PI 資訊，因此讀取檔案大小需要更改成 520 Bytes（512B + 8PI）。
 
 ```
-$ nvme read /dev/nvme0n1 -s 0x12 -z 520 -d data_read.bin --prinfo=0xf --ref-tag=0x12
+$ nvme read /dev/nvme0n1 -s 0x12 -z 520 -d data_read.bin --prinfo=0x7 --ref-tag=0x12
 ```
 
 透過 `xxd` 命令可以查看控制器回傳後的（LBA 資料 + PI 資訊）。
