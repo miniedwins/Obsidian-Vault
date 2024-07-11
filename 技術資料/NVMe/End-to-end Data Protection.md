@@ -157,13 +157,16 @@ $ xxd -l 520 read_data.bin
 
 # PI first byte of Metadata
 
+Read data : 4160 Bytes ( 4096 + 64 Metadata )
+Metadata : ( PI 8B + 56B )
 ```
 nvme format /dev/nvme0n1 -n 1 -l 4 -i 1 -m 1 -p 1 -f
 nvme write /dev/nvme0n1 -s 0x12 -z 4096 -d 4k.bin --prinfo=0xf --ref-tag=0x12
 nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64Meta.bin --prinfo=0x7 --ref-tag=0x12
 ```
 
-PI = 00001000 : (f15f 0000 0000 0012) c3e2 00f0 f3ee 00f0
+Metadata = 00001000-00001030
+First PI (00001000): f15f 0000 0000 0012
 
 ```
 $ xxd -l 4160 read_4k_64Meta.bin
@@ -179,13 +182,16 @@ $ xxd -l 4160 read_4k_64Meta.bin
 
 # PI last byte of Metadata
 
+Read data : 4160 Bytes ( 4096 + 64 Metadata )
+Metadata : ( 56B + PI 8B )
+
 ```
 nvme format /dev/nvme0n1 -n 1 -l 4 -i 1 -m 1 -p 0 -f
 nvme write /dev/nvme0n1 -s 0x12 -z 4096 -d 4k.bin --prinfo=0xf --ref-tag=0x12
 nvme read /dev/nvme0n1 -s 0x12 -z 4160 -d read_4k_64Meta.bin --prinfo=0x7 --ref-tag=0x12
 ```
-
-Last PI = 00001030 : f3ee 00f0 f3ee 00f0 (6300 0000 0000 0012)
+Metadata = 00001000-00001030
+Last PI (00001030) = 6300 0000 0000 0012
 
 ```
 $ xxd -l 4160 read_4k_64Meta.bin
