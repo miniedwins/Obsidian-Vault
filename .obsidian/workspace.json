@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "762ba72778a187fe",
+        "id": "879a6fb69980beb1",
         "type": "tabs",
         "children": [
           {
-            "id": "ce543950c114fb87",
+            "id": "12e31b82f20e7288",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -167,7 +167,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "ce543950c114fb87",
+  "active": "12e31b82f20e7288",
   "lastOpenFiles": [
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
