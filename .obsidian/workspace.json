@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
+                "file": "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
+                "file": "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
+                "file": "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md"
+                "file": "技術資料/NVMe/Reset/NVM Subsystem Reset.md"
               }
             }
           },
@@ -169,11 +169,18 @@
   },
   "active": "12e31b82f20e7288",
   "lastOpenFiles": [
-    "程式設計/Python/視窗操作/PyAutoGUI/未命名.md",
+    "技術資料/NVMe/Reset/Controller Level Reset.md",
+    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "技術資料/PCIE/System Reset/Conventional Reset.md",
+    "技術資料/PCIE/System Reset/Fundamental Reset.md",
+    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
+    "技術資料/NVMe/End-to-end Data Protection.md",
+    "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
     "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
+    "程式設計/Python/視窗操作/PyAutoGUI/未命名.md",
     "程式設計/C 語言/時間戳轉換 (timestamp).md",
     "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "作業系統/Linux/套件安裝/函示庫/json-c.md",
     "作業系統/Linux/套件安裝/工具/nvmecli.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
@@ -189,17 +196,10 @@
     "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
     "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
-    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
-    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
-    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
-    "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "作業系統/Windows/Modern Standby",
-    "技術資料/PCIE/System Reset/Conventional Reset.md",
-    "技術資料/NVMe/End-to-end Data Protection.md",
     "程式設計/Python/視窗操作",
     "程式設計/Python/視窗操作/PyAutoGUI",
     "程式設計/Python/視窗操作/PyAutoit",
-    "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
     "技術資料/PCIE/System Reset",
