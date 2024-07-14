@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md"
+                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md"
               }
             }
           },
@@ -169,9 +169,15 @@
   },
   "active": "12e31b82f20e7288",
   "lastOpenFiles": [
+    "作業系統/Linux/教學/fio",
+    "作業系統/Linux/教學/lspci.md",
+    "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
+    "作業系統/Linux/教學/i2c-tools.md",
+    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "作業系統/Linux/教學",
+    "作業系統/Linux/未命名.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
-    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
@@ -188,14 +194,9 @@
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/檔案操作/pathlib",
     "程式設計/Python/檔案操作/pathlib.md",
-    "作業系統/Linux/命令/i2c-tools.md",
-    "作業系統/Linux/命令/lspci.md",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "作業系統/Linux/核心/更新 linux 核心版本.md",
     "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
-    "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
-    "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
-    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby",
     "程式設計/Python/視窗操作",
     "程式設計/Python/視窗操作/PyAutoGUI",
@@ -214,7 +215,6 @@
     "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
     "技術資料/NVMe/attachments/nvme_subsystem_reset",
     "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_hmb_attributes_data_structure.png",
-    "技術資料/NVMe/attachments/nvme_host_mem_buffer",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
