@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "a768b92cb7ca0b36",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -167,11 +178,12 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "12e31b82f20e7288",
+  "active": "a768b92cb7ca0b36",
   "lastOpenFiles": [
+    "作業系統/Linux/教學/fio/設定混合讀寫比例.md",
+    "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
     "作業系統/Linux/教學/i2c-tools.md",
     "作業系統/Linux/教學/lspci.md",
-    "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
     "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
     "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
     "作業系統/Linux/教學/fio",
@@ -197,7 +209,6 @@
     "程式設計/Python/檔案操作/pathlib",
     "程式設計/Python/檔案操作/pathlib.md",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
-    "作業系統/Linux/核心/更新 linux 核心版本.md",
     "作業系統/Windows/Modern Standby",
     "程式設計/Python/視窗操作",
     "程式設計/Python/視窗操作/PyAutoGUI",
