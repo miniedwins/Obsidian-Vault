@@ -13,24 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
+                "file": "作業系統/Linux/教學/fio/Standard/設定混合讀寫比例.md",
                 "mode": "source",
                 "source": false
               }
             }
-          },
-          {
-            "id": "a768b92cb7ca0b36",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.6.7"
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
+                "file": "作業系統/Linux/教學/fio/Standard/設定混合讀寫比例.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
+                "file": "作業系統/Linux/教學/fio/Standard/設定混合讀寫比例.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md"
+                "file": "作業系統/Linux/教學/fio/Standard/設定混合讀寫比例.md"
               }
             }
           },
@@ -178,10 +167,12 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "a768b92cb7ca0b36",
+  "active": "12e31b82f20e7288",
   "lastOpenFiles": [
-    "作業系統/Linux/教學/fio/設定混合讀寫比例.md",
-    "作業系統/Linux/教學/fio/指定寫入與讀取自訂的資料.md",
+    "作業系統/Linux/教學/fio/Standard/如何指定寫入與讀取自訂的資料.md",
+    "作業系統/Linux/教學/fio/Standard/設定混合讀寫比例.md",
+    "作業系統/Linux/教學/fio/Standard",
+    "作業系統/Linux/教學/fio/Zone Storange",
     "作業系統/Linux/教學/i2c-tools.md",
     "作業系統/Linux/教學/lspci.md",
     "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
@@ -208,7 +199,6 @@
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/檔案操作/pathlib",
     "程式設計/Python/檔案操作/pathlib.md",
-    "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "作業系統/Windows/Modern Standby",
     "程式設計/Python/視窗操作",
     "程式設計/Python/視窗操作/PyAutoGUI",
@@ -221,8 +211,6 @@
     "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_identify_ctrl_hmpre.png",
     "技術資料/NVMe/attachments/nvme_data_protection/nvme_read_pi_md_eq8_pract_1.png",
     "技術資料/NVMe/attachments/nvme_data_protection/nvme_write_pi_md_eq8_pract_1.png",
-    "技術資料/NVMe/attachments/nvme_data_protection",
-    "技術資料/nvme/attachments/nvme_subsystem_reset/未命名",
     "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrc.png",
     "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
     "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_hmb_attributes_data_structure.png",
