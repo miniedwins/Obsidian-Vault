@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/核心/如何獨立編譯核心模組.md",
+                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Linux/核心/如何獨立編譯核心模組.md",
+                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Linux/核心/如何獨立編譯核心模組.md",
+                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/核心/如何獨立編譯核心模組.md"
+                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md"
               }
             }
           },
@@ -169,6 +169,11 @@
   },
   "active": "12e31b82f20e7288",
   "lastOpenFiles": [
+    "技術資料/NVMe/End-to-end Data Protection.md",
+    "技術資料/NVMe/Reset/Controller Level Reset.md",
+    "作業系統/Linux/核心/手動安裝 linux 核心.md",
+    "作業系統/Linux/教學/NVMECLI",
+    "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "作業系統/Linux/核心/更新 linux 核心版本.md",
     "作業系統/Linux/教學/I2C/i2c-tools.md",
     "作業系統/Linux/教學/GNU/LSPCI.md",
@@ -198,13 +203,8 @@
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
-    "技術資料/NVMe/Reset/NVM Subsystem Reset.md",
-    "技術資料/NVMe/Reset/Controller Level Reset.md",
-    "技術資料/NVMe/End-to-end Data Protection.md",
-    "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
     "程式設計/Python/檔案操作/pathlib",
     "作業系統/Windows/Modern Standby",
-    "程式設計/Python/視窗操作",
     "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
     "技術資料/NVMe/attachments/nvme_data_protection/metadata_contiguous.png",

@@ -12,6 +12,10 @@ cp -v /boot/config-$(uname -r) /home/user_name/kernel/.config
 
 開始編譯前檔案需要設定 `.config`，這邊我們使用 `make oldconfig`。
 
+```shell
+$ make oldconfig
+```
+
 - 核心組態設定檔案 (.config) : 
 	- 如果 `.config` 不存在，運行 `make config/menuconfig` 使用預設值設定。
 	- 如果 `.config` 存在，運行 `make config/menuconfig` 使用當前 `.config` 設定。
@@ -24,10 +28,6 @@ cp -v /boot/config-$(uname -r) /home/user_name/kernel/.config
 
 - localmodconfig :  
 	- 執行 `lsmod` 查看當前系統中載入了哪些模組 (Modules)，最後將原來的 `.config`  中不需要的模組去掉，僅保留前面 `lsmod` 出來的這些模組，從而簡化了核心的組態過程。
-
-```
-$ make oldconfig
-```
 
 若是還有要修改核心設定檔案，執行 `make menuconfig`。
 
