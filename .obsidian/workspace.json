@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+                "file": "作業系統/Linux/教學/FIO/Standard/資料驗證/指定資料的驗證方法.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+                "file": "作業系統/Linux/教學/FIO/Standard/資料驗證/指定資料的驗證方法.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+                "file": "作業系統/Linux/教學/FIO/Standard/資料驗證/指定資料的驗證方法.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md"
+                "file": "作業系統/Linux/教學/FIO/Standard/資料驗證/指定資料的驗證方法.md"
               }
             }
           },
@@ -169,13 +169,16 @@
   },
   "active": "12e31b82f20e7288",
   "lastOpenFiles": [
-    "作業系統/Linux/教學/FIO/Standard/寫入或是讀取偏移量.md",
-    "作業系統/Linux/教學/FIO/Standard/指定寫入不同 IO 大小的百分比.md",
+    "作業系統/Linux/教學/FIO/Standard/資料驗證/指定自訂的寫入與讀取資料.md",
     "作業系統/Linux/教學/FIO/Standard/設定混合讀寫比例 (rwmixed).md",
     "作業系統/Linux/教學/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
-    "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+    "作業系統/Linux/教學/FIO/Standard/資料驗證/指定資料的驗證方法.md",
+    "作業系統/Linux/教學/FIO/Standard/寫入不同 IO 大小的百分比.md",
+    "作業系統/Linux/教學/FIO/Standard/寫入或是讀取偏移量.md",
+    "作業系統/Linux/教學/FIO/Standard/資料驗證",
     "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
-    "作業系統/Linux/教學/FIO/Standard/如何指定寫入與讀取自訂的資料.md",
+    "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+    "技術資料/SMBus/Packet Error Code.md",
     "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/Management Interface.md",
@@ -200,11 +203,7 @@
     "作業系統/Linux/教學/FIO",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "作業系統/Linux/教學",
-    "作業系統/Linux/未命名.md",
-    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "程式設計/Python/檔案操作/pathlib",
-    "作業系統/Windows/Modern Standby",
     "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
     "技術資料/NVMe/attachments/nvme_data_protection/metadata_contiguous.png",
