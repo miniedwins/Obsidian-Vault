@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md",
+                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md",
+                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md",
+                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/End-to-end Data Protection.md"
+                "file": "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md"
               }
             }
           },
@@ -169,17 +169,22 @@
   },
   "active": "12e31b82f20e7288",
   "lastOpenFiles": [
+    "作業系統/Linux/教學/FIO/Standard/寫入或是讀取偏移量.md",
+    "作業系統/Linux/教學/FIO/Standard/指定寫入不同 IO 大小的百分比.md",
+    "作業系統/Linux/教學/FIO/Standard/設定混合讀寫比例 (rwmixed).md",
+    "作業系統/Linux/教學/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
+    "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+    "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
+    "作業系統/Linux/教學/FIO/Standard/如何指定寫入與讀取自訂的資料.md",
+    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/Management Interface.md",
-    "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/Reset/Controller Level Reset.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
     "作業系統/Linux/教學/NVMECLI",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "作業系統/Linux/核心/更新 linux 核心版本.md",
     "作業系統/Linux/教學/I2C/i2c-tools.md",
-    "作業系統/Linux/教學/GNU/LSPCI.md",
-    "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
     "作業系統/Linux/教學/I2C",
     "作業系統/Linux/教學/未命名.md",
     "作業系統/Linux/教學/PCIe",
@@ -187,12 +192,7 @@
     "作業系統/Linux/套件安裝/函示庫/json-c.md",
     "作業系統/Linux/套件安裝/工具/nvmecli.md",
     "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
-    "作業系統/Linux/教學/FIO/Standard/寫入或是讀取偏移量.md",
     "作業系統/Linux/教學/GNU",
-    "作業系統/Linux/教學/FIO/Standard/設定混合讀寫比例 (rwmixed).md",
-    "作業系統/Linux/教學/FIO/Standard/如何指定寫入與讀取自訂的資料.md",
-    "作業系統/Linux/教學/FIO/Standard/指定寫入不同 IO 大小的百分比.md",
-    "作業系統/Linux/教學/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
     "作業系統/Linux/教學/FIO/Standard",
     "作業系統/Linux/教學/FIO/Zone Storange",
     "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
