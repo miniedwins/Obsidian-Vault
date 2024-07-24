@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
+                "file": "技術資料/NVMe/End-to-end Data Protection.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
+                "file": "技術資料/NVMe/End-to-end Data Protection.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md",
+                "file": "技術資料/NVMe/End-to-end Data Protection.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/Host Memory Buffer (HMB).md"
+                "file": "技術資料/NVMe/End-to-end Data Protection.md"
               }
             }
           },
@@ -169,6 +169,8 @@
   },
   "active": "12e31b82f20e7288",
   "lastOpenFiles": [
+    "技術資料/NVMe/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/Management Interface.md",
     "技術資料/NVMe/End-to-end Data Protection.md",
     "技術資料/NVMe/Reset/Controller Level Reset.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
@@ -201,8 +203,6 @@
     "作業系統/Linux/未命名.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
-    "技術資料/PCIE/System Reset/Conventional Reset.md",
-    "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "程式設計/Python/檔案操作/pathlib",
     "作業系統/Windows/Modern Standby",
     "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
