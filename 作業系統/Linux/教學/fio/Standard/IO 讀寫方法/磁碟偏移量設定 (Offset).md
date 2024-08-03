@@ -4,13 +4,13 @@
 範例 1 : offset=1%
 
 ```shell
-$ fio fio --filename=/dev/sdx --name=test --ioengine=libaio --iodepth=32 --bs=4k --size=100% --offset=1% --rw=write
+$ fio fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=4k --offset=1% --rw=write --size=100%
 ```
 
 範例 2 : offset=1MB
 
 ```shell
-$ fio fio --filename=/dev/sdx --name=test --ioengine=libaio --iodepth=32 --bs=4k --size=100% --offset=1MB --rw=write
+$ fio fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=4k --offset=1MB --rw=write --size=100%
 ```
 
 ---

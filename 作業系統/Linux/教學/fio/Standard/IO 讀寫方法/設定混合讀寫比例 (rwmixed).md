@@ -3,7 +3,7 @@
 範例 : Write=30%，Read=70%
 
 ```shell
-$ fio --filename=/dev/sdx --name=test --ioengine=libaio --iodepth=32 --bs=128k --size=100% --rwmixwrite=30
+$ fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=128k --rwmixwrite=30 --size=100%
 ```
 
 ---
@@ -13,5 +13,5 @@ $ fio --filename=/dev/sdx --name=test --ioengine=libaio --iodepth=32 --bs=128k -
 範例 : Read=30%，Write=70%
 
 ```shell
-$ fio --filename=/dev/sdx --name=test --ioengine=libaio --iodepth=32 --bs=128k --size=100% --rwmixread=30
+$ fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=128k --rwmixread=30 --size=100% 
 ```
