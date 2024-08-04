@@ -13,7 +13,7 @@ $ fio fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth
 $ fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=4k --offset=1MB --rw=write --size=100%
 ```
 
-寫入的資料是從偏移量 offset=1MBytes 開始，因此可以看到 offset 前面的資料都是為零。
+寫入的資料是從偏移量 offset=1MBytes 開始，因此可以看到 offset=00100000 前面的資料都是為零。
 
 ```shell
 $ hexdump -C -n 1049088 /dev/sdb
@@ -30,8 +30,8 @@ $ hexdump -C -n 1049088 /dev/sdb
 ---
 
 參數 : offset_increment=int ( byes or percentage )
-說明 1 : 通常搭配 Threads or NumJobs 使用
+說明 : 通常搭配 threads or numjobs 使用
 
 ```shell
-$ fio --filename=/dev/sdx --name=test --direct=1 --numjobs=2 --ioengine=libaio --iodepth=32 --bs=4k --offset=1MB --offset_increment=1MB --rw=write --size=4096
+
 ```
