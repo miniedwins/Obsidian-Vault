@@ -33,5 +33,5 @@ $ hexdump -C -n 1049088 /dev/sdb
 說明 : 通常搭配 threads or numjobs 使用
 
 ```shell
-
+$ fio --filename=/dev/sdx --name=test --direct=1 --numjobs=2 --ioengine=libaio --iodepth=32 --bs=4k --offset=0 --offset_increment=1MB --rw=write --size=128k
 ```
