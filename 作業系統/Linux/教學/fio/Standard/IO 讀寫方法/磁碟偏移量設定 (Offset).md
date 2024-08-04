@@ -30,9 +30,8 @@ $ hexdump -C -n 1049088 /dev/sdb
 ---
 
 參數 : offset_increment=int ( byes or percentage )
-說明 1 : 設定跟 offset 大致相同
-說明 2 : 若是有給設定值，最終的偏移量會是 offset + offset_increment
+說明 1 : 通常搭配 Threads or NumJobs 使用
 
 ```shell
-$ fio --
+$ fio --filename=/dev/sdx --name=test --direct=1 --numjobs=2 --ioengine=libaio --iodepth=32 --bs=4k --offset=1MB --offset_increment=1MB --rw=write --size=4096
 ```
