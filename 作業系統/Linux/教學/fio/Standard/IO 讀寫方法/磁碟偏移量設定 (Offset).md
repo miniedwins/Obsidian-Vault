@@ -16,7 +16,7 @@ $ fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 
 寫入的資料是從偏移量 offset=1MBytes 開始，因此可以看到 offset 前面的資料都是為零。
 
 ```shell
-$ hexdump -C -n 1049088 /dev/nvme0n1
+$ hexdump -C -n 1049088 /dev/sdb
 00000000  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 *
 00100000  c6 fd a8 a8 90 71 19 02  b8 1f 32 96 dd d9 64 1e  |.....q....2...d.|
