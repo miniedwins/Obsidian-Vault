@@ -167,8 +167,9 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "12e31b82f20e7288",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "程式設計/Python/converter.md",
     "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/設定混合讀寫比例 (rwmixed).md",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/磁碟偏移量設定 (offset).md",
@@ -199,7 +200,6 @@
     "作業系統/Linux/教學/未命名.md",
     "作業系統/Linux/教學/PCIe",
     "作業系統/Linux/套件安裝/函示庫/libnvme.md",
-    "作業系統/Linux/套件安裝/函示庫/json-c.md",
     "作業系統/Linux/教學/GNU",
     "作業系統/Linux/教學/FIO/Standard",
     "作業系統/Linux/教學/FIO/Zone Storange",
