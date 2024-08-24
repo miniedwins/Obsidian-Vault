@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/教學/GNU/DIFF 檔案比較.md"
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md"
               }
             }
           },
@@ -167,8 +167,14 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "12e31b82f20e7288",
   "lastOpenFiles": [
+    "技術資料/PCIE/System Reset/Fundamental Reset.md",
+    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
+    "技術資料/PCIE/System Reset/Conventional Reset.md",
+    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
     "程式設計/Python/converter.md",
     "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/設定混合讀寫比例 (rwmixed).md",
@@ -178,7 +184,6 @@
     "作業系統/Linux/教學/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
-    "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
     "作業系統/Linux/教學/FIO/Standard/資料驗證/自訂資料的寫入與讀取.md",
     "程式設計/Python/未命名.md",
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
@@ -193,13 +198,8 @@
     "技術資料/NVMe/Reset/Controller Level Reset.md",
     "作業系統/Linux/核心/手動安裝 linux 核心.md",
     "作業系統/Linux/教學/NVMECLI",
-    "作業系統/Linux/核心/如何獨立編譯核心模組.md",
-    "作業系統/Linux/核心/更新 linux 核心版本.md",
-    "作業系統/Linux/教學/I2C/i2c-tools.md",
     "作業系統/Linux/教學/I2C",
-    "作業系統/Linux/教學/未命名.md",
     "作業系統/Linux/教學/PCIe",
-    "作業系統/Linux/套件安裝/函示庫/libnvme.md",
     "作業系統/Linux/教學/GNU",
     "作業系統/Linux/教學/FIO/Standard",
     "作業系統/Linux/教學/FIO/Zone Storange",
