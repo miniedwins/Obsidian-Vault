@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "879a6fb69980beb1",
+        "id": "b88c96fceff62a36",
         "type": "tabs",
         "children": [
           {
-            "id": "12e31b82f20e7288",
+            "id": "441d0369d0f6a5cf",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md"
-              }
+              "state": {}
             }
           },
           {
@@ -167,26 +159,37 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "12e31b82f20e7288",
+  "active": "441d0369d0f6a5cf",
   "lastOpenFiles": [
+    "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_hmb_cdw13_14.png",
+    "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_hmb_cdw11.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssro.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrs.png",
+    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrc.png",
+    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
+    "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
+    "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
+    "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
-    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
+    "技術資料/NVMe/attachments/nvme_data_protection/nvme_write_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/nvme_read_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
+    "技術資料/NVMe/attachments/nvme_data_protection/metadata_contiguous.png",
+    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+    "技術資料/NVMe/BaseSpec/firmware_image_download_commit.md",
+    "技術資料/NVMe/BaseSpec/endurance_groups.md",
+    "技術資料/NVMe/BaseSpec/device_self_test.md",
+    "技術資料/NVMe/BaseSpec/dataset_management.md",
     "技術資料/PCIE/Power Management",
-    "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
-    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "技術資料/NVMe/Other/IEEE EUI, OUI, and CID.md",
-    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssro.png",
-    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_subsystem_reset_nssrc.png",
-    "技術資料/NVMe/attachments/nvme_subsystem_reset/nvme_substem_reset.png",
-    "技術資料/NVMe/attachments/nvme_cc_memory_page_size.png",
-    "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
     "技術資料/NVMe/CommandSet",
     "技術資料/NVMe/BaseSpec",
     "技術資料/NVMe/NVMe-MI",
@@ -198,22 +201,12 @@
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/磁碟偏移量設定 (offset).md",
     "作業系統/Linux/教學/FIO/Standard/資料驗證/指定寫入資料後的驗證方法.md",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
-    "作業系統/Linux/教學/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
-    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
-    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
-    "作業系統/Linux/教學/FIO/Standard/資料驗證/自訂資料的寫入與讀取.md",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法",
     "作業系統/Linux/教學/FIO/Standard/資料驗證",
     "作業系統/Linux/教學/NVMECLI",
     "作業系統/Linux/教學/I2C",
     "作業系統/Linux/教學/PCIe",
     "作業系統/Linux/教學/GNU",
-    "技術資料/NVMe/attachments/nvme_data_protection/medata_as_separate.png",
-    "技術資料/NVMe/attachments/nvme_data_protection/metadata_contiguous.png",
-    "技術資料/NVMe/attachments/nvme_data_protection/nvm_write_prinfo_field.png",
-    "技術資料/NVMe/attachments/nvme_host_mem_buffer/nvme_identify_ctrl_hmpre.png",
-    "技術資料/NVMe/attachments/nvme_data_protection/nvme_read_pi_md_eq8_pract_1.png",
-    "技術資料/NVMe/attachments/nvme_data_protection/nvme_write_pi_md_eq8_pract_1.png",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
