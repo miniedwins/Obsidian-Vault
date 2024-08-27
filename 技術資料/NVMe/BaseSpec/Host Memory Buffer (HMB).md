@@ -14,7 +14,7 @@
 - HMPRE = 0 (不支援)
 - HMPRE = non-zone (支援)
 
-![[nvme_identify_ctrl_hmpre.png]]
+![[identify_ctrl_hmpre.png]]
 ## 取得 HMB 資訊 
 
 - nvme-cli 執行後會顯示兩個資訊內容
@@ -61,13 +61,13 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
  - HMDALU : `0x00000001`
  - 完整的記憶體位置 : `0x0000000112887000`
 
-![[nvme_hmb_cdw13_14.png]]
+![[hmb_cdw13_14.png]]
 
 這個參數是描述 Host 提供給控制器可以使用主機的記憶體範圍，分配支援資源給控制器所使用，因此 Host 不能去修改這些記憶體範圍的內容，除非該記憶體被回收。
 
 - HMDLEC : `0x00000010` 
 
-![[nvme_hmb_descriptor_list.png]]
+![[hmb_descriptor_list.png]]
 ## Enable HMB
 
 - 記憶體空間是由系統分配，若是關閉後想要再開啟需要手動設定。  
@@ -76,10 +76,11 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 
 **注意 : 記憶體是系統分配的，不能隨意指定一個記憶體位址。**
 
-![[nvme_hmb_cdw11.png]]
+![[hmb_cdw11.png]]
 
 ```
 $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
+
 Admin Command Set Features is Success and result: 0x00000000
 ```
 ## Disable HMB
