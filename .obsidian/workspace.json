@@ -11,8 +11,12 @@
             "id": "441d0369d0f6a5cf",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "技術資料/NVMe/BaseSpec/dataset_management.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "技術資料/NVMe/BaseSpec/dataset_management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "技術資料/NVMe/BaseSpec/dataset_management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "技術資料/NVMe/BaseSpec/dataset_management.md"
+              }
             }
           },
           {
@@ -161,6 +169,9 @@
   },
   "active": "441d0369d0f6a5cf",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
+    "技術資料/NVMe/BaseSpec/abort.md",
+    "技術資料/NVMe/attachments/dataset_management_range_definition.png",
     "技術資料/NVMe/attachments/identify_controller/FRMW.png",
     "技術資料/NVMe/attachments/identify_controller/Identify_Controller_FNA.png",
     "技術資料/NVMe/attachments/identify_controller/FNA.png",
@@ -170,15 +181,12 @@
     "技術資料/NVMe/attachments/identify_controller/CTRATT_Bit4_Endurance_Groups.png",
     "技術資料/NVMe/attachments/identify_controller/CTRATT_Bit2_NVM_Sets.png",
     "技術資料/NVMe/attachments/identify_controller/CNTLID.png",
-    "技術資料/NVMe/attachments/identify_controller/APSTA.png",
-    "技術資料/NVMe/attachments/identify_controller/ACL.png",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "技術資料/SMBus/Packet Error Code.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
