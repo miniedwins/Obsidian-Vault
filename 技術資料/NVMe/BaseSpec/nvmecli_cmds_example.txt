@@ -1,0 +1,41 @@
+# delete sq_id 1
+sudo nvme admin-passthru --opcode=0x00 --cdw10=0x01 /dev/nvme0
+
+# delete sq_id=1
+sudo nvme admin-passthru --opcode=0x00 --cdw10=0x01 /dev/nvme0
+
+# create sq_id=1
+sudo nvme admin-passthru --opcode=0x01 --cdw10=0x03ff0001 --cdw11=0x00010005 /dev/nvme0
+
+# get log page
+sudo nvme admin-passthru --opcode=0x02 --cdw10=0x02 /dev/nvme0 --data-len=512 --read > /dev/null
+
+# delete cq_id=1
+sudo nvme admin-passthru --opcode=0x04 --cdw10=0x01 /dev/nvme0
+
+# create cq_id=1
+sudo nvme admin-passthru --opcode=0x05 --cdw10=0x03ff0001 --cdw11=0x00010003 /dev/nvme0
+
+# identify (controller)
+sudo nvme admin-passthru --opcode=0x06 --cdw10=0x01 /dev/nvme0 --data-len=4096 --read -b > /dev/null
+
+# abort
+sudo nvme admin-passthru --opcode=0x08 --cdw10=0x00010000 /dev/nvme0
+
+# set feature (power management)
+sudo nvme admin-passthru --opcode=0x09 --cdw10=0x02 /dev/nvme0 --cdw11=0x00 --write
+
+# get feature (power management)
+sudo nvme admin-passthru --opcode=0x0A --cdw10=0x02 /dev/nvme0 --read
+
+# fw download image
+sudo nvme fw-download -f E8TP14B2.bin /dev/nvme0
+
+# fw commit
+sudo nvme fw-commit --slot=0x01 --action=0x01 /dev/nvme0
+
+# Asynchronous Event Request
+sudo nvme admin-passthru --opcode=0x0c /dev/nvme0
+
+# self-test (short-test)
+sudo nvme admin-passthru --opcode=0x14 --cdw10=0x01 /dev/nvme0
