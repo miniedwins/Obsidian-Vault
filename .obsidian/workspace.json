@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/dataset_management.md",
+                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/dataset_management.md",
+                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/dataset_management.md",
+                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/dataset_management.md"
+                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md"
               }
             }
           },
@@ -169,8 +169,17 @@
   },
   "active": "441d0369d0f6a5cf",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
-    "技術資料/NVMe/BaseSpec/abort.md",
+    "技術資料/NVMe/BaseSpec/Abort.md",
+    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+    "技術資料/NVMe/BaseSpec/Sanitize.md",
+    "技術資料/NVMe/BaseSpec/nvm_set.md",
+    "技術資料/NVMe/BaseSpec/Namespace Management.md",
+    "技術資料/NVMe/BaseSpec/endurance_groups.md",
+    "程式設計/Makefile/make.md",
+    "Obsidian/如何使用註腳格式.md",
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/attachments/dataset_management_range_definition.png",
     "技術資料/NVMe/attachments/identify_controller/FRMW.png",
     "技術資料/NVMe/attachments/identify_controller/Identify_Controller_FNA.png",
@@ -191,10 +200,7 @@
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
-    "技術資料/NVMe/BaseSpec/firmware_image_download_commit.md",
-    "技術資料/NVMe/BaseSpec/endurance_groups.md",
-    "技術資料/NVMe/BaseSpec/device_self_test.md",
-    "技術資料/NVMe/BaseSpec/dataset_management.md",
+    "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/PCIE/Power Management",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
@@ -203,12 +209,6 @@
     "技術資料/NVMe/BaseSpec",
     "技術資料/NVMe/NVMe-MI",
     "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
-    "程式設計/Python/converter.md",
-    "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
-    "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/設定混合讀寫比例 (rwmixed).md",
-    "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/磁碟偏移量設定 (offset).md",
-    "作業系統/Linux/教學/FIO/Standard/資料驗證/指定寫入資料後的驗證方法.md",
-    "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法",
     "作業系統/Linux/教學/FIO/Standard/資料驗證",
     "作業系統/Linux/教學/NVMECLI",
