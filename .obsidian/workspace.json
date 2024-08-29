@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Conventional Reset.md",
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Conventional Reset.md",
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Conventional Reset.md",
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Conventional Reset.md"
+                "file": "技術資料/PCIE/System Reset/Non-Fundamental Reset.md"
               }
             }
           },
@@ -169,6 +169,7 @@
   },
   "active": "441d0369d0f6a5cf",
   "lastOpenFiles": [
+    "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
@@ -200,7 +201,6 @@
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "技術資料/SMBus/Packet Error Code.md",
     "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
-    "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/PCIE/Power Management",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
