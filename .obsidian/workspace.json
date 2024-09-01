@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Namespace Management.md"
+                "file": "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md"
               }
             }
           },
@@ -169,12 +169,15 @@
   },
   "active": "441d0369d0f6a5cf",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Namespace Management.md",
+    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
+    "技術資料/NVMe/NVMe-MI/Management Interface.md",
+    "技術資料/SMBus/Packet Error Code.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/Abort.md",
-    "技術資料/NVMe/NVMe-MI/Management Interface.md",
-    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
@@ -182,14 +185,12 @@
     "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/nvm_set.md",
-    "技術資料/NVMe/BaseSpec/Namespace Management.md",
     "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/endurance_groups.md",
     "程式設計/Makefile/make.md",
     "Obsidian/如何使用註腳格式.md",
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/attachments/dataset_management_range_definition.png",
     "技術資料/NVMe/attachments/identify_controller/FRMW.png",
     "技術資料/NVMe/attachments/identify_controller/Identify_Controller_FNA.png",
@@ -201,7 +202,6 @@
     "技術資料/NVMe/attachments/identify_controller/CTRATT_Bit2_NVM_Sets.png",
     "技術資料/NVMe/attachments/identify_controller/CNTLID.png",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
-    "技術資料/SMBus/Packet Error Code.md",
     "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
     "技術資料/PCIE/Power Management",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
