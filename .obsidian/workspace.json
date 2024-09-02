@@ -169,9 +169,9 @@
   },
   "active": "dac338d6dd7cc094",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "未命名.canvas",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
