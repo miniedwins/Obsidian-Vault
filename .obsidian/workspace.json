@@ -11,8 +11,12 @@
             "id": "dac338d6dd7cc094",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md"
+              }
             }
           },
           {
@@ -161,10 +169,13 @@
   },
   "active": "dac338d6dd7cc094",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
+    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "未命名.canvas",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "技術資料/NVMe/BaseSpec/Abort.md",
@@ -182,7 +193,6 @@
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "技術資料/NVMe/BaseSpec/Namespace Management.md",
-    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/SMBus/Packet Error Code.md",
@@ -192,7 +202,6 @@
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/nvm_set.md",
-    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/endurance_groups.md",
     "程式設計/Makefile/make.md",
