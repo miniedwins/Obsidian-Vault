@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c8fed3ad277af8c6",
+        "id": "8d0683b8f89ebaa4",
         "type": "tabs",
         "children": [
           {
-            "id": "dac338d6dd7cc094",
+            "id": "2f9ece8f11660f98",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -167,11 +167,16 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "dac338d6dd7cc094",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/attachments/identify/controller/HCTM.png",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240903074935.png",
+    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240903074828.png",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240903074752.png",
+    "技術資料/NVMe/BaseSpec/attachments",
+    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "未命名.canvas",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
@@ -179,16 +184,13 @@
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "技術資料/NVMe/BaseSpec/Abort.md",
-    "技術資料/NVMe/attachments/nvme_feature/autonomous_power_state_transition.png",
-    "技術資料/NVMe/attachments/nvme_feature/error_recovery_id_05.png",
-    "技術資料/NVMe/attachments/nvme_feature/power_management_id_02.png",
-    "技術資料/NVMe/attachments/log_page/self_test_result_data_structure_02.png",
-    "技術資料/NVMe/attachments/log_page/self_test_result_data_structure_01.png",
-    "技術資料/NVMe/attachments/log_page/self_test_structure.png",
-    "技術資料/NVMe/attachments/log_page/self_test_log_description.png",
-    "技術資料/NVMe/attachments/log_page/telemetry_controller_initiated.png",
-    "技術資料/NVMe/attachments/log_page/sanitize_status_SSTAT.png",
-    "技術資料/NVMe/attachments/log_page/sanitize_status_SPROG.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/autonomous_power_state_transition.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/error_recovery_id_05.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/power_management_id_02.png",
+    "技術資料/NVMe/BaseSpec/attachments/log_page/self_test_result_data_structure_02.png",
+    "技術資料/NVMe/BaseSpec/attachments/log_page/self_test_result_data_structure_01.png",
+    "技術資料/NVMe/BaseSpec/attachments/log_page/self_test_structure.png",
+    "技術資料/NVMe/BaseSpec/attachments/log_page/self_test_log_description.png",
     "作業系統/Linux/套件安裝/工具/nvmecli.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
@@ -205,7 +207,6 @@
     "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/endurance_groups.md",
     "程式設計/Makefile/make.md",
-    "Obsidian/如何使用註腳格式.md",
     "技術資料/PCIE/Power Management",
     "技術資料/NVMe/CommandSet",
     "技術資料/NVMe/BaseSpec",
@@ -215,7 +216,6 @@
     "作業系統/Linux/教學/NVMECLI",
     "作業系統/Linux/教學/I2C",
     "作業系統/Linux/教學/PCIe",
-    "作業系統/Linux/教學/GNU",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
