@@ -152,13 +152,4 @@ Similar to the limit on the maximum number of open zones, a limit on the maximum
 
 (說明) 最大 active zones 數量的限制，並不會影響讀取操作。無論目前是 open and active zones 數量是多少，任何一個 zone 只要不是在 offline 狀態下，都可以讀取資料。
 
----
-
-## 疑問待了解 
-
-* 所以可以建立多個 Zoned NS，每個 NS 都可以包含多個 Zone
-* 若是成立，每個 NS's Zone 編號都依順序編號 ?
-  * NS1 : zone 1, 2, 3, 4, 5
-  * NS2 : zone 1, 2, 3, 4, 5
-* Implicitly and Explicitly Opend 是不是只有 Implicitly Opend 可以寫入資料 ?
 
