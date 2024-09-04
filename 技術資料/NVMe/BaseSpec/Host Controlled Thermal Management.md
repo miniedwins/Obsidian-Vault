@@ -7,7 +7,13 @@
 
 ( 未完 )
 
-那麼主機端要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 Set-Feature ( HCTM ) 命令設定溫度。
+那麼要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 Set-Feature ( HCTM ) 命令設定溫度。規格書定義克耳文 ( Kelvin ) 是計量溫度的單位，但是我們使用的計量單位是攝氏 ( Celsius )，因此設定時需要對溫度做單位轉換。
+
+> 克耳文  ( Kelvin ) = 攝氏溫度 ( Celsius ) + 273
+
+另外在溫度若是設定不當，控制器則回覆主機端錯誤訊息 ( Invalid Field in Command )
+- TMT1 >= TMT2  ( 例如 : TMT2=80 若是設定 TMT1=85 )
+- TMT2 <= TMT1 ( 例如 : TMT1=70 若是設定 TMT2=65 )
 
 ![[Pasted image 20240904061321.png]]
 
@@ -15,12 +21,11 @@
 
 ![[MNTMT_MXTMT.png]]
 
-
 # 檢查是否支援 HCTM
 
 **主機控制的熱管理支援** : 控製器是否支援 HCTM， 是由控製器 `Identify Ctrl` 結構中的 `HCTMA` 欄位表示。如果支援，代表控製器可以響應主機的熱管理請求命令。
 
-- HCTM
+- HCTM ( Host Controlled Thermal Management Attributes )
 	- Bit 0 : 1 ( Support )
 	- Bit 0 : 0 ( Not Supported )
 	- Bit 1-15  ( Reserved )
