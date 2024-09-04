@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 359.5110321044922
+    "width": 359.5110321044922,
+    "collapsed": true
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -169,9 +170,11 @@
   },
   "active": "e28e4fc6d6a79743",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
+    "技術資料/NVMe/BaseSpec/Telemetry.md",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/host_controlled_thermal_management.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/HCTM.png",
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/error_recovery_id_05.png",
@@ -184,7 +187,6 @@
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/ACL.png",
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
-    "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/attachments",

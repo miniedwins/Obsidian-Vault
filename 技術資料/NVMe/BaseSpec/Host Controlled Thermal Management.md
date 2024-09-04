@@ -45,8 +45,9 @@
 	- Bit 1-15  ( Reserved )
 
 ![[HCTM.png]]
-# 設定 HCTM 溫度
 
+
+# 設定 HCTM 溫度
 
 
 
