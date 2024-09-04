@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8d0683b8f89ebaa4",
+        "id": "0f5a873eb98845cd",
         "type": "tabs",
         "children": [
           {
-            "id": "2f9ece8f11660f98",
+            "id": "e28e4fc6d6a79743",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -167,20 +167,19 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "2f9ece8f11660f98",
+  "active": "e28e4fc6d6a79743",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/host_controlled_thermal_management.png",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/attachments/identify/controller/HCTM.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/error_recovery_id_05.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/hctm_example.png",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240904061321.png",
     "技術資料/NVMe/BaseSpec/attachments/non_operational_power_state_config.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/DSTO.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/CNTLID.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/APSTA.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/ACL.png",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/BaseSpec/attachments/identify/controller/MNTMT_MXTMT.png",
-    "技術資料/NVMe/BaseSpec/attachments/identify/controller/SQES_CQES.png",
-    "技術資料/NVMe/BaseSpec/attachments/identify/controller/MXTMT.png",
-    "技術資料/NVMe/BaseSpec/attachments/identify/controller/MNTMT.png",
-    "技術資料/NVMe/BaseSpec/attachments/identify/controller/Power_State_Descriptor.png",
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
