@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Sanitize.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Sanitize.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Sanitize.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Sanitize.md"
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md"
               }
             }
           },
@@ -169,6 +169,7 @@
   },
   "active": "e28e4fc6d6a79743",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/host_controlled_thermal_management.png",
@@ -183,7 +184,6 @@
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/ACL.png",
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
-    "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",

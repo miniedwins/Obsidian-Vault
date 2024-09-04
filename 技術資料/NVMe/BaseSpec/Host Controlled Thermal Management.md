@@ -20,18 +20,18 @@
 
 > 克耳文  ( Kelvin ) = 攝氏溫度 ( Celsius ) + 273
 
-另外若是溫度設定不當，控制器則會回覆主機端錯誤訊息 ( Invalid Field in Command )。
+另外若是溫度設定不當，控制器會回覆主機端錯誤訊息 ( Invalid Field in Command )。
 
 - **設定溫度規則 :** 
 	- TMT1 < TMT2 
 	- TMT2 > TMT1
 - **錯誤範例設定 :** 
-	- TMT2=80 若是設定 TMT1=85
-	- TMT1=70 若是設定 TMT2=65 
+	- 當前 TMT2 = 80 若是設定 TMT1 = 85
+	- 當前 TMT1 = 70 若是設定 TMT2 = 65 
 
 ![[host_controlled_thermal_management.png]]
 
-另外值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有限定，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的限定值，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
+另外值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有限定值，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的限定值，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
 
 ![[MNTMT_MXTMT.png]]
 
@@ -39,7 +39,7 @@
 
 **主機控制的熱管理支援** : 控製器是否支援 HCTM， 是由控製器 `Identify Ctrl` 結構中的 `HCTMA` 欄位表示。如果支援，代表控製器可以響應主機的熱管理請求命令。
 
-- HCTM ( Host Controlled Thermal Management Attributes )
+- HCTMA ( Host Controlled Thermal Management Attributes )
 	- Bit 0 : 1 ( Support )
 	- Bit 0 : 0 ( Not Supported )
 	- Bit 1-15  ( Reserved )
