@@ -7,17 +7,22 @@
 
 ( 未完 )
 
-那麼要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 Set-Feature ( HCTM ) 命令設定溫度。規格書定義克耳文 ( Kelvin ) 是計量溫度的單位，但是我們使用的計量單位是攝氏 ( Celsius )，因此設定時需要對溫度做單位轉換。
+那麼要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 Set-Feature ( HCTM ) 命令設定溫度。定義克耳文 ( Kelvin ) 是計量溫度的單位，但是我們使用的計量單位是攝氏 ( Celsius )，因此設定時需要對溫度做單位轉換。
 
 > 克耳文  ( Kelvin ) = 攝氏溫度 ( Celsius ) + 273
 
-另外在溫度若是設定不當，控制器則回覆主機端錯誤訊息 ( Invalid Field in Command )
-- TMT1 >= TMT2  ( 例如 : TMT2=80 若是設定 TMT1=85 )
-- TMT2 <= TMT1 ( 例如 : TMT1=70 若是設定 TMT2=65 )
+另外溫度若是設定不當，控制器則會回覆主機端錯誤訊息 ( Invalid Field in Command )。
+
+- 設定溫度規則 : 
+	- TMT1 < TMT2 
+	- TMT2 > TMT1
+- 錯誤範例設定 : 
+	- TMT2=80 若是設定 TMT1=85
+	- TMT1=70 若是設定 TMT2=65 
 
 ![[Pasted image 20240904061321.png]]
 
-值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有範圍限定，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的範圍，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
+另外值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有範圍限定，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的範圍，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
 
 ![[MNTMT_MXTMT.png]]
 
