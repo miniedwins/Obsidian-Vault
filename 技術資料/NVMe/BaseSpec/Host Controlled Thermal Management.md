@@ -37,7 +37,7 @@
 
 # 檢查是否支援 HCTM
 
-**主機控制的熱管理支援** : 控製器是否支援 HCTM， 是由控製器 `Identify Ctrl` 結構中的 `HCTMA` 欄位表示。如果支援，代表控製器可以響應主機的熱管理請求命令。
+**主機控制的熱管理支援** : 控製器是否支援 HCTM，是由控製器 `Identify Ctrl` 結構中的 `HCTMA` 欄位表示。如果支援，代表控製器可以響應主機的熱管理請求命令。
 
 - HCTMA ( Host Controlled Thermal Management Attributes )
 	- Bit 0 : 1 ( Support )
@@ -46,8 +46,67 @@
 
 ![[HCTM.png]]
 
+# 查看當前 HCTM 設定
 
+主機端可以透過 Get-Feature ( HCTM ) 取得當前 TMT1 以及 TMT2 溫度設定的狀態。
+
+```shell
+$ sudo nvme get-feature -f 0x10 /dev/nvme0 -H
+get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
+		Thermal Management Temperature 1 (TMT1) : 349 K (76 °C)
+		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
+```
 # 設定 HCTM 溫度
+
+首先取得當前 HCTM 所設定的溫度，可以得知 TMT1=76 °C 以及 TMT2=79 °C。
+
+```shell
+$ sudo nvme get-feature -f 0x10 /dev/nvme0 -H
+get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
+		Thermal Management Temperature 1 (TMT1) : 349 K (76 °C)
+		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
+```
+
+接下來我們想要將 TMT1 設定 60 °C，在稍微有一點的溫度下觸發熱管理機制。
+
+```shell
+$ sudo nvme set-feature -f 0x10 --value=0x014d0160 /dev/nvme0
+set-feature:0x10 (Host Controlled Thermal Management), value=0x014d0160, cdw12:00000000, save:0
+```
+
+然後再重新取得 HCTM 設定的溫度，可以發現當前的 TMT1 溫度已經變成 60 °C
+
+```shell
+$ sudo nvme get-feature -f 0x10 /dev/nvme0 -H
+get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
+		Thermal Management Temperature 1 (TMT1) : 349 K (60 °C)
+		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
+```
+
+若是 HCTM 設定溫度不符合規則，例如 : TMT1=0x0142 以及 TMT2=0x0140
+
+當設定 TMT1=85 °C  大於 TMT2=83 °C 觸發熱管理的動作不符合定義，因此發生錯誤。
+
+```
+$ sudo nvme set-feature -f 0x10 --value=0x1420140 /dev/nvme0
+NVMe status: Invalid Field in Command: A reserved coded value or an unsupported value in a defined field (0x2002)
+```
+
+另外需要考慮到控制器支援溫度的上下限 **( MNTMT & MXTMT )**，當設定超過限定的範圍，控制器也是會回覆錯誤訊息。
+
+例如 : TMT1=80 °C  以及  TMT2=92 °C，首先透過 `Identify Ctrl` 取得結構表，得知當前可設定的溫度
+MNTMT= ??  MXTMT= ??，
+
+```shell
+(待完成) 顯示取得 MNTMT= ??  MXTMT= ?? 結構表
+```
+
+雖然 TMT1 設定符合規則，但是 TMT2 已經超過限定範圍，因此主機端發出的請求命令會產生錯誤。
+
+```shell
+$ sudo nvme set-feature -f 0x10 --value=0x015d0161 /dev/nvme0
+NVMe status: Invalid Field in Command: A reserved coded value or an unsupported value in a defined field (0x2002)
+```
 
 
 
