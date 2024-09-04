@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Sanitize.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Sanitize.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Sanitize.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md"
+                "file": "技術資料/NVMe/BaseSpec/Sanitize.md"
               }
             }
           },
@@ -169,8 +169,9 @@
   },
   "active": "e28e4fc6d6a79743",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/host_controlled_thermal_management.png",
+    "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/host_controlled_thermal_management.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/HCTM.png",
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/error_recovery_id_05.png",
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/hctm_example.png",
@@ -191,7 +192,6 @@
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "未命名.canvas",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
-    "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "技術資料/NVMe/BaseSpec/Abort.md",
     "作業系統/Linux/套件安裝/工具/nvmecli.md",

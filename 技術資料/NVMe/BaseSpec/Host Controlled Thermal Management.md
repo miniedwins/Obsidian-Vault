@@ -31,7 +31,7 @@
 
 ![[host_controlled_thermal_management.png]]
 
-另外值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有範圍限定，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的範圍，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
+另外值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有限定，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的限定值，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
 
 ![[MNTMT_MXTMT.png]]
 

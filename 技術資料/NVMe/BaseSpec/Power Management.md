@@ -165,7 +165,7 @@ nvme get-feature /dev/nvme0 --feature-id=0x02
 說明 : nvme-cli 會將所有的資料顯示出來，不過可以從回傳值 Current value : `0x000001` 取得目前的狀態是被啟用的。
 
 * 每個電源狀態會有一個 `Entry`，總共 64 Bits (8 Bytes)
-* 因為控制器最大可以支援 `32` 個電源狀態，所以才會回傳 8*32=256 Bytes 
+* 因為控制器最大可以支援 `32` 個電源狀態，所以才會回傳 8 x 32=256 Bytes 
 * 目前控制器只支援五種狀態，所以之後的值都會是 `0x00`
 
 **APST 狀態結構表**
@@ -209,8 +209,8 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 說明 : 發送命令 set-feature 設定 APST
 
 * `value` : 
-  * APSTE=1 (Enable) 
-  * APSTE=0 (Disable)
+  * APSTE = 1 ( Enable ) 
+  * APSTE = 0 ( Disable )
 
 **啟用 APST**
 
