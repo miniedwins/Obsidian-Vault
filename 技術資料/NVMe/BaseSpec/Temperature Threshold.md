@@ -4,11 +4,14 @@
 
 ![[temperature_threshold.png]]
 
-當溫度超過或是等於主機端所設定的過溫閾值，或者低於或等於低溫閾值時，SMART 健康資訊日誌中的關鍵警告欄位（Critical Warning field）的第二位會被設定為 **"1"**。這種情況可能會觸發一個**非同步事件**，通知主機發生了溫度異常。
+當溫度超過或是等於主機端所設定的**過溫閾值**，或者低於或等於**低溫閾值**時，SMART 健康資訊日誌中的關鍵警告欄位（Critical Warning field）的第二位會被設定為 **"1"**。這種情況可能會觸發一個**非同步事件**，通知主機發生了溫度異常。
 
 ![[smart_health_critical_warning.png]]
 
-控製器必須為 **綜合溫度（Composite Temperature）** 實現過溫閾值功能。
+控製器必須為 **綜合溫度（Composite Temperature）** 實現**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。
+
+
+
 
 - **Composite Temperature 的閾值實現**:
     - 控製器必須為**綜合溫度（Composite Temperature）**實現**過溫閾值**功能。
