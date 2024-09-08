@@ -1,4 +1,4 @@
-# HCTM 介紹
+# 基本介紹
 
 控制器提供主機端一個熱管理設定機制 **( HCTM )**，讓主機端 ( Host ) 可以通過特定的組態設定不同階段的熱管理 **( TMT1 and TMT2 )**，當控製器達到設定溫度的閥值時，執行特定熱管理動作。
 
@@ -8,8 +8,8 @@
 
 > **供應商特定的熱管理動作** : 除了切換電源狀態，控製器還可能執行一些由供應商定義的特定操作，這些操作可能與裝置的散熱機制、CPU 速度控制等相關，旨在更好地管理裝置的溫度。
 
-何謂 TMT1 以及 TMT2 ? 
-**TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令，主機端可以透過該命令方式來設定溫度的閥值，共可以設定 TMT1 ( Light Throttle ) 以及 TMT2 ( Heavy Throttle )。當控制器達到主機端所設定的溫度時，就會開始啟動熱管理機制。
+## 何謂 TMT1 以及 TMT2 ?
+TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令，主機端可以透過該命令方式來設定溫度的閥值，共可以設定 TMT1 ( Light Throttle ) 以及 TMT2 ( Heavy Throttle )。當控制器達到主機端所設定的溫度時，就會開始啟動熱管理機制。
 
 下圖為 **HCTM** 範例，分別描述 **TMT1 以及 TMT2 之間的關係**。若是當前 Composite Temperature 達到符合 HCTM 溫度設定，控制器會開始轉換到 `Low Power Active States` 並且執行廠商所指定的 `Thermal Management Actions` 也就是熱管理動作。
 

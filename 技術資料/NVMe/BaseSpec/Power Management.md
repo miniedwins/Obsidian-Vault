@@ -1,8 +1,4 @@
-# Power Management
-
-
-
-## 電源管理說明
+# 電源管理說明
 
 主要功能是允許主機 (Host) 可以靜態或是動態管理 **NVM Subsystem Power**。
 
@@ -24,7 +20,7 @@
 
 
 
-## 電源階段描述 (Power State)
+# 電源階段描述 (Power State)
 
 描述各個電源階段表格，說明每個階段有不同的最大電源消耗 (MP)，進入 (Enter) 或是離開 (Exit) 該電源階段的延遲時間，以及不同階段的 `I/O` 效能 (Performance) 與延遲 (Latency) 時間的處理能力。數字越小代表者效能越好，相對的功耗也會越大。
 
@@ -50,7 +46,7 @@
 
 
 
-## 非操作電源模式 (NOPS)
+# 非操作電源模式 (NOPS)
 
 **Non-Operational Power States (NOPS) :** 定義是當控制器沒有任何 I/O 命令需要處理，並且閒置了一段時間後，就會進入到非操作電源模式。因為是主機 (Host) 自動切換電源狀態，前提條件下必須要啟用 `APST`。
 
@@ -74,7 +70,7 @@
 
 
 
-## 自動電源狀態切換 (APST)
+# 自動電源狀態切換 (APST)
 
 **Autonomous Power State Transitions (APST) :** 提供主機一個電源狀態自動切換的機制，能讓主機可以切換電源階段 (a non-operational power state may autonomously transition to another non-operational power state)。它的進入的條件是當控制器連續閒置 (Idle) 一段時間，並且超過所指定的閒置時間，主機就會轉換電源狀態到 NOPS。
 
@@ -84,9 +80,9 @@
 
 
 
-## 如何執行命令
+# 如何執行命令
 
-### 取得控制器支援的電源狀態
+## 取得控制器支援的電源狀態
 
 說明 : 發送 identify controller 命令， 取得控制器最大支援電源狀態數量。
 
@@ -103,7 +99,7 @@ nvme id-ctrl /dev/nvme0 | grep npss
 
 
 
-### 取得各個電源的狀態描述
+## 取得各個電源的狀態描述
 
 說明 : 發送 identify controller 命令， nvme-cli 會回傳整理好的資訊。
 
@@ -132,7 +128,7 @@ ps    4 : mp:0.0050W non-operational enlat:400000 exlat:90000 rrt:4 rrl:4
 
 
 
-### 如何設定電源狀態
+## 如何設定電源狀態
 
 說明 : nvme-cli 指定參數 (Power States)，即可設定或是取得電源狀態。
 
@@ -158,9 +154,9 @@ nvme get-feature /dev/nvme0 --feature-id=0x02
 
 
 
-### 設定與查看 APST 屬性
+## 設定與查看 APST 屬性
 
-#### 取得目前狀態
+### 取得目前狀態
 
 說明 : nvme-cli 會將所有的資料顯示出來，不過可以從回傳值 Current value : `0x000001` 取得目前的狀態是被啟用的。
 
@@ -204,7 +200,7 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 
 
 
-#### 設定啟用或停用功能
+### 設定啟用或停用功能
 
 說明 : 發送命令 set-feature 設定 APST
 

@@ -1,8 +1,4 @@
-# Telemetry
-
-
-
-## Telemetry 介紹
+# Telemetry 介紹
 
 Telemetry log 主要讓開發商收集內部資料去改善產品功能與穩定性。Telemetry 資料的收集方式可以透過兩種方法取得 initiated by the host or by the controller，資料會存放在 `Telemetry Host-Initiated` and `Telemetry Controller-Initiated` log page，因此我們可以透過 `get-log` 命令方式取得 telemetry 資料。由於要收集資料的方法與內容是由開發商所指定，所以無法得知資料內容的格式。
 
