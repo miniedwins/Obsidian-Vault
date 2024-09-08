@@ -1,6 +1,6 @@
 # HCTM 介紹
 
-控制器提供主機端一個熱管理設定機制 **( HCTM )**，讓主機端 ( Host ) 可以通過特定的組態設定不同階段的熱管理 **( TMT1 and TMT2 )**，當控製器達到設定溫度的閥值執行特定熱管理動作。
+控制器提供主機端一個熱管理設定機制 **( HCTM )**，讓主機端 ( Host ) 可以通過特定的組態設定不同階段的熱管理 **( TMT1 and TMT2 )**，當控製器達到設定溫度的閥值時，執行特定熱管理動作。
 
 - **這些操作的目標主要是**
 	- 降低性能以減少熱量的產生，從而保護裝置和資料的安全。
@@ -16,7 +16,7 @@
 
 ![[hctm_example.png]]
 
-那麼要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 Set-Feature ( HCTM ) 命令設定溫度。定義克耳文 ( Kelvin ) 是計量溫度的單位，但是我們使用的計量單位是攝氏 ( Celsius )，因此設定時需要對溫度做單位轉換。
+那麼要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 **Set-Feature ( HCTM )** 命令設定溫度。定義**克耳文 ( Kelvin )** 是計量溫度的單位，但是我們使用的計量單位是**攝氏 ( Celsius )**，因此設定時需要對溫度做單位轉換。
 
 > 克耳文  ( Kelvin ) = 攝氏溫度 ( Celsius ) + 273
 
@@ -37,7 +37,7 @@
 
 # 檢查是否支援 HCTM
 
-**主機控制的熱管理支援** : 控製器是否支援 HCTM，是由控製器 `Identify Ctrl` 結構中的 `HCTMA` 欄位表示。如果支援，代表控製器可以響應主機的熱管理請求命令。
+**主機控制的熱管理支援** : 控製器是否支援 HCTM，可以從結構表 `Identify Ctrl` 獲得 `HCTMA` 欄位。如果支援，代表控製器可以響應主機的熱管理請求命令。
 
 - HCTMA ( Host Controlled Thermal Management Attributes )
 	- Bit 0 : 1 ( Support )
@@ -46,12 +46,17 @@
 
 ![[HCTM.png]]
 
+從命令回報的結果得知，控制器有支援 HCTM。
+
+```shell
+(待完成) 顯示 HCTMA 欄位值
+```
 # 查看當前 HCTM 設定
 
 主機端可以透過 Get-Feature ( HCTM ) 取得當前 TMT1 以及 TMT2 溫度設定的狀態。
 
 ```shell
-$ sudo nvme get-feature -f 0x10 /dev/nvme0 -H
+$ nvme get-feature -f 0x10 /dev/nvme0 -H
 get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 		Thermal Management Temperature 1 (TMT1) : 349 K (76 °C)
 		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
@@ -61,7 +66,7 @@ get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 首先取得當前 HCTM 所設定的溫度，可以得知 TMT1=76 °C 以及 TMT2=79 °C。
 
 ```shell
-$ sudo nvme get-feature -f 0x10 /dev/nvme0 -H
+$ nvme get-feature -f 0x10 /dev/nvme0 -H
 get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 		Thermal Management Temperature 1 (TMT1) : 349 K (76 °C)
 		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
@@ -70,14 +75,14 @@ get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 接下來我們想要將 TMT1 設定 60 °C，在稍微有一點的溫度下觸發熱管理機制。
 
 ```shell
-$ sudo nvme set-feature -f 0x10 --value=0x014d0160 /dev/nvme0
+$ nvme set-feature -f 0x10 --value=0x014d0160 /dev/nvme0
 set-feature:0x10 (Host Controlled Thermal Management), value=0x014d0160, cdw12:00000000, save:0
 ```
 
 然後再重新取得 HCTM 設定的溫度，可以發現當前的 TMT1 溫度已經變成 60 °C
 
 ```shell
-$ sudo nvme get-feature -f 0x10 /dev/nvme0 -H
+$ nvme get-feature -f 0x10 /dev/nvme0 -H
 get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 		Thermal Management Temperature 1 (TMT1) : 349 K (60 °C)
 		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
@@ -88,7 +93,7 @@ get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 當設定 TMT1=85 °C  大於 TMT2=83 °C 觸發熱管理的動作不符合定義，因此發生錯誤。
 
 ```
-$ sudo nvme set-feature -f 0x10 --value=0x1420140 /dev/nvme0
+$ nvme set-feature -f 0x10 --value=0x1420140 /dev/nvme0
 NVMe status: Invalid Field in Command: A reserved coded value or an unsupported value in a defined field (0x2002)
 ```
 
@@ -101,7 +106,7 @@ MNTMT= ??  MXTMT= ??，
 (待完成) 顯示取得 MNTMT= ??  MXTMT= ?? 結構表
 ```
 
-雖然 TMT1 設定符合規則，但是 TMT2 已經超過限定範圍，因此主機端發出的請求命令會產生錯誤。
+雖然 TMT1 設定符合規則，但是 TMT2 已經超過限定範圍，因此主機端發出的命令請求會發生錯誤。
 
 ```shell
 $ sudo nvme set-feature -f 0x10 --value=0x015d0161 /dev/nvme0
