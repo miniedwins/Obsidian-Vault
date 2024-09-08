@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+                "file": "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md"
+                "file": "技術資料/NVMe/BaseSpec/Temperature Threshold.md"
               }
             }
           },
@@ -169,12 +169,14 @@
   },
   "active": "e28e4fc6d6a79743",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
+    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240905061834.png",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240905061750.png",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240905061717.png",
-    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
@@ -185,11 +187,9 @@
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240904061321.png",
     "技術資料/NVMe/BaseSpec/attachments/non_operational_power_state_config.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/DSTO.png",
-    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
     "技術資料/NVMe/BaseSpec/attachments",
-    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "未命名.canvas",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",

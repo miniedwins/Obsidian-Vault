@@ -1,7 +1,3 @@
-# Firmware Download
-
-
-
 ## 基本介紹
 
 NVMe Firmware Command 分為以下兩種命令 : 
