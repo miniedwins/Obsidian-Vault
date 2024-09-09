@@ -51,7 +51,7 @@ TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令�
 	- Bit 0 : 0 ( Not Supported )
 	- Bit 1-15  ( Reserved )
 
-![[HCTM.png]]
+![[host_ctrl_thermal_management_attrs.png]]
 
 從命令回報的結果得知 HCTMA = 1 ，代表控制器有支援 HCTM。
 
