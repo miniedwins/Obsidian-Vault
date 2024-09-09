@@ -10,8 +10,6 @@ Telemetry data 定義兩個資料結構，`Host-Initiated` 以及 `Controller-In
 
 ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/telemetry_data_areas.png)
 
-
-
 ## 如何執行命令
 
 ### 檢查控制器是否支援 
