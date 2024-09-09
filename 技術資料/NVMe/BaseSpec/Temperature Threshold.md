@@ -8,26 +8,70 @@
 
 ![[smart_health_critical_warning.png]]
 
-控製器必須為 **綜合溫度（Composite Temperature）** 實現**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。
+控製器必須為 **綜合溫度（Composite Temperature）** 實現**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。它的預設值，可以透過 `Identify Ctrl` 結構表找到 `WCTEMP` 以及 `CCTEMP`。這樣我們就可以知道當控制器到最大上限可以支援的溫度值。
 
+另外對於有效的溫度感測器（即那些報告了非零值的感測器），都需要實現相應的過溫和低溫閾值功能。
+所有實現的溫度感測器的預設**過溫閾值**為 **FFFFh**（表示極高的閾值，通常不會觸發警告），默認**低溫閾值**為 **0h**
 
-
-
-- **Composite Temperature 的閾值實現**:
-    - 控製器必須為**綜合溫度（Composite Temperature）**實現**過溫閾值**功能。
-    - 如果**Warning Composite Temperature Threshold (WCTEMP)** 欄位報告了非零值，則還必須為 Composite Temperature 實現**低溫閾值**功能。
-- **各感測器的閾值實現**:
-    - 對於所有有效的溫度感測器（即那些報告了非零值的感測器），都需要實現相應的過溫和低溫閾值功能。
-- **默認閾值**:
-    - Composite Temperature 的**過溫閾值**預設值是 **WCTEMP** 欄位的值（如果 **WCTEMP** 為非零）。如果 **WCTEMP** 為零，過溫閾值的預設值是**具體實現決定**的。
-    - Composite Temperature 的**低溫閾值**預設值也是**具體實現決定**的。
-    - 所有實現的溫度感測器的默認**過溫閾值**為 **FFFFh**（表示極高的閾值，通常不會觸發警告），默認**低溫閾值**為 **0h**
-
+![[composite_termperature_threshold.png]]
 # 執行命令操作
 
-## 檢查感測器溫度設定
+## 檢查感測器預設溫度
 
+```shell
+$ nvme id-ctrl /dev/nvme0 -H 
+NVME Identify Controller:
+vid       : 0x1bcd
+ssvid     : 0x1bcd
+sn        : 122020404029        
+mn        : 480GB PCIe Drive                        
+fr        : PNPP2D2A
+...
+...
+wctemp    : 357
+ [15:0] : 84 °C (357 K)	Warning Composite Temperature Threshold (WCTEMP)
+
+cctemp    : 362
+ [15:0] : 89 °C (362 K)	Critical Composite Temperature Threshold (CCTEMP)
+```
+## 取得當前綜合溫度
+
+以下 **NVMe-CLI** 命令會幫我們直接取得 **綜合溫度（Composite Temperature )**。
+
+```shell
+$ nvme get-feature -f 0x4 /dev/nvme0 -H
+get-feature:0x04 (Temperature Threshold), Current value:0x0000012f
+	Threshold Type Select         (THSEL): 0 - Over Temperature Threshold
+	Threshold Temperature Select (TMPSEL): 0 - Composite Temperature
+	Temperature Threshold         (TMPTH): 30 °C (303 K)
+```
+
+若是要取得其它 **感測器溫度** 必須要指定 **CDW11**，命令如下 : 
+
+```shell
+$ nvme
+```
 
 ## 設定綜合溫度
 
+例如 : 若是想要過溫閾值為 50°C，因此需要設定 THSEL= 00 以及 TMPTH = 0x012f
 
+- THSEL : 選擇設定 Temperature Threshold 
+	- 00 : Over
+	- 01 : Under
+- TMPTH : 設定溫度閾值 ( 單位 : Kelvins )
+
+```shell
+$ nvme set-feature -f 0x4 --value=0x00000143 /dev/nvme0
+set-feature:0x04 (Temperature Threshold), value:0x00000143, cdw12:00000000, save:0
+```
+
+設定完成後，可以透過 `Get-Feature` 取得當前溫度閥值是否被更改
+
+```shell
+$ nvme get-feature -f 0x4 /dev/nvme0 -H
+get-feature:0x04 (Temperature Threshold), Current value:0x00000143
+	Threshold Type Select         (THSEL): 0 - Over Temperature Threshold
+	Threshold Temperature Select (TMPSEL): 0 - Composite Temperature
+	Temperature Threshold         (TMPTH): 30 °C (303 K)
+```

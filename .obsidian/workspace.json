@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "8b484ccc7148548e",
+        "id": "a33c1cfd2f1cad0e",
         "type": "tabs",
         "children": [
           {
-            "id": "faca6af3e1fa8479",
+            "id": "7988c76a726b9e43",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -167,14 +167,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "faca6af3e1fa8479",
+  "active": "7988c76a726b9e43",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240909033428.png",
-    "技術資料/NVMe/BaseSpec/attachments/smart_health_critical_warning.png",
-    "技術資料/NVMe/BaseSpec/attachments/temperature_threshold.png",
-    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
+    "技術資料/NVMe/BaseSpec/attachments/composite_termperature_threshold.png",
+    "技術資料/NVMe/BaseSpec/attachments/smart_health_critical_warning.png",
+    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240909033428.png",
+    "技術資料/NVMe/BaseSpec/attachments/temperature_threshold.png",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
@@ -188,8 +189,6 @@
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/host_controlled_thermal_management.png",
     "技術資料/NVMe/BaseSpec/attachments/identify/controller/HCTM.png",
     "技術資料/NVMe/BaseSpec/attachments/nvme_feature/error_recovery_id_05.png",
-    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/hctm_example.png",
-    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20240904061321.png",
     "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
     "技術資料/NVMe/BaseSpec/attachments",
