@@ -11,11 +11,9 @@
             "id": "7988c76a726b9e43",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
-                "mode": "source",
-                "source": false
+                "file": "技術資料/NVMe/BaseSpec/attachments/identify/controller/volatile_write_cache.png"
               }
             }
           }
@@ -77,7 +75,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5110321044922
+    "width": 458.5110321044922
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +91,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/attachments/identify/controller/volatile_write_cache.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +108,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/attachments/identify/controller/volatile_write_cache.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +131,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md"
+                "file": "技術資料/NVMe/BaseSpec/attachments/identify/controller/volatile_write_cache.png"
               }
             }
           },
@@ -169,25 +167,30 @@
   },
   "active": "7988c76a726b9e43",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/autonomous_power_state_transition.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/power_management.png",
+    "技術資料/NVMe/BaseSpec/attachments/identify/controller/composite_termperature_threshold.png",
+    "技術資料/NVMe/BaseSpec/attachments/admin_command_set/sanitize_cmd_dw10.png",
+    "技術資料/NVMe/BaseSpec/attachments/host_controller_thermal_management",
+    "技術資料/NVMe/BaseSpec/attachments/log_page/smart_health_critical_warning.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvme_feature/error_recovery.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvm_command_set/dataset_management/dataset_management_range_definition.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvm_command_set/dataset_management/dataset_management_dw11.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvm_command_set/data_protection/protection_information_field_definition.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvm_command_set/data_protection/medata_as_separate.png",
+    "技術資料/NVMe/BaseSpec/attachments/nvm_command_set/dataset_management",
+    "技術資料/NVMe/BaseSpec/attachments/nvm_command_set/data_protection/write_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
+    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer (HMB).md",
     "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
-    "技術資料/NVMe/BaseSpec/attachments/admin_command_set/device_self_test_aborting_operation.png",
-    "技術資料/NVMe/BaseSpec/attachments/admin_command_set/abort_cmd_dw10.png",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
-    "技術資料/NVMe/BaseSpec/attachments/subsystem_reset/nvme_subsystem_reset_nssrc.png",
-    "技術資料/NVMe/BaseSpec/attachments/subsystem_reset/nvme_substem_reset.png",
-    "技術資料/NVMe/BaseSpec/attachments/dynamic_power_management.png",
     "技術資料/NVMe/BaseSpec/Abort.md",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_cdw13_14.png",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_cdw11_12.png",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_cdw11.png",
-    "技術資料/NVMe/BaseSpec/attachments/identify/namesapce/namespace_features.png",
-    "技術資料/NVMe/BaseSpec/attachments/identify/namesapce/deallocate_logical_block_features.png",
     "技術資料/NVMe/BaseSpec/attachments/controller",
-    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
     "技術資料/NVMe/BaseSpec/Namespace Management.md",
     "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
@@ -196,11 +199,9 @@
     "技術資料/NVMe/BaseSpec/attachments",
     "未命名.canvas",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
     "作業系統/Linux/套件安裝/工具/nvmecli.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/SMBus/Packet Error Code.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
@@ -213,8 +214,6 @@
     "技術資料/NVMe/NVMe-MI",
     "作業系統/Linux/教學/FIO/Standard/IO 讀寫方法",
     "作業系統/Linux/教學/FIO/Standard/資料驗證",
-    "作業系統/Linux/教學/NVMECLI",
-    "作業系統/Linux/教學/I2C",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]

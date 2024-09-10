@@ -88,7 +88,7 @@ $ nvme format /dev/nvme0n1 -n 1 -l 1 -i 1 -m 1 -p 0 -f
 
 當主機端發出寫入請求命令，控制器收到命令後會在 `LBA Data` 後面加入 PI 資訊，最後寫入 NAND。
 
-![[nvme_write_pi_md_eq8_pract_1.png]]
+![[write_pi_md_eq8_pract_1.png]]
 
 首先主機端使用 DD 命令建立寫入的檔案。
 
@@ -105,12 +105,12 @@ dd if=/dev/urandom of=512B.bin bs=512 count=1
 $ nvme write /dev/nvme0n1 -s 0x12 -z 512 -d 512B.bin --prinfo=0xf --ref-tag=0x12
 ```
 
-![[nvm_write_prinfo_field.png]]
+![[protection_information_field_definition.png]]
 #### 控制器收到主機讀取請求
 
 當控制器收到主機端的讀取命令請求，主機端可以設定是否需要回傳 PI 資訊或是回傳 `LBA Data`。在這個範例中我們只要求控制器回傳 LBA 資料即可。
 
-![[nvme_read_pi_md_eq8_pract_1.png]]
+![[read_pi_md_eq8_pract_1.png]]
 
 使用 nvm read 命令讀取 `LBA=0x12` 位址的資料，ILBRT 指定相同位址 `--ref-tag=0x12`，並且設定 `PRACT=0`，代表控制器只回傳 `LBA Data`，然後設定 `PRCHK=111b` 檢查 PI 所有的資訊內容是否正常。
 

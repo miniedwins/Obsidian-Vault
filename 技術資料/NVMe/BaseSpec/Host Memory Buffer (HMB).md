@@ -16,7 +16,7 @@
 - HMPRE = 0 (不支援)
 - HMPRE = non-zone (支援)
 
-![[identify_ctrl_hmpre.png]]
+![[host_memory_buffer_perferrez_size.png]]
 ## 取得 HMB 資訊 
 
 - nvme-cli 執行後會顯示兩個資訊內容

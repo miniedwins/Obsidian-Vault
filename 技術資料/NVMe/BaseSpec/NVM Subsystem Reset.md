@@ -3,12 +3,12 @@
 ***備註 :*** 
 - ***待確認 : 尚未了解該 Subsytem Reset，是屬於哪一種 PCIe Reset (Hot or FLR) ?***
 
-![[nvme_substem_reset.png]]
+![[nvme_subsytem_reset.png]]
 ## 檢查是否支援 NVM Subsystem Reset
 
 - `CAP.NSSRS` 設定為 `1` 則支援  `NVM Subsystem Reset`。
 
-![[nvme_subsystem_reset_nssrs.png]]
+![[nvme_subsystem_reset_supported.png]]
 
 ## 如何發起 NVM Subsystem Reset
  
@@ -16,10 +16,10 @@
  - 若是寫入其它值則不會有任何影響。
  - 當讀取 `NSSR.NSSRC`，該回傳值則需為 `0`。
  
-![[nvme_subsystem_reset_nssrc.png]]
+![[nvme_subsystem_reset_control.png]]
 
 ## 主機端如何知道發生 NVM Subsystem Reset
 
 ***內容待確認***
 
-![[nvme_subsystem_reset_nssro.png]]
+![[nvme_subsystem_reset_occurred.png]]
