@@ -1,6 +1,6 @@
 
 
-# 機本介紹
+# 基本介紹
 
 主要目的用來管理 NS 空間建立的大小，掛載，刪除以及其它對 NS 空間的屬性定義等設定，這些設定可以從 Namespace Management - Host Software Filed 來設定所有屬性值，前提控制器也必須要支援 **Namespace Management Command**。
 
