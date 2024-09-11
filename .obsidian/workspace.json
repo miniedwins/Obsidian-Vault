@@ -21,9 +21,11 @@
             "id": "10cd1e5ea64da366",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/attachments/identify/namesapce/namespace_features.png"
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -102,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/attachments/identify/namesapce/namespace_features.png",
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/attachments/identify/namesapce/namespace_features.png",
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -142,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/attachments/identify/namesapce/namespace_features.png"
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md"
               }
             }
           },
@@ -176,55 +178,55 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "10cd1e5ea64da366",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/attachments/namespace_management",
-    "技術資料/NVMe/BaseSpec/attachments/log_page/firmware_slot_information_AFI.png",
-    "技術資料/NVMe/BaseSpec/attachments/power_management",
-    "技術資料/NVMe/BaseSpec/attachments/firmware_image_download",
-    "技術資料/NVMe/BaseSpec/attachments/log_page/smart_health_critical_warning.png",
-    "技術資料/NVMe/BaseSpec/attachments/sanitize/sanitize_process.png",
-    "技術資料/NVMe/BaseSpec/attachments/sanitize/sanitize_status.png",
-    "技術資料/NVMe/BaseSpec/attachments/self_test/self_test_log.png",
-    "技術資料/NVMe/BaseSpec/attachments/sanitize",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/host_memory_buffer_perferrez_size.png",
-    "技術資料/NVMe/BaseSpec/attachments/self_test",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_descriptor_list.png",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_cq_entry_enable_host_memory.png",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_cdw11_12.png",
-    "技術資料/NVMe/BaseSpec/attachments/host_memory_buffer/hmb_cdw13_14.png",
-    "技術資料/NVMe/BaseSpec/Namespace Management.md",
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
-    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
-    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
-    "技術資料/PCIE/System Reset/Fundamental Reset.md",
-    "技術資料/PCIE/System Reset/Conventional Reset.md",
-    "技術資料/NVMe/Other/IEEE EUI, OUI, and CID.md",
-    "技術資料/NVMe/BaseSpec/attachments/host_controller_thermal_management",
-    "技術資料/NVMe/BaseSpec/attachments/dataset_management",
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset (CLR).md",
-    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
-    "技術資料/NVMe/BaseSpec/Power Management.md",
-    "技術資料/NVMe/BaseSpec/Zoned Namespace.md",
-    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
-    "技術資料/NVMe/BaseSpec/Telemetry.md",
-    "技術資料/NVMe/BaseSpec/Abort.md",
-    "技術資料/NVMe/BaseSpec/attachments/controller",
-    "技術資料/NVMe/BaseSpec/Sanitize.md",
-    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
-    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
-    "技術資料/NVMe/BaseSpec/Write Cahce.md",
-    "技術資料/NVMe/BaseSpec/attachments",
-    "未命名.canvas",
-    "技術資料/NVMe/BaseSpec/Device Self Test.md",
-    "作業系統/Linux/套件安裝/工具/nvmecli.md",
-    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
+    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
-    "技術資料/PCIE/Power Management",
-    "技術資料/NVMe/CommandSet",
+    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
+    "技術資料/NVMe/ZoneNS/Zoned Namespace.md",
+    "技術資料/NVMe/ZoneNS/attachments/zone_characteristics.png",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
+    "技術資料/NVMe/nvmecli_cmds_example.txt",
+    "技術資料/NVMe/ZoneNS/attachments/zone_state_machine.png",
+    "技術資料/NVMe/ZoneNS/attachments/zone_state.jpg",
+    "技術資料/NVMe/ZoneNS/attachments/zone_resource.png",
+    "技術資料/NVMe/ZoneNS/attachments/zone_management_send.png",
+    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_state_machine.png",
+    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_resource.png",
+    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_state.jpg",
+    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_management_send.png",
+    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_characteristics.png",
+    "技術資料/NVMe/ZoneNS/attachments/zns_command_set",
+    "技術資料/NVMe/ZoneNS/attachments",
+    "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
+    "技術資料/NVMe/ZoneNS",
+    "技術資料/NVMe/NVMe-MI/Management Interface.md",
+    "技術資料/SMBus/Packet Error Code.md",
+    "程式設計/Python/converter.md",
+    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
+    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
+    "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
+    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
+    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
+    "程式設計/Git/建立第一個版本控制.md",
+    "程式設計/Git/如何設定命令縮寫.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/Git/修改已提交的紀錄.md",
+    "程式設計/Git/rebase 操作方法.md",
+    "程式設計/C 語言/建立靜態與共享函式庫.md",
+    "程式設計/C 語言/執行緒 (pthread)/如何接收子執行緒的返回值.md",
+    "程式設計/C 語言/執行緒 (pthread)/執行緒退出.md",
+    "程式設計/C 語言/名詞解釋/function returning type.md",
+    "技術資料/NVMe/BaseSpec/Namespace Management.md",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/attachments/write_cache",
+    "技術資料/NVMe/BaseSpec/attachments/telemetry",
+    "技術資料/NVMe/BaseSpec/attachments/format_nvm",
+    "技術資料/NVMe/BaseSpec/attachments/abort",
+    "技術資料/NVMe/BaseSpec/attachments/host_controlled_thermal_management",
+    "技術資料/NVMe/BaseSpec/attachments/namespace_management",
+    "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
   ]
