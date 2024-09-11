@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md",
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.5110321044922
+    "width": 390.5110321044922
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md",
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md",
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md"
+                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md"
               }
             }
           },
@@ -171,6 +171,15 @@
   "lastOpenFiles": [
     "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
+    "技術資料/PCIE/System Reset/Fundamental Reset.md",
+    "技術資料/PCIE/System Reset/Conventional Reset.md",
+    "技術資料/NVMe/BaseSpec/Device Self Test.md",
+    "技術資料/NVMe/BaseSpec/attachments/telemetry/telemetry_data_areas.png",
+    "技術資料/NVMe/BaseSpec/attachments/telemetry/telemetry_controller_initiated.png",
+    "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
@@ -182,7 +191,6 @@
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
-    "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_01.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_log_description.png",
@@ -190,9 +198,6 @@
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/extented_device_self_test_time.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_options.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_namespace_test_action.png",
-    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_informative.png",
-    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_dw_10.png",
-    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_aborting_operation.png",
     "技術資料/NVMe/BaseSpec/Abort.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/NVMe/Main.md",
@@ -205,11 +210,6 @@
     "技術資料/NVMe/ZoneNS/attachments",
     "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
     "技術資料/NVMe/ZoneNS",
-    "技術資料/SMBus/Packet Error Code.md",
-    "程式設計/Python/converter.md",
-    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
-    "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
     "技術資料/NVMe/BaseSpec/attachments/write_cache",
     "技術資料/NVMe/BaseSpec/attachments/telemetry",
     "技術資料/NVMe/BaseSpec/attachments/format_nvm",
