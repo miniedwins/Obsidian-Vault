@@ -15,28 +15,19 @@
 **Example Device Self-test Operation (Informative)**
 
 下圖是一個自檢的範本，控制器至少需要能夠執行一系列的自我檢驗功能測試
-
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/device_self_test_informative.png)
-
-
-
+![[device_self_test_informative.png]]
 ## 自檢類型
 
 主要分成兩個類型，如下說明 : 
-
 ### short device self-test
 
 * 一個自檢測試 (short self-test) 必須要在兩分鐘內或是更少的時間完成測試
 * 自檢的進度與測試的情況，可以從 Device Self-Test 日誌取得資訊內容
-
 ### extended device self-test
 
 * 一個自檢測試 (extended self-test) 會依據 EDSTT 所指定的時間內完成測試
   * EDSTT : Extended Device Self Test Time (單位 : 分鐘)
 * 檢測進度與測試的情況，可以從 Device Self-Test 日誌取得資訊內容
-
-
-
 ## 自檢中斷
 
 自檢是一個在背景執行的動作，若是主機端在自檢過程中執行發出特殊命令給控制器，此時就會造成自檢中斷。
@@ -62,10 +53,7 @@
 
 下圖描述當自檢過程中遇到 `format NVM` 命令，是否需要停止自檢測試。
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/device_self_test_aborting_operation.png)
-
-
-
+![[device_self_test_aborting_operation.png]]
 ## 自檢項目說明
 
 ### DRAM Check
@@ -96,16 +84,12 @@ DRAM 作用是來做資料的緩存，或許會存放了部分代碼和重要的
 ### Data Integrity (Extended only)
 
 該測試需要在背景下執行，主要確保所有使用者儲存的資料完整性。
-
 ### Media Check
 
 隨機讀取每一個可用的儲存空間，並作讀寫校驗。
-
 ### Drive Life
 
 檢查 SSD 壽命是否已經快要結束了。
-
-
 
 ## 檢查控制器支援
 
@@ -116,26 +100,24 @@ DRAM 作用是來做資料的緩存，或許會存放了部分代碼和重要的
     - 0 : Don't Support
     - 1 : Support
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/identify_controller/Identify_Controller_DSTO.png)
+![[device_self_test_options.png]]
 
 ~~~shell
 nvme id-ctrl /dev/nvme0 | grep dsto
 # dsto: 1
 ~~~
 
-
-
 ## 發送自檢測試命令
 
 說明 : 指定 Namespace Id 以及 Self-test Code (STC)，發送自檢命令給控制器執行操作。
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/admin_command_set/device_self_test_dw_10.png)
+![[device_self_test_dw_10.png]]
 
 備註 :  發送命令前需要了解 **Namespace Test Action** 所描述的說明。
 
 **Device Self-test Namespace Test Action**
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/admin_command_set/device_self_test_namespace_test_action.png)
+![[device_self_test_namespace_test_action.png]]
 
 說明 : 指定哪一個自檢測試類型，只少會有兩個類型可以設定。
 
@@ -153,8 +135,6 @@ nvme device-self-test /dev/nvme0 --namespace-id=1 --self-test-code=2
 # Abort the device self-test
 nvme device-self-test /dev/nvme0 --namespace-id=1 --self-test-code=0xf
 ~~~
-
-
 
 ## 查看自檢日誌
 
@@ -180,10 +160,7 @@ nvme device-self-test /dev/nvme0 --namespace-id=1 --self-test-code=0xf
 * Current Device Self-Test Operation : 目前執行那一種自檢測試
 * Current Device Self-Test Completion : 目前測試進度百分比
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/log_page/log_page_self_test.png)
-
-
-
+![[self_test_log.png]]
 #### Self-test Result Data Structure
 
 說明 : 主要觀察這兩個項目，其它在參考圖示說明
@@ -191,9 +168,9 @@ nvme device-self-test /dev/nvme0 --namespace-id=1 --self-test-code=0xf
 * Device Self-test Status : 自檢測試的類型與結果
 * Segment Number : 發生自檢錯誤，是哪個測試項目錯誤
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/log_page/log_page_self_test_result_data_structure_01.png)
+![[self_test_result_data_structure_01.png]]
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/log_page/log_page_self_test_result_data_structure_02.png)
+![[self_test_result_data_structure_02.png]]
 
 執行命令 : `nvme-cli` 可以選擇那一種顯示方式，較為方便閱讀日誌。
 
@@ -312,10 +289,7 @@ nvme get-log -i 0x06 -l 563
   * Segment Number : `0x00` (代表成功)
   * Namespace Identifier : `0x01` (指定哪一個 NS Id 測試)
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/log_page/self_test_log_description.png)
-
-
-
+![[self_test_log_description.png]]
 ## 查看 EDSTT 測試時間
 
 說明 : 發送 **Identify Controller** 命令來確認 **Extended Self-Test** 需要多少時間內完成測試。
@@ -327,7 +301,7 @@ Controller Attributes (CTRATT) :
 - 317:316 Bytes :  Extended Device Self-test Time (EDSTT)
   - 欄位需要轉換成 10 進制，取得真正的測試時間
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/identify_controller/Identify_Controller_EDSTT.png)
+![[extented_device_self_test_time.png]]
 
 執行命令 : 
 

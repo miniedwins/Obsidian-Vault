@@ -4,26 +4,26 @@
     "type": "split",
     "children": [
       {
-        "id": "a33c1cfd2f1cad0e",
+        "id": "8126e428ce4bb55f",
         "type": "tabs",
         "children": [
           {
-            "id": "7988c76a726b9e43",
+            "id": "a8c8f4b59c37d48b",
             "type": "leaf",
             "state": {
               "type": "image",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/attachments/sanitize/sanitize_process.png"
+                "file": "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png"
               }
             }
           },
           {
-            "id": "10cd1e5ea64da366",
+            "id": "e9b01776b1bc0e89",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
                 "mode": "source",
                 "source": false
               }
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 458.5110321044922
+    "width": 231.5110321044922
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md"
+                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md"
               }
             }
           },
@@ -178,30 +178,40 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "10cd1e5ea64da366",
+  "active": "e9b01776b1bc0e89",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
-    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
-    "技術資料/NVMe/ZoneNS/Zoned Namespace.md",
-    "技術資料/NVMe/ZoneNS/attachments/zone_characteristics.png",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/BaseSpec/Device Self Test.md",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_01.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_log_description.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_log.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/extented_device_self_test_time.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_options.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_namespace_test_action.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_informative.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_dw_10.png",
+    "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_aborting_operation.png",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
+    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/Dataset Management.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/BaseSpec/Abort.md",
+    "技術資料/NVMe/NVMe-MI/Management Interface.md",
+    "技術資料/NVMe/Main.md",
+    "技術資料/NVMe/BaseSpec/Power Management.md",
+    "技術資料/NVMe/BaseSpec/base",
+    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
+    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
+    "技術資料/NVMe/BaseSpec/Sanitize.md",
+    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
+    "技術資料/NVMe/ZoneNS/Zoned Namespace.md",
     "技術資料/NVMe/nvmecli_cmds_example.txt",
-    "技術資料/NVMe/ZoneNS/attachments/zone_state_machine.png",
-    "技術資料/NVMe/ZoneNS/attachments/zone_state.jpg",
-    "技術資料/NVMe/ZoneNS/attachments/zone_resource.png",
-    "技術資料/NVMe/ZoneNS/attachments/zone_management_send.png",
-    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_state_machine.png",
-    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_resource.png",
-    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_state.jpg",
-    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_management_send.png",
-    "技術資料/NVMe/ZoneNS/attachments/zns_command_set/zone_characteristics.png",
     "技術資料/NVMe/ZoneNS/attachments/zns_command_set",
     "技術資料/NVMe/ZoneNS/attachments",
     "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
     "技術資料/NVMe/ZoneNS",
-    "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/SMBus/Packet Error Code.md",
     "程式設計/Python/converter.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
@@ -210,22 +220,11 @@
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Git/建立第一個版本控制.md",
-    "程式設計/Git/如何設定命令縮寫.md",
-    "程式設計/Git/同步原作專案進度.md",
-    "程式設計/Git/修改已提交的紀錄.md",
-    "程式設計/Git/rebase 操作方法.md",
-    "程式設計/C 語言/建立靜態與共享函式庫.md",
-    "程式設計/C 語言/執行緒 (pthread)/如何接收子執行緒的返回值.md",
-    "程式設計/C 語言/執行緒 (pthread)/執行緒退出.md",
-    "程式設計/C 語言/名詞解釋/function returning type.md",
-    "技術資料/NVMe/BaseSpec/Namespace Management.md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/attachments/write_cache",
     "技術資料/NVMe/BaseSpec/attachments/telemetry",
     "技術資料/NVMe/BaseSpec/attachments/format_nvm",
     "技術資料/NVMe/BaseSpec/attachments/abort",
     "技術資料/NVMe/BaseSpec/attachments/host_controlled_thermal_management",
-    "技術資料/NVMe/BaseSpec/attachments/namespace_management",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
