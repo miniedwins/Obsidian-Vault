@@ -4,33 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "8126e428ce4bb55f",
+        "id": "12782e937c61c988",
         "type": "tabs",
         "children": [
           {
-            "id": "a8c8f4b59c37d48b",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png"
-              }
-            }
-          },
-          {
-            "id": "e9b01776b1bc0e89",
+            "id": "d921685aedd38a78",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
+                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -104,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
+                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
+                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md"
+                "file": "技術資料/NVMe/BaseSpec/Device Self Test.md"
               }
             }
           },
@@ -178,8 +167,20 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e9b01776b1bc0e89",
+  "active": "d921685aedd38a78",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+    "技術資料/NVMe/BaseSpec/Power Management.md",
+    "技術資料/NVMe/BaseSpec/Write Cahce.md",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
+    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
+    "技術資料/NVMe/BaseSpec/Telemetry.md",
+    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png",
@@ -192,20 +193,12 @@
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_informative.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_dw_10.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/device_self_test_aborting_operation.png",
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
-    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
     "技術資料/NVMe/BaseSpec/Abort.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/NVMe/Main.md",
-    "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/NVMe/BaseSpec/base",
-    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
-    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
-    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "技術資料/NVMe/ZoneNS/Zoned Namespace.md",
     "技術資料/NVMe/nvmecli_cmds_example.txt",
     "技術資料/NVMe/ZoneNS/attachments/zns_command_set",
@@ -217,9 +210,6 @@
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
-    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
-    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Git/建立第一個版本控制.md",
     "技術資料/NVMe/BaseSpec/attachments/write_cache",
     "技術資料/NVMe/BaseSpec/attachments/telemetry",
     "技術資料/NVMe/BaseSpec/attachments/format_nvm",
