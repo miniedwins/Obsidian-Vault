@@ -11,9 +11,8 @@
     #define debugX(level,fmt,args...)
 #endif  
 ```
-# 程式編譯階段去定義 DEBUG 
-不改變在程式檔, 而是在
 
+程式編譯階段去定義 DEBUG
 ```shell
 $ gcc -DDEBUG  debug.c -o test 
 ```
