@@ -3,7 +3,7 @@
 ```c
 #include <stdio.h>
 
-#ifdef  DEBUG
+#ifdef DEBUG
     #define debug(fmt,args...) printf (fmt ,##args)
     #define debugX(level,fmt,args...) if (DEBUG>=level) printf(fmt,##args);
 #else
