@@ -1,10 +1,21 @@
-
-# Command Line
-
+# Install Poetry
 ```shell
 # Install Poetry Module
 $ curl -sSL https://install.python-poetry.org | python3 -
 
+# 設定 PATH 環境變數
+$ export PATH=$PATH:$HOME/.local/bin
+
+# 建立虛擬環境
+$ poetry env use [version] # example: python3.10
+
+# 
+```
+
+
+# Command Line
+
+```shell
 # Install Package
 $ poetry add [module]
 
@@ -16,6 +27,12 @@ $ poetry show --tree
 
 # Change to env
 $ poetry env use [version] # example: python3.10
+
+# 啟動虛擬環境
+$ poetry shell
+
+# 退出虛擬環境
+$ exit #退出
 
 # Export requirements.txt
 $ poetry export -f requirements.txt -o requirements.txt --without-hashes
