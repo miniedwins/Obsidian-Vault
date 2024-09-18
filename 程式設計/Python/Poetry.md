@@ -3,14 +3,22 @@
 
 ```shell
 # Install Poetry Module
+$ curl -sSL https://install.python-poetry.org | python3 -
 
 # Install Package
+$ poetry add [module]
 
 # Remove Package
+$ poetry remove [module]
 
 # Show package
+$ poetry show --tree 
+
+# Change to env
+$ poetry env use [version] # example: python3.10
 
 # Export requirements.txt
+$ poetry export -f requirements.txt -o requirements.txt --without-hashes
 ```
 
 # Poetry PATH 
