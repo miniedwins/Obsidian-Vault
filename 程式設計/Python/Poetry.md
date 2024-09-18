@@ -32,7 +32,7 @@ $ poetry env use [version] # example: python3.10
 $ poetry shell
 
 # 退出虛擬環境
-$ exit #退出
+$ exit
 
 # Export requirements.txt
 $ poetry export -f requirements.txt -o requirements.txt --without-hashes
