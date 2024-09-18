@@ -25,6 +25,12 @@ $ poetry add [module] --group dev
 # 移除套件
 $ poetry remove [module]
 
+# 更新套件
+$ poetry update
+
+# 指定特定套件更新
+$ poetry update flask
+
 # 套件
 $ poetry show --tree 
 
