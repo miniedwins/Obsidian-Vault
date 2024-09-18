@@ -16,13 +16,16 @@ $ poetry env use [version] # example: python3.10
 # Command Line
 
 ```shell
-# Install Package
+# 新增套件
 $ poetry add [module]
 
-# Remove Package
+# 新增套件 dev-dependencies
+$ poetry add [module] --group dev
+
+# 移除套件
 $ poetry remove [module]
 
-# Show package
+# 套件
 $ poetry show --tree 
 
 # Change to env
@@ -34,8 +37,12 @@ $ poetry shell
 # 退出虛擬環境
 $ exit
 
-# Export requirements.txt
+# 輸出 requirements.txt
+# For tool.poetry.dependencies
 $ poetry export -f requirements.txt -o requirements.txt --without-hashes
+
+# For tool.poetry.group.dev.dependencies
+$ poetry export -f requirements.txt -o requirements.txt --without-hashes --dev
 ```
 
 # Poetry PATH 
