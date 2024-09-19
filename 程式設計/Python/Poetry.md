@@ -160,7 +160,7 @@ $ ~/home/edwin/poetry-demo/poetry env remove 3.12
 Deleted virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
 ```
 
-可以看到 Poetry 只會移除檔案 `poetry-demo-jNWKs6r--py3.12`
+可以看到 `poetry-demo-jNWKs6r--py3.12` 檔案會被移除 
 
 ```shell
 $ ls -l ~/.cache/pypoetry/virtualenvs
