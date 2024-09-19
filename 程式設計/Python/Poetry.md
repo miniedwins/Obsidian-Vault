@@ -30,6 +30,9 @@ $ poetry add [module] --group dev
 # 移除套件
 $ poetry remove [module]
 
+# 移除套件 dev-dependencies
+$ poetry remove [module] --group dev
+
 # 更新套件
 $ poetry update
 
