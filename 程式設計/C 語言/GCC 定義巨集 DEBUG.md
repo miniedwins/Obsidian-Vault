@@ -12,7 +12,8 @@
 #endif  
 ```
 
-程式編譯階段去定義 DEBUG
+程式編譯階段定義 DEBUG 
+
 ```shell
-$ gcc -DDEBUG  debug.c -o test 
+$ gcc -DDEBUG debug.c -o test 
 ```

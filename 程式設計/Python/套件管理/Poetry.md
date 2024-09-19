@@ -6,6 +6,11 @@
 $ curl -sSL https://install.python-poetry.org | python3 -
 ```
 
+Poetry 實際安裝路徑如下：
+
+- `$HOME/.local/bin` for Unix or Linux
+- `%APPDATA%\Python\Scripts` on Windows
+
 設定 `Poetry PATH` 環境變數
 
 ```shell
@@ -13,44 +18,75 @@ $ export PATH=$PATH:$HOME/.local/bin
 $ source ~/.bashrc
 ```
 
-或是透過軟連結將執行檔案連結到 `/usr/bin`
+或是透過軟連結將執行檔案連結到 `/usr/bin` or `/usr/local/bin`
 
 ```shell
 $ ln -s $PATH:$HOME/.local/bin /usr/bin
+$ ln -s $PATH:$HOME/.local/bin /usr/local/bin
 ```
 
 # 建立 Poetry 專案
 
-建立專案資料夾，並進入專案目錄
+## 初始化 Poetry
+
+首先建立專案資料夾，然後進入專案目錄中。
 
 ```shell
 $ mkdir poerty-demo
-$ mv poerty-demo
+$ cd poerty-demo
 ```
 
-然後初始化 Poetry，這會產生下列兩個檔案
-- poetry.lock
-- pyproject.toml
+初始化 Poetry，使用 `poerty init` 命令，這會產生下列兩個檔案 : 
+
+- `poetry.lock` : 
+- `pyproject.toml` : 
 
 ```shell
 $ poerty init
 ```
 
-完成後，啟動虛擬環境
+初始化所使用的 Python 版本，會根據系統所安裝的版本作為開發環境所使用。
+
+另外，也可以指定 Python 特定的版本，如下設定 : 
+
+```shell
+$ poerty init python3.12
+```
+
+## 進入開發環境
+
+初始化完成後，啟動虛擬環境
 
 ```shell
 poetry shell
 ```
-# 使用不同的虛擬環境開發
 
-開發中可能會需要建立不同的虛擬環境，Poetry 能讓使用者指定不同的 Python 版本。
+剛建立完的新專案並未安裝任何套件，因此可以用命令 `poetry add` 新增套件。
+
+下列範例為安裝 Pytest 套件，如下 : 
+
+```shell
+$ poetry add pytest
+```
+
+安裝完成後，安裝完成的套件會記錄在 `pyproject.toml` 檔案中，套件安裝區分為開發以及佈署
+
+```shell
+
+```
+
+# 管理虛擬環境
+
+## 使用不同的虛擬環境開發
+
+開發中可能會需要建立不同的虛擬環境，`poetry env use` 能讓使用者指定不同的 Python 版本。
 
 ```shell
 $ poetry env use python3.10
 Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
 ```
 
-設定完成後，進入虛擬環境就可以看到現在使用的是 Python 3.10
+設定完成後，進入虛擬環境就可以看到現在使用的是 `Python 3.10`
 
 ```shell
 $ poetry shell
@@ -86,9 +122,9 @@ $ poetry env use python3.12
 ```shell
 $ poetry shell
 ```
-# 重新建立相同的專案
+## 重新建立相同的專案
 
-主要目的是為了將開發所使用的套件或是設定，重新建立相同的開發環境
+主要目的是為了將開發所使用的套件或是設定，重新建立到不同的平台上
 
 將下列檔案複製到新的專案資料夾中
 - poetry.lock
@@ -238,7 +274,7 @@ $ poetry remove <module>
 # 移除開發套件 dev-dependencies
 $ poetry remove <module> --group dev
 
-# 更新 poetry 套件
+# 更新 poetry 版本
 $ poetry self update
 
 # 更新套件
