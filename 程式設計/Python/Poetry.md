@@ -80,6 +80,8 @@ Spawning shell within /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6
 
 # 別台主機上重現專案的 Poetry 虛擬環境
 
+You have both `poetry.lock` and `pyproject.toml` files in your project
+
 You can specify a specific Python version.
 
 ```shell
