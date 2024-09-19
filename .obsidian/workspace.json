@@ -150,12 +150,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,7 +166,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "d921685aedd38a78",
+  "active": "4e24df3295ed24a3",
   "lastOpenFiles": [
     "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
