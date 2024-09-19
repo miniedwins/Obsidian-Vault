@@ -7,7 +7,10 @@ $ curl -sSL https://install.python-poetry.org | python3 -
 $ export PATH=$PATH:$HOME/.local/bin
 
 # 建立虛擬環境
-$ poetry env use [version] # example: python3.10
+$ poetry env use [version] 
+
+# Example: python3.10
+$ poetry env use python3.10
 
 # 
 ```
