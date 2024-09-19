@@ -6,7 +6,7 @@
 $ curl -sSL https://install.python-poetry.org | python3 -
 ```
 
-設定 PATH 環境變數
+設定 `Poetry PATH` 環境變數
 
 ```shell
 $ export PATH=$PATH:$HOME/.local/bin
@@ -41,7 +41,7 @@ $ poerty init
 ```shell
 poetry shell
 ```
-# 如何使用不同的虛擬環境版本
+# 使用不同的虛擬環境開發
 
 開發中可能會需要建立不同的虛擬環境，Poetry 能使用指定的 Python 版本。
 
@@ -82,7 +82,7 @@ $ poetry env use python3.12
 $ poetry shell
 ```
 
-# 重現專案別的主機平台
+# 重現專案到別的主機平台
 
 目的是為了將開發所使用的套件或是設定，移轉到新的平台重現相同的開發環境
 
@@ -110,17 +110,7 @@ Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--p
 $ poetry shell
 ```
 
-透過 `pip list` 可以看到當前沒有任何的套件被安裝
-
-```shell
-$ pip list
-Package    Version
----------- -------
-pip        24.2
-setuptools 74.1.2
-```
- 
-依據 `poetry.lock` 記載的套件版本安裝到虛擬環境中
+使用 `poetry install` 會依據 `poetry.lock` 記載的套件版本安裝到虛擬環境中
 
 ```shell
 $ poetry install
@@ -143,11 +133,11 @@ Package operations: 15 installs, 0 updates, 0 removals
   - Installing pytest (8.3.3)
 ```
 
-# 移除並虛擬環境
+# 移除虛擬環境
 
 ## (1) 使用 env remove
 
-每個專案所使用的虛擬環境不一樣
+每個專案所使用的虛擬環境不一樣，移除哪一個專案所用的虛擬環境需要進入該專案目錄中
 
 ```shell
 $ ls -l ~/.cache/pypoetry/virtualenvs
@@ -158,7 +148,7 @@ drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
-進入專案資料夾，執行指定的 Python 版本移除，這裡我們指定 `3.12`，可以看到 Poetry 只會移除檔案`poetry-demo-jNWKs6r--py3.12`
+執行指定的 Python 版本移除，這裡我們指定 `3.12`，可以看到 Poetry 只會移除檔案 `poetry-demo-jNWKs6r--py3.12`
 
 ```shell
 $ ~/home/edwin/poetry-demo/poetry env remove 3.12
@@ -173,7 +163,7 @@ drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 
 ## (2) 直接移除檔案
 
-進入到虛擬環境檔案路徑
+進入到虛擬環境檔案路徑，找到要移除專案使用的虛擬環境資料夾
 
 ```shell
 ls -l ~/.cache/pypoetry/virtualenvs/
@@ -184,15 +174,16 @@ drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
-透過 `rm -rf` 命令直接移除檔案
+然後透過 `rm -rf` 命令直接移除檔案，這裡我們移除 `poetry-export` 所使用的 `py3.12` 虛擬環境
 
 ```shell
 $ rm -rf ~/.cache/pypoetry/virtualenvs/poetry-export-Q8rhi4Ih-py3.12/
 ```
 
-# Poetry 的版本管理能力
+# 版本管理能力
 
 ## (1) 使用^符號（文件）
+
 指定 Django 版本為 >=4.2.9 且 <5.0.0（允許 4.2.9 及以上版本，但不包括 5.0.0，即最大版號不能變更）:
 
 ```shell
@@ -201,6 +192,7 @@ poetry add django@^4.2.9
 這意味著它會接受所有 4.x.x 的更新，只要版本號小於 5.0.0。這是一個常見的做法，因為它允許套件自動更新到任何非重大變更的新版本。
 
 ## (2) 使用~符號（文件）
+
 指定 Django 版本為 >=4.2.9 且 <4.3.0（允許 4.2.9 及以上版本，但不包括 4.3.0，即只能升級最小版號）:
 
 ```shell
@@ -209,6 +201,7 @@ poetry add django@~4.2.9
 這個選項更加保守，只會接受 4.2.x 系列的更新。這適合想要進一步限制更新的範圍，但又保留一些更新的彈性——僅包括 bug 修正和小幅度的改進。
 
 ## (3) 使用>=符號
+
 指定 Django 版本為 >=4.2.9（沒有上限）:
 
 ```shell
@@ -218,25 +211,25 @@ $ poetry add "django>=4.2.9"
 主版號（即上面的 4.x.x 中的 4）升級時，通常有更大機率引入 API 變更、棄用舊有的 API 等，也就是所謂的 breaking change。
 這樣的更新可能會導致你的專案無法正常運作，需要一併修改程式碼。所以一般不建議使用這種方式。
 
-# Poetry 常用指令清單
+# 常用指令清單
 
 ```shell
-# 初始化，建立 pyproject.toml
+# 初始化 Poetry
 $ poerty init
 
 # 新增套件
 $ poetry add <module>
 
-# 新增套件 dev-dependencies
+# 新增開發套件 dev-dependencies
 $ poetry add <module> --group dev
 
 # 移除套件
 $ poetry remove <module>
 
-# 移除套件 dev-dependencies
+# 移除開發套件 dev-dependencies
 $ poetry remove <module> --group dev
 
-# 更新 poetry
+# 更新 poetry 套件
 $ poetry self update
 
 # 更新套件
@@ -248,21 +241,20 @@ $ poetry update flask
 # 列出全部套件清單 (顯示套件依賴層級)
 $ poetry show --tree 
 
-# Change to env
-# example: python3.10
+# 設定虛擬環境版本 
+# Example: python3.10
 $ poetry env use <version> 
 
 # 啟動虛擬環境
-# 如果虛擬環境尚未建立，則會直接自動幫你建立虛擬環境並使用
 $ poetry shell
 
 # 退出虛擬環境
 $ exit
 
-# 輸出 requirements.txt
-# For tool.poetry.dependencies
+# 輸出 requirements.txt 檔案
+# tool.poetry.dependencies (不包含開發套件)
 $ poetry export -f requirements.txt -o requirements.txt --without-hashes
 
-# For tool.poetry.group.dev.dependencies
+# For tool.poetry.group.dev.dependencies (包含開發套件)
 $ poetry export -f requirements.txt -o requirements.txt --without-hashes --dev
 ```
