@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "file": "程式設計/Python/converter.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 390.5110321044922
+    "width": 298.5110321044922
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "file": "程式設計/Python/converter.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+                "file": "程式設計/Python/converter.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Firmware Image Download.md"
+                "file": "程式設計/Python/converter.md"
               }
             }
           },
@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 258.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -166,12 +166,19 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "4e24df3295ed24a3",
+  "active": "d921685aedd38a78",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "技術資料/NVMe/BaseSpec/Write Cahce.md",
+    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
+    "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
+    "程式設計/Makefile/make.md",
+    "程式設計/Python/converter.md",
+    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
+    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
@@ -181,13 +188,10 @@
     "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
     "技術資料/NVMe/BaseSpec/Power Management.md",
-    "技術資料/NVMe/BaseSpec/Write Cahce.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
     "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
-    "技術資料/NVMe/BaseSpec/Telemetry.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png",
@@ -201,13 +205,9 @@
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/NVMe/Main.md",
     "技術資料/NVMe/BaseSpec/base",
-    "技術資料/NVMe/BaseSpec/Temperature Threshold.md",
-    "技術資料/NVMe/BaseSpec/Sanitize.md",
-    "技術資料/NVMe/ZoneNS/Zoned Namespace.md",
     "技術資料/NVMe/nvmecli_cmds_example.txt",
     "技術資料/NVMe/ZoneNS/attachments/zns_command_set",
     "技術資料/NVMe/ZoneNS/attachments",
-    "技術資料/NVMe/CommandSet/End-to-end Data Protection.md",
     "技術資料/NVMe/ZoneNS",
     "技術資料/NVMe/BaseSpec/attachments/write_cache",
     "技術資料/NVMe/BaseSpec/attachments/telemetry",
