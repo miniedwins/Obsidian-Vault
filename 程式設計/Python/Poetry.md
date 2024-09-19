@@ -101,6 +101,16 @@ Creating virtualenv poetry-demo-jNWKs6r--py3.12 in /home/edwin/.cache/pypoetry/v
 Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
 ```
 
+We can use the pip list command to display the currently installed packages.
+
+```shell
+$ pip list
+Package    Version
+---------- -------
+pip        24.2
+setuptools 74.1.2
+```
+
 因為是舊專案，不需要init, poetry.lock 記載的套件版本安裝到虛擬環境中
 
 ```shell
