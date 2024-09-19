@@ -78,3 +78,35 @@ Spawning shell within /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6
  ~/Desktop/workspace/study/py/poetry-demo  emulate bash -c '. /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10/bin/activate' 
 ```
 
+# 別台主機上重現專案的 Poetry 虛擬環境
+
+You can specify a specific Python version.
+
+```shell
+$ poetry env use python3.12
+Creating virtualenv poetry-demo-jNWKs6r--py3.12 in /home/edwin/.cache/pypoetry/virtualenvs
+Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
+```
+
+因為是舊專案，不需要init, poetry.lock 記載的套件版本安裝到虛擬環境中
+
+```shell
+$ poetry install
+Installing dependencies from lock file
+Package operations: 15 installs, 0 updates, 0 removals
+  - Installing markupsafe (2.1.5)
+  - Installing blinker (1.8.2)
+  - Installing click (8.1.7)
+  - Installing iniconfig (2.0.0)
+  - Installing itsdangerous (2.2.0)
+  - Installing jinja2 (3.1.4)
+  - Installing mypy-extensions (1.0.0)
+  - Installing packaging (24.1)
+  - Installing pathspec (0.12.1)
+  - Installing platformdirs (4.3.3)
+  - Installing pluggy (1.5.0)
+  - Installing werkzeug (3.0.4)
+  - Installing black (24.8.0)
+  - Installing flask (3.0.3)
+  - Installing pytest (8.3.3)
+```
