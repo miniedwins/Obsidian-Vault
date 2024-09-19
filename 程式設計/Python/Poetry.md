@@ -15,7 +15,6 @@ $ poetry env use python3.10
 # 
 ```
 
-
 # Poetry 常用指令清單
 
 ```shell
@@ -112,3 +111,24 @@ Package operations: 15 installs, 0 updates, 0 removals
   - Installing flask (3.0.3)
   - Installing pytest (8.3.3)
 ```
+
+# 移除並虛擬環境
+
+Go to the virtual environment folder and remove it directly.
+
+```shell
+ls -l ~/.cache/pypoetry/virtualenvs/
+total 20
+-rw-rw-r-- 1 edwin edwin  113  九  19 14:03 envs.toml
+drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  19 14:03 poetry-demo-jNWKs6r--py3.12
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
+```
+
+Remove the environment folder.
+
+```shell
+rm -rf ~/.cache/pypoetry/virtualenvs/poetry-export-Q8rhi4Ih-py3.12/
+```
+
