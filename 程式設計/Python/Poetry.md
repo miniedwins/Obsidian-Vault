@@ -121,6 +121,39 @@ Package operations: 15 installs, 0 updates, 0 removals
 
 # 移除並虛擬環境
 
+## (1) 移除1
+
+```shell
+ ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                                                           ok  15:39:54 
+total 20
+-rw-rw-r-- 1 edwin edwin  113  九  19 14:03 envs.toml
+drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  19 14:03 poetry-demo-jNWKs6r--py3.12
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
+
+ ~/Desktop/workspace/study/py/poetry-demo  poetry env remove 3.12                                                                                                        ok  15:40:05 
+Deleted virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
+
+ ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                                                           ok  15:40:16 
+total 16
+-rw-rw-r-- 1 edwin edwin   57  九  19 15:40 envs.toml
+drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
+
+ ~/Desktop/workspace/study/py/poetry-demo  poetry env remove 3.10                                                                                                        ok  15:40:27 
+Deleted virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
+
+ ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                                                           ok  15:40:38 
+total 12
+-rw-rw-r-- 1 edwin edwin   57  九  19 15:40 envs.toml
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
+drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
+```
+
+
+## (2) 移除2
 Go to the virtual environment folder and remove it directly.
 
 ```shell
