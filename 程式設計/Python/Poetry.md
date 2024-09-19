@@ -33,6 +33,9 @@ $ poetry remove [module]
 # 移除套件 dev-dependencies
 $ poetry remove [module] --group dev
 
+# 更新 poetry
+$ poetry self update
+
 # 更新套件
 $ poetry update
 
