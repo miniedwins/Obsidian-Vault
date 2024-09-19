@@ -39,7 +39,7 @@ $ poetry update
 # 指定特定套件更新
 $ poetry update flask
 
-# 套件
+# 列出全部套件清單 (顯示套件依賴層級)
 $ poetry show --tree 
 
 # Change to env
