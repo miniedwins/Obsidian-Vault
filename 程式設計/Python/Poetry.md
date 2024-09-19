@@ -97,7 +97,8 @@ $ poetry shell
 ```shell
 $ mkdir poetry-new
 $ cd poetry-new
-$ cp ../poetry.lock pyproject.toml
+$ cp ../poerty-old/poetry.lock .
+$ cp ../poerty-old/pyproject.toml .
 ```
 
 然後使用 `poetry env use` 指定要執行的虛擬環境版本
