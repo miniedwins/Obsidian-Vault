@@ -7,7 +7,8 @@ $ curl -sSL https://install.python-poetry.org | python3 -
 $ export PATH=$PATH:$HOME/.local/bin
 
 # 建立虛擬環境
-$ poetry env use [version] 
+# 為了讓 Poetry 在建立虛擬環境時，能使用你想要的 Python 版本 
+$ poetry env use <version>
 
 # Example: python3.10
 $ poetry env use python3.10
@@ -22,16 +23,16 @@ $ poetry env use python3.10
 $ poerty init
 
 # 新增套件
-$ poetry add [module]
+$ poetry add <module>
 
 # 新增套件 dev-dependencies
-$ poetry add [module] --group dev
+$ poetry add <module> --group dev
 
 # 移除套件
-$ poetry remove [module]
+$ poetry remove <module>
 
 # 移除套件 dev-dependencies
-$ poetry remove [module] --group dev
+$ poetry remove <module> --group dev
 
 # 更新 poetry
 $ poetry self update
@@ -46,7 +47,8 @@ $ poetry update flask
 $ poetry show --tree 
 
 # Change to env
-$ poetry env use [version] # example: python3.10
+# example: python3.10
+$ poetry env use <version> 
 
 # 啟動虛擬環境
 # 如果虛擬環境尚未建立，則會直接自動幫你建立虛擬環境並使用
