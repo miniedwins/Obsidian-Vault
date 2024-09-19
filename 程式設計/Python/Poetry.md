@@ -18,6 +18,9 @@ $ poetry env use python3.10
 # Poetry 常用指令清單
 
 ```shell
+# 初始化，建立 pyproject.toml
+$ poerty init
+
 # 新增套件
 $ poetry add [module]
 
@@ -40,6 +43,7 @@ $ poetry show --tree
 $ poetry env use [version] # example: python3.10
 
 # 啟動虛擬環境
+# 如果虛擬環境尚未建立，則會直接自動幫你建立虛擬環境並使用
 $ poetry shell
 
 # 退出虛擬環境
