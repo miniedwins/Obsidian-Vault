@@ -43,7 +43,7 @@ poetry shell
 ```
 # 使用不同的虛擬環境開發
 
-開發中可能會需要建立不同的虛擬環境，Poetry 能使用指定的 Python 版本。
+開發中可能會需要建立不同的虛擬環境，Poetry 能讓使用者指定不同的 Python 版本。
 
 ```shell
 $ poetry env use python3.10
@@ -74,14 +74,18 @@ drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
-上面說明 `poetry-demo` 目前只有建立 `py3.10`，若是要使用 `py3.12`，需要進入到`poetry-demo` 資料夾中，使用 `poetry env use` 指定虛擬環境版本，例如下列範例 : 
+上面說明 `poetry-demo` 目前只有建立 `py3.10`，若是要使用 `py3.12`，需要進入到 `poetry-demo` 資料夾中，使用 `poetry env use` 指定虛擬環境版本，例如下列範例 : 
 
 ```shell
 $ cd poetry-demo
 $ poetry env use python3.12
-$ poetry shell
 ```
 
+最後再啟動虛擬環境
+
+```shell
+$ poetry shell
+```
 # 重現專案到別的主機平台
 
 目的是為了將開發所使用的套件或是設定，移轉到新的平台重現相同的開發環境
