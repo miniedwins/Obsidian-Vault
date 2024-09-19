@@ -1,99 +1,102 @@
-# Install Poetry
+# 安裝 Poetry 套件
+
+下載 Poetry 套件並安裝
+
 ```shell
-# Install Poetry Module
 $ curl -sSL https://install.python-poetry.org | python3 -
+```
 
-# 設定 PATH 環境變數
+設定 PATH 環境變數
+
+```shell
 $ export PATH=$PATH:$HOME/.local/bin
-
-# 建立虛擬環境
-# 為了讓 Poetry 在建立虛擬環境時，能使用你想要的 Python 版本 
-$ poetry env use <version>
-
-# Example: python3.10
-$ poetry env use python3.10
-
-# 
+$ source ~/.bashrc
 ```
 
-# Poetry 常用指令清單
+或是透過軟連結將執行檔案連結到 `/usr/bin`
 
 ```shell
-# 初始化，建立 pyproject.toml
+$ ln -s $PATH:$HOME/.local/bin /usr/bin
+```
+
+# 建立 Poetry 專案
+
+建立專案資料夾，並進入專案目錄
+
+```shell
+$ mkdir poerty-demo
+$ mv poerty-demo
+```
+
+然後初始化 Poetry，這會產生下列兩個檔案
+- poetry.lock
+- pyproject.toml
+
+```shell
 $ poerty init
-
-# 新增套件
-$ poetry add <module>
-
-# 新增套件 dev-dependencies
-$ poetry add <module> --group dev
-
-# 移除套件
-$ poetry remove <module>
-
-# 移除套件 dev-dependencies
-$ poetry remove <module> --group dev
-
-# 更新 poetry
-$ poetry self update
-
-# 更新套件
-$ poetry update
-
-# 指定特定套件更新
-$ poetry update flask
-
-# 列出全部套件清單 (顯示套件依賴層級)
-$ poetry show --tree 
-
-# Change to env
-# example: python3.10
-$ poetry env use <version> 
-
-# 啟動虛擬環境
-# 如果虛擬環境尚未建立，則會直接自動幫你建立虛擬環境並使用
-$ poetry shell
-
-# 退出虛擬環境
-$ exit
-
-# 輸出 requirements.txt
-# For tool.poetry.dependencies
-$ poetry export -f requirements.txt -o requirements.txt --without-hashes
-
-# For tool.poetry.group.dev.dependencies
-$ poetry export -f requirements.txt -o requirements.txt --without-hashes --dev
 ```
 
-# Poetry PATH 
+完成後，進入到開發環境
 
 ```shell
- ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                           ok  poetry-demo-jNWKs6r--py3.10 py  16:22:38 
-total 16
+poetry shell
+```
+# 如何使用不同的虛擬環境版本
+
+為了讓 Poetry 在建立虛擬環境時，能使用你指定的 Python 版本。
+
+```shell
+$ poetry env use python3.10
+Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
+```
+
+設定完成後，進入交互模式就可以看到現在使用的是 Python 3.10
+
+```shell
+$ poetry shell
+Spawning shell within /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
+ ~/Desktop/workspace/study/py/poetry-demo  emulate bash -c '. /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10/bin/activate' 
+```
+
+虛擬環境所產生的位置是在，本地路徑 `~/.cache/pypoetry/virtualenvs` 資料夾中
+
+- poetry-demo : 
+	- py3.10
+- poetry-export : 
+	- py3.10
+	- py3.12
+
+```shell
+$ ls -l ~/.cache/pypoetry/virtualenvs
 -rw-rw-r-- 1 edwin edwin  114  九  16 17:24 envs.toml
 drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
-# Use different python version
-
-The command can be used to switch between different Python versions.
+上面說明 `poetry-demo` 目前只有建立 `py3.10`，若是要使用 `py3.12`，需要進入到`poetry-demo` 資料夾中，使用 `poetry env use` 指定虛擬環境版本，例如下列範例 : 
 
 ```shell
-$ poetry env use python3.10
-Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
-
+$ cd poetry-demo
+$ poetry env use python3.12
 $ poetry shell
-Spawning shell within /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
- ~/Desktop/workspace/study/py/poetry-demo  emulate bash -c '. /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10/bin/activate' 
 ```
 
-# 別台主機上重現專案的 Poetry 虛擬環境
+# 重現專案別的主機平台
 
-You have both `poetry.lock` and `pyproject.toml` files in your project
+目的是為了將開發所使用的套件或是設定，移轉到新的平台重現相同的開發環境
 
-You can specify a specific Python version.
+將下列檔案複製到新的專案資料夾中
+- poetry.lock
+- pyproject.toml
+
+```shell
+$ mkdir poetry-new
+$ cd poetry-new
+$ cp ../poetry.lock pyproject.toml
+```
+
+然後使用 `poetry env use` 指定要執行的虛擬環境版本
 
 ```shell
 $ poetry env use python3.12
@@ -101,7 +104,13 @@ Creating virtualenv poetry-demo-jNWKs6r--py3.12 in /home/edwin/.cache/pypoetry/v
 Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
 ```
 
-We can use the pip list command to display the currently installed packages.
+因為是舊專案，不需要 `init`，直接進入新專案虛擬環境
+
+```shell
+$ poetry shell
+```
+
+透過 `pip list` 可以看到當前沒有任何的套件被安裝
 
 ```shell
 $ pip list
@@ -110,8 +119,8 @@ Package    Version
 pip        24.2
 setuptools 74.1.2
 ```
-
-因為是舊專案，不需要init, poetry.lock 記載的套件版本安裝到虛擬環境中
+ 
+依據 `poetry.lock` 記載的套件版本安裝到虛擬環境中
 
 ```shell
 $ poetry install
@@ -214,3 +223,52 @@ $ poetry add "django>=4.2.9"
 ```
 主版號（即上面的 4.x.x 中的 4）升級時，通常有更大機率引入 API 變更、棄用舊有的 API 等，也就是所謂的 breaking change。
 這樣的更新可能會導致你的專案無法正常運作，需要一併修改程式碼。所以一般不建議使用這種方式。
+
+# Poetry 常用指令清單
+
+```shell
+# 初始化，建立 pyproject.toml
+$ poerty init
+
+# 新增套件
+$ poetry add <module>
+
+# 新增套件 dev-dependencies
+$ poetry add <module> --group dev
+
+# 移除套件
+$ poetry remove <module>
+
+# 移除套件 dev-dependencies
+$ poetry remove <module> --group dev
+
+# 更新 poetry
+$ poetry self update
+
+# 更新套件
+$ poetry update
+
+# 指定特定套件更新
+$ poetry update flask
+
+# 列出全部套件清單 (顯示套件依賴層級)
+$ poetry show --tree 
+
+# Change to env
+# example: python3.10
+$ poetry env use <version> 
+
+# 啟動虛擬環境
+# 如果虛擬環境尚未建立，則會直接自動幫你建立虛擬環境並使用
+$ poetry shell
+
+# 退出虛擬環境
+$ exit
+
+# 輸出 requirements.txt
+# For tool.poetry.dependencies
+$ poetry export -f requirements.txt -o requirements.txt --without-hashes
+
+# For tool.poetry.group.dev.dependencies
+$ poetry export -f requirements.txt -o requirements.txt --without-hashes --dev
+```
