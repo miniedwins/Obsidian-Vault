@@ -86,9 +86,9 @@ $ poetry env use python3.12
 ```shell
 $ poetry shell
 ```
-# 重現專案到別的主機平台
+# 重新建立相同的專案
 
-目的是為了將開發所使用的套件或是設定，移轉到新的平台重現相同的開發環境
+主要目的是為了將開發所使用的套件或是設定，重新建立相同的開發環境
 
 將下列檔案複製到新的專案資料夾中
 - poetry.lock
@@ -142,7 +142,7 @@ Package operations: 15 installs, 0 updates, 0 removals
 
 ## (1) 使用 env remove
 
-每個專案所使用的虛擬環境不一樣，移除哪一個專案所用的虛擬環境需要進入該專案目錄中
+每個專案所使用的虛擬環境不一樣，移除哪一個專案的虛擬環境需要進入該專案目錄中
 
 ```shell
 $ ls -l ~/.cache/pypoetry/virtualenvs
@@ -153,12 +153,16 @@ drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
-執行指定的 Python 版本移除，這裡我們指定 `3.12`，可以看到 Poetry 只會移除檔案 `poetry-demo-jNWKs6r--py3.12`
+執行指定的 Python 版本移除，這裡我們指定移除 `3.12`
 
 ```shell
 $ ~/home/edwin/poetry-demo/poetry env remove 3.12
 Deleted virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
+```
 
+可以看到 Poetry 只會移除檔案 `poetry-demo-jNWKs6r--py3.12`
+
+```shell
 $ ls -l ~/.cache/pypoetry/virtualenvs
 -rw-rw-r-- 1 edwin edwin   57  九  19 15:40 envs.toml
 drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
