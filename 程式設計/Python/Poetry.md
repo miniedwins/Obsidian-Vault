@@ -36,21 +36,21 @@ $ mv poerty-demo
 $ poerty init
 ```
 
-完成後，進入到開發環境
+完成後，啟動虛擬環境
 
 ```shell
 poetry shell
 ```
 # 如何使用不同的虛擬環境版本
 
-為了讓 Poetry 在建立虛擬環境時，能使用你指定的 Python 版本。
+開發中可能會需要建立不同的虛擬環境，Poetry 能使用指定的 Python 版本。
 
 ```shell
 $ poetry env use python3.10
 Using virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
 ```
 
-設定完成後，進入交互模式就可以看到現在使用的是 Python 3.10
+設定完成後，進入虛擬環境就可以看到現在使用的是 Python 3.10
 
 ```shell
 $ poetry shell
@@ -145,44 +145,38 @@ Package operations: 15 installs, 0 updates, 0 removals
 
 # 移除並虛擬環境
 
-## (1) 移除1
+## (1) 使用 env remove
+
+每個專案所使用的虛擬環境不一樣
 
 ```shell
- ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                                                           ok  15:39:54 
-total 20
+$ ls -l ~/.cache/pypoetry/virtualenvs
 -rw-rw-r-- 1 edwin edwin  113  九  19 14:03 envs.toml
 drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  19 14:03 poetry-demo-jNWKs6r--py3.12
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
+```
 
- ~/Desktop/workspace/study/py/poetry-demo  poetry env remove 3.12                                                                                                        ok  15:40:05 
+進入專案資料夾，執行指定的 Python 版本移除，這裡我們指定 `3.12`，可以看到 Poetry 只會移除檔案`poetry-demo-jNWKs6r--py3.12`
+
+```shell
+$ ~/home/edwin/poetry-demo/poetry env remove 3.12
 Deleted virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
 
- ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                                                           ok  15:40:16 
-total 16
+$ ls -l ~/.cache/pypoetry/virtualenvs
 -rw-rw-r-- 1 edwin edwin   57  九  19 15:40 envs.toml
 drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
-
- ~/Desktop/workspace/study/py/poetry-demo  poetry env remove 3.10                                                                                                        ok  15:40:27 
-Deleted virtualenv: /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.10
-
- ~/Desktop/workspace/study/py/poetry-demo  ls -l ~/.cache/pypoetry/virtualenvs                                                                                           ok  15:40:38 
-total 12
--rw-rw-r-- 1 edwin edwin   57  九  19 15:40 envs.toml
-drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
-drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
+## (2) 直接移除檔案
 
-## (2) 移除2
-Go to the virtual environment folder and remove it directly.
+進入到虛擬環境檔案路徑
 
 ```shell
 ls -l ~/.cache/pypoetry/virtualenvs/
-total 20
 -rw-rw-r-- 1 edwin edwin  113  九  19 14:03 envs.toml
 drwxrwxr-x 4 edwin edwin 4096  九  18 16:21 poetry-demo-jNWKs6r--py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  19 14:03 poetry-demo-jNWKs6r--py3.12
@@ -190,10 +184,10 @@ drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.10
 drwxrwxr-x 4 edwin edwin 4096  九  16 17:24 poetry-export-Q8rhi4Ih-py3.12
 ```
 
-Remove the environment folder.
+透過 `rm -rf` 命令直接移除檔案
 
 ```shell
-rm -rf ~/.cache/pypoetry/virtualenvs/poetry-export-Q8rhi4Ih-py3.12/
+$ rm -rf ~/.cache/pypoetry/virtualenvs/poetry-export-Q8rhi4Ih-py3.12/
 ```
 
 # Poetry 的版本管理能力
