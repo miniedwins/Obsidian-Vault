@@ -71,8 +71,16 @@ $ poetry add pytest
 
 安裝完成後，安裝完成的套件會記錄在 `pyproject.toml` 檔案中，套件安裝區分為開發以及佈署
 
-```shell
+- `tool.poetry.dependencies`: 佈署
+- `tool.poetry.group.dev.dependencies`: 開發
 
+```shell
+[tool.poetry.dependencies]
+python = "^3.10"
+pytest = "^8.3.3"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
 ```
 
 # 管理虛擬環境
