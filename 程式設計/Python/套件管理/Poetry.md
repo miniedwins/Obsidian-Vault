@@ -85,6 +85,25 @@ black = "^24.8.0"
 
 # 管理虛擬環境
 
+## Displaying the environment information
+
+```shell
+$ poetry env info
+Virtualenv
+Python:         3.12.6
+Implementation: CPython
+Path:           /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12
+Executable:     /home/edwin/.cache/pypoetry/virtualenvs/poetry-demo-jNWKs6r--py3.12/bin/python
+Valid:          True
+
+Base
+Platform:   linux
+OS:         posix
+Python:     3.12.6
+Path:       /usr
+Executable: /usr/bin/python3.12
+```
+
 ## 使用不同的虛擬環境開發
 
 開發中可能會需要建立不同的虛擬環境，`poetry env use` 能讓使用者指定不同的 Python 版本。
