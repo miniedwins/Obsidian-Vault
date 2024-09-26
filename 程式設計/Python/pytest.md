@@ -1,6 +1,6 @@
 # Pytest
 
-## pytest.mark.skip
+## @pytest.mark.skip
 
 ### 設定跳過整個模組
 
