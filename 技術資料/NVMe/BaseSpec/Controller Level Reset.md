@@ -2,9 +2,7 @@
 
 ## 介紹
 
-主要的目的是對控制器進行復位，復位操作會影響整個控製器及其相關功能，會將控制器內部的`Internal state` 重置。 大部份 `Controller Properties` 會被清除並復位，僅有少部份 **持久屬性** 不會因為復位而被重置。
-
-除了控製器復位之外，其他形式的控製器級復位會根據相關的 **NVMe傳輸繫結規範** 對控製器屬性進行重設。
+主要的目的是對控制器進行復位，復位操作會影響整個控製器及其相關功能，會將控制器內部的`Internal state` 重置。 大部份 `Controller Properties` 會被清除並復位，僅有少部份 **持久屬性** 不會因為復位而被重置。其他形式的控製器級復位會根據相關的 **NVMe傳輸繫結規範** 對控製器屬性進行重設。
 
 > Controller Properties : 定義在 Base-Specification
 ## 重置的三種方法
@@ -32,6 +30,7 @@
 * Update transport specific state and controller property state as appropriate
 * 設定 `CC.EN=1`
 * 等待 `CSTS.RDY=0`  被設定為 `CSTS.RDY=1`
-* Configure the controller using Admin commands as needed;
+* **( 原文 ) Configure the controller using Admin commands as needed** 
+	* 應該是指設定重置後需要的一些動作 ( e.g. HBM )
 * 建立 I/O Completion Queues and I/O Submission Queues
 * 執行正常的 I/O 命令操作

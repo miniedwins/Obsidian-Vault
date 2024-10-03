@@ -169,10 +169,10 @@
   },
   "active": "d921685aedd38a78",
   "lastOpenFiles": [
-    "程式設計/Python/套件管理/Poetry.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Reset.md",
     "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "程式設計/Python/套件管理/Poetry.md",
+    "技術資料/NVMe/BaseSpec/Controller Reset.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
     "技術資料/SMBus/Packet Error Code.md",
