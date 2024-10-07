@@ -9,4 +9,3 @@
 * Function Level Reset
 ## 多個不同的復位說明
 
-0
