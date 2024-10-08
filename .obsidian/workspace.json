@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/Message Based Transport.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/Message Based Transport.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/Message Based Transport.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md"
+                "file": "技術資料/NVMe/BaseSpec/Message Based Transport.md"
               }
             }
           },
@@ -168,9 +168,14 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Controller Property.md",
+    "技術資料/NVMe/BaseSpec/Memory Based Transport.md",
+    "技術資料/NVMe/BaseSpec/Message Based Transport.md",
+    "技術資料/NVMe/BaseSpec/Namespace Management.md",
+    "技術資料/NVMe/NVMe-MI/Management Interface.md",
+    "技術資料/MAP.md",
     "技術資料/NVMe/BaseSpec/Controller Reset.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/BaseSpec/Controller Property.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
@@ -194,11 +199,6 @@
     "程式設計/Python/單元測試",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
-    "程式設計/Python/數值轉換/converter.md",
-    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Makefile/make.md",
-    "程式設計/Git/如何移動標籤.md",
-    "程式設計/Git/同步原作專案進度.md",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Python/數值轉換",
     "程式設計/Python/套件管理",
