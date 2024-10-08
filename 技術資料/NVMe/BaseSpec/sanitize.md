@@ -8,11 +8,9 @@
 * `Overwrite` : 使用特定資料格式去複寫現有已存在的資料
 * `Crypto Erase` : 通過刪除密鑰的方式讓資料無法再被識別，因為沒有金鑰就無法取得真正的資料內容
 
-
-
 **當命令 (Sanitize) 開始運作的時候，控制器需要有以下動作 :** 
 
-* (原文) Shall clear any outstanding Sanitize Operation Completed asynchronous event or Sanitize Operation Completed With Unexpected Deallocation asynchronous event
+* **(原文) Shall clear any outstanding Sanitize Operation Completed asynchronous event or Sanitize Operation Completed With Unexpected Deallocation asynchronous event**
   * (說明) 表示無論執行成功或是失敗，都會發出非同步事件通知主機端 *(重要)*，並且控制器會清除已所發出的事件通知
 * 將目前執行的狀態更新到日誌中
   * *Reference : Sanitize Status log*
@@ -25,13 +23,10 @@
 * Shall release stream identifiers for any open streams. 
   * *備註 : 尚未了解 streams 定義*
 
-
-
 **控制器會中止任何一個 Sanitize command，如以下動作 :**
-
 * If controller unsupported Sanitize command
   * (原文) Controller shall abort the command with a status of Invalid Field in Command.
-  * (說明) 控制器若是不支援 Sanitize 命令，當收到命令後，控制器會回覆一個不是有效的命令
+  * (說明) 控制器若是不支援 Sanitize 命令，當收到命令後，控制器會回覆 Invalid Status
 * If any Persistent Memory Region (PMR) is enabled
   * (原文) Controller shall abort any Sanitize command with a status of Sanitize Prohibited.
   * (說明) 當啟用 `PMR` 功能，Sanitize 操作會被禁止使用
@@ -40,8 +35,6 @@
   * (說明) 執行 `F/W Commit` 完成後，基本上需要執行 Controller Rest，若是狀態還沒有完成，不允許執行 Sanitize 命令
 * Activation of new firmware is prohibited during a sanitize operation
   * (說明) 若是先前有執行 `F/W Download`，禁止在操作期間內 `Active F/W`
-
-
 
 ## 檢查控制器支援
 
@@ -62,8 +55,6 @@ Controller Attributes (CTRATT) :
 nvme id-ctrl /dev/nvme0 | grep sanicap
 # sanicap : 0x3
 ~~~
-
-
 
 ## 如何執行 Sanitize
 

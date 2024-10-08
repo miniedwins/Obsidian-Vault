@@ -5,13 +5,13 @@
 主要的目的是對控制器進行復位，復位操作會影響整個控製器及其相關功能，會將控制器內部的`Internal state` 狀態重置，大部份 `Controller Properties` 會被清除並復位，僅有少部份 **持久屬性** 不會因為復位而被重置。其他形式的控製器級復位會根據相關的 **NVMe傳輸繫結規範** 對控製器屬性進行重設。
 
 常規復位（Conventional Reset）和功能級復位（Function Level Reset, FLR）是根據 PCI Express 規範定義的復位方法，**它們也都會觸發 NVMe 控製器級復位（Controller Level Reset）**
-* [[Conventional Reset]]
-* [[Function Level Reset]]
 ## 重置的三種方法
 
 1. [[NVM Subsystem Reset]] 
 2. [[Controller Reset]]
-3. Transport Specific Reset Types
+3. **Transport Specific Reset Types**
+	* [[Conventional Reset]]
+	* [[Function Level Reset]]
 ## 重置的流程
 
 當發生重置後，**控制器與主機端**後續的執行動作，如下所述 : 
