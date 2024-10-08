@@ -13,7 +13,7 @@
 ## 重置的流程
 
 當發生重置後，**控制器與主機端**後續的執行動作，如下所述 : 
-### 控制器行為流程
+### 控制器流程
 
 * 控制器停止所有的 `Admin` or `I/O` Commands
 * 刪除所有的 I/O Completion Queues and I/O Submission Queues
@@ -22,17 +22,21 @@
 
  **有哪些持久屬性不會被重置**  
 * **( 原文 )** For Controllers using a memory-based transport
-	* **控制器屬性後面標示 ( 括號 ) 是說明哪一種 Reset 不會被重置**
-	* Admin Queue Properties `AQA`, `ASQ`, and `ACQ` ( Controller Reset )
-	* `CMBMSC` ( Controller Reset and Function Level Reset )
-	* `PMRMSCU` and `PMRMSCL` ( Controller Reset )
+	* **Controller Reset**
+		* Admin Queue Properties `AQA`, `ASQ`, `ACQ`
+		* `CMBMSC` ( Controller Memory Buffer Memory Space )
+		* Persistent Memory Region
+			* `PMRMSCU` 
+			* `PMRMSCL`
+	* **Function Level Reset** 
+		* `CMBMSC`
 * **( 原文 )** For Controllers using a message-based transport
 	* There are no exceptions
 
 > **補充說明 :** 
 > 1. [[Memory Based Transport]]
 > 2. [[Message Based Transport]]
-### 主機端行為流程
+### 主機端流程
 
 * **( 原文 ) Update transport specific state and controller property state as appropriate**
 	* **( 譯文 )** PCI 暫存器空間會按照**PCI Express 基本規範**中的定義被重設

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md"
+                "file": "技術資料/NVMe/BaseSpec/Controller Reset.md"
               }
             }
           },
@@ -168,37 +168,37 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Controller Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
-    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
-    "技術資料/NVMe/BaseSpec/Message Based Transport.md",
-    "技術資料/NVMe/BaseSpec/Memory Based Transport.md",
-    "技術資料/NVMe/BaseSpec/Namespace Management.md",
-    "技術資料/NVMe/NVMe-MI/Management Interface.md",
-    "技術資料/MAP.md",
-    "技術資料/NVMe/BaseSpec/Controller Property.md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
+    "技術資料/PCIE/System Reset/Hot Reset.md",
     "技術資料/PCIE/System Reset/Non-Fundamental Reset.md",
+    "技術資料/PCIE/System Reset/Function Level Reset.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Fundamental Reset.md",
-    "2024-10-04.md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "技術資料/NVMe/BaseSpec/Controller Reset.md",
+    "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
+    "技術資料/NVMe/BaseSpec/Power Management.md",
+    "技術資料/NVMe/BaseSpec/Controller Property.md",
+    "技術資料/NVMe/ZoneNS/Zoned Namespace.md",
+    "技術資料/NVMe/BaseSpec/Memory Based Transport.md",
+    "技術資料/NVMe/BaseSpec/Message Based Transport.md",
+    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+    "技術資料/NVMe/BaseSpec/Namespace Management.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/NVMe-MI/Management Interface.md",
+    "技術資料/MAP.md",
+    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
+    "2024-10-04.md",
     "技術資料/NVMe/BaseSpec/Abort.md",
     "技術資料/NVMe/BaseSpec/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/attachments/property_definition.png",
-    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
     "未命名.md",
     "技術資料/NVMe/BaseSpec/未命名",
     "程式設計/Python/套件管理/Poetry.md",
     "技術資料/NVMe/BaseSpec/Write Cahce.md",
-    "技術資料/SMBus/Packet Error Code.md",
-    "程式設計/Python/單元測試/pytest.md",
     "程式設計/Python/單元測試",
-    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Python/數值轉換",
     "程式設計/Python/套件管理",
