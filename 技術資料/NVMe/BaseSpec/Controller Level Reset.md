@@ -9,7 +9,7 @@
 
 1. [[NVM Subsystem Reset]] 
 2. [[Controller Reset]]
-3. **Transport Specific Reset Types**
+3. **Transport Specific Reset Types ( PCIe )**
 	* [[Conventional Reset]]
 	* [[Function Level Reset]]
 ## 重置的流程
