@@ -4,7 +4,7 @@
 
 主要的目的是對控制器進行復位，復位操作會影響整個控製器及其相關功能，會將控制器內部的`Internal state` 狀態重置，大部份 `Controller Properties` 會被清除並復位，僅有少部份 **持久屬性** 不會因為復位而被重置。其他形式的控製器級復位會根據相關的 **NVMe傳輸繫結規範** 對控製器屬性進行重設。
 
-> Controller Properties : 定義在 Base-Specification
+> Controller Properties : 定義在 Base Specification
 ## 重置的三種方法
 
 1. [[NVM Subsystem Reset]] 
