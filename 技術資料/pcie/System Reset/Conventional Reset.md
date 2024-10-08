@@ -5,8 +5,8 @@
 **Conventional Reset** 主要分為下列幾種，如下所示 : 
 
 - **Fundamental Reset**
-	- Cold Reset
-	- Warm Reset
+	- [[Cold Reset]]
+	- [[Warm Rset]]
 - **Non-Fundamental Reset**
 	- [[Hot Reset]]
 	- [[Function Level Reset]]
