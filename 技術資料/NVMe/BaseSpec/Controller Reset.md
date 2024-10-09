@@ -2,10 +2,12 @@
 
 ## 基本介紹
 
-NVMe 規範中說明只要將 `CC.EN=1` 設定成 `CC.EN=0`，即是觸發 `Controller Reset`。
-
 * 專門針對 NVMe 控製器本身的復位，當執行復位時，控製器會重啟，但不會重設某些持久屬性。
 * **控製器復位不會影響與傳輸相關的設定。**
+
+## 如何觸發控制器重置
+
+NVMe 規範中說明只要將 `CC.EN=1` 設定成 `CC.EN=0`，即是觸發 `Controller Reset`。
 ## 解釋不同於 Controller Level Reset
 
  控制器復位 ( Controller Reset ) 與控製器級復位 ( Controller Level Reset ) 不同 : 
