@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Level Reset.md"
+                "file": "技術資料/NVMe/BaseSpec/NVM Subsystem Reset.md"
               }
             }
           },
@@ -168,10 +168,10 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
     "技術資料/NVMe/BaseSpec/Controller Property.md",
     "技術資料/NVMe/BaseSpec/Controller Reset.md",
     "技術資料/NVMe/BaseSpec/Dataset Management.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/Controller Initialization.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
