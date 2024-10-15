@@ -12,7 +12,7 @@
 * ( 00b ) : Normal operation (no shutdown has been requested
 * ( 01b ) : Shutdown processing occurring
 * ( 10b ) : Shutdown processing complete
-## 關機操作流程
+## 操作流程
 
 當進行 **Shutdown Processing** 主機端需要遵循協議規範的關機流程。
 
@@ -40,8 +40,9 @@
  >(1) 一般只有不正常斷電的狀態下，才有可能發生 **Abrupt Shutdown**
  >(2) 若是不正常斷電，主機端還有時間可以立刻寫入`CC.SHN=10b` ?
 
+另外進入 D3 Power State，也需要遵循 **Normal Controller Shutdown** 流程
 
 
 ### Message-based Transport
 
-( 狀態 ) 暫定不寫
+***( 說明 ) 暫定不寫，它是屬於別的NVMe通訊協議***
