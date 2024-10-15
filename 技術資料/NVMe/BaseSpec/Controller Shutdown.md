@@ -14,14 +14,12 @@
 * ( 10b ) : Shutdown processing complete
 ## 操作流程
 
-主機端需要遵循協議規範的關機流程。
-
-* **Controller Shutdown 又可以分為兩種類型*
-	* Memory-based Transport Controller Shutdown
-		* Normal Controller Shutdown
-		* Abrupt Shutdown
-		* RTD3 with Normal Controller Shutdown
-	* Message-based Transport Controller Shutdown
+Controller Shutdown 又可以分為兩種類型
+* **Memory-based Transport Controller Shutdown**
+	* Normal Controller Shutdown
+	* Abrupt Shutdown
+	* RTD3 with Normal Controller Shutdown
+* **Message-based Transport Controller Shutdown**
 ### Memory-based Transport
  
 如果控制器的暫存器被設定成 CC.EN=1，Normal & Abrupt 它們的操作流程如下 : 
@@ -41,7 +39,7 @@
  >(3) 若是不正常斷電，主機端還有時間可以立刻寫入`CC.SHN=10b` ?
 #### RTD3 with Normal Controller Shutdown
 
-控製器進入低功耗狀態（RTD3）的時間。在關閉操作完成之前，主機需要等待至少RTD3進入延遲時間，可以從 Identify Controller 取得 **"D3 Entry Latency"** 。如果 **RTD3進入延遲值** 為0h，那麼主機至少應該等待1秒鐘。**"不建議"** 通過 CC.EN 欄位停用控製器，通過這種方式停用控製器會導致 `Controller Reset`，這可能會影響完成關閉處理所需的時間。
+控製器進入低功耗狀態（RTD3）的時間。在關閉操作完成之前，主機需要等待至少RTD3進入延遲時間，可以從 Identify Controller 取得 **"D3 Entry Latency"** 。如果 **D3 Entry Latency=0h**，那麼主機至少應該等待1秒鐘。**"不建議"** 通過 CC.EN 欄位停用控製器，通過這種方式停用控製器會導致 `Controller Reset`，這可能會影響完成關閉處理所需的時間。
 
 當 `CSTS.ST=0` 被清除為 "0" 時，以及 `CSTS.SHST=10b`被設定 "10b"，表明控製器不再處於活動狀態，已完成所有必要的處理。 無論 CC.EN 的值如何，這個時候斷電都是安全的。
 
