@@ -158,6 +158,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:開啟快速切換": false,
       "graph:查看關聯圖": false,
       "canvas:建立新畫布": false,
@@ -168,6 +169,7 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
+    "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
     "技術資料/NVMe/BaseSpec/Controller Reset.md",
     "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
@@ -193,7 +195,6 @@
     "技術資料/PCIE/System Reset/Hot Reset.md",
     "技術資料/PCIE/System Reset/Function Level Reset.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
-    "技術資料/PCIE/System Reset/Fundamental Reset.md",
     "技術資料/NVMe/BaseSpec/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/attachments/property_definition.png",
