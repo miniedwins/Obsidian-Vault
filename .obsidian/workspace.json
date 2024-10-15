@@ -94,7 +94,7 @@
               "type": "backlink",
               "state": {
                 "file": "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -167,7 +167,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "cea40359ca2a62e8",
+  "active": "4e24df3295ed24a3",
   "lastOpenFiles": [
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
     "技術資料/NVMe/BaseSpec/Controller Reset.md",
