@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/Study.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/Study.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/Study.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/Study.md"
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md"
               }
             }
           },
@@ -169,16 +169,16 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
-    "技術資料/MAP.md",
+    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
+    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
     "技術資料/Study.md",
+    "技術資料/MAP.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
-    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
     "技術資料/NVMe/BaseSpec/Controller Reset.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
     "技術資料/NVMe/BaseSpec/Controller Property.md",
-    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
     "技術資料/NVMe/BaseSpec/Abort.md",
     "技術資料/NVMe/BaseSpec/Memory Based Transport.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
