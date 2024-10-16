@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
+                "file": "技術資料/Study.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
+                "file": "技術資料/Study.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
+                "file": "技術資料/Study.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Shutdown.md"
+                "file": "技術資料/Study.md"
               }
             }
           },
@@ -167,11 +167,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "4e24df3295ed24a3",
+  "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
+    "技術資料/MAP.md",
+    "技術資料/Study.md",
+    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
+    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
+    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
     "技術資料/NVMe/BaseSpec/Controller Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
     "技術資料/NVMe/BaseSpec/Controller Property.md",
     "技術資料/NVMe/BaseSpec/Controller Initialization.md",
@@ -192,9 +196,6 @@
     "技術資料/NVMe/BaseSpec/Power Management.md",
     "技術資料/PCIE/System Reset/Cold Reset.md",
     "技術資料/PCIE/System Reset/Warm Rset.md",
-    "技術資料/PCIE/System Reset/Hot Reset.md",
-    "技術資料/PCIE/System Reset/Function Level Reset.md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/NVMe/BaseSpec/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/attachments/property_definition.png",
@@ -208,7 +209,6 @@
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_01.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_log_description.png",
-    "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_log.png",
     "技術資料/NVMe/BaseSpec/base",
     "技術資料/NVMe/nvmecli_cmds_example.txt",
     "技術資料/NVMe/ZoneNS/attachments/zns_command_set",
