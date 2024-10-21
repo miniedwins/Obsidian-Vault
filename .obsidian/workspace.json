@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+                "file": "技術資料/NVMe/BaseSpec/Flush.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Initialization"
+              "title": "Flush"
             }
           }
         ]
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+                "file": "技術資料/NVMe/BaseSpec/Flush.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Controller Initialization 的反向連結"
+              "title": "Flush 的反向連結"
             }
           },
           {
@@ -122,12 +122,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+                "file": "技術資料/NVMe/BaseSpec/Flush.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Controller Initialization 的對外連結"
+              "title": "Flush 的對外連結"
             }
           },
           {
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md"
+                "file": "技術資料/NVMe/BaseSpec/Flush.md"
               },
               "icon": "lucide-list",
-              "title": "Controller Initialization 的大綱"
+              "title": "Flush 的大綱"
             }
           },
           {
@@ -189,8 +189,11 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
-    "技術資料/Study.md",
+    "技術資料/NVMe/BaseSpec/abort.md",
+    "技術資料/NVMe/BaseSpec/Volatile Write Cache.md",
+    "技術資料/NVMe/BaseSpec/Flush.md",
     "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+    "技術資料/Study.md",
     "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
     "技術資料/MAP.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
@@ -213,9 +216,6 @@
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Namespace Management.md",
     "技術資料/NVMe/BaseSpec/Sanitize.md",
-    "技術資料/NVMe/BaseSpec/Power Management.md",
-    "技術資料/PCIE/System Reset/Cold Reset.md",
-    "技術資料/PCIE/System Reset/Warm Rset.md",
     "技術資料/NVMe/BaseSpec/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/attachments/property_definition.png",
