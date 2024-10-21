@@ -39,3 +39,9 @@ sudo nvme admin-passthru --opcode=0x0c /dev/nvme0
 
 # self-test (short-test)
 sudo nvme admin-passthru --opcode=0x14 --cdw10=0x01 /dev/nvme0
+
+# Active Namespace ID list
+sudo nvme admin-passthru --opcode=0x06 --cdw10=0x02 /dev/nvme0 --data-len 512 --read
+
+# Allocated Namespace ID list
+sudo nvme admin-passthru --opcode=0x06 --cdw10=0x10 /dev/nvme0 --data-len 512 --read
