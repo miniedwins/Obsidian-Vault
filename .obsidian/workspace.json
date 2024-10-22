@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Flush.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flush"
+              "title": "Controller Initialization"
             }
           }
         ]
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Flush.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Flush 的反向連結"
+              "title": "Controller Initialization 的反向連結"
             }
           },
           {
@@ -122,12 +122,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Flush.md",
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Flush 的對外連結"
+              "title": "Controller Initialization 的對外連結"
             }
           },
           {
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Flush.md"
+                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md"
               },
               "icon": "lucide-list",
-              "title": "Flush 的大綱"
+              "title": "Controller Initialization 的大綱"
             }
           },
           {
@@ -189,8 +189,8 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Flush.md",
+    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/Volatile Write Cache.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
