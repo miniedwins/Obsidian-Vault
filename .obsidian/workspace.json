@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Flush.md",
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flush"
+              "title": "Host Controlled Thermal Management"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Flush.md"
+                "file": "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md"
               },
               "icon": "lucide-list",
-              "title": "Flush 的大綱"
+              "title": "Host Controlled Thermal Management 的大綱"
             }
           },
           {
@@ -189,8 +189,16 @@
   },
   "active": "cea40359ca2a62e8",
   "lastOpenFiles": [
-    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
+    "技術資料/NVMe/BaseSpec/Controller Property.md",
+    "技術資料/NVMe/BaseSpec/Controller Reset.md",
+    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
+    "技術資料/NVMe/BaseSpec/Sanitize.md",
+    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
+    "技術資料/NVMe/BaseSpec/Device Self Test.md",
+    "技術資料/NVMe/BaseSpec/Dataset Management.md",
     "技術資料/NVMe/BaseSpec/Flush.md",
+    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
     "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
     "技術資料/NVMe/BaseSpec/Telemetry.md",
     "技術資料/NVMe/BaseSpec/Volatile Write Cache.md",
@@ -202,21 +210,13 @@
     "未命名.md",
     "技術資料/NVMe/BaseSpec/abort.md",
     "技術資料/Study.md",
-    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
     "技術資料/MAP.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
-    "技術資料/NVMe/BaseSpec/Controller Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Property.md",
     "技術資料/NVMe/BaseSpec/Abort.md",
     "技術資料/NVMe/BaseSpec/Memory Based Transport.md",
     "技術資料/NVMe/BaseSpec/Host Memory Buffer.md",
-    "技術資料/NVMe/BaseSpec/Format Secure Erase.md",
-    "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
-    "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/BaseSpec/attachments/property_definition.png",
