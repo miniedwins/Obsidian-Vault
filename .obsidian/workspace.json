@@ -11,10 +11,12 @@
             "id": "87e672bfa9775d76",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.7.6"
+              },
               "icon": "lucide-file",
-              "title": "新分頁"
+              "title": "Release Notes 1.7.6"
             }
           }
         ]
