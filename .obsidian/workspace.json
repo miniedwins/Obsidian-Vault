@@ -4,53 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "8cbc1cfc81a3b54d",
+        "id": "dd8c51960f2f4d40",
         "type": "tabs",
         "children": [
           {
-            "id": "cea40359ca2a62e8",
+            "id": "87e672bfa9775d76",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技術資料/NVMe/BaseSpec/Telemetry.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Telemetry"
-            }
-          },
-          {
-            "id": "0b3afc05017b5094",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "程式設計/Python/資料分析/Pandas/填補缺失的資料.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "填補缺失的資料"
-            }
-          },
-          {
-            "id": "796aefefc0f4ac66",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "BMC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "BMC"
+              "title": "新分頁"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -116,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 349.5
+    "width": 297.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -177,11 +144,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "BMC.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "BMC 的大綱"
+              "title": "大綱"
             }
           },
           {
@@ -216,36 +181,38 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "796aefefc0f4ac66",
+  "active": "87e672bfa9775d76",
   "lastOpenFiles": [
     "程式設計/Python/資料分析/Pandas/填補缺失的資料.md",
-    "BMC.md",
-    "程式設計/Python/資料分析/Pandas/比較資料.md",
+    "暫存內容/BMC.md",
+    "暫存內容",
+    "技術資料/Study.md",
+    "程式設計/Meson",
+    "技術資料/PCIE",
+    "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
+    "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
+    "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
+    "作業系統/Linux/腳本/取得命令行輸入的參數.md",
+    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
+    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
+    "程式設計/Python/數值轉換/converter.md",
+    "程式設計/C 語言/GCC 定義巨集 DEBUG.md",
+    "程式設計/C 語言/建立靜態與共享函式庫.md",
+    "程式設計/C 語言/時間戳轉換 (timestamp).md",
+    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
+    "程式設計/Python/資料分析/Pandas/重置 index.md",
+    "程式設計/Python/單元測試/pytest.md",
     "程式設計/Python/資料分析/Pandas/如何檢查資料為空.md",
+    "程式設計/Python/資料分析/Pandas/比較資料.md",
     "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
     "程式設計/Python/資料分析/Pandas",
     "程式設計/Python/資料分析",
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Python/單元測試/pytest.md",
-    "技術資料/Study.md",
     "技術資料/MAP.md",
     "技術資料/NVMe/BaseSpec/Device Self Test.md",
     "技術資料/NVMe/BaseSpec/Host Controlled Thermal Management.md",
     "技術資料/NVMe/BaseSpec/Controller Level Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Property.md",
-    "技術資料/NVMe/BaseSpec/Controller Reset.md",
-    "技術資料/NVMe/BaseSpec/Controller Shutdown.md",
-    "技術資料/NVMe/BaseSpec/Sanitize.md",
-    "技術資料/NVMe/BaseSpec/End-to-end Data Protection.md",
-    "技術資料/NVMe/BaseSpec/Dataset Management.md",
-    "技術資料/NVMe/BaseSpec/Flush.md",
-    "技術資料/NVMe/BaseSpec/Controller Initialization.md",
-    "技術資料/NVMe/BaseSpec/Firmware Image Download.md",
-    "技術資料/NVMe/BaseSpec/Telemetry.md",
-    "技術資料/NVMe/BaseSpec/Volatile Write Cache.md",
-    "技術資料/NVMe/NVMe-MI/Management Interface.md",
-    "技術資料/NVMe/Other/IEEE EUI, OUI, and CID.md",
     "技術資料/NVMe/BaseSpec/attachments/write_cache/idenitfy_volatile_write_cache.png",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
     "技術資料/NVMe/BaseSpec/attachments/controller/nvme_cc_memory_page_size.png",
@@ -261,9 +228,6 @@
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_02.png",
     "技術資料/NVMe/BaseSpec/attachments/device_self_test/self_test_result_data_structure_01.png",
     "技術資料/NVMe/BaseSpec/base",
-    "技術資料/NVMe/nvmecli_cmds_example.txt",
-    "技術資料/NVMe/ZoneNS/attachments/zns_command_set",
-    "技術資料/NVMe/ZoneNS/attachments",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
