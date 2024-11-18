@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "eaea85261123ddc9",
+        "id": "d4e861ee1701e9f8",
         "type": "tabs",
         "children": [
           {
-            "id": "c420dda297b05fd4",
+            "id": "a9cf12a24f951738",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -187,10 +187,16 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "c420dda297b05fd4",
+  "active": "a9cf12a24f951738",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Abort.md",
+    "技術資料/NVMe/NVMe-Base/Flush.md",
+    "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
+    "技術資料/NVMe/NVMe-Base/attachments/log_page_attributes.png",
+    "技術資料/NVMe/NVMe-Base/attachments/error_recovery.png",
+    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/page_base_address_offset.png",
+    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Abort.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
@@ -203,14 +209,10 @@
     "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
     "暫存內容/Trace.md",
     "技術資料/NVMe/Trace",
-    "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/NVMe-Base/attachments/property_definition.png",
-    "技術資料/NVMe/NVMe-Base/attachments/log_page_attributes.png",
-    "技術資料/NVMe/NVMe-Base/attachments/error_recovery.png",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test.md",
-    "技術資料/NVMe/NVMe-Base/Flush.md",
     "程式設計/Python/資料分析/Pandas/填補缺失的資料.md",
     "暫存內容/BMC.md",
     "暫存內容",
@@ -222,7 +224,6 @@
     "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
     "作業系統/Linux/腳本/取得命令行輸入的參數.md",
     "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
-    "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "程式設計/Python/資料分析/Pandas",
     "程式設計/Python/資料分析",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
@@ -232,9 +233,7 @@
     "程式設計/Python/單元測試",
     "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Python/數值轉換",
-    "程式設計/Python/套件管理",
     "技術資料/NVMe/NVMe-Base/attachments/telemetry/telemetry_data_areas.png",
-    "技術資料/NVMe/NVMe-Base/attachments/telemetry/telemetry_controller_initiated.png",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"

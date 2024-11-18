@@ -5,35 +5,32 @@ PRP 是 NVMe 主機控制器用於描述資料緩衝區物理位址的機制。�
 
 PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可以是**連續的或分散**。PRP 支援兩種描述方法：
 
-1. **PRP Entry**:
+1. **PRP1 Entry** :
     - 一個 64 位元的記憶體位址，用來描述主機記憶體中資料緩衝區的記憶體位址。
 	- 每個 PRP Entry 對應一個資料頁（Memory Page Size = 4kB）
 	- PRP Entry 指向緩衝區的位址必須對齊到一個頁面大小（MPS）的邊界。
-2. **PRP List**:    
-    - 當資料大小超過 **Memory Page Size**，就會使用 PRP List 描述多個 **PRP Entry**。 
-    - PRP List 內容，存放後續每個傳輸資料的記憶體位址。
-    - 如果需要傳輸的資料超過了第一個頁面大小，PRP2 用於描述剩餘的資料。
-    - 若是 PRP List 無法描述所有要傳輸的記憶體位址，**最後一個 PRP Entry** 會是存放下一個可以鏈接到另一個 PRP List，形成多層結構。
+2. **PRP2 Entry** :
+	- 若是傳輸資料沒有超過 MPS，PRP2 Entry 內容則保留。
+	- 如果傳輸的資料超過了第一個頁面大小，PRP2 用於描述剩餘的資料。
+		- PRP2 指向 **第二個連續頁面** ( 當傳輸資料量只有 8KB )
+		- PRP2 指向一個 **PRP List**。 ( 當傳輸資料量大於 8KB 以上 )
+3. **PRP List** :
+    - PRP List 用於存放多個 PRP Entry。
+    - 若是 PRP List 無法描述所有要傳輸的記憶體位址，**最後一個 PRP Entry** 會是存放下一個可以鏈接 PRP List，形成多層結構。
 
 >如何定義 Memory Page Size  ( MPS ) ? 
 >1.  **Controller Configuration** ( CC ) 暫存器裡的 **Memory Page Size** ( MPS ) 欄位來決定。
 >2.  計算方法為 **( 2 ^ ( 12 + MPS ) )**，當設定為 0 表示 4096 bytes。
 
-## **PRP 運作方式**
-
-1. **PRP1 Entry**：
-    - 第一個 PRP1 Entry 通常描述第一個頁面 ( Memory Page ) 的記憶體位址。
-2. **PRP2 Entry ( PRP List ) **：    
-	- 若是傳輸資料沒有超過 MPS，PRP2 Entry 內容則保留。
-    - 當資料量超過 MPS，PRP2 Entry 則會指向一另個 PRP List。
 ## **PRP Entry 與 PRP List 的 Offset 要求**
 
+- 偏移量為 `0h` 表示，資料總是從該頁面的起始處開始。
 - 每個 PRP Entry 都必須具有 **頁面偏移為 0h** 的地址。
 - 一個命令包含兩個 PRP Entry，則第二個 PRP Entry 的地址也必須具有 **頁面偏移為 0h*。
 - PRP List 中的每個 PRP Entry 位址必須對齊到記憶體頁面的起始地址（例如 4 KB 邊界）。
-- 偏移量為 `0h` 表示，資料總是從該頁面的起始處開始。
 - 如果控制器收到 **PRP Entry 頁面偏移不為 0**，則控制器應傳回 **PRP Offset Invalid**。
 
+![[page_base_address_offset.png]]
 ## **PRP 運作範例**
 
 1. 假設頁面 ( MPS ) 大小為 4 KB，資料大小為 4 KB，並且只有使用 PRP1 Entry：
@@ -60,7 +57,7 @@ PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可�
 | 第一個 PRP Entry | ``0x0000001:09BFD000`` | `0h` |
 | 第二個 PRP Entry | `0x0000001:09BFE000`   | `0h` |
 
-3.  假設頁面 ( MPS ) 大小為 4 KB，傳輸資料大小為 16KB，當前資料量大於 MPS，因此需要使用PRP2 Entry 會當作 PRP List 描述多筆資料的記憶體位址空間：
+3.  假設頁面 ( MPS ) 大小為 4 KB，傳輸資料大小為 16KB，當前資料量大於 MPS，因此需要使用PRP2 Entry 描述多筆資料記憶體位址空間：
 
 	- **PRP1 Entry**
 	    - 描述第一頁，指向第一筆記憶體位址 `0x0000004:1EDF2000`。
