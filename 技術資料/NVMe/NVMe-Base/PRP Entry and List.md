@@ -7,24 +7,26 @@ PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可�
 
 1. **PRP Entry**:
     - 包含一個 64 位元的記憶體位址，用來描述主機記憶體中資料緩衝區的物理位址。
-	- 每個 PRP Entry 對應一個資料頁（Memory Page）
-	- PRP Entry 的地址指向的緩衝區必須對齊到一個頁面大小（MPS）的邊界。
+	- 每個 PRP Entry 對應一個資料頁（Memory Page = 4kB）
+	- PRP Entry 指向緩衝區的位址必須對齊到一個頁面大小（MPS）的邊界。
 2. **PRP List**:    
-    - 當資料大小超過單一頁面，PRP List 就會用於描述多個 **PRP Entry**。 
-    - PRP List 描述每個後續傳輸資料的物理位址。 
+    - 當資料大小超過 **Memory Page Size**，就會使用 PRP List 描述多個 **PRP Entry**。 
+    - PRP List 內容存放後續每個傳輸資料的記憶體位址。 
 
->怎麼決定 Memory Page Size  ( MPS ) ? 
->主要透過 **Controller Configuration** ( CC ) 暫存器裡的 **Memory Page Size** ( MPS ) 欄位來決定，計算方法為 ( 2 ^ ( 12 + MPS ) )，當設定為 0 表示 Page Size : 4096 bytes。
+>如何定義 Memory Page Size  ( MPS ) ? 
+>1.  **Controller Configuration** ( CC ) 暫存器裡的 **Memory Page Size** ( MPS ) 欄位來決定。
+>2.  計算方法為 **( 2 ^ ( 12 + MPS ) )**，當設定為 0 表示 4096 bytes。
 
 ## **PRP List 的運作方式**
 
-1. **第一頁資料**：
-    - 第一個 PRP Entry 通常描述第一個頁面的物理位址。
-2. **後續頁面**：    
-    - 當資料量超過一頁，PRP Entry 的第二個欄位會指向一個 PRP List。
-    - PRP List 是一個數組，每個條目是 64 位元的記憶體位址，依序指向後續頁面。
-3. **多層結構**：    
+1. **PRP1 Entry**：
+    - 第一個 PRP1 Entry 通常描述第一個頁面 ( Memory Page ) 的物理位址。
+2. **PRP2 Entry**：    
+    - 當資料量超過一頁面，PRP2 Entry 會指向一另個 PRP List。
+    - PRP List 每個條目是 64 位元的記憶體位址，依序指向後續頁面。
+3. **多層結構**：
     - 如果 PRP List 本身無法容納所有頁面，則可以鏈接到另一個 PRP List，形成多層結構。
+    - 
 
 ## **PRP List 的應用場景**
 
