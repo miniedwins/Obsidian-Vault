@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "暫存內容/Trace.md",
+                "file": "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Trace"
+              "title": "Host Controlled Thermal Management"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "暫存內容/Trace.md"
+                "file": "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md"
               },
               "icon": "lucide-list",
-              "title": "Trace 的大綱"
+              "title": "Host Controlled Thermal Management 的大綱"
             }
           },
           {
@@ -187,8 +187,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "c420dda297b05fd4",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
+    "技術資料/NVMe/NVMe-Base/Abort.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize.md",
+    "技術資料/NVMe/NVMe-Base/Namespace Management.md",
+    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
+    "暫存內容/Trace.md",
     "技術資料/NVMe/Trace",
     "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/NVMe-Base/attachments/property_definition.png",
@@ -196,14 +203,12 @@
     "技術資料/NVMe/NVMe-Base/attachments/error_recovery.png",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Flush.md",
-    "暫存內容/Trace.md",
     "程式設計/Python/資料分析/Pandas/填補缺失的資料.md",
     "暫存內容/BMC.md",
     "暫存內容",
@@ -218,10 +223,6 @@
     "作業系統/Windows/Modern Standby/Win 11 安裝 Modern Standby.md",
     "程式設計/Python/數值轉換/converter.md",
     "程式設計/C 語言/GCC 定義巨集 DEBUG.md",
-    "程式設計/C 語言/建立靜態與共享函式庫.md",
-    "程式設計/C 語言/時間戳轉換 (timestamp).md",
-    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/Python/資料分析/Pandas/重置 index.md",
     "程式設計/Python/資料分析/Pandas",
     "程式設計/Python/資料分析",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
@@ -234,7 +235,6 @@
     "程式設計/Python/套件管理",
     "技術資料/NVMe/NVMe-Base/attachments/telemetry/telemetry_data_areas.png",
     "技術資料/NVMe/NVMe-Base/attachments/telemetry/telemetry_controller_initiated.png",
-    "技術資料/NVMe/BaseSpec/base",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"

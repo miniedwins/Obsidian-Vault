@@ -5,5 +5,8 @@
   "interfaceFontFamily": "微軟正黑體",
   "textFontFamily": "微軟正黑體,Fira Code",
   "baseFontSize": 15,
-  "monospaceFontFamily": "Fira Code"
+  "monospaceFontFamily": "Fira Code",
+  "enabledCssSnippets": [
+    "custom-code"
+  ]
 }
