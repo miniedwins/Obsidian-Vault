@@ -23,6 +23,8 @@ PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可�
     - 每一個PRP Entry會再指向一個 **Page Base Address**
     - 若是 PRP List 無法描述所有要傳輸的記憶體位址，**最後一個 PRP Entry** 會是存放下一個可以鏈接 PRP List，形成多層結構。	
 
+![[prp_list_describing_data_to_comapre.png]]
+
 >如何定義 Memory Page Size  ( MPS ) ? 
 >1.  **Controller Configuration** ( CC ) 暫存器裡的 **Memory Page Size** ( MPS ) 欄位來決定。
 >2.  計算方法為 **( 2 ^ ( 12 + MPS ) )**，當設定為 0 表示 4096 bytes。

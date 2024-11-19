@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "aa1881e889d28696",
+        "id": "3f6e42ff7c383471",
         "type": "tabs",
         "children": [
           {
-            "id": "f276f0bdc94ca508",
+            "id": "b64cd3a9103b2d43",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -187,10 +187,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "f276f0bdc94ca508",
+  "active": "b64cd3a9103b2d43",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Controller Initialization.md",
+    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_list_describing_data_to_comapre.png",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_entry_layout.png",
     "技術資料/NVMe/NVMe-Base/Flush.md",
     "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
@@ -225,7 +226,6 @@
     "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
     "作業系統/Linux/虛擬機/openbmc/問題處理/初始登入帳號密碼.md",
     "作業系統/Linux/腳本/取得命令行輸入的參數.md",
-    "作業系統/Windows/Modern Standby/如何進入 Modern Standby.md",
     "程式設計/Python/資料分析/Pandas",
     "程式設計/Python/資料分析",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
@@ -233,7 +233,6 @@
     "技術資料/NVMe/NVMe-Base/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/未命名",
     "程式設計/Python/單元測試",
-    "程式設計/Git/images/github_keys_setting.png",
     "程式設計/Python/數值轉換",
     "未命名.canvas",
     "doxygen.canvas",
