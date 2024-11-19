@@ -1,26 +1,36 @@
 ## PRP 概述
 
 PRP 是 NVMe 主機控制器用於描述資料緩衝區物理位址的機制。它提供了一種方法來告訴 NVMe 控制器，主記憶體中哪一部分包含要讀取或寫入的資料。
+## PRP 結構
 
-當需要傳輸的Data size剛好符合4k bytes，則Page Base Address指向的是"一個Memory Page"的base address，Offset則是可以介於0~4k之間，但spec規定Offset必須為DWORD align，所以bit[1:0]必須為0。
+PRP Entry 格式，主要由 **Page Base Address** 以及 **Offset** 欄位所組成
 
-當需要傳輸的Data size大於4k bytes，則PBA會指向一個PRP List ，PRP List是由好幾個PRP Entry所組成，以4k bytes為例，一個PRP Entry為8 bytes，所以一個PRP List總共會有4096 / 8 = 512個PRP Entry，且每一個PRP Entry會再指向一個Physical Memory Page(如圖3所示)。
+- **Page Base Address**
+	- 主機端要寫入或是讀取資料的位址 **( Memory Page Address )**
+- **Offset**
+	- MPS=4 KiB，bits [11:00] 必須要為 0
+	- MPS=8 KiB，bits [12:00] 必須要為 0
+
+舉例說明 :  MPS=4k，Page Base Address : `0x0000004:1D811000`，協議規範 bits [11:00] 必須要全部為 0，因此尾數會是 `1000h`。每個 PRP Entry 都必須要對齊，若是有多個資料，代表會有下一個 PRP Entry，則記憶體位址因該為 `0x0000004:1D812000`，符合 MPS=4k 邊界對齊。
+
+![[prp_entry_layout.png]]
 ## PRP 兩種主要方式
 
 PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可以是**連續的或分散**。PRP 支援兩種描述方法：
 
 1. **PRP1 Entry** :
-    - 一個 64 位元的記憶體位址，用來描述主機記憶體中資料緩衝區的記憶體位址。
-	- 每個 PRP Entry 對應一個資料頁（Memory Page Size = 4kB）
+    - 一個 64 位元記憶體位址 ( Page Base Address )，用來描述主機資料緩衝區的記憶體位址。
+	- 每個 PRP Entry 對應一個資料頁（預設 : Memory Page Size = 4kB）
 	- PRP Entry 指向緩衝區的位址必須對齊到一個頁面大小（MPS）的邊界。
 2. **PRP2 Entry** :
 	- 若是傳輸資料沒有超過 MPS，PRP2 Entry 內容則保留。
 	- 如果傳輸的資料超過了第一個頁面大小，PRP2 用於描述剩餘的資料。
-		- PRP2 指向 **第二個連續頁面** ( 當傳輸資料量只有 8KB )
-		- PRP2 指向一個 **PRP List**。 ( 當傳輸資料量大於 8KB 以上 )
+		- PRP2 指向 **第二個連續頁面**
+		- PRP2 指向一個 **PRP List**。
 3. **PRP List** :
     - PRP List 用於存放多個 PRP Entry。
-    - 若是 PRP List 無法描述所有要傳輸的記憶體位址，**最後一個 PRP Entry** 會是存放下一個可以鏈接 PRP List，形成多層結構。
+    - 每一個PRP Entry會再指向一個 **Page Base Address**
+    - 若是 PRP List 無法描述所有要傳輸的記憶體位址，**最後一個 PRP Entry** 會是存放下一個可以鏈接 PRP List，形成多層結構。	
 
 >如何定義 Memory Page Size  ( MPS ) ? 
 >1.  **Controller Configuration** ( CC ) 暫存器裡的 **Memory Page Size** ( MPS ) 欄位來決定。
