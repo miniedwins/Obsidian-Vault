@@ -189,8 +189,9 @@
   },
   "active": "f276f0bdc94ca508",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_entry_layout.png",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_entry_layout.png",
     "技術資料/NVMe/NVMe-Base/Flush.md",
     "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/NVMe-Base/attachments/log_page_attributes.png",
