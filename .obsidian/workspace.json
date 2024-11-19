@@ -189,8 +189,9 @@
   },
   "active": "b64cd3a9103b2d43",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_list_describing_data_to_comapre.png",
+    "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241119125543.png",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_list_describing_data_to_comapre.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_entry_layout.png",
     "技術資料/NVMe/NVMe-Base/Flush.md",
@@ -230,7 +231,6 @@
     "程式設計/Python/資料分析",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
     "技術資料/NVMe/BaseSpec/attachments/Pasted image 20241015115933.png",
-    "技術資料/NVMe/NVMe-Base/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/BaseSpec/未命名",
     "程式設計/Python/單元測試",
     "程式設計/Python/數值轉換",
