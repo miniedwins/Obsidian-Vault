@@ -1,14 +1,13 @@
 ## 基本介紹
 
 NVMe Firmware Command 分為以下兩種命令 : 
-
 ### Firmware  Image Download 
 
-此功能主要是用來更新全部或是部份的資料 (image) 到控制器上(controller)，也就是可以將新的韌體資料上傳到控制器上，由此方式更新韌體。更新的過程中需要將該更新的資料分成一小部份的方式作為傳遞，每一份傳遞資料都包含了 NUMD and OFST，所以 host 必須要確保資料傳遞的 NUMD and OFST是否有符合 FWUG，可以透過  identify-ctrl 取得，若是沒有符合 FWUG 就會造成韌體更新錯誤。
+此功能主要是用來更新全部或是部份的資料 (image) 到控制器上(controller)，也就是可以將新的韌體資料上傳到控制器上，由此方式更新韌體。更新的過程中需要將該更新的資料分成一小部份的方式作為傳遞，每一份傳遞資料都包含了 NUMD and OFST，所以 host 必須要確保資料傳遞的 NUMD and OFST是否有符合 FWUG，可以透過 Identify-Ctrl 取得，若是沒有符合 FWUG 就會造成韌體更新錯誤。
 
 當所有的資料傳遞完成後，並不會馬上被啟用 (active)，Host 還需要發送 firmware commit，並且在其它  downloading image 之前發送該命令，這個時候控制器就會處理第一次 firmware commit 之前的 firmware image。
 
-(重要) 如果在執行 firmware image download or commit 的期間，發生系統斷電或式控制器被重置等突發事件後，先前傳遞的資料都會被控制器給移除。
+**重要** :  如果在執行 firmware image download or commit 的期間，發生系統斷電或式控制器被重置等突發事件後，先前傳遞的資料都會被控制器給移除。
 
 *備註 : 建議要越小越好，目前  FADU Sample 所提供的  FWUG value = 1。*
 
@@ -50,8 +49,6 @@ host 檢查下列表格就可以得知，下一次控制器重置後，是否需
 
 ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/admin_command_set/firmware_commit_dw10.png)
 
-
-
 ## 檢查控制器是否支援更新
 
 說明 : 確認控制器是否有支援 `Firmware Image Download` and `Firmware Commit`，沒有支援代表控制器無法執行韌體更新。
@@ -59,7 +56,7 @@ host 檢查下列表格就可以得知，下一次控制器重置後，是否需
 Controller Attributes (CTRATT) :
 
 * 257:256 Bytes :
-  * Bit 2 : 
+  * Bit2 : 
     * 1 : 支援韌體更新
     * 0 : 不支援韌體更新
 

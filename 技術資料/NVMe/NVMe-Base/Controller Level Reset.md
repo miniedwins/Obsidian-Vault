@@ -54,4 +54,4 @@
 **重置過程中注意事項 !!!**
 * 除了 `Controller Reset` 之外，`Cntroller Level Reset` 操作都會導致控製器立即失去與主機的通訊
 * 控製器將無法 `Abort` 任何命令或是 `Update`  Completion Queue Entries
-* 通過以上兩點說明， 上主機端正在傳送的資料應該也會丟失
+* 通過以上兩點說明， 主機端正在傳送的資料應該也會丟失

@@ -154,17 +154,16 @@ nvme device-self-test /dev/nvme0 --namespace-id=1 --self-test-code=0xf
 
 #### Device Self-test Log
 
-**說明 :** 主要觀察這兩個項目
-* Current Device Self-Test Operation : 目前執行那一種自檢測試
-* Current Device Self-Test Completion : 目前測試進度百分比
+- **說明 :** 主要觀察這兩個項目
+	- Current Device Self-Test Operation : 目前執行那一種自檢測試
+	* Current Device Self-Test Completion : 目前測試進度百分比
 
 ![[self_test_log.png]]
 #### Self-test Result Data Structure
 
-說明 : 主要觀察這兩個項目，其它在參考圖示說明
-
-* Device Self-test Status : 自檢測試的類型與結果
-* Segment Number : 發生自檢錯誤，是哪個測試項目錯誤
+- **說明 :** 主要觀察這兩個項目，其它在參考圖示說明
+	* Device Self-test Status : 自檢測試的類型與結果
+	* Segment Number : 發生自檢錯誤，是哪個測試項目錯誤
 
 ![[self_test_result_data_structure_01.png]]
 
@@ -182,15 +181,20 @@ nvme self-test-log /dev/nvme0 -o "json"
 
 日誌結果 :  下列每一條日誌所輸出的結果並非日誌完整的訊息，`nvme-cli` 只挑選比較重要的內容顯示。
 
-* 這兩個都數值都為零，代表當前並沒有任何自檢測試在運行
-  * Current operation  : 0
-  * Current Completion : 0%
+- 這兩個都數值都為零，代表當前並沒有任何自檢測試在運行
+	- Current operation  : 0
+	- Current Completion : 0%
 * Self Test Result [0] 代表第一條日誌，以此類推
-  * Operation Result : 0  (測試的結果，0 : 代表沒有發生錯誤)
-  * Self Test Code : 2  (Extended Self Test)
-  * Valid Diagnostic Information : 0 (疑問 : 不清楚想表達的意義)
-  * Power on hours (POH)  : `0x288`  (執行第一次自檢測試開始，到現在 `SSD` 總共上電多少個小時)
-  * Vendor Specific : `0 0` (未確定 : 應該表示廠商自定義的自檢測試)
+	* Operation Result : 0  
+		* 測試的結果，0 : 代表沒有發生錯誤
+	* Self Test Code : 2  
+		* Extended Self Test
+	* Valid Diagnostic Information : 0 
+		* 疑問 : 不清楚想表達的意義
+	* Power on hours (POH)  : `0x288`  
+		* 執行第一次自檢測試開始，到現在 `SSD` 總共上電多少個小時
+	* Vendor Specific : `0 0` 
+		* 未確定 : 應該表示廠商自定義的自檢測試
 
 ~~~shell
 Device Self Test Log for NVME device:nvme0
@@ -277,13 +281,12 @@ nvme get-log -i 0x06 -l 563
 
 下面圖示使用上面日誌結果說明對應關係，僅描述第一個日誌內容，第二個到最後一個日誌以此類推查看。
 
-說明 : 
-
-* 當前因為沒有在運行自檢測試，狀態均為 `0x00`
-* 主要觀察日誌的重點
-  * Device Self-test Status : `0x20`
-    * 自檢類型 : Extended device self-test
-    * 自檢結果 : 沒有發生錯誤
+- 說明 : 
+	* 當前因為沒有在運行自檢測試，狀態均為 `0x00`
+	* 主要觀察日誌的重點
+		* Device Self-test Status : `0x20`
+	    * 自檢類型 : Extended device self-test
+	    * 自檢結果 : 沒有發生錯誤
   * Segment Number : `0x00` (代表成功)
   * Namespace Identifier : `0x01` (指定哪一個 NS Id 測試)
 
