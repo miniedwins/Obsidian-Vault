@@ -1,16 +1,16 @@
 
 - NVMe
 	- Power
-		- Power On
-		- Power Off
+		- Power On (O)
+		- Power Off (O)
 		- Reset
 			- NVMe Reset
 			- NVM Subsystem Reset
-		- S3 and S4
+		- S3 and S4 (O)
 		- Power States
 	- Command
 		- Namesapce Management
-		- Host Memory Buffer
+		- Host Memory Buffer (O)
 		- Firmware Download
 		- Get-log Page
 			- SMART
@@ -26,5 +26,5 @@
 	- Hot-Reset
 
  - Linux
-	 - Remove NVMe 
-	 - Rescan NVMe
+	 - Remove NVMe  (O)
+	 - Rescan NVMe (O)
