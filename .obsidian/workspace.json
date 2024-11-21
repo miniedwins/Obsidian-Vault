@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Hot Reset.md",
+                "file": "暫存內容/Trace.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Hot Reset"
+              "title": "Trace"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/PCIE/System Reset/Hot Reset.md"
+                "file": "暫存內容/Trace.md"
               },
               "icon": "lucide-list",
-              "title": "Hot Reset 的大綱"
+              "title": "Trace 的大綱"
             }
           },
           {
@@ -189,10 +189,17 @@
   },
   "active": "b64cd3a9103b2d43",
   "lastOpenFiles": [
+    "暫存內容/BMC.md",
+    "暫存內容/Trace.md",
+    "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Function Level Reset.md",
+    "技術資料/PCIE/System Reset/Hot Reset.md",
+    "技術資料/PCIE/System Reset/Warm Rset.md",
+    "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
+    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
+    "技術資料/Study.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
-    "暫存內容/Trace.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer.md",
@@ -213,19 +220,12 @@
     "技術資料/NVMe/NVMe-Base/attachments/property_definition.png",
     "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241119125543.png",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_list_describing_data_to_comapre.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/prp_entry_layout.png",
     "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/NVMe-Base/attachments/log_page_attributes.png",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page/page_base_address_offset.png",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
-    "技術資料/NVMe/NVMe-Base/Abort.md",
-    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
     "技術資料/NVMe/Trace",
-    "程式設計/Python/資料分析/Pandas/填補缺失的資料.md",
-    "暫存內容/BMC.md",
     "暫存內容",
     "程式設計/Meson",
     "技術資料/PCIE",

@@ -23,8 +23,12 @@
 		- L1.1
 		- L1.2
 	- FLR
+		- Windows (O)
+		- LINUX
 	- Hot-Reset
-
- - Linux
+		- Windows (O)
+		- LINUX
 	 - Remove NVMe  (O)
 	 - Rescan NVMe (O)
+	 - Uninstall Device (O)
+	 - Rescan Device (O)
