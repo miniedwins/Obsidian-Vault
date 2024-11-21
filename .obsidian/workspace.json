@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
+                "file": "技術資料/PCIE/System Reset/Hot Reset.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Shutdown"
+              "title": "Hot Reset"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Shutdown.md"
+                "file": "技術資料/PCIE/System Reset/Hot Reset.md"
               },
               "icon": "lucide-list",
-              "title": "Controller Shutdown 的大綱"
+              "title": "Hot Reset 的大綱"
             }
           },
           {
@@ -189,6 +189,8 @@
   },
   "active": "b64cd3a9103b2d43",
   "lastOpenFiles": [
+    "技術資料/PCIE/System Reset/Function Level Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "暫存內容/Trace.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request.md",
@@ -197,7 +199,6 @@
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
@@ -226,7 +227,6 @@
     "程式設計/Python/資料分析/Pandas/填補缺失的資料.md",
     "暫存內容/BMC.md",
     "暫存內容",
-    "技術資料/Study.md",
     "程式設計/Meson",
     "技術資料/PCIE",
     "程式設計/Python/資料分析/Pandas",
