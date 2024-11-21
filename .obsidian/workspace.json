@@ -189,11 +189,11 @@
   },
   "active": "b64cd3a9103b2d43",
   "lastOpenFiles": [
-    "暫存內容/BMC.md",
+    "技術資料/PCIE/System Reset/Hot Reset.md",
     "暫存內容/Trace.md",
+    "暫存內容/BMC.md",
     "技術資料/PCIE/System Reset/Conventional Reset.md",
     "技術資料/PCIE/System Reset/Function Level Reset.md",
-    "技術資料/PCIE/System Reset/Hot Reset.md",
     "技術資料/PCIE/System Reset/Warm Rset.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",

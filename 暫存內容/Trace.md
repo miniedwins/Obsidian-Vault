@@ -28,6 +28,8 @@
 	- Hot-Reset
 		- Windows (O)
 		- LINUX
+	- Link-Disable
+		- LINUX
 	 - Remove NVMe  (O)
 	 - Rescan NVMe (O)
 	 - Uninstall Device (O)
