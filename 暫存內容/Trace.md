@@ -4,7 +4,7 @@
 		- Power On (O)
 		- Power Off (O)
 		- Reset
-			- NVMe Reset
+			- NVMe Reset (O)
 			- NVM Subsystem Reset
 		- S3 and S4 (O)
 		- Power States
@@ -12,16 +12,13 @@
 		- Namesapce Management
 		- Host Memory Buffer (O)
 		- Firmware Download (O)
-		- Get-log Page
-			- SMART
-			- Temperature
 - PCIe
 	- ASPM
 		- L1.1
 		- L1.2
 	- FLR
 		- Windows (O)
-		- LINUX
+		- LINUX (O)
 	- Hot-Reset
 		- Windows (O)
 		- LINUX
