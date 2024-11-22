@@ -8,10 +8,9 @@
 
 ![[smart_health_critical_warning.png]]
 
-控製器必須為 **綜合溫度（Composite Temperature）** 實現**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。它的預設值，可以透過 `Identify Ctrl` 結構表找到 `WCTEMP` 以及 `CCTEMP`。
+控製器必須為 **綜合溫度（Composite Temperature）** 實現**過溫閾值**（Over Temperature Threshold）和 **低溫閾值（Under Temperature Threshold）**。它的預設值，可以透過 `Identify Ctrl` 結構表找到 `WCTEMP` 以及 `CCTEMP`。
 
-另外對於有效的溫度感測器（即那些報告了非零值的感測器），都需要實現相應的過溫和低溫閾值功能。
-所有實現的溫度感測器的預設**過溫閾值**為 **FFFFh**，默認**低溫閾值**為 **0h**。
+另外對於有效的溫度感測器（即那些報告了非零值的感測器），都需要實現相應的過溫和低溫閾值功能。所有實現的溫度感測器的預設**過溫閾值**為 **FFFFh**，默認**低溫閾值**為 **0h**。
 
 > **待確認 : 若是沒有實現溫度感測器，SMART 健康資訊日誌應該要多少 ?**
 > 1. 沒有實現溫度感測器，若是設定溫度感測器1，則命令無效
