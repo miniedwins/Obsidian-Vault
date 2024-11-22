@@ -11,13 +11,10 @@
 	- Command
 		- Namesapce Management
 		- Host Memory Buffer (O)
-		- Firmware Download
+		- Firmware Download (O)
 		- Get-log Page
 			- SMART
 			- Temperature
-		- NVMe-MI
-			- In-Banded 
-
 - PCIe
 	- ASPM
 		- L1.1
