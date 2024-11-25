@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "暫存內容/Trace.md",
+                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Trace"
+              "title": "Asynchronous Event Request"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "暫存內容/Trace.md"
+                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request.md"
               },
               "icon": "lucide-list",
-              "title": "Trace 的大綱"
+              "title": "Asynchronous Event Request 的大綱"
             }
           },
           {
@@ -189,8 +189,8 @@
   },
   "active": "b64cd3a9103b2d43",
   "lastOpenFiles": [
-    "技術資料/PCIE/System Reset/Hot Reset.md",
     "暫存內容/Trace.md",
+    "技術資料/PCIE/System Reset/Hot Reset.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "暫存內容/BMC.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
