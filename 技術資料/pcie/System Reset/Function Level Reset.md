@@ -19,7 +19,7 @@ FLR 執行過程中 :
 - 一個來自完成 ( Completionple ) 封包，則會允許將當作意外完成 `UC` ( Unexpected Completion ) 進行處理，或是默默地丟棄，並且不其記錄或標記為意外完成。
 - 初始化過程中，如果收到 `Configuration Request`，Function 必需要回覆 `CRS` ( Configuration Request Retry Status )  Completion Status。
 
-Reste 退出後 : 
+Reset 退出後 : 
 - Reset 狀態退出後，必須在 20ms 內開始 Link Training。
 - 系統軟體啟動 FLR 至少要等待 100ms 完成重置，然後才能嘗試發送 `Configuration Requests`。
 - 如果軟體等待 100ms 開始發送  Configuration Request，但是 Device 初始化尚未完成，因此 Device需要回覆 `CRS` ( Configuration Request Retry Status )  Completion Status。
