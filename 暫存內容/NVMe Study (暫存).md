@@ -15,8 +15,9 @@
 	- 寫入CC.SHN=01 ( Shutdown Notification )
 
 - Linux Rescan
-	- 主機端會將 CC.EN=0
-	- 控制器 SHST=01 > SHST=00
+	- 主機端會直接將 CC.EN=0
+	- 讀取控制器 SHST=01, 然後等待後再讀取會變成 SHST=00 
+		- 代表前面移除後,  因為還是維持有電的狀態, 所以一開始 SHST=01 還是維持這個值
 	- 重新執行初始化相關流程
 
 - **後續要記錄的 TRACE**
