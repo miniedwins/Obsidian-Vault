@@ -40,5 +40,6 @@
 	- Disable Link, 觀察行為
 
  - **後續要修改的筆記**
-	 - HMB :  加入詳細說明 Host Memory Descriptor
-	![[Pasted image 20241127081953.png]]
+	- HMB :  加入詳細說明 Host Memory Descriptor
+	- 如何找 PCIe Capacity Register
+	- PCIe Class Code 代表什麼 
