@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Asynchronous Event Request"
+              "title": "Host Memory Buffer"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md"
+                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md"
               },
               "icon": "lucide-list",
-              "title": "Asynchronous Event Request 的大綱"
+              "title": "Host Memory Buffer 的大綱"
             }
           },
           {
@@ -187,11 +187,19 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "2473c5fe13cd8e66",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129032849.png",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241128073441.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241128075243.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241129023907.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241129023812.png",
     "暫存內容/範例筆記.md",
     "暫存內容/NVMe Study (暫存).md",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "暫存內容/PCIe Class Code.md",
@@ -200,8 +208,6 @@
     "技術資料/NVMe/NVMe-Base/Namespace Management.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/Telemetry.md",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241128075243.png",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241128073441.png",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request",
     "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241128071332.png",
@@ -214,7 +220,6 @@
     "暫存內容/BMC.md",
     "技術資料/PCIE/System Reset/Function Level Reset.md",
     "暫存內容/attachments",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
@@ -224,17 +229,11 @@
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
-    "技術資料/Other/IEEE EUI, OUI, and CID.md",
-    "技術資料/NVMe/NVMe-Base/attachments/data_protection/medata_as_separate.png",
-    "技術資料/NVMe/NVMe-Base/attachments/error_recovery.png",
-    "技術資料/NVMe/NVMe-Base/attachments/property_definition.png",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
     "技術資料/NVMe/NVMe-Trace",
     "暫存內容",
     "程式設計/Meson",
     "技術資料/PCIE",
-    "程式設計/Python/資料分析/Pandas",
-    "程式設計/Python/資料分析",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
