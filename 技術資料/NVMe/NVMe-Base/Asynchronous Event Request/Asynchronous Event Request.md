@@ -8,7 +8,7 @@
 當主機收到事件通知後，會根據事件中提供的 **LID（Log Page Identifier）**，使用 **Get Log Page 命令** 獲取具體的事件細節。處理完成後，主機會執行清除操作，將事件標記為已處理。以下是詳細流程：
 
 1. **發出事件請求** : 
-	- 主機提交 **Asynchronous Event Configuration**
+	- 主機透過 **Asynchronous Event Configuration** 設定要觀察的事件
 	- 主機提交 **Asynchronous Event Request** 請求命令
 
 3. **收到事件通知**：
@@ -18,7 +18,7 @@
     - 主機根據 LID 的值，向控制器發送 **Get Log Page 命令**，並且將 **RAE（Reporting Asynchronous Event）** 位元設置為 `0`，告知控制器該事件已被清除。
     
 3. **檢查並處理事件資訊**：
-    - 主機解析日誌數據，- 根據 AET 類型以及 AEI 資訊，決定是否採取進一步操作。
+    - 主機解析日誌數據， 根據 AET 類型以及 AEI 資訊，決定是否採取進一步操作。
     - 執行必要的操作（例如通知用戶、更新內部狀態、調整工作策略）。
 ## 事件工作原理
 
