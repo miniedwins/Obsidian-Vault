@@ -22,11 +22,15 @@
 - **HMPRE ≠ 0**：表示支援 HMB，且值表示建議的 HMB 大小（以 4KB 為單位）。
 
 ![[Pasted image 20241129064658.png]]
-### 2. 取得 HMB 資訊 
 
-- nvme-cli 執行後會顯示兩個資訊內容
-	- `Completion Queue Entry Dword 0`
-	- `Attributes Data Structure`
+### 2. 開啟與配置 HMB
+
+
+## HMB 配置分析
+
+### 1. 解釋 HMB 資訊 
+
+使用 Get-Feature ( Host Memory Buffer ) 命令，長度設定為 64 Bytes。
 
 ```
 $ nvme get-feature -f 0x0d /dev/nvme0 -l 64
@@ -37,31 +41,36 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
-### Completion Queue Entry Dword 0
 
-可以從 `CQ Entry` 得到目前 `HMB` 狀態是否開啟或是關閉，目前 `value=0x01` 代表 Enable。
+可以從 `CQ Entry DW` 得到目前 `HMB` 狀態是否開啟或是關閉，目前 `value=0x01` 代表開啟。
 
-```
-get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
-```
+![[Pasted image 20241129070614.png]]
 
-![[nvme_hmb_cq_entry_dword0.png]]
-### Attributes Data Structure
+另外我們指定的 64 Bytes 則是 HMB 資料結構 **( Attributes Data Structure )**，此表描述所使用的容量大小以及配置的記憶體位址，最大可以指定 4096 Bytes。
 
-另外則是 `HMB` 資料結構，描述所使用的容量大小以及作業系統所配置給控制器使用的記憶體位址。
+![[Pasted image 20241129071812.png]]
+
+不過 HMB 所使用的數量並不多，因此 64 Bytes 已經可以顯示足夠的資訊。
 
 ```
        0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
 0000: 00 40 00 00 00 70 88 12 01 00 00 00 10 00 00 00 ".@...p.........."
+0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
-![[nvme_hmb_attributes_data_structure.png]]
 
-- HSIZE : `0x00004000h`
-	- 計算使用的 HMB 大小需要取得 `MPS` 設定
-	- 目前取得 MPS=0，Page Size 使用的大小為 4K
-	- Host Memory Buffer Size  =  16384 * 4k = 64MB
+### 2. 使用的記憶體大小
 
-![[nvme_cc_memory_page_size.png]]
+我們要如何計算主機配置的記憶體大小 ?  當前設定 HSIZE = 0x00004000h = 16384
+
+1. 計算容量需要先取得 MPS ( Memory Page Size ) 
+2. 目前取得 MPS = ( 2 ^ ( 12 + 0 ) ) = 4096 Bytes
+3. Host Memory Buffer Size  =  16384 * 4096 = 64MB
+
+![[Pasted image 20241129073116.png]]
+
+### 3. 配置的記憶體位置
 
 作業系統分配的記憶體位址，分別為一個是高位址 (HMDALU) 一個是低位址 (HMDAL)
  - HMDAL : `0x12887000`
