@@ -1,52 +1,28 @@
 ## **概要說明**
 
 **Host Memory Buffer (HMB)** 是 NVMe 協議引入的一項功能，旨在使用主機的系統內存作為控制器的資料緩存區域（如 Flash Translation Layer，FTL）或用作資料緩存， 當主機或控制器需要訪問頻繁數據時，可以通過 HMB 加快響應速度。
-## 工作機制
+## 運作流程
 
-- **分配內存**：
-    - 主機與控制器協商，決定分配的 HMB 大小及其用途。
-    - 內存分配由主機完成，並通知控制器內存的基址及大小。
-- **主機的通知**：
-    - 主機通過 **Set Features 命令** 設置 HMB 配置（Feature Identifier: `0x0D`）。
-    - 主機分配的內存起始地址和大小由 **HMB PRP（Host Memory Buffer Physical Region Page）** 指定。
-- **內存釋放**：
-    - 當主機不再需要 HMB 或設備重置時，可以通過 Disable HMB 設置來釋放已分配的資源。
-## 重點說明
+### 1. 記憶體分配
 
-- **記憶體分配與使用限制**
-    - 系統透過 Set-Feature ( Host Memory Buffer ) 命令分配一段 **HMB 記憶體空間** 給控制器。
-    - 該記憶體區域由控制器完全管理，系統無法直接修改或操作記憶體內容。
-- **HMB 的首次配置**
-    - 第一次配置 HMB 時，**Memory Return Bit** 設置為 `0`，表示分配的新記憶體空間並不依賴之前的配置。
-    - 控制器負責初始化並使用該記憶體區域。
-- **記憶體釋放與回收**
-    - 當發生重置、關機等事件時，系統會通知控制器釋放已分配的記憶體空間，並將其歸還給主機。
-    - 主機通過將 **HMB 大小設為 0** 來回收已配置的記憶體
+主機通過 **Set Features 命令 ( Host Memory Buffer )** 開啟 `EHM`，並且配置記憶體容量大小 `HSIZE` 以及記憶體位址 `HMDLLA and HMDLUA`。主機首次配置 HMB，需要將 **Memory Return Bit** 設置為 `0`，表示分配的新記憶體空間。
 
+![[Pasted image 20241129061806.png]]
+### 2. 記憶體釋放與回收
 
-
-- 系統會分配一段記憶體空間給控制器使用，該記憶體內容無法被系統修改。
-- 第一次配置 `HMB` 記憶體空間，`Memory Return Bit` 設定為 `0`。
-- 使用期間內，控制器需要確保資料內容沒有遺失。
-- 經過重置或是關機等事件，系統會要求控制器釋放記憶體空間，並且回收已配置的記憶體空間。
-- 休眠 (D3Cold)
-	- 進入休眠
-		- 無法保留 `HMB`。 
-	- 系統恢復
-		- 應該要分配先前所設定的記憶體位址。
-		- `Memory Return Bit` 設定為 `1`。
-
+當發生重置、關機等事件時，系統會使用 **Set Features 命令 ( Host Memory Buffer )**，關閉 `EHM`通知控制器釋放已分配的記憶體空間，並將其歸還給主機。
 
 ## HMB 設定範例
 
 ### 1. 檢查是否支援 HMB 
 
-可以從 `Identify Controller Data Structure` 取得 `HMPRE` 屬性
-- HMPRE = 0 (不支援)
-- HMPRE = non-zone (支援)
+要檢查設備是否支持 **Host Memory Buffer (HMB)**，可以從 **Identify Controller Data Structure** 中取得 **HMPRE**（Host Memory Buffer Preferred Size）屬性。
 
-![[host_memory_buffer_perferrez_size.png]]
-## 取得 HMB 資訊 
+- **HMPRE = 0**：表示不支援 HMB 功能。
+- **HMPRE ≠ 0**：表示支援 HMB，且值表示建議的 HMB 大小（以 4KB 為單位）。
+
+![[Pasted image 20241129064658.png]]
+### 2. 取得 HMB 資訊 
 
 - nvme-cli 執行後會顯示兩個資訊內容
 	- `Completion Queue Entry Dword 0`
@@ -99,7 +75,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 - HMDLEC : `0x00000010` 
 
 ![[hmb_descriptor_list.png]]
-## Enable HMB
+### 3. 開啟與配置 HMB
 
 - 記憶體空間是由系統分配，若是關閉後想要再開啟需要手動設定。  
 	- 指定先前系統所配置的位址 `0x0000000112887000`。
@@ -114,7 +90,7 @@ $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000
 
 Admin Command Set Features is Success and result: 0x00000000
 ```
-## Disable HMB
+### 4. 關閉 HMB 功能
 
 一旦取消 HMB，控制器無法再使用 `Host Memory Buffer` 任何資料，直到再一次的 Enable。
 
@@ -124,12 +100,12 @@ set-feature:0x0d (Host Memory Buffer), value:00000000, cdw12:00000000, save:0
 ```
 
 
+## **HMB 的清除與回收**
 
-## **休眠狀態下**
-
-1. **進入休眠**   
-    - 當系統進入 **D3Cold（完全休眠狀態）** 時，HMB 的記憶體空間無法保留，控制器失去對該記憶體的使用權限。
-    - 主機應回收該記憶體，釋放系統資源。
-2. **系統恢復**
-    - 當系統從休眠狀態恢復時，應重新分配與先前相同的記憶體位址，供控制器恢復使用。
-    - 在此過程中，**Memory Return Bit** 設置為 `1`，表示主機為控制器分配了先前使用的記憶體區域。
+1. **進入休眠  ( D3 Cold )** 
+    - 系統進入休眠時，HMB 的記憶體空間無法保留，控制器失去對該記憶體的使用權限。
+    - 主機需要回收該記憶體，釋放系統資源。
+2. **系統恢復 ( Recovery from D3 Cold )**
+    - 當系統從休眠狀態恢復時，應重新分配與先前相同的記憶體位址，提供控制器恢復使用。
+    - 透過 Set-Feature 命令，將 **Memory Return Bit** 設置為 `1`，表示主機為控制器分配了先前使用的記憶體區域。
+記憶體區域由控制器完全管理，系統無法直接修改或操作記憶體內容。

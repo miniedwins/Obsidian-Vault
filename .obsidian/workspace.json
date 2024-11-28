@@ -187,10 +187,12 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "2473c5fe13cd8e66",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129064658.png",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129061806.png",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129032849.png",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer",
@@ -216,7 +218,6 @@
     "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "暫存內容/attachments/Pasted image 20241127081953.png",
     "暫存內容/BMC.md",
     "技術資料/PCIE/System Reset/Function Level Reset.md",
     "暫存內容/attachments",
