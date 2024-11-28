@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+                "file": "暫存內容/範例筆記.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Asynchronous Event Request"
+              "title": "範例筆記"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md"
+                "file": "暫存內容/範例筆記.md"
               },
               "icon": "lucide-list",
-              "title": "Asynchronous Event Request 的大綱"
+              "title": "範例筆記 的大綱"
             }
           },
           {
@@ -189,6 +189,10 @@
   },
   "active": "2473c5fe13cd8e66",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Telemetry.md",
+    "暫存內容/範例筆記.md",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241128075243.png",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241128073441.png",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments",
@@ -196,10 +200,7 @@
     "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241128071332.png",
     "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241128070730.png",
     "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241128065931.png",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/attachments/sq_cq_queue_entry_size.png",
-    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
-    "暫存內容/範例筆記.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "暫存內容/NVMe Study (暫存).md",
@@ -215,7 +216,6 @@
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
     "技術資料/NVMe/NVMe-Base/Sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
@@ -227,7 +227,6 @@
     "技術資料/NVMe/NVMe-Base/attachments/data_protection/medata_as_separate.png",
     "技術資料/NVMe/NVMe-Base/attachments/error_recovery.png",
     "技術資料/NVMe/NVMe-Base/attachments/property_definition.png",
-    "技術資料/NVMe/NVMe-Base/attachments/Pasted image 20241119125543.png",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
     "技術資料/NVMe/NVMe-Trace",
     "暫存內容",
