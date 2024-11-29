@@ -25,10 +25,31 @@
 
 ### 2. 開啟與配置 HMB
 
+- 記憶體空間是由系統分配，若是關閉後想要再開啟需要手動設定。  
+	- 指定先前系統所配置的位址 `0x0000000112887000`。
+	- 由於是配置先前所指派的記憶體空間，`Mmemory Return Bit` 需要設定為 `1`。
+
+**注意 : 記憶體是系統分配的，不能隨意指定一個記憶體位址。**
+
+![[hmb_cdw11.png]]
+
+```
+$ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
+
+Admin Command Set Features is Success and result: 0x00000000
+```
+### 3. 關閉 HMB 功能
+
+一旦取消 HMB，控制器無法再使用 `Host Memory Buffer` 任何資料，直到再一次的 Enable。
+
+```
+$ nvme set-feature -f 0x0d --value=0x00 /dev/nvme0
+set-feature:0x0d (Host Memory Buffer), value:00000000, cdw12:00000000, save:0
+```
 
 ## HMB 配置分析
 
-### 1. 解釋 HMB 資訊 
+### 1. HMB 資訊 
 
 使用 Get-Feature ( Host Memory Buffer ) 命令，長度設定為 64 Bytes。
 
@@ -60,7 +81,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
 
-### 2. 配置記憶體大小
+### 2. 記憶體大小
 
 我們要如何計算主機配置的記憶體大小 ?  當前設定 HSIZE [3:0] = 0x00004000h = 16384
 
@@ -69,7 +90,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 3. Host Memory Buffer Size  =  16384 * 4096 = 64MB
 
 ![[Pasted image 20241129073116.png]]
-### 3. 配置記憶體位置
+### 3. 記憶體位置
 
 作業系統分配的記憶體位址，分別為低位址 **HMDAL** 以及高位址 **HMDALU**。
 
@@ -78,37 +99,23 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
  - 完整的記憶體位置 : `0x0000000112887000`
 
 ![[Pasted image 20241129081433.png]]
-### 4. 配置記憶體的數量
+### 4. 記憶體範圍數量
 
-**HMDLEC** 這個參數描述 Host 提供給控制器使用的記憶體數量，也就是 **Host Memory Descriptor List (HMDL)** 中的數量。
+**HMDLEC** 這個參數描述 Host 提供給控制器使用的記憶體範圍數量。
 
+ HMDLEC [15:12] = `0x00000010`
 
+![[Pasted image 20241129083224.png]]
 
-![[hmb_descriptor_list.png]]
-### 3. 開啟與配置 HMB
+什麼是  **Host Memory Descriptor List  (HMDL )** ? 它是用來描述主機記憶體位址以及使用的容量大小。主機開始配置 HMB 並不會配置一段非常大的記憶體範圍，而是會配置多個一小段的記憶體範圍給控制器使用。
 
-- 記憶體空間是由系統分配，若是關閉後想要再開啟需要手動設定。  
-	- 指定先前系統所配置的位址 `0x0000000112887000`。
-	- 由於是配置先前所指派的記憶體空間，`Mmemory Return Bit` 需要設定為 `1`。
+![[Pasted image 20241129083631.png]]
 
-**注意 : 記憶體是系統分配的，不能隨意指定一個記憶體位址。**
+- **Host Memory Buffer Descriptor Entry** 它包含兩個關鍵信息：
+    1. 連續的記憶體頁數量。
+    2. 主機記憶體位址（以頁為單位）。
 
-![[hmb_cdw11.png]]
-
-```
-$ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
-
-Admin Command Set Features is Success and result: 0x00000000
-```
-### 4. 關閉 HMB 功能
-
-一旦取消 HMB，控制器無法再使用 `Host Memory Buffer` 任何資料，直到再一次的 Enable。
-
-```
-$ nvme set-feature -f 0x0d --value=0x00 /dev/nvme0
-set-feature:0x0d (Host Memory Buffer), value:00000000, cdw12:00000000, save:0
-```
-
+![[Pasted image 20241129083913.png]]
 
 ## **HMB 的清除與回收**
 
@@ -118,4 +125,5 @@ set-feature:0x0d (Host Memory Buffer), value:00000000, cdw12:00000000, save:0
 2. **系統恢復 ( Recovery from D3 Cold )**
     - 當系統從休眠狀態恢復時，應重新分配與先前相同的記憶體位址，提供控制器恢復使用。
     - 透過 Set-Feature 命令，將 **Memory Return Bit** 設置為 `1`，表示主機為控制器分配了先前使用的記憶體區域。
+
 記憶體區域由控制器完全管理，系統無法直接修改或操作記憶體內容。
