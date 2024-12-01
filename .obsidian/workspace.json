@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Host Memory Buffer"
+              "title": "Controller Initialization"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md"
+                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md"
               },
               "icon": "lucide-list",
-              "title": "Host Memory Buffer 的大綱"
+              "title": "Controller Initialization 的大綱"
             }
           },
           {
@@ -189,20 +189,24 @@
   },
   "active": "2473c5fe13cd8e66",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241202063349.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241202062500.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241202063153.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241202063201.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241202063039.png",
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments/Pasted image 20241202062945.png",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241202025212.png",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241202025108.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241202022625.png",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241202022442.png",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129090809.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129090536.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129083913.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129083631.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129083224.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129081433.png",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments/Pasted image 20241129071812.png",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer",
     "暫存內容/範例筆記.md",
@@ -222,19 +226,14 @@
     "技術資料/PCIE/System Reset/Function Level Reset.md",
     "暫存內容/attachments",
     "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
     "技術資料/NVMe/NVMe-Base/Sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
-    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
-    "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
     "技術資料/NVMe/NVMe-Trace",
     "暫存內容",
     "程式設計/Meson",
-    "技術資料/PCIE",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"

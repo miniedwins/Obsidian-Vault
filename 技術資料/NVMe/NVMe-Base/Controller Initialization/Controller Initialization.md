@@ -1,4 +1,11 @@
-# Controller Initialization
+
+## 控制器初始化設定
+
+
+
+
+
+========================================================
 
 1. Set the PCI and PCI Express registers described in section 2 appropriately based on the system configuration. This includes configuration of power management features. A single interrupt (e.g., pin-based, single-MSI, or single MSI-X) should be used until the number of I/O Queues is determined
 

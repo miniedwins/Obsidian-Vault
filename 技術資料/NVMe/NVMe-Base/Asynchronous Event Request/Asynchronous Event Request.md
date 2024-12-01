@@ -34,7 +34,9 @@
 4. 主機處理事件後，設置 RAE = 0 清除事件。
 ## 事件資訊解析範例
 
-假設當主機端收到 **CQ Entry Dword0 : `0x00040002`**，表示控制器通知了一個 **Namespace Changed** 的事件。以下是該事件的詳細解析：
+追蹤  `NVMe TRACE` 當主機端收到 **CQ Entry Dword0 : `0x00040002`**，表示控制器通知了一個 **Namespace Changed** 的事件。以下是該事件的詳細解析：
+
+![[Pasted image 20241202062500.png]]
 
 **解析事件**：
 - 確認 LID : `0x04` ( **Namespace Changed Log Page** ，表示相關日誌頁)
@@ -43,11 +45,16 @@
 
 ![[Pasted image 20241128073441.png]]
 
+從事件的通知說明，主要命名空間 ( Namespace ) 屬性發生變化，就會發通知給主機端。
+
+![[Pasted image 20241128075243.png]]
+
 事件資訊的內容會回報主機，`Namsapce Data Structure` 發生了改變，此時的主機端可能會重確認目前所有 `Namespaces` 狀態，並且做出相對應的處理流程。
 
 目前從 `NVMe Trace` 可以得知，主機端會發出 **List Namesapce ( Attached )** 以及 **Identify Namesapce List**，來取得當前所有 Namespaces 狀態。
 
-![[Pasted image 20241128075243.png]]
+![[Pasted image 20241202063349.png]]
+
 ## 事件清除補充說明
 
 根據 NVMe 規範，當沒有未完成的 AER 命令時，控制器需要處理和保留異步事件的資訊，並在後續的 AER 命令中進行回報。以下是具體行為的說明：
