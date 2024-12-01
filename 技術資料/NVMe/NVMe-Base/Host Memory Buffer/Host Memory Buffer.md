@@ -1,11 +1,11 @@
 ## **概要說明**
 
-**Host Memory Buffer (HMB)** 是 NVMe 協議引入的一項功能，旨在使用主機的系統內存作為控制器的資料緩存區域（如 Flash Translation Layer，FTL）或用作資料緩存， 當主機或控制器需要訪問頻繁數據時，可以通過 HMB 加快響應速度。
+**Host Memory Buffer (HMB)** 是 NVMe 協議引入的一項功能，旨在使用主機的系統內存作為控制器的資料緩存區域（如 Flash Translation Layer，FTL）或用作資料緩存， 當主機或控制器需要訪問頻繁資料時，可以通過 HMB 加快響應速度。
 ## 運作流程
 
 ### 1. 記憶體分配
 
-主機通過 **Set Features 命令 ( Host Memory Buffer )** 開啟 `EHM`，並且配置記憶體容量大小 `HSIZE` 以及記憶體位址 `HMDLLA and HMDLUA`。主機首次配置 HMB，需要將 **Memory Return Bit** 設置為 `0`，表示分配的新記憶體空間。
+主機通過 **Set Features 命令 ( Host Memory Buffer )** 開啟 `EHM`，並且配置記憶體容量大小 `HSIZE` 以及記憶體位址 `HMDLLA and HMDLUA`。主機首次配置 HMB，需要將 **Memory Return Bit** 位元設置為 `0`，表示分配的新記憶體空間。
 
 ![[Pasted image 20241129061806.png]]
 ### 2. 記憶體釋放與回收
@@ -19,12 +19,12 @@
 要檢查設備是否支持 **Host Memory Buffer (HMB)**，可以從 **Identify Controller Data Structure** 中取得 **HMPRE**（Host Memory Buffer Preferred Size）屬性。
 
 - **HMPRE = 0**：表示不支援 HMB 功能。
-- **HMPRE ≠ 0**：表示支援 HMB，且值表示建議的 HMB 大小（以 4KB 為單位）。
+- **HMPRE ≠ 0**：表示支援 HMB，且值表示要求 HMB 大小（以 4KB 為單位）。
 
 ![[Pasted image 20241129064658.png]]
 ### 2. 開啟與配置 HMB
 
-設定參數 `cdw10=`，。
+設定參數 `cdw10=`。
 
 ```bash
 $ nvme admin-passthru --opcode=0x09 --cdw10=0x0d --cdw11=0x01 --cdw12=0x00004000 --cdw13=0x12887000 --cdw14=0x00000001 --cdw15=0x10 /dev/nvme0
@@ -41,21 +41,19 @@ Admin Command Set Features is Success and result: 0x00000000
 
 ![[Pasted image 20241129090809.png]]
 
-設定參數 `cdw13=0x144CF000`，配置低位址記憶體。
-設定參數 `cdw14=0x00000001`，配置高位址記憶體。
+設定參數 `cdw13=0x144CF000`，`cdw14=0x00000001`，主要用來告知控制器讀取該位址內容，取得主機配置的記憶體容量與使用範圍。這個內容也就是 **Host Memory Buffer Descriptor List**。
 
 ![[Pasted image 20241129081433.png]]
 
-設定參數 `cdw15=0x00000004`，這裡表示配置記憶體有 4 段範圍位址。
-
-![[Pasted image 20241129083224.png]]
+設定參數 `cdw15=0x00000004`，這裡表示配置記憶體會有 4 段範圍位址。
 
 什麼是  **Host Memory Buffer Descriptor Entry** ? 它是用來描述主機記憶體位址以及使用的容量大小。主機開始配置 HMB 並不會給予一段非常大的記憶體範圍，而是會配置多個一小段的記憶體範圍給控制器使用。
 
+![[Pasted image 20241129083224.png]]
+
+當控制器收到命令後，就會根據設定發送 **TLP MRd(64)** 讀取該主機告知的記憶體位址，取得所有 **Host Memory Buffer Descriptor Entry**。
+
 ![[Pasted image 20241129083631.png]]
-
-
-
 
 - **Host Memory Buffer Descriptor Entry** 它包含兩個關鍵信息：
 	1. 連續的記憶體頁數量。
@@ -63,8 +61,17 @@ Admin Command Set Features is Success and result: 0x00000000
 
 ![[Pasted image 20241129083913.png]]
 
+透過 TRACE 追蹤取得主機分配的記憶體內容如下 : 
 
+總共配置 4 段記憶體範圍，每段記憶體大小為 4MBytes。
+如何計算 Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
 
+| Memory Buffer Entry | Buffer Address      | Buffer Size        |
+| ------------------- | ------------------- | ------------------ |
+| 第一個範圍               | `00000001:14800000` | `0000000000000400` |
+| 第二個範圍               | `00000001:14C00000` | `0000000000000400` |
+| 第三個範圍               | `00000001:15000000` | `0000000000000400` |
+| 第四個範圍               | `00000001:15400000` | `0000000000000400` |
 ### 3. 關閉 HMB 功能
 
 一旦取消 HMB，控制器無法再使用 `Host Memory Buffer` 任何資料，直到再一次的 Enable。
