@@ -27,8 +27,18 @@
 
 ![[Pasted image 20241202075200.png]]
 
-**3. 確定控制器支持的 I/O 命令集類型
+**3. 確定控制器支持的 I/O 命令類型
 
+![[Pasted image 20241202081215.png]]
+
+
+The host determines the supported I/O Command Sets by checking the state of CAP.CSS and appropriately initializing CC.CSS as follows:
+a. If the CAP.CSS.NOIOCSS bit is set to ‘1’, then the CC.CSS field should be set to 111b;
+b. If the CAP.CSS.IOCSS bit is set to ‘1’, then the CC.CSS field should be set to 110b; and
+c. If the CAP.CSS.IOCSS bit is cleared to ‘0’ and the CAP.CSS.NCSS bit is set to ‘1’, then the CC.CSS field should be set to 000b;
+4. The controller settings should be configured. Specifically:
+
+The
 ========================================================
 
   
