@@ -1,14 +1,14 @@
 
 ## 控制器初始化設定
 
-以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。
+以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。不過從圖中觀察 Linux 開機行為來看，似乎並沒有遵循 NVMe 規範中的順序進行。
 
 ![[Pasted image 20241202071500.png]]
 
-**1. 等待控制器完成重置**
+### 1. 等待控制器完成重置
 檢查控制器狀態寄存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
 
-**2. 設定主機端 Admin Queue 相關屬性**
+### 2. 設定主機端 Admin Queue 相關屬性
 主機端設定控制器 Admin Queue Size 設定數量為多少 ( 表示 Queues 的數量有多少 )，表示最大可以存放命令的數量，從上圖得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
 
 ![[Pasted image 20241202071855.png]]
@@ -27,18 +27,31 @@
 
 ![[Pasted image 20241202075200.png]]
 
-**3. 確定控制器支持的 I/O 命令類型
+### 3.1 主機確認控制器支持的 I/O 命令類型
+
+主機檢查 **CAP.CSS**（Command Set Support）欄位，根據以下條件設置 **CC.CSS**（Command Set Selected）：
+
+- **CAP.CSS.NOIOCSS = 1**：
+	- 設置 **CC.CSS = 111b**（無 I/O 命令集支持）。
+- **CAP.CSS.IOCSS = 1**：
+	- 設置 **CC.CSS = 110b**（支持 I/O 命令集）。
+- **CAP.CSS.NCSS = 1  and CAP.CSS.IOCSS = 0**：
+	- 設置 **CC.CSS = 000b**（支持 NVM 命令集）。
 
 ![[Pasted image 20241202081215.png]]
 
+![[Pasted image 20241202084405.png]]
 
-The host determines the supported I/O Command Sets by checking the state of CAP.CSS and appropriately initializing CC.CSS as follows:
-a. If the CAP.CSS.NOIOCSS bit is set to ‘1’, then the CC.CSS field should be set to 111b;
-b. If the CAP.CSS.IOCSS bit is set to ‘1’, then the CC.CSS field should be set to 110b; and
-c. If the CAP.CSS.IOCSS bit is cleared to ‘0’ and the CAP.CSS.NCSS bit is set to ‘1’, then the CC.CSS field should be set to 000b;
-4. The controller settings should be configured. Specifically:
+從圖中主機端發出 **Mrd(32)** 讀取控制器 **CAP.CSS** 屬性，目前屬性值 `0x000000001`。
 
-The
+![[Pasted image 20241202090225.png]]
+
+確認 **CAP.CSS** 屬性，**CC.CSS** 屬性會被主機端設置為 `000b`，代表支援 **NVMe Command Set**。
+
+![[Pasted image 20241202090645.png]]
+### 3.2 設定 I/O Queue Entry Size
+
+
 ========================================================
 
   
