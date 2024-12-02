@@ -23,7 +23,7 @@
 
 ![[Pasted image 20241202074835.png]]
 
-下圖是 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址 **ASQ 以及 ACQ** 就是主機端在初始化設定的起始位址。
+下圖是 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址 **ASQ 以及 ACQ** 就是主機端在初始化設定的記憶位址。
 
 ![[Pasted image 20241202075200.png]]
 
