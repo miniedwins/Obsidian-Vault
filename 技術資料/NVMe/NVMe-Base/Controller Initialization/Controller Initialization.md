@@ -1,14 +1,14 @@
 
-## 控制器初始化設定
+## 主機初始化控制器設定
 
 以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。不過從圖中觀察 Linux 開機行為來看，似乎並沒有遵循 NVMe 規範中的順序進行。
 
 ![[Pasted image 20241202071500.png]]
-
 ### 1. 等待控制器完成重置
-檢查控制器狀態寄存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
 
+檢查控制器狀態寄存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
 ### 2. 設定主機端 Admin Queue 相關屬性
+
 主機端設定控制器 Admin Queue Size 設定數量為多少 ( 表示 Queues 的數量有多少 )，表示最大可以存放命令的數量，從上圖得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
 
 ![[Pasted image 20241202071855.png]]
@@ -23,11 +23,13 @@
 
 ![[Pasted image 20241202074835.png]]
 
-下圖是 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址 **ASQ 以及 ACQ** 就是主機端在初始化設定的記憶位址。
+下圖是 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQ 以及 ACQ**。
 
 ![[Pasted image 20241202075200.png]]
+### 3. 檢查設定 I/O 相關屬性
 
-### 3.1 主機確認控制器支持的 I/O 命令類型
+在初始化 NVMe 控制器時，主機需要檢查控制器支持的 I/O 命令集屬性，並配置相關參數。
+#### (1) 檢查命令集支持
 
 主機檢查 **CAP.CSS**（Command Set Support）欄位，根據以下條件設置 **CC.CSS**（Command Set Selected）：
 
@@ -42,18 +44,24 @@
 
 ![[Pasted image 20241202084405.png]]
 
-從圖中主機端發出 **Mrd(32)** 讀取控制器 **CAP.CSS** 屬性，目前屬性值 `0x000000001`。
+控制器 **CAP.CSS.NCSS** 的返回值指示支持 NVM 命令集。
 
 ![[Pasted image 20241202090225.png]]
 
-確認 **CAP.CSS** 屬性，**CC.CSS** 屬性會被主機端設置為 `000b`，代表支援 **NVMe Command Set**。
+**CC.CSS** 屬性會被主機設置為 `000b`，代表支援 **NVM Command Set**。
 
 ![[Pasted image 20241202090645.png]]
-### 3.2 設定 I/O Queue Entry Size
+#### (2) 設定 I/O Queue Entry Size
 
+**I/O Submission Queue Entry Size** :
+
+![[Pasted image 20241202095513.png]]
+
+**I/O Completion Queue Entry Size** :
+
+![[Pasted image 20241202095900.png]]
 
 ========================================================
-
   
 
    
