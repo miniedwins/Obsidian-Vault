@@ -42,11 +42,11 @@
 
 ![[Pasted image 20241202081215.png]]
 
-這裡要注意一下，若是設定 **CC.CSS = 111b**，代表僅支援 **Admin Command Set**。
+這裡要注意一下，若是 **CC.CSS = 111b**，代表僅支援 **Admin Command Set**。
 
 ![[Pasted image 20241202084405.png]]
 
-控制器 **CAP.CSS.NCSS** 的返回值指示支持 NVM 命令集。
+下圖是主機讀取控制器 **CAP.CSS.NCSS** 的返回值，表示支持 NVM 命令集。
 
 ![[Pasted image 20241202090225.png]]
 
@@ -72,6 +72,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 當前 **IOSQES** 設定 2^6 代表 64 Bytes，**IOCQES** 設定為 2^4 代表 16 Bytes，符合標準規範。
 
 ![[Pasted image 20241203033802.png]]
+
+
+### 4. 
 
 
 ========================================================
