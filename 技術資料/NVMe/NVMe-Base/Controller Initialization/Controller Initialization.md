@@ -3,51 +3,37 @@
 
 以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。
 
-1. 
+![[Pasted image 20241202071500.png]]
 
+**1. 等待控制器完成重置**
+檢查控制器狀態寄存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
+
+**2. 設定主機端 Admin Queue 相關屬性**
+主機端設定控制器 Admin Queue Size 設定數量為多少 ( 表示 Queues 的數量有多少 )，表示最大可以存放命令的數量，從上圖得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
+
+![[Pasted image 20241202071855.png]]
+
+主機還需要再設定放置 Admin Queue Entry 記憶體的位址 **ASQ** 以及 **ACQ**。
+ 
+**Admin Submission Queue Base Address** : 表示存放 Admin SQ 命令的記憶體位址範圍。
+
+![[Pasted image 20241202074605.png]]
+
+**Admin Completion Queue Base Address** : 表示存放 Admin CQ 命令的記憶體位址範圍。
+
+![[Pasted image 20241202074835.png]]
+
+下圖是 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址 **ASQ 以及 ACQ** 就是主機端在初始化設定的起始位址。
+
+![[Pasted image 20241202075200.png]]
+
+**3. 確定控制器支持的 I/O 命令集類型
 
 ========================================================
 
-1. Set the PCI and PCI Express registers described in section 2 appropriately based on the system configuration. This includes configuration of power management features. A single interrupt (e.g., pin-based, single-MSI, or single MSI-X) should be used until the number of I/O Queues is determined
+  
 
    
-
-2. The host waits for the controller to indicate that any previous reset is complete by waiting for CSTS.RDY to become ‘0’;
-
-   **說明 :** 
-
-   * 主機端必須等待控制器重置 (Reset) 完成
-   * 並確認該狀態變成 CSTS.RDY=0
-
-   
-
-3. The Admin Queue should be configured. The Admin Queue is configured by setting the Admin Queue Attributes (AQA), Admin Submission Queue Base Address (ASQ), and Admin Completion Queue Base Address (ACQ) to appropriate values;
-
-   **說明 : **
-
-   *  設定主機端 Admin SQ & CQ Entry Memory Address
-   
-   **功能 :** 
-   
-   * 主機端告知控制器若是要取得 (SQ) 命令 或是 寫入完成的 (CQ) 命令，需要從指定的記憶位置提取或寫入
-   
-   
-   
-   ***備註 : 一旦主機端發送 Admin 命令，就可以從該命令的 PRP1 or PRP2 看到該記憶體所指定的位置***
-   
-   
-   
-   **屬性 :** 
-   
-   * AQA --  設定 (Admin SQ and CQ) 最大可以存放命令的數量，目前該主機端設定為 256 (0x00 - 0xFF)
-   * ACQ --  設定 (Admin CQ) 所存放的記憶體位址 (當主機端完成命令後，會將 (CQ) 命令寫入到該記憶體中) 
-     * ACQB Address Low : 0x02610000
-     * ACQB Address High : 0x00000001
-   * ASQ --  設定 (Admin SQ) 所存放的記憶體位址 (當主機端發送命令後，會將 (SQ) 命令寫入到該記憶體中)
-     * ASQB Address Low : 0x0260C000
-     * ACQB Address High : 0x00000001
-     
-     
 
 
 4. The controller settings should be configured. Specifically:
