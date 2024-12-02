@@ -1,15 +1,15 @@
 
 ## 主機初始化控制器設定
 
-以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。不過從圖中觀察 Linux 開機行為來看，似乎並沒有遵循 NVMe 規範中的順序進行。
+以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。不過從圖中觀察 Linux 開機行為來看，似乎並沒有遵循 NVMe 規範中的順序進行，但不影響觀察行為。
 
 ![[Pasted image 20241202071500.png]]
 ### 1. 等待控制器完成重置
 
-檢查控制器狀態寄存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
+檢查控制器狀態暫存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
 ### 2. 設定主機端 Admin Queue 相關屬性
 
-主機端設定控制器 Admin Queue Size 設定數量為多少 ( 表示 Queues 的數量有多少 )，表示最大可以存放命令的數量，從上圖得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
+主機端設定控制器 Admin Queue Size 數量為多少 ( 表示 Queues 的數量有多少 )，表示最大可以存放命令的數量，從上圖得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
 
 ![[Pasted image 20241202071855.png]]
 
@@ -42,6 +42,8 @@
 
 ![[Pasted image 20241202081215.png]]
 
+這裡要注意一下，若是設定 **CC.CSS = 111b**，代表僅支援 **Admin Command Set**。
+
 ![[Pasted image 20241202084405.png]]
 
 控制器 **CAP.CSS.NCSS** 的返回值指示支持 NVM 命令集。
@@ -53,13 +55,24 @@
 ![[Pasted image 20241202090645.png]]
 #### (2) 設定 I/O Queue Entry Size
 
-**I/O Submission Queue Entry Size** :
+I/O Queue Entry Size 代表一個 Queue 的結構大小，也就是**命令結構的大小**。NVMe 規範主機提交命令給控制器為 **64 Bytes**，控制器完成命令後回傳給主機為 **16 Bytes**。
+
+Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Entry Size** 標準定義。
+
+![[Pasted image 20241203033310.png]]
+
+**I/O Submission Queue Entry Size** : 表示提交命令資料結構大小 ( NVMe 定義 64 Bytes )
 
 ![[Pasted image 20241202095513.png]]
 
-**I/O Completion Queue Entry Size** :
+**I/O Completion Queue Entry Size** : 表示完成命令資料結構大小 (  NVMe 定義 16 Bytes )
 
 ![[Pasted image 20241202095900.png]]
+
+當前 **IOSQES** 設定 2^6 代表 64 Bytes，**IOCQES** 設定為 2^4 代表 16 Bytes，符合標準規範。
+
+![[Pasted image 20241203033802.png]]
+
 
 ========================================================
   
