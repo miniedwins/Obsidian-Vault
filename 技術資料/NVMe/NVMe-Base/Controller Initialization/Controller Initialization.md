@@ -1,5 +1,5 @@
 
-## 主機初始化控制器設定
+## NVMe 初始化設定
 
 以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。不過從圖中觀察 Linux 開機行為來看，似乎並沒有遵循 NVMe 規範中的順序進行，但不影響觀察行為。
 
@@ -7,26 +7,41 @@
 ### 1. 等待控制器完成重置
 
 檢查控制器狀態暫存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
-### 2. 設定主機端 Admin Queue 相關屬性
+### 2. 設定 Admin Queue 記憶體位址與數量
 
-主機端設定控制器 Admin Queue Size 數量為多少 ( 表示 Queues 的數量有多少 )，表示最大可以存放命令的數量，從上圖得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
+在 NVMe 中，**Admin Queue** 包括 **Admin Submission Queue (ASQ)** 和 **Admin Completion Queue (ACQ)**，用於放置管理命令 ( 提交與完成 )，如 **Identify** 和 **Set Features**。它們的大小（Size）和基址（Base Address）需要主機在控制器初始化階段進行配置。
+#### (1) 設定 Admin Queue Size
+
+主機端設定控制器 Admin Queue Size 數量為多少，表示主機可以提交與完成最大管理命令數量。
 
 ![[Pasted image 20241202071855.png]]
 
-主機還需要再設定放置 Admin Queue Entry 記憶體的位址 **ASQ** 以及 **ACQ**。
+從圖中得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
+
+![[Pasted image 20241203063725.png]]
+#### (2) 設定 Admin Queue Base Address
+
+主機發出的管理命令與完成的命令都是存放在主機端的記憶體位址，因此主機需要告知控制器 Admin Queue Base 記憶體位址 **ASQ** 以及 **ACQ**。
  
-**Admin Submission Queue Base Address** : 表示存放 Admin SQ 命令的記憶體位址範圍。
+**Admin Submission Queue Base Address** : 表示存放 Admin SQ 命令的記憶體位址。
 
 ![[Pasted image 20241202074605.png]]
 
-**Admin Completion Queue Base Address** : 表示存放 Admin CQ 命令的記憶體位址範圍。
+**Admin Completion Queue Base Address** : 表示存放 Admin CQ 命令的記憶體位址。
 
 ![[Pasted image 20241202074835.png]]
 
-下圖是 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQ 以及 ACQ**。
+從圖中得知可以發現到主機設定，記憶體需要根據 CC.MPS 對齊 ( MPS Default : 4K  )
+- **ASQB**  : 0x00000000 : 7168C000
+- **ACQB**  : 0x00000000 : 7168B000
+- **位元對齊** : 7168C000h - 7168B000 = 1000h = 4096
+
+![[Pasted image 20241203063846.png]]
+
+下圖是 NVMe 初始化後的一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQB 以及 ACQB**。
 
 ![[Pasted image 20241202075200.png]]
-### 3. 檢查設定 I/O 相關屬性
+### 3. 檢查支援命令集與設定 I/O 相關屬性
 
 在初始化 NVMe 控制器時，主機需要檢查控制器支持的 I/O 命令集屬性，並配置相關參數。
 #### (1) 檢查命令集支持
@@ -61,11 +76,11 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203033310.png]]
 
-**I/O Submission Queue Entry Size** : 表示提交命令資料結構大小 ( NVMe 定義 64 Bytes )
+**I/O Submission Queue Entry Size** : 表示提交命令資料結構大小 ( 單位 : 2^n )
 
 ![[Pasted image 20241202095513.png]]
 
-**I/O Completion Queue Entry Size** : 表示完成命令資料結構大小 (  NVMe 定義 16 Bytes )
+**I/O Completion Queue Entry Size** : 表示完成命令資料結構大小 ( 單位 : 2^n )
 
 ![[Pasted image 20241202095900.png]]
 
@@ -73,14 +88,44 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203033802.png]]
 
+### 4. 設定命令執行優先序 Round Robin Arbitration
 
-### 4. 
+**Round Robin Arbitration** 是 NVMe 控制器仲裁命令執行順序的一種機制。當控制器接收到多個提交隊列的命令時，仲裁機制決定命令的執行優先順序，而 **Round Robin** 模式則是一種公平分配執行機會的方式。
 
+>TODO : 
+
+### 5. 啟用控制器
+
+**CC.EN** 是 NVMe 控制器配置暫存器（**Controller Configuration, CC**）中的一個關鍵位元，用於控制控制器的啟用和禁用狀態。當設置 **CC.EN** 為 `1` 時，控制器進入啟用狀態並開始處理命令。
+
+![[Pasted image 20241203065144.png]]
+
+從圖中觀察，主機會先讀取 CC 暫存器內容，確認後再將 **CC.EN** 設定為 `1`。
+
+![[Pasted image 20241203065244.png]]
+
+### 6. 等待控制器 Ready
+
+主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以執行 Submission Queue，代表控制器可以開始處理主機發送的命令。
+
+![[Pasted image 20241203065556.png]]
+
+主機啟用控制器後，持續讀取 CSTS.RDY 狀態，直到 RDY 狀態被設定為 `1`。
+
+![[Pasted image 20241203065646.png]]
+
+### 7. 主機發送 Identify Controller
+
+主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 建立 I/O Submission Queue and Completion Queue。
+
+![[Pasted image 20241203071327.png]]
+
+## NVMe 初始化總結
 
 ========================================================
-  
-
-   
+ 
+ 
+ 
 
 
 4. The controller settings should be configured. Specifically:
@@ -113,80 +158,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
      * 111b : Vendor Specific
    
    
-   
-   * CC.MPS :
-   
-     **說明 :** 定義主機端 Memory Page Size
-   
-     **設定 :** 0000b (Default) :  (2 ^ (12 + 0 )) = 4K
-   
-     **參數 :** 2 ^ (12 + MPS)
-   
-   
-   
-   * CC.CSS : 
-   
-     **說明 :** 定義 (Command Sets) 支援的型態，基本上該值都固定為 (000b)，全部支援 (Admin and I/O Command)
-   
-     **設定 :** 000b (Default)
-   
-     **參數 :** 
-   
-     * 000b : NVM Command Set
-     * 001b to 110b : Reserved
-     * 111b : Admin Command Set only (若是設定 111b，不支援 I/O Command)
-   
-   
-   
-   * CC.IOSQES : 
-   
-     **說明 :** I/O Submission Queue Entry Size
-   
-     **設定** : 0110b (2^6 = 64)
-   
-     **參數 :** 2^n
-   
-   
-   
-   * CC.IOCQES : 
-   
-     **說明 :** I/O Complete Queue Entry Size
-   
-     **設定 :** 0100b (2^4 = 16)
-   
-     **參數 :** 2^n
-   
-   
-   
-   ***Identify Controller Data Structure (IOSQES and IOCQES)***
-   
-   <img src="../../res/Identify_Controller_SQES_CQES.png" style="zoom:80%;" align="left"/>
-   
-   
-   
-5.  The controller should be enabled by setting CC.EN to ‘1’; 
-
-   **說明 :** 主機端設定 CC.EN=1，控制器才可以處理 Submission Queue Tail doorbell writes
 
    
-
-6. The host should wait for the controller to indicate that the controller is ready to process commands. The controller is ready to process commands when CSTS.RDY is set to ‘1’;
-
-   **說明 :** 
-
-   * 前面設定(第五步驟) CC.EN=1，所以主機端會等待狀態成為 CSTS.RDY=1
-
-   **功能 :** 
-
-   * 控制器 (CSTS.RDY=1) 才可以處理 (SQ) 命令
-
-   
-
-   ***Step [1-6]***
-
-   <img src="../../res/Trace_Controller_Initialization_Register.png" style="zoom:80%;" align="left"/>
-
-   
+  
 
 7. The host should determine the configuration of the controller by issuing the Identify command, specifying the Controller data structure. The host should then determine the configuration of each namespace by issuing the Identify command for each namespace, specifying the Namespace data structure
 
