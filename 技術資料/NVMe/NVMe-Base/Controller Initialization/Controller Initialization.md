@@ -48,10 +48,12 @@
 
 主機檢查 **CAP.CSS**（Command Set Support）欄位，根據以下條件設置 **CC.CSS**（Command Set Selected）：
 
+注意 : 需要搭配 **CAP.CSS** 以及 **CC.CSS** 這兩組設定才能確認支援 NVM Command Set。
+
 - **CAP.CSS.NOIOCSS = 1**：
 	- 設置 **CC.CSS = 111b**（無 I/O 命令集支持）。
 - **CAP.CSS.IOCSS = 1**：
-	- 設置 **CC.CSS = 110b**（支持 I/O 命令集）。
+	- 設置 **CC.CSS = 110b**（支持 多個 I/O 命令集）。
 - **CAP.CSS.NCSS = 1  and CAP.CSS.IOCSS = 0**：
 	- 設置 **CC.CSS = 000b**（支持 NVM 命令集）。
 
@@ -61,11 +63,11 @@
 
 ![[Pasted image 20241202084405.png]]
 
-下圖是主機讀取控制器 **CAP.CSS.NCSS** 的返回值，表示支持 NVM 命令集。
+主機讀取控制器 **CAP.CSS.NCSS** 的返回值，表示支持 NVM 命令集。
 
 ![[Pasted image 20241202090225.png]]
 
-**CC.CSS** 屬性會被主機設置為 `000b`，代表支援 **NVM Command Set**。
+**CC.CSS** 屬性會被主機設置為 `000b`，代表選擇的是 **NVM Command Set**。
 
 ![[Pasted image 20241202090645.png]]
 #### (2) 設定 I/O Queue Entry Size
@@ -94,7 +96,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 >TODO : 
 
-### 5. 啟用控制器
+### 5. 主機啟用控制器
 
 **CC.EN** 是 NVMe 控制器配置暫存器（**Controller Configuration, CC**）中的一個關鍵位元，用於控制控制器的啟用和禁用狀態。當設置 **CC.EN** 為 `1` 時，控制器進入啟用狀態並開始處理命令。
 
@@ -104,7 +106,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203065244.png]]
 
-### 6. 等待控制器 Ready
+### 6. 主機等待控制器 Ready
 
 主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以執行 Submission Queue，代表控制器可以開始處理主機發送的命令。
 
@@ -116,9 +118,14 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ### 7. 主機發送 Identify Controller
 
-主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 建立 I/O Submission Queue and Completion Queue。
+主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 電源管理或是 HMB 等設定。
 
 ![[Pasted image 20241203071327.png]]
+
+### 8.
+
+### 9.
+
 
 ## NVMe 初始化總結
 
