@@ -125,11 +125,15 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ### 9. 設定 Number of Queues
 
+在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
+
+
+
 ### 10. 建立 I/O Completion Queues
 
 ### 11. 建立 I/O Submission Queues
 
-### 12.  Asynchronous Notification
+### 12. 發送非同步事件通知
 
 ## NVMe 初始化總結
 
