@@ -1,9 +1,12 @@
-
 ## NVMe 初始化設定
 
-以下是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。不過從圖中觀察 Linux 開機行為來看，似乎並沒有遵循 NVMe 規範中的順序進行，但不影響觀察行為。
+下圖是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。從圖中觀察 Linux 開機行為來看，似乎沒有遵循 **Controller Initialization**，但不影響整體觀察。
 
 ![[Pasted image 20241202071500.png]]
+
+下圖是完成控制器初始化後，主機發送命令確認狀態或是透過 Set Feature 命令設定功能。
+
+![[Pasted image 20241203091933.png]]
 ### 1. 等待控制器完成重置
 
 檢查控制器狀態暫存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
@@ -128,6 +131,10 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
 
 
+
+
+
+![[Pasted image 20241203092444.png]]
 
 ### 10. 建立 I/O Completion Queues
 
