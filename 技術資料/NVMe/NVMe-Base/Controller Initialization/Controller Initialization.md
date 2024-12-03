@@ -94,7 +94,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 **Round Robin Arbitration** 是 NVMe 控制器仲裁命令執行順序的一種機制。當控制器接收到多個提交隊列的命令時，仲裁機制決定命令的執行優先順序，而 **Round Robin** 模式則是一種公平分配執行機會的方式。
 
->TODO : 
+**TODO : 尚未了解**
 
 ### 5. 主機啟用控制器
 
@@ -121,7 +121,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 電源管理或是 HMB 等設定。
 
 ![[Pasted image 20241203071327.png]]
-### 8.
+### 8. 主機確認 I/O Command Set 設定資訊
+
+**TODO : 尚未了解**
 
 ### 9.
 
