@@ -130,12 +130,21 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
 
+主機端要告訴控制器設定 IO SQ  & CQ Entry 數量的大小，主機端就會根據此設定值，發送 Create IO CQ & SQ 的命令建立 IO Queue Entry，可以由 ***Step [9-10]*** 確認主機端發送過程。但是控制器不見得會符合主機端所要求的這些設定，也就是說控制器內部所設定的值不一定符合主機端的要求，不過最小一定會支援 One Queue (SQ & CQ) Entry (NCQA=0x0000 and NSQA=0x0000)。
 
+**以上說明會有兩種行為產生 :** 
 
+* 如果主機端要求設定 IO Queue Entry，控制器 (無法符合主機要求)，則主機端會依控制器回覆的值建立 IO Queue Entry
+
+* 如果主機端要求設定 IO Queue Entry，控制器 (符合主機要求)，則主機端會依當初的要求的值建立 IO Queue Entry
+
+![[Pasted image 20241203100436.png]]
 
 
 ![[Pasted image 20241203092444.png]]
 
+
+![[Pasted image 20241203100809.png]]
 ### 10. 建立 I/O Completion Queues
 
 ### 11. 建立 I/O Submission Queues
