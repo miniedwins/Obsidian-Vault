@@ -151,12 +151,30 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203092444.png]]
 
-最後主機會根據控制器回覆 NSQA 以及 NCQA  建立 8 組 I/O Queues。
+最後主機端會根據控制器回覆 NSQA 以及 NCQA  建立 8 組 I/O Queues。設定值是 `0x0007` 為什會是 8 組 ? 因為單位最小是 **0's based value**，所以結果會是 7 + 1 = 8 。
 
 ![[Pasted image 20241203100809.png]]
 ### 10. 建立 I/O Completion Queues
 
+根據前面的系統設定值以及控制器所支援的數量，主機端會發送 Create I/O Completion Queue 建立適當的 I/O CQ Entry
 
+
+主機端會針對每個 CQ Entry 分配一個獨立的記憶體位置控制器處理 (SQ) 命令完成後，會從主機端分配的記憶體位置寫入 Completion Queue Entry 命令
+
+![[Pasted image 20241204035707.png]]
+
+Queue Identifier (QID)  :  0x0001 ~ 0x0008 (CQID)
+Queue Size (QSIZE) : 0x03FF (1024) (可以存放多少個CQ命令)
+
+![[Pasted image 20241204035812.png]]
+
+Physically Contiguous (PC) : 1
+Interrupts Enabled (IEN) : 1 (啟用中斷功能)
+Interrupt Vector (IV) : 0x0001 ~ 0x0008 
+QID & IV 基本上會是對應關係
+Example : QID=0x0001, IV=0x0001
+
+![[Pasted image 20241204035851.png]]
 
 ### 11. 建立 I/O Submission Queues
 
@@ -164,6 +182,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 
 ### 12. 發送非同步事件通知
+
+
+
 
 ## NVMe 初始化總結
 
