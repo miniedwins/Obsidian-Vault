@@ -141,9 +141,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203100436.png]]
 
-當主機完成設定後，控制器回覆 NCQA 以及 NSQA， 代表控制器能夠建立的 I/O Queues，而主機會依據回覆的結果建立同等的 I/O Queues。
+當主機完成設定後，控制器回覆 NCQA 以及 NSQA，代表控制器能夠建立的 I/O Queues，而主機會依據回覆的結果建立同等的 I/O Queues。
 
-備註 : 控制器最小支援一個 Queue，回覆則會是 **NCQA=0 and NSQA=0**。
+備註 : 若是控制器回覆 **NCQA=0 and NSQA=0**，則代表最小支援一個 Queue。
 
 ![[Pasted image 20241204025143.png]]
 
@@ -206,14 +206,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
    
   
-
-7. The host should determine the configuration of the controller by issuing the Identify command, specifying the Controller data structure. The host should then determine the configuration of each namespace by issuing the Identify command for each namespace, specifying the Namespace data structure
-
-   **說明 :** 主機端 (Host) 發送 Identify Controller and Namesapce 命令取得控制器資訊，並根據這些內容作為後續設定
-
-   **備註 :**  LeCroy (NVMe_Z4DriveEmulation.pex) 並未看到主機端發送 Identify Ctrl & Identify Namespace Command
-
-   
+  
 
 8. If the controller implements I/O queues, then the host should determine the number of I/O Submission Queues and I/O Completion Queues supported using the Set Features command with the Number of Queues feature identifier. After determining the number of I/O Queues, the MSI and/or MSI-X registers should be configured;
 
@@ -221,49 +214,8 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
    * Number of Queues 
    * MSI and/or MSI-X registers
-   * Arbitration
-
-   
-
-   **Number of Queues – Command Dword 11 :**
-
-   * Number of I/O Submission Queues Requested (NSQR) : 0x0007 (IO SQ Entry=8)
-
-   * Number of I/O Completion Queues Requested (NCQR) : 0x0007 (IO CQ Entry=8)
-
-   
-
-   **Number of Queues – Completion Queue Entry Dword 0**
-
-   * Number of I/O Completion Queues Allocated (NCQA) : 0x0040 (64)
-
-   * Number of I/O Submission Queues Allocated (NSQA) : 0x0040 (64)
-
-      
-
-   主機端要告訴控制器設定 IO SQ  & CQ Entry 數量的大小，主機端就會根據此設定值，發送 Create IO CQ & SQ 的命令建立 IO Queue Entry，可以由 ***Step [9-10]*** 確認主機端發送過程。但是控制器不見得會符合主機端所要求的這些設定，也就是說控制器內部所設定的值不一定符合主機端的要求，不過最小一定會支援 One Queue (SQ & CQ) Entry (NCQA=0x0000 and NSQA=0x0000)。
-
-   
-
-   **以上說明會有兩種行為產生 :** 
-
-   * 如果主機端要求設定 IO Queue Entry，控制器 (無法符合主機要求)，則主機端會依控制器回覆的值建立 IO Queue Entry
-
-   * 如果主機端要求設定 IO Queue Entry，控制器 (符合主機要求)，則主機端會依當初的要求的值建立 IO Queue Entry
-
-     也就造成為什麼控制器回覆 (NCQA & NSQA = 0x0040)，而主機端還是根據當初要求的設定值建立 IO SQ & CQ Entry=8
-
-   
-
-   **另外一套軟體解析開機的時候設定 Number of Queues 的結果 :**
-
-   * 主機端要求設定 IO NSQR=0x0003 & NCQR=0x0003，而控制器端也回覆 NSQA=0x0003 & NCQA=0x0003
-   * 主機端收到回覆後，確認該設定值也符合主機端的要求，所以會根據主機端當初要求參數建立 IO SQ & CQ Entry
-   * 主機端之後就會發出 Cerate IO CQ & SQ Commands，建立 IO SQ & CQ Entry = 0x0003 (Total = 4)
-
-   <img src="../../res/Number_of_Queues_Detail_Data.png" style="zoom:80%;" align="left"/>
-
-      
+   * Arbitration   
+     
 
    **MSI and/or MSI-X registers :**
 
