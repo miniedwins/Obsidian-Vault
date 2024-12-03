@@ -41,7 +41,7 @@
 下圖是 NVMe 初始化後的一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQB 以及 ACQB**。
 
 ![[Pasted image 20241202075200.png]]
-### 3. 檢查支援命令集與設定 I/O 相關屬性
+### 3. 檢查控制器支援命令集與設定 I/O 相關屬性
 
 在初始化 NVMe 控制器時，主機需要檢查控制器支持的 I/O 命令集屬性，並配置相關參數。
 #### (1) 檢查命令集支持
@@ -96,7 +96,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 **TODO : 尚未了解**
 
-### 5. 主機啟用控制器
+### 5. 啟用控制器
 
 **CC.EN** 是 NVMe 控制器配置暫存器（**Controller Configuration, CC**）中的一個關鍵位元，用於控制控制器的啟用和禁用狀態。當設置 **CC.EN** 為 `1` 時，控制器進入啟用狀態並開始處理命令。
 
@@ -106,7 +106,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203065244.png]]
 
-### 6. 主機等待控制器 Ready
+### 6. 等待控制器 Ready
 
 主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以執行 Submission Queue，代表控制器可以開始處理主機發送的命令。
 
@@ -116,17 +116,20 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203065646.png]]
 
-### 7. 主機發送 Identify Controller
+### 7. 發送 Identify Controller
 
 主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 電源管理或是 HMB 等設定。
 
 ![[Pasted image 20241203071327.png]]
-### 8. 主機確認 I/O Command Set 設定資訊
+### 8. 確認控制器 I/O Command Set 設定資訊
 
-**TODO : 尚未了解**
+### 9. 設定 Number of Queues
 
-### 9.
+### 10. 建立 I/O Completion Queues
 
+### 11. 建立 I/O Submission Queues
+
+### 12.  Asynchronous Notification
 
 ## NVMe 初始化總結
 
