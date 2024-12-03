@@ -4,7 +4,7 @@
 
 ![[Pasted image 20241202071500.png]]
 
-下圖是完成控制器初始化後，主機發送命令確認狀態或是透過 Set Feature 命令設定功能。
+下圖是完成控制器初始化後，主機發送命令確認狀態或是透過 Set Feature 命令設定相關功能。
 
 ![[Pasted image 20241203091933.png]]
 ### 1. 等待控制器完成重置
@@ -108,7 +108,6 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 從圖中觀察，主機會先讀取 CC 暫存器內容，確認後再將 **CC.EN** 設定為 `1`。
 
 ![[Pasted image 20241203065244.png]]
-
 ### 6. 等待控制器 Ready
 
 主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以執行 Submission Queue，代表控制器可以開始處理主機發送的命令。
@@ -125,6 +124,8 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241203071327.png]]
 ### 8. 確認控制器 I/O Command Set 設定資訊
+
+
 
 ### 9. 設定 Number of Queues
 

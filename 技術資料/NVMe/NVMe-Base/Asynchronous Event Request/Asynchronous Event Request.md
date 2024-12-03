@@ -51,7 +51,7 @@
 
 事件資訊的內容會回報主機，`Namsapce Data Structure` 發生了改變，此時的主機端可能會重確認目前所有 `Namespaces` 狀態，並且做出相對應的處理流程。
 
-目前從 `NVMe Trace` 可以得知，主機端會發出 **List Namesapce ( Attached )** 以及 **Identify Namesapce List**，來取得當前所有 Namespaces 狀態。
+圖中可以得知，主機端會發出 **List Namesapce ( Attached )** 以及 **Identify Namesapce List**，來取得當前所有 Namespaces 狀態。
 
 ![[Pasted image 20241202063349.png]]
 
