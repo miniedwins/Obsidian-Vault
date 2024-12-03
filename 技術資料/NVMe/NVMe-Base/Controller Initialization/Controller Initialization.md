@@ -1,10 +1,10 @@
 ## NVMe 初始化設定
 
-下圖是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。從圖中觀察 Linux 開機行為來看，似乎沒有遵循 **Controller Initialization**，但不影響整體觀察。
+下圖是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。從圖中觀察 Linux 開機行為來看，不過似乎沒有遵循 **Controller Initialization**，但不影響整體觀察。
 
 ![[Pasted image 20241202071500.png]]
 
-下圖是完成控制器初始化後，主機發送命令確認狀態或是透過 Set Feature 命令設定相關功能。
+完成控制器初始化後，主機就會開始發送命令確認狀態或是使用 Set Feature 命令設定相關功能。
 
 ![[Pasted image 20241203091933.png]]
 ### 1. 等待控制器完成重置
@@ -41,12 +41,12 @@
 
 ![[Pasted image 20241203063846.png]]
 
-下圖是 NVMe 初始化後的一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQB 以及 ACQB**。
+下圖是一個 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQB 以及 ACQB**。
 
 ![[Pasted image 20241202075200.png]]
 ### 3. 檢查控制器支援命令集與設定 I/O 相關屬性
 
-在初始化 NVMe 控制器時，主機需要檢查控制器支持的 I/O 命令集屬性，並配置相關參數。
+初始化 NVMe 控制器時，主機需要檢查控制器支持的 I/O 命令集屬性，並配置相關參數。
 #### (1) 檢查命令集支持
 
 主機檢查 **CAP.CSS**（Command Set Support）欄位，根據以下條件設置 **CC.CSS**（Command Set Selected）：
@@ -62,7 +62,7 @@
 
 ![[Pasted image 20241202081215.png]]
 
-這裡要注意一下，若是 **CC.CSS = 111b**，代表僅支援 **Admin Command Set**。
+這裡要注意一下，若是 **CC.CSS = 111b**，代表控制器僅支援 **Admin Command Set**。
 
 ![[Pasted image 20241202084405.png]]
 
@@ -131,24 +131,37 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
 
-主機端要告訴控制器設定 IO SQ  & CQ Entry 數量的大小，主機端就會根據此設定值，發送 Create IO CQ & SQ 的命令建立 IO Queue Entry，可以由 ***Step [9-10]*** 確認主機端發送過程。但是控制器不見得會符合主機端所要求的這些設定，也就是說控制器內部所設定的值不一定符合主機端的要求，不過最小一定會支援 One Queue (SQ & CQ) Entry (NCQA=0x0000 and NSQA=0x0000)。
+主機端發出命令要求設定 I/O Queues ( Submission Queues and Completion Queues ) 數量大小，Submission Queue 以及 Completion Queue 定義為一組。
 
-**以上說明會有兩種行為產生 :** 
+另外有一點要注意，控制器不一定能夠符合主機端要求設定，也就是說控制器內部所設定的 I/O Queues 可能會低於主機要求，不過最小一定會支援 One Queue。
 
-* 如果主機端要求設定 IO Queue Entry，控制器 (無法符合主機要求)，則主機端會依控制器回覆的值建立 IO Queue Entry
-
-* 如果主機端要求設定 IO Queue Entry，控制器 (符合主機要求)，則主機端會依當初的要求的值建立 IO Queue Entry
+**設定範例說明** :
+* 控制器 ( 無法符合主機要求 )，控制器回覆的值會 **小於主機要求**。
+* 控制器 (符合主機要求)，控制器回覆的值可能會 **等於或是大於主機要求**。
 
 ![[Pasted image 20241203100436.png]]
 
+當主機完成設定後，控制器回覆 NCQA 以及 NSQA， 代表控制器能夠建立的 I/O Queues，而主機會依據回覆的結果建立同等的 I/O Queues。
+
+備註 : 控制器最小支援一個 Queue，回覆則會是 **NCQA=0 and NSQA=0**。
+
+![[Pasted image 20241204025143.png]]
+
+主機設定 `NSQR=0x000B` 以及 `NCQR=0x000B`，要求建立 12 組 I/O Queues。控制器回覆 `NSQA=0x0007` 以及 `NCQA=0x0007`，顯然控制器無法符合主機要求，因此回覆的結果會是控制器能夠建立 I/O Queues 的數量。
 
 ![[Pasted image 20241203092444.png]]
 
+最後主機會根據控制器回覆 NSQA 以及 NCQA  建立 8 組 I/O Queues。
 
 ![[Pasted image 20241203100809.png]]
 ### 10. 建立 I/O Completion Queues
 
+
+
 ### 11. 建立 I/O Submission Queues
+
+
+
 
 ### 12. 發送非同步事件通知
 
