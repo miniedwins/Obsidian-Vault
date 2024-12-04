@@ -193,14 +193,19 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 從上述可以了解一個 **I/O Completion Queue** 所佔的記憶體空間為 16K Bytes。
 
 **如何觀察 PRP1 記憶體的範圍 ?**
-- 第一筆 PRP1 : 0x000000001:1220000
-- 第二筆 PRP1 : 0x000000001:1224000
-- 範圍差異 : 1224000h - 1220000h = 4000h = 16384 Bytes = 16K Bytes
+- 第一筆 PRP1 : `0x000000001:122C0000`
+- 第二筆 PRP1 : `0x000000001:122C4000`
+- 範圍差異 : 122C4000h - 122C0000h = 4000h = 16384 Bytes = 16K Bytes
 
 **計算公式 :** 
 - Completion Queue Entry = 16 Bytes
 - Queue Size = 0x3FF = 1024
 - PRP1 Memory Range = 1024 * 16 = 16384 Bytes = 16K Bytes
+
+**從第一筆 Read 命令** 可以看到主機回寫 **CQ Entry** 開始位址就是 `0x000000001:122C0000`。
+
+![[Pasted image 20241204160153.png]]
+
 ### 11. 建立 I/O Submission Queues
 
 
