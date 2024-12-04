@@ -4,7 +4,7 @@
 
 ![[Pasted image 20241202071500.png]]
 
-完成控制器初始化後，主機就會開始發送命令確認狀態或是使用 Set Feature 命令設定相關功能。
+完成控制器初始化後，主機就會開始發送 Identify Controller 命令確認控制器當前狀態，或是使用 Set Feature 命令設定相關功能。
 
 ![[Pasted image 20241203091933.png]]
 ### 1. 等待控制器完成重置
@@ -15,7 +15,7 @@
 在 NVMe 中，**Admin Queue** 包括 **Admin Submission Queue ( ASQ )** 和 **Admin Completion Queue ( ACQ )**，用於放置管理命令 ( 提交與完成 )，如 **Identify** 和 **Set Features**。它們的大小（Size）和基址（Base Address）需要主機在控制器初始化階段進行配置。
 #### (1) 設定 Admin Queue Size
 
-主機端設定控制器 Admin Queue Size 數量為多少，表示主機可以放置多少提交與完成最大管理命令數量，而非一次可以處理多少個命令。另外 ，Admin 命令都是一筆一筆執行，並沒有多工。
+主機端設定控制器 Admin Queue Size 數量為多少，表示主機可以放置多少提交與完成最大管理命令數量。
 
 ![[Pasted image 20241202071855.png]]
 
@@ -110,7 +110,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203065244.png]]
 ### 6. 等待控制器 Ready
 
-主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以執行 Submission Queue，代表控制器可以開始處理主機發送的命令。
+主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以處理主機發送的命令。
 
 ![[Pasted image 20241203065556.png]]
 
@@ -124,8 +124,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203071327.png]]
 ### 8. 確認控制器 I/O Command Set 設定資訊
 
+CAP.CSS.IOCSS bit is set to 1
 
-
+CC.CSS field is set to 000b
 ### 9. 設定 Number of Queues
 
 在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
@@ -229,40 +230,4 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241204165012.png]]   
 
-8. If the controller implements I/O queues, then the host should determine the number of I/O Submission Queues and I/O Completion Queues supported using the Set Features command with the Number of Queues feature identifier. After determining the number of I/O Queues, the MSI and/or MSI-X registers should be configured;
-
-   **說明 :**  以下由主機端發起設定 (Set-Feature) 
-
-   * Number of Queues 
-   * MSI and/or MSI-X registers
-   * Arbitration   
-     
-
-   **MSI and/or MSI-X registers :**
-
-   **說明 :** 
-
-   * 設定是否要使用中斷聚合 (多個 (SQ) 命令完成後發起一次中斷，目的減少主機端 (CPU) 消耗)
-   * 若是設定的參數 (TIME) & (THR) 符合，就會發起中斷請求
-   * 目前主機端並沒有設定 (中斷聚合)
-
-   **設定 :** 
-
-   * Aggregation Time (TIME) : 0 
-   * Aggregation Threshold (THR) : 0 
-
-   **參數 :** 
-
-   * Aggregation Time : 最大中斷延遲時間
-
-   * Aggregation Threshold  : 最大中斷聚合的數量
-
-   
-   **Arbitration :** 
-
-   * 設定仲裁機制 Arbitration Burst (AB) : 000b
-
-   * Bits 2:0 = 000b (Round Robin)
-
-
-
+連結筆記 :  [[Asynchronous Event Request]]

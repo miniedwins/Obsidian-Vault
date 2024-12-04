@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3f6e42ff7c383471",
+        "id": "614d7f5a7430989d",
         "type": "tabs",
         "children": [
           {
-            "id": "2473c5fe13cd8e66",
+            "id": "3b8d2b40f8562eee",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -187,11 +187,14 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "2473c5fe13cd8e66",
+  "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+    "暫存內容/NVMe Study (暫存).md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204165012.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204164618.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204163632.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204162932.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204162336.png",
@@ -201,13 +204,10 @@
     "未命名 1.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204035851.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204035812.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241204035707.png",
     "未命名.md",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
-    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments",
     "技術資料/NVMe/NVMe-Base/Controller Initialization",
@@ -217,7 +217,6 @@
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer",
     "暫存內容/範例筆記.md",
-    "暫存內容/NVMe Study (暫存).md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "暫存內容/PCIe Class Code.md",
