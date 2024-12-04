@@ -124,9 +124,9 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203071327.png]]
 ### 8. 確認控制器 I/O Command Set 設定資訊
 
-CAP.CSS.IOCSS bit is set to 1
+![[Pasted image 20241204101407.png]]
 
-CC.CSS field is set to 000b
+
 ### 9. 設定 Number of Queues
 
 在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
