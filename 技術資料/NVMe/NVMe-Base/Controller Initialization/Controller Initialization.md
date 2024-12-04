@@ -133,7 +133,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 主機端發出命令要求設定 I/O Queues ( Submission Queues and Completion Queues ) 數量大小，Submission Queue 以及 Completion Queue 定義為一組。
 
-另外有一點要注意，控制器不一定能夠符合主機端要求設定，也就是說控制器內部所設定的 I/O Queues 可能會低於主機要求，不過最小一定會支援 One Queue。
+另外有一點要注意，**控制器不一定能夠符合主機端要求設定**，也就是說控制器內部所設定的 I/O Queues 可能會低於主機要求，不過最小一定會支援 One Queue。
 
 **設定範例說明** :
 * 控制器 ( 無法符合主機要求 )，控制器回覆的值會 **小於主機要求**。
@@ -147,7 +147,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241204025143.png]]
 
-主機設定 `NSQR=0x000B` 以及 `NCQR=0x000B`，要求建立 12 組 I/O Queues。控制器回覆 `NSQA=0x0007` 以及 `NCQA=0x0007`，顯然控制器無法符合主機要求，因此回覆的結果會是控制器能夠建立 I/O Queues 的數量。
+圖中可以看到主機設定 `NSQR=0x000B` 以及 `NCQR=0x000B`，要求建立 12 組 I/O Queues。控制器回覆 `NSQA=0x0007` 以及 `NCQA=0x0007`，顯然控制器無法符合主機要求，因此回覆的結果會是控制器能夠建立 I/O Queues 的數量。
 
 ![[Pasted image 20241203092444.png]]
 
@@ -168,16 +168,40 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 接下來指定  Queue Identifier ( Completion QID )  以及 Queue Size，其中 Queue Size 代表可以放置多少個 **Completion Queue Entry**，這也表示 I/O Completion Queue 記憶體位址範圍。
 
+**Completion Queue Identifier**：
+- 主機在創建時分配該 ID，標識唯一個 **I/O Completion Queue**。
+- 建立 **I/O Submission Queue** 會指定該 Completion QID，是互相對應的關係。
+
 ![[Pasted image 20241204035812.png]]
 
-主機設定中斷功能 ( Interrupts Enabled )，中斷向量 ( Interrupt Vector )，以及確認 **Physically Contiguous** 是否要設定 I/O Completion Queue 是不是一個連續的記憶體 ( PRP1 Entry )。若是指定不連續的記憶體，則 PRP 1 Entry 會做為一個 PRP List 表示記憶體範圍 ( 猜測 )。
+主機設定中斷功能 ( Interrupts Enabled )，中斷向量 ( Interrupt Vector )，以及確認 **Physically Contiguous** 是否要設定 I/O Completion Queue 是不是一個連續的記憶體。
+
+ **Interrupt Vector** : 
+- NVMe 控制器使用中斷向量通知主機完成某些操作，例如 I/O 完成。
+- 每個 **I/O Completion Queue** 可綁定一個單獨的中斷向量
+
+**Physically Contiguous** : 
+- 若是 PC=1，表示記憶體連續，PRP1 Entry 為記憶體起始位址。
+- 若是 PC=0，表示記憶體不連續，PRP1 Entry 會做為一個 PRP List。
 
 ![[Pasted image 20241204035851.png]]
 
+圖中簡易描述執行 **Create I/O Completion Queue** ( 備註 : 說明用，主機並不會連續建立 )。主機設定 PRP1 記憶體 ( PRP1 ) 為連續記憶體，以及 Completion Queues 數量及中斷向量與起用中斷。
 
+![[Pasted image 20241204150039.png]]
 
+從上述可以了解一個 **I/O Completion Queue** 所佔的記憶體空間為 16K Bytes。
+
+**如何觀察 PRP1 記憶體的範圍 ?**
+- 第一筆 PRP1 : 0x000000001:1220000
+- 第二筆 PRP1 : 0x000000001:1224000
+- 範圍差異 : 1224000h - 1220000h = 4000h = 16384 Bytes = 16K Bytes
+
+**計算公式 :** 
+- Completion Queue Entry = 16 Bytes
+- Queue Size = 0x3FF = 1024
+- PRP1 Memory Range = 1024 * 16 = 16384 Bytes = 16K Bytes
 ### 11. 建立 I/O Submission Queues
-
 
 
 
