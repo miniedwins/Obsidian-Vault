@@ -12,10 +12,10 @@
 檢查控制器狀態暫存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
 ### 2. 設定 Admin Queue 記憶體位址與數量
 
-在 NVMe 中，**Admin Queue** 包括 **Admin Submission Queue (ASQ)** 和 **Admin Completion Queue (ACQ)**，用於放置管理命令 ( 提交與完成 )，如 **Identify** 和 **Set Features**。它們的大小（Size）和基址（Base Address）需要主機在控制器初始化階段進行配置。
+在 NVMe 中，**Admin Queue** 包括 **Admin Submission Queue ( ASQ )** 和 **Admin Completion Queue ( ACQ )**，用於放置管理命令 ( 提交與完成 )，如 **Identify** 和 **Set Features**。它們的大小（Size）和基址（Base Address）需要主機在控制器初始化階段進行配置。
 #### (1) 設定 Admin Queue Size
 
-主機端設定控制器 Admin Queue Size 數量為多少，表示主機可以提交與完成最大管理命令數量。
+主機端設定控制器 Admin Queue Size 數量為多少，表示主機可以放置多少提交與完成最大管理命令數量，而非一次可以處理多少個命令。另外 ，Admin 命令都是一筆一筆執行，並沒有多工。
 
 ![[Pasted image 20241202071855.png]]
 
@@ -156,25 +156,25 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203100809.png]]
 ### 10. 建立 I/O Completion Queues
 
-根據前面的系統設定值以及控制器所支援的數量，主機端會發送 Create I/O Completion Queue 建立適當的 I/O CQ Entry
+根據前面的系統設定值以及控制器所支援的數量，首先主機會發送 **Create I/O Completion Queue**命令建立適當的 I/O Queues。
 
+為什麼會是先建立 I/O Completion Queue ?  因為 Create I/O Submission Queue 需要指定 **Completion Queue Identifier ( CQID )**，所以主機開始會是先建立 I/O Completion Queue。
 
-主機端會針對每個 CQ Entry 分配一個獨立的記憶體位置控制器處理 (SQ) 命令完成後，會從主機端分配的記憶體位置寫入 Completion Queue Entry 命令
+主機會針對每一個 I/O Completion Queue 分配一組獨立記憶體範圍，指定 **PRP Entry 1** 做為開始位址。這些記憶體它是存放控制器執行後的結果 **Common Completion Queue Entry**，當控制器完成命令，會將執行的結果 **Completion Queue Entry** 寫回到到記憶體。
+
+備註 : 上述說明都是關於 **NVMe Command Processing** 命令處理的行為之一。
 
 ![[Pasted image 20241204035707.png]]
 
-Queue Identifier (QID)  :  0x0001 ~ 0x0008 (CQID)
-Queue Size (QSIZE) : 0x03FF (1024) (可以存放多少個CQ命令)
+接下來指定  Queue Identifier ( Completion QID )  以及 Queue Size，其中 Queue Size 代表可以放置多少個 **Completion Queue Entry**，這也表示 I/O Completion Queue 記憶體位址範圍。
 
 ![[Pasted image 20241204035812.png]]
 
-Physically Contiguous (PC) : 1
-Interrupts Enabled (IEN) : 1 (啟用中斷功能)
-Interrupt Vector (IV) : 0x0001 ~ 0x0008 
-QID & IV 基本上會是對應關係
-Example : QID=0x0001, IV=0x0001
+主機設定中斷功能 ( Interrupts Enabled )，中斷向量 ( Interrupt Vector )，以及確認 **Physically Contiguous** 是否要設定 I/O Completion Queue 是不是一個連續的記憶體 ( PRP1 Entry )。若是指定不連續的記憶體，則 PRP 1 Entry 會做為一個 PRP List 表示記憶體範圍 ( 猜測 )。
 
 ![[Pasted image 20241204035851.png]]
+
+
 
 ### 11. 建立 I/O Submission Queues
 
