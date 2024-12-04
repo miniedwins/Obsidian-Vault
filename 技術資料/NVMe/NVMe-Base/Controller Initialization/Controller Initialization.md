@@ -117,7 +117,6 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 主機啟用控制器後，持續讀取 CSTS.RDY 狀態，直到 RDY 狀態被設定為 `1`。
 
 ![[Pasted image 20241203065646.png]]
-
 ### 7. 發送 Identify Controller
 
 主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 電源管理或是 HMB 等設定。
@@ -205,58 +204,30 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 **從第一筆 Read 命令** 可以看到主機回寫 **CQ Entry** 開始位址就是 `0x000000001:122C0000`。
 
 ![[Pasted image 20241204160153.png]]
-
 ### 11. 建立 I/O Submission Queues
 
+基本上跟 **I/O Completion Queues** 的設定是相同的，唯一不同的是 **Command Dword 11**。
 
+1. **Completion Queue Identifier** ( 先前建立的 CQID )
+2. **Queue Priority**  ( 僅使用 **WRR 仲裁機制** 且啟用 **Urgent Priority Class**）
 
+![[Pasted image 20241204162025.png]]
+
+- Completion Queue Identifier : `0x0001`
+- Queue Priority : `Urgent`
+
+![[Pasted image 20241204162932.png]]
+
+**從第一筆 Read 命令** 可以看到主機提交命令 **SQ Entry** 開始位址就是 `0x000000001:14610000`。
+
+![[Pasted image 20241204163632.png]]
 ### 12. 發送非同步事件通知
 
-
-
-
-## NVMe 初始化總結
-
-========================================================
+這是一個非同步事件觸發 ( Asynchronous  Events ) 的功能，都是經由主機端透過 Set-Feature ( Asynchronous Event Configuration ) 設定觸發的事件，然後再發出 **Asynchronous Event Request**。如果這個觸發條件成立，控制器會將主機關注的事件通知給主機端。
  
- 
- 
+從圖示可知，主機設定完成 Asynchronous Event Configuration 然後就發送出 Asynchronous  Events Requests，但是不會立刻回覆主機 Completion Queue。
 
-
-4. The controller settings should be configured. Specifically:
-   a. The arbitration mechanism should be selected in CC.AMS;
-   b. The memory page size should be initialized in CC.MPS; and NVM Express TM Revision 1.4a 298
-   c. The I/O Command Set that is to be used should be selected in CC.CSS or CC.CSS field should be set to the value indicating that only the Admin Command Set is supported;
-
-   **說明 :** 
-
-   * 建立仲裁機制 (Round Robin)
-   * 設定主機端 Memory Page Size = 4K
-   * 設定支援 NVM Command Set
-   * 設定 IOSQES=64  IOCQES=16
-   
-   
-   
-   **屬性 :**
-   
-   * CC.AMS : 
-   
-     **說明 :** 設定仲裁機制
-   
-     **設定 :** 000b
-   
-     **參數 :** 
-   
-     * 000b : Round Robin
-     * 001b : Weighted Round Robin with Urgent Priority Class
-     * 010b to 110b : Reserved
-     * 111b : Vendor Specific
-   
-   
-
-   
-  
-  
+![[Pasted image 20241204165012.png]]   
 
 8. If the controller implements I/O queues, then the host should determine the number of I/O Submission Queues and I/O Completion Queues supported using the Set Features command with the Number of Queues feature identifier. After determining the number of I/O Queues, the MSI and/or MSI-X registers should be configured;
 
@@ -287,115 +258,11 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
    * Aggregation Threshold  : 最大中斷聚合的數量
 
    
-
    **Arbitration :** 
 
    * 設定仲裁機制 Arbitration Burst (AB) : 000b
 
    * Bits 2:0 = 000b (Round Robin)
 
-   <img src="../../res/Feature_Identifier_01h_Arbitration.png" style="zoom:80%;" align="left"/>
-
-   
-
-      ***Step [7-8]***  
-
-   <img src="../../res/Trcae_Number_of_Queues.png" style="zoom:80%;" align="left"/>
-
-   
-
-9. If the controller implements I/O queues, then the host should allocate the appropriate number of I/O Completion Queues based on the number required for the system configuration and the number supported by the controller. The I/O Completion Queues are allocated using the Create I/O Completion Queue command;
-
-   **說明 :** 
-
-   * 根據前面的系統設定值以及控制器所支援的數量，主機端會發送 Create I/O Completion Queue 建立適當的 I/O CQ Entry
-
-   * 主機端 (Host) 連續建立 I/O CQ Entry = 8
-
-   * 設定每個屬性
-
-     * Queue Identifier (QID)  :  0x0001 ~ 0x0008 (CQID)
-
-     * Queue Size (QSIZE) : 0x03FF (1024) (可以存放多少個CQ命令)
-
-     * PRP Entry 1 :
-
-       * 主機端會針對每個 CQ Entry 分配一個獨立的記憶體位置
-       * 控制器處理 (SQ) 命令完成後，會從主機端分配的記憶體位置寫入 Completion Queue Entry 命令
-
-     * Physically Contiguous (PC) : 1
-
-     * Interrupts Enabled (IEN) : 1 (啟用中斷功能)
-
-     * Interrupt Vector (IV) : 0x0001 ~ 0x0008 
-
-       * QID & IV 基本上會是對應關係
-       * Example : QID=0x0001, IV=0x0001
-
-       
-
-   > 補充 : 為什麼先建立 I/O Completion Queue Entry?
-   >
-   > Create I/O SQ Command 必須要指定 Completion Queue Identifier (CQID)，所以需要先建立的 CQ Entry。
 
 
-
-10. If the controller implements I/O queues, then the host should allocate the appropriate number of I/O Submission Queues based on the number required for the system configuration and the number supported by the controller. The I/O Submission Queues are allocated using the Create I/O Submission Queue command; and
-
-    **說明 :** 
-
-    * 根據前面的系統設定值以及控制器所支援的數量，主機端會發送 Create I/O Submission Queue 建立適當的 I/O SQ Entry
-    * 連續建立 I/O SQ Entry = 8
-    * Queue Identifier (QID) : 0x0001 ~ 0x0008 (SQID)
-    * Queue Size (QSIZE) : 0x03FF (1024) (可以存放多少個SQ命令)
-    * PRP Entry 1 
-      * 主機端會針對每個 SQ Entry 分配一個獨立的記憶體位置
-      * 主機端發送 (SQ) 命令，都會往指定的記憶體寫入命令
-      * 一但有命令 (SQ Tail Door Bell Register) 被寫入，控制器會從主機端分配的記憶體位置取 (SQ) 命令
-    * Physically Contiguous (PC) : 1
-    * QPRIO (Queue Priority) : Medium
-    * CQID : 0x0001 ~ 0x0008 
-      * 每一個 SQID 會對應一個 CQID
-      * Example : QID=0x0001 & CQID=0x0001
-
-    
-
-    ***Step [9-10]***
-
-    <img src="../../res/Trcae_Create_IO_CQ_SQ.png" style="zoom:80%;" align="left"/>
-
-
-
-11. To enable asynchronous notification of optional events, the host should issue a Set Features command specifying the events to enable. To enable asynchronous notification of events, the host should submit an appropriate number of Asynchronous Event Request commands. This step may be done at any point after the controller signals that the controller is ready (i.e., CSTS.RDY is set to ‘1’)
-
-    **說明 :** 
-
-    這是一個非同步事件觸發 (asynchronous  events) 的功能，都是經由主機端透過 Set-Feature (Asynchronous Event Configuration) 設定觸發的事件，如果這個觸發條件成立，控制器會將這該事件通知給主機端 (Return Complete Queue Command to CQ Entry)。
-
-    
-
-    從圖示可知，主機端設定完成 Asynchronous Event Configuration 然後就發送出 Asynchronous  Events Requests，但是不會立刻回覆 Completion Queue Command。不過目前設定 Event Configuration 都是清除為零，所以不會有任何觸發事件。
-
-    
-
-    ***Step [11]***
-
-    <img src="../../res/Trcae_Asynchronous Event Request.png" style="zoom:80%;" align="left"/>
-
-
-
-**NVMe 初始化流程總結 :** 
-
-經過這些初始化流程過後，系統就可以對控制器發送 I/O Command (e.g., Write, Read)
-
-1. 系統設定 PCI Express 相關事項
-2. Host 等待先前的 Reset 重置操作，然後等待控制器變成 Not Ready (CSTS.RDY=0)
-3. Host 設定暫存器 (CC.AQA, CC.ACQ, CC.ASQ)，配置 (SQ & CQ Entry) 記憶體位置 
-4. Host 設定暫存器 (CC.AMS, CC.MPS, CC.CSS, CC.IOSQES, CC.IOCQES)
-5. Host 啟用控制器 CC.EN=1
-6. Host 等待控制器 Ready (CSTS.RDY=1)
-7. Host 發送 Identify Controller & Identify Namespace Commands
-8. Host 透過 Set Feature (Number of Queues) 設定 IO SQ & CQ Entry 的數量以及中斷功能
-9. Host 透過 Admin Command (Create I/O Completion Queue) 命令建立 I/O CQ Entry
-10. Host 透過 Admin Command (Create I/O Submission Queue) 命令建立 I/O SQ Entry
-11. Host 透過 Set Feature (Asynchronous Event Configuration) 設定非同步事件 (asynchronous  events)
