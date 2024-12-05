@@ -1,10 +1,23 @@
 ## NVMe 初始化設定
 
-下圖是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。從圖中觀察 Linux 開機行為來看，不過似乎沒有遵循 **Controller Initialization**，但不影響整體觀察。
+下圖是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。從圖中觀察 Linux 開機行為來看，系統似乎沒有遵循 **Controller Initialization** 順序，但不影響整體觀察。
+
+前期大都是對控制器的暫存器做設定，此時的控制器還未能夠開始處理主機提交的命令，直到控制器的功能設定完畢後，並且暫存器 **CC.EN=1**，才會開始處理 NVMe Admin 命令。
 
 ![[Pasted image 20241202071500.png]]
 
 完成控制器初始化後，主機就會開始發送 Identify Controller 命令確認控制器當前狀態，或是使用 Set Feature 命令設定相關功能。
+
+從下圖執行命令來看，系統大致上會做以下動作 :  
+- Identify Controller  ( 取得控制器相關支援功能 )
+- Commands Supported and Effects ( 確認控制器支援的哪些命令 )
+- Autonomous Power State Transition ( 如果有支援，設定 APST=1 )
+- SMART / Health Information ( 取得 SMART 日誌 )
+- Host Memory Buffer ( 如果有支援，設定 HMB )
+- Number of Queues ( 設定多少組 I/O Queues )
+- Create I/O Submission and I/O Completion Queues ( 建立 I/O Queues )
+
+備註 : 控制器的功能越多，可能會有更多執行命令產生。
 
 ![[Pasted image 20241203091933.png]]
 ### 1. 等待控制器完成重置
@@ -56,7 +69,7 @@
 - **CAP.CSS.NOIOCSS = 1**：
 	- 設置 **CC.CSS = 111b**（無 I/O 命令集支持）。
 - **CAP.CSS.IOCSS = 1**：
-	- 設置 **CC.CSS = 110b**（支持 多個 I/O 命令集）。
+	- 設置 **CC.CSS = 110b**（支持多個 I/O 命令集，例如 : Zoned Namespace）。
 - **CAP.CSS.NCSS = 1  and CAP.CSS.IOCSS = 0**：
 	- 設置 **CC.CSS = 000b**（支持 NVM 命令集）。
 
@@ -66,7 +79,7 @@
 
 ![[Pasted image 20241202084405.png]]
 
-主機讀取控制器 **CAP.CSS.NCSS** 的返回值，表示支持 NVM 命令集。
+主機讀取控制器 **CAP.CSS.NCSS** 的返回值，表示 **NVM Command Set Support**。
 
 ![[Pasted image 20241202090225.png]]
 
@@ -124,7 +137,6 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203071327.png]]
 ### 8. 確認控制器 I/O Command Set 設定資訊
 
-![[Pasted image 20241204101407.png]]
 
 
 ### 9. 設定 Number of Queues
@@ -214,6 +226,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241204162025.png]]
 
+- PRP1 : `0x00000001:14610000`
 - Completion Queue Identifier : `0x0001`
 - Queue Priority : `Urgent`
 
