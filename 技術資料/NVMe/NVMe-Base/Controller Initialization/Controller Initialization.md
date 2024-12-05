@@ -137,20 +137,65 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203071327.png]]
 ### 8. 取得與設定控制器 I/O Command Set 資訊
 
-前面已經有確認支援的 I/O Command Set，這邊還需要設定或取得什麼樣的資訊 ? 
+前面已經有確認支援的 I/O Command Set，這邊主機端還需要設定或取得什麼樣的資訊 ? 
 
 主機會確認控制器有沒有支援多個 **I/O Command Set**，若是有支援多個 I/O 命令集，主機會根據支援的命令集，發送 Identify with Command Set Identifier 命令，取得相關資訊。
 
-首先會檢查 CAP.CSS.IOCSS=1 ( 支援多個 I/O 命令集 ) ，然後會執行以下命令 : 
+若是沒有支援多個 **I/O Command Set**，基本上最少也支援 NVM Command Set，因此主機也會去獲取 Identify 相關資訊。
 
-(1) 提交命令 Identify I/O Command Set data structure ( CNS=1C )
+首先會檢查 CAP.CSS.IOCSS = 1 ( 支援多個 I/O 命令集 ) 
 
+![[Pasted image 20241205161420.png]]
 
+以及 CC.CSS = 111b ( All Supported I/O Command Sets )
 
-(2) 提交命令 Set Features with the I/O Command Set Profile
+![[Pasted image 20241205161530.png]]
 
+**(1) 提交命令 Identify I/O Command Set data structure ( CNS=1C )**
 
+![[Pasted image 20241205152733.png]]
 
+執行命令後會取得 **I/O Command Set Vector**，這個結構表代表結合哪幾種 I/O Command Set。
+
+***例如 : Combination Index = 1 ，表示啟用了 NVM 和 ZNS。( 猜測 : 暫時未經過確認 )***
+
+| Index | I/O Command Set Combination | I/O Command Set Vecctor |
+| ----- | --------------------------- | ----------------------- |
+| 0     | 0b0001                      | 支持 NVM Command Set      |
+| 1     | 0b0101                      | 支持 NVM 和 ZNS            |
+| 2     | 0b0011                      | 支持 NVM 和 Key-Value      |
+
+![[Pasted image 20241205152858.png]]
+
+**(2) 提交命令 Set Features with the I/O Command Set Profile**
+
+根據取得結構表的 Index，主機可以選擇使用哪一種 **IOCSC** 命令集。
+
+![[Pasted image 20241205154024.png]]
+
+查詢當前所使用的 **IOCSC** 命令集，透過 Get Feature 命令回傳所選擇的 Index。
+
+![[Pasted image 20241205154722.png]]
+
+**(3) 提交 Identify 命令，指定支援的 I/O Command Set，獲取相關資料結構表。**
+
+無論有無支援多個 I/O 命令集，主機多會對這些支援的命令集 ( 例如 : NVM，Zoned Namespace Command Set ) 取得相關的 Identify 資料結構表。
+
+**範例說明 :** 假設控制器有支援 **Zoned Namespace Command Set**，主機端除了獲取 NVM Command Set 資料結構表 Identify Controller and NS ，另外也會提交命令獲取關於 ZNS Command Set 結構表。
+
+![[Pasted image 20241205155534.png]]
+
+如何取得關於 Zoned Data Structure 結構表呢 ?
+
+```bash
+# Namespace Datat Structure
+nvme admin-passthru --opcode=0x06 --cdw10=0x05 -cdw11=0x2000000 /dev/nvme0 --data-len=4096 --read -b
+
+# Controller Data Structure
+nvme admin-passthru --opcode=0x06 --cdw10=0x05 -cdw11=0x2000000 /dev/nvme0 --data-len=4096 --read -b
+```
+
+![[Pasted image 20241205160705.png]]
 
 ### 9. 設定 Number of Queues
 

@@ -3,5 +3,11 @@
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "./attachments",
   "newFileLocation": "folder",
-  "newFileFolderPath": "閃存筆記"
+  "newFileFolderPath": "閃存筆記",
+  "pdfExportSettings": {
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
