@@ -69,7 +69,7 @@
 - **CAP.CSS.NOIOCSS = 1**：
 	- 設置 **CC.CSS = 111b**（無 I/O 命令集支持）。
 - **CAP.CSS.IOCSS = 1**：
-	- 設置 **CC.CSS = 110b**（支持多個 I/O 命令集，例如 : Zoned Namespace）。
+	- 設置 **CC.CSS = 110b**（支持多個 I/O 命令集，例如 : Zoned Namespace Cmd Set）。
 - **CAP.CSS.NCSS = 1  and CAP.CSS.IOCSS = 0**：
 	- 設置 **CC.CSS = 000b**（支持 NVM 命令集）。
 
