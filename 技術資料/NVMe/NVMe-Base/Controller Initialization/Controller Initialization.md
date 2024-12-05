@@ -135,7 +135,20 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 電源管理或是 HMB 等設定。
 
 ![[Pasted image 20241203071327.png]]
-### 8. 確認控制器 I/O Command Set 設定資訊
+### 8. 取得與設定控制器 I/O Command Set 資訊
+
+前面已經有確認支援的 I/O Command Set，這邊還需要設定或取得什麼樣的資訊 ? 
+
+主機會確認控制器有沒有支援多個 **I/O Command Set**，若是有支援多個 I/O 命令集，主機會根據支援的命令集，發送 Identify with Command Set Identifier 命令，取得相關資訊。
+
+首先會檢查 CAP.CSS.IOCSS=1 ( 支援多個 I/O 命令集 ) ，然後會執行以下命令 : 
+
+(1) 提交命令 Identify I/O Command Set data structure ( CNS=1C )
+
+
+
+(2) 提交命令 Set Features with the I/O Command Set Profile
+
 
 
 
