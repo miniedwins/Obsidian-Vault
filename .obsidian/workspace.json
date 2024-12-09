@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
+                "file": "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Shutdown"
+              "title": "Controller Level Reset"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md"
+                "file": "技術資料/NVMe/NVMe-Base/Controller Level Reset.md"
               },
               "icon": "lucide-list",
-              "title": "Controller Shutdown 的大綱"
+              "title": "Controller Level Reset 的大綱"
             }
           },
           {
@@ -189,6 +189,7 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209162642.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209161307.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209155640.png",
@@ -200,7 +201,6 @@
     "技術資料/NVMe/NVMe-Base/Namespace Management.md",
     "技術資料/NVMe/NVMe-Base/Power Management.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
@@ -218,7 +218,6 @@
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161420.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161401.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205160705.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205155534.png",
     "暫存內容/NVMe Study (暫存).md",
     "未命名 1.md",
     "未命名.md",
