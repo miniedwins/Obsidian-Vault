@@ -187,8 +187,12 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209155640.png",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209155446.png",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209154626.png",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Namespace Management.md",
@@ -215,8 +219,6 @@
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205155534.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205154722.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205154024.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205152858.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205152733.png",
     "暫存內容/NVMe Study (暫存).md",
     "未命名 1.md",
     "未命名.md",
@@ -233,8 +235,6 @@
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request",
     "暫存內容/attachments",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
-    "技術資料/NVMe/NVMe-Trace",
-    "暫存內容",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"

@@ -6,24 +6,41 @@
 ### 三種類型通知
 
 * ( 00b ) : No notification; no effect
+	* 無需通知，對控制器運作沒有影響。
 * ( 01b ) : Normal shutdown notification
+	* 正常關機通知，表明控制器正在進行有序的關機流程。
 * ( 10b ) : Abrupt shutdown notification
+	* 突然關機通知，表明控制器未經計劃就中止操作，可能導致數據或狀態的不一致。
 ### 三種關機處理狀態
 
 * ( 00b ) : Normal operation ( no shutdown has been requested )
+	* 表示控制器處於正常運行狀態，尚未發起任何關機請求。
 * ( 01b ) : Shutdown processing occurring
+	* 關機處理正在進行中，控制器正有序地停止運作。
 * ( 10b ) : Shutdown processing complete
+	* 關機處理已完成，表明控制器可以安全地進入關機狀態。
+
 ## 操作流程
 
-Controller Shutdown 又可以分為兩種類型 : 
+有三個情況會執行 **Controller Shutdown** : 
 
-* **Memory-based Transport Controller Shutdown**
-	* Normal Controller Shutdown
-	* Abrupt Shutdown
-	* RTD3 with Normal Controller Shutdown
+- Normal Controller Shutdown
+- Abrupt Shutdown
+- RTD3 with Normal Controller Shutdown
 
-* **Message-based Transport Controller Shutdown**
-	* 這裡是說明的是另外一種通訊協議 ( 例如 : TCP/IP over PCIe )
+首先可以檢查控制器暫存器 **CAP.NSSS** 是否有支援 Shutdown Feature。
+
+![[Pasted image 20241209154626.png]]
+
+接下來我們要觀察 **Controller Shutdown** 有關的暫存器 **CC.SHN 以及 CSTS.SHST**。
+
+**CC.SHN** 主要是系統準備關閉系統之前，透過寫入暫存器的值通知控制器進行關閉操作。
+
+![[Pasted image 20241209155446.png]]
+
+**CST.SHST** 表示當前控制器關閉操作的進度，系統會去觀察控制器是否已經完成關閉的動作。
+
+![[Pasted image 20241209155640.png]]
 ### Memory-based Transport
  
 如果控制器的暫存器被設定成 CC.EN=1，Normal & Abrupt 它們的操作流程如下 : 
