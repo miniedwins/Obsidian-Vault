@@ -22,7 +22,7 @@
 
 ## 操作流程
 
-有三個情況會執行 **Controller Shutdown** : 
+系統有三個情況會執行 **Controller Shutdown** 動作 : 
 
 - Normal Controller Shutdown
 - Abrupt Shutdown
