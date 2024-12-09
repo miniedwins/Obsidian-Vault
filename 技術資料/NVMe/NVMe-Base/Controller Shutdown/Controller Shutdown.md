@@ -15,11 +15,13 @@
 * ( 10b ) : Shutdown processing complete
 ## 操作流程
 
-Controller Shutdown 又可以分為兩種類型
+Controller Shutdown 又可以分為兩種類型 : 
+
 * **Memory-based Transport Controller Shutdown**
 	* Normal Controller Shutdown
 	* Abrupt Shutdown
 	* RTD3 with Normal Controller Shutdown
+
 * **Message-based Transport Controller Shutdown**
 	* 這裡是說明的是另外一種通訊協議 ( 例如 : TCP/IP over PCIe )
 ### Memory-based Transport
@@ -51,6 +53,6 @@ Controller Shutdown 又可以分為兩種類型
 
 以下描述是若是當前 CC.EN 設定‘1’或是‘0’主機端要如何設定 ?
 
-- **如果 CC.EN 被設定為‘1’**：那麼必須執行**Controller Reset**，即將**CC.EN**從‘1’清除為‘0’（停用控製器），然後再重新啟用它。
+- **如果 CC.EN 被設定為‘1’**：那麼必須執行 **Controller Reset**，即將 **CC.EN** 從‘1’清除為‘0’（停用控製器），然後再重新啟用它。
     
-- **如果 CC.EN 已經清除為‘0’**：那麼控製器必須被**啟用**，即將 **CC.EN**從‘0’設定為‘1’（啟用控製器）。
+- **如果 CC.EN 已經清除為‘0’**：那麼控製器必須被 **啟用**，即將 **CC.EN** 從‘0’設定為‘1’（啟用控製器）。
