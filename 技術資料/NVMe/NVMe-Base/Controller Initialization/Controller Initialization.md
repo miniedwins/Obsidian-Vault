@@ -109,8 +109,38 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ### 4. 設定命令執行優先序 Round Robin Arbitration
 
 **Round Robin Arbitration** 是 NVMe 控制器仲裁命令執行順序的一種機制。當控制器接收到多個提交隊列的命令時，仲裁機制決定命令的執行優先順序，而 **Round Robin** 模式則是一種公平分配執行機會的方式。
+#### 嚴格優先級類別
 
-**TODO : 尚未了解**
+**(1) Admin 類別**
+
+- **最高優先級**：Admin Submission Queue 的命令擁有最高的嚴格優先級。
+- **處理順序**：Admin 類別的命令優先於任何 I/O Submission Queue 中的命令。
+
+**(2) Urgent 類別**
+
+- **次高優先級**：Urgent 優先級的 I/O Submission Queue 比 WRR 階層的任何命令具有更高的優先級。
+- **注意事項**：
+    - 主機分配 Urgent 類別時需謹慎，因為該類別可能導致加權輪詢層級的 Submission Queue 遭遇「飢餓」現象（無公平性協議保護）。
+
+ **(3) Weighted Round Robin 類別**
+
+- **最低嚴格優先級**：該類別包含 **High（高）、Medium（中）、Low（低）** 三個加權輪詢層級。
+- **處理順序**：僅在 Admin 和 Urgent 類別的命令處理完成後，才開始處理 WRR 階層的命令。
+#### 操作順序
+
+ **(1) 嚴格優先級類別的仲裁**
+
+1. 首先處理 Admin Submission Queue 的命令。
+2. 當 Admin 隊列的命令完成後，開始處理 Urgent 類別的 I/O Submission Queue。
+3. 當 Admin 和 Urgent 類別的命令都處理完成後，才會處理 WRR 層級的命令。
+
+ **(2) Weighted Round Robin 層級的仲裁**
+
+1. **按權重處理命令**：
+    - High 層級的隊列獲得更多的處理機會。
+    - Medium 和 Low 層級則根據設置的權重獲得處理機會。
+2. **相同層級內的隊列仲裁**：
+    - 使用簡單的 Round Robin 機制分配處理機會。
 
 ### 5. 啟用控制器
 

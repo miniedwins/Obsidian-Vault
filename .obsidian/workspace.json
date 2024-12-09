@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
+                "file": "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Initialization"
+              "title": "Controller Shutdown"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md"
+                "file": "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md"
               },
               "icon": "lucide-list",
-              "title": "Controller Initialization 的大綱"
+              "title": "Controller Shutdown 的大綱"
             }
           },
           {
@@ -187,18 +187,26 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3b8d2b40f8562eee",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown",
+    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
+    "技術資料/NVMe/NVMe-Base/Namespace Management.md",
+    "技術資料/NVMe/NVMe-Base/Power Management.md",
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-Base/Controller Property.md",
-    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161530.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161448.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161420.png",
@@ -216,21 +224,13 @@
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments",
     "技術資料/NVMe/NVMe-Base/Controller Initialization",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown.md",
-    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer",
     "暫存內容/範例筆記.md",
     "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/PCIE/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
-    "暫存內容/PCIe Class Code.md",
-    "暫存內容/如何找 PCIe Capacity Register.md",
-    "技術資料/NVMe/NVMe-MI/Management Interface.md",
-    "技術資料/NVMe/NVMe-Base/Namespace Management.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request",
-    "暫存內容/BMC.md",
     "暫存內容/attachments",
     "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
     "技術資料/NVMe/NVMe-Trace",
