@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Level Reset"
+              "title": "Sanitize"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Level Reset.md"
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize.md"
               },
               "icon": "lucide-list",
-              "title": "Controller Level Reset 的大綱"
+              "title": "Sanitize 的大綱"
             }
           },
           {
@@ -189,6 +189,7 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209162642.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209161307.png",
@@ -200,7 +201,6 @@
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Namespace Management.md",
     "技術資料/NVMe/NVMe-Base/Power Management.md",
-    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
