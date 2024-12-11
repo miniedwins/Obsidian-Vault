@@ -59,7 +59,7 @@ Admin Command Set Features is Success and result: 0x00000000
 
 ![[Pasted image 20241129090809.png]]
 
-設定參數 `cdw13=0x144CF000`，`cdw14=0x00000001`，主要用來告知控制器讀取該位址內容，取得主機配置的記憶體容量與使用範圍。這個內容也就是 **Host Memory Buffer Descriptor List**。
+設定參數 `cdw13=0x144CF000`，`cdw14=0x00000001`，主要用來告知控制器讀取該位址內容，取得主機配置的記憶體容量與使用範圍，也就是 **Host Memory Buffer Descriptor List Address**。
 
 什麼是  **Host Memory Buffer Descriptor Entry** ? 它是用來描述主機記憶體位址以及使用的容量大小。主機開始配置 HMB 並不會給予一段非常大的記憶體範圍，而是會配置多個一小段的記憶體範圍給控制器使用。
 
@@ -87,8 +87,9 @@ Admin Command Set Features is Success and result: 0x00000000
 
 ![[Pasted image 20241202022625.png]]
 
-如何計算 Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
-總配置記憶體大小為 = 4 * 4M = 16M Bytes
+- 如何計算 Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
+- 總配置記憶體大小為 = 4 Entry * 4M = 16M Bytes
+- 每個記憶體都有對齊 4K
 
 | Memory Buffer Entry | Buffer Address      | Buffer Size        |
 | ------------------- | ------------------- | ------------------ |
