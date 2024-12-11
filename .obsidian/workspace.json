@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+                "file": "作業系統/Linux/教學/PCIe/lspci 命令操作.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Host Memory Buffer"
+              "title": "lspci 命令操作"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md"
+                "file": "作業系統/Linux/教學/PCIe/lspci 命令操作.md"
               },
               "icon": "lucide-list",
-              "title": "Host Memory Buffer 的大綱"
+              "title": "lspci 命令操作 的大綱"
             }
           },
           {
@@ -189,6 +189,20 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
+    "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
+    "作業系統/Linux/教學/I2C/i2c-tools.md",
+    "作業系統/Linux/教學/PCIe/lspci 命令操作.md",
+    "作業系統/Linux/教學/PCIe/attachments/Pasted image 20241212072854.png",
+    "作業系統/Linux/教學/PCIe/attachments/Pasted image 20241212072445.png",
+    "作業系統/Linux/教學/PCIe/attachments/Pasted image 20241212071910.png",
+    "作業系統/Linux/教學/PCIe/attachments",
+    "作業系統/Linux/教學/PCIe",
+    "作業系統/Linux/教學/未命名.md",
+    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
+    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/磁碟偏移量設定 (Offset).md",
+    "作業系統/Linux/腳本/取得命令行輸入的參數.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-Base/Sanitize.md",
@@ -211,30 +225,15 @@
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161530.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161448.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161420.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161401.png",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205160705.png",
-    "暫存內容/NVMe Study (暫存).md",
-    "未命名 1.md",
-    "未命名.md",
-    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
-    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments",
     "技術資料/NVMe/NVMe-Base/Controller Initialization",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/attachments",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer",
-    "暫存內容/範例筆記.md",
-    "技術資料/PCIE/System Reset/如何設定 Hot and FLR Reset 方法.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/attachments",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request",
-    "暫存內容/attachments",
-    "技術資料/NVMe/NVMe-Base/attachments/physical_region_page",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
