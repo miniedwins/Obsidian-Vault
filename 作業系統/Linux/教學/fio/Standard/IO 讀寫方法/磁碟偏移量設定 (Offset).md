@@ -1,19 +1,19 @@
-參數 : offset=int ( byes or percentage )
-說明 : 若是給百分比，offset 會根據硬碟單位 blocksize  ( 512B or 4K ) 對齊
+**參數** : offset=int ( byes or percentage )
+**說明** : 若是給百分比，offset 會根據硬碟單位 block size  ( 512B or 4K ) 對齊
 
-範例 1 : offset=1%
+**範例 1** : offset=1%
 
 ```shell
 $ fio fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=4k --offset=1% --rw=write --size=100%
 ```
 
-範例 2 : offset=1MB
+**範例 2** : offset=1MB
 
 ```shell
 $ fio --filename=/dev/sdx --name=test --direct=1 --ioengine=libaio --iodepth=32 --bs=4k --offset=1MB --rw=write --size=100%
 ```
 
-寫入的資料是從偏移量 offset=1MBytes 開始，因此可以看到 offset=00100000 前面的資料都是為零。
+寫入的資料是從偏移量 offset=1MBytes 開始，可以看到 offset=00100000 前面的資料都是為零。
 
 ```shell
 $ hexdump -C -n 1049088 /dev/sdb
@@ -28,10 +28,3 @@ $ hexdump -C -n 1049088 /dev/sdb
 ```
 
 ---
-
-參數 : offset_increment=int ( byes or percentage )
-說明 : 通常搭配 threads or numjobs 使用
-
-```shell
-$ 
-```

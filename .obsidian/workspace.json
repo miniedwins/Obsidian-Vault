@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/教學/PCIe/lspci 命令操作.md",
+                "file": "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lspci 命令操作"
+              "title": "設定不同 IO 大小的百分比"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/教學/PCIe/lspci 命令操作.md"
+                "file": "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md"
               },
               "icon": "lucide-list",
-              "title": "lspci 命令操作 的大綱"
+              "title": "設定不同 IO 大小的百分比 的大綱"
             }
           },
           {
@@ -189,18 +189,20 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "作業系統/Linux/教學/PCIe/lspci 命令操作.md",
+    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/磁碟偏移量設定 (Offset).md",
+    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
+    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/設定混合讀寫比例 (rwmixed).md",
+    "作業系統/Linux/教學/fio/Standard/等待任務執行完，再繼續執行下一個任務.md",
     "作業系統/Linux/教學/GNU/如何移除或重新掃描 PCIe 裝置.md",
     "作業系統/Linux/教學/GNU/DIFF 檔案比較.md",
     "作業系統/Linux/教學/I2C/i2c-tools.md",
-    "作業系統/Linux/教學/PCIe/lspci 命令操作.md",
     "作業系統/Linux/教學/PCIe/attachments/Pasted image 20241212072854.png",
     "作業系統/Linux/教學/PCIe/attachments/Pasted image 20241212072445.png",
     "作業系統/Linux/教學/PCIe/attachments/Pasted image 20241212071910.png",
     "作業系統/Linux/教學/PCIe/attachments",
     "作業系統/Linux/教學/PCIe",
     "作業系統/Linux/教學/未命名.md",
-    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
-    "作業系統/Linux/教學/fio/Standard/IO 讀寫方法/磁碟偏移量設定 (Offset).md",
     "作業系統/Linux/腳本/取得命令行輸入的參數.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
@@ -225,7 +227,6 @@
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161530.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments/Pasted image 20241205161448.png",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments",
