@@ -1,16 +1,17 @@
-# Pytest
+## **跳過整個模組測試**
 
-## @pytest.mark.skip
+**說明** :
+`@pytest.mark.skip` 是 pytest 中的標記，用來跳過某些測試。當你設置 `allow_module_level=True` 時，可以在模組層級跳過整個模組的測試。
 
-### 設定跳過整個模組
+**參數** :
+- **msg** (`str`) : 設置跳過測試的理由。
+- **allow_module_level** (`bool`) : 
+	- 預設為 `False`。
+	- 設定為 `True` 時可以讓測試模組層級被跳過。
 
-當 allow_module_level=True 時，可以設定在模組等級跳過整個模組
+**範例** : 
+- 如果操作系統是 Linux，則跳過整個模組的測試並給出相應的理由。
 
-Args : 
-- msg = "Your Reason"
-- allow_module_level = True
-
-Example : 
 ```python
 if sys.platform.startswith("linux"):
     pytest.skip("Only tests for Windows platform", allow_module_level=True)

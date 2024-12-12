@@ -1,10 +1,10 @@
-下載 JSON-C 原始碼
+- 下載 JSON-C 原始碼
 
 ```
 $ git clone https://github.com/json-c/json-c.git
 ```
 
-安裝 JSON-C 函式庫
+- 安裝 JSON-C 函式庫
 
 ```
 $ mkdir json-c-build

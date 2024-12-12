@@ -1,5 +1,4 @@
-
-(1) 驗證鏈路狀態
+## (1) 驗證鏈路狀態
 
 使用以下命令檢查 PCIe 鏈路狀態：
 
@@ -13,7 +12,7 @@ cat /sys/bus/pci/devices/0000:xx:xx.x/power_state
 dmesg | grep PCIe
 ```
 
-(2) 配置 ASPM
+## (2) 配置 ASPM
 
 在 Linux 中，可以通過以下方式啟用 ASPM：
 
