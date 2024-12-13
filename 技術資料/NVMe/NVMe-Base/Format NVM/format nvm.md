@@ -29,7 +29,7 @@ SES 設定分為三個類型，其中有兩種類型可以將所有資料清除�
 ![[Pasted image 20241213141643.png]]
 ## 操作範圍 (Operation Scope)
 
-低階格式化會**影響所有命名空間或是特定命名空間**，控制器會根據 `Namespace Identify Ctrl` 欄位中的 **Format NVM Attributes ( FNA )** 欄位決定操作範圍。
+低階格式化會**影響所有命名空間或是特定命名空間**，控制器會根據 `Namespace  Identify Ctrl` 欄位中的 **Format NVM Attributes ( FNA )** 欄位決定操作範圍。
 
 ![[Pasted image 20241213142445.png]]
 
