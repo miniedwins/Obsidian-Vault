@@ -289,7 +289,7 @@ edwin@edwin:~$ sudo hexdump -C -n 512 trim.bin
 發送 nvme io-passthru，將剛剛產生的資料 `trim.bin` (Range Definition) 傳送給控制器，所以必須要帶 `--write` 命令
 
 ~~~shell
-sudo nvme io-passthru /dev/nvme0 --opcode=0x09 --namespace-id=1 --cdw10=0x00 --cdw11=0x04 --input-file=trim.bin --data-len=4096 --write
+nvme io-passthru /dev/nvme0 --opcode=0x09 --namespace-id=1 --cdw10=0x00 --cdw11=0x04 --input-file=trim.bin --data-len=4096 --write
 ~~~
 
 然後再使用 fio 確認剛剛寫入的邏輯區塊是否被清除為 `0x00h`，如果不成功 fio 會報資料驗證的錯誤訊息
@@ -297,7 +297,7 @@ sudo nvme io-passthru /dev/nvme0 --opcode=0x09 --namespace-id=1 --cdw10=0x00 --c
 寫入的資料的開始位置是 LBA=0，所以 fio 不需要帶參數 `--offset` 去調整從哪個位置開始
 
 ~~~shell
-sudo fio --thread --direct=1 --allow_file_creat=0 --ioengine=libaio --rw=read --bs=128k --iodepth=128 --numjobs=1 --name=nvme0n1 --filename=/dev/nvme0n1 --size=1g --verify=pattern --do_verify=1 --verify_pattern=0x00
+fio --thread --direct=1 --allow_file_creat=0 --ioengine=libaio --rw=read --bs=128k --iodepth=128 --numjobs=1 --name=nvme0n1 --filename=/dev/nvme0n1 --size=1g --verify=pattern --do_verify=1 --verify_pattern=0x00
 ~~~
 
 
