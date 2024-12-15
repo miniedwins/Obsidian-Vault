@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
+                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "format nvm"
+              "title": "Host Memory Buffer"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md"
+                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md"
               },
               "icon": "lucide-list",
-              "title": "format nvm 的大綱"
+              "title": "Host Memory Buffer 的大綱"
             }
           },
           {
@@ -189,10 +189,10 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/attachments/Pasted image 20241213143554.png",
     "技術資料/NVMe/NVMe-Base/Format NVM/attachments/Pasted image 20241213142801.png",
     "技術資料/NVMe/NVMe-Base/Format NVM/attachments/Pasted image 20241213142650.png",
-    "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/attachments/Pasted image 20241213142445.png",
     "技術資料/NVMe/NVMe-Base/Format NVM/attachments/Pasted image 20241213141643.png",
     "技術資料/NVMe/NVMe-Base/Format NVM/attachments",
@@ -230,7 +230,6 @@
     "作業系統/Linux/指令/PCIe/attachments",
     "作業系統/Linux/指令/PCIe",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209162642.png",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments/Pasted image 20241209161307.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/attachments",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/attachments",
