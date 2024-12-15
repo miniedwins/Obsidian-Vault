@@ -177,7 +177,7 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 
 ![[Pasted image 20241205161420.png]]
 
-以及 CC.CSS = 111b ( All Supported I/O Command Sets )
+以及 CC.CSS = 110b ( All Supported I/O Command Sets )
 
 ![[Pasted image 20241205161530.png]]
 

@@ -81,15 +81,16 @@ Admin Command Set Features is Success and result: 0x00000000
 
 ![[Pasted image 20241129083913.png]]
 
-透過 TRACE 追蹤取得主機分配的記憶體內容如下 : 
-
-總共配置 4 段記憶體範圍，每段記憶體大小為 4MBytes。
+- **透過 TRACE 追蹤取得主機分配的記憶體內容如下** : 
+	- 總共配置 4 段記憶體範圍。
+	- 每段記憶體大小為 4MBytes。
+	- 每個記憶體都有對齊 4K。
 
 ![[Pasted image 20241202022625.png]]
 
-- 如何計算 Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
-- 總配置記憶體大小為 = 4 Entry * 4M = 16M Bytes
-- 每個記憶體都有對齊 4K
+- **如何計算 Buffer Size 容量大小** : 
+	-  Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
+	- 總配置記憶體大小為 = 4 Entry * 4M = 16M Bytes
 
 | Memory Buffer Entry | Buffer Address      | Buffer Size        |
 | ------------------- | ------------------- | ------------------ |
