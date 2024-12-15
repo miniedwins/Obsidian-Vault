@@ -85,12 +85,12 @@ Admin Command Set Features is Success and result: 0x00000000
 	- 總共配置 4 段記憶體範圍。
 	- 每段記憶體大小為 4MBytes。
 	- 每個記憶體都有對齊 4K。
+	- 總配置記憶體大小 = 4 Entry * 4M = 16M Bytes
 
 ![[Pasted image 20241202022625.png]]
 
 - **如何計算 Buffer Size 容量大小** : 
-	-  Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
-	- 總配置記憶體大小為 = 4 Entry * 4M = 16M Bytes
+	- Buffer Size = 1024 ( 0x400h ) * 4096 ( MPS ) = 4MBytes
 
 | Memory Buffer Entry | Buffer Address      | Buffer Size        |
 | ------------------- | ------------------- | ------------------ |
@@ -141,7 +141,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ```
 ### 2. 記憶體大小
 
-我們要如何計算主機配置的記憶體大小 ?  當前設定 HSIZE [3:0] = `0x00004000h` = `16384`
+我們要如何計算主機配置的記憶體大小 ?  當前設定 HSIZE [ 3:0 ] = `0x00004000h` = `16384`
 
 1. 計算容量需要先取得 MPS ( Memory Page Size ) 
 2. 目前取得 MPS = ( 2 ^ ( 12 + 0 ) ) = 4096 Bytes
