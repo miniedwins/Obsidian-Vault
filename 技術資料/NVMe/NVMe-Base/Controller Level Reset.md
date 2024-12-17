@@ -25,11 +25,11 @@
  **有哪些持久屬性不會被重置**  
 * **( 原文 )** For Controllers using a memory-based transport
 	* **Controller Reset**
-		* Admin Queue Properties `AQA`, `ASQ`, `ACQ`
+		* Admin Queue Properties **`AQA`, `ASQ`, `ACQ`**
 		* `CMBMSC` ( Controller Memory Buffer Memory Space )
 		* Persistent Memory Region
-			* `PMRMSCU` 
-			* `PMRMSCL`
+			* **`PMRMSCU`** 
+			* **`PMRMSCL`**
 	* **Function Level Reset** 
 		* `CMBMSC`
 * **( 原文 )** For Controllers using a message-based transport
