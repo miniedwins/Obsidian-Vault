@@ -1,4 +1,4 @@
-Hdparm Security Erase Command
+# Hdparm Security Erase Command
 
 1. hdparm --user-master u --security-set-pass p /dev/sdb
 2. hdparm --user-master u --security-erase p /dev/sdb
