@@ -4,7 +4,7 @@
 
 Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** 以及 **Emergency Power Fail Processing** 都與儲存裝置的穩定性和資料完整性相關，但它們適用於不同的情況，且處理方式不同。
 
-**Host ( 主機端 )** 可以透過 Set-Feature 的方式設定掉電處理模式，當發生電源丟失時，控制器可以立刻通知系統正在進行準備處理電源丟失流程。
+**Host ( 主機端 )** 可以透過 **Power Loss Signaling Config feature** 的方式 **設定掉電處理模式**，當發生電源丟失時，控制器可以立刻通知系統正在進行處理電源丟失流程。
 
 # 電源丟失處理模式
 
@@ -35,7 +35,7 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
  - **Asserted** 
 	 - 表示主機通知 NVMe 裝置即將掉電。
  - **Deasserted** 
-	 - 表示主機已撤銷掉電通知，或是系統電源情況恢復正常。
+	 - 表示主機已撤銷掉電通知，或是當前電源情況正常。
 ### Power Loss Acknowledge
  
  由 **NVMe 控製器** 設定，用於表示當前的電源丟失處理狀態，分為四種：
@@ -48,3 +48,4 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 	- 緊急掉電流程處理中中，當前狀態無法與主機正常端通訊。
 - **Deasserted**
 	- 控製器未處理任何電源丟失流程，一切正常運行。
+
