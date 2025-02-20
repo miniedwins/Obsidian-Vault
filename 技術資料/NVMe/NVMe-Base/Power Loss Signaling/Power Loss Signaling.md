@@ -1,0 +1,50 @@
+# 概要說明
+
+**Emergency Power Fail Processing（緊急掉電處理）** 主旨在確保在電源丟失時，控製器能夠儘可能安全地完成 I/O 操作以及後續突發事件的操作流程，以防止資料丟失或損壞。
+
+Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** 以及 **Emergency Power Fail Processing** 都與儲存裝置的穩定性和資料完整性相關，但它們適用於不同的情況，且處理方式不同。
+
+**Host ( 主機端 )** 可以透過 Set-Feature 的方式設定掉電處理模式，當發生電源丟失時，控制器可以立刻通知系統正在進行準備處理電源丟失流程。
+
+# 電源丟失處理模式
+
+###  **Forced Quiescence Processing**
+
+#### 主要目的
+
+#### 觸發條件
+
+#### 處理過程
+
+###  **Emergency Power Fail Processing**
+
+#### 主要目的
+
+#### 觸發條件
+
+#### 處理過程
+
+
+# 電源丟失通知
+
+當控制器電源發生丟失時，主機和控製器之間是如何通訊 ? 主要依賴於兩個變數 **Power Loss Notification（PLN）** 以及 **Power Loss Acknowledge（PLA）**。
+### Power Loss Notification
+
+**控制器** 通知 **主機端** 表示當前電源是否丟失或是電源恢復正常：
+
+ - **Asserted** 
+	 - 表示主機通知 NVMe 裝置即將掉電。
+ - **Deasserted** 
+	 - 表示主機已撤銷掉電通知，或是系統電源情況恢復正常。
+### Power Loss Acknowledge
+ 
+ 由 **NVMe 控製器** 設定，用於表示當前的電源丟失處理狀態，分為四種：
+ 
+- **Asserted-FQ**
+	- 強制靜默流程處理中，當前狀態可以正常與主機端通訊。
+- **Asserted-EPF-Enabled**
+	- 緊急掉電流程處理中，當前狀態可以正常與主機端通訊。
+- **Asserted-EPF-Disabled** 
+	- 緊急掉電流程處理中中，當前狀態無法與主機正常端通訊。
+- **Deasserted**
+	- 控製器未處理任何電源丟失流程，一切正常運行。

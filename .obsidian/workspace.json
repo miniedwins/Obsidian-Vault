@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Firmware Image Download"
+              "title": "Power Loss Signaling"
             }
           }
         ]
@@ -149,10 +149,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Firmware Image Download.md"
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md"
               },
               "icon": "lucide-list",
-              "title": "Firmware Image Download 的大綱"
+              "title": "Power Loss Signaling 的大綱"
             }
           },
           {
@@ -189,6 +189,16 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Device Self Test/5. 查看自檢日誌.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/1. 概要說明.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/4. 執行自檢命令.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/3. 自檢項目說明.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/2. 自檢類型.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling",
+    "技術資料/SATA/Security Erase.md",
+    "技術資料/SATA",
     "技術資料/MCTP/解析主機設定 EID.md",
     "技術資料/MCTP/MCTP 封包基本組成.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
@@ -209,16 +219,8 @@
     "作業系統/Linux/指令/IPMI",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "作業系統/Linux/指令/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
-    "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
-    "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/volatile_write_cache.png",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/5. 查看自檢日誌.md",
     "技術資料/NVMe/NVMe-Base/attachments/format_nvm/format_nvm_cmd_dw10.png",
     "技術資料/NVMe/NVMe-Base/attachments/controller/nvme_cc_memory_page_size.png",
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218035515.png",
@@ -233,8 +235,6 @@
     "技術資料/NVMe/NVMe-Base/Format NVM",
     "技術資料/NVMe/NVMe-Base/Namespace Management",
     "作業系統/Linux/系統",
-    "作業系統/Linux/指令/PCIe/attachments",
-    "作業系統/Linux/指令/PCIe",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
