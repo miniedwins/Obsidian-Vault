@@ -24,13 +24,12 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 
 #### 處理過程
 
-
-# 電源丟失通知
+# 電源丟失通知機制
 
 當控制器電源發生丟失時，主機和控製器之間是如何通訊 ? 主要依賴於兩個變數 **Power Loss Notification（PLN）** 以及 **Power Loss Acknowledge（PLA）**。
 ### Power Loss Notification
 
-**控制器** 通知 **主機端** 表示當前電源是否丟失或是電源恢復正常：
+電源丟失時主機與控制器的透過設定 **PLN** 訊號通知，表示當前電源是否丟失或是電源恢復正常：
 
  - **Asserted** 
 	 - 表示主機通知 NVMe 裝置即將掉電。
@@ -38,7 +37,7 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 	 - 表示主機已撤銷掉電通知，或是當前電源情況正常。
 ### Power Loss Acknowledge
  
- 由 **NVMe 控製器** 設定，用於表示當前的電源丟失處理狀態，分為四種：
+ 控制器設定 **PLA** 訊號，用於表示當前的電源丟失處理狀態，可以分為四種處理方式：
  
 - **Asserted-FQ**
 	- 強制靜默流程處理中，當前狀態可以正常與主機端通訊。
@@ -51,6 +50,7 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 
 > 疑問 :  EPF Processing Port Communication Processed ( Enable or Disable )
 > 推測但不確定是否正確 : 
-> 1. ( Enable ) 當前正在處理的命令，可以回覆主機端是否完成 。
-> 2. (Disable) 拋棄正在處理的命令，專心處理掉電流程。
+> 1. ( Enable ) 當前正在處理的命令，可以回覆主機端是否完成。
+> 2. ( Disable) 拋棄正在處理的命令，專心處理掉電流程。
+
 

@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Power Loss Signaling"
             }
+          },
+          {
+            "id": "e4efe8b519044b79",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +53,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "檔案瀏覽器"
@@ -149,10 +163,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md"
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Power Loss Signaling 的大綱"
+              "title": "大綱"
             }
           },
           {
@@ -187,7 +203,7 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3b8d2b40f8562eee",
+  "active": "e4efe8b519044b79",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-Base/Device Self Test/5. 查看自檢日誌.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
