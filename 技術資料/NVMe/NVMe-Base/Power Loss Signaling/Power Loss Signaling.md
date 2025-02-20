@@ -49,3 +49,8 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 - **Deasserted**
 	- 控製器未處理任何電源丟失流程，一切正常運行。
 
+> 疑問 :  EPF Processing Port Communication Processed ( Enable or Disable )
+> 推測但不確定是否正確 : 
+> 1. ( Enable ) 當前正在處理的命令，可以回覆主機端是否完成 。
+> 2. (Disable) 拋棄正在處理的命令，專心處理掉電流程。
+
