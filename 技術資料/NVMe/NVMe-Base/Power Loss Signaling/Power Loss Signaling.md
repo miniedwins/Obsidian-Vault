@@ -1,11 +1,20 @@
-# 概要說明
+# 概要
 
 **Emergency Power Fail Processing（緊急掉電處理）** 主旨在確保在電源丟失時，控製器能夠儘可能安全地完成 I/O 操作以及後續突發事件的操作流程，以防止資料丟失或損壞。
 
 Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** 以及 **Emergency Power Fail Processing** 都與儲存裝置的穩定性和資料完整性相關，但它們適用於不同的情況，且處理方式不同。
 
 **Host ( 主機端 )** 可以透過 **Power Loss Signaling Config feature** 的方式 **設定掉電處理模式**，當發生電源丟失時，控制器可以立刻通知系統正在進行處理電源丟失流程。
+# 功能說明
 
+- 電源丟失處理模式
+	- Forced Quiescence Processing
+	- Emergency Power Fail Processing
+- 控制器支援 Power Loss Signaling 需要條件
+	- 支援 Power Loss Acknowledge ( PLA ) 
+	- 支援 或是 不支援 PLN
+	- 至少要支援其中一個模式 FQ 或是 EPF
+	- 支援設定 Power Loss Signaling Config feature
 # 電源丟失處理模式
 
 ###  **Forced Quiescence Processing**
@@ -35,21 +44,25 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 	 - 表示主機通知 NVMe 裝置即將掉電。
  - **Deasserted** 
 	 - 表示主機已撤銷掉電通知，或是當前電源情況正常。
+
+![[Pasted image 20250221153007.png]]
 ### Power Loss Acknowledge
  
- 控制器設定 **PLA** 訊號，用於表示當前的電源丟失處理狀態，可以分為四種處理方式：
+ 控制器設定 **PLA** 訊號，用於表示當前的電源丟失處理狀態，控制器會根據 **Power Loss Signaling Config feature** 決定執行哪一個處理模式，一般可以分為四種處理方式：
  
 - **Asserted-FQ**
-	- 強制靜默流程處理中，當前狀態可以正常與主機端通訊。
+	- 強制靜默流程處理中，當前狀態可以正常與主機端通。
 - **Asserted-EPF-Enabled**
 	- 緊急掉電流程處理中，當前狀態可以正常與主機端通訊。
 - **Asserted-EPF-Disabled** 
-	- 緊急掉電流程處理中中，當前狀態無法與主機正常端通訊。
+	- 緊急掉電流程處理中，當前狀態無法與主機正常端通訊。
 - **Deasserted**
-	- 控製器未處理任何電源丟失流程，一切正常運行。
+	- 控製器未處理任何電源丟失流程。
 
-> 疑問 :  EPF Processing Port Communication Processed ( Enable or Disable )
-> 推測但不確定是否正確 : 
+![[Pasted image 20250221153043.png]]
+
+> 疑問 : 不了解 EPF Port Communication Processed 通訊的定義
+> 可能推測的行為 : 
 > 1. ( Enable ) 當前正在處理的命令，可以回覆主機端是否完成。
 > 2. ( Disable) 拋棄正在處理的命令，專心處理掉電流程。
 
