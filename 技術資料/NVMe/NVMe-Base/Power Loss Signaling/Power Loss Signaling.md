@@ -5,15 +5,20 @@
 Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** 以及 **Emergency Power Fail Processing** 都與儲存裝置的穩定性和資料完整性相關，但它們適用於不同的情況，且處理方式不同。
 
 **Host ( 主機端 )** 可以透過 **Power Loss Signaling Config feature** 的方式 **設定掉電處理模式**，當發生電源丟失時，控制器可以立刻通知系統正在進行處理電源丟失流程。
+
+那麼控制器如何通知 **Host ( 主機端 )** 發生掉電呢 ? 主要是透過 PLN 訊號通知系統發生電源丟失，以及 PLA 訊號來表示正在處理掉電流程 ( FQ 或是 EPF )。
 # 功能說明
 
 - 電源丟失處理模式
-	- Forced Quiescence Processing
-	- Emergency Power Fail Processing
+	- Forced Quiescence Processing ( FQ )
+	- Emergency Power Fail Processing ( EPF )
 - 控制器支援 Power Loss Signaling 需要條件
 	- 支援 Power Loss Acknowledge ( PLA ) 
-	- 支援 或是 不支援 PLN
-	- 至少要支援其中一個模式 FQ 或是 EPF
+	- 選擇性支援 Power Loss Acknowledge ( PLN )
+	- 至少支援其中一個模式 FQ & EPF，或是兩個都支援
+	- 至少支援一個或是多個 Power States ( FQ & EPF )
+	- 根據支援模式，需要回報 FQ & EPF Vault Time
+	- 支援回報 I/O Performance is degraded
 	- 支援設定 Power Loss Signaling Config feature
 # 電源丟失處理模式
 
