@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "模型類別三種方法解析資料"
+              "title": "Emergency Power Fail Processing"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "模型類別三種方法解析資料 的大綱"
+              "title": "Emergency Power Fail Processing 的大綱"
             }
           },
           {
@@ -193,8 +193,12 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
-    "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
     "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
+    "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pytest/跳過整個模組測試.md",
     "程式設計/Python/Pydantic/API/model_validate.md",
     "程式設計/Python/Pytest/API/mark.skip.md",
@@ -206,7 +210,6 @@
     "程式設計/Python/Pydantic/API",
     "程式設計/Python/套件管理/Poetry.md",
     "程式設計/Python/Pytest",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "程式設計/Python/Pydantic",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
@@ -218,14 +221,12 @@
     "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "Forced Quiescence Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments",
     "技術資料/NVMe/NVMe-Base/Device Self Test/5. 查看自檢日誌.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/1. 概要說明.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/4. 執行自檢命令.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/3. 自檢項目說明.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/2. 自檢類型.md",
-    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling",
     "技術資料/SATA",
     "作業系統/Linux/指令/IPMI",
