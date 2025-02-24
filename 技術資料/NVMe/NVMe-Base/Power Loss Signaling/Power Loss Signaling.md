@@ -20,6 +20,10 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
 	- 根據支援模式，需要回報 FQ & EPF Vault Time
 	- 支援回報 I/O Performance is degraded
 	- 支援設定 Power Loss Signaling Config feature
+
+# 運作機制
+
+
 # 電源丟失處理模式
 
 ###  **Forced Quiescence Processing**
@@ -55,15 +59,6 @@ Power Loss Signaling 處理模式分為兩種 **Forced Quiescence Processing** �
  
  控制器設定 **PLA** 訊號，用於表示當前的電源丟失處理狀態，控制器會根據 **Power Loss Signaling Config feature** 決定執行哪一個處理模式，一般可以分為四種處理方式：
  
-- **Asserted-FQ**
-	- 強制靜默流程處理中，當前狀態可以正常與主機端通。
-- **Asserted-EPF-Enabled**
-	- 緊急掉電流程處理中，當前狀態可以正常與主機端通訊。
-- **Asserted-EPF-Disabled** 
-	- 緊急掉電流程處理中，當前狀態無法與主機正常端通訊。
-- **Deasserted**
-	- 控製器未處理任何電源丟失流程。
-
 ![[Pasted image 20250221153043.png]]
 
 > 疑問 : 不了解 EPF Port Communication Processed 通訊的定義

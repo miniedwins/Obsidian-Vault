@@ -195,6 +195,7 @@
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
@@ -223,7 +224,6 @@
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/PCIE/PCIe Class Code.md",
     "作業系統/Linux/指令/IPMI/ipmitool.md",
-    "作業系統/Linux/指令/PCIe/lspci 命令操作.md",
     "作業系統/Linux/指令/IPMI",
     "作業系統/Linux/指令/IPMI",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/volatile_write_cache.png",
