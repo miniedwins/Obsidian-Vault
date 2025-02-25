@@ -9,7 +9,13 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 那麼控制器如何通知 **Host ( 主機端 )** 發生掉電呢 ? 主要是透過 **PLN** 訊號通知系統發生電源丟失，以及 **PLA** 訊號來表示正在處理掉電流程 ( FQ 或是 EPF )。需要注意的是，任何時候都不能有多個斷電訊號模式處於活動狀態。
 # 電源丟失通知機制
 
-當控制器電源發生丟失時，主機和控製器之間是如何通訊 ? 主要依賴於兩個變數  [[Power Loss Notification]]  以及  [[Power Loss Acknowledge]]。
+當控制器電源發生丟失時，主機和控製器之間是如何通訊 ? 主要會使用到這兩個變數  [[Power Loss Notification]] 以及  [[Power Loss Acknowledge]]。
+
+- **`Power Loss Notification`** : 
+	- 通知控制器即將發生斷電。
+- **`Power Loss Acknowledge`** : 
+	- 通知主機端正在處理斷電流程。
+## 通知流程
 
 1. 主機檢測到斷電風險（例如電源不穩定或電池電量低）。    
 2. 主機將 PLN 信號設置為 **Asserted**，並通過 NVMe 傳輸層發送給控制器。    

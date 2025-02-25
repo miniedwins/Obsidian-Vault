@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "處理返回的字段名稱與程式碼對應"
+              "title": "Power Loss Signaling"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "處理返回的字段名稱與程式碼對應 的大綱"
+              "title": "Power Loss Signaling 的大綱"
             }
           },
           {
@@ -193,15 +193,15 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
-    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)",
     "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071056.png",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
