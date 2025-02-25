@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+                "file": "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Power Loss Signaling"
+              "title": "處理返回的字段名稱與程式碼對應"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+                "file": "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Power Loss Signaling 的大綱"
+              "title": "處理返回的字段名稱與程式碼對應 的大綱"
             }
           },
           {
@@ -193,11 +193,12 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071056.png",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
@@ -205,7 +206,6 @@
     "path with spaces",
     "Power.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
-    "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
     "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pytest/跳過整個模組測試.md",
     "程式設計/Python/Pydantic/API/model_validate.md",
