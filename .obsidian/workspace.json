@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
                 "mode": "source",
                 "source": false
               },
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 297.5
+    "width": 320.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -150,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -193,6 +193,9 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)",
     "程式設計/Python/Pydantic/模型類別三種方法解析資料.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
@@ -206,7 +209,6 @@
     "path with spaces",
     "Power.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
-    "程式設計/Python/Pydantic/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pytest/跳過整個模組測試.md",
     "程式設計/Python/Pydantic/API/model_validate.md",
     "程式設計/Python/Pytest/API/mark.skip.md",
@@ -226,12 +228,10 @@
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling",
     "技術資料/SATA",
-    "作業系統/Linux/指令/IPMI",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/volatile_write_cache.png",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
     "技術資料/NVMe/NVMe-Base/attachments/format_nvm/format_nvm_cmd_dw10.png",
