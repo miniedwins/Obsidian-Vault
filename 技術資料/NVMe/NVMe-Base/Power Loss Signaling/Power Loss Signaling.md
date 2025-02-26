@@ -34,10 +34,9 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 - 選擇性支援  Power Loss Acknowledge ( PLN )
 - 支援 Power Loss Signaling Config feature
 - 根據支援的模式而定，需要回報處理與恢復時間
-	- `FQVT` 回報值不能為 **`0`**
-	- `EPFV and EPFRT` 回報值不能為 **`0
+	- `FQVT / EPFV / EPFRT` 回報時間不能為 **`0
 	- 支援一個或是多個 Power States
-		- 這裡表示不同的 PS ，處理與恢復時間會有不同狀態
+		- 表示不同的 PS ，處理與恢復時間會有所不同
 - 支援回報 I/O Performance is degraded
 	- [[Namespace Status]] ( NSTAT ) 
 		- 描述 I/O Impacted ( IOI ) 狀態
