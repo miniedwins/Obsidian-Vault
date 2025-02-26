@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 320.5
+    "width": 344.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -178,7 +178,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5
+    "width": 241.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,9 +193,9 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",

@@ -18,7 +18,7 @@
 	- 指定 Power Loss Signaling Config  該命令會被 中止。
 
 3. 如果控制器在「FQ Processing」狀態下轉換到「PLS Not Ready」：
-	- `FQ` 處理將被中止（Abort FQ Processing）。
+	- 處理將被中止（Abort FQ Processing）。
 	- 不會影響主機與控制器的通訊。
 
 4. 如果 PLN 被設為 `Asserted`，然後又變回 `Deasserted`：
