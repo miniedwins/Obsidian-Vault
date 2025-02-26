@@ -26,8 +26,8 @@
 
 要檢查設備是否支持 **Host Memory Buffer (HMB)**，可以從 **Identify Controller Data Structure** 中取得 **HMPRE**（Host Memory Buffer Preferred Size）屬性。
 
-- **HMPRE = 0**：表示不支援 HMB 功能。
-- **HMPRE ≠ 0**：表示支援 HMB，且值表示要求 HMB 大小（以 4KB 為單位）。
+- `HMPRE=0`：表示不支援 HMB 功能。
+- `HMPRE≠0`：表示支援 HMB，且值表示要求 HMB 大小（以 4KB 為單位）。
 
 ![[Pasted image 20241129064658.png]]
 ### 2. 開啟與配置 HMB
@@ -47,9 +47,9 @@ Admin Command Set Features is Success and result: 0x00000000
 
 另外一個要注意的是 **Memory Return Bit**，如下說明 : 
 
-- **MR = 0**：初始分配記憶體時，**表示主機首次配置 HMB**，記憶體內存空間不依賴之前的配置。這種情況通常在設備第一次上電或初始化時發生。
+- `MR=0`：初始分配記憶體時，**表示主機首次配置 HMB**，記憶體內存空間不依賴之前的配置。這種情況通常在設備第一次上電或初始化時發生。
 
-- **MR = 1**：經歷過 **D3 State**（如進入休眠）或 **Reset** 後，主機會重新分配記憶體給控制器，此時會將 MR 設定為 `1`，表示記憶體應該按照之前的分配情況進行重新配置。
+- `MR=1`：經歷過 `D3 State`（如進入休眠）或 `Reset` 後，主機會重新分配記憶體給控制器，此時會將 MR 設定為 `1`，表示記憶體應該按照之前的分配情況進行重新配置。
 
 ![[Pasted image 20241202025212.png]]
 
@@ -69,7 +69,7 @@ Admin Command Set Features is Success and result: 0x00000000
 
 ![[Pasted image 20241129083224.png]]
 
-當控制器收到命令後，就會根據設定發送 **TLP MRd(64)** 讀取該主機告知的記憶體位址，取得所有 **Host Memory Buffer Descriptor Entry**。
+當控制器收到命令後，就會根據設定發送 `TLP MRd(64)` 讀取該主機告知的記憶體位址，取得所有 **Host Memory Buffer Descriptor Entry**。
 
 ![[Pasted image 20241129083631.png]]
 
@@ -139,6 +139,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
+
 ### 2. 記憶體大小
 
 我們要如何計算主機配置的記憶體大小 ?  當前設定 HSIZE [ 3:0 ] = `0x00004000h` = `16384`
@@ -148,6 +149,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 3. Host Memory Buffer Size  =  16384 * 4096 = 64MB
 
 ![[Pasted image 20241129073116.png]]
+
 ### 3. 記憶體位置
 
 作業系統分配的記憶體位址，分別為低位址 **HMDAL** 以及高位址 **HMDALU**。
@@ -157,6 +159,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
  - 完整的記憶體位置 : `0x00000001:12887000`
 
 ![[Pasted image 20241129081433.png]]
+
 ### 4. 記憶體範圍數量
 
 **HMDLEC** 這個參數描述 Host 提供給控制器使用的記憶體範圍數量。

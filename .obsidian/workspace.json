@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Power Loss Signaling"
+              "title": "Emergency Power Fail Processing"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Power Loss Signaling 的大綱"
+              "title": "Emergency Power Fail Processing 的大綱"
             }
           },
           {
@@ -191,14 +191,15 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3b8d2b40f8562eee",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
@@ -231,7 +232,6 @@
     "程式設計/Python/套件管理/Poetry.md",
     "程式設計/Python/Pytest",
     "程式設計/Python/Pydantic",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling",
