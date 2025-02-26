@@ -8,7 +8,4 @@
     - **Asserted**：表示主機檢測到即將發生斷電，並通知控制器。 
     - **Deasserted**：表示斷電風險已解除，系統恢復正常運行。
 
-3. **PLN 腳位的拉動者**： 
-    - PLN 信號是由 **主機（Host）** 拉動的。主機通過 NVMe 傳輸層（NVMe Transport）設置 PLN 的狀態（Asserted 或 Deasserted），並通知控制器。
-
 ![[Pasted image 20250221153007.png]]
