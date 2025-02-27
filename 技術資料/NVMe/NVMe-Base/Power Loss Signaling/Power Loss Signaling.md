@@ -50,21 +50,24 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 > 3. FQ is Enabled & PLN is Asserted.
 
 # 控制器支援 PLS 條件
-- 至少支援其中一個掉電模式處理，或者是兩個都支援
+- 至少支援其中一個掉電模式處理，或者是兩個都支援：
 	- Forced Quiescence Processing ( FQ )
 	- Emergency Power Fail Processing ( EPF )
 - 支援 Power Loss Acknowledge ( PLA ) 	
 - 選擇性支援  Power Loss Acknowledge ( PLN )
 - 支援 Power Loss Signaling Config feature
-- 根據支援的模式而定，需要回報處理與恢復時間
-	- `FQVT / EPFV / EPFRT` 回報時間不能為 **`0
+- 根據支援的模式而定，需要回報處理與恢復時間：
+	- 所有的回報時間都不能為 `0`： 
+		- `FQVT`（Forced Quiescence Vault Time）
+		- `EPFVT`（Emergency Power Fail Vault Time）
+		- `EPFRT`（Emergency Power Fail Recovery Time） 
 	- 支援一個或是多個 Power States
 		- 表示不同的 PS，處理與恢復時間會有所不同
-- 支援回報 I/O Performance is degraded
+- 支援回報 I/O Performance is degraded：
 	- [[Namespace Status]] ( NSTAT ) 
 		- 描述 I/O Impacted ( IOI ) 狀態
 		- 描述 NS 是否準備接收 I/O
 
 >備註 :
->1. `FQ` 沒有恢復時間，可能的原因是它的流程屬於正常關機，因此才沒有恢復時間的欄位值。
->2. `EPF` 流程屬於不正常掉電，因此需要表示開機後恢復時間的欄位值。
+>1. `FQ` 沒有恢復時間，它的流程屬於正常關機，因此猜測沒有恢復時間的欄位值。
+>2. `EPF` 它的流程屬於不正常掉電，控制器表示需要多久恢復時間的欄位值。
