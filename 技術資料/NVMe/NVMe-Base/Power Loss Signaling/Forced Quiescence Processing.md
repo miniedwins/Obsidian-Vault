@@ -4,7 +4,7 @@
 1. 設置 PLA 變數為 `Asserted-FQ`（如果支援）
 2. 停止擷取所有 Submission Queues 任何命令
 3. 並行或順序執行以下操作：
-	- 處理來自管理端點的 `out-of-band 命令`（如果有 NVMe-MI）。
+	- 處理來自管理端點的 `out-of-band 命令`（如果有支援 Management Endpoint）。
 	- 完成進入該狀態前處理已擷取的命令（例如，回報命令完成或中止）。
 	- 準備電源丟失處理流程 （FQ Processing）。
 4. 進入 `FQ Complete` 狀態（表明 FQ 完成）。
