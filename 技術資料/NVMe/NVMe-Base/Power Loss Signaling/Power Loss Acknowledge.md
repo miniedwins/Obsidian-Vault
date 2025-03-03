@@ -1,3 +1,4 @@
+## 參數說明
 控制器設定 `PLA` 訊號，用於表示當前的電源丟失處理狀態，控制器會根據 **Power Loss Signaling Config feature** 決定執行哪一個處理模式。
 
 1. **PLA 的作用**：

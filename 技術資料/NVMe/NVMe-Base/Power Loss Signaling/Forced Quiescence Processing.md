@@ -1,4 +1,4 @@
-### 工作流程
+## 工作流程
 當控制器進入 `FQ Processing 狀態時，會依序執行以下步驟 ：
 
 1. 設置 PLA 變數為 `Asserted-FQ`（如果支援）
@@ -10,7 +10,7 @@
 4. 進入 `FQ Complete` 狀態（表明 FQ 完成）。
 5. 通知系統 `FQ` 處理已完成，將 PLA 變數設為 `Deasserted`。
 
-### 注意事項
+## 注意事項
 1. 如果正在執行背景作業（如 Self-Test 或 Sanitize）：
 	- 暫停執行，直到 PLN 變數恢復至 `Deasserted` 並恢復命令提取。
 

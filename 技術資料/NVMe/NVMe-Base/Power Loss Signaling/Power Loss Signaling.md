@@ -27,6 +27,7 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 控制器在接收到電源丟失通知（Power Loss Notification, PLN）後，如何處理並響應主機。
 ### (1) PLS Not Ready（未準備狀態）
 - 控制器處於未準備好（Not Ready）狀態，不接受新的 I/O 命令。
+- 控制器在當前狀態不會進行掉電丟失處理。
 - 當電源被恢復且初始化完成後，控制器會轉入 `PLS Ready` 狀態。
 - 若是未完成掉電丟失處理，需要等待完成後，才會進入到 `PLS Ready` 狀態。
 - 觸發條件：
@@ -62,9 +63,8 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 		- `FQVT`（Forced Quiescence Vault Time）
 		- `EPFVT`（Emergency Power Fail Vault Time）
 		- `EPFRT`（Emergency Power Fail Recovery Time） 
-		- 以上這三個參數需要參考 SPEC
 	- 支援一個或是多個 Power States
-		- 表示不同的 PS，處理與恢復時間會有所不同
+		- 表示在不同的 PS 狀態下，處理與恢復時間會有所不同
 - 支援回報 I/O Performance is degraded：
 	- [[Namespace Status]] ( NSTAT ) 
 		- 描述 I/O Impacted ( IOI ) 狀態
@@ -73,3 +73,4 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 >備註 :
 >1. `FQ` 沒有恢復時間，由於它的流程屬於正常關機，因此猜測沒有恢復時間的欄位值。
 >2. `EPF` 流程屬於不正常掉電，因此控制器需要表示恢復時間的欄位值。
+>3. 要計算處理與恢復時間，需要參考 Identity's 欄位 `FQVTS`  `EPFVTS`  `EPFRTS`。

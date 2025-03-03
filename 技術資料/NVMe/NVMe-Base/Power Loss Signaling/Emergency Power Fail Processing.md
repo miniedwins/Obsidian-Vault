@@ -1,6 +1,7 @@
+## 概要說明
 當控制器被設定為 Power Loss Signaling（PLS）並啟用 Emergency Power Fail（EPF），如果進入 `EPF Processing Port Disabled` 或 `EPF Processing Port Enabled`，則會執行以下步驟：
 
-### 工作流程 
+## 工作流程 
 1. 如果支援 `PLA`，則根據 EPF 狀態設定對應的 PLA 值：
 	- EPF Processing Port Disabled → `Asserted-EPF-Disabled`
 	- EPF Processing Port Enabled → `Asserted-EPF-Enabled`
@@ -15,7 +16,7 @@
 		- 若進入 EPF Complete Port Disabled，則 PCIe 端口將被關閉。
 	- 完成 EPF 處理，將 PLA 變數設為 `Deasserted`。
 
-### 注意事項
+## 注意事項
 1. 所有在進入 EPF Processing 之前從 Submission Queue 已經被提取的命令：
 	- 將被直接丟棄，不會執行。
 	- 所有 Out-of-Band（Management Endpoint）命令也會被丟棄。
