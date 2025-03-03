@@ -62,6 +62,7 @@ Power Loss Signaling 處理模式分為兩種 [[Forced Quiescence Processing]] �
 		- `FQVT`（Forced Quiescence Vault Time）
 		- `EPFVT`（Emergency Power Fail Vault Time）
 		- `EPFRT`（Emergency Power Fail Recovery Time） 
+		- 以上這三個參數需要參考 SPEC
 	- 支援一個或是多個 Power States
 		- 表示不同的 PS，處理與恢復時間會有所不同
 - 支援回報 I/O Performance is degraded：
