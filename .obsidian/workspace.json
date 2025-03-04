@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "處理返回的字段名稱與程式碼對應"
+              "title": "AfterValidator"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "處理返回的字段名稱與程式碼對應 的大綱"
+              "title": "AfterValidator 的大綱"
             }
           },
           {
@@ -191,13 +191,13 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "3b8d2b40f8562eee",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之前 執行自定義邏輯.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之後 執行自定義邏輯.md",
-    "程式設計/Python/Pydantic/自定義驗證 (Validator)",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
