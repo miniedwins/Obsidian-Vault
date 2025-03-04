@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之前 執行自定義邏輯.md",
+                "file": "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之後 執行自定義邏輯.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "型別驗證之前 執行自定義邏輯"
+              "title": "型別驗證之後 執行自定義邏輯"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之前 執行自定義邏輯.md",
+                "file": "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之後 執行自定義邏輯.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "型別驗證之前 執行自定義邏輯 的大綱"
+              "title": "型別驗證之後 執行自定義邏輯 的大綱"
             }
           },
           {
@@ -193,8 +193,9 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之前 執行自定義邏輯.md",
+    "程式設計/Python/Pydantic/自定義驗證 (Validator)/型別驗證之後 執行自定義邏輯.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/自定義驗證 (Validator)",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
@@ -228,7 +229,6 @@
     "程式設計/Python/Pandas/重置 index.md",
     "程式設計/Python/Pandas/API",
     "程式設計/Python/Pandas/如何檢查資料為空.md",
-    "程式設計/Python/Pandas/填補缺失的資料.md",
     "程式設計/Python/Pytest/API",
     "程式設計/Python/Pydantic/API",
     "程式設計/Python/Pytest",
