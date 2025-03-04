@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+                "file": "程式設計/Python/Pytest/跳過整個模組測試.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AfterValidator"
+              "title": "跳過整個模組測試"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+                "file": "程式設計/Python/Pytest/跳過整個模組測試.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "AfterValidator 的大綱"
+              "title": "跳過整個模組測試 的大綱"
             }
           },
           {
@@ -191,9 +191,10 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
     "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
+    "程式設計/Python/Pytest/跳過整個模組測試.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
@@ -223,7 +224,6 @@
     "path with spaces/Power.md",
     "path with spaces",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
-    "程式設計/Python/Pytest/跳過整個模組測試.md",
     "程式設計/Python/Pydantic/API/model_validate.md",
     "程式設計/Python/Pytest/API/mark.skip.md",
     "程式設計/Python/Pandas/重置 index.md",
