@@ -1,4 +1,3 @@
-## 說明
-描述說明是否支援 `Persistent Event Log`。
+描述 `Persistent Event Log` 是否支援。
 
 ![[Pasted image 20250305165826.png]]
