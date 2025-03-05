@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme_reset.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "End-to-end Data Protection"
+              "title": "nvme_reset"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme_reset.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "End-to-end Data Protection 的大綱"
+              "title": "nvme_reset 的大綱"
             }
           },
           {
@@ -193,11 +193,20 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-CLI/nvme_log_page.md",
+    "技術資料/NVMe/NVMe-CLI/nvme_set_feature.md",
+    "技術資料/NVMe/NVMe-CLI/nvme_reset.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-CLI",
+    "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/MainPage.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Telemetry.md",
-    "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-Base/Sanitize.md",
+    "技術資料/NVMe/NVMe-Base/Question.md",
+    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
@@ -212,14 +221,6 @@
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/1. 概要說明.md",
     "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
-    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
-    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
-    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
-    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
-    "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "程式設計/Python/Pytest/命令模式操作",
     "程式設計/Python/Pytest/檔案設定說明/conftest",
     "程式設計/Python/Pytest/檔案設定說明/pytest.ini",
@@ -230,7 +231,6 @@
     "attachments/Pasted image 20250226071710.png",
     "attachments",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
-    "程式設計/Python/Pydantic/別名處理 (Alias)",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071056.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",

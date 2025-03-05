@@ -1,0 +1,3 @@
+
+- 有沒有支援日誌 ( Log Page ID )
+- 有沒有支援 Set-Feature
