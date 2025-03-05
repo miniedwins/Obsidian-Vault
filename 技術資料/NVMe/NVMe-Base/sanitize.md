@@ -1,5 +1,4 @@
 ## 基本介紹
-
 主要的功能就是清除 NAND Flash 資料，支援三個操作類型 : `Block Erase`、`Overwrite`、`Crypto Erase`。所有的操作類型都在背景運行，我們可以在執行的途中或是完成後，透過 `Sanitize Status Log` 來檢查執行的進度或是狀態。
 
 **Sanitize 操作類型 :** 

@@ -1,5 +1,4 @@
-# Telemetry 介紹
-
+## 概要說明
 Telemetry log 主要讓開發商收集內部資料去改善產品功能與穩定性。Telemetry 資料的收集方式可以透過兩種方法取得 initiated by the host or by the controller，資料會存放在 `Telemetry Host-Initiated` and `Telemetry Controller-Initiated` log page，因此我們可以透過 `get-log` 命令方式取得 telemetry 資料。由於要收集資料的方法與內容是由開發商所指定，所以無法得知資料內容的格式。
 
 Telemetry data 定義兩個資料結構，`Host-Initiated` 以及 `Controller-Initiated` 彼此之間相互獨立，描述不同 log data 資訊，所以分開是很合理的。資料結構前 512 Bytes 代表 Header 資訊內容 (可由 get-log page 命令取得)，而之後都是表示 `data log`，這些都是由 Data Blocks (ex : Telemetry Host-Initiated Data Block 1...n) 所組成的，每一個 block 空間大小為 512 Bytes。

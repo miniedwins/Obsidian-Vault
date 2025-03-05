@@ -1,6 +1,5 @@
-# 基本介紹
-
-**Temperature Threshold** 主要目的是用來設定溫度感測器，控製器可以在 **SMART 健康資訊日誌** 中報告**最多九個感測器溫度**，包括一個綜合溫度（Composite Temperature ) 以及八個溫度感測器。對於每個感測器，都會有對應的**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。
+# 概要說明
+`Temperature Threshold` 主要目的是用來設定溫度感測器，控製器可以在 **SMART 健康資訊日誌** 中報告**最多九個感測器溫度**，包括一個綜合溫度（Composite Temperature ) 以及八個溫度感測器。對於每個感測器，都會有對應的**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。
 
 ![[temperature_threshold.png]]
 
@@ -17,10 +16,9 @@
 > 2. NVMe-CLI SMART 日誌不會顯示，那是因為預設 0xFFFF 的關係嗎 
 
 ![[composite_termperature_threshold.png]]
+
 # 執行命令操作
-
 ## 取得當前綜合溫度
-
 首先可以檢查感測器預設溫度，**WCTEMP** 為當前預設 Over Temperature Threshold。
 
 ```shell
@@ -51,13 +49,12 @@ get-feature:0x04 (Temperature Threshold), Current value:0x00000165
 ```
 
 ## 設定綜合溫度
-
 例如 : 若是想要過溫閾值為 50°C，因此需要設定 THSEL= 00 以及 TMPTH = 0x012f
 
-- THSEL : 選擇設定 Temperature Threshold 
+- `THSEL` : 選擇設定 Temperature Threshold 
 	- 00 : Over
 	- 01 : Under
-- TMPTH : 設定溫度閾值 ( 單位 : Kelvins )
+- `TMPTH` : 設定溫度閾值 ( 單位 : Kelvins )
 
 ```shell
 $ nvme set-feature -f 0x04 --value=0x00000143 /dev/nvme0

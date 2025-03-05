@@ -1,12 +1,9 @@
-# 端對端資料保護
-
 ## 內容說明
-
 端到端資料保護將資料的完整性保護範圍從SSD內部延伸到外部鏈路，以防止靜默錯誤產生——通過對邏輯塊資料（Logical Block Data，通常指使用者資料）新增額外的PI（Protection Information，保護資訊，如CRC），使其作為資料的中繼資料 (Metadata) 被一同傳輸，主機端和NVM控製器都可以在接收到資料後，根據PI的內容對資料完整性進行校驗，以確定這些資料是否真的可用。
 
 端到端資料保護的關鍵就在於 PI（Protection Information）作為中繼資料時的傳輸與校驗，中繼資料有**DIF和DIX兩種方式**，經過T10組織的相關工作已經實現了標準化。簡單來說，DIF即中繼資料與使用者資料（LBA Data）連續存放；而 DIX格式則是中繼資料與使用者資料單獨存放；可以根據應用場景的需求。
-## 中繼資料 (Metadata)
 
+## 中繼資料 (Metadata)
 - 中繼資料內容存放的是 PI 資訊，經常使用在傳遞 PI 資訊。
 - 它會被做為端對端資料保護的傳輸的格式，並且分為 DIF & DIX。
 
@@ -17,10 +14,9 @@ DIX : 中繼資料與使用者資料個別單獨存放
 ![[medata_as_separate.png]]
 
 ## PI 資訊（Protection Information）
- 
 下列內容是參考 SPEC 1.4.C ，NVMe 2.x 有更進一步加強端對端資料保護功能。
-### PI 內容結構
 
+### PI 內容結構
  - Guard Field
 	 - 基於邏輯區塊資料計算得出的 `CRC` 校驗資訊。
 - Application Tag
@@ -28,19 +24,18 @@ DIX : 中繼資料與使用者資料個別單獨存放
 - Reference Tag
 	- 應用在寫入 `邏輯區塊資料` 與 `邏輯位址` 相關聯，例如：寫入資料的邏輯位址是 `0x1234`	      則 nvm write 參數所設定的欄位 (Reference Tag) 就會存放寫入的邏輯位址 `0x1234`。
 	- 防止資料被誤用或傳輸亂序情況發生。
-### PI 存放中繼資料的位置
 
+### PI 存放中繼資料的位置
 - PI 位於 Metadata 開頭 （First of Metadata）
 - PI 位於 Metadata 結尾 （Last of Metadata）
 
 根據上述 PI 在中繼資料的位置，對於資料保護的範圍會有所不同，也就是計算校驗資訊（CRC）
 - 若是 PI 位於 Metadata 開頭
-	- Medata == PI，則校驗資訊只需要計算（邏輯區塊資料）即可。
+	- Metadata == PI，則校驗資訊只需要計算（邏輯區塊資料）即可。
 - 若是 PI 位於 Metadata 結尾
-	- Medata > PI，則校驗資訊則是需要計算（邏輯區塊資料 + 元資料）但是不包含 PI 資訊。  
+	- Metadata > PI，則校驗資訊則是需要計算（邏輯區塊資料 + 元資料）但是不包含 PI 資訊。  
 
 ### PI 類型 (檢查方式)
-
 另外，端到端資料保護中有不同的 TYPE 1 / 2 / 3，在進行LBA格式化設定就需要指定哪一種類型，代表了不同的 Reference Tag 設定和 PI 檢查方式，如下說明 : 
 
 - TYPE 1： 
@@ -51,14 +46,14 @@ DIX : 中繼資料與使用者資料個別單獨存放
 	- SSD 檢查 PI 的方式與 TYPE 1 相同，允許 Host 指定任意 ILBRT 和 ELBRT。 
 - TYPE 3：
 	- Reference Tag 保持不變，SSD 不會檢查 ILBRT 和 ELBRT。 
-# 如何使用端對端資料保護功能
 
+# 如何使用端對端資料保護功能
 - 建立 PI 資訊的方法有兩種
 	- (1) 主機端建立PI 資訊，連同（LBA 資料 + 中繼資料）傳遞給控制器。
 	- (2) 控制器收到主機端 LBA 資料，然後由控制器建立 PI 資訊。
 	- 以上都需要透過`PRACT` 設定。
-## 啟用端對端資料保護
 
+## 啟用端對端資料保護
 首先列出當前所控制器支援 `Metadata Size` 以及 `Data Size`，可以看到支援許多 `LBA Format`，因此我們可以針對控制器所支援的 LBA 格式設定。
 
 ```
