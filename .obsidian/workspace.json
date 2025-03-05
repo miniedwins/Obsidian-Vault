@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AfterValidator"
+              "title": "處理返回的字段名稱與程式碼對應"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "AfterValidator 的大綱"
+              "title": "處理返回的字段名稱與程式碼對應 的大綱"
             }
           },
           {
@@ -193,17 +193,17 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
-    "程式設計/Python/Pandas/重置 index.md",
-    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
-    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
-    "程式設計/Python/Pytest/命令模式操作",
-    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
-    "程式設計/Python/Pytest/檔案設定說明/conftest",
-    "程式設計/Python/Pytest/檔案設定說明/pytest.ini",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
+    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
+    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+    "程式設計/Python/Pandas/重置 index.md",
+    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
+    "程式設計/Python/Pytest/命令模式操作",
+    "程式設計/Python/Pytest/檔案設定說明/conftest",
+    "程式設計/Python/Pytest/檔案設定說明/pytest.ini",
     "程式設計/Python/Pytest/忽略測試項目",
     "程式設計/Python/Pytest/Pytest 檔案設定/est.ini 檔案設定說明.md",
     "程式設計/Python/Pytest/檔案設定說明",
