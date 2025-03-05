@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Asynchronous Event Request"
+              "title": "Controller Initialization"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Asynchronous Event Request 的大綱"
+              "title": "Controller Initialization 的大綱"
             }
           },
           {
@@ -193,14 +193,16 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset/Controller Level Reset.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
-    "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
-    "技術資料/NVMe/NVMe-Base/Controller Reset/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-Base/Controller Reset/Controller Reset.md",
-    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset",
     "技術資料/NVMe/NVMe-Base/Format NVM/Format NVM.md",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
@@ -218,8 +220,6 @@
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/rebase 操作方法.md",
     "程式設計/Makefile/make.md",
-    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
-    "path with spaces/Power.md",
     "程式設計/Python/Pytest/命令模式操作",
     "程式設計/Python/Pytest/檔案設定說明/conftest",
     "程式設計/Python/Pytest/檔案設定說明/pytest.ini",

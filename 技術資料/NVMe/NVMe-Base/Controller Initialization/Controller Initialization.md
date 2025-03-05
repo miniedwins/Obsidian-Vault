@@ -1,5 +1,4 @@
 ## NVMe 初始化設定
-
 下圖是主機初始化 NVMe 控制器的完整過程，這些步驟是基於 NVMe 規範中的描述。從圖中觀察 Linux 開機行為來看，系統似乎沒有遵循 **Controller Initialization** 順序，但不影響整體觀察。
 
 前期大都是對控制器的暫存器做設定，此時的控制器還未能夠開始處理主機提交的命令，直到控制器的功能設定完畢後，並且暫存器 **CC.EN=1**，才會開始處理 NVMe Admin 命令。
@@ -20,14 +19,14 @@
 備註 : 控制器的功能越多，可能會有更多執行命令產生。
 
 ![[Pasted image 20241203091933.png]]
+
 ### 1. 等待控制器完成重置
-
 檢查控制器狀態暫存器（CSTS）的 **RDY（Ready）位**，確認其值為 `0`，表示重置完成。
+
 ### 2. 設定 Admin Queue 記憶體位址與數量
-
 在 NVMe 中，**Admin Queue** 包括 **Admin Submission Queue ( ASQ )** 和 **Admin Completion Queue ( ACQ )**，用於放置管理命令 ( 提交與完成 )，如 **Identify** 和 **Set Features**。它們的大小（Size）和基址（Base Address）需要主機在控制器初始化階段進行配置。
-#### (1) 設定 Admin Queue Size
 
+#### (1) 設定 Admin Queue Size
 主機端設定控制器 Admin Queue Size 數量為多少，表示主機可以放置多少提交與完成最大管理命令數量。
 
 ![[Pasted image 20241202071855.png]]
@@ -35,8 +34,8 @@
 從圖中得知可以發現到主機端將 **ASQS** 以及 **ACQS** 設定為 64 ( 0x3F )。
 
 ![[Pasted image 20241203063725.png]]
-#### (2) 設定 Admin Queue Base Address
 
+#### (2) 設定 Admin Queue Base Address
 主機發出的管理命令與完成的命令都是存放在主機端的記憶體位址，因此主機需要告知控制器 Admin Queue Base 記憶體位址 **ASQ** 以及 **ACQ**。
  
 **Admin Submission Queue Base Address** : 表示存放 Admin SQ 命令的記憶體位址。
@@ -57,15 +56,14 @@
 下圖是一個 NVMe 初始化後的第一道 Admin 命令 ( Set Feature )，可以看到控制器拿取命令的記憶體位址，就是主機端初始化設定的記憶位址 **ASQB 以及 ACQB**。
 
 ![[Pasted image 20241202075200.png]]
+
 ### 3. 檢查控制器支援命令集與設定 I/O 相關屬性
-
 初始化 NVMe 控制器時，主機需要檢查控制器支持的 I/O 命令集屬性，並配置相關參數。
-#### (1) 檢查命令集支持
 
+#### (1) 檢查命令集支持
 主機檢查 **CAP.CSS**（Command Set Support）欄位，根據以下條件設置 **CC.CSS**（Command Set Selected）：
 
 注意 : 需要搭配 **CAP.CSS** 以及 **CC.CSS** 這兩組設定才能確認支援 NVM Command Set。
-
 - **CAP.CSS.NOIOCSS = 1**：
 	- 設置 **CC.CSS = 111b**（無 I/O 命令集支持）。
 - **CAP.CSS.IOCSS = 1**：
@@ -86,8 +84,8 @@
 **CC.CSS** 屬性會被主機設置為 `000b`，代表選擇的是 **NVM Command Set**。
 
 ![[Pasted image 20241202090645.png]]
-#### (2) 設定 I/O Queue Entry Size
 
+#### (2) 設定 I/O Queue Entry Size
 I/O Queue Entry Size 代表一個 Queue 的結構大小，也就是**命令結構的大小**。NVMe 規範主機提交命令給控制器為 **64 Bytes**，控制器完成命令後回傳給主機為 **16 Bytes**。
 
 Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Entry Size** 標準定義。
@@ -107,43 +105,36 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 ![[Pasted image 20241203033802.png]]
 
 ### 4. 設定命令執行優先序 Round Robin Arbitration
-
 **Round Robin Arbitration** 是 NVMe 控制器仲裁命令執行順序的一種機制。當控制器接收到多個提交隊列的命令時，仲裁機制決定命令的執行優先順序，而 **Round Robin** 模式則是一種公平分配執行機會的方式。
+
 #### 嚴格優先級類別
-
 **(1) Admin 類別**
-
 - **最高優先級**：Admin Submission Queue 的命令擁有最高的嚴格優先級。
 - **處理順序**：Admin 類別的命令優先於任何 I/O Submission Queue 中的命令。
 
 **(2) Urgent 類別**
-
 - **次高優先級**：Urgent 優先級的 I/O Submission Queue 比 WRR 階層的任何命令具有更高的優先級。
 - **注意事項**：
     - 主機分配 Urgent 類別時需謹慎，因為該類別可能導致加權輪詢層級的 Submission Queue 遭遇「飢餓」現象（無公平性協議保護）。
 
  **(3) Weighted Round Robin 類別**
-
 - **最低嚴格優先級**：該類別包含 **High（高）、Medium（中）、Low（低）** 三個加權輪詢層級。
 - **處理順序**：僅在 Admin 和 Urgent 類別的命令處理完成後，才開始處理 WRR 階層的命令。
+
 #### 操作順序
-
  **(1) 嚴格優先級類別的仲裁**
-
 1. 首先處理 Admin Submission Queue 的命令。
 2. 當 Admin 隊列的命令完成後，開始處理 Urgent 類別的 I/O Submission Queue。
 3. 當 Admin 和 Urgent 類別的命令都處理完成後，才會處理 WRR 層級的命令。
 
  **(2) Weighted Round Robin 層級的仲裁**
-
-1. **按權重處理命令**：
+4. **按權重處理命令**：
     - High 層級的隊列獲得更多的處理機會。
     - Medium 和 Low 層級則根據設置的權重獲得處理機會。
-2. **相同層級內的隊列仲裁**：
+5. **相同層級內的隊列仲裁**：
     - 使用簡單的 Round Robin 機制分配處理機會。
 
 ### 5. 啟用控制器
-
 **CC.EN** 是 NVMe 控制器配置暫存器（**Controller Configuration, CC**）中的一個關鍵位元，用於控制控制器的啟用和禁用狀態。當設置 **CC.EN** 為 `1` 時，控制器進入啟用狀態並開始處理命令。
 
 ![[Pasted image 20241203065144.png]]
@@ -151,8 +142,8 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 從圖中觀察，主機會先讀取 CC 暫存器內容，確認後再將 **CC.EN** 設定為 `1`。
 
 ![[Pasted image 20241203065244.png]]
-### 6. 等待控制器 Ready
 
+### 6. 等待控制器 Ready
 主機會持續等待 **CC.RDY** 狀態被設置成 `1`，這時候控制器已經準備好可以處理主機發送的命令。
 
 ![[Pasted image 20241203065556.png]]
@@ -160,13 +151,13 @@ Identify Data Structure [ 513: 512 ] 可以得到控制器對於 **I/O Queue Ent
 主機啟用控制器後，持續讀取 CSTS.RDY 狀態，直到 RDY 狀態被設定為 `1`。
 
 ![[Pasted image 20241203065646.png]]
-### 7. 發送 Identify Controller
 
+### 7. 發送 Identify Controller
 主機等待控制器都準備好 ( CSTS.RDY )，會提交第一道命令 **Identify Controller**，取得控制器狀態，並對後續執行相對的設定，例如 : 電源管理或是 HMB 等設定。
 
 ![[Pasted image 20241203071327.png]]
-### 8. 取得與設定控制器 I/O Command Set 資訊
 
+### 8. 取得與設定控制器 I/O Command Set 資訊
 前面已經有確認支援的 I/O Command Set，這邊主機端還需要設定或取得什麼樣的資訊 ? 
 
 主機會確認控制器有沒有支援多個 **I/O Command Set**，若是有支援多個 I/O 命令集，主機會根據支援的命令集，發送 Identify with Command Set Identifier 命令，取得相關資訊。
@@ -228,7 +219,6 @@ nvme admin-passthru --opcode=0x06 --cdw10=0x05 -cdw11=0x2000000 /dev/nvme0 --dat
 ![[Pasted image 20241205160705.png]]
 
 ### 9. 設定 Number of Queues
-
 在 NVMe 設備中，I/O 提交隊列（Submission Queues）和完成隊列（Completion Queues）的數量直接影響 I/O 命令的並行處理能力。
 
 主機端發出命令要求設定 I/O Queues ( Submission Queues and Completion Queues ) 數量大小，Submission Queue 以及 Completion Queue 定義為一組。
@@ -254,8 +244,8 @@ nvme admin-passthru --opcode=0x06 --cdw10=0x05 -cdw11=0x2000000 /dev/nvme0 --dat
 最後主機端會根據控制器回覆 NSQA 以及 NCQA  建立 8 組 I/O Queues。設定值是 `0x0007` 為什會是 8 組 ? 因為單位最小是 **0's based value**，所以結果會是 7 + 1 = 8 。
 
 ![[Pasted image 20241203100809.png]]
-### 10. 建立 I/O Completion Queues
 
+### 10. 建立 I/O Completion Queues
 根據前面的系統設定值以及控制器所支援的數量，首先主機會發送 **Create I/O Completion Queue**命令建立適當的 I/O Queues。
 
 為什麼會是先建立 I/O Completion Queue ?  因為 Create I/O Submission Queue 需要指定 **Completion Queue Identifier ( CQID )**，所以主機開始會是先建立 I/O Completion Queue。
@@ -305,10 +295,9 @@ nvme admin-passthru --opcode=0x06 --cdw10=0x05 -cdw11=0x2000000 /dev/nvme0 --dat
 **從第一筆 Read 命令** 可以看到主機回寫 **CQ Entry** 開始位址就是 `0x000000001:122C0000`。
 
 ![[Pasted image 20241204160153.png]]
+
 ### 11. 建立 I/O Submission Queues
-
 基本上跟 **I/O Completion Queues** 的設定是相同的，唯一不同的是 **Command Dword 11**。
-
 1. **Completion Queue Identifier** ( 先前建立的 CQID )
 2. **Queue Priority**  ( 僅使用 **WRR 仲裁機制** 且啟用 **Urgent Priority Class**）
 
@@ -323,8 +312,8 @@ nvme admin-passthru --opcode=0x06 --cdw10=0x05 -cdw11=0x2000000 /dev/nvme0 --dat
 **從第一筆 Read 命令** 可以看到主機提交命令 **SQ Entry** 開始位址就是 `0x000000001:14610000`。
 
 ![[Pasted image 20241204163632.png]]
-### 12. 發送非同步事件通知
 
+### 12. 發送非同步事件通知
 這是一個非同步事件觸發 ( Asynchronous  Events ) 的功能，都是經由主機端透過 Set-Feature ( Asynchronous Event Configuration ) 設定觸發的事件，然後再發出 **Asynchronous Event Request**。如果這個觸發條件成立，控制器會將主機關注的事件通知給主機端。
  
 從圖示可知，主機設定完成 Asynchronous Event Configuration 然後就發送出 Asynchronous  Events Requests，但是不會立刻回覆主機 Completion Queue。
