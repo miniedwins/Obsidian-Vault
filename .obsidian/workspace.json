@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "處理返回的字段名稱與程式碼對應"
+              "title": "AfterValidator"
             }
           }
         ]
@@ -150,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "處理返回的字段名稱與程式碼對應 的大綱"
+              "title": "AfterValidator 的大綱"
             }
           },
           {
@@ -193,17 +193,21 @@
   },
   "active": "3b8d2b40f8562eee",
   "lastOpenFiles": [
+    "程式設計/Python/Pandas/重置 index.md",
+    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
+    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+    "程式設計/Python/Pytest/命令模式操作",
+    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
+    "程式設計/Python/Pytest/檔案設定說明/conftest",
+    "程式設計/Python/Pytest/檔案設定說明/pytest.ini",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/Pytest/忽略測試項目 (SKIP)/跳過整個模組測試.md",
-    "程式設計/Python/Pytest/檔案設定說明 (Pytest.ini)/指定標記 (Markers) 測試.md",
-    "程式設計/Python/Pytest/當發生錯誤停止測試.md",
-    "程式設計/Python/Pytest/忽略測試項目 (SKIP)",
+    "程式設計/Python/Pytest/忽略測試項目",
     "程式設計/Python/Pytest/Pytest 檔案設定/est.ini 檔案設定說明.md",
-    "程式設計/Python/Pytest/檔案設定說明 (Pytest.ini)",
+    "程式設計/Python/Pytest/檔案設定說明",
     "程式設計/Python/Pytest/Skip",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
@@ -230,9 +234,6 @@
     "path with spaces/Power.md",
     "path with spaces",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
-    "程式設計/Python/Pandas/API",
-    "程式設計/Python/Pytest/API",
-    "程式設計/Python/Pydantic/API",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/volatile_write_cache.png",
     "技術資料/NVMe/NVMe-Base/attachments/write_cache/idenitfy_volatile_write_cache.png",
