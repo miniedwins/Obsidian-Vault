@@ -1,18 +1,16 @@
 ## 概要說明
-
 由主機端發起通知，透過設定暫存器 ( Controller Property ) 方式進行關閉控制器。例如 : 設定暫存器`CC.SHN=01` ( Normal shutdown notification )，代表主機端通知控制器要進行正常關機流程。此時主機端會去觀察暫存器 Controller Status ( CSTS )，這個暫存器是由控制器更新，並且回報當前關閉進行的狀態，一旦 `CSTS.SHST`設定值為 `10b`，代表進行關閉控制器已經完成。
 ## 控制器通知關機類型與狀態
 
 ### 關機通知類型
-
 * ( 00b ) : No notification; no effect
 	* 無需通知，對控制器運作沒有影響。
 * ( 01b ) : Normal shutdown notification
 	* 正常關機通知，表明控制器正在進行有序的關機流程。
 * ( 10b ) : Abrupt shutdown notification
 	* 突然關機通知，表明控制器未經計劃就中止操作，可能導致數據或狀態的不一致。
-### 關機處理狀態
 
+### 關機處理狀態
 * ( 00b ) : Normal operation ( no shutdown has been requested )
 	* 表示控制器處於正常運行狀態，尚未發起任何關機請求。
 * ( 01b ) : Shutdown processing occurring
@@ -21,45 +19,43 @@
 	* 關機處理已完成，表明控制器可以安全地進入關機狀態。
 
 ## 操作流程
-
-系統有三個情況會執行 **Controller Shutdown** 動作 : 
-
+系統有三個情況會執行 `Controller Shutdown` 動作 : 
 - Normal Controller Shutdown
 - Abrupt Shutdown
 - RTD3 with Normal Controller Shutdown
 
-首先可以檢查控制器暫存器 **CAP.NSSS** 是否有支援 Shutdown Feature。
+首先可以檢查控制器暫存器 `CAP.NSSS` 是否有支援 Shutdown Feature。
 
 ![[Pasted image 20241209154626.png]]
 
-接下來我們要觀察 **Controller Shutdown** 有關的暫存器 **CC.SHN 以及 CSTS.SHST**。
+接下來我們要觀察 **Controller Shutdown** 有關的暫存器 `CC.SHN` 以及 `CSTS.SHST`。
 
-**CC.SHN** 主要是系統準備關閉系統之前，透過寫入暫存器的值通知控制器進行關閉操作。
+`CC.SHN` 主要是系統準備關閉系統之前，透過寫入暫存器的值通知控制器進行關閉操作。
 
 ![[Pasted image 20241209155446.png]]
 
-**CST.SHST** 表示當前控制器關閉操作的進度，系統會去觀察控制器是否已經完成關閉的動作。
+`CST.SHST` 表示當前控制器關閉操作的進度，系統會去觀察控制器是否已經完成關閉的動作。
 
 ![[Pasted image 20241209155640.png]]
-### Memory-based Transport
- 
-如果控制器的暫存器被設定成 CC.EN=1，Normal & Abrupt 它們的操作流程如下 : 
-#### (1) Normal Controller Shutdown
 
+### Memory-based Transport
+如果控制器的暫存器被設定成 CC.EN=1，Normal & Abrupt 它們的操作流程如下 : 
+
+#### (1) Normal Controller Shutdown
  * 停止提交任何新的 I/O 命令給控制器，以及完成所有已經送出去的命令。
  * 若是控制器有建立 I/O Queues，主機端應該要發送命令刪除 I/O Queues ( Submission & Completion )，若是佇列中還有剩餘未完成命令會一併被中止。
  * 主機端設定 `CC.SHN=01b`，通知控制器進行 Controller shutdown operation。
  * 控制器會更新 `CSTS.SHST` 狀態直到 `CSTS.SHST=10b`，並且 `CSTS.ST` 該值被清除為 "0"。
-#### (2) Abrupt Shutdown
 
+#### (2) Abrupt Shutdown
 這裡的操作流程與 `Normal Shudown` 沒有差異，僅有主機端設定 `CC.SHN=10b`。
 
 >( 疑問 ) : 
  >(1) 一般只有不正常斷電的狀態下，才有可能發生 "Abrupt Shutdown"
  >(2) 為什麼主機端可以設定通知 "Abrupt Shutdown"
  >(3) 若是不正常斷電，主機端還有時間可以立刻寫入`CC.SHN=10b` ?
-#### (3) RTD3 with Normal Controller Shutdown
 
+#### (3) RTD3 with Normal Controller Shutdown
 控製器進入低功耗狀態（RTD3）的時間。在關閉操作完成之前，主機需要等待至少RTD3進入延遲時間，可以從 Identify Controller 取得 **"D3 Entry Latency"** 。如果 **D3 Entry Latency=0h**，那麼主機至少應該等待1秒鐘。**"不建議"** 通過 CC.EN 欄位停用控製器，通過這種方式停用控製器會導致 `Controller Reset`，這可能會影響完成關閉處理所需的時間。
 
 ![[Pasted image 20241209161307.png]]
@@ -71,12 +67,11 @@
 下圖是系統準備關機的行為，可以看到系統會先設定 **CC.SHN=1**，然後再觀察 **CSTS.SHST=10**。
 
 ![[Pasted image 20241209162642.png]]
+
 ## 系統處理行為
 
 ### (1) 控製器報告關閉處理完成後，如何重新啟動控製器 ?
 
 以下描述是若是當前 CC.EN 設定‘1’或是‘0’主機端要如何設定 ?
-
-- **如果 CC.EN 被設定為‘1’**：那麼必須執行 **Controller Reset**，即將 **CC.EN** 從‘1’清除為‘0’（停用控製器），然後再重新啟用它。
-    
-- **如果 CC.EN 已經清除為‘0’**：那麼控製器必須被 **啟用**，即將 **CC.EN** 從‘0’設定為‘1’（啟用控製器）。
+- 如果 `CC.EN=1` 那麼必須執行 **Controller Reset**，即將 **CC.EN** 從 `1`清除為 `0`（停用控製器），然後再重新啟用它。    
+- 如果 `CC.EN=0` 那麼控製器必須被 **啟用**，即將 **CC.EN** 從 `0` 設定為`1`（啟用控製器）。

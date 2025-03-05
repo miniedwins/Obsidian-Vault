@@ -1,8 +1,7 @@
-## **概要說明**
-
+## 概要說明
 **Host Memory Buffer (HMB)** 是 NVMe 協議引入的一項功能，旨在使用主機的系統內存作為控制器的資料緩存區域（如 Flash Translation Layer，FTL）或用作資料緩存， 當主機或控制器需要訪問頻繁資料時，可以通過 HMB 加快響應速度。
-## HMB 運作說明
 
+## HMB 運作說明
 1.  **記憶體管理與控制**
 	- HMB 是由主機記憶體分配給 NVMe 控制器使用的緩存區域。
     - 主機僅提供記憶體空間，不干涉控制器對 HMB 的管理和使用。
@@ -20,18 +19,18 @@
 	- **系統恢復 ( Recovery from D3 Cold )**
 	    - 系統從休眠狀態恢復時，應重新分配與先前相同的記憶體位址，提供控制器使用。
 	    - 重新分配時，設置 **MR=1**，表示通知控制器這是針對先前分配的記憶體的恢復。
+
 ## HMB 設定範例
 
 ### 1. 檢查是否支援 HMB 
-
 要檢查設備是否支持 **Host Memory Buffer (HMB)**，可以從 **Identify Controller Data Structure** 中取得 **HMPRE**（Host Memory Buffer Preferred Size）屬性。
 
 - `HMPRE=0`：表示不支援 HMB 功能。
 - `HMPRE≠0`：表示支援 HMB，且值表示要求 HMB 大小（以 4KB 為單位）。
 
 ![[Pasted image 20241129064658.png]]
-### 2. 開啟與配置 HMB
 
+### 2. 開啟與配置 HMB
 設定參數 `opcde=0x09`，對應使用 **Set-Feature 命令** 執行。
 設定參數 `cdw10=0x0d`，指定的 FID 對應於 **Host Memory Buffer**。
 
@@ -74,8 +73,8 @@ Admin Command Set Features is Success and result: 0x00000000
 ![[Pasted image 20241129083631.png]]
 
 - **Host Memory Buffer Descriptor Entry** 它包含兩個關鍵信息：
-	1. **Buffer Size** : 連續的記憶體頁數量（單位: MPS）。
-	2. **Buffer Address** : 主機記憶體位址（單位: MPS）。
+	1. `Buffer Size` : 連續的記憶體頁數量（單位: MPS）。
+	2. `Buffer Address` : 主機記憶體位址（單位: MPS）。
 		- MPS=4k ( Bits [11:0] 這些位元需要對齊為 `0` )
 		- MPS=8k ( Bits [12:0] 這些位元需要對齊為 `0` )
 
@@ -99,17 +98,15 @@ Admin Command Set Features is Success and result: 0x00000000
 | 第三個範圍               | `00000001:15000000` | `0000000000000400` |
 | 第四個範圍               | `00000001:15400000` | `0000000000000400` |
 ### 3. 關閉 HMB 功能
-
 一旦取消 HMB，控制器無法再使用 `Host Memory Buffer` 任何資料，直到再一次的 Enable。
 
 ```
 $ nvme set-feature -f 0x0d --value=0x00 /dev/nvme0
 set-feature:0x0d (Host Memory Buffer), value:00000000, cdw12:00000000, save:0
 ```
+
 ## HMB 配置分析
-
 ### 1. HMB 資訊 
-
 使用 Get-Feature ( Host Memory Buffer ) 命令，長度設定為 64 Bytes。
 
 ```
@@ -141,7 +138,6 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ```
 
 ### 2. 記憶體大小
-
 我們要如何計算主機配置的記憶體大小 ?  當前設定 HSIZE [ 3:0 ] = `0x00004000h` = `16384`
 
 1. 計算容量需要先取得 MPS ( Memory Page Size ) 
@@ -151,9 +147,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ![[Pasted image 20241129073116.png]]
 
 ### 3. 記憶體位置
-
-作業系統分配的記憶體位址，分別為低位址 **HMDAL** 以及高位址 **HMDALU**。
-
+作業系統分配的記憶體位址，分別為低位址 `HMDAL` 以及高位址 `HMDALU`。
  - HMDAL [ 7: 4 ] : `0x12887000`
  - HMDALU [ 11: 8 ] : `0x00000001`
  - 完整的記憶體位置 : `0x00000001:12887000`
@@ -161,9 +155,7 @@ get-feature:0x0d (Host Memory Buffer), Current value:0x00000001
 ![[Pasted image 20241129081433.png]]
 
 ### 4. 記憶體範圍數量
-
-**HMDLEC** 這個參數描述 Host 提供給控制器使用的記憶體範圍數量。
-
-HMDLEC [15:12] = `0x00000004` ( 代表配置 **4** 段記憶體範圍 )
+`HMDLEC` 這個參數描述 Host 提供給控制器使用的記憶體範圍數量。
+HMDLEC [15:12] = `0x00000004` ( 代表配置 `4` 段記憶體範圍 )
 
 ![[Pasted image 20241129083224.png]]

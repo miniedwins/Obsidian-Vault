@@ -1,22 +1,19 @@
-# Controller Level Reset
-
 ## 基本介紹
-
 主要的目的是對控制器進行復位，復位操作會影響整個控製器及其相關功能，會將控制器內部的`Internal state` 狀態重置，大部份 `Controller Properties` 會被清除並復位，僅有少部份**持久屬性**不會因為復位而被重置。
 
 常規復位（Conventional Reset）和功能級復位（Function Level Reset, FLR）是根據 PCI Express 規範定義的復位方法，**它們也都會觸發 NVMe 控製器級復位（Controller Level Reset）**
-## 觸發重置的三種方法
 
+## 觸發重置的三種方法
 1. [[NVM Subsystem Reset]] 
 2. [[Controller Reset]]
-3. **Transport Specific Reset Types ( PCIe )**
+3. Transport Specific Reset Types ( PCIe )
 	* [[Conventional Reset]]
 	* [[Function Level Reset]]
+
 ## 重置的流程
+當發生重置後，控制器與主機端如何執行後續的動作，如下所述 : 
 
-當發生重置後，**控制器與主機端**如何執行後續的動作，如下所述 : 
 ### 控制器流程
-
 * 控制器停止所有的 `Admin` or `I/O` Commands
 * 刪除所有的 I/O Completion Queues and I/O Submission Queues
 * 控制器會轉成 `Idle` 狀態，完成後 `CSTS.RDY`  會被清除為 `0`
@@ -38,8 +35,8 @@
 > **補充說明 :** 
 > 1. [[Memory Based Transport]]
 > 2. [[Message Based Transport]]
-### 主機端流程
 
+### 主機端流程
 * **( 原文 ) Update transport specific state and controller property state as appropriate**
 	* **( 譯文 )** PCI 暫存器空間會按照**PCI Express 基本規範**中的定義被重設
 	* **( 譯文 )** 主機端也需要再一次設定控制器屬性
