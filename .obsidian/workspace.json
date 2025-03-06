@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+                "file": "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "指定標記 (Markers) 測試"
+              "title": "測試結束後執行清理操作"
             }
           }
         ],
@@ -165,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+                "file": "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "指定標記 (Markers) 測試 的大綱"
+              "title": "測試結束後執行清理操作 的大綱"
             }
           },
           {
@@ -208,10 +208,11 @@
   },
   "active": "7894f3646791a5dc",
   "lastOpenFiles": [
-    "程式設計/Python/Pytest/應用場景/命令列取得設定檔案.md",
-    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
-    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
     "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+    "程式設計/Python/Pytest/應用場景/命令列取得設定檔案.md",
+    "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
+    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
+    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/Pytest/應用場景",
@@ -240,7 +241,6 @@
     "技術資料/NVMe/NVMe-CLI/nvme_set_feature.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-CLI",
-    "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset",
     "程式設計/Python/Pytest/命令模式操作",
     "程式設計/Python/Pytest/檔案設定說明/conftest",
