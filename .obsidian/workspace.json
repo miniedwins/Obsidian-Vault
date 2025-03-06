@@ -25,12 +25,14 @@
             "id": "7894f3646791a5dc",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.9"
+                "file": "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.9"
+              "icon": "lucide-file",
+              "title": "建立多層目錄結構"
             }
           }
         ],
@@ -163,12 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "建立多層目錄結構 的大綱"
             }
           },
           {
@@ -205,11 +208,15 @@
   },
   "active": "7894f3646791a5dc",
   "lastOpenFiles": [
+    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
+    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
     "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
     "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
-    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event Log Size.md",
@@ -219,16 +226,13 @@
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250305165826.png",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
-    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-MI/Management Interface.md",
     "技術資料/NVMe/NVMe-CLI/nvme_subsystem_reset.md",
     "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-CLI/nvme_log_page.md",
     "技術資料/NVMe/NVMe-CLI/nvme_set_feature.md",
@@ -236,7 +240,6 @@
     "技術資料/NVMe/NVMe-CLI",
     "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
     "技術資料/NVMe/MainPage.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset",
     "程式設計/Python/Pytest/命令模式操作",
     "程式設計/Python/Pytest/檔案設定說明/conftest",
