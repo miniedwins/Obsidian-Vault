@@ -1,5 +1,18 @@
-Autonomous Power State Transitions（APST）是 NVMe 提供的一種 **自動省電機制**，主要目的是當 SSD 閒置一段時間後，自動降低功耗，提高能源效率。如果 SSD 持續閒置超過「設定的閒置時間」，它會自動進入較低的電源狀態（[[Non-Operational Power States]], NOPS）
+## 概要說明
+Autonomous Power State Transitions（APST）是 NVMe 提供的一種自動省電機制，主要目的是當 SSD 閒置一段時間後，自動降低功耗，提高能源效率。如果 SSD 持續閒置超過「設定的閒置時間」，它會自動進入較低的電源狀態 [[Non-Operational Power States]]。
 
-如果電源階段是在 `NOPS`，這個時候控制器可能會去運行像是 [[Device Self Test]]（DST）操作，那就可能會超過控制器所宣告該電源階段的最大功耗值（MP），此時控制器不應該切換到較低的電源狀態。
+## 省電機制
+控制器基於這兩個參數 [[#Idle Time Prior to Transition（ITPT）|ITPT]] 以及 [[#Idle Transition Power State （ITPS）|ITPS]]，判斷是否進入閒置狀態並且切換電源狀態（PS）。
 
-*備註 : Controller idle means that there are no commands outstanding to any I/O Submission Queue*
+### Idle Time Prior to Transition（ITPT）
+1. 當 NVMe 控制器進入閒置狀態時，開始計算 `ITPT`（閒置時間）。
+2. `ITPT` 是一個時間閾值（單位為毫秒），當閒置時間超過該閾值時，控制器會根據 `ITPS` 進行狀態轉換。
+
+### Idle Transition Power State （ITPS）
+1. 當 `ITPT` 達到指定時間後，控制器會自動切換到 `ITPS` 所指定的低功耗狀態。
+2.  `ITPS` 指定了要進入的電源狀態，通常是一個非運行（Non-Operational）電源狀態，例如 `PS3` 或 `PS4`。
+
+![[Pasted image 20250311074058.png]]
+
+備註 : 
+>1. Controller Idle : 控制器被認為是空閒狀態，並且沒有任何未完成的命令在 I/O Submission Queue 當中，也就是沒有 [[Outstanding Command]]。
