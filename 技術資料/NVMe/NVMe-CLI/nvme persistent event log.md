@@ -1,22 +1,38 @@
-## 執行命令
+## 檢查支援 Persistent Event Feature
+
 ```shell
-# 檢查支援 Persistent Event Log
 $ sudo nvme id-ctrl -H /dev/nvme0 | grep -i Persistent
 [4:4] : 0x1 Persistent Event log Supported
 [3:3] : 0 ANA Persistent Loss state Not Supported**
-
-# 建立 Persistent Event Log
-$ sudo nvme persistent-event-log -a 1 /dev/nvme0
-Establishing Persistent Event Log Context
-
-# 讀取 Persistent Event Log Header
-$ sudo nvme persistent-event-log -a 1 -l 512 /dev/nvme0
-
-# 讀取 Persistent Event Log
-sudo nvme persistent-event-log -a 1 -l 1024 /dev/nvme0
 ```
 
-## 輸出結果 ( Event Header )
+## 建立 Persistent Event Log
+
+需要先建立 `Persistent Event Log`，否則會讀取不到日誌資訊。
+
+```shell
+$ sudo nvme persistent-event-log -a 1 /dev/nvme0
+Establishing Persistent Event Log Context
+```
+
+## 讀取 Persistent Event Log Header
+
+協議規範的 Log Header 長度為 `512 Bytes`。
+
+```shell
+$ sudo nvme persistent-event-log -a 1 -l 512 /dev/nvme0
+```
+
+## 讀取 Persistent Event Log
+
+可以從 `Persistent Log Header` 取得日誌總長度。
+
+```shell
+$ sudo nvme persistent-event-log -a 1 -l 1024 /dev/nvme0
+```
+
+### 輸出結果 ( Event Header )
+
 ```shell
 # Persistent Event Header
 Persistent Event Log for device: nvme0
@@ -51,8 +67,7 @@ Support Set Telemetry CRT Event(0xc)
 Support Thermal Excursion Event(0xd)
 ```
 
-## 輸出結果 ( Event Entries )
-
+### 輸出結果 ( Event Entries )
 - 顯示 `Persistent Event Entries`，描述不同的事件日誌。
 - 新的日誌會一直出現在最上層，原先舊的日誌會往後移動。
 
