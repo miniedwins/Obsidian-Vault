@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+                "file": "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Firmware Image Download"
+              "title": "讀取使用者設定的 INI 檔案"
             }
           }
         ],
@@ -165,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+                "file": "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Firmware Image Download 的大綱"
+              "title": "讀取使用者設定的 INI 檔案 的大綱"
             }
           },
           {
@@ -208,10 +208,24 @@
   },
   "active": "7894f3646791a5dc",
   "lastOpenFiles": [
+    "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
+    "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
+    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
+    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
+    "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
+    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
+    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
+    "程式設計/Python/套件管理/Poetry.md",
+    "程式設計/Python/數值轉換/converter.md",
+    "技術資料/NVMe/NVMe-CLI/nvme subsystem reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
-    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/Format NVM.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
@@ -220,20 +234,6 @@
     "技術資料/NVMe/NVMe-CLI/nvme format.md",
     "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
     "技術資料/NVMe/NVMe-Base/Telemetry.md",
-    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
-    "技術資料/NVMe/NVMe-CLI/nvme controller thermal management.md",
-    "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
-    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
-    "技術資料/NVMe/NVMe-CLI/nvme management interface.md",
-    "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
-    "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Power Management.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
     "技術資料/NVMe/NVMe-Base/Power Management",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250306084323.png",
     "程式設計/Python/Pytest/應用場景",
