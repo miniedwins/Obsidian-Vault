@@ -1,12 +1,11 @@
 ## PRP 概述
-
 PRP 是 NVMe 主機控制器用於描述資料緩衝區物理位址的機制。它提供了一種方法來告訴 NVMe 控制器，主記憶體中哪一部分包含要讀取或寫入的資料。
 
 Host Software 在提交 Command之前，需要在主機端預先分配一塊 **Memory Buffer**，告知控制器要去哪裡拿取或是寫入資料。控制器是如何知道 Memory Buffer 的位置呢 ? 主要透過命令中的 **PRP 或是 SGL**，將緩衝區 ( Memory Buffer Address ) 填入所提交的命令中的 **DPTR 欄位**，控制器就能夠知道要去哪裡取得資料 ( Host Write ) 或是將資料放置在正確的位置 ( Host Read )。
 
 ![[prp_entry_layout.png]]
-## PRP 兩種主要方式
 
+## PRP 兩種主要方式
 PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可以是**連續的或分散**。PRP 支援兩種描述方法：
 
 1. **PRP1 Entry** :
@@ -31,7 +30,6 @@ PRP 設計允許主機控制器描述資料緩衝區的位址。這些位址可�
 >2.  計算方法為 **( 2 ^ ( 12 + MPS ) )**，當設定為 0 表示 4096 bytes。
 
 ## PRP 結構說明
-
 PRP Entry 格式，主要由 **Page Base Address** 以及 **Offset** 欄位所組成
 
 - **Page Base Address**
@@ -43,7 +41,6 @@ PRP Entry 格式，主要由 **Page Base Address** 以及 **Offset** 欄位所�
 舉例說明 :  MPS=4k，Page Base Address : `0x0000004:1D811000`，協議規範 bits [11:00] 必須要全部為 0，因此尾數會是 `1000h`。每個 PRP Entry 都必須要對齊，若是有多個資料，代表會有下一個 PRP Entry，則記憶體位址因該為 `0x0000004:1D812000`，符合 MPS=4k 邊界對齊。
 
 ## **PRP Entry 與 PRP List 的 Offset 要求**
-
 - 偏移量為 `0h` 表示，資料總是從該頁面的起始處開始。
 - 每個 PRP Entry 都必須具有 **頁面偏移為 0h** 的地址。
 - 一個命令包含兩個 PRP Entry，則第二個 PRP Entry 的地址也必須具有 **頁面偏移為 0h*。
@@ -53,9 +50,7 @@ PRP Entry 格式，主要由 **Page Base Address** 以及 **Offset** 欄位所�
 ![[page_base_address_offset.png]]
 
 ## **PRP 運作範例**
-
 1. 假設頁面 ( MPS ) 大小為 4 KB，資料大小為 4 KB，並且只有使用 PRP1 Entry：
-
 	- **PRP1 Entry**
 		- 描述第一個記憶體頁面。
 		- 指向記憶體位址： `0x0000004:1D810000`（對齊到 4 KB 的邊界）。
@@ -68,7 +63,6 @@ PRP Entry 格式，主要由 **Page Base Address** 以及 **Offset** 欄位所�
 | 第二個 PRP Entry | `0x0000000:00000000` | `0h` |
 
 2. 假設頁面 ( MPS ) 大小為 4 KB，傳輸資料大小為 8 KB，當前資料量大於 MPS，因此需要使用 PRP2 Entry **描述第二筆資料**的記憶體位址空間：
-
 	- **PRP1 Entry**
 		- 描述第一個記憶體頁面。
 	    - 指向記憶體位址： `0x0000001:09BFD000`。
@@ -82,7 +76,6 @@ PRP Entry 格式，主要由 **Page Base Address** 以及 **Offset** 欄位所�
 | 第二個 PRP Entry | `0x0000001:09BFE000`   | `0h` |
 
 3.  假設頁面 ( MPS ) 大小為 4 KB，傳輸資料大小為 16KB，當前資料量大於 MPS，因此需要使用PRP2 Entry **描述多筆資料**記憶體位址空間：
-
 	- **PRP1 Entry**
 	    - 描述第一個記憶體頁面。
 		- 指向記憶體位址：`0x0000004:1EDF2000`。
