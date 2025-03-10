@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
+                "file": "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "讀取使用者設定的 INI 檔案"
+              "title": "Memory Based Transport"
             }
           }
         ],
@@ -165,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
+                "file": "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "讀取使用者設定的 INI 檔案 的大綱"
+              "title": "Memory Based Transport 的大綱"
             }
           },
           {
@@ -208,14 +208,20 @@
   },
   "active": "7894f3646791a5dc",
   "lastOpenFiles": [
-    "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
-    "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
+    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
+    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
+    "程式設計/Python/套件管理/Poetry.md",
+    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
     "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
     "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
+    "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
+    "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
     "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
-    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Python/套件管理/Poetry.md",
     "程式設計/Python/數值轉換/converter.md",
     "技術資料/NVMe/NVMe-CLI/nvme subsystem reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
@@ -228,12 +234,6 @@
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/Format NVM.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize.md",
-    "技術資料/NVMe/NVMe-CLI/nvme format.md",
-    "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Power Management",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250306084323.png",
     "程式設計/Python/Pytest/應用場景",
