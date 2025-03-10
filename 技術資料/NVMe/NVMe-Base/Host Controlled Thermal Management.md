@@ -1,5 +1,4 @@
 ## 基本介紹
-
 控制器提供主機端一個熱管理設定機制 **( HCTM )**，讓主機端 ( Host ) 可以通過特定的組態設定不同階段的熱管理 **( TMT1 and TMT2 )**，當控製器達到設定溫度的閥值時，執行特定熱管理動作。
 
 - **這些操作的目標主要是**
@@ -9,7 +8,6 @@
 > **供應商特定的熱管理動作** : 除了切換電源狀態，控製器還可能執行一些由供應商定義的特定操作，這些操作可能與裝置的散熱機制、CPU 速度控制等相關，旨在更好地管理裝置的溫度。
 
 ## 何謂 TMT1 以及 TMT2 ?
-
 TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令，主機端可以透過該命令方式來設定溫度的閥值，共可以設定 TMT1 ( Light Throttle ) 以及 TMT2 ( Heavy Throttle )。當控制器達到主機端所設定的溫度時，就會開始啟動熱管理機制。
 
 下圖為 **HCTM** 範例，分別描述 **TMT1 以及 TMT2 之間的關係**。若是當前 Composite Temperature 達到符合 HCTM 溫度設定，控制器會開始轉換到 `Low Power Active States` 並且執行廠商所指定的 `Thermal Management Actions` 也就是熱管理動作。
@@ -41,7 +39,6 @@ TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令�
 
 # 執行命令與操作
 ## 檢查是否支援 HCTM
-
 **主機控制的熱管理支援** : 控製器是否支援 HCTM，可以從結構表 `Identify Ctrl` 獲得 `HCTMA` 欄位。如果支援，代表控製器可以響應主機的熱管理請求命令。
 
 - HCTMA ( Host Controlled Thermal Management Attributes )
@@ -57,8 +54,8 @@ TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令�
 $ nvme id-ctrl /dev/nvme0 -H | grep hctma
 hctma     : 0x1
 ```
-## 查看當前 HCTM 設定
 
+## 查看當前 HCTM 設定
 主機端可以透過 Get-Feature ( HCTM ) 取得當前 TMT1 以及 TMT2 溫度設定的狀態。
 
 ```shell
@@ -67,8 +64,8 @@ get-feature:0x10 (Host Controlled Thermal Management), Current value:0x015d0160
 		Thermal Management Temperature 1 (TMT1) : 349 K (76 °C)
 		Thermal Management Temperature 2 (TMT2) : 352 K (79 °C)
 ```
-## 設定 HCTM 溫度
 
+## 設定 HCTM 溫度
 首先取得當前 HCTM 所設定的溫度，可以得知 TMT1=76 °C 以及 TMT2=79 °C。
 
 ```shell
