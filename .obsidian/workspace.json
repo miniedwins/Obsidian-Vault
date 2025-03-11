@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme power management.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Non-Operational Power States"
+              "title": "nvme power management"
             }
           }
         ],
@@ -165,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme power management.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Non-Operational Power States 的大綱"
+              "title": "nvme power management 的大綱"
             }
           },
           {
@@ -208,10 +208,11 @@
   },
   "active": "7894f3646791a5dc",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Power Management/Power Management.md",
     "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
     "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Power Management.md",
     "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
+    "技術資料/NVMe/NVMe-CLI/nvme power management.md",
     "技術資料/NVMe/NVMe-Base/Power Management/attachments/Pasted image 20250311090336.png",
     "技術資料/NVMe/NVMe-Base/Power Management/Power State.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
@@ -229,7 +230,6 @@
     "技術資料/NVMe/NVMe-CLI/nvme persistent event log.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-CLI/nvme namesapce management.md",
-    "技術資料/NVMe/NVMe-CLI/nvme power management.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
