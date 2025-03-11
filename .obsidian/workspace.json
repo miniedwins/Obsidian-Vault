@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-CLI/nvme power management.md",
+                "file": "程式設計/領域驅動/判斷是否為業務流程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "nvme power management"
+              "title": "判斷是否為業務流程"
             }
           }
         ],
@@ -165,13 +165,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-CLI/nvme power management.md",
+                "file": "程式設計/領域驅動/判斷是否為業務流程.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "nvme power management 的大綱"
+              "title": "判斷是否為業務流程 的大綱"
             }
           },
           {
@@ -209,9 +209,13 @@
   "active": "7894f3646791a5dc",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
+    "程式設計/領域驅動/判斷是否為業務流程.md",
+    "程式設計/領域驅動",
     "技術資料/NVMe/NVMe-Base/Power Management/Power Management.md",
     "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-CLI/nvme power management.md",
     "技術資料/NVMe/NVMe-Base/Power Management/attachments/Pasted image 20250311090336.png",
     "技術資料/NVMe/NVMe-Base/Power Management/Power State.md",
@@ -235,8 +239,6 @@
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
-    "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
     "技術資料/NVMe/NVMe-Base/Power Management",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250306084323.png",
     "程式設計/Python/Pytest/應用場景",
@@ -249,7 +251,6 @@
     "技術資料/NVMe/NVMe-Base/Controller Reset",
     "程式設計/Python/Pytest/命令模式操作",
     "程式設計/Python/Pytest/檔案設定說明/conftest",
-    "程式設計/Python/Pytest/檔案設定說明/pytest.ini",
     "attachments/Pasted image 20250226071710.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
