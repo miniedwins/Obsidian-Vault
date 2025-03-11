@@ -54,13 +54,6 @@ $ sudo nvme get-feature /dev/nvme0 --feature-id=0x02
 
 ## 設定與查看 APST 屬性
 
-### 取得目前狀態
-- NVMe-CLI 會將所有的資料顯示出來
-- Current value : `0x000001` 取得目前的狀態是被啟用的
-* 每個電源狀態會有一個 `Entry`，總共 64 Bits (8 Bytes)
-* 因為控制器最大可以支援 `32` 個電源狀態，所以才會回傳 8 x 32=256 Bytes 
-* 目前控制器只支援五種狀態，所以之後的值都會是 `0x00`
-
 **APST 狀態結構表**
 
 ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/feature/autonomous_power_state_transition_data_structure.png)
@@ -70,6 +63,10 @@ $ sudo nvme get-feature -f 0x0c /dev/nvme0
 ~~~
 
 執行結果 : 
+- Current value : `0x000001` 取得目前的狀態是被啟用的
+* 每個電源狀態會有一個 `Entry`，總共 64 Bits (8 Bytes)
+* 因為控制器最大可以支援 `32` 個電源狀態，所以才會回傳 8 x 32=256 Bytes 
+* 目前控制器只支援五種狀態，所以之後的值都會是 `0x00`
 
 ~~~shell
 get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
@@ -93,14 +90,14 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 ~~~
 
 ### 設定啟用或停用功能
-說明 : 給定一個 `value=1` 設定為啟用 APST。
+說明 :  `value=1` 設定啟用 APST。
 
 ~~~shell
 $ sudo nvme set-feature -f 0x0c /dev/nvme0 -v 0x01
 # set-feature:0c (Autonomous Power State Transition), value:00000001
 ~~~
 
-說明 : 給定一個 `value=0` 設定為停用 APST。
+說明 :  `value=0` 設定停用 APST。
 
 ~~~shell
 $ sudo nvme set-feature -f 0x0c /dev/nvme0 -v 0x00
