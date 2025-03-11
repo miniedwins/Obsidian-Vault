@@ -19,7 +19,7 @@ Autonomous Power State Transitions（APST）是 NVMe 提供的一種自動省電
 
 ## 補充說明
 ### APSTE 以及 NOPPME 之間交互作用
-兩個與電源管理相關的功能，它們之間可能存在交互作用的影響。
+- 兩個與電源管理相關的功能，它們之間可能存在交互作用的影響。
 
 ![[Pasted image 20250311090336.png]]
 

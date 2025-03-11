@@ -7,4 +7,3 @@
 
 * `Dynamic Power Management`
   動態電源管理由主機 (Host) 決定切換到最適合的電源狀態。Power Manager 會根據這 Power Objective & Performance Objective 做為參考標準，並動態的切換符合的電源模式。 
-  ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/dynamic_power_management.png)
