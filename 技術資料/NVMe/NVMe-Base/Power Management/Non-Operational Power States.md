@@ -2,7 +2,7 @@
 NOPS (Non-Operational Power State) 指的是當控制器 `沒有任何 I/O 命令需要處理`，且閒置超過設定時間後，主機 (Host) 或控制器 (NVMe) 會將電源狀態切換到 `非操作電源模式`，以降低功耗。
 
 ## 重點整理
-1. 主機可以發送要求進入 `NOPS` 非操作電源模式。
+1. 主機可以發送命令要求進入 `NOPS` 非操作電源模式。
 2. 透過 [[Autonomous Power State Transitions#Idle Time Prior to Transition（ITPT）|ITPT]] 閒置時間判定是否進入該電源狀態。
 3. 不允許處理 I/O 命令，但仍可執行管理類 (Admin) 指令與背景操作。
 4. 當有 I/O 命令時，控制器需自動切換至最近操作電源狀態，確保能夠處理請求。
