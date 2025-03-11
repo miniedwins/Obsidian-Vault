@@ -1,15 +1,14 @@
-
 ## 取得控制器支援的電源狀態
 
 說明 : 發送 Identify Data Controller 命令，取得控制器最大支援電源狀態數量。
 備註 : 控制器最少要支援一個電源狀態 PS0。
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/identify_controller/Identify_Controller_NPSS.png)
-
 ~~~shell
 $ sudo nvme id-ctrl /dev/nvme0 | grep npss
 # npss : 4
 ~~~
+
+![[Pasted image 20250312073326.png]]
 
 ## 取得各個電源的狀態描述
 
@@ -54,19 +53,16 @@ $ sudo nvme get-feature /dev/nvme0 --feature-id=0x02
 
 ## 設定與查看 APST 屬性
 
-**APST 狀態結構表**
-
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/feature/autonomous_power_state_transition_data_structure.png)
-
 ~~~shell
 $ sudo nvme get-feature -f 0x0c /dev/nvme0
 ~~~
 
 執行結果 : 
-- Current value : `0x000001` 取得目前的狀態是被啟用的
-* 每個電源狀態會有一個 `Entry`，總共 64 Bits (8 Bytes)
-* 因為控制器最大可以支援 `32` 個電源狀態，所以才會回傳 8 x 32=256 Bytes 
-* 目前控制器只支援五種狀態，所以之後的值都會是 `0x00`
+- Current value : `0x000001` 取得目前的狀態是被啟用的。
+* APST 狀態結構表，[[Autonomous Power State Transitions#Idle Time Prior to Transition（ITPT）|ITPT]]  以及 [[#Idle Transition Power State （ITPS）|ITPS]] 總共 64 Bits (8 Bytes)。
+* 控制器回傳的值
+	* 會根據支援多少個 `NPSS` 數量，當前 NPSS= 4。
+	* 返回的 Entry（8Bytes）* NPSS = 32 Bytes。
 
 ~~~shell
 get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
@@ -74,19 +70,6 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 0000: 18 64 00 00 00 00 00 00 18 64 00 00 00 00 00 00 ".d.......d......"
 0010: 18 64 00 00 00 00 00 00 20 b4 5f 00 00 00 00 00 ".d........_....."
 0020: 20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0040: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-0090: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-00a0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-00b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-00c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-00d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-00e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
-00f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ~~~
 
 ### 設定啟用或停用功能
