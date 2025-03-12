@@ -35,7 +35,7 @@ ps    4 : mp:0.0050W non-operational enlat:400000 exlat:90000 rrt:4 rrl:4
 
 ## 如何設定電源狀態
 
-說明 : 給定一個 `value=0x04` 將目前的電源狀態切換到 `PS4`。
+說明 : 設定 `value=0x04` 將目前的電源狀態切換到 `PS4`。
 
 ~~~shell
 $ sudo nvme set-feature /dev/nvme0 --feature-id=0x02 --value=0x04
@@ -44,7 +44,7 @@ $ sudo nvme set-feature /dev/nvme0 --feature-id=0x02 --value=0x04
 
 ## 取得目前電源狀態
 
-說明 : 給定一個 `feature-id=0x02` 取得目前控制器運行在哪一個電源狀態。
+說明 : 設定 `feature-id=0x02` 取得目前控制器運行在哪一個電源狀態。
 
 ~~~shell
 $ sudo nvme get-feature /dev/nvme0 --feature-id=0x02
@@ -61,8 +61,8 @@ $ sudo nvme get-feature -f 0x0c /dev/nvme0
 - Current value : `0x000001` 取得目前的狀態是被啟用的。
 * APST 狀態結構表，[[Autonomous Power State Transitions#Idle Time Prior to Transition（ITPT）|ITPT]]  以及 [[#Idle Transition Power State （ITPS）|ITPS]] 總共 64 Bits (8 Bytes)。
 * 控制器回傳的值
-	* 會根據支援多少個 `NPSS` 數量，當前 NPSS= 4。
-	* 返回的 Entry（8Bytes）* NPSS = 32 Bytes。
+	* 會根據支援多少個 `NPSS` 數量，當前 NPSS= 4（PS0-PS4）。
+	* 返回的 APST Entry（8Bytes）* NPSS = 40 Bytes。
 
 ~~~shell
 get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
@@ -72,19 +72,20 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 0020: 20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ~~~
 
-### 設定啟用或停用功能
+![[Pasted image 20250311074058.png]]
+
+## 設定啟用或停用 APST
+
 說明 :  `value=1` 設定啟用 APST。
 
-~~~shell
+```shell
 $ sudo nvme set-feature -f 0x0c /dev/nvme0 -v 0x01
 # set-feature:0c (Autonomous Power State Transition), value:00000001
-~~~
+```
 
 說明 :  `value=0` 設定停用 APST。
 
-~~~shell
+```shell
 $ sudo nvme set-feature -f 0x0c /dev/nvme0 -v 0x00
 # set-feature:0c (Autonomous Power State Transition), value:00000000
-~~~
-
-## 查看 ITPT 以及 ITPS
+```
