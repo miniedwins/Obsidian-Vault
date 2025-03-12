@@ -1,6 +1,6 @@
-## DSM 介紹
+Dataset Management (DSM) : 由主機來設定參數以及執行 `dsm` 命令，可以改善效能與穩定性，以及對邏輯區塊 (logic block) 執行像是 `TRIM` 的行為，但並不代表 DSM 它只能執行 `TRIM` 功能 (重要)。它有一個 `Range Definition` 結構表定義如何執行。
 
-**Dataset Management (DSM) :** 由主機來設定參數以及執行 `dsm` 命令，可以改善效能與穩定性，以及對邏輯區塊 (logic block) 執行像是 `TRIM` 的行為，但並不代表 DSM 它只能執行 `TRIM` 功能 (重要)。它有一個 `Range Definition` 結構表定義如何執行，最大可以支援 Range 0-255 (256*16 = 4096 Bytes)，每個 Range 的組成包含 Starting LBA, Length in logical blocks, Context Attributes。主機可以透過 dsm 命令，指定每個 Range Field Attributes，而控制器會根據該 Range 所指定的內容去執行 (重要)。
+最大可以支援 Range 0-255 (256 x 16 = 4096 Bytes)，每個 Range 的組成包含 Starting LBA, Length in logical blocks, Context Attributes。主機可以透過  命令，指定每個 Range Field Attributes，而控制器會根據該 Range 所指定的內容去執行 (重要)。
 
 例如 : 主機若是要執行 `TRIM` 功能，主機發送 dsm 命令就會設定 `Attribute Deallocate (AD)` 以及將 Range Definition Data 傳給控制器，當控制器執行完畢後，那些指定的 block range 就會變成 `deallocate` or `unwritten logical block`。
 
