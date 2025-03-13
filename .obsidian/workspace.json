@@ -11,28 +11,26 @@
             "id": "3b8d2b40f8562eee",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
-                "mode": "source",
-                "source": false
+                "file": "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20241218033737.png"
               },
-              "icon": "lucide-file",
-              "title": "指定標記 (Markers) 測試"
+              "icon": "lucide-image",
+              "title": "Pasted image 20241218033737"
             }
           },
           {
-            "id": "7894f3646791a5dc",
+            "id": "e58be72d5101a282",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
+                "file": "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "nvme sanitize"
+              "title": "Self-Test Log"
             }
           }
         ],
@@ -165,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
+                "file": "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "nvme sanitize 的大綱"
+              "title": "Self-Test Log 的大綱"
             }
           },
           {
@@ -206,54 +204,53 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "7894f3646791a5dc",
+  "active": "e58be72d5101a282",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-CLI/nvme power management.md",
-    "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/4. 執行自檢命令.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/5. 查看自檢日誌.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/2. 自檢類型.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/3. 自檢項目說明.md",
+    "技術資料/NVMe/NVMe-CLI/nvme format.md",
+    "技術資料/NVMe/NVMe-CLI/nvme management interface.md",
+    "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
+    "技術資料/NVMe/NVMe-CLI/nvme device self test.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024600.png",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024646.png",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/Device Self-Test.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/執行自檢命令.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218035515.png",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218033254.png",
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024357.png",
+    "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20250313100705.png",
+    "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20241218033919.png",
+    "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20250312073326.png",
+    "技術資料/NVMe/NVMe-CLI/nvme controller thermal management.md",
+    "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20241218033737.png",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
+    "技術資料/NVMe/NVMe-CLI/nvme power management.md",
+    "技術資料/NVMe/NVMe-CLI/nvme persistent event log.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/3. 自檢項目說明.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/2. 自檢類型.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/1. 概要說明.md",
+    "技術資料/NVMe/NVMe-OPAL/Locking Range.md",
+    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+    "技術資料/NVMe/NVMe-OPAL",
+    "技術資料/NVMe/NVMe-Base/未命名.md",
+    "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/Format NVM.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
-    "技術資料/NVMe/NVMe-CLI/nvme format.md",
     "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test.md",
-    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
-    "技術資料/NVMe/NVMe-Base/Controller Property.md",
-    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event Log Size.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
-    "技術資料/NVMe/NVMe-CLI/nvme persistent event log.md",
-    "技術資料/NVMe/NVMe-CLI/nvme namesapce management.md",
-    "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20250312073326.png",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",
     "技術資料/NVMe/NVMe-Base/Power Management/attachments/Pasted image 20250311090336.png",
-    "技術資料/NVMe/NVMe-Base/Power Management/attachments/Pasted image 20250311074531.png",
-    "技術資料/NVMe/NVMe-Base/Power Management/attachments/Pasted image 20250311074058.png",
     "技術資料/NVMe/NVMe-Base/Power Management/attachments",
     "技術資料/NVMe/NVMe-Base/Power Management",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250306084323.png",
     "程式設計/Python/Pytest/應用場景",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250305181221.png",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250305171929.png",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments/Pasted image 20250305165826.png",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log",
     "技術資料/NVMe/NVMe-CLI",
     "技術資料/NVMe/NVMe-Base/Controller Reset",
-    "程式設計/Python/Pytest/命令模式操作",
-    "attachments/Pasted image 20250226071710.png",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"

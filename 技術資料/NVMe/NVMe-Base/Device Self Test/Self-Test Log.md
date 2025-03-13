@@ -1,8 +1,7 @@
 # 概要說明
-
 日誌格式可以讓我們知道自檢運行的進度以及結果。
-# 日誌結構
 
+# 日誌結構
 - 日誌運行的狀態共佔 ( 4 bytes ) : 
 	- [ 01:00 ] Bytes : 永遠表示當前自檢的類型與進度 
 	- [ 03:02 ] Bytes : 保留位元
@@ -13,23 +12,23 @@
 * 全部日誌資料 :  4 + ( 28 x 20 Entry ) = 564 Bytes
 * 最新自檢的日誌會放在第一個 ( 1st )。
 * 若是超過最大儲存，最後一個 ( 20th ) 日誌會被前一個 ( 19th ) 取代。
+
 # 取得自檢日誌
 
-- 執行命令 `nvme-cli`，選擇那一種顯示方式較為方便閱讀日誌。
+ 執行命令 `nvme-cli`，選擇那一種顯示方式較為方便閱讀日誌。
 
 ~~~shell
 # NORMAL 格式輸出
-nvme self-test-log /dev/nvme0 -o "normal"
+$ sudo nvme self-test-log /dev/nvme0 -o "normal"
 
 # JSON 格式輸出
-nvme self-test-log /dev/nvme0 -o "json"
+$ sudo nvme self-test-log /dev/nvme0 -o "json"
 ~~~
-# 解析基本日誌
 
+# 解析基本日誌
 - **NVMe-CLI 輸出結果說明** : 
 	- 只挑選比較重要的內容顯示。
 	- 每一條日誌所輸出的結果並非日誌完整的訊息。
-
 - **日誌說明 :** 
 	- Current Operation : 
 		- 數值 : `0%`
@@ -90,23 +89,23 @@ Self Test Result[5]:
 Self Test Result[20]:
   Operation Result             : 0xf
 ~~~
-# 解析完整日誌
 
+# 解析完整日誌
 - 若是要取得完整的資訊，需要輸出二進制檔案。
 - 使用 `hexdump` 查看，這裡僅顯示 512 Bytes 做範例說明。
 
 ~~~shell
 # 將日誌以二進位輸出到 "self_test.log" 檔案
-nvme self-test-log /dev/nvme0 -o "binary" > self_test.log
+$ sudo nvme self-test-log /dev/nvme0 -o "binary" > self_test.log
 
 # 使用 hexdump 命令，它會以16進位的方式顯示
-hexdump -C -n 512 self_test.log
+$ sudo hexdump -C -n 512 self_test.log
 
 # 或是直接使用 get-log
-nvme get-log -i 0x06 -l 563
+$ sudo nvme get-log -i 0x06 -l 563
 ~~~
 
-- 日誌輸出結果 
+日誌輸出結果 
 
 ~~~shell
 00000000  00 00 00 00 20 00 00 00  88 02 00 00 00 00 00 00  |.... ...........|
@@ -122,16 +121,16 @@ nvme get-log -i 0x06 -l 563
 		- 表示當前測試的操作與進度。
 	- **Self-Test Result Data Structure**
 		- 說明自檢測試的結果。
-## Device Self-Test Log
 
+## Device Self-Test Log
 - **Current Device Self-Test Operation** : 
 	- 表示當前自檢的類型。
 - **Current Device Self-Test Completion** :
 	- 目前自檢進度百分比。
 
 ![[Pasted image 20241218024357.png]]
-## Self-Test Result Data Structure
 
+## Self-Test Result Data Structure
 - 主要觀察這兩個項目，其它在參考圖示說明
 	* **Device Self-test Status** : 
 		* [ 07:04 ] Bits : 自檢測試的類型。
@@ -149,7 +148,6 @@ nvme get-log -i 0x06 -l 563
 - 圖示使用上面日誌輸出結果說明 : 
 	- 僅描述第一個日誌內容。
 	- 第二個到最後一個日誌以此類推查看。
-
 - 日誌說明 : 
 	* 當前因為沒有在運行自檢測試，狀態均為 `0x00`
 	* 自檢類型 : `Extended device self-test`
