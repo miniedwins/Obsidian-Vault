@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ComPacket Packet Subpacket"
+              "title": "Packet Header Field"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ComPacket Packet Subpacket 的大綱"
+              "title": "Packet Header Field 的大綱"
             }
           },
           {
@@ -206,8 +206,9 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
     "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
+    "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
+    "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
     "技術資料/NVMe/NVMe-OPAL/TPer (Trusted Peripheral).md",
     "技術資料/NVMe/NVMe-OPAL/Method Signature Pseudo-code.md",
     "技術資料/NVMe/NVMe-OPAL/Range Crossing Behavior.md",
@@ -243,7 +244,6 @@
     "技術資料/NVMe/NVMe-OPAL",
     "技術資料/NVMe/NVMe-Base/未命名.md",
     "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",
     "技術資料/NVMe/NVMe-Base/Power Management/attachments",
