@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ComPacket"
+              "title": "ComPacket Packet Subpacket"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "ComPacket 的大綱"
+              "title": "ComPacket Packet Subpacket 的大綱"
             }
           },
           {
@@ -207,7 +207,7 @@
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
-    "技術資料/NVMe/NVMe-OPAL/ComPacket.md",
+    "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
     "技術資料/NVMe/NVMe-OPAL/TPer (Trusted Peripheral).md",
     "技術資料/NVMe/NVMe-OPAL/Method Signature Pseudo-code.md",
     "技術資料/NVMe/NVMe-OPAL/Range Crossing Behavior.md",
