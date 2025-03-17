@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Range Crossing Behavior.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Range Crossing Behavior"
+              "title": "ComPacket"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Range Crossing Behavior.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ComPacket.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Range Crossing Behavior 的大綱"
+              "title": "ComPacket 的大綱"
             }
           },
           {
@@ -206,10 +206,11 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
+    "技術資料/NVMe/NVMe-OPAL/ComPacket.md",
     "技術資料/NVMe/NVMe-OPAL/TPer (Trusted Peripheral).md",
     "技術資料/NVMe/NVMe-OPAL/Method Signature Pseudo-code.md",
     "技術資料/NVMe/NVMe-OPAL/Range Crossing Behavior.md",
-    "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
     "技術資料/NVMe/NVMe-OPAL/Atom Encoding.md",
     "技術資料/NVMe/NVMe-OPAL/Data Stream Encoding.md",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250317063533.png",
@@ -243,7 +244,6 @@
     "技術資料/NVMe/NVMe-Base/未命名.md",
     "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",
     "技術資料/NVMe/NVMe-Base/Power Management/attachments",
