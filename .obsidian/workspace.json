@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Subpacket.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Secure Messaging Packet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Subpacket"
+              "title": "Secure Messaging Packet"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Subpacket.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Secure Messaging Packet.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Subpacket 的大綱"
+              "title": "Secure Messaging Packet 的大綱"
             }
           },
           {
@@ -206,8 +206,9 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
     "技術資料/NVMe/NVMe-OPAL/Subpacket.md",
+    "技術資料/NVMe/NVMe-OPAL/Secure Messaging Packet.md",
+    "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
     "技術資料/NVMe/NVMe-OPAL/Packet SeqNumber.md",
     "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
     "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
@@ -242,7 +243,6 @@
     "技術資料/NVMe/NVMe-Base/Device Self Test/3. 自檢項目說明.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/2. 自檢類型.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/1. 概要說明.md",
-    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
     "技術資料/NVMe/NVMe-OPAL",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",
