@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/未命名.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/無法識別的方法調用.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "無法識別的方法調用"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/未命名.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/無法識別的方法調用.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大綱"
+              "title": "無法識別的方法調用 的大綱"
             }
           },
           {
@@ -206,8 +206,11 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/Method Responses.md",
+    "技術資料/NVMe/NVMe-OPAL/Session Manager 協議層方法調用的錯誤處理.md",
+    "技術資料/NVMe/NVMe-OPAL/SP and Session Manager Layer 的區別.md",
+    "技術資料/NVMe/NVMe-OPAL/無法識別的方法調用.md",
     "技術資料/NVMe/NVMe-OPAL/Secure Messaging Packet.md",
-    "技術資料/NVMe/NVMe-OPAL/未命名.md",
     "技術資料/NVMe/NVMe-OPAL/Subpacket.md",
     "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
     "技術資料/NVMe/NVMe-OPAL/Packet SeqNumber.md",
@@ -240,9 +243,6 @@
     "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20250313100705.png",
     "技術資料/NVMe/NVMe-CLI/nvme controller thermal management.md",
     "技術資料/NVMe/NVMe-CLI/nvme power management.md",
-    "技術資料/NVMe/NVMe-CLI/nvme persistent event log.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/3. 自檢項目說明.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/2. 自檢類型.md",
     "技術資料/NVMe/NVMe-OPAL",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",
