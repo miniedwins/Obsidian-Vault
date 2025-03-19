@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Security-Send、Security-Receive、IF-SEND、IF-RECV 之間的關係.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Communication Layer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Security-Send、Security-Receive、IF-SEND、IF-RECV 之間的關係"
+              "title": "Communication Layer"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Security-Send、Security-Receive、IF-SEND、IF-RECV 之間的關係.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Communication Layer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Security-Send、Security-Receive、IF-SEND、IF-RECV 之間的關係 的大綱"
+              "title": "Communication Layer 的大綱"
             }
           },
           {
@@ -206,8 +206,9 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/無法識別的方法調用.md",
     "技術資料/NVMe/NVMe-OPAL/Security-Send、Security-Receive、IF-SEND、IF-RECV 之間的關係.md",
+    "技術資料/NVMe/NVMe-OPAL/Communication Layer.md",
+    "技術資料/NVMe/NVMe-OPAL/無法識別的方法調用.md",
     "技術資料/NVMe/NVMe-OPAL/單向雙向通信.md",
     "技術資料/NVMe/NVMe-OPAL/理解 IF-SEND IF-RECV.md",
     "技術資料/NVMe/NVMe-OPAL/SyncSession.md",
@@ -231,7 +232,6 @@
     "技術資料/NVMe/NVMe-OPAL/Packet Header Field.md",
     "技術資料/NVMe/NVMe-OPAL/Communication Infrastructure.md",
     "技術資料/NVMe/NVMe-OPAL/TPer (Trusted Peripheral).md",
-    "技術資料/NVMe/NVMe-OPAL/Method Signature Pseudo-code.md",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055133.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055014.png",
