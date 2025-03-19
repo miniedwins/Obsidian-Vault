@@ -215,3 +215,56 @@
     
 
 如果需要進行高級操作（例如會話管理、加密操作等），主機仍然需要通過 **GET_COMID** 命令獲取 **ComID**，並進入 **通信層** 進行雙向通信。
+
+
+============================================
+### **1️⃣ 主機發送 HANDLE_COMID_REQUEST**
+
+- **透過 Security-Send（IF-SEND）發送請求**
+- **Payload 應包含：**
+    - **4-byte Extended ComID**
+    - **Request Code**
+    - 其他可能的欄位，如 `VERIFY_COMID_VALID` 或 `STACK_RESET`
+
+|**Field**|**Value**|
+|---|---|
+|**Command**|IF-SEND|
+|**Protocol ID**|`0x02`|
+|**Transfer Length**|`0x0001` (至少 2 bytes)|
+|**ComID**|Allocated ComID (通常 Host 先填預設值)|
+
+---
+
+### **2️⃣ TPer 回應 GET_COMID_RESPONSE**
+
+- **透過 Security-Receive（IF-RECV）獲取回應**
+- **回傳的 Payload 包含：**
+    - **分配的 ComID**
+    - **狀態資訊**
+
+|**Field**|**Value**|
+|---|---|
+|**Command**|IF-RECV|
+|**Protocol ID**|`0x02`|
+|**Transfer Length**|`0x0001`|
+|**ComID**|`Request_ComID`（TPer 回傳的可用 ComID）|
+
+---
+
+### **📌 你的問題解答**
+
+1. **主機端只需要發送 Security-SEND（IF-SEND），並帶上 Payload，不需要建立 Session 或 Token。**
+    
+    - 取得 ComID 是基礎的系統查詢操作，與 Opal Session（如 StartSession）無關。
+    - 只要填寫 `HANDLE_COMID_REQUEST` 的內容並發送即可。
+2. **主機使用 Security-RECV（IF-RECV）來取得 ComID。**
+    
+    - `GET_COMID_RESPONSE` 指令是用來獲取先前發出的 `HANDLE_COMID_REQUEST` 的結果。
+
+---
+
+### **📌 總結**
+
+✔ **只要 Security-SEND（IF-SEND）發送 `HANDLE_COMID_REQUEST`，然後透過 Security-RECV（IF-RECV）取得 `GET_COMID_RESPONSE`，即可取得可用的 ComID。**  
+✔ **不需要開啟 Session，也不涉及 Token。**  
+✔ **回應的 `Request_ComID` 即是 TPer 指派給主機的 ComID。**
