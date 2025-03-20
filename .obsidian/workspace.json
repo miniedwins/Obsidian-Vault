@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Class Authorities.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Class Authorities"
+              "title": "類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Class Authorities.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Class Authorities 的大綱"
+              "title": "類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication） 的大綱"
             }
           },
           {
@@ -206,8 +206,9 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/Authority.md",
     "技術資料/NVMe/NVMe-OPAL/Class Authorities.md",
+    "技術資料/NVMe/NVMe-OPAL/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
+    "技術資料/NVMe/NVMe-OPAL/Authority.md",
     "技術資料/NVMe/NVMe-OPAL/Authentication.md",
     "技術資料/NVMe/NVMe-OPAL/Transaction.md",
     "技術資料/NVMe/NVMe-OPAL/SMUID.md",
@@ -231,7 +232,6 @@
     "技術資料/NVMe/NVMe-OPAL/Unique Columns.md",
     "技術資料/NVMe/NVMe-OPAL/Table table.md",
     "技術資料/NVMe/NVMe-OPAL/Table.md",
-    "技術資料/NVMe/NVMe-OPAL/Packet SeqNumber.md",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055133.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055014.png",
