@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/GET_COMID.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Session Startup.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GET_COMID"
+              "title": "Session Startup"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/GET_COMID.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Session Startup.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "GET_COMID 的大綱"
+              "title": "Session Startup 的大綱"
             }
           },
           {
@@ -206,6 +206,8 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/GET_COMID.md",
+    "技術資料/NVMe/NVMe-OPAL/Session Startup.md",
     "技術資料/NVMe/NVMe-OPAL/Session Manager.md",
     "技術資料/NVMe/NVMe-OPAL/GET COMID.md",
     "技術資料/NVMe/NVMe-OPAL/TPer Session Manager (TSM)、Host Session Number (HSN).md",
@@ -218,7 +220,6 @@
     "技術資料/NVMe/NVMe-OPAL/OpenSession.md",
     "技術資料/NVMe/NVMe-OPAL/Extended ComID.md",
     "技術資料/NVMe/NVMe-OPAL/ComID.md",
-    "技術資料/NVMe/NVMe-OPAL/GET_COMID.md",
     "技術資料/NVMe/NVMe-OPAL/TPer-Host Communication Protocol Layers.md",
     "技術資料/NVMe/NVMe-OPAL/Host Session Manager.md",
     "技術資料/NVMe/NVMe-OPAL/ComPacket Packet Subpacket.md",
@@ -231,7 +232,6 @@
     "技術資料/NVMe/NVMe-OPAL/Method Responses.md",
     "技術資料/NVMe/NVMe-OPAL/Session Manager 協議層方法調用的錯誤處理.md",
     "技術資料/NVMe/NVMe-OPAL/SP and Session Manager Layer 的區別.md",
-    "技術資料/NVMe/NVMe-OPAL/Secure Messaging Packet.md",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055133.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055014.png",
