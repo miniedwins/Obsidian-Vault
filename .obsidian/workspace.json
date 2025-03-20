@@ -25,12 +25,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/為什麼 Admin SP 會有 Locking SP 的 UID.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/模板與 SP 的關係.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "為什麼 Admin SP 會有 Locking SP 的 UID"
+              "title": "模板與 SP 的關係"
             }
           }
         ],
@@ -163,13 +163,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/為什麼 Admin SP 會有 Locking SP 的 UID.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/模板與 SP 的關係.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "為什麼 Admin SP 會有 Locking SP 的 UID 的大綱"
+              "title": "模板與 SP 的關係 的大綱"
             }
           },
           {
@@ -206,8 +206,9 @@
   },
   "active": "e58be72d5101a282",
   "lastOpenFiles": [
-    "技術資料/NVMe/Invoking UID 和 Method UID.md",
     "技術資料/NVMe/NVMe-OPAL/為什麼 Admin SP 會有 Locking SP 的 UID.md",
+    "技術資料/NVMe/NVMe-OPAL/模板與 SP 的關係.md",
+    "技術資料/NVMe/Invoking UID 和 Method UID.md",
     "技術資料/NVMe/NVMe-OPAL/Method Responses.md",
     "技術資料/NVMe/NVMe-OPAL/Method Signature Pseudo-code.md",
     "技術資料/NVMe/NVMe-OPAL/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
@@ -231,7 +232,6 @@
     "技術資料/NVMe/NVMe-OPAL/Extended ComID.md",
     "技術資料/NVMe/NVMe-OPAL/ComID.md",
     "技術資料/NVMe/NVMe-OPAL/TPer-Host Communication Protocol Layers.md",
-    "技術資料/NVMe/NVMe-OPAL/Host Session Manager.md",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055133.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055014.png",
