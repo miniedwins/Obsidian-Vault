@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/問題.md",
                 "mode": "source",
                 "source": false
               },
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/問題.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -204,10 +204,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e58be72d5101a282",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/Changing RangeStart and RangeLength Values.md",
+    "技術資料/NVMe/問題.md",
     "技術資料/NVMe/NVMe-OPAL/Re-Encryption.md",
-    "技術資料/NVMe/NVMe-OPAL/問題.md",
     "技術資料/NVMe/NVMe-OPAL/MBR.md",
     "技術資料/NVMe/NVMe-OPAL/LastReEncryptLBA and LastReEncStat.md",
     "技術資料/NVMe/NVMe-OPAL/Admin SP.md",
@@ -231,7 +232,6 @@
     "技術資料/NVMe/NVMe-OPAL/GET COMID.md",
     "技術資料/NVMe/NVMe-OPAL/TPer Session Manager (TSM)、Host Session Number (HSN).md",
     "技術資料/NVMe/NVMe-OPAL/Communication Layer.md",
-    "技術資料/NVMe/NVMe-OPAL/Security-Send、Security-Receive、IF-SEND、IF-RECV 之間的關係.md",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055133.png",
     "技術資料/NVMe/NVMe-OPAL/attachments/Pasted image 20250314055014.png",
