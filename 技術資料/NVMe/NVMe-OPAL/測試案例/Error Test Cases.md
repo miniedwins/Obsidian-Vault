@@ -8,6 +8,13 @@
 回傳 no further data。
 
 #### 測試行為
+從測試的資料來看，設定 Data Payload = MaxComPacket Size - 20 = 1092h
+
+- TPer Properties
+	- MaxComPacket Size = 10A6h
+	- MaxPacket Size = 1092h = 10A6h - 20Bytes ( ComPacket Header )
+
+![[Pasted image 20250407073546.png]]
 
 ---
 ### ETC-14 Exceed TPer Properties Regular Session

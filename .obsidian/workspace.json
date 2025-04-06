@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -193,6 +193,7 @@
   },
   "active": "4070237093888ca4",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407073546.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/重新加密（Re-encryption）.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
@@ -222,7 +223,6 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/TPer (Trusted Peripheral).md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Go",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments/Pasted image 20250314055133.png",
