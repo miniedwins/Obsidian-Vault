@@ -4,37 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "614d7f5a7430989d",
+        "id": "0598bd3733997bcc",
         "type": "tabs",
         "children": [
           {
-            "id": "3b8d2b40f8562eee",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "技術資料/NVMe/NVMe-CLI/attachments/Pasted image 20241218033737.png"
-              },
-              "icon": "lucide-image",
-              "title": "Pasted image 20241218033737"
-            }
-          },
-          {
-            "id": "e58be72d5101a282",
+            "id": "b4e2cb2700bba218",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/分析測試案例/ExceedSubPacket_RegSession.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "問題"
+              "title": "ExceedSubPacket_RegSession"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -163,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/分析測試案例/ExceedSubPacket_RegSession.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "問題 的大綱"
+              "title": "ExceedSubPacket_RegSession 的大綱"
             }
           },
           {
@@ -204,10 +191,20 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "e58be72d5101a282",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-OPAL/查詢 SPEC 資料.md",
+    "技術資料/NVMe/NVMe-OPAL/分析測試案例/ExceedSubPacket_RegSession.md",
+    "技術資料/NVMe/NVMe-OPAL/分析測試案例",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/重新加密（Re-encryption）.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/理解 IF-SEND IF-RECV.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/單向雙向通信.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/TPer (Trusted Peripheral).md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
     "程式設計/Python/套件管理/Poetry.md",
     "程式設計/Python/Go",
@@ -224,15 +221,6 @@
     "程式設計/Python/Pandas/填補缺失的資料.md",
     "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
     "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
-    "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
-    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
-    "技術資料/NVMe/NVMe-Base/Controller Property.md",
-    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
-    "技術資料/NVMe/NVMe-ZNS/Zoned Namespace.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Authentication.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/OpenSession.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Method Signature Pseudo-code.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/無法識別的方法調用.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments/Pasted image 20250314055133.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT",
@@ -251,7 +239,6 @@
     "技術資料/NVMe/NVMe-Base/Power Management/attachments",
     "技術資料/NVMe/NVMe-Base/Power Management",
     "程式設計/Python/Pytest/應用場景",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/attachments",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
