@@ -1,5 +1,22 @@
 
 ---
+### ETC-11 Invalid Invoking ID – Non-Get
+#### 測試情境說明
+此測試是要驗證調用無效的 Invalid Invoking ID。
+
+#### 期望結果
+回傳 NOT_AUTHORIZED。
+
+#### 測試行為
+調用無效的 Invoking UID 以及使用 Method UID。
+
+![[Pasted image 20250407092200.png]]
+
+返回執行結果 NOT_AUTHORIZED，符合預期。
+
+![[Pasted image 20250407092621.png]]
+
+---
 ### ETC-13 Malformed ComPacket Header Regular Session
 #### 測試情境說明
 此測試是要驗證 **ComPacket 的長度超過 `MaxComPacketSize-20`** 時，TPer 的處理行為是否正確。
@@ -33,6 +50,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header)
 #### 測試行為
 1. 寫入資料到 Data Store Table
 2. 發送多個 Subpacket 封包 ( Subpacket 1  +Subpacket 2 )
+
 ![[Pasted image 20250407062258.png]]
 
 ---

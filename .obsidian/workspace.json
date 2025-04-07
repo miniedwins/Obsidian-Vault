@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"aliases\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -176,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -195,10 +195,13 @@
   },
   "active": "4070237093888ca4",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407092621.png",
+    "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407092544.png",
+    "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
+    "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407092200.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例/Template.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP 的 SP Table.md",
-    "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407073546.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/重新加密（Re-encryption）.md",
     "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
@@ -225,7 +228,6 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/單向雙向通信.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/TPer (Trusted Peripheral).md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "程式設計/Python/Go",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments/Pasted image 20250317063533.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments/Pasted image 20250314055133.png",
@@ -235,8 +237,6 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments",
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024600.png",
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024646.png",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218035515.png",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218033254.png",
     "技術資料/NVMe/NVMe-OPAL",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",
