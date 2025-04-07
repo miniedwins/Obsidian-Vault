@@ -8,7 +8,7 @@
 回傳 NOT_AUTHORIZED。
 
 #### 測試行為
-調用無效的 Invoking UID 以及使用 Method UID。
+調用無效的 Invoking UID 以及 有效的 Method UID。
 
 ![[Pasted image 20250407092200.png]]
 
