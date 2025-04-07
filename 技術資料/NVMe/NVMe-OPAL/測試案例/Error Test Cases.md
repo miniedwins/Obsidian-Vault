@@ -27,7 +27,7 @@
 #### 參數說明
 MaxComPacketSize = 10B8h
 MaxPacketSize = 10A6h
-Data Pay Load = 10A6h - 20Bytes ( ComPacket Header)
+Data Pay Load = 10A6h - 20Bytes ( ComPacket Header )
 
 #### 測試行為
 - 不太清楚為什要用 MaxComPacketSize - 20 作為 Data Pay Load。
@@ -38,7 +38,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header)
 ---
 ### ETC-14 Exceed TPer Properties Regular Session
 #### 測試情境說明
-此測試是要模擬主機端發送 MaxSubPackets + 1 時，TPer 的處理行為是否正確。
+此測試是要模擬主機端發送 MaxSubPackets + 1 時，也就是 Packet 帶有多個 SubPacket。
 
 #### 期望結果
 回傳 no further data。
