@@ -1,4 +1,8 @@
 
+### ETC-10 Invalid Invoking ID - Get
+#### 測試情境說明
+
+
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
 #### 測試情境說明
@@ -8,11 +12,14 @@
 回傳 NOT_AUTHORIZED。
 
 #### 測試行為
-調用無效的 Invoking UID 以及 有效的 Method UID。
+1. 調用無效的 Invoking UID : 00 00 08 01 00 00 00 05h ( UNKNOWN )
+2. 調用有效的 Method UID : 00 00 00 06 00 00 00 17h ( Set )
+
+備註 : 官方測試案例所調用的是無效的 UID of 00 00 08 01 00 00 00 05。
 
 ![[Pasted image 20250407092200.png]]
 
-返回執行結果 NOT_AUTHORIZED，符合預期。
+返回執行結果 NOT_AUTHORIZED。
 
 ![[Pasted image 20250407092621.png]]
 
