@@ -21,12 +21,14 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header)
 ---
 ### ETC-14 Exceed TPer Properties Regular Session
 #### 測試情境說明
-此測試是要驗證當主機端發送 MaxSubPackets + 1 時，TPer 的處理行為是否正確。
-1. MaxSubPackets :  TPer 宣告的最大可接受封包數量。
-2. MaxSubPackets 規範上定義為 `1`。
+此測試是要模擬主機端發送 MaxSubPackets + 1 時，TPer 的處理行為是否正確。
 
 #### 期望結果
 回傳 no further data。
+
+#### 參數說明
+1. MaxSubPackets :  TPer 宣告的最大可接受封包數量。
+2. SPEC 定義 MaxSubPackets=1。
 
 #### 測試行為
 1. 寫入資料到 Data Store Table
