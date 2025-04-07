@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
@@ -138,7 +138,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "標籤"
@@ -174,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -193,12 +195,13 @@
   },
   "active": "4070237093888ca4",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/測試案例/Template.md",
+    "技術資料/NVMe/NVMe-OPAL/問題.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP 的 SP Table.md",
+    "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407073546.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/重新加密（Re-encryption）.md",
-    "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
-    "技術資料/NVMe/NVMe-OPAL/問題.md",
     "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
-    "技術資料/NVMe/NVMe-OPAL/測試案例/Template.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/模板與 SP 的關係.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/TPer Session Manager (TSM)、Host Session Number (HSN).md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Table table.md",
@@ -234,7 +237,6 @@
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024646.png",
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218035515.png",
     "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218033254.png",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/attachments/Pasted image 20241218024357.png",
     "技術資料/NVMe/NVMe-OPAL",
     "技術資料/NVMe/NVMe-CLI/attachments",
     "程式設計/領域驅動",

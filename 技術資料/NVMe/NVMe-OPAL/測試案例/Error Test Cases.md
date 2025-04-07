@@ -7,12 +7,14 @@
 #### 期望結果
 回傳 no further data。
 
-#### 測試行為
-從測試的資料來看，設定 Data Payload = MaxComPacket Size - 20 = 1092h
+#### 參數說明
+MaxComPacketSize = 10B8h
+MaxPacketSize = 10A6h
+Data Pay Load = 10A6h - 20Bytes ( ComPacket Header)
 
-- TPer Properties
-	- MaxComPacket Size = 10A6h
-	- MaxPacket Size = 1092h = 10A6h - 20Bytes ( ComPacket Header )
+#### 測試行為
+- 不太清楚為什要用 MaxComPacketSize - 20 作為 Data Pay Load。
+- ComPacket 封包會因為 Payload 大小而最終導致超過 MaxComPacket Size，符合測試案例。
 
 ![[Pasted image 20250407073546.png]]
 
