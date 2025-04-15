@@ -1,3 +1,4 @@
+## Devslp Trace
 1. 使用 SET FEATURES 設定
 	- Subcommands ( 0x10 ) : Enable  SATA feature
 	- Subcommands ( 0x90 ) : Disable SATA feature
@@ -6,6 +7,8 @@
 2. 當前這個設定是失敗的，主機端回傳 Status=0x02，代表 Command Aborted
 
 ![[Pasted image 20250415074822.png]]
+
+## SPEC 參考
 
 - SET FEATURES Subcommands ( 省略很多 Subcommands )
 
