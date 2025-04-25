@@ -25,12 +25,14 @@
             "id": "81fcf5a8aaf3e1a4",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.8.10"
+                "file": "程式設計/Python/Pytest/pytest.mark.usefixtures.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
+              "icon": "lucide-file",
+              "title": "pytest.mark.usefixtures"
             }
           }
         ],
@@ -165,12 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "程式設計/Python/Pytest/pytest.mark.usefixtures.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "pytest.mark.usefixtures 的大綱"
             }
           },
           {
@@ -207,6 +210,11 @@
   },
   "active": "81fcf5a8aaf3e1a4",
   "lastOpenFiles": [
+    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+    "程式設計/Python/Pytest/pytest.mark.usefixtures.md",
+    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
+    "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
+    "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
     "技術資料/I2C/I2C的工作原理與技術分析.md",
     "技術資料/SATA/觀察主機端設定 Devslp 功能.md",
     "技術資料/I2C",
@@ -241,13 +249,8 @@
     "技術資料/NVMe/NVMe-ZNS/Zoned Namespace.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407062258.png",
-    "技術資料/NVMe/NVMe-OPAL/分析測試案例/ETC-14 Exceed TPer Properties Regular Session.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
-    "技術資料/NVMe/NVMe-OPAL/查詢 SPEC 資料.md",
-    "技術資料/NVMe/NVMe-OPAL/分析測試案例/ExceedSubPacket_RegSession.md",
     "技術資料/NVMe/NVMe-OPAL/分析測試案例",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/理解 IF-SEND IF-RECV.md",
     "程式設計/Python/Go",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments",
