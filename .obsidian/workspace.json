@@ -208,10 +208,11 @@
       "command-palette:開啟命令面板": false
     }
   },
-  "active": "81fcf5a8aaf3e1a4",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
+    "程式設計/Python/Pytest/未命名.md",
     "程式設計/Python/Pytest/pytest.mark.usefixtures.md",
+    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
     "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
     "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
     "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
@@ -246,7 +247,6 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/ComPacket Packet Subpacket.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/outside of a transaction.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Range Crossing Behavior.md",
-    "技術資料/NVMe/NVMe-ZNS/Zoned Namespace.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407062258.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments",
