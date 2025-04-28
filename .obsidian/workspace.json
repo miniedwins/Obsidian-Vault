@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/領域驅動/DAO and DO 概念.md",
+                "file": "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "DAO and DO 概念"
+              "title": "分層架構重構後的系統設計解析"
             }
           }
         ],
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/領域驅動/DAO and DO 概念.md",
+                "file": "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "DAO and DO 概念 的大綱"
+              "title": "分層架構重構後的系統設計解析 的大綱"
             }
           },
           {
@@ -210,8 +210,18 @@
   },
   "active": "81fcf5a8aaf3e1a4",
   "lastOpenFiles": [
+    "程式設計/領域驅動/阿里技術專家詳解DDD系列/DDD系列 (2).md",
+    "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
+    "程式設計/領域驅動/阿里技術專家詳解DDD系列/判斷是否為業務流程.md",
+    "程式設計/領域驅動/DeepSeek 解釋/中介軟體抽象（Middleware ACL）的設計解析與實戰.md",
+    "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
+    "程式設計/領域驅動/DeepSeek 解釋/ACL 的關鍵設計與範例解析.md",
+    "程式設計/領域驅動/DeepSeek 解釋",
+    "程式設計/領域驅動/阿里技術專家詳解DDD系列",
+    "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
+    "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
+    "技術資料/NVMe/NVMe-OPAL/測試案例/Template.md",
     "程式設計/Python/Pytest/pytest.mark.usefixtures.md",
-    "程式設計/領域驅動/DAO and DO 概念.md",
     "程式設計/領域驅動/DDD系列第二講.md",
     "程式設計/Python/Pytest/未命名.md",
     "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
@@ -229,8 +239,6 @@
     "技術資料/PCIE/PCIe Class Code.md",
     "技術資料/SATA/attachments/Pasted image 20250415074822.png",
     "技術資料/SATA/attachments",
-    "技術資料/NVMe/NVMe-OPAL/測試案例/Error Test Cases.md",
-    "技術資料/NVMe/NVMe-OPAL/測試案例/Template.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407092621.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407092544.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407092200.png",
@@ -238,15 +246,9 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP 的 SP Table.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407073546.png",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/重新加密（Re-encryption）.md",
-    "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/模板與 SP 的關係.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/TPer Session Manager (TSM)、Host Session Number (HSN).md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Table table.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Session Manager.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Packet SeqNumber.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/LastReEncryptLBA and LastReEncStat.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Changing RangeStart and RangeLength Values.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/ComPacket Packet Subpacket.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments/Pasted image 20250407062258.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例/attachments",
@@ -254,8 +256,6 @@
     "程式設計/Python/Go",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/attachments",
-    "技術資料/NVMe/NVMe-OPAL",
-    "技術資料/NVMe/NVMe-CLI/attachments",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
