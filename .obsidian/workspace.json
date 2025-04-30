@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "處理返回的字段名稱與程式碼對應"
+              "title": "DAO and DO 概念"
             }
           }
         ],
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+                "file": "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "處理返回的字段名稱與程式碼對應 的大綱"
+              "title": "DAO and DO 概念 的大綱"
             }
           },
           {
@@ -210,16 +210,16 @@
   },
   "active": "81fcf5a8aaf3e1a4",
   "lastOpenFiles": [
+    "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
+    "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
+    "程式設計/領域驅動/DeepSeek 解釋/中介軟體抽象（Middleware ACL）的設計解析與實戰.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Admin SP.md",
-    "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
     "程式設計/領域驅動/阿里技術專家詳解DDD系列/DDD系列 (2).md",
     "程式設計/領域驅動/阿里技術專家詳解DDD系列/判斷是否為業務流程.md",
-    "程式設計/領域驅動/DeepSeek 解釋/中介軟體抽象（Middleware ACL）的設計解析與實戰.md",
-    "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
     "程式設計/領域驅動/DeepSeek 解釋/ACL 的關鍵設計與範例解析.md",
     "程式設計/領域驅動/DeepSeek 解釋",
     "程式設計/領域驅動/阿里技術專家詳解DDD系列",
