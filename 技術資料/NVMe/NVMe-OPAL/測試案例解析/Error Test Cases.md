@@ -21,7 +21,8 @@
 
 ![[Pasted image 20250519144343.png]]
 
-#### CASE 2 : 測試情境說明 
+### 測試案例 (2)
+#### 測試說明 
 此測試驗證在位元組表 ( Byte Table )上呼叫 Get 方法，但是沒有權限可以檢索內容。
 
 #### 期望結果
@@ -37,7 +38,8 @@
 
 ![[Pasted image 20250519152226.png]]
 
-#### CASE 3 : 測試情境說明 
+### 測試案例 (3)
+#### 測試說明 
 
 
 #### 期望結果
@@ -48,7 +50,7 @@
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
-#### 測試情境說明
+#### 測試說明
 1. 此測試是要驗證調用 LockingInfo table 不存在的 Invoking ID。
 2. 該測試所調用的是 Set Method。
 
@@ -69,7 +71,7 @@
 
 ---
 ### ETC-13 Malformed ComPacket Header Regular Session
-#### 測試情境說明
+#### 測試說明
 此測試是要驗證 **ComPacket 的長度超過 `MaxComPacketSize-20`** 時，TPer 的處理行為是否正確。
 
 #### 期望結果
@@ -88,7 +90,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header )
 
 ---
 ### ETC-14 Exceed TPer Properties Regular Session
-#### 測試情境說明
+#### 測試說明
 此測試是要模擬主機端發送 MaxSubPackets + 1 時，也就是 Packet 帶有多個 SubPacket。
 
 #### 期望結果
