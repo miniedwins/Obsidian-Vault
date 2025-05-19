@@ -1,13 +1,16 @@
 
 ### ETC-10 Invalid Invoking ID - Get
 #### 測試情境說明
+1. 此測試是要驗證調用無效的 Invalid Invoking ID。
+2. 該測試所調用的是 Get Method。
 #### 期望結果
 #### 測試行為
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
 #### 測試情境說明
-此測試是要驗證調用無效的 Invalid Invoking ID。
+1. 此測試是要驗證調用無效的 Invalid Invoking ID。
+2. 該測試所調用的是 Set Method。
 
 #### 期望結果
 回傳 NOT_AUTHORIZED。
@@ -52,8 +55,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header )
 回傳 no further data。
 
 #### 參數說明
-1. MaxSubPackets :  TPer 宣告的最大可接受封包數量。
-2. SPEC 定義 MaxSubPackets=1。
+MaxSubPackets :  TPer 宣告的最大可接受封包數量。
 
 #### 測試行為
 1. 寫入資料到 Data Store Table
