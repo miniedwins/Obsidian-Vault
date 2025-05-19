@@ -1,7 +1,8 @@
 
 ### ETC-10 Invalid Invoking ID - Get
 #### 測試情境說明
-
+#### 期望結果
+#### 測試行為
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
