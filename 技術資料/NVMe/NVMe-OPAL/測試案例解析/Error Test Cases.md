@@ -2,24 +2,27 @@
 ### ETC-10 Invalid Invoking ID - Get
 
 #### CASE 1 : 測試情境說明 
-1. 此測試是要驗證調用無效的 Invalid Invoking ID。
-2. 該測試所調用的是 Get Method。
+1. 此測試是要驗證調用 LockingInfo table 不存在的 Invoking ID。
+2. 以及調用的是 Get Method。
 
 #### 期望結果
 回傳 NOT_AUTHORIZED。
 
 #### 測試行為
-1. 調用無效的 Invoking UID : 00 00 08 01 AA BB CC DDh ( UNKNOWN )
-2. 調用有效的 Method UID : 00 00 00 06 00 00 00 17h ( Set )
+1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身分作為授權者。
+2. 調用無效的 Invoking UID : 00 00 08 01 AA BB CC DDh ( UNKNOWN )
+3. 調用有效的 Method UID : 00 00 00 06 00 00 00 17h ( Set )
 
 ![[Pasted image 20250519141449.png]]
 
+返回執行結果 NO FURTHER DATA。
 
+![[Pasted image 20250519144343.png]]
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
 #### 測試情境說明
-1. 此測試是要驗證調用無效的 Invalid Invoking ID。
+1. 此測試是要驗證調用 LockingInfo table 不存在的 Invoking ID。
 2. 該測試所調用的是 Set Method。
 
 #### 期望結果
