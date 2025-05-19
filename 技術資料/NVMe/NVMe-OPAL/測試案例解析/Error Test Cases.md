@@ -1,23 +1,50 @@
 
-### ETC-10 Invalid Invoking ID - Get
+## ETC-10 Invalid Invoking ID - Get
 
-#### CASE 1 : 測試情境說明 
-1. 此測試是要驗證調用 LockingInfo table 不存在的 Invoking ID。
-2. 以及調用的是 Get Method。
+### 測試案例 (1)
+#### 測試說明 
+此測試是要驗證調用 LockingInfo table 不存在的 Invoking ID。
 
 #### 期望結果
 回傳 NOT_AUTHORIZED。
 
 #### 測試行為
-1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身分作為授權者。
+1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身份作為授權者。
 2. 調用無效的 Invoking UID : 00 00 08 01 AA BB CC DDh ( UNKNOWN )
 3. 調用有效的 Method UID : 00 00 00 06 00 00 00 17h ( Set )
 
 ![[Pasted image 20250519141449.png]]
 
-返回執行結果 NO FURTHER DATA。
+返回執行結果 no further data，但是官方測試案例則表示回傳 NOT_AUTHORIZED。
+
+這邊猜測應該是 no further data 比較會是對的。因為測試身份是使用  Admin1 去調用不存在的Invoking ID，因此不應該回傳未授權 ( NOT_AUTHORIZED ) 的狀態。
 
 ![[Pasted image 20250519144343.png]]
+
+#### CASE 2 : 測試情境說明 
+此測試驗證在位元組表 ( Byte Table )上呼叫 Get 方法，但是沒有權限可以檢索內容。
+
+#### 期望結果
+回傳 NOT_AUTHORIZED or SUCCESS 以及 Empty Result List。
+
+#### 測試行為
+1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Anybody 的身份作為授權者。
+2. 調用 Get method on Invoking UID of 00 00 10 01 00 00 00 00 ( DataStore table )
+
+![[Pasted image 20250519152137.png]]
+
+返回執行結果 NOT_AUTHORIZED。
+
+![[Pasted image 20250519152226.png]]
+
+#### CASE 3 : 測試情境說明 
+
+
+#### 期望結果
+回傳 SUCCESS and only returns the CharSet, TryLimit, and Tries column values。
+
+#### 測試行為
+1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身份作為授權者。
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
