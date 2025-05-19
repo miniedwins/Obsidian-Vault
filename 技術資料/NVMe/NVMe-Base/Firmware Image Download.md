@@ -1,11 +1,8 @@
 ## 基本介紹
 
-NVMe Firmware Command 分為以下兩種命令 : 
-### Firmware  Image Download 
+此功能主要是用來更新全部或是部份的資料 ( Image ) 到控制器上( Controller )，也就是可以將新的韌體資料上傳到控制器上，由此方式更新韌體。更新的過程中需要將該更新的資料分成一小部份的方式作為傳遞，每一份傳遞資料都包含了 NUMD and OFST，所以 Host 必須要確保資料傳遞的 NUMD and OFST是否有符合 FWUG，可以透過 Identify-Ctrl 取得，若是沒有符合 FWUG 就會造成韌體更新錯誤。
 
-此功能主要是用來更新全部或是部份的資料 (image) 到控制器上(controller)，也就是可以將新的韌體資料上傳到控制器上，由此方式更新韌體。更新的過程中需要將該更新的資料分成一小部份的方式作為傳遞，每一份傳遞資料都包含了 NUMD and OFST，所以 host 必須要確保資料傳遞的 NUMD and OFST是否有符合 FWUG，可以透過 Identify-Ctrl 取得，若是沒有符合 FWUG 就會造成韌體更新錯誤。
-
-當所有的資料傳遞完成後，並不會馬上被啟用 (active)，Host 還需要發送 firmware commit，並且在其它  downloading image 之前發送該命令，這個時候控制器就會處理第一次 firmware commit 之前的 firmware image。
+當所有的資料傳遞完成後，並不會馬上被啟用 ( Active )，Host 還需要發送 firmware commit，並且在其它  downloading image 之前發送該命令，這個時候控制器就會處理第一次 firmware commit 之前的 firmware image。
 
 **重要** :  如果在執行 firmware image download or commit 的期間，發生系統斷電或式控制器被重置等突發事件後，先前傳遞的資料都會被控制器給移除。
 
@@ -13,7 +10,7 @@ NVMe Firmware Command 分為以下兩種命令 :
 
 ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/identify_controller/Identify_Controller_FWUG.png)
 
-#### NUMD (Number of  Dwords)
+#### NUMD (Number of  DWords)
 
 這裡是設定傳遞資料的大小，可以由 NUMD 設定較大的傳輸資料 128k bytes，最小要設定成 4k bytes 大小，不過最後都要符合 FWUG 所要求的規範。
 
@@ -34,7 +31,7 @@ host 會在下一次 Controller Level Rest 去檢查兩件事情， 如下 :
 1. 檢查目前所使用的 Firmware Revsion (FR)
 2. 檢查 Firmware Slot Information (Log Page : AFI)
 
-host 檢查下列表格就可以得知，下一次控制器重置後，是否需要 active firmware slot
+host 檢查下列表格就可以得知，下一次控制器重置後，是否需要 Active firmware slot
 
 ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/log_page/log_page_firmware_slot_information_AFI.png)
 
