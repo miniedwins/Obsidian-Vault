@@ -43,11 +43,25 @@
 
 
 #### 期望結果
-回傳 SUCCESS and only returns the CharSet, TryLimit, and Tries column values。
+回傳 SUCCESS and only returns the CharSet, TryLimit, and Tries column values。 
 
 #### 測試行為
 1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身份作為授權者。
+2. 調用 Get method on Invoking UID of 00 00 00 0B 00 01 00 01 ( C_PIN_Admin1 )
 
+![[Pasted image 20250520074422.png]]
+
+3. Data Payload 會帶有要取得 CharSet, TryLimit, and Tries 相關欄位資訊。04h 06h 應該有表示
+ C_PIN Table Description 欄位的 Column Number 範圍 ***（目前尚未確定）***。
+
+![[Pasted image 20250520074444.png]]
+
+返回執行結果可以取得 C_PIN Table Description（CharSet, TryLimit, and Tries）。
+
+![[Pasted image 20250520072911.png]]
+
+
+![[Pasted image 20250520073304.png]]
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
