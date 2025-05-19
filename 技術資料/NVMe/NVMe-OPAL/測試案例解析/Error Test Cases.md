@@ -48,6 +48,7 @@
 #### 測試行為
 1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身份作為授權者。
 
+
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
 #### 測試說明
