@@ -1,10 +1,20 @@
 
 ### ETC-10 Invalid Invoking ID - Get
-#### 測試情境說明
+
+#### CASE 1 : 測試情境說明 
 1. 此測試是要驗證調用無效的 Invalid Invoking ID。
 2. 該測試所調用的是 Get Method。
+
 #### 期望結果
+回傳 NOT_AUTHORIZED。
+
 #### 測試行為
+1. 調用無效的 Invoking UID : 00 00 08 01 AA BB CC DDh ( UNKNOWN )
+2. 調用有效的 Method UID : 00 00 00 06 00 00 00 17h ( Set )
+
+![[Pasted image 20250519141449.png]]
+
+
 
 ---
 ### ETC-11 Invalid Invoking ID – Non-Get
