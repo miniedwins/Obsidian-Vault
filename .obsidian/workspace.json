@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/測試案例解析/Error Test Cases.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Error Test Cases"
+              "title": "nvme end-to-end protection"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 289.5
+    "width": 479.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/測試案例解析/Error Test Cases.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Error Test Cases"
+              "title": "Outline of nvme end-to-end protection"
             }
           },
           {
@@ -205,43 +205,43 @@
   },
   "active": "4070237093888ca4",
   "lastOpenFiles": [
+    "技術資料/SMBus/Packet Error Code.md",
+    "技術資料/SATA/設定 Security Erase Command.md",
+    "技術資料/SATA/觀察主機端設定 Devslp 功能.md",
+    "技術資料/NVMe/NVMe-ZNS/Zoned Namespace.md",
+    "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
+    "技術資料/NVMe/NVMe-CLI/nvme power management.md",
+    "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
+    "技術資料/NVMe/NVMe-CLI/nvme subsystem reset.md",
+    "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
+    "技術資料/NVMe/NVMe-Base/Dataset Management.md",
+    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
+    "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Question.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize.md",
+    "技術資料/NVMe/NVMe-Base/Telemetry.md",
+    "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
+    "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
+    "技術資料/NVMe/NVMe-Base/attachments/host_memory_buffer/hmb_attributes_data_structure.png",
+    "技術資料/NVMe/NVMe-Base/attachments/firmware_image_download/firmware_update_granularity.png",
+    "技術資料/NVMe/NVMe-Base/attachments/firmware_image_download/firmware_updates.png",
+    "技術資料/NVMe/NVMe-Base/attachments/data_protection/write_pi_md_eq8_pract_1.png",
+    "技術資料/NVMe/NVMe-Base/attachments/data_protection/read_pi_md_eq8_pract_1.png",
+    "Untitled.canvas",
+    "技術資料/NVMe/NVMe-Base/attachments/data_protection/metadata_contiguous.png",
+    "技術資料/NVMe/NVMe-Base/attachments/data_protection/medata_as_separate.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520074444.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520074422.png",
     "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520074243.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/Error Test Cases.md",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520074338.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520073815.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520073304.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520072911.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520073026.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520073033.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520073057.png",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments/Pasted image 20250520073102.png",
-    "程式設計/C 語言/執行緒 (pthread)/執行緒的建立.md",
-    "程式設計/C 語言/執行緒 (pthread)/執行緒退出.md",
-    "程式設計/C 語言/名詞解釋/function returning type.md",
-    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
-    "程式設計/C 語言/時間戳轉換 (timestamp).md",
-    "程式設計/C 語言/GCC 定義巨集 DEBUG.md",
-    "程式設計/C 語言/建立靜態與共享函式庫.md",
-    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
-    "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
-    "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
-    "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
-    "程式設計/Python/套件管理/Poetry.md",
-    "程式設計/Python/Pytest/檔案設定說明/指定標記 (Markers) 測試.md",
-    "程式設計/Python/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
-    "程式設計/Python/Pytest/應用場景/測試結束後執行清理操作.md",
-    "程式設計/Python/Pytest/忽略測試項目/跳過整個模組測試.md",
-    "程式設計/Python/Pytest/命令模式操作/當發生錯誤停止測試.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/無法識別的方法調用.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Security Provider.md",
-    "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
-    "技術資料/Other/IEEE EUI, OUI, and CID.md",
-    "技術資料/SATA/設定 Security Erase Command.md",
-    "Untitled.canvas",
     "程式設計/領域驅動/DeepSeek 解釋/attachments",
     "程式設計/領域驅動/DeepSeek 解釋",
     "程式設計/領域驅動/阿里技術專家詳解DDD系列",
