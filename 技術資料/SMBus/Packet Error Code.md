@@ -32,3 +32,20 @@ Packet Error Checking, whenever applicable, is implemented by appending a Packet
 ## Packet error checking implementation
 The SMBus must accommodate any mixture of devices that support Packet Error Checking and devices that do not. A device that acts as a target and supports the PEC must always be prepared to perform the target transfer with or without a PEC, verify the correctness of the PEC if present, and only process the message if the PEC is correct. Implementations are encouraged to issue a NACK if the PEC is present but not correct.
 
+## ACK/NACK 與 PEC 並不構成絕對保證
+
+### 1. ACK ≠ 確認資料正確
+- 即使有 ACK，也**不能保證 PEC 正確或資料寫入成功**。
+### 2. NACK 代表目標設備可能偵測錯誤
+- 如果你發送資料 + PEC，然後收到 **NACK**：   
+    - 代表目標設備可能在 link layer 就偵測到了錯誤（如 PEC 不正確）       
+    - 因此它有機會即時送出 NACK
+###  3. ACK 的限制
+- 如果你發送資料 + PEC，然後收到 **ACK**：   
+    - 只能表示：目標設備的 link 層「沒有發現錯誤」
+    - 但它不一定來得及做 PEC 驗證（即有可能是錯誤但來不及 NACK）
+### 4. 建議使用：Write 後 Read 回來 + PEC 驗證
+- 如果你要保證寫入真的成功、資料正確：
+    - 發送 write 命令（加 PEC）        
+    - 再用 read + PEC 回讀該值
+    - 比對 PEC 是否正確，若 OK → 資料可被信任

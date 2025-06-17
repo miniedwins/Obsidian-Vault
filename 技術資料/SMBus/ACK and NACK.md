@@ -1,4 +1,3 @@
-
 ## ACK
 A SMBus device must always acknowledge (ACK) its own address. SMBus uses this signaling to detect the presence of detachable devices on the bus.
 
