@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+                "file": "技術資料/SMBus/Packet Error Code.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AfterValidator"
+              "title": "Packet Error Code"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 479.5
+    "width": 271.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+                "file": "技術資料/SMBus/Packet Error Code.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of AfterValidator"
+              "title": "Outline of Packet Error Code"
             }
           },
           {
@@ -205,11 +205,16 @@
   },
   "active": "4070237093888ca4",
   "lastOpenFiles": [
+    "技術資料/SMBus/ACK and NACK.md",
+    "技術資料/SMBus/Packet Error Code.md",
+    "技術資料/MCTP/解析主機設定 EID.md",
+    "技術資料/MCTP/MCTP 封包基本組成.md",
+    "技術資料/MCTP/mctp.md",
+    "技術資料/I2C/I2C的工作原理與技術分析.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "程式設計/Python/Pydantic/驗證器 (Validator)/BeforeValidator.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
     "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
-    "技術資料/SMBus/Packet Error Code.md",
     "技術資料/SATA/設定 Security Erase Command.md",
     "技術資料/SATA/觀察主機端設定 Devslp 功能.md",
     "技術資料/NVMe/NVMe-ZNS/Zoned Namespace.md",
@@ -226,11 +231,6 @@
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
     "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
-    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
-    "技術資料/NVMe/NVMe-Base/Question.md",
     "技術資料/NVMe/NVMe-Base/attachments/host_memory_buffer/hmb_attributes_data_structure.png",
     "技術資料/NVMe/NVMe-Base/attachments/firmware_image_download/firmware_update_granularity.png",
     "技術資料/NVMe/NVMe-Base/attachments/firmware_image_download/firmware_updates.png",
