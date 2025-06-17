@@ -22,3 +22,8 @@ Packet Error Code (PEC) 是用來做檢驗傳遞的封包是否有錯誤，針�
 2. `Master` 收到來自 `Slave` 回傳的資料，資料傳輸完畢後加入 `PEC` 校驗碼
 
 // TODO : Capture Receive byte protocol with PEC
+
+
+## Packet error checking implementation
+The SMBus must accommodate any mixture of devices that support Packet Error Checking and devices that do not. A device that acts as a target and supports the PEC must always be prepared to perform the target transfer with or without a PEC, verify the correctness of the PEC if present, and only process the message if the PEC is correct. Implementations are encouraged to issue a NACK if the PEC is present but not correct.
+
