@@ -24,6 +24,11 @@ Packet Error Code (PEC) 是用來做檢驗傳遞的封包是否有錯誤，針�
 // TODO : Capture Receive byte protocol with PEC
 
 
+## Packet Error Checking
+The Packet Error Checking mechanism improves reliability and communication robustness. Implementation of Packet Error Checking by SMBus devices is optional for SMBus devices but is required for devices participating in and only during the ARP process. SMBus devices that implement Packet Error Checking must be capable to communicate with the controller and other devices that do not implement the Packet Error Checking mechanism.
+
+Packet Error Checking, whenever applicable, is implemented by appending a Packet Error Code (PEC) at the end of each message transfer. Each protocol (except for Quick Command and the SMBus Host Notify protocol described Section 6.5.9) has two variants: one with the Packet Error Code (PEC) byte and one without. The PEC is a CRC-8 error-checking byte, calculated on all the message bytes (including addresses and read/write bits). The PEC is appended to the message by the device that supplied the last data byte.
+
 ## Packet error checking implementation
 The SMBus must accommodate any mixture of devices that support Packet Error Checking and devices that do not. A device that acts as a target and supports the PEC must always be prepared to perform the target transfer with or without a PEC, verify the correctness of the PEC if present, and only process the message if the PEC is correct. Implementations are encouraged to issue a NACK if the PEC is present but not correct.
 
