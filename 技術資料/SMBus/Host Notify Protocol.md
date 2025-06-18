@@ -5,11 +5,10 @@ Communication from a SMBus device to the SMBus Host begins with the SMBus Host a
 SMBus Hosts, as defined in Section 6.1.3, must support the SMBus Host Notify protocol. Hosts may implement the optional SMBALERT# line if devices in the system use it.
 
 ## 概要說明
-
-
-## 為什麼需要 Host Notify？
-- Host Notify 是一種「目標裝置主動通知 ARP Controller」的機制。    
-- 通常用於告知：**「我有新裝置插入」** 或是 **「裝置被移除」** 等事件。
+- 主要功能是一種「目標裝置主動通知 ARP Controller」的機制。    
+- 通常用於告知：「我有新裝置插入」 或是 「裝置被移除」 等事件。　
+- 它是一個可選的功能（Optional feature），不是所有支援 ARP 的裝置都必須實作。
+- 若是做為 Host Controller ，必須要支援 Host Notify 命令。
 
 ## Host Notify 由誰發起？
 - 發起者是原本的從裝置（Slave），此時角色變為 Controller（主控）    
