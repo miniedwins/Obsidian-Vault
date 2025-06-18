@@ -13,4 +13,8 @@
 | `10b`         | Dynamic & Volatile Address   | 裝置支援動態指派 SMBus 地址，但**斷電後會遺失地址設定（易失性）**。例如初始化後分配地址，但下次開機重新分配。  |
 | `11b`         | Random Number Device         | 裝置沒有可用地址，**僅用於初始裝置發現階段（如 ARP）**，可透過唯一隨機碼識別它。通常會要求分配新位址後才啟用功能。 |
 
-GET UDID ( General ) 以及 GET UDID ( Direct ) 不同 ?
+## GET UDID ( General ) 
+
+
+## GET UDID ( Direct ) 
+

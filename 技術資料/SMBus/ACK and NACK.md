@@ -9,3 +9,11 @@ A SMBus target device may decide to NACK a byte other than the address byte in t
 • The target device detects an invalid command or invalid data. In this case the target device must NACK the received byte. The controller upon detection of this condition must generate a STOP condition and retry the transaction.
 
 • If a controller-receiver is involved in the transaction it must signal the end of data to the target-transmitter by generating an NACK on the last byte that was clocked out by the target. The target-transmitter must release the data line to allow the controller to generate a STOP condition.
+
+## 什麼是 NACK
+ NACK 是 SMBus/I2C 中從裝置對特定位元組發出的「拒絕」訊號：
+- 通常在 **裝置不存在**、**裝置不支援命令**、或 **PEC 錯誤** 時出現。    
+- SMBus 裝置會在特定 byte 送出 NACK，例如：    
+    - UDID 比對錯誤（ARP 流程中）        
+    - PEC 檢查錯誤        
+    - 記憶體越界或無法處理的命令
