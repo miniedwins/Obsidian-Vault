@@ -1,0 +1,2 @@
+The MCTP message body (including IC bit, Message Type, Message type-specific header fields,
+message payload and message integrity check if present) for NVMe Management Messages over MCTP shall be less than or equal to 4224 (4K+128) bytes.
