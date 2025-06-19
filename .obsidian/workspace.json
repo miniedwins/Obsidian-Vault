@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/MCTP/MCTP Packet Encapsulation.md",
+                "file": "技術資料/MCTP/MCTP Over SMBus Packet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MCTP Packet Encapsulation"
+              "title": "MCTP Over SMBus Packet"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/MCTP/MCTP Packet Encapsulation.md",
+                "file": "技術資料/MCTP/MCTP Over SMBus Packet.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of MCTP Packet Encapsulation"
+              "title": "Outline of MCTP Over SMBus Packet"
             }
           },
           {
@@ -205,16 +205,19 @@
   },
   "active": "b68646818a4310b7",
   "lastOpenFiles": [
-    "技術資料/MCTP/MCTP Message Type codes.md",
-    "技術資料/MCTP/MCTP Packet Encapsulation.md",
+    "技術資料/MCTP/Generic MCTP message fields.md",
+    "技術資料/MCTP/MCTP Over SMBus Packet.md",
     "技術資料/MCTP/MCTP Control Messages Type.md",
-    "技術資料/MCTP/MCTP 封包基本組成.md",
-    "技術資料/MCTP/解析主機設定 EID.md",
-    "技術資料/MCTP/mctp.md",
+    "技術資料/MCTP/MCTP Message Type codes.md",
+    "技術資料/MCTP/MCTP Packet Format.md",
+    "技術資料/MCTP/MCTP 封包層次結構 (SMBus).md",
     "技術資料/MCTP/attachments/Pasted image 20250619114132.png",
     "技術資料/MCTP/attachments/Pasted image 20250619113950.png",
-    "技術資料/MCTP/Maximum message size.md",
     "技術資料/MCTP/attachments/Pasted image 20250619112614.png",
+    "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
+    "技術資料/MCTP/attachments/Pasted image 20250619142553.png",
+    "技術資料/MCTP/解析主機設定 EID.md",
+    "技術資料/MCTP/mctp.md",
     "技術資料/MCTP/attachments",
     "技術資料/SMBus/Packet Error Code (PEC).md",
     "技術資料/SMBus/Unique Device Identifier (UDID).md",
@@ -235,16 +238,13 @@
     "技術資料/SMBus/ARP Controller Behavior.md",
     "技術資料/SMBus/ARP Capable Device Behavior.md",
     "技術資料/SMBus/如何知道裝置不支援 ARP.md",
-    "技術資料/SMBus/AssignAddress.md",
     "技術資料/SMBus/attachments/Pasted image 20250617153121.png",
     "技術資料/SMBus/attachments",
     "技術資料/NVMe/NVMe-Base/attachments/host_memory_buffer/hmb_attributes_data_structure.png",
     "技術資料/NVMe/NVMe-Base/attachments/firmware_image_download/firmware_update_granularity.png",
     "技術資料/NVMe/NVMe-Base/attachments/firmware_image_download/firmware_updates.png",
     "技術資料/NVMe/NVMe-Base/attachments/data_protection/write_pi_md_eq8_pract_1.png",
-    "技術資料/NVMe/NVMe-Base/attachments/data_protection/read_pi_md_eq8_pract_1.png",
     "Untitled.canvas",
-    "技術資料/NVMe/NVMe-Base/attachments/data_protection/metadata_contiguous.png",
     "程式設計/領域驅動/DeepSeek 解釋/attachments",
     "程式設計/領域驅動/DeepSeek 解釋",
     "程式設計/領域驅動/阿里技術專家詳解DDD系列",
