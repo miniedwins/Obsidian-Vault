@@ -5,7 +5,7 @@
 - 如何知道裝置有沒有支援 ARP
 
 ## Prepare to ARP
-ARP Controller 發出命令 [[Notify ARP Controller]] ，用於通知所有 ARP Capable 設備：
+ARP Controller 發出命令 [[Prepare ARP]] ，用於通知所有 ARP Capable 設備：
 1. ARP 流程即將開始，所有設備需準備進入地址分配狀態。    
 2. 強制清除設備的 `AR`（Address Resolved）標誌，表示當前地址可能被重新分配。    
 3. 取消所有待處理的 [[Notify ARP Controller]] 請求，避免衝突。
