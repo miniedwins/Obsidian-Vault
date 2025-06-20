@@ -1,5 +1,3 @@
-
-
 ## Device Categorized
 - 欄位說明
 - 如何知道裝置有沒有支援 ARP

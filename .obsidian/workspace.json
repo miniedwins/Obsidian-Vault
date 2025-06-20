@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/MCTP/Generic MCTP Message Fields.md",
+                "file": "技術資料/SMBus/Address Resolution Protocol (ARP).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Generic MCTP Message Fields"
+              "title": "Address Resolution Protocol (ARP)"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/MCTP/Generic MCTP Message Fields.md",
+                "file": "技術資料/SMBus/Address Resolution Protocol (ARP).md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Generic MCTP Message Fields"
+              "title": "Outline of Address Resolution Protocol (ARP)"
             }
           },
           {
@@ -205,12 +205,14 @@
   },
   "active": "b68646818a4310b7",
   "lastOpenFiles": [
-    "技術資料/MCTP/MCTP.md",
-    "技術資料/MCTP/MCTP Control Messages Type.md",
-    "技術資料/MCTP/MCTP Message Type Codes.md",
-    "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
+    "技術資料/SMBus/Commands/Prepare ARP.md",
+    "技術資料/SMBus/Commands/Assign Address.md",
     "技術資料/SMBus/Commands/Block Write Bus.md",
+    "技術資料/MCTP/MCTP Control Messages Type.md",
+    "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
+    "技術資料/MCTP/MCTP Message Type Codes.md",
     "技術資料/MCTP/Generic MCTP Message Fields.md",
+    "技術資料/MCTP/MCTP.md",
     "技術資料/SMBus/Commands/Reset.md",
     "技術資料/MCTP/attachments/Pasted image 20250619114132.png",
     "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
@@ -228,11 +230,9 @@
     "技術資料/SMBus/ACK NACK 與 PEC 並不構成絕對保證.md",
     "技術資料/SMBus/ACK and NACK.md",
     "技術資料/SMBus/Commands/Get UDID.md",
-    "技術資料/SMBus/Commands/Prepare ARP.md",
     "技術資料/SMBus/Commands",
     "技術資料/SMBus/Commands/Notify ARP Controller.md",
     "Notify ARP Controller.md",
-    "技術資料/SMBus/Commands/Assign Address.md",
     "技術資料/SMBus/AV and AR flags.md",
     "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",

@@ -1,4 +1,4 @@
-Management Component Transport Protocol (MCTP) 使用 **Message Type** 字段來區分不同類型的消息，這些代碼定義在 **DMTF DSP0236 (MCTP Base Specification)** 及相關標準中。以下是完整的 MCTP Message Type 分類與說明：
+Management Component Transport Protocol (MCTP) 使用 **Message Type** 字段來區分不同類型的消息，這些代碼定義在 DMTF DSP0236 (MCTP Base Specification) 及相關標準中。以下是完整的 MCTP Message Type 分類與說明：
 
 ![[Pasted image 20250619112614.png]]
 
