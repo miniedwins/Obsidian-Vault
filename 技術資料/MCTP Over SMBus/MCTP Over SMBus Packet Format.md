@@ -2,8 +2,10 @@ MCTP（Management Component Transport Protocol）透過 SMBus 傳送，其通訊
 
 公式 = Address + Command Code + Bye Count * N + Data Byes（MCTP Packet）
 
+> MCTP over SMBus 傳送所使用的 Command code = `0x0F`。
+
 ![[Pasted image 20250702110211.png]]
 
-- MCTP Packet = Source Slave Address +  Packet Header + Message Payload + PEC 
+- MCTP Packet = Source Slave Address + Packet Header + Message Payload + PEC 
 - MCTP Message Payload = Message Header + Message Data
  ![[Pasted image 20250619113950.png]]

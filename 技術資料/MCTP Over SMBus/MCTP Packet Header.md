@@ -10,8 +10,8 @@
 
 ## Source Slave address 
 1. 屬於 MCTP 欄位，並非 SMBus 協定
-2. Bit0  : This bit shall be set to `1b`. 
-3. Reason : The value enables MCTP to be differentiated from IPMI over SMBus and IPMB (IPMI over I2C) protocols. ***(尚未了解原因)***
+2. Bit0 : This bit shall be set to `1b`. 
+3. 原因 : The value enables MCTP to be differentiated from IPMI over SMBus and IPMB (IPMI over I2C) protocols. ***(尚未了解原因)***
 
 ## PEC ( Packet error code )
 1. 所有 MCTP 傳送應該都要包含 PEC byte
