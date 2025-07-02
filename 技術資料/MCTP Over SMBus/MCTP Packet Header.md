@@ -2,11 +2,11 @@
 ## Pkt Seq
 
 ## Command Code
-1. All MCTP over SMBus messages use a command code of `0x0F`
+1. 所有 MCTP over SMBus 傳送所使用的 Command code = `0x0F`。
 
 ## Byte Count
 1. 從 Byte Count 欄位之後開始，不包含 PEC 欄位為止的「實際資料長度」。
-2. 範例說明： Byte Count = 64 Payload ( Starting with Byte 9 ) + 5 ( Byte 4~8 ) = 69 Bytes
+2. 範例說明：Byte Count = 64 Payload ( Starting with Byte 9 ) + 5 ( Byte 4~8 ) = 69 Bytes
 
 ## Source Slave address 
 1. 屬於 MCTP 欄位，並非 SMBus 協定
@@ -14,7 +14,7 @@
 3. Reason : The value enables MCTP to be differentiated from IPMI over SMBus and IPMB (IPMI over I2C) protocols. ***(尚未了解原因)***
 
 ## PEC ( Packet error code )
-1.  All MCTP transactions shall include a PEC byte
+1. 所有 MCTP 傳送應該都要包含 PEC byte
 
 ## Message Tag 是什麼
 1.  Message Tag 是一個 3-bit 欄位（0~7）
