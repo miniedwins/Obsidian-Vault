@@ -10,8 +10,9 @@
 
 ## Source Slave address 
 1. 屬於 MCTP 欄位，並非 SMBus 協定
-2. Bit0 : This bit shall be set to `1b`. 
-3. 原因 : The value enables MCTP to be differentiated from IPMI over SMBus and IPMB (IPMI over I2C) protocols. ***(尚未了解原因)***
+2. 在 IPMI over SMBus/I2C 與 MCTP over SMBus 中，傳輸資料的第 4 個 byte（Source Slave Address） 都被使用。該設定是為了區別哪種協定的封包在這個 byte 中：
+    - IPMI over SMBus/I2C  規範要求最小有效位元（LSB）為 `0b` 
+    - MCTP over SMBus 規範要求 LSB 為 `1b`
 
 ## PEC ( Packet error code )
 1. 所有 MCTP 傳送應該都要包含 PEC byte
