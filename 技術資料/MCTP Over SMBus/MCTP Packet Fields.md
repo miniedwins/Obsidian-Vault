@@ -18,22 +18,18 @@
 2. 範例說明：Byte Count = 64 Payload ( Starting with Byte 9 ) + 5 ( Byte 4~8 ) = 69 Bytes
 
 ### Source Slave address 
+Source Slave address 之中的最低位元 LSB，是為了區別哪種協定的封包
 1. 屬於 MCTP 欄位，並非 SMBus 協定
-2. 在 IPMI over SMBus/I2C 與 MCTP over SMBus 中，傳輸資料的第 4 個 byte（Source Slave Address） 都被使用。該設定是為了區別哪種協定的封包在這個 byte 中：
-    - IPMI over SMBus/I2C  規範要求最小有效位元（LSB）為 `0b` 
-    - MCTP over SMBus 規範要求 LSB 為 `1b`
+2. IPMI over SMBus/I2C  規範要求最小有效位元（LSB）為 `0b` 
+3. MCTP over SMBus 規範要求 LSB 為 `1b`
 
 ### Tag Owner ( TO )
 是一個用來對應 Request and Response 的識別碼。如果不區分來源，就可能會產生衝突
 1. 用來表示：「這個訊息的 Message Tag 是由哪一方產生的？」
-2. Message Tag  : 
-	- 來源端（Source Endpoint） 
-	- 目的端（Destination Endpoint） 
+2. TO Tag  : 
+	- `TO=1b` :  發起端 ( Request ) 建立 Tag
+	- `TO=0b` :  回應端 ( Response ) 回傳 Tag
 
-| 訊息類型     | TO bit | 說明              |
-| -------- | ------ | --------------- |
-| Request  | `1b`   | 發起端建立 tag，TO=1  |
-| Response | `0b`   | 回應端回傳原 tag，TO=0 |
 ### Message Tag 是什麼
 1.  Message Tag 是一個 3-bit 欄位（0~7）
 2. 搭配 Source EID 和 TO 位元，可唯一識別一筆訊息    
