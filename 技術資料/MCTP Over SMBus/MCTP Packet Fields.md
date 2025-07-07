@@ -8,8 +8,11 @@
 
 ![[Pasted image 20250704031027.png]]
 
-### Endpoint ID
-EID (Endpoint ID) 是 MCTP 資料鏈結層中用來識別設備的邏輯位址。 每個 Endpoint（例如 NVMe-MI、BMC 內部元件等）會分配一個唯一的 **非 0 EID**（通常由 Endpoint Discovery 或靜態配置來決定）。
+### Source Endpoint ID
+表示發送 MCTP 封包來源的 [[Endpoint ID]]。
+
+### Destination Endpoint ID
+表示接收 MCTP 封包端點的 [[Endpoint ID]]。
 
 ### Start Of Message ( SOM )
 用來區別是否為第一筆傳遞的封包訊息，設定為 `SOM=1b` 代表是第一筆封包訊息。
