@@ -3,11 +3,14 @@
 ## 1. 封包順序錯誤／訊息組裝問題
 收到中段（SOM=0, EOM=0）或結尾（SOM=0, EOM=1）封包時，先前沒收到 SOM=1 開頭封包，即「訊息未開始就有中段或結尾」。
 
-## 2. 資料鏈結層（Data Link Layer）錯誤
+## 2. 錯誤的資料或是物理層錯誤
 封包資料經過 **Integrity Check 或是 PEC 檢查失敗**。其他可能的物理層錯誤，包括訊框錯誤、位元組 對齊錯誤、封包大小不符合物理層要求等等。
 
 ## 3. Message Tag 錯誤
+當收到 TO=0 封包，代表是一個正常的 Reponse，所以應該是針對我自己之前送出的某個 Request 來的 Response，但實際上這個目的端（也就是自己）： 並沒有發出過這個 tag 對應的 request
+或是這個 tag 已經處理完、超時、重設、不再等待。
 
+那麼這個 Response 就是「**無效或過期的訊息**」，會被直接丟棄。
 
 ## 4. 目的端 EID 錯誤
 收到封包，但封包中的 Destination EID 不符合本裝置 EID（或 Null-EID + physical address）。
