@@ -8,11 +8,11 @@
 
 ### 主機如何知道設備是否支援 MCTP Over SMBus
 1. 發送 SMBus GET UDID 命令取得 Unique Device Identifier (UDID)
-2. 查詢 Interface field bit fields description 其中的 Bit 5 `ASF`
+2. 查詢 Interface field bit fields description 其中的 Bit 5 代表 `ASF`
 
 ### 如何取得 SMBus Version
 1. 發送 SMBus GET UDID 命令取得 Unique Device Identifier (UDID)
-2. 查詢 Interface field bit fields description 其中的 Bit 0-3 `SMBusVersion`
+2. 查詢 Interface field bit fields description 其中的 Bit 0-3 代表 `SMBusVersion`
 
 ### 設備如何判斷是 MCTP 封包
 1. MCTP Header 找到 Source Slave Address
