@@ -68,14 +68,13 @@ Source Slave address 之中的最低位元 LSB，是為了區別使用哪一種�
 - 目的端 Response（回應）回應時會使用同一個 Msg Tag =0，並設定 TO = 0
 
 **範例說明：假設 A 是發起端、B 是回應端。**
+解釋 : 訊息 1 和 訊息 2 的 Msg Tag 相同，但 TO 不同，可區分 Request vs Response。
 
 | Packet | SOM | EOM | Msg Tag | TO  | 備註                   |
 | ------ | --- | --- | ------- | --- | -------------------- |
 | 1      | 1   | 1   | 0       | 1   | A 發送 Request，建立 tag  |
 | 2      | 1   | 1   | 0       | 0   | B 回應 Response，回用 tag |
 |        |     |     |         |     |                      |
->訊息 1 和 訊息 2 的 Msg Tag 相同，但 TO 不同，可區分 Request vs Response。
-
 ### Message Tag
 1.  Message Tag 是一個 3-bit 欄位（0~7）
 2. 搭配 Source EID 和 TO 位元，可唯一識別一筆訊息    

@@ -1,12 +1,12 @@
 EID (Endpoint ID) 是 MCTP 資料鏈結層中用來識別設備的邏輯位址。 每個 Endpoint（例如 NVMe-MI、BMC 內部元件等）會分配一個唯一的 **非 0 EID**（通常由 Endpoint Discovery 或靜態配置來決定）。
 
-## Null Destination EID 0
+## Null Destination EID
 適用於設備尚未經由 Endpoint Discovery 分配 EID 的情況。
 
 範例說明：
 主機端發送出命令（Set Endpoint ID），MCTP Header （Destination EID）就會被設定為 `0`。
 
-## Null Source EID 0
+## Null Source EID
 適用於設備已經接受 Endpoint ID， 但是該設備尚未被主機註冊。
 
 範例說明：
