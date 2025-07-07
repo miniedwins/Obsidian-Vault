@@ -1,18 +1,21 @@
 ## MCTP Transport Header
+
+![[Pasted image 20250619142254.png]]
+
 ### Header version ( Hdr )
-- 定義為一組與 MCTP 可使用的不同媒體類型相對應的介面。
-- 這個欄位的值會依據不同的傳輸綁定而有所不同。
+定義 MCTP 可使用的不同媒體類型相對應的介面，這個欄位的值會依據不同的傳輸綁定而有所不同。
+如果要傳送的介面是 MCTP over SMBus，則需要將 Header Version 欄位設定為 `0x01`。
 
 ![[Pasted image 20250704031027.png]]
 
 ### Start Of Message ( SOM )
-用來區別是否為第一筆傳遞的封包訊息，設定為 1b 代表是第一筆封包訊息。
+用來區別是否為第一筆傳遞的封包訊息，設定為 `SOM=1b` 代表是第一筆封包訊息。
 
 ### End Of Message ( EOM )
-用來區別是否為最後一筆的封包訊息，設定為 0b 代表是最後一筆封包訊息。
+用來區別是否為最後一筆的封包訊息，設定為 `SOM=0b` 代表是最後一筆封包訊息。
 
 ### Packet Sequence Number ( Pkt Seq )
-用來表示一個 MCTP Message 被拆成多個封包（Packet）傳送後，每個封包的順序，用來協助接收端、**辨識順序、重組訊息、偵測遺失封包**。封包順序（0~3，modulo 4）可表達 0~3 編號。
+用來表示一個 MCTP Message 被拆成多個封包（Packet）傳送。每個封包的順序，用來協助接收端、**辨識順序、重組訊息、偵測遺失封包**。封包順序（0~3，modulo 4）可表達 0~3 編號。
 
 如果一筆 MCTP 訊息被拆成多個封包傳送，那麼封包的 Packet Sequence Number 應該每次遞增（modulo 4），**例如：0 → 1 → 2 → 3 → 0**。因為欄位是 2-bits，最多可追蹤 4 個封包順序，接收端最多可以偵測連續遺失最多 3 個封包。
 
@@ -22,14 +25,14 @@
 
 | Packet | SOM (Start of Msg) | EOM (End of Msg) | Pkt Seq # |
 | ------ | ------------------ | ---------------- | --------- |
-| 1      | 1                  | 0                | 0         |
+| 1      | 1（起始封包）            | 0                | 0         |
 | 2      | 0                  | 0                | 1         |
 | 3      | 0                  | 1 （結尾封包）         | 2         |
 > 下一筆訊息建議從 Seq # 3 開始。
 
 | Packet | SOM (Start of Msg) | EOM (End of Msg) | Pkt Seq # |
 | ------ | ------------------ | ---------------- | --------- |
-| 4      | 1                  | 0                | 3         |
+| 4      | 1（起始封包）            | 0                | 3         |
 | 5      | 0                  | 0                | 0         |
 | 6      | 0                  | 1（結尾封包）          | 1         |
 
@@ -37,22 +40,13 @@
 
 | Packet | SOM (Start of Msg) | EOM (End of Msg) | Pkt Seq #      |
 | ------ | ------------------ | ---------------- | -------------- |
-| 1      | 1 (起始封包)           | 0                | 0              |
+| 1      | 1 （起始封包）           | 0                | 0              |
 | 2      | 0                  | 0                | 1              |
 | 3      | 0                  | 0                | 2              |
 | 4      | 0                  | 0                | 3              |
 | 5      | 0                  | 1 （結尾封包）         | 0 （mod 4 循環回來） |
-### Command Code
-所有 MCTP over SMBus 傳送所使用的 Command code = `0x0F`。
-
-### Byte Count
-用來表示 Message Body 不包含 PEC 欄位為止的「實際資料長度」。 
-
-範例說明：
-Byte Count = 64 Payload ( Starting with Byte 9 ) + 5 ( Byte 4~8 ) = 69 Bytes
-
 ### Source Slave address 
-Source Slave address 之中的最低位元 LSB，是為了區別使用哪種協定的封包。
+Source Slave address 之中的最低位元 LSB，是為了區別使用哪一種協定的封包。
 
 設定說明 : 
 1. IPMI over SMBus/I2C  規範要求最小有效位元（LSB）為 `0b` 
@@ -62,19 +56,20 @@ Source Slave address 之中的最低位元 LSB，是為了區別使用哪種協�
 屬於 MCTP 欄位，並非 SMBus 協定。
 
 ### Tag Owner ( TO )
-用來表示：「這個訊息的 Message Tag 是由哪一方產生的？這樣可以讓雙方知道：  這是哪一筆 Request 的回應，也能避免不同方向的 Tag 衝突。
+用來表示：「這個訊息的 Message Tag 是由哪一方產生的？這樣可以讓雙方知道，這是哪一筆 Request 的回應，也能避免不同方向的 Tag 衝突。
 
-- 來源端 Request（請求）會建立一個 Tag 值，例如 Msg Tag = 0，並設定 TO = 1
-- 目的端 Response（回應）回應時會使用同一個 Msg Tag（=0），但將 TO 設為 0
+- 發起端 Request（請求）會建立一個 Tag 值，例如 Msg Tag = 0，並設定 TO = 1
+- 目的端 Response（回應）回應時會使用同一個 Msg Tag =0，並設定 TO = 0
 
-範例 : 假設 A 是發起端、B 是回應端。
-說明 : 訊息 1 和 訊息 2 的 Msg Tag 相同，但 TO 不同，可區分 Request vs Response。
+**範例說明：假設 A 是發起端、B 是回應端。**
 
 | Packet | SOM | EOM | Msg Tag | TO  | 備註                   |
 | ------ | --- | --- | ------- | --- | -------------------- |
 | 1      | 1   | 1   | 0       | 1   | A 發送 Request，建立 tag  |
 | 2      | 1   | 1   | 0       | 0   | B 回應 Response，回用 tag |
 |        |     |     |         |     |                      |
+>訊息 1 和 訊息 2 的 Msg Tag 相同，但 TO 不同，可區分 Request vs Response。
+
 ### Message Tag
 1.  Message Tag 是一個 3-bit 欄位（0~7）
 2. 搭配 Source EID 和 TO 位元，可唯一識別一筆訊息    
@@ -83,7 +78,7 @@ Source Slave address 之中的最低位元 LSB，是為了區別使用哪種協�
 	- 只要這些訊息有不同的 Message Tag
 	- 每筆訊息的多個 Packet（SOM ~ EOM）都會標記相同 tag，讓接收端能把封包組回來
 
-例如：Host 發送兩個 Request 給同一個裝置（EID=0x20）
+**範例說明：Host 發送兩個 Request 給同一個裝置（EID=0x20）**
 
 | Packet | SOM | EOM | Msg Tag | TO  | 說明      |
 | ------ | --- | --- | ------- | --- | ------- |
