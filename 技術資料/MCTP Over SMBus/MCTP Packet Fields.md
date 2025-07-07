@@ -1,7 +1,4 @@
-
-
 ## MCTP Transport Header
-
 ### Header version ( Hdr )
 - 定義為一組與 MCTP 可使用的不同媒體類型相對應的介面。
 - 這個欄位的值會依據不同的傳輸綁定而有所不同。
@@ -27,10 +24,10 @@ Source Slave address 之中的最低位元 LSB，是為了區別哪種協定的�
 是一個用來對應 Request and Response 的識別碼。如果不區分來源，就可能會產生衝突
 1. 用來表示：「這個訊息的 Message Tag 是由哪一方產生的？」
 2. TO Tag  : 
-	- `TO=1b` :  發起端 ( Request ) 建立 Tag
-	- `TO=0b` :  回應端 ( Response ) 回傳 Tag
+	- `TO=1b` :  發起端 ( Request ) 建立 TO
+	- `TO=0b` :  回應端 ( Response ) 回傳 TO
 
-### Message Tag 是什麼
+### Message Tag
 1.  Message Tag 是一個 3-bit 欄位（0~7）
 2. 搭配 Source EID 和 TO 位元，可唯一識別一筆訊息    
 3. 同一 Source EID 可以 interleave 多個 messages 給同一個目標
@@ -52,6 +49,9 @@ Source Slave address 之中的最低位元 LSB，是為了區別哪種協定的�
 |---|---|---|---|---|---|
 |4|1|1|1|0|Response to 訊息 A|
 |5|1|1|2|0|Response to 訊息 B|
+## MCTP Message body
 
-### PEC ( Packet error code )
-1. 所有 MCTP 傳送應該都要包含 PEC byte ( 參考 : SMBus PEC )
+### Integrity Check Bit ( IC )
+1. 用來指出這筆 MCTP 封包是否包含額外的完整性檢查機制
+2. 出現在第一個 packet 的 message body 開頭第一個 byte ( Message Type )
+3. 它是這個 byte 的最高位元（MSB）→ 也就是 bit7
