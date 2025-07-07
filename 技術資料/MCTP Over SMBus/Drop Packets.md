@@ -12,7 +12,7 @@
 但實際上這個目的端（也就是自己）並沒有發出過這個 tag 對應的 Request 或是這個 tag 已經處理完、超時、重設、不再等待。那麼這個 Response 就是「**無效或過期的訊息**」，會被直接丟棄。
 
 ## 4. 目的端 EID 錯誤
-收到封包，但封包中的 Destination EID 不符合本裝置 EID（或 Null-EID + physical address）。
+收到封包，但封包中的 Destination EID 不符合本裝置 EID（或 Null-EID + Physical Address）。
 
 ## 5. EID 路由失敗
 當一個 MCTP bridge 無法找到目標 EID 的路由紀錄，即無法路由該 EID 而造成失敗。
