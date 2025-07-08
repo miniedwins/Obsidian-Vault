@@ -2,7 +2,7 @@
 
 ## 1. 正常 Termination
 說明：收到了 EOM=1 的封包，且前面已正確收到 SOM=1 開頭的封包序列。
-動作：對這些 Messages 進行組裝完成，這是一個正常情況（Normal Termination）。
+動作：對這些完整的訊息進行組裝，這是一個正常情況（Normal Termination）。
 
 ## 2. 收到新的 SOM（新的訊息起始封包）
 說明：一筆訊息還在組裝中，就又收到另一筆對同一 Endpoint 的 SOM 封包。
@@ -19,7 +19,23 @@
 動作：丟棄所有組裝中的訊息。
 
 ## 5. 不正確的傳輸單元（Unit）
+說明：假設收到 middle packet 封包（SOM = 0b and EOM = 0b），但是它的 Payload 大小不符合開始封包（SOM = 1b and EOM = 0b）Payload 大小。每個封包的 payload 大小應一致（除了最後一包 EOM=1 的可能較小）。
 
+**錯誤範例：起始封包不一致**
+
+|Packet|SOM|EOM|Payload Length|說明|
+|---|---|---|---|---|
+|1|1|0|48 bytes|Start 封包|
+|2|0|0|36 bytes|❌ 錯誤：與起始封包長度不同|
+
+**正確範例：Middle 封包與起始封包一致****
+
+|Packet|SOM|EOM|Payload Length|說明|
+|---|---|---|---|---|
+|1|1|0|48 bytes|Start 封包|
+|2|0|0|48 bytes|Middle 封包|
+|3|0|0|48 bytes|Middle 封包|
+|4|0|1|12 bytes|✅ End 封包（尾包可短）|
 ## 6. Message Integrity Check 錯誤
 說明：一個或多個 Packet 組裝結束後，發現訊息完整性檢查值不匹配。
 動作：導致訊息組裝終止並且整個訊息被丟棄。
