@@ -6,12 +6,12 @@
 
 ## 2. 收到新的 SOM（新的訊息起始封包）
 說明：一筆訊息還在組裝中，就又收到另一筆對同一 Endpoint 的 SOM 封包。
-動作：需要丟棄舊的那一筆正在處理的 message，然後開始以新封包為開頭組裝新訊息。
+動作：需要丟棄舊的那一筆正在處理的訊息，然後開始以新封包為開頭組裝新訊息。
 
 ## 3. 等待封包超時
-說明：多個封包中間間隔太久，超過 Timeout 時間。
-動作：丟棄這筆訊息。
-備註：Timeout 由 Transport binding 規範定義（如 SMBus）。
+說明：多個封包（multiple-packet message）中間間隔太久，超過 Timeout 時間。
+動作：丟棄所有訊息。
+備註：Timeout 由 Transport binding 規範定義。
 
 ## 4.  Pkt Seq 編號不連續（順序錯誤）
 說明：同一筆訊息中，封包的 `Packet Sequence` 沒有按照 mod 4 順序遞增。
