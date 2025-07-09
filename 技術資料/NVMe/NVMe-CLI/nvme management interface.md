@@ -133,3 +133,17 @@ NVMe-MI Receive Command is Success and result: 0x00000000
 0000: 38 ff 32 00 21 03 00 00 00 00 00 00 00 00 00 00 "8.2.!..........."
 0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
 ```
+
+## Controller Health Data Structure
+- Uses NVMe Management Dword : 0, 1
+- Response Data : Controller Health Data Structure (CHDS)
+- Data Length : 16 byes
+```
+sudo nvme nvme-mi-recv /dev/nvme0n1 --opcode=0x02 -nmimt=0x01 --nmd0=0x80000001 --nmd1=0x01 --data-len=64
+NVMe-MI Receive Command is Success and result: 0x01000000 (status: 0x00, response: 0x010000)
+       0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+0000: 01 00 21 00 46 01 00 64 00 00 00 00 00 00 00 00 "..!.F..d........"
+0010: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0020: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+0030: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 "................"
+```
