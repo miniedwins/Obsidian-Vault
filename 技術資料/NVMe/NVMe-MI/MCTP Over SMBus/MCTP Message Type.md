@@ -3,7 +3,7 @@
 ## Control Message
 如果只是要傳送 MCTP 基礎控制協議（例如端點發現、協商或路由管理），則 Message Type 需設定為 `0x00`，表示這是一個 MCTP Control Message。
 
-基本 MCTP Control Message 並不會使用 Integrity Check field（IC），因此該位元會設定為 0。
+> 基本 MCTP Control Message 並不會使用 Integrity Check field（IC），因此該位元會設定為 0。
 
 ![[Pasted image 20250620165945.png]]
 
