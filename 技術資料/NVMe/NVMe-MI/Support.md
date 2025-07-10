@@ -26,3 +26,4 @@ Request-to-response time = 100ms
 ### 設備如何判斷是 MCTP 封包
 1. MCTP Header 找到 Source Slave Address
 2. 取得最低位元 ( LSB )， LSB 為 `1` 表示 MCTP over SMBus
+
