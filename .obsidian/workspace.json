@@ -205,6 +205,8 @@
   },
   "active": "b68646818a4310b7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250710153234.png",
+    "技術資料/NVMe/NVMe-MI/attachments",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Control Message.md",
@@ -231,7 +233,6 @@
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250704031027.png",
     "技術資料/SMBus/Packet Error Code (PEC).md",
     "技術資料/SMBus/Unique Device Identifier (UDID).md",
-    "技術資料/SMBus/Address Resolution Protocol (ARP).md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250702110211.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250620171239.png",
     "技術資料/MCTP/attachments/Pasted image 20250620171148.png",
@@ -251,7 +252,6 @@
     "技術資料/I2C",
     "技術資料/SATA/attachments",
     "技術資料/NVMe/NVMe-OPAL/測試案例解析",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/attachments",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
