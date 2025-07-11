@@ -1,6 +1,7 @@
+TODO :  
+1. 介紹 Control Primitive
+2. 說明每個 Control Primitive 特性
 
-
-## Control Primitive 特性 
 ### 不需等待回應 
 說明 : 與 Command Message 不同，**Control Primitive 可連續發送，不需等待前一筆 Response**。
 
@@ -29,3 +30,23 @@
 
 ### Response 中會攜帶 TAG
 說明 : Controller 可利用 **TAG** 對應 Request and Response 做關聯。TAG 為 Controller 指定，用來識別設備回傳到 Response Message 中供對應。若是 Controller 指定 TAG=1，則設備需要回覆相同的TAG =1 作為回傳識別。
+
+## Control Primitive
+
+### Pause
+
+- Pause 狀態下的 Command Slot 不會回應 Command Message
+- Controller 不應在 Pause 狀態時再送新的 Command 到這個 Slot    
+
+正確流程應是：
+1. 發送 Command 1 (tag=0) 到 Command Slot 1    
+2. Slot 進入 Process 狀態    
+3. 發送 Pause Control Primitive → Slot 1 暫停    
+4. 等待管理端（例如 BMC）處理外部原因    
+5. 發送 Resume Control Primitive → Slot 1 恢復    
+6. 等待 Command 1 的回應    
+7. Command 1 完成後，再送 Command 2 (tag=1) 到同一個 Slot
+
+問題錯誤流程：　
+問題 : 如果 Command 1 (tag=0) 在 Slot 1 被 Pause，可以傳 Command 2 (tag=1) 到 Slot 1 嗎？
+說明 : 不行，Slot 處於 Pause 狀態，不應傳新指令。應先 Resume，完成 Command 1。
