@@ -33,7 +33,6 @@
 |         |         |             |            |
 ## Command Servicing State Diagram
 
-
 ![[Pasted image 20250711141407.png]]
 
 ### 狀態：Idle
@@ -67,8 +66,8 @@
 - 組裝完成後，進入命令處理階段    
 - 執行 Command Message 中的指令，例如查詢資訊、改變狀態等
 #### 2. 轉移條件（轉入下一狀態）
-- 命令執行完成，需要傳送回應訊息 → 進入 `Transmit`
-- 處理未完成但時間已到（Timeout）→ `Transmit`（會送出 "More Processing Required"）
+- 命令執行完成或是處理未完成但時間已到（Timeout） ，需要傳送回應訊息 → 進入 `Transmit`
+- 處理命令未完成或是沒有 Primitive Pause，則會進入→ `Transmit` 發送 "More Processing Required"  → 然後再返回 `Process`
 - 上層通知中止命令 Abort Control Primitive 控制訊號 → `Idle`（中止流程）
 #### 3. 發生問題時的處理：
 - 若解析或執行指令中發現邏輯錯誤 → 進入 `Transmit` 回應錯誤碼 
@@ -79,10 +78,9 @@
 - Response Message 可能是成功結果、錯誤代碼，或 "More Processing Required"
 #### 2. 轉移條件（轉入下一狀態）
 - Response Message 全部傳完 → 進入 `Idle`
-- 傳送的是 "More Processing Required" → 回到 `Process`
+-  上層通知中止命令 Abort Control Primitive 控制訊號 → `Idle`（中止流程）
 #### 3. 發生問題時的處理
 - 若傳送中失敗或超時，可回報錯誤後中止命令
-- 若 Controller 支援多封包 Response，也要檢查封包順序與結尾
 
 ### 狀態轉移總結表
 | 狀態       | 行為說明           | 可轉移到              | 發生錯誤後處理           |
@@ -91,7 +89,8 @@
 | Receive  | 組裝封包、檢查格式      | → Process / Idle  | 檢查錯誤、Abort → Idle |
 | Process  | 執行命令、驗證合法性     | → Transmit / Idle | Abort → Idle      |
 | Transmit | 傳送回應、或要求更多時間處理 | → Idle / Process  | 傳送失敗後回 Idle       |
+|          |                |                   |                   |
 ### 注意事項
-1. 若 Controller 傳送兩條重疊的命令（相同 Slot 未完成又重送新命令）：
-	- Endpoint **應丟棄第二條命令**    
-	- 依據策略 **回傳錯誤**
+( 原文 ) : The behavior of receiving two or more overlapping Command Messages to the same Command Slot is undefined. If this results in the Management Endpoint discarding a Command Message, then this is considered receiving a Command Message to a non-Idle Command Slot (CMNICS)
+
+( 說明 ) :  若 Controller 傳送兩條重疊的命令（相同 Slot 未完成又重送新命令）， Endpoint 應丟棄第二條命令，並且回傳 Command Message to non-Idle Command Slot (CMNICS)。回傳的 Response Message 會是 Control Primitive Success Response Fields。
