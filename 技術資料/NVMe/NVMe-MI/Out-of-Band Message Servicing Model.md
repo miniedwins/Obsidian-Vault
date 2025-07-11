@@ -1,5 +1,15 @@
 
 
+## 📌 Command Slot 機制
+
+| 項目      | 說明                                                |
+| ------- | ------------------------------------------------- |
+| Slot 數量 | 每個 Endpoint 有 **2 個 Command Slots**               |
+| 組裝行為    | 對每個 Command Slot，Endpoint 會獨立組裝 MCTP 封包為完整命令      |
+| 執行流程    | Command Message 組裝完成 → 處理 → 回傳 Response → 清除 Slot |
+| 限制      | 同一個 Slot 在 **完成前不可接受第二個命令**                       |
+| Msg Tag | 用來區分封包，但同一條命令的封包需保持一致（同一 Msg Tag）                 |
+| 並行能力    | 一個 Endpoint 最多同時處理 2 條命令；N 個 Endpoint 可並行 2N 條命令  |
 ## 範例說明（單 Slot）
 
 假設目前正在使用 Command Slot 0，Controller 傳送以下 3 個封包：
