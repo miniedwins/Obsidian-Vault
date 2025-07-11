@@ -1,4 +1,8 @@
 
+
+
+![[Pasted image 20250620171239.png]]
+
 ## Message Type
 MCTP 封包的 Message Type 必須設定為 `0x04`，表示這是一個 NVMe-MI over MCTP Message。
 
@@ -14,9 +18,5 @@ MCTP 封包的 Message Type 必須設定為 `0x04`，表示這是一個 NVMe-
 ## NVMe-MI Message Type
 
 ![[Pasted image 20250710153234.png]]
-
-
-
-![[Pasted image 20250620171239.png]]
 
 
