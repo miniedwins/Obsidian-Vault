@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Packet Assembly into Messages"
+              "title": "NVMe-MI Message"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Packet Assembly into Messages"
+              "title": "Outline of NVMe-MI Message"
             }
           },
           {
@@ -205,9 +205,9 @@
   },
   "active": "b68646818a4310b7",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
-    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
+    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Generic MCTP Message Fields.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Maximum Message Size.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Control Message.md",
