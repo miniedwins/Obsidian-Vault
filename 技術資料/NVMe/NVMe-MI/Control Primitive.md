@@ -53,20 +53,20 @@ TODO :
 
 ### Resume
 
-### 🔍 **1. 為什麼 Controller 會掉包？**
+#### 🔍 **1. 為什麼 Controller 會掉包？**
 
 其實不是「Controller 掉包」，而是 **Controller 判斷**「某個封包沒有收到」，進而 **丟棄整個回應訊息（Response Message）**。  
 
-#### ✳️ 原因說明
+##### ✳️ 原因說明
 
 Resume 時，**Endpoint 會從「上次已發送的封包」之後開始繼續傳送**，  
 但假設最後一個封包（例如 packet \#2）**被 Endpoint 傳送了，但 Controller 沒收到**（可能是通訊錯誤），那 Controller 只記得自己「最後收到的是 packet \#1」。
 
-#### ❗ 問題就出在這裡
+##### ❗ 問題就出在這裡
 
 Resume 之後，Endpoint 會傳送 packet \#3，Controller 卻期望下一包是 packet #2 ⇒ **序號錯誤（out-of-order）⇒ Controller 丟棄整個 Response Message！**
 
-### 🔁 **2. Pause → Resume 為什麼可能會導致封包丟棄？**
+#### 🔁 **2. Pause → Resume 為什麼可能會導致封包丟棄？**
 
 不是 Resume 本身導致掉包，而是：
 
@@ -74,7 +74,7 @@ Resume 之後，Endpoint 會傳送 packet \#3，Controller 卻期望下一包是
     
 - 若封包同步出問題 ⇒ 就需要使用 **Replay Control Primitive** 來要求重新傳送特定編號之後的封包。
 
-### ✅ **正確流程（防止封包掉落）**
+#### ✅ **正確流程（防止封包掉落）**
 1. `Pause` 傳送中斷。    
 
 2. 若有疑慮是否收到最後一包，**Controller 在 Resume 前先發送 Replay**：    
@@ -83,3 +83,38 @@ Resume 之後，Endpoint 會傳送 packet \#3，Controller 卻期望下一包是
 3. `Resume` 然後 Endpoint 根據 Replay offset 重新傳送。    
 
 4. 確保封包順序正確，避免 Controller 誤認為掉包。
+
+### Abort
+
+Abort Primitive 的目的：
+
+- **強制將某個 Command Slot 重設為 Idle 狀態**。
+    
+- 同時 **清除 Pause Flag（設為 0）**。
+    
+- 若正在執行中的命令已產生作用，則根據是否能中斷而做回應。
+
+其本質是：
+
+> 清除 Command Slot 狀態、資源，並嘗試中斷未完成的命令流程。
+
+---
+
+#### ✅ 合理應用情境
+
+- Management Controller 發現某 Slot 無回應或狀態不明，可發送 Abort 來「清空」該 Slot。
+    
+- 結合 `Get State` 指令確認目前每個 Slot 狀態（是否 Busy、Paused）。
+    
+- 若命令發送失敗或中途要切換工作，可使用 Abort 做復原處理。
+    
+
+---
+
+#### 📌 額外注意：
+
+- `Abort` 只會作用於 **指定的 Command Slot**，不會影響其他 Slot、Endpoint、或 NVMe 控制器。
+    
+- 即使命令無法中止（CPAS=2h），該 Slot 最終仍會 **reset 成 Idle**，可接受新命令。
+    
+- 即使在 Idle，Abort 還是會回應一個成功狀態（只是沒做任何事）。
