@@ -118,3 +118,54 @@ Abort Primitive 的目的：
 - 即使命令無法中止（CPAS=2h），該 Slot 最終仍會 **reset 成 Idle**，可接受新命令。
     
 - 即使在 Idle，Abort 還是會回應一個成功狀態（只是沒做任何事）。
+
+
+### Replay
+#### 📌 功能簡介
+
+Replay Control Primitive 的功能是：
+
+- **重新傳送** 上一筆在 Command Slot 中處理過的 Response Message。
+    
+- **可以指定從哪個位置（offset）開始 replay**。
+    
+- 同時會將 **Pause Flag 清除（兩個 Slot 的 Pause Flag 皆設為 0）**。
+
+
+#### 🔄 Replay 的細節與原則
+
+Replay 起點（Response Replay Offset）
+從原本 Response Message 的 offset 位置開始 replay，直到完整結束（含 MIC）
+
+1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始
+2. Replay 第一包必須含有原本的 Message Header，不管 offset 是不是 0|
+3. 
+4. Replay 執行時會自動清除兩個 Slot 的 Pause Flag（等同 Resume）
+
+#### 🎯 為什麼需要 Replay？
+
+Replay 是為了處理以下情境：
+
+#### ✅ 常見應用情境
+
+- **在 Pause + Resume 後，Controller 掉包或順序錯亂**（導致無法完整重組 Response Message）。
+    
+- **Response Message 很大，Controller 在中間掉了某一包（Packet Integrity Fail）**。
+    
+    - 若支援 **non-zero offset Replay**，可以指定從掉落之後的某個 byte offset 重新傳送。
+
+
+例如：
+
+- 若掉在 offset=128 的位置：
+    
+    1. Controller 需先保留 offset=0～127 的資料給 NVMe-MI 層
+        
+    2. 使用 Replay offset=128 重新取得後續資料（直到結尾）
+        
+    3. **NVMe-MI Layer 負責將前半段與後半段合併**
+        
+    4. 再計算與驗證 MIC 完整性
+
+
+
