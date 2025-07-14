@@ -140,7 +140,10 @@ Replay 起點（Response Replay Offset）
 1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始
 2. Replay 第一包必須含有原本的 Message Header，不管 offset 是不是 0|
 3. Response Message Msg Tag 要與 Replay Control Primitive 相同
-4. MCTP Message Tag 也需要先前傳遞封包的 Tag 一致 
+4. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同
+
+>❌ 如果 Msg Tag 設定錯誤會發生什麼？
+>Controller 假如在 Replay 中用了新的 MCTP Msg Tag `0x01` 與原先的 Msg Tag = `0x00`，這筆 Replay 的 Response 對 Controller 來說是「新的 Message」，會造成組裝失敗。
 
 #### 🎯 為什麼需要 Replay？
 
@@ -152,20 +155,7 @@ Replay 是為了處理以下情境：
     
 - **Response Message 很大，Controller 在中間掉了某一包（Packet Integrity Fail）**。
     
-    - 若支援 **non-zero offset Replay**，可以指定從掉落之後的某個 byte offset 重新傳送。
-
-
-例如：
-
-- 若掉在 offset=128 的位置：
-    
-    1. Controller 需先保留 offset=0～127 的資料給 NVMe-MI 層
-        
-    2. 使用 Replay offset=128 重新取得後續資料（直到結尾）
-        
-    3. **NVMe-MI Layer 負責將前半段與後半段合併**
-        
-    4. 再計算與驗證 MIC 完整性
+    - 若支援 **non-zero offset Replay**，可以指定從掉落之後的某個 Packet 重新傳送。
 
 
 
