@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "91c2c459448270c3",
+        "id": "829773dc6fe9c42c",
         "type": "tabs",
         "children": [
           {
-            "id": "b68646818a4310b7",
+            "id": "22607599267f96d7",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "[\"aliases\"]",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜尋"
+              "title": "Search"
             }
           },
           {
@@ -203,11 +203,13 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "b68646818a4310b7",
+  "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "2025-07-14.md",
+    "Untitled.canvas",
+    "技術資料/NVMe/NVMe-MI/Control Primitive.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
     "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
@@ -233,7 +235,6 @@
     "技術資料/SMBus/Commands/Block Write Bus.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP.md",
     "技術資料/MCTP Over SMBus/Terminating message assembly and dropped messages.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID Retention.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250704031027.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250702110211.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250620171239.png",
@@ -245,7 +246,6 @@
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments",
     "技術資料/SMBus/Commands",
     "技術資料/SMBus/attachments",
-    "Untitled.canvas",
     "程式設計/領域驅動/DeepSeek 解釋/attachments",
     "程式設計/領域驅動/DeepSeek 解釋",
     "程式設計/領域驅動/阿里技術專家詳解DDD系列",

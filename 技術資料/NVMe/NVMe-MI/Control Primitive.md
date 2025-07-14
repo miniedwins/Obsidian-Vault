@@ -50,3 +50,36 @@ TODO :
 問題錯誤流程：　
 問題 : 如果 Command 1 (tag=0) 在 Slot 1 被 Pause，可以傳 Command 2 (tag=1) 到 Slot 1 嗎？
 說明 : 不行，Slot 處於 Pause 狀態，不應傳新指令。應先 Resume，完成 Command 1。
+
+### Resume
+
+### 🔍 **1. 為什麼 Controller 會掉包？**
+
+其實不是「Controller 掉包」，而是 **Controller 判斷**「某個封包沒有收到」，進而 **丟棄整個回應訊息（Response Message）**。  
+
+#### ✳️ 原因說明
+
+Resume 時，**Endpoint 會從「上次已發送的封包」之後開始繼續傳送**，  
+但假設最後一個封包（例如 packet \#2）**被 Endpoint 傳送了，但 Controller 沒收到**（可能是通訊錯誤），那 Controller 只記得自己「最後收到的是 packet \#1」。
+
+#### ❗ 問題就出在這裡
+
+Resume 之後，Endpoint 會傳送 packet \#3，Controller 卻期望下一包是 packet #2 ⇒ **序號錯誤（out-of-order）⇒ Controller 丟棄整個 Response Message！**
+
+### 🔁 **2. Pause → Resume 為什麼可能會導致封包丟棄？**
+
+不是 Resume 本身導致掉包，而是：
+
+- 如果 Resume **後續封包的序號**不是 Controller 所預期的 ⇒ Controller 丟棄。
+    
+- 若封包同步出問題 ⇒ 就需要使用 **Replay Control Primitive** 來要求重新傳送特定編號之後的封包。
+
+### ✅ **正確流程（防止封包掉落）**
+1. `Pause` 傳送中斷。    
+
+2. 若有疑慮是否收到最後一包，**Controller 在 Resume 前先發送 Replay**：    
+    - 告知 Endpoint：**「請從 packet #N 重新開始」**        
+
+3. `Resume` 然後 Endpoint 根據 Replay offset 重新傳送。    
+
+4. 確保封包順序正確，避免 Controller 誤認為掉包。
