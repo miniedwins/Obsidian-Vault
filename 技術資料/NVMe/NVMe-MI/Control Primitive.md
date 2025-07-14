@@ -139,8 +139,8 @@ Replay 起點（Response Replay Offset）
 
 1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始
 2. Replay 第一包必須含有原本的 Message Header，不管 offset 是不是 0|
-3. 
-4. Replay 執行時會自動清除兩個 Slot 的 Pause Flag（等同 Resume）
+3. Response Message Msg Tag 要與 Replay Control Primitive 相同
+4. MCTP Message Tag 也需要先前傳遞封包的 Tag 一致 
 
 #### 🎯 為什麼需要 Replay？
 
