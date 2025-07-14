@@ -143,7 +143,7 @@ Replay 起點（Response Replay Offset）
 4. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同
 
 >❌ 如果 Msg Tag 設定錯誤會發生什麼？
->Controller 假如在 Replay 中用了新的 MCTP Msg Tag `0x01` 與原先的 Msg Tag = `0x00`，這筆 Replay 的 Response 對 Controller 來說是「新的 Message」，會造成組裝失敗。
+> 因為 MCTP Message Tag 是用來分辨與組裝封包的一致性與順序依據。若 Msg Tag 不相同，Receiver（如 Management Controller）會認為這是另一筆新訊息，就無法將 Replay 封包與先前接收到的前半部分組合起來。
 
 #### 🎯 為什麼需要 Replay？
 
