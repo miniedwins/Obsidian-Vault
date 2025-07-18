@@ -11,14 +11,17 @@
             "id": "22607599267f96d7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Reset.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 1057.4037692599827,
+                  "y": 455.0342311265731,
+                  "zoom": -1.5448700096758499
+                }
               },
-              "icon": "lucide-file",
-              "title": "Reset"
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
             }
           }
         ]
@@ -152,13 +155,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Reset.md",
+                "file": "Untitled.canvas",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Reset"
+              "title": "Outline of Untitled"
             }
           },
           {
@@ -190,7 +193,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.5
+    "width": 230.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -205,8 +208,12 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-MI/Support.md",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
+    "關機處理狀態.md",
+    "2025-07-14.md",
+    "Untitled.canvas",
     "技術資料/NVMe/NVMe-MI/Reset.md",
+    "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
@@ -224,17 +231,12 @@
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Maximum Message Size.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID.md",
     "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
-    "2025-07-14.md",
-    "Untitled.canvas",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250710153234.png",
     "技術資料/NVMe/NVMe-MI/attachments",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Drop Packets.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint Discovery.md",
-    "技術資料/MCTP Over SMBus/Support.md",
-    "技術資料/SMBus/Commands/Notify ARP Controller.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250704031027.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250702110211.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250620171239.png",
