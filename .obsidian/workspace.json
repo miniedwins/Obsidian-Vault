@@ -11,17 +11,14 @@
             "id": "22607599267f96d7",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Untitled.canvas",
-                "viewState": {
-                  "x": 1057.4037692599827,
-                  "y": 455.0342311265731,
-                  "zoom": -1.5448700096758499
-                }
+                "file": "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Untitled"
+              "icon": "lucide-file",
+              "title": "MCTP Over SMBus Packet Format"
             }
           }
         ]
@@ -155,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of MCTP Over SMBus Packet Format"
             }
           },
           {
@@ -208,35 +205,36 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Control Message.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Message Assembly.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Terminate Assembly and Drop Message.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Drop Packets.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint Discovery.md",
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID Retention.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive.md",
+    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
+    "Untitled.canvas",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "關機處理狀態.md",
     "2025-07-14.md",
-    "Untitled.canvas",
     "技術資料/NVMe/NVMe-MI/Reset.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-Base/Controller Reset.md",
     "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive.md",
     "技術資料/SMBus/Commands/Get UDID.md",
     "技術資料/SMBus/Commands/Block Write Bus.md",
     "技術資料/SMBus/Commands/Assign Address.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Control Message.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Terminate Assembly and Drop Message.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Message Assembly.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Generic MCTP Message Fields.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Maximum Message Size.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID.md",
-    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250710153234.png",
     "技術資料/NVMe/NVMe-MI/attachments",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Drop Packets.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250704031027.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250702110211.png",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments/Pasted image 20250620171239.png",
