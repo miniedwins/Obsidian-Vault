@@ -159,3 +159,37 @@ Replay 是為了處理以下情境：
 
 
 
+### 🔁 Replay with Pause 重點解釋：
+
+(原文) : It is not an error to issue a Replay Control Primitive to a Command Slot that is paused. A Response Message is transmitted even if the Command Slot is paused at any time during the response, including before the first packet was transmitted. After successful completion of the Replay Control Primitive, neither Command Slot is paused (i.e., there is an implicit Resume Control Primitive affecting both Command Slots when processing the Replay Control Primitive except that the Management Endpoint shall not transmit a Response Message).
+
+> **"It is not an error to issue a Replay Control Primitive to a Command Slot that is paused."**
+
+即使某個 **Command Slot 處於 Paused 狀態**，也允許對它發送 Replay Control Primitive，不會當作錯誤。
+
+---
+
+> **"A Response Message is transmitted even if the Command Slot is paused at any time during the response..."**
+
+即使 Response Message 的傳送過程中，Command Slot 被暫停（Paused），Replay 還是會重新發送該 Response。
+
+---
+
+> **"After successful completion of the Replay Control Primitive, neither Command Slot is paused..."**
+
+當 Replay Control Primitive 成功後：
+
+- **相關的 Command Slots 都會自動 Resume（恢復傳送）**
+    
+- 雖然沒有明確送出 Resume Control Primitive，但這個 Replay 動作的副作用就是 **Resume Both Slots**。
+    
+
+---
+
+> **"except that the Management Endpoint shall not transmit a Response Message"**
+
+這句是補充條件：
+
+- 雖然 Command Slot Resume 了，
+    
+- **但 Management Endpoint（Responder）不能因為 Replay Control Primitive 而回傳新的 Response Message**（因為 Replay 是重播前面已存在的 Response，不該產生新的訊息）
