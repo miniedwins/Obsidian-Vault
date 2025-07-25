@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "暫存/Critical Warning.md",
+                "file": "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Critical Warning"
+              "title": "設定不同 IO 大小的百分比"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "暫存/Critical Warning.md",
+                "file": "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Critical Warning"
+              "title": "Outline of 設定不同 IO 大小的百分比"
             }
           },
           {
@@ -205,6 +205,16 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定混合讀寫比例.md",
+    "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
+    "作業系統/Linux/指令/FIO/Standard/資料驗證/自訂資料寫入與驗證.md",
+    "作業系統/Linux/指令/FIO/Standard/資料驗證/指定資料驗證方法.md",
+    "作業系統/Linux/指令/GNU/移除或重新掃描 PCIe 裝置.md",
+    "作業系統/Linux/指令/GNU/diff 檔案比較.md",
+    "作業系統/Linux/指令/I2C/i2c-tools.md",
+    "作業系統/Linux/指令/IPMI/ipmitool.md",
+    "Untitled.canvas",
+    "暫存/Critical Warning.md",
     "暫存/attachments/Pasted image 20250724120148.png",
     "暫存/attachments/Pasted image 20250724115932.png",
     "暫存/attachments/Pasted image 20250724115705.png",
@@ -214,7 +224,6 @@
     "暫存/attachments/Pasted image 20250724115623.png",
     "暫存/attachments/Pasted image 20250724115921.png",
     "暫存/attachments/Pasted image 20250724120135.png",
-    "暫存/Critical Warning.md",
     "暫存/attachments",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "暫存",
@@ -234,14 +243,6 @@
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Terminate Assembly and Drop Message.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Drop Packets.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint Discovery.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID Retention.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
-    "Untitled.canvas",
-    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
-    "關機處理狀態.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
     "技術資料/NVMe/NVMe-MI/attachments",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/attachments",
