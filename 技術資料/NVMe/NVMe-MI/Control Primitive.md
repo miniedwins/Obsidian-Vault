@@ -1,6 +1,45 @@
-TODO :  
-1. 介紹 Control Primitive
-2. 說明每個 Control Primitive 特性
+## 定義
+
+**Control Primitives** 是一種特殊類型的訊息，屬於「Request Message」的一種，由 **Management Controller (管理控制器)** 發送至 **Management Endpoint (管理端點)**。
+
+### 🔹 功能與目的
+
+用來：
+
+- **影響已送出之 Command Message 的執行行為**    
+
+- **查詢 Command Slot 或 Management Endpoint 的狀態**
+    
+### 🔹 適用範圍
+
+- **僅適用於 Out-of-Band 機制**    
+
+    - ✅ 可用於 **Out-of-Band (OOB)** 管理通道        
+
+    - ❌ **禁止使用於 In-Band Tunneling 機制**        
+
+> 🔸 補充：Out-of-Band 指的是獨立於主資料路徑以外的管理通道，常用於遠端管理設備狀態。
+
+### 🔹 與 Command Slot 的互動
+
+- Control Primitives **可以針對特定 Command Slot 發送**
+    
+- **不受 Command Slot 當前狀態限制**：
+    
+    - 無論 Command Slot 是在何種「命令服務狀態（Command Servicing State）」都可以傳送
+        
+    - **會立即由 Management Endpoint 處理**
+        
+
+### 🔹 狀態影響
+
+- **通常不會改變 Command Slot 的命令處理狀態**
+    
+    - 除非文件中另有特別說明，否則：
+        
+        - Control Primitives 僅用來控制或查詢
+            
+        - 不會影響命令本身的執行流程或狀態轉換
 
 ### 不需等待回應 
 說明 : 與 Command Message 不同，**Control Primitive 可連續發送，不需等待前一筆 Response**。
