@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
+                "file": "技術資料/I2C/I2C的工作原理與技術分析.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MCTP Message Type"
+              "title": "I2C的工作原理與技術分析"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
+                "file": "技術資料/I2C/I2C的工作原理與技術分析.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of MCTP Message Type"
+              "title": "Outline of I2C的工作原理與技術分析"
             }
           },
           {
@@ -205,6 +205,7 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Terminate Assembly and Drop Message.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Message Assembly.md",
@@ -222,7 +223,6 @@
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Endpoint ID Retention.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Generic MCTP Message Fields.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Control Message.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
     "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
     "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定混合讀寫比例.md",
