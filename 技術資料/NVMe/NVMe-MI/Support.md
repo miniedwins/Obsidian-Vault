@@ -9,11 +9,11 @@ Request-to-response time = 100ms
 
 
 ### MCTP Over SMBus 支援速度模式
-1. 7-bit addressing
-	- Standard-mode fast-mode (400 kHz)
-	- Fast-mode Plus (1MHz) I2C buses 
-
-> 備註 : 不支援 10-bit addressing
+1. 支援 7-bit addressing
+	- Standard-mode 
+	- Fast-mode ( 400 kHz )
+	- Fast-mode Plus ( 1MHz )
+2. 不支援 10-bit addressing
 
 ### 主機如何知道設備是否支援 MCTP Over SMBus
 1. 發送 SMBus GET UDID 命令取得 Unique Device Identifier ( UDID )
