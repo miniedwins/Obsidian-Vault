@@ -38,4 +38,7 @@
 |4|0|1|12 bytes|✅ End 封包（尾包可短）|
 ## 6. Message Integrity Check 錯誤
 說明：一個或多個 Packet 組裝結束後，發現訊息完整性檢查值不匹配。
-動作：導致訊息組裝終止並且整個訊息被丟棄。
+動作：組裝終止並且整個訊息被丟棄，因為是「silently discard」，對方不會傳任何 Response。
+處理方式：
+1. Host 等到 MCTP Transaction Timeout，發現沒有回覆，就會視為失敗。
+2. Host 會嘗試 重送該封包訊息。
