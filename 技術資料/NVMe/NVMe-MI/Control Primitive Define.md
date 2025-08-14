@@ -1,5 +1,5 @@
 ## 定義
-Control Primitive 的重點在於，它並不是用來「傳資料」，而是用來「控制命令服務執行狀態」（Command Servicing State Diagram）。也因為它是即時控制訊息，所以通常會優先處理，確保管理端可以精準地調整端點的回應節奏與資料傳輸狀態。
+Control Primitive 的重點在於，它並不是用來「傳資料」，而是用來「控制命令服務執行狀態」（Command Servicing State Diagram）。也因為它是即時控制訊息，所以通常會優先處理，確保管理端可以精準地調整端點的回應節奏與命令執行狀態。
 
 ## 運作功能
 當管理控制器（Management Controller）需要對端點（Management Endpoint）下達某種即時控制時，就會送出一個 Control Primitive 訊息。該訊息會放在 NVMe-MI Message Fields 欄位中的 NVMe-MI Message Type 來表示傳遞的訊息是 Control Primitive Message。
