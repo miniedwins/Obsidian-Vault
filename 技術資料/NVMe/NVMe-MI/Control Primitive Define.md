@@ -2,7 +2,7 @@
 Control Primitive 的重點在於，它並不是用來「傳資料」，而是用來「控制命令服務執行狀態」（Command Servicing State Diagram）。也因為它是即時控制訊息，所以通常會優先處理，確保管理端可以精準地調整端點的回應節奏與命令執行狀態。
 
 ## 運作功能
-當管理控制器（Management Controller）需要對端點（Management Endpoint）下達某種即時控制時，就會送出一個 Control Primitive 訊息。該訊息會放在 NVMe-MI Message Fields 欄位中的 NVMe-MI Message Type 來表示傳遞的訊息是 Control Primitive Message。
+當管理控制器（Management Controller）需要對端點（Management Endpoint）下達某種即時控制時，就會送出一個 Control Primitive 訊息。該訊息會放在 **NVMe-MI Message Fields** 欄位中的 **NVMe-MI Message Type** 來表示傳遞的訊息是 Control Primitive Message。
 
 當端點（Management Endpoint）收到 Control Primitive Request 訊息後，會立即針對控制要求做動作，並以一個對應的 Control Primitive Response（例如 : Pause Control Primitive Response）回送給發送端，以確認指令執行的狀態。
 
@@ -31,7 +31,7 @@ Control Primitive 的重點在於，它並不是用來「傳資料」，而是�
 
 ### 情境一：三筆 Primitive 是依序進入，前一筆還沒處理完就來新的
 
-當 Slot 收到 Primitive A 後尚未處理完成，又接收到 B、C 等後續指令時，依據規範，只有最後送入的 Primitive（C）會被實際處理，其餘前面的指令（A、B）會被丟棄（discarded），不會回傳 Response。
+當 Command Slot 收到 Primitive A 後尚未處理完成，又接收到 B、C 等後續指令時，依據規範，只有最後送入的 Primitive（C）會被實際處理，其餘前面的指令（A、B）會被丟棄（discarded），不會回傳 Response。
 
 | 時間  | 動作                 | 狀態                            |
 | --- | ------------------ | ----------------------------- |
