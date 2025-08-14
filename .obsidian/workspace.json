@@ -200,16 +200,17 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive.md",
     "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
     "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250813163919.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250710153234.png",
