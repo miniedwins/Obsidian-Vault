@@ -206,10 +206,10 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
-    "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
+    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+    "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message.md",
     "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",

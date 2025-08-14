@@ -26,7 +26,7 @@ Control Primitive 的重點在於，它並不是用來「傳資料」，而是�
 5. **Request & Response TAG（請求回應識別）**　
 	Management Controller 透過 TAG 將 Control Primitive Request 與 Response 對應。TAG 由 Controller 指定，設備回傳的 Response 必須使用相同 TAG 以識別執行完成的回覆命令。
 
-## 情境範例說明
+## 多筆情境範例說明
 在 Control Primitive 的運作中，可能出現多筆指令快速進入同一個 Command Slot 的情況，透過以下情境可以理解系統行為：
 
 ### 情境一：三筆 Primitive 是依序進入，前一筆還沒處理完就來新的
