@@ -235,3 +235,15 @@ Replay 是為了處理以下情境：
 
 
 
+sequenceDiagram
+    participant Host as Host
+    participant Endpoint as Endpoint
+
+    Host->>Endpoint: Replay Control Primitive (RRO=X)
+    Endpoint->>Host: Success Response (RR=1)
+    Note right of Endpoint: Control command response
+    Endpoint->>Host: More Processing Required Response (Update time)
+    Endpoint->>Host: Data Packet #X (Original data content)
+    Endpoint->>Host: Data Packet #X+1
+    Note over Host,Endpoint: ...
+    Endpoint->>Host: Data Packet #last
