@@ -27,8 +27,11 @@ Control Primitive 的重點在於，它並不是用來「傳資料」，而是�
 	Management Controller 透過 TAG 將 Control Primitive Request 與 Response 對應。TAG 由 Controller 指定，設備回傳的 Response 必須使用相同 TAG 以識別執行完成的回覆命令。
 
 ## 情境範例說明
+在 Control Primitive 的運作中，可能出現多筆指令快速進入同一個 Command Slot 的情況，透過以下情境可以理解系統行為：
 
 ### 情境一：三筆 Primitive 是依序進入，前一筆還沒處理完就來新的
+
+當 Slot 收到 Primitive A 後尚未處理完成，又接收到 B、C 等後續指令時，依據規範，只有最後送入的 Primitive（C）會被實際處理，其餘前面的指令（A、B）會被丟棄（discarded），不會回傳 Response。
 
 | 時間  | 動作                 | 狀態                            |
 | --- | ------------------ | ----------------------------- |
@@ -36,8 +39,11 @@ Control Primitive 的重點在於，它並不是用來「傳資料」，而是�
 | T1  | Primitive B        | 還沒處理完 A，B 到 → 蓋掉 A（discard A） |
 | T2  | Primitive C        | 還沒處理 B，C 到 → 蓋掉 B（discard B）  |
 | T3  | 處理 C，傳回 Response C |                               |
+|     |                    |                               |
 
 ### 情境二：Primitive A 已經開始處理（Process 中），B 和 C 進來得太快
+
+即使 Primitive A 已經進入處理階段，若 B、C 到達速度過快，系統依然會將後續指令覆蓋先前尚未完成的操作。最終實際處理與回覆的仍是最後一筆 Primitive（C），先前指令不會影響系統已生效的狀態。
 
 | 時間  | 動作                            | 狀態                             |
 | --- | ----------------------------- | ------------------------------ |
