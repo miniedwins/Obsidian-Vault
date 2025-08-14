@@ -1,6 +1,5 @@
 ## 定義
-
-**Control Primitives** 是一種特殊類型的訊息，屬於「Request Message」的一種，由 **Management Controller (管理控制器)** 發送至 **Management Endpoint (管理端點)**。
+Control Primitives 是一種特殊類型的訊息，屬於「Request Message」的一種，由 Management Controller (管理控制器) 發送至 Management Endpoint (管理端點)。
 
 ### 🔹 功能與目的
 
