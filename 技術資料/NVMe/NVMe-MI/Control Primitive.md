@@ -231,3 +231,7 @@ Replay 是為了處理以下情境：
 - 雖然 Command Slot Resume 了，
     
 - **但 Management Endpoint（Responder）不能因為 Replay Control Primitive 而回傳新的 Response Message**（因為 Replay 是重播前面已存在的 Response，不該產生新的訊息）
+
+
+
+
