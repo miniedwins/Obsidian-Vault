@@ -1,44 +1,29 @@
 ## 定義
-Control Primitives 是一種特殊類型的訊息，屬於「Request Message」的一種，由 Management Controller (管理控制器) 發送至 Management Endpoint (管理端點)。
+Control Primitive 的重點在於，它並不是用來「傳資料」，而是用來「控制資料傳輸的行為」。它會影響資料流的節奏、順序、以及重播行為。也因為它是即時控制訊息，所以通常會優先處理，確保管理端可以精準地調整端點的回應節奏與資料傳輸狀態。
 
-### 🔹 功能與目的
+## 運作功能
+當管理控制器（Management Controller）需要對端點下達某種即時控制時，就會送出一個 Control Primitive 訊息。這種訊息本身會透過 MCTP 標準封裝，但在 MCTP Message Type 的分類中，它屬於管理協定定義的特殊控制訊息，因此和一般 Command & Response 封包在邏輯上是分開的。
+
+當端點收到 Control Primitive 後，而是立即針對控制要求做動作，並以一個對應的 Control Primitive Response（例如 : Pause Control Primitive Response）回送給發送端，以確認指令執行的狀態。
+
+
+
 
 用來：
-
 - **影響已送出之 Command Message 的執行行為**    
-
 - **查詢 Command Slot 或 Management Endpoint 的狀態**
     
 ### 🔹 適用範圍
-
 - **僅適用於 Out-of-Band 機制**    
-
     - ✅ 可用於 **Out-of-Band (OOB)** 管理通道        
-
     - ❌ **禁止使用於 In-Band Tunneling 機制**        
 
-> 🔸 補充：Out-of-Band 指的是獨立於主資料路徑以外的管理通道，常用於遠端管理設備狀態。
-
 ### 🔹 與 Command Slot 的互動
-
-- Control Primitives **可以針對特定 Command Slot 發送**
-    
+- Control Primitives **可以針對特定 Command Slot 發送**   
 - **不受 Command Slot 當前狀態限制**：
-    
-    - 無論 Command Slot 是在何種「命令服務狀態（Command Servicing State）」都可以傳送
-        
-    - **會立即由 Management Endpoint 處理**
-        
+	-無論 Command Slot 是在何種「命令服務狀態（Command Servicing State）」都可以傳送   
+    - **會立即由 Management Endpoint 處理** 
 
-### 🔹 狀態影響
-
-- **通常不會改變 Command Slot 的命令處理狀態**
-    
-    - 除非文件中另有特別說明，否則：
-        
-        - Control Primitives 僅用來控制或查詢
-            
-        - 不會影響命令本身的執行流程或狀態轉換
 
 ### 不需等待回應 
 說明 : 與 Command Message 不同，**Control Primitive 可連續發送，不需等待前一筆 Response**。
@@ -235,15 +220,3 @@ Replay 是為了處理以下情境：
 
 
 
-sequenceDiagram
-    participant Host as Host
-    participant Endpoint as Endpoint
-
-    Host->>Endpoint: Replay Control Primitive (RRO=X)
-    Endpoint->>Host: Success Response (RR=1)
-    Note right of Endpoint: Control command response
-    Endpoint->>Host: More Processing Required Response (Update time)
-    Endpoint->>Host: Data Packet #X (Original data content)
-    Endpoint->>Host: Data Packet #X+1
-    Note over Host,Endpoint: ...
-    Endpoint->>Host: Data Packet #last
