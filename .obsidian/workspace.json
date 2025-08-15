@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Out-of-Band Message Servicing Model"
+              "title": "NVMe-MI Message Fields"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Out-of-Band Message Servicing Model"
+              "title": "Outline of NVMe-MI Message Fields"
             }
           },
           {
@@ -220,9 +220,10 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/More Processing Required.md",
+    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Response Message Format.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
@@ -250,7 +251,6 @@
     "技術資料/SMBus/Commands/Get UDID.md",
     "技術資料/SMBus/Commands/Notify ARP Controller.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Maximum Message Size.md",
-    "技術資料/UNH-IOL/NVMe-MI/Group 5 NVMe Management Interface Tests.md",
     "技術資料/UNH-IOL/NVMe-MI",
     "技術資料/UNH-IOL",
     "Untitled.canvas",
