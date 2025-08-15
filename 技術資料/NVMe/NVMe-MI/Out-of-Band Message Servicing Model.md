@@ -43,9 +43,7 @@
 | ------- | ------- | ----------- | ---------- |
 | A-1~A-n | 0       | Slot 0      | 正在傳送中      |
 | B-1~B-n | 1       | Slot 1      | 可同時傳送第二條命令 |
-|         |         |             |            |
-|         |         |             |            |
-|         |         |             |            |
+
 ## Command Servicing State Diagram
 
 ![[Pasted image 20250711141407.png]]
@@ -104,9 +102,15 @@
 | Receive  | 組裝封包、檢查格式      | → Process / Idle  | 檢查錯誤、Abort → Idle |
 | Process  | 執行命令、驗證合法性     | → Transmit / Idle | Abort → Idle      |
 | Transmit | 傳送回應、或要求更多時間處理 | → Idle / Process  | 傳送失敗後回 Idle       |
-|          |                |                   |                   |
-|          |                |                   |                   |
+
 ### 注意事項
 ( 原文 ) : The behavior of receiving two or more overlapping Command Messages to the same Command Slot is undefined. If this results in the Management Endpoint discarding a Command Message, then this is considered receiving a Command Message to a non-Idle Command Slot (CMNICS)
 
-( 說明 ) :  若 Controller 傳送兩條重疊的命令（相同 Slot 未完成又重送新命令）， Endpoint 應丟棄第二條命令，並且回傳 Command Message to non-Idle Command Slot (CMNICS)。回傳的 Response Message 會是 Control Primitive Success Response Fields。
+( 說明 ) :  若 Controller 傳送兩條重疊的命令 ( 相同 Slot 未完成又重送新命令 )，Controller 會根據
+第一筆命令有沒有完全收完來處理，處理如下 : 
+
+- 第一筆命令完全收完，第二筆命令會丟棄 ( slight discard )。
+- 第一筆命令沒有完全收完，然後第二筆命令進來，丟棄一筆命令並且處理第二筆命令。
+- ( 尚未確定 ) 最後都需要更新 CMNICS 設定為 1
+
+這邊所說的回傳 Command Message to non-Idle Command Slot (CMNICS)，是需要透過 Get State Control Primitive 取得 Control Primitive Success Response Fields。因此並不會因為 Overlapping Command 而回傳 Response，當前的命令會靜態丟棄，不會回傳 Response。
