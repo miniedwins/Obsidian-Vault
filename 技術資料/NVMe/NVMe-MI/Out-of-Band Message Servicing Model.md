@@ -1,15 +1,28 @@
-
+## 核心概念
+- 採用 Request / Response 服務模型   
+    1. Management Controller 傳送 Request Message 給 Management Endpoint。        
+    2. Management Endpoint 處理請求後，回傳 Response Message 給 Management Controller。        
+    3. 不允許 Management Endpoint 主動產生沒有對應 Request 的 Response（即不能主動回覆未被要求的訊息）。
+    
 ## Command Slot 機制
+- 用途：用來處理 Command Message（多封包型 NVMe-MI 訊息）。    
+- 數量：每個 Management Endpoint 有 2 個 Command Slot，每個 Slot 有自己的狀態資訊。    
+- 操作規則：    
+    - 同一個 Slot 在收到前一筆 Command Message 的 Response 前，不可再發送新的 Command Message。        
+    - Management Controller 發送 Command Message 時，需指定目標 Slot。        
+    - 對每個 Command Slot，Endpoint 會獨立組裝 MCTP 封包為完整命令。 
+    - Command Message 必須完整處理完畢後，該 Slot 才能釋放並接收新指令。
+    - 用來區分封包，但同一條命令的封包需保持一致（同一 Message Tag）
+        
+## 並行處理能力
+- 每個 Command Slot 獨立運作，可同時處理兩條獨立的 Command Message 流。    
+- 若一個 NVM Subsystem 有 **N 個 Management Endpoint**：    
+    - 每個 Endpoint 2 個 Slot → 最多可同時處理 **2N 筆 Command Message**。        
+    - 各 Endpoint 之間的命令服務互不影響，可並行處理。
 
-| 項目      | 說明                                                |
-| ------- | ------------------------------------------------- |
-| Slot 數量 | 每個 Endpoint 有 **2 個 Command Slots**               |
-| 組裝行為    | 對每個 Command Slot，Endpoint 會獨立組裝 MCTP 封包為完整命令      |
-| 執行流程    | Command Message 組裝完成 → 處理 → 回傳 Response → 清除 Slot |
-| 限制      | 同一個 Slot 在 **完成前不可接受第二個命令**                       |
-| Msg Tag | 用來區分封包，但同一條命令的封包需保持一致（同一 Msg Tag）                 |
-| 並行能力    | 一個 Endpoint 最多同時處理 2 條命令；N 個 Endpoint 可並行 2N 條命令  |
-### 範例說明（單 Slot）
+## 範例說明
+
+### 使用 1 Slot
 
 假設目前正在使用 Command Slot 0，Controller 傳送以下 3 個封包：
 
@@ -22,7 +35,7 @@
 
 在這個命令還沒回應完成前，**不可以用 Slot 0 傳送另一條命令**，即使換 Msg Tag 也不行。
 
-### 延伸範例（同時使用 2 Slot）
+### 同時使用 2 Slot
 
 ✔ Slot 0 和 Slot 1 可以同時處理不同的 Command Message（互不干擾）
 
@@ -30,6 +43,8 @@
 | ------- | ------- | ----------- | ---------- |
 | A-1~A-n | 0       | Slot 0      | 正在傳送中      |
 | B-1~B-n | 1       | Slot 1      | 可同時傳送第二條命令 |
+|         |         |             |            |
+|         |         |             |            |
 |         |         |             |            |
 ## Command Servicing State Diagram
 
@@ -89,6 +104,7 @@
 | Receive  | 組裝封包、檢查格式      | → Process / Idle  | 檢查錯誤、Abort → Idle |
 | Process  | 執行命令、驗證合法性     | → Transmit / Idle | Abort → Idle      |
 | Transmit | 傳送回應、或要求更多時間處理 | → Idle / Process  | 傳送失敗後回 Idle       |
+|          |                |                   |                   |
 |          |                |                   |                   |
 ### 注意事項
 ( 原文 ) : The behavior of receiving two or more overlapping Command Messages to the same Command Slot is undefined. If this results in the Management Endpoint discarding a Command Message, then this is considered receiving a Command Message to a non-Idle Command Slot (CMNICS)

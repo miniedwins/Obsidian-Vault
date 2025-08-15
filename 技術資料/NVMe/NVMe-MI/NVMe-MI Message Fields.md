@@ -1,6 +1,4 @@
 
-
-
 ![[Pasted image 20250620171239.png]]
 
 ## Message Type
