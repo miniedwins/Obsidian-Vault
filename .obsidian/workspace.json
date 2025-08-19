@@ -222,10 +222,10 @@
   },
   "active": "a3c10d51fd4f008e",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-MI/問題討論.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+    "技術資料/NVMe/NVMe-MI/問題討論.md",
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
     "技術資料/NVMe/NVMe-MI/More Processing Required.md",
     "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",

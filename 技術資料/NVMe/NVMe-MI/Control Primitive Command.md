@@ -1,23 +1,21 @@
 ## Pause
 
 ### 概要
-- 用途：暫停 Response 傳送與暫停等待後續封包的 timeout 計時。    
-- 適用範圍：針對 Management Endpoint 的 Command Slot。    
-- 回應：收到 Pause Control Primitive 後，Management Endpoint 需回傳 Success Response（表示成功接受），不論 Slot 當下是否真的被影響。
-- CSI bit：固定為 `0h`，若設為 `1` → 應回傳 Invalid Parameter Error Response。    
-- Pause Flag：每個 Command Slot 都有一個 Pause Flag，標示該 Slot 是否被暫停。    
-    - 成功回應時會帶回 Pause Flag 狀態。        
-    - 也可透過 Get State Control Primitive 查詢。
-### 狀態說明
+每個 Command Slot 都有一個 Pause Flag，標示該 Slot 是否被暫停。成功回應時會帶回 Pause Flag 狀態。也可透過 Get State Control Primitive 查詢 Command Slot 狀態。
 
-### 流程範例
-1. 發送 Command 1 (tag=0) 到 Command Slot 1    
-2. Slot 進入 Process 狀態    
-3. 發送 Pause Control Primitive → Slot 1 暫停    
-4. 等待管理端（例如 BMC）處理外部原因    
-5. 發送 Resume Control Primitive → Slot 1 恢復    
-6. 等待 Command 1 的回應    
-7. Command 1 完成後，再送 Command 2 (tag=1) 到同一個 Slot
+當主機端發送 Pause Control Primitive 命令，控制器會暫停 Response 傳送與暫停等待後續封包的 timeout 計時，並且 Management Endpoint 需回傳 Success Response（表示成功接受）。
+
+> Note :  CSI bit：固定為 `0h`，若設為 `1` → 應回傳 Invalid Parameter Error Response。
+
+### 狀態說明
+- **Idle** : 
+	- Pause Control Primitive 不會改變 Pause Flag (保持 `0`)。        
+- **Receive** : 
+	- 表示後續封包可能延遲，但仍可正常接收。        
+- **Process** : 
+	- 不影響目前命令的處理流程，處理完成後仍會進入 Transmit 狀態。        
+- **Transmit** : 
+	- 在封包邊界處暫停 Response 傳送，應盡快停止後續傳輸。
 
 ### 錯誤處理 FAQ
 - Q1：如果 Slot 1 被 Pause，能否送 Command 2 (tag=1) 到 Slot 1？
@@ -31,19 +29,35 @@
 
 ## Resume
 
-#### 1. 為什麼 Controller 會掉包？
-其實不是「Controller 掉包」，而是 **Controller 判斷**「某個封包沒有收到」，進而 **丟棄整個回應訊息（Response Message）**。  
+### 概要
+
+### 狀態說明
+
+### 流程範例
+1. 發送 Command 1 (tag=0) 到 Command Slot 1    
+2. Slot 進入 Process 狀態    
+3. 發送 Pause Control Primitive → Slot 1 暫停    
+4. 等待管理端（例如 BMC）處理外部原因    
+5. 發送 Resume Control Primitive → Slot 1 恢復    
+6. 等待 Command 1 的回應    
+7. Command 1 完成後，再送 Command 2 (tag=1) 到同一個 Slot
+
+### 為什麼會遺失封包？
+ 是「Controller 掉包」，而是 **Management Controller 判斷**「某個封包沒有收到」，進而 **丟棄整個回應訊息（Response Message）**。  
+
+如果 Resume 後續封包的序號不是 Management Controller 所預期的 ⇒ Controller 丟棄。
+若封包同步出問題 ⇒ 就需要使用 Replay Control Primitive 來要求重新傳送特定編號之後的封包。
 
 ##### 原因說明
-Resume 時，**Endpoint 會從「上次已發送的封包」之後開始繼續傳送**，但假設最後一個封包（例如 Packet \#2）**被 Endpoint 傳送了，但 Controller 沒收到**（可能是通訊錯誤），那 Controller 只記得自己「最後收到的是 Packet \#1」。
+Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳送，但假設最後一個封包（例如 Packet \#2）被 Endpoint 傳送了，但 Management Controller 沒收到（可能是通訊錯誤），那 Controller 只記得自己「最後收到的是 Packet \#1」。
 
 ##### 問題就出在這裡
-Resume 之後，Endpoint 會傳送 Packet \#3，Controller 卻期望下一包是 Packet #2 ⇒ **序號錯誤（out-of-order）⇒ Controller 丟棄整個 Response Message！**
+Resume 之後，Endpoint 會傳送 Packet \#3，Management Controller 卻期望下一包是 Packet #2 ⇒ 序號錯誤（out-of-order）⇒ Controller 丟棄整個 Response Message！
 
-####  2. Pause → Resume 為什麼可能會導致封包丟棄？
+####  Pause → Resume 為什麼可能會導致封包丟棄？
 不是 Resume 本身導致掉包，而是：
-- 如果 Resume **後續封包的序號**不是 Controller 所預期的 ⇒ Controller 丟棄。    
-- 若封包同步出問題 ⇒ 就需要使用 **Replay Control Primitive** 來要求重新傳送特定編號之後的封包。
+- 如果 Resume 後續封包的序號不是 Controller 所預期的 ⇒ Controller 丟棄。    
+- 若封包同步出問題 ⇒ 就需要使用 Replay Control Primitive 來要求重新傳送特定編號之後的封包。
 
 #### 正確流程（防止封包掉落）
 1. `Pause` 傳送中斷。    
@@ -88,7 +102,7 @@ Abort Primitive 的目的：
 - 即使在 Idle，Abort 還是會回應一個成功狀態（只是沒做任何事）。
 
 
-### Replay
+## Replay
 #### 📌 功能簡介
 
 Replay Control Primitive 的功能是：
