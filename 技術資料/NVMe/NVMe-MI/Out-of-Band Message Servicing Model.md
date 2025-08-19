@@ -14,7 +14,7 @@
     - Command Message 必須完整處理完畢後，該 Slot 才能釋放並接收新指令。
     - 用來區分封包，但同一條命令的封包需保持一致（同一 Message Tag）
         
-## 並行處理能力
+## 並行處理能力 ( Parallel )
 - 每個 Command Slot 獨立運作，可同時處理兩條獨立的 Command Message 流。    
 - 若一個 NVM Subsystem 有 **N 個 Management Endpoint**：    
     - 每個 Endpoint 2 個 Slot → 最多可同時處理 **2N 筆 Command Message**。        
@@ -22,7 +22,7 @@
 
 ## 範例說明
 
-### 使用 1 Slot
+### 使用單一個 Slot
 
 假設目前正在使用 Command Slot 0，Controller 傳送以下 3 個封包：
 
@@ -35,7 +35,7 @@
 
 在這個命令還沒回應完成前，**不可以用 Slot 0 傳送另一條命令**，即使換 Msg Tag 也不行。
 
-### 同時使用 2 Slot
+### 同時使用兩個 Slot
 
 ✔ Slot 0 和 Slot 1 可以同時處理不同的 Command Message（互不干擾）
 
@@ -79,7 +79,7 @@
 - 組裝完成後，進入命令處理階段    
 - 執行 Command Message 中的指令，例如查詢資訊、改變狀態等
 #### 2. 轉移條件（轉入下一狀態）
-- 命令執行完成或是處理未完成但時間已到（Timeout） ，需要傳送回應訊息 → 進入 `Transmit`
+- 命令執行完成或是處理未完成但時間已到（Timeout），需要傳送回應訊息 → 進入 `Transmit`
 - 處理命令未完成或是沒有 Primitive Pause，則會進入→ `Transmit` 發送 "More Processing Required"  → 然後再返回 `Process`
 - 上層通知中止命令 Abort Control Primitive 控制訊號 → `Idle`（中止流程）
 #### 3. 發生問題時的處理：
