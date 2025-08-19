@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+                "file": "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Control Primitive Command"
+              "title": "Packet Assembly into Messages"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+                "file": "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Control Primitive Command"
+              "title": "Outline of Packet Assembly into Messages"
             }
           },
           {
@@ -220,6 +220,23 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/Reset.md",
+    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
+    "技術資料/NVMe/NVMe-MI/More Processing Required.md",
+    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
+    "技術資料/I2C/I2C的工作原理與技術分析.md",
+    "技術資料/NVMe/NVMe-MI/Support.md",
+    "暫存內容/BMC.md",
+    "技術資料/NVMe/NVMe-MI/task list.md",
+    "暫存內容/NVMe Study (暫存).md",
+    "暫存內容/PCIe Class Code.md",
+    "暫存內容/範例筆記.md",
+    "暫存內容/如何找 PCIe Capacity Register.md",
+    "暫存內容/attachments/Pasted image 20241127081953.png",
+    "技術資料/NVMe/NVMe-MI/Response Message Format.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Terminate Assembly and Drop Message.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Message Assembly.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/Generic MCTP Message Fields.md",
@@ -229,28 +246,12 @@
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
-    "技術資料/NVMe/NVMe-MI/More Processing Required.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
-    "技術資料/NVMe/NVMe-MI/Response Message Format.md",
-    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
-    "技術資料/NVMe/NVMe-MI/Support.md",
-    "技術資料/NVMe/NVMe-MI/Reset.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250815101206.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250815101112.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250813163919.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250710153234.png",
-    "技術資料/NVMe/NVMe-OPAL/問題.md",
-    "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
-    "技術資料/NVMe/NVMe-OPAL/測試案例解析/Error Test Cases.md",
-    "技術資料/SMBus/Commands/Assign Address.md",
-    "技術資料/SMBus/ACK and NACK.md",
-    "技術資料/SMBus/Commands/Block Write Bus.md",
-    "技術資料/SMBus/Commands/Get UDID.md",
     "技術資料/UNH-IOL/NVMe-MI",
     "技術資料/UNH-IOL",
     "Untitled.canvas",
@@ -258,7 +259,6 @@
     "暫存/attachments/Pasted image 20250724115932.png",
     "暫存/attachments/Pasted image 20250724115705.png",
     "暫存/attachments/Pasted image 20250724115542.png",
-    "暫存/attachments/Pasted image 20250724115450.png",
     "暫存/attachments",
     "暫存",
     "技術資料/NVMe/NVMe-MI/attachments",
