@@ -1,11 +1,10 @@
+## Pause
 
+### 概要
 
-### Pause
+### 狀態說明
 
-- Pause 狀態下的 Command Slot 不會回應 Command Message
-- Controller 不應在 Pause 狀態時再送新的 Command 到這個 Slot    
-
-正確流程應是：
+### 流程解釋
 1. 發送 Command 1 (tag=0) 到 Command Slot 1    
 2. Slot 進入 Process 狀態    
 3. 發送 Pause Control Primitive → Slot 1 暫停    
@@ -14,11 +13,18 @@
 6. 等待 Command 1 的回應    
 7. Command 1 完成後，再送 Command 2 (tag=1) 到同一個 Slot
 
-問題錯誤流程：　
-問題 : 如果 Command 1 (tag=0) 在 Slot 1 被 Pause，可以傳 Command 2 (tag=1) 到 Slot 1 嗎？
-說明 : 不行，Slot 處於 Pause 狀態，不應傳新指令。應先 Resume，完成 Command 1。
+### 錯誤處理
+( 問題 ) : 如果 Command 1 (tag=0) 在 Slot 1 被 Pause，可以傳 Command 2 (tag=1) 到 Slot 1 嗎？
+( 說明 ) : 不行，Slot 處於 Pause 狀態，不應傳新指令。應先 Resume，完成 Command 1。
 
-### Resume
+( 問題 ) : Pause 狀態下的 Command Slot 是否會回應 Control Primitive Response ? 
+( 說明 ) : 不會回應 Control Primitive Response。
+
+( 問題 ) : Controller 位在 Pause 狀態下，可以再接受新的 Command 到相同 Slot ?  
+( 說明 ) : 前一個命令尚未處理完成時，不應該接受下一個新的命令 ( 除非不是相同的 Slot )。
+
+
+## Resume
 
 #### 1. 為什麼 Controller 會掉包？
 其實不是「Controller 掉包」，而是 **Controller 判斷**「某個封包沒有收到」，進而 **丟棄整個回應訊息（Response Message）**。  
@@ -41,7 +47,7 @@ Resume 之後，Endpoint 會傳送 Packet \#3，Controller 卻期望下一包是
 3. `Resume` 然後 Endpoint 根據 Replay offset 重新傳送。    
 4. 確保封包順序正確，避免 Controller 誤認為掉包。
 
-### Abort
+## Abort
 
 Abort Primitive 的目的：
 
