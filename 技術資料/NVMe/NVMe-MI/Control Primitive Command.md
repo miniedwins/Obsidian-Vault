@@ -1,10 +1,16 @@
 ## Pause
 
 ### 概要
-
+- 用途：暫停 Response 傳送與暫停等待後續封包的 timeout 計時。    
+- 適用範圍：針對 Management Endpoint 的 Command Slot。    
+- 回應：收到 Pause Control Primitive 後，Management Endpoint 需回傳 Success Response（表示成功接受），不論 Slot 當下是否真的被影響。
+- CSI bit：固定為 `0h`，若設為 `1` → 應回傳 Invalid Parameter Error Response。    
+- Pause Flag：每個 Command Slot 都有一個 Pause Flag，標示該 Slot 是否被暫停。    
+    - 成功回應時會帶回 Pause Flag 狀態。        
+    - 也可透過 Get State Control Primitive 查詢。
 ### 狀態說明
 
-### 流程解釋
+### 流程範例
 1. 發送 Command 1 (tag=0) 到 Command Slot 1    
 2. Slot 進入 Process 狀態    
 3. 發送 Pause Control Primitive → Slot 1 暫停    
@@ -13,16 +19,15 @@
 6. 等待 Command 1 的回應    
 7. Command 1 完成後，再送 Command 2 (tag=1) 到同一個 Slot
 
-### 錯誤處理
-( 問題 ) : 如果 Command 1 (tag=0) 在 Slot 1 被 Pause，可以傳 Command 2 (tag=1) 到 Slot 1 嗎？
-( 說明 ) : 不行，Slot 處於 Pause 狀態，不應傳新指令。應先 Resume，完成 Command 1。
-
-( 問題 ) : Pause 狀態下的 Command Slot 是否會回應 Control Primitive Response ? 
-( 說明 ) : 不會回應 Control Primitive Response。
-
-( 問題 ) : Controller 位在 Pause 狀態下，可以再接受新的 Command 到相同 Slot ?  
-( 說明 ) : 前一個命令尚未處理完成時，不應該接受下一個新的命令 ( 除非不是相同的 Slot )。
-
+### 錯誤處理 FAQ
+- Q1：如果 Slot 1 被 Pause，能否送 Command 2 (tag=1) 到 Slot 1？
+- A1：不行。Slot 處於 Pause 狀態時，不應發送新的命令。必須先 Resume，完成 Command 1。
+    
+- Q2：Pause 狀態下，控制器會不會回應 Control Primitive Response？
+- A2：會。Pause Control Primitive 本身仍會收到一個 Success Response（或 Error Response，如果 CSI=1）。但在 Pause 狀態下，對於 Command Message 的 Response Message 會被暫停。
+    
+- Q3：Controller 在 Pause 狀態下，可以接受新的 Command 到相同 Slot 嗎？  
+- A3：不行。在同一個 Slot 中，上一個命令尚未完成前，不應接受新的 Command。只有其他空閒的 Slot 可接受新命令。
 
 ## Resume
 
