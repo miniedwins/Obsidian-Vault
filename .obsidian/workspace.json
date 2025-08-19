@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+                "file": "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Out-of-Band Message Servicing Model"
+              "title": "Control Primitive Command"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+                "file": "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Out-of-Band Message Servicing Model"
+              "title": "Outline of Control Primitive Command"
             }
           },
           {
@@ -220,18 +220,18 @@
   },
   "active": "22607599267f96d7",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
     "技術資料/NVMe/NVMe-MI/More Processing Required.md",
     "技術資料/NVMe/NVMe-MI/問題討論.md",
     "技術資料/NVMe/NVMe-MI/Response Message Format.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-MI/Reset.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/I2C/I2C的工作原理與技術分析.md",
     "暫存內容/BMC.md",
     "技術資料/NVMe/NVMe-MI/task list.md",
