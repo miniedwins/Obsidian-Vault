@@ -95,14 +95,14 @@ Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳�
 	- NVMe Controllers in NVM Subsystem            
 
 ### 狀態說明
-- **Idle 狀態**
-    - Abort 不影響。
-    - 回傳 Response Success with `CPAS=0h`。
-- **Receive 狀態**    
-    - Slot 內容被丟棄 → 狀態轉為 Idle。
-    - 回傳 Response Success with `CPAS=1h`
-- **Process 狀態**
-    - Slot 內容被丟棄 → 轉為 Idle。
+#### Idle 狀態
+- Abort 不影響。
+- 回傳 Response Success with `CPAS=0h`。
+#### Receive 狀態    
+- Slot 內容被丟棄 → 狀態轉為 Idle。
+- 回傳 Response Success with `CPAS=1h`
+#### Process 狀態
+- Slot 內容被丟棄 → 轉為 Idle。
     - 分兩種情況：  
         a) **尚未開始處理命令**        
         - 回傳 Response Success with `CPAS=0h` 。
@@ -111,11 +111,11 @@ Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳�
 		- Management Endpoint 嘗試中止命令：
             - 若成功中止且對 NVM Subsystem 無影響 →Response Success with `CPAS=1h` 。
             - 若無法中止（命令可能部分已執行） → Response Success with `CPAS=2h` 。
+#### Transmit 狀態
+- Slot 內容被丟棄 → 轉為 Idle。
+- 回傳 Response Success with `CPAS=0h`。
 
-- **Transmit 狀態**
-	- Slot 內容被丟棄 → 轉為 Idle。
-	- 回傳 Response Success with `CPAS=0h`。
-
+#### CPAS 欄位說明
 - `CPAS` ( Command Processing Abort Status ) 欄位說明 : 
 	- `00h` : Command aborted after processing completed or no command to abort
 	- `01h` : Command aborted before processing began
@@ -140,16 +140,47 @@ A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `
 
 ### 功能說明
 - 可以指定從哪個位置（offset）開始 Replay。
-- 當收到 Replay 後，對應的 Command Slot 的 Pause Flag 會被清除為 0。
+- 當收到 Replay 後，對應的 Command Slot 的 `Pause Flag` 會被清除為 0。
 - 重播資料從 Response Replay Offset 開始，一直到原本 Response Message 的結尾。
 
+### 狀態說明
+#### Idle 狀態
+- 重播是否成功 → 取決於是否有可用的 Response Message。   
+    - **若剛經過 Abort / Reset → 無可重播的 Response**        
+        - 回覆 Success Response，`RR bit = 0`。            
+    - **若已處理過至少一個 Command → 可重播**   
+        - 回覆 Success Response，`RR bit = 1`。            
+        - 然後傳送該 Response Message 的 MCTP 封包（從指定的 RRO 開始）。            
+#### Receive 狀態
+- 無法進行重播，因為命令仍在接收。    
+- 回覆 Success Response，`RR bit = 0`。
+#### Process 狀態
+- 如果 **尚未傳送 More Processing Required (MPR) Response**：   
+    - 回覆 Success Response，`RR bit = 0`。        
+- 如果 **已傳送過 MPR Response**：    
+    - 回覆 Success Response，`RR bit = 1`。        
+    - 重新傳送 **MPR Response**，並更新其中的 **More Processing Required Time** 欄位。       
+#### Transmit 狀態
+- 停止當前的 Response 傳輸。   
+- 回覆 Success Response，`RR bit = 1`。    
+- 依照 `RRO` 欄位指定的位置，重播 Response Message 的剩餘封包。    
+- Command Slot 保持在 Transmit 狀態直到重播完成。
+
 ### 流程範例
-1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始。
+1. 第一個 Replay 封包必定要 `SOM=1`，即使不是從 offset=0 開始。
 2. Replay 第一包必須含有原本的 `Message Header`，不管 offset 是不是從第 `0` 開始。
 3. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同。
 
 >❌ 如果 Msg Tag 設定錯誤會發生什麼？
 > 因為 MCTP Message Tag 是用來分辨與組裝封包的一致性與順序依據。若 Msg Tag 不相同，Receiver（如 Management Controller）會認為這是另一筆新訊息，就無法將 Replay 封包與先前接收到的前半部分組合起來。
+
+### 錯誤處理流程（Offset ≠ 0h）
+1. Management Controller 收到一串 Response 封包 → 前半部分 OK。
+2. 某個封包出錯 → MCTP 層會終止組裝。
+3. 把已收到的正確部分交給 NVMe-MI 層。
+4. 指定 Replay Offset → 要求從某個位置繼續傳送。        
+5. NVMe-MI 層 → 將「前半部分 + Replay 後的部分」組合成完整 Response。    
+6. 驗證整體 MIC（跨完整訊息）。
 
 ### 應用情境
 - 在 Pause + Resume 後，Controller 掉包或順序錯亂（導致無法完整重組 Response Message）。
@@ -161,42 +192,4 @@ A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `
 3. 當 Replay Control Primitive 成功後：
 	- 相關的 Command Slots 都會自動 Resume（恢復傳送）    
 	- 雖然沒有明確送出 Resume Control Primitive，但這個動作就是 Resume Both Slots。
-    
-### 🔁 Replay with Pause 重點解釋：
-
-(原文) : It is not an error to issue a Replay Control Primitive to a Command Slot that is paused. A Response Message is transmitted even if the Command Slot is paused at any time during the response, including before the first packet was transmitted. After successful completion of the Replay Control Primitive, neither Command Slot is paused (i.e., there is an implicit Resume Control Primitive affecting both Command Slots when processing the Replay Control Primitive except that the Management Endpoint shall not transmit a Response Message).
-
-> **"It is not an error to issue a Replay Control Primitive to a Command Slot that is paused."**
-
-即使某個 **Command Slot 處於 Paused 狀態**，也允許對它發送 Replay Control Primitive，不會當作錯誤。
-
----
-
-> **"A Response Message is transmitted even if the Command Slot is paused at any time during the response..."**
-
-即使 Response Message 的傳送過程中，Command Slot 被暫停（Paused），Replay 還是會重新發送該 Response。
-
----
-
-> **"After successful completion of the Replay Control Primitive, neither Command Slot is paused..."**
-
-當 Replay Control Primitive 成功後：
-
-- **相關的 Command Slots 都會自動 Resume（恢復傳送）**
-    
-- 雖然沒有明確送出 Resume Control Primitive，但這個 Replay 動作的副作用就是 **Resume Both Slots**。
-    
-
----
-
-> **"except that the Management Endpoint shall not transmit a Response Message"**
-
-這句是補充條件：
-
-- 雖然 Command Slot Resume 了，
-    
-- **但 Management Endpoint（Responder）不能因為 Replay Control Primitive 而回傳新的 Response Message**（因為 Replay 是重播前面已存在的 Response，不該產生新的訊息）
-
-
-
 
