@@ -14,11 +14,11 @@
 2. 後續封包只是把剩下的 Message Data 切成片段裝進來。    
 3. 最後一個封包通常會包含 Message Data + Message Integrity Check。
 
+![[Pasted image 20250813163919.png]]
+
 ## 多個封包分割範例
 假設 NVMe-MI Message 長度需要 4 個 MCTP 封包：
 - Packet #1 → MCTP Header (SOM=1, EOM=0) + NVMe-MI Message Header + 第一段資料    
 - Packet #2 → MCTP Header (SOM=0, EOM=0) + 第二段資料    
 - Packet #3 → MCTP Header (SOM=0, EOM=0) + 第三段資料    
 - Packet #4 → MCTP Header (SOM=0, EOM=1) + 最後一段資料 + MIC
-
-![[Pasted image 20250813163919.png]]
