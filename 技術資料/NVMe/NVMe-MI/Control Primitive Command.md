@@ -4,7 +4,7 @@
 每個 Command Slot 都有一個 Pause Flag，標示該 Slot 是否被暫停。成功回應時會帶回 Pause Flag 狀態。也可透過 Get State Control Primitive 查詢 Command Slot 狀態。
 
 當主機端發送 Pause Control Primitive 命令，控制器會暫停 Response 傳送與暫停等待後續封包的 timeout 計時，並且 Management Endpoint 需回傳 Success Response（表示成功接受）。
-
+　
 ### 狀態說明
 - **Idle** : 
 	- Pause Control Primitive 不會改變 Pause Flag (保持 `0`)。        
