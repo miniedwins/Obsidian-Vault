@@ -50,20 +50,20 @@ Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳�
 4. 確保封包順序正確，避免 Controller 誤認為掉包。
 
 ### 狀態說明
-- **Idle 狀態**
-	- Resume 無效果。    
-    - Pause Flag 保持不變 (`0`)。        
-- **Receive 狀態**
-    - Resume 告知 Management Endpoint 繼續接收 Command Message 剩餘封包。        
+#### Idle 狀態
+- Resume 無效果。    
+- Pause Flag 保持不變 (`0`)。        
+#### Receive 狀態
+- Resume 告知 Management Endpoint 繼續接收 Command Message 剩餘封包。        
     - Pause Flag 清除為 `0`。  
-- **Process 狀態**    
-    - 如果該 Slot 被 Pause，且尚未送出 More Processing Required Response：        
-        - Request-to-Response Timer 需被重設並重新啟動。            
-	    - Pause Flag 清除為 `0`。
-- **Transmit 狀態** 
-    - Management Endpoint 在回應 Resume Control Primitive 後，  
+#### Process 狀態
+- 如果該 Slot 被 Pause，且尚未送出 More Processing Required Response：        
+       - Request-to-Response Timer 需被重設並重新啟動。            
+	   - Pause Flag 清除為 `0`。
+#### Transmit 狀態
+- Management Endpoint 在回應 Resume Control Primitive 後，  
         繼續傳送對應的 Response Message（從暫停點之後）。        
-    - Pause Flag 清除為 `0`。
+-  Pause Flag 清除為 `0`。
 
 ### 流程範例
 - Host 發送 Command 1 → Slot 1 進入 Process。
@@ -149,10 +149,10 @@ A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `
     - **若剛經過 Abort / Reset → 無可重播的 Response**        
         - 回覆 Success Response，`RR bit = 0`。            
     - **若已處理過至少一個 Command → 可重播**   
-        - 回覆 Success Response，`RR bit = 1`。            
+        - 回覆 Success Response，`RR bit = 1`。 
         - 然後傳送該 Response Message 的 MCTP 封包（從指定的 RRO 開始）。            
 #### Receive 狀態
-- 無法進行重播，因為命令仍在接收。    
+- 無法進行重播，因為命令仍在接收。
 - 回覆 Success Response，`RR bit = 0`。
 #### Process 狀態
 - 如果 **尚未傳送 More Processing Required (MPR) Response**：   
