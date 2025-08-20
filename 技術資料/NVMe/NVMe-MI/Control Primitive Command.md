@@ -1,30 +1,28 @@
 ## Pause
-
-### 概要
+### 功能簡介
 每個 Command Slot 都有一個 Pause Flag，標示該 Slot 是否被暫停。成功回應時會帶回 Pause Flag 狀態。也可透過 Get State Control Primitive 查詢 Command Slot 狀態。
 
 當主機端發送 Pause Control Primitive 命令，控制器會暫停 Response 傳送與暫停等待後續封包的 timeout 計時，並且 Management Endpoint 需回傳 Success Response（表示成功接受）。
-　
+
+這裡提到的計時器 ( Timer )，Management Endpoint 會停用等待封包的 Timeout 計時器（定義於 MCTP Base Spec）。Command Timeout 時間是 `100ms` ( MCTP 傳輸綁定規範指定的時間 )。
+
 ### 狀態說明
-- **Idle** : 
+- **Idle 狀態** : 
 	- Pause Control Primitive 不會改變 Pause Flag (保持 `0`)。        
-- **Receive** : 
+- **Receive 狀態** : 
 	- 表示後續封包可能延遲，但仍可正常接收封包 ( 注意 : 並非暫停接受封包 )。        
-- **Process** : 
+- **Process 狀態** : 
 	- 不影響目前命令的處理流程，處理完成後仍會進入 Transmit 狀態。        
-- **Transmit** : 
+- **Transmit 狀態** : 
 	- 在封包邊界處暫停傳送，應盡快停止後續傳輸。
 
 ### 問題處理 FAQ
-- Q1：如果 Slot 1 被 Pause，能否送 Command 2 (tag=1) 到 Slot 1？
-- A1：不行。Slot 處於 Pause 狀態時，不應發送新的命令。必須先 Resume，完成 Command 1。
-    
-- Q2：Pause 狀態下，控制器會不會回應 Control Primitive Response？
-- A2：會。Pause Control Primitive 本身仍會收到一個 Success Response（或 Error Response，如果 CSI=1）。但在 Pause 狀態下，對於 Command Message 的 Response Message 會被暫停。
-    
-- Q3：Controller 在 Pause 狀態下，可以接受新的 Command 到相同 Slot 嗎？  
-- A3：不行。在同一個 Slot 中，上一個命令尚未完成前，不應接受新的 Command。只有其他空閒的 Slot 可接受新命令。
+- Q1：如果 Slot 1 被 Pause，可以接受新的 Command 到相同 Slot 嗎？
+- A1： A3：不行。在同一個 Slot 中，上一個命令尚未完成前，不應接受新的 Command。只有其他空閒沒有被 Pause 的 Slot 可接受新命令。
 
+- Q2：Pause 狀態下，控制器會不會回應 Control Primitive Response？
+- A2：會。Pause Control Primitive 本身仍會收到一個 Success Response（或 Error Response，如果 CSI=1）。對於 **Command Message 的 Response Message 會被暫停**。
+    
 - Q4 : CSI bit 固定為 `0h`，若設為 `1` 需不需要回應訊息？　
 - A4 :  Management Point 應回傳 Invalid Parameter Error Response。
 
@@ -33,8 +31,7 @@
 2. The `CSI` bit in a Pause Control Primitive is not used and shall be cleared to `0h`. 
 
 ## Resume
-
-### 概要
+### 功能簡介
 恢復被 Pause 的 Command Slot，使其繼續 Response 傳送與恢復 timeout 計時。基本上 Resume 會與 Pause 成對使用，Management Controller 動作會是先 Pause 然後再 Resume。
 
 ### 為什麼會遺失封包？
@@ -56,14 +53,14 @@ Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳�
 - **Idle 狀態**
 	- Resume 無效果。    
     - Pause Flag 保持不變 (`0`)。        
-- **Receive**
+- **Receive 狀態**
     - Resume 告知 Management Endpoint 繼續接收 Command Message 剩餘封包。        
     - Pause Flag 清除為 `0`。  
-- **Process**    
+- **Process 狀態**    
     - 如果該 Slot 被 Pause，且尚未送出 More Processing Required Response：        
         - Request-to-Response Timer 需被重設並重新啟動。            
 	    - Pause Flag 清除為 `0`。
-- **Transmit**    
+- **Transmit 狀態** 
     - Management Endpoint 在回應 Resume Control Primitive 後，  
         繼續傳送對應的 Response Message（從暫停點之後）。        
     - Pause Flag 清除為 `0`。
@@ -87,40 +84,58 @@ Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳�
 2. The `CPSR` field in the Control Primitive Success Response is reserved.
 
 ## Abort
+### 功能簡介
+重新初始化指定的 Command Slot → 轉為 `Idle` 狀態並且清除 Pause Flag = 0，其本質是清除 Command Slot 狀態、資源，並嘗試中斷未完成的命令流程。
 
-Abort Primitive 的目的：
+### 影響範圍    
+- 僅影響目標 Command Slot。       
+- 不影響：  
+	- 另一個 Command Slot
+	- 其他 Management Endpoints    
+	- NVMe Controllers in NVM Subsystem            
 
-- **強制將某個 Command Slot 重設為 Idle 狀態**。
-    
-- 同時 **清除 Pause Flag（設為 0）**。
-    
-- 若正在執行中的命令已產生作用，則根據是否能中斷而做回應。
+### 狀態說明
+- **Idle 狀態**
+    - Abort 不影響。
+    - 回傳 Response Success with `CPAS=0h`。
+- **Receive 狀態**    
+    - Slot 內容被丟棄 → 狀態轉為 Idle。
+    - 回傳 Response Success with `CPAS=1h`
+- **Process 狀態**
+    - Slot 內容被丟棄 → 轉為 Idle。
+    - 分兩種情況：  
+        a) **尚未開始處理命令**        
+        - 回傳 Response Success with `CPAS=0h` 。
+        b) **命令正在處理中**
+	    - 內容被丟棄 → 狀態轉為 Idle。
+		- Management Endpoint 嘗試中止命令：
+            - 若成功中止且對 NVM Subsystem 無影響 →Response Success with `CPAS=1h` 。
+            - 若無法中止（命令可能部分已執行） → Response Success with `CPAS=2h` 。
 
-其本質是：
+- **Transmit 狀態**
+	- Slot 內容被丟棄 → 轉為 Idle。
+	- 回傳 Response Success with `CPAS=0h`。
 
-> 清除 Command Slot 狀態、資源，並嘗試中斷未完成的命令流程。
+- `CPAS` ( Command Processing Abort Status ) 欄位說明 : 
+	- `00h` : Command aborted after processing completed or no command to abort
+	- `01h` : Command aborted before processing began
+	- `02h` : Command processing partially completed
 
----
+### 應用情境
+- 對主機端來說 : 
+	- 若命令發送失敗或中途要切換工作，可使用 Abort 做重置處理。
+	- Command Slot 無回應或狀態不明，可發送 Abort 來「清空」該 Slot。
+- 即使命令無法中止（CPAS=2h），該 Slot 最終仍會切換到 Idle 狀態，可接受新命令。
 
-#### ✅ 合理應用情境
+### 問題處理 FAQ
+Q1 : 若 Slot 處於 Pause 狀態，然後收到 Abort Control Primitive ?
+A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `0`。
 
-- Management Controller 發現某 Slot 無回應或狀態不明，可發送 Abort 來「清空」該 Slot。
-    
-- 結合 `Get State` 指令確認目前每個 Slot 狀態（是否 Busy、Paused）。
-    
-- 若命令發送失敗或中途要切換工作，可使用 Abort 做復原處理。
-
----
-
-- `Abort` 只會作用於 **指定的 Command Slot**，不會影響其他 Slot、Endpoint、或 NVMe 控制器。
-    
-- 即使命令無法中止（CPAS=2h），該 Slot 最終仍會 **reset 成 Idle**，可接受新命令。
-    
-- 即使在 Idle，Abort 還是會回應一個成功狀態（只是沒做任何事）。
-
+### 其他備註
+1. The `CPSP` field for the Resume Control Primitive is reserved. 
 
 ## Replay
-#### 📌 功能簡介
+### 功能簡介
 
 Replay Control Primitive 的功能是：
 
@@ -131,24 +146,18 @@ Replay Control Primitive 的功能是：
 - 同時會將 **Pause Flag 清除（兩個 Slot 的 Pause Flag 皆設為 0）**。
 
 
-#### 🔄 Replay 的細節與原則
+### 流程範例
+Replay 起點（Response Replay Offset）從原本 Response Message 的 offset 封包位置開始重送，直到最後一個封包完整結束（含 MIC）。
 
-Replay 起點（Response Replay Offset）
-從原本 Response Message 的 offset 位置開始 replay，直到完整結束（含 MIC）
-
+#### 重送流程說明
 1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始
-2. Replay 第一包必須含有原本的 Message Header，不管 offset 是不是 0|
-3. Response Message Msg Tag 要與 Replay Control Primitive 相同
-4. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同
+2. Replay 第一包必須含有原本的 `Message Header`，不管 offset 是不是從第 `0` 開始
+3. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同
 
 >❌ 如果 Msg Tag 設定錯誤會發生什麼？
 > 因為 MCTP Message Tag 是用來分辨與組裝封包的一致性與順序依據。若 Msg Tag 不相同，Receiver（如 Management Controller）會認為這是另一筆新訊息，就無法將 Replay 封包與先前接收到的前半部分組合起來。
 
-#### 🎯 為什麼需要 Replay？
-
-Replay 是為了處理以下情境：
-
-#### ✅ 常見應用情境
+### 應用情境
 
 - **在 Pause + Resume 後，Controller 掉包或順序錯亂**（導致無法完整重組 Response Message）。
     
