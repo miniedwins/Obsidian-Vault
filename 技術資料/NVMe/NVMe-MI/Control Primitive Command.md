@@ -148,7 +148,7 @@ A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `
 - 重播是否成功 → 取決於是否有可用的 Response Message。   
     - **若剛經過 Abort / Reset → 無可重播的 Response**        
         - 回覆 Success Response，`RR bit = 0`。            
-    - **若已處理過至少一個 Command → 可重播**   
+    - **若已處理過至少一個 Command → 可重播** 
         - 回覆 Success Response，`RR bit = 1`。 
         - 然後傳送該 Response Message 的 MCTP 封包（從指定的 RRO 開始）。            
 #### Receive 狀態
