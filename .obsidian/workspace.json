@@ -223,6 +223,7 @@
   "active": "a3c10d51fd4f008e",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/More Processing Required.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
     "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
@@ -230,7 +231,6 @@
     "技術資料/NVMe/NVMe-MI/Reset.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-MI/FAQ.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
     "技術資料/NVMe/NVMe-MI/Response Message Format.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250813163919.png",
