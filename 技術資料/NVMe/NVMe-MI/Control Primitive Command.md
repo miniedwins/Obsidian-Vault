@@ -1,5 +1,5 @@
 ## Pause
-### 功能簡介
+### 概要
 每個 Command Slot 都有一個 Pause Flag，標示該 Slot 是否被暫停。成功回應時會帶回 Pause Flag 狀態。也可透過 Get State Control Primitive 查詢 Command Slot 狀態。
 
 當主機端發送 Pause Control Primitive 命令，控制器會暫停 Response 傳送與暫停等待後續封包的 timeout 計時，並且 Management Endpoint 需回傳 Success Response（表示成功接受）。
@@ -24,14 +24,14 @@
 - A2：會。Pause Control Primitive 本身仍會收到一個 Success Response（或 Error Response，如果 CSI=1）。對於 **Command Message 的 Response Message 會被暫停**。
     
 - Q4 : CSI bit 固定為 `0h`，若設為 `1` 需不需要回應訊息？　
-- A4 :  Management Point 應回傳 Invalid Parameter Error Response。
+- A4 :  Management Point 應該要回傳 Invalid Parameter Error Response。
 
 ### 其他備註
 1. The `CPSP` field for the Pause Control Primitive is reserved
 2. The `CSI` bit in a Pause Control Primitive is not used and shall be cleared to `0h`. 
 
 ## Resume
-### 功能簡介
+### 概要
 恢復被 Pause 的 Command Slot，使其繼續 Response 傳送與恢復 timeout 計時。基本上 Resume 會與 Pause 成對使用，Management Controller 動作會是先 Pause 然後再 Resume。
 
 ### 為什麼會遺失封包？
@@ -84,7 +84,7 @@ Resume 時，Endpoint 會從「上次已發送的封包」之後開始繼續傳�
 2. The `CPSR` field in the Control Primitive Success Response is reserved.
 
 ## Abort
-### 功能簡介
+### 概要
 重新初始化指定的 Command Slot → 轉為 `Idle` 狀態並且清除 Pause Flag = 0，其本質是清除 Command Slot 狀態、資源，並嘗試中斷未完成的命令流程。
 
 ### 影響範圍    
@@ -135,38 +135,33 @@ A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `
 1. The `CPSP` field for the Resume Control Primitive is reserved. 
 
 ## Replay
-### 功能簡介
+### 概要
+一般通訊的過程中，主機端接收的資料可能會與實際上不一致 ( 例如：封包遺失或是資料不正確 )，因此 Replay 主要用途，就是讓主機端可以重新傳送 Command Slot 中處理過的 Response Message。
 
-Replay Control Primitive 的功能是：
-
-- **重新傳送** 上一筆在 Command Slot 中處理過的 Response Message。
-    
-- **可以指定從哪個位置（offset）開始 replay**。
-    
-- 同時會將 **Pause Flag 清除（兩個 Slot 的 Pause Flag 皆設為 0）**。
-
+### 功能說明
+- 可以指定從哪個位置（offset）開始 Replay。
+- 當收到 Replay 後，對應的 Command Slot 的 Pause Flag 會被清除為 0。
+- 重播資料從 Response Replay Offset 開始，一直到原本 Response Message 的結尾。
 
 ### 流程範例
-Replay 起點（Response Replay Offset）從原本 Response Message 的 offset 封包位置開始重送，直到最後一個封包完整結束（含 MIC）。
-
-#### 重送流程說明
-1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始
-2. Replay 第一包必須含有原本的 `Message Header`，不管 offset 是不是從第 `0` 開始
-3. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同
+1. 第一個 Replay 封包必定要 SOM = 1，即使不是從 offset=0 開始。
+2. Replay 第一包必須含有原本的 `Message Header`，不管 offset 是不是從第 `0` 開始。
+3. MCTP Message Tag 也需要先前傳遞封包的 Tag 相同。
 
 >❌ 如果 Msg Tag 設定錯誤會發生什麼？
 > 因為 MCTP Message Tag 是用來分辨與組裝封包的一致性與順序依據。若 Msg Tag 不相同，Receiver（如 Management Controller）會認為這是另一筆新訊息，就無法將 Replay 封包與先前接收到的前半部分組合起來。
 
 ### 應用情境
+- 在 Pause + Resume 後，Controller 掉包或順序錯亂（導致無法完整重組 Response Message）。
+- 檢查 Response Message with MIC 發生資料比對不一致。
 
-- **在 Pause + Resume 後，Controller 掉包或順序錯亂**（導致無法完整重組 Response Message）。
+### 問題處理 FAQ
+1. 即使某個 Command Slot 處於 Paused 狀態，也允許對它發送 Replay Control Primitive，不會當作錯誤。
+2. 即使 Response Message 的傳送過程中，Command Slot 被暫停（Paused），Replay 還是會重新發送該 Response。
+3. 當 Replay Control Primitive 成功後：
+	- 相關的 Command Slots 都會自動 Resume（恢復傳送）    
+	- 雖然沒有明確送出 Resume Control Primitive，但這個動作就是 Resume Both Slots。
     
-- **Response Message 很大，Controller 在中間掉了某一包（Packet Integrity Fail）**。
-    
-    - 若支援 **non-zero offset Replay**，可以指定從掉落之後的某個 Packet 重新傳送。
-
-
-
 ### 🔁 Replay with Pause 重點解釋：
 
 (原文) : It is not an error to issue a Replay Control Primitive to a Command Slot that is paused. A Response Message is transmitted even if the Command Slot is paused at any time during the response, including before the first packet was transmitted. After successful completion of the Replay Control Primitive, neither Command Slot is paused (i.e., there is an implicit Resume Control Primitive affecting both Command Slots when processing the Replay Control Primitive except that the Management Endpoint shall not transmit a Response Message).
