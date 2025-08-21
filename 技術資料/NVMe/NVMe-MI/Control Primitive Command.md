@@ -4,7 +4,8 @@
 
 當主機端發送 Pause Control Primitive 命令，控制器會暫停 Response 傳送與暫停等待後續封包的 timeout 計時，並且 Management Endpoint 需回傳 Success Response（表示成功接受）。
 
-這裡提到的計時器 ( Timer )，Management Endpoint 會停用等待封包的 Timeout 計時器（定義於 MCTP Base Spec）。Command Timeout 時間是 `100ms` ( MCTP 傳輸綁定規範指定的時間 )。
+> Note : 
+> 這裡提到的計時器 ( Timer ) : Management Endpoint 會停用等待封包的 Timeout 計時器（定義於 MCTP Base Spec）。Command Timeout 時間是 `100ms` ( MCTP 傳輸綁定規範指定的時間 )。
 
 ### 狀態說明
 - **Idle 狀態** : 
