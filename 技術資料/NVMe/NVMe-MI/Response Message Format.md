@@ -1,23 +1,23 @@
-以下是 NVMe-MI 標準回傳格式，不同的 Message Type 有不同的 Response Message。 若是使用 in-band tunneling，回傳會是 CQE Mapping to NVMe-MI Response Format。
+### Response Message 與傳輸方式
+- 不同 NVMe-MI Message Type → 有不同的 Response Message 格式。
+- in-band tunneling  → 回傳 CQE Mapping to NVMe-MI Response Format。
 
 ![[Pasted image 20250821160710.png]]
 
-> Note : 
-> 1. in-band tunneling : CSI = 0
-> 2. out-of-band : CSI = 1
-
 ## NVMe Admin Response Message Format
-- Completion Queue Entry Dword 2 : `Reserved`
-- Completion Queue Entry Dword 3 :
-	- Command ID field : shall be cleared to `0h`
-	- Status : Status Code ( Mapping to DW3 Status )
+### Mapping To Completion Queue Entry
+- Dword 0/1 : 對應到 CQE DW0/1
+- Dword 2：Reserved   
+- Dword 3 : 對應到 CQE DW3
+    - Command ID field：必須清除為 `0h`        
+    - Status field：用於回傳 Status Code
 
 ![[Pasted image 20250821164838.png]]
 
 ![[Pasted image 20250821165027.png]]
 
 這是一個執行 Identify Controller 所回傳的範例 : 
-- DW3 Status : `0x00` 
+- DW3 : `0x00` 
 - Response Data : `AZ123456`（Serial Number）
 - CRC32 : `7BC41F7A`
 - PEC : `48h`
