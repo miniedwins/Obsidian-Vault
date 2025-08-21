@@ -24,4 +24,3 @@ Once support for ASF has been indicated, an MCTP control message (for example, G
 ### 設備如何判斷是 MCTP 封包
 1. MCTP Header 找到 Source Slave Address
 2. 取得最低位元 ( LSB )， LSB 為 `1` 表示 MCTP over SMBus
-
