@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Response Message Format.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Response Message Format"
+              "title": "NVMe-MI Message Fields"
             }
           }
         ],
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Response Message Format.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Response Message Format"
+              "title": "Outline of NVMe-MI Message Fields"
             }
           },
           {
@@ -222,7 +222,11 @@
   },
   "active": "a3c10d51fd4f008e",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
+    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
+    "技術資料/NVMe/NVMe-MI/Reset.md",
     "技術資料/NVMe/NVMe-MI/Response Message Format.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250822032014.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250822031803.png",
@@ -236,11 +240,7 @@
     "技術資料/NVMe/NVMe-MI/More Processing Required.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250821160710.png",
     "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
-    "技術資料/NVMe/NVMe-MI/Reset.md",
     "技術資料/NVMe/NVMe-MI/FAQ.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
