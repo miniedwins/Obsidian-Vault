@@ -4,8 +4,7 @@
 
 當主機端發送 Pause Control Primitive 命令，控制器會暫停 Response 傳送與暫停等待後續封包的 timeout 計時，並且 Management Endpoint 需回傳 Success Response（表示成功接受）。
 
-> Note : 
-> 這裡提到的計時器 ( Timer ) : Management Endpoint 會停用等待封包的 Timeout 計時器（定義於 MCTP Base Spec）。Command Timeout 時間是 `100ms` ( MCTP 傳輸綁定規範指定的時間 )。
+> 計時器 : Management Endpoint 會停用等待封包的 Timeout 計時器（定義於 MCTP Base Spec）。Command Timeout 時間是 `100ms` ( MCTP 傳輸綁定規範指定的時間 )。
 
 ### 狀態說明
 - **Idle 狀態** : 
@@ -36,7 +35,7 @@
 恢復被 Pause 的 Command Slot，使其繼續 Response 傳送與恢復 timeout 計時。基本上 Resume 會與 Pause 成對使用，Management Controller 動作會是先 Pause 然後再 Resume。
 
 ### 為什麼會遺失封包？
-另外需要探討的是 Management Controller 為什麼會收到不一致的封包，而造成掉包的影響 ? 
+Management Controller 收到不一致的封包，而造成的掉包。
 
 ##### 管理端是如何判斷掉包 ?
 如果 Resume 後續封包的序號 ( Packet Number ) 不是 Controller 所預期的 ⇒ Controller 丟棄。 
@@ -192,5 +191,5 @@ A1 : Abort 不視為錯誤，Slot 會被重新初始化，Pause Flag 清除為 `
 2. 即使 Response Message 的傳送過程中，Command Slot 被暫停（Paused），Replay 還是會重新發送該 Response。
 3. 當 Replay Control Primitive 成功後：
 	- 相關的 Command Slots 都會自動 Resume（恢復傳送）    
-	- 雖然沒有明確送出 Resume Control Primitive，但這個動作就是 Resume Both Slots。
+	- 雖然沒有明確送出 Resume Control Primitive，但這個動作就是 Resume + Replay。
 
