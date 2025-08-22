@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/SMBus/ARP Capable.md",
+                "file": "技術資料/SMBus/Notify ARP Controller.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ARP Capable"
+              "title": "Notify ARP Controller"
             }
           }
         ],
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/SMBus/ARP Capable.md",
+                "file": "技術資料/SMBus/Notify ARP Controller.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ARP Capable"
+              "title": "Outline of Notify ARP Controller"
             }
           },
           {
@@ -222,14 +222,14 @@
   },
   "active": "a3c10d51fd4f008e",
   "lastOpenFiles": [
-    "技術資料/SMBus/Assign Address.md",
     "技術資料/SMBus/AV and AR flags.md",
+    "技術資料/SMBus/ARP.md",
+    "技術資料/SMBus/Assign Address.md",
     "技術資料/SMBus/Packet Error Code (PEC).md",
     "技術資料/SMBus/Unique Device Identifier (UDID).md",
     "技術資料/SMBus/Reset.md",
     "技術資料/SMBus/Get UDID.md",
     "技術資料/SMBus/Notify ARP Controller.md",
-    "技術資料/SMBus/ARP Capable.md",
     "技術資料/SMBus/Commands/Prepare ARP.md",
     "技術資料/SMBus/Commands/Block Write Bus.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP.md",
