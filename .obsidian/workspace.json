@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+                "file": "技術資料/SMBus/ARP Controller.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Control Primitive Command"
-            }
-          },
-          {
-            "id": "a3c10d51fd4f008e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "技術資料/SMBus/Notify ARP Controller.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Notify ARP Controller"
+              "title": "ARP Controller"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -167,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/SMBus/Notify ARP Controller.md",
+                "file": "技術資料/SMBus/ARP Controller.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Notify ARP Controller"
+              "title": "Outline of ARP Controller"
             }
           },
           {
@@ -220,16 +205,21 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "a3c10d51fd4f008e",
+  "active": "22607599267f96d7",
   "lastOpenFiles": [
-    "技術資料/SMBus/AV and AR flags.md",
-    "技術資料/SMBus/ARP.md",
-    "技術資料/SMBus/Assign Address.md",
+    "技術資料/SMBus/ARP Capable.md",
+    "技術資料/SMBus/ARP Controller.md",
+    "技術資料/SMBus/ARP Command.md",
+    "技術資料/SMBus/Notify ARP Controller.md",
+    "技術資料/SMBus/Address Resolution Protocol (ARP).md",
     "技術資料/SMBus/Packet Error Code (PEC).md",
-    "技術資料/SMBus/Unique Device Identifier (UDID).md",
     "技術資料/SMBus/Reset.md",
     "技術資料/SMBus/Get UDID.md",
-    "技術資料/SMBus/Notify ARP Controller.md",
+    "技術資料/SMBus/Assign Address.md",
+    "Prepare ARP.md",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
+    "技術資料/SMBus/Unique Device Identifier (UDID).md",
+    "技術資料/SMBus/AV and AR flags.md",
     "技術資料/SMBus/Commands/Prepare ARP.md",
     "技術資料/SMBus/Commands/Block Write Bus.md",
     "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP.md",
@@ -250,13 +240,8 @@
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250821164838.png",
     "技術資料/NVMe/NVMe-MI/More Processing Required.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250821160710.png",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Support.md",
     "技術資料/NVMe/NVMe-MI/FAQ.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Message Type.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Over SMBus Packet Format.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Control Message.md",
-    "技術資料/NVMe/NVMe-MI/MCTP Over SMBus/MCTP Packet Fields.md",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250813163919.png",
     "技術資料/UNH-IOL/NVMe-MI",
     "技術資料/UNH-IOL",

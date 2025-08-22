@@ -5,8 +5,8 @@
 - 若是做為 Host Controller ，必須要支援 Host Notify 命令。
 
 ## Host Notify 由誰發起？
-- 發起者是原本的從裝置（Slave），此時角色變為 Controller（主控）    
-- 接收者是 SMBus Host，裝置會發起一個 Write Word Protocol 給 Host
+- 發起者是原本的從裝置 `Slave`，此時角色變為 `Controller`
+- 接收者是 `SMBus Host`，裝置會發起一個 Write Word Protocol 給 Host
 
 ## Host Notify 有什麼幫助 ?
 - 若系統允許裝置在 SMBus 上動態插拔，Host Notify 可以幫助通知 ARP Controller。    
