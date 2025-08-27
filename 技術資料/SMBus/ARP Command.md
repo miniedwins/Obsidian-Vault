@@ -1,7 +1,5 @@
 ## Prepare to ARP
 
-
-
 ## Get UDID
 
 ### Directed Get UDID
@@ -20,3 +18,20 @@
     - 或是在下一個位元組送出 NACK（若無法及時） 
 
 ## Assign Address
+
+
+## Reset Device
+### General
+**Action**：Always ACK/PROCESS
+**AR Flag**：CLEAR
+**AV Flag**： if (non-PTA) then CLEAR; if (DTA) then SET; else NO CHANGE
+
+- **DTA (Default Target Address)** 裝置：
+    - Reset 後，它會回到「預設目標地址 (Default Address)」。        
+    - 既然有一個有效的 Default Address → AV 必須設為 SET。        
+- **PTA (Persistent Target Address)** 裝置：    
+    - Reset 後，它會保留原本的地址 (因為它是 Persistent)。        
+    - 所以AV Flag 不變 (NO CHANGE)**。        
+- **Non-PTA (沒有 Persistent Target Address)** 裝置：    
+    - Reset 後，它會清除自己的 AV Flag (因為沒有固定的地址)。        
+    - 所以 AV = CLEAR。

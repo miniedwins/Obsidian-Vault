@@ -1,4 +1,4 @@
-- 支援 ARP 所有指令集，除了 Host Notify command ( Optional )
+- 支援 ARP 所有指令集，除了 Notify ARP Controller ( Optional )
 - 在還沒有被分配正式地址之前，會在一個保留的廣播地址上回應        
 - 主機透過 Assign address 命令，可以被分配唯一地址
-- 支援兩種重置命令
+- 支援兩種重置命令 ( Reset General and Direct Command )

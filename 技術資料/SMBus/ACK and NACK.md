@@ -14,6 +14,7 @@ A SMBus target device may decide to NACK a byte other than the address byte in t
  NACK 是 SMBus/I2C 中從裝置對特定位元組發出的「拒絕」訊號：
 - 通常在 **裝置不存在**、**裝置不支援命令**、或 **PEC 錯誤** 時出現。    
 - SMBus 裝置會在特定 byte 送出 NACK，例如：    
-    - UDID 比對錯誤（ARP 流程中）        
+    - UDID 比對錯誤
     - PEC 檢查錯誤        
-    - 記憶體越界或無法處理的命令
+    - 無法處理的命令
+    - 停止資料傳送
