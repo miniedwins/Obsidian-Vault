@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "ARP Command"
             }
+          },
+          {
+            "id": "f8c1ae615016fd99",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.12"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.12"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -152,13 +165,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/SMBus/ARP Command.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ARP Command"
+              "title": "Outline"
             }
           },
           {
@@ -205,7 +217,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "1180e1b140244a94",
+  "active": "f8c1ae615016fd99",
   "lastOpenFiles": [
     "技術資料/SMBus/ACK and NACK.md",
     "暫存內容/PCIe Class Code.md",
