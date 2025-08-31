@@ -64,6 +64,34 @@ ARP Controller 向 bus 上所有「ARP-capable 或可被 Discover」的裝置查
 		- 如果回傳的是別的 (ex. `0x83` = 1000 0011b)，那就代表「裝置有一個已分配的 Target Address = 0x41 (0x82 >> 1)」。
 
 ## Assign Address
+
+### 動作與參數
+**Action** : always ACK; if (UDID match) then PROCESS.
+**AR Flag** : SET if UDID matches.
+**AV Flag** : SET if UDID matches.
+
+### 概述說明
+- 這個命令是 **ARP Controller 用來指定新目標位址 (Target Address)** 給某一個特定裝置。    
+- 指定的依據是裝置的 **UDID (Unique Device ID)**。    
+- 所有 ARP-capable 裝置都必須同時監聽這個封包，逐一比對 UDID。    
+    - 如果 UDID 不符合 → 必須 **NACK 當前或下一個位元組**，表示「我不是目標」。        
+    - 如果 UDID 完全符合 → 該裝置會 **接受新的 Target Address**。
+
+### 執行後的狀態解釋
+- **目標裝置 (UDID match)**    
+    - **AR Flag**：設為 SET → 表示它現在已被指派一個解析完成的位址。        
+    - **AV Flag**：設為 SET → 表示它目前有一個有效的目標位址。        
+    - 該裝置必須立即採用新的位址，並且若支援 **Persistent Target Address (PTA)**，還要將這個位址寫入其持久設定中。        
+    - 注意：新位址的 **LSB (bit0)** 必須忽略（因為 SMBus 位址只使用高 7 bits）。
+        
+- **非目標裝置 (UDID mismatch)**    
+    - 在比對 UDID 過程中，一旦發現不符，裝置必須在「當前 byte 或下一個 byte」對總線送出 **NACK**，以示「我不是目標」。        
+    - 這樣可讓 ARP Controller 在傳送過程中即時判斷目標是否存在。
+
+### PEC (Packet Error Code) 機制
+- **如果 PEC 正確** → 目標裝置會 **ACK PEC**，並真正採用新位址。    
+- **如果 PEC 錯誤** → 目標裝置必須 **NACK PEC**，而且 **忽略這次的指派命令**。 
+
 #### UDID 比對成功
 如果裝置完整比對所有 16 個 UDID 位元組，它必須：
 - 立即採用新的 SMBus Address
@@ -77,6 +105,39 @@ ARP Controller 向 bus 上所有「ARP-capable 或可被 Discover」的裝置查
     - 或是在下一個位元組送出 NACK（若無法及時） 
 
 ## Reset Device
+
+### Direct
+#### 動作與參數
+**Action** : if ( AV = 1 ) then ACK/PROCESS; else NACK/REJECT.
+**AR Flag** : 清除 (CLEAR) 
+**AV Flag** : 依裝置類型而定
+	- **Non-PTA** → CLEAR        
+    - **DTA** → SET        
+    - **PTA** → NO CHANGE
+
+#### 概述說明
+這個命令是 **針對特定裝置** 的 ARP（Address Resolution Protocol）重置指令。
+- 它只能發送給 **ARP-capable 裝置**。 
+- 如果控制器在傳送過程中偵測到 **NACK**，表示沒有 ARP-capable 裝置存在。
+- 控制器會直接指定某個目標位址，並要求該裝置清除 ARP 相關狀態。    
+- 它不是「一般性的硬體 reset」，而是僅限於 **ARP 功能相關的重置**。
+- 如果裝置的 UDID 中包含隨機數，它必須在這個 Reset 之後 **重新產生新的隨機數**。
+
+#### 執行後的狀態解釋
+- **Non-PTA (非 Persistent Target Address 裝置)**   
+    - AR Flag：清除 (CLEAR)        
+    - AV Flag：清除 (CLEAR) → 表示裝置不再有有效位址        
+    - 裝置會回到「剛上電、尚未被指派位址」的狀態。
+        
+- **PTA (Persistent Target Address 裝置)**    
+    - AR Flag：清除 (CLEAR)        
+    - AV Flag：不變 (NO CHANGE) → 因為 PTA 的位址是持久性的，不能輕易消失        
+    - 換句話說，PTA 保留它的有效位址，但會重新進入「尚未完成 AR」的狀態。
+        
+- **DTA (Default Target Address 裝置)**    
+    - AR Flag：清除 (CLEAR)        
+    - AV Flag：設為 SET → 因為 DTA 裝置必須回到它的 **預設位址**，這個位址永遠是有效的。
+
 ### General
 #### 動作與參數
 - **Action**：Always ACK / PROCESS    
