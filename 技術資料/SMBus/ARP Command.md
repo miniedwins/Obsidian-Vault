@@ -24,6 +24,22 @@ ARP Controller 發出命令 `Prepare ARP` ，用於通知所有 ARP Capable �
 ## Get UDID
 
 ### Directed Get UDID
+#### 動作與參數
+- **Action** : if (AV = 1) then ACK/PROCESS; else NACK/REJECT.
+	- **AV = 0** → 裝置還沒拿到地址 → 回傳 **NACK**。    
+	- **AV = 1** → 裝置已經拿到地址 → 回傳 **ACK 並回傳 UDID**。
+- **AR Flag** : NO CHANGE
+- **AV Flag** : NO CHANGE
+
+#### 概述說明
+UDID（Unique Device Identifier）在 **Direct 模式** 下，代表一個控制器想要「直接詢問」匯流排上是否有某個特定裝置存在。
+
+一旦裝置經過 ARP 流程並被分配到 Target Address → **AV = 1**。之後 Controller 對這個裝置發送 **Get UDID (directed)** 時，它才會 ACK 並回傳資料。
+
+#### 執行後的狀態解釋
+- 若該 UDID 的裝置存在 → 這個裝置會回應，並與控制器建立 **確認關係**（例如回覆 ACK，或後續配置動態位址）。    
+- 若該 UDID 的裝置不存在 → 匯流排上就不會有任何回應，控制器便知道這個裝置不在線。    
+- 匯流排上的其他裝置 → 看到這個 Direct 命令，但因為 UDID 不符合自己，就會保持 **靜默**。
 
 ### General Get UDID 
 #### 動作與參數
