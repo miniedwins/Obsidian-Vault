@@ -14,7 +14,7 @@ Packet Error Code (PEC) 是用來做檢驗傳遞的封包是否有錯誤，針�
   - STOP
   - REPEATED START
 
-## 行為規範
+## Packet Error Checking
 - **Target 端（Slave）如果支援 PEC**：   
     - 必須能處理 **有 PEC** 和 **無 PEC** 的傳輸。
     - 如果有 PEC，就驗證其正確性。        
