@@ -21,8 +21,10 @@ ARP Controller 發出命令 `Prepare ARP` ，用於通知所有 ARP Capable �
 3. 取消待處理的 [[Notify ARP Controller]] 命令
     - 設備若是有支援 Host Notify，上電後會發送該命令。因此防止設備在 ARP 過程中主動發送請求，干擾 Controller 的主導權。
 
-## Get UDID
+### 重點
+- **Prepare to ARP 的目的**：宣告要開始 ARP、同步狀態（清 AR）、確認「是否有裝置在場」。    
 
+## Get UDID
 ### Directed Get UDID
 #### 動作與參數
 - **Action** : if (AV = 1) then ACK/PROCESS; else NACK/REJECT.
