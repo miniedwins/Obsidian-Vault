@@ -92,6 +92,9 @@ ARP Controller 向 bus 上所有「ARP-capable 或可被 Discover」的裝置查
 - **如果 PEC 正確** → 目標裝置會 **ACK PEC**，並真正採用新位址。    
 - **如果 PEC 錯誤** → 目標裝置必須 **NACK PEC**，而且 **忽略這次的指派命令**。 
 
+### 補充重點
+- 即使裝置的 **AR Flag 已經是 SET**，它也必須回應此命令（允許重新指派位址）。   
+
 ## Reset Device
 
 ### Direct
