@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/SMBus/ARP Capable Device.md",
+                "file": "技術資料/SMBus/ARP Command.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ARP Capable Device"
+              "title": "ARP Command"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/SMBus/ARP Capable Device.md",
+                "file": "技術資料/SMBus/ARP Command.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of ARP Capable Device"
+              "title": "Outline of ARP Command"
             }
           },
           {
@@ -207,14 +207,15 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "技術資料/SMBus/ARP Controller.md",
+    "技術資料/SMBus/ARP Capable Device.md",
+    "技術資料/SMBus/Packet Error Code ( PEC ).md",
     "技術資料/SMBus/Arbitration ( 仲裁機制 ).md",
     "技術資料/SMBus/ARP Command.md",
-    "技術資料/SMBus/ARP Capable Device.md",
     "技術資料/SMBus/Address Resolution Protocol (ARP).md",
     "技術資料/SMBus/ACK and NACK.md",
     "技術資料/SMBus/PTA ( Persistent Target Address ).md",
     "技術資料/SMBus/PEC Sample Code.md",
-    "技術資料/SMBus/Packet Error Code ( PEC ).md",
     "程式設計/Python/套件管理/Poetry.md",
     "技術資料/SMBus/Sample Code",
     "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
@@ -233,7 +234,6 @@
     "暫存內容/BMC.md",
     "暫存內容/NVMe Study (暫存).md",
     "技術資料/SMBus/Internal state of ARP-capable.md",
-    "技術資料/SMBus/Notify ARP Controller.md",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
     "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
     "技術資料/MCTP/attachments/Pasted image 20250619112614.png",
