@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/重構/Data Clump (資料泥團).md",
+                "file": "程式設計/重構/Data Class (壞味道).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Clump (資料泥團)"
+              "title": "Data Class (壞味道)"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/重構/Data Clump (資料泥團).md",
+                "file": "程式設計/重構/Data Class (壞味道).md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Data Clump (資料泥團) 的大綱"
+              "title": "Data Class (壞味道) 的大綱"
             }
           },
           {
@@ -207,8 +207,9 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
-    "程式設計/Python/自動測試/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
     "程式設計/重構/Data Clump (資料泥團).md",
+    "程式設計/重構/Data Class (壞味道).md",
+    "程式設計/Python/自動測試/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
     "程式設計/Python/自動測試/Pytest/應用場景/測試結束後執行清理操作.md",
     "程式設計/Python/自動測試/Pytest/命令模式操作/當發生錯誤停止測試.md",
     "程式設計/Python/自動測試/Pytest",
@@ -234,7 +235,6 @@
     "技術資料/pcie/System Reset/Function Level Reset.md",
     "技術資料/pcie/System Reset/Warm Rset.md",
     "技術資料/pcie/System Reset/Hot Reset.md",
-    "技術資料/pcie/System Reset/觀察 PCIe 如何指向下一個暫存器配置位址.md",
     "attachments/Pasted image 20250226071710.png",
     "技術資料/SMBus/Sample Code",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
