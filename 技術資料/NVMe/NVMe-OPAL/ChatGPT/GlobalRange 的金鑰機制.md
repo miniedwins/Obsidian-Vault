@@ -131,3 +131,87 @@
         
 
 這種設計確保即使物理媒體被移出設備，沒有正確的金鑰也無法解讀數據，符合現代資料安全保護要求。
+
+
+============================================================
+
+## OPAL/Locking SP 的 Key 模型
+
+- **Global Range**
+    
+    - 一開始整顆 disk 的加密是由 **Global Key (K_global)** 負責。
+        
+    - 沒有定義的範圍 (或不受 Locking Range 控制的範圍)，都用 Global Key。
+        
+- **Locking Range N**
+    
+    - 每一個 Locking Range 會有一把獨立的 AES Key (K_rangeN)。
+        
+    - 當該 Range 被「啟用 (Active)」並「上鎖 (Locked)」時，是否能存取要透過授權判斷。
+        
+    - 如果某個 Range 被 **Disable** 或 **Unlocked**，那麼任何人都可以存取這個 Range 的資料。
+        
+
+---
+
+## ⚡ 你的問題：「Disable / Unlocked 的 Range 會用哪把 Key？」
+
+- **即使 Range 被 Disable 或 Unlocked**，它的資料 **仍然使用該 Range 原本的 K_rangeN 來加解密**。
+    
+    - 因為「加解密用哪把 Key」是由 **LBA 所屬的 Range** 決定的，不是由存取控制決定的。
+        
+    - Lock/Unlock/Disable 只是決定「誰能不能訪問」，而不是決定「換不換 Key」。
+        
+- **沒有被任何 Range 覆蓋的 LBA** → 使用 **K_global**。
+    
+
+---
+
+## 📌 例子
+
+假設：
+
+- Global Key = K_global
+    
+- Range1 (LBA 0x100–0x2FF) → K_range1
+    
+
+### Case A：Range1 = Enabled + Locked
+
+- User 沒授權 → 無法讀寫 (I/O blocked)
+    
+- 有授權 → 能讀寫，但資料仍然是用 K_range1 加解密
+    
+
+### Case B：Range1 = Enabled + Unlocked
+
+- 任何人都能讀寫
+    
+- 但加解密 **還是使用 K_range1**
+    
+- 所以資料內容跟 Global Key 管轄的區域不同
+    
+
+### Case C：Range1 = Disabled
+
+- 等同於沒有這個 Range
+    
+- **回歸 Global Key (K_global)** → 再讀時，資料會 mismatch，因為它本來是用 K_range1 寫的
+    
+
+---
+
+## 🧭 關鍵差異
+
+- **Unlocked**：資料仍然用 Range 的 Key，但不再有存取限制。
+    
+- **Disabled**：Range 被移除，這段 LBA 回到 Global Key 的控制 → 如果之前用 Range Key 寫的資料，現在會亂碼。
+    
+
+---
+
+✅ 所以回答你的疑問：
+
+- **Range Unlocked → 還是用原本的 Range Key**。
+    
+- **Range Disabled → 改用 Global Key，舊資料就讀不對了**。
