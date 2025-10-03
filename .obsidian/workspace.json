@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Locking Range"
             }
+          },
+          {
+            "id": "66a77ad1669311aa",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.9.14"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.9.14"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -205,7 +218,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "1180e1b140244a94",
+  "active": "66a77ad1669311aa",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/為什麼 Open Session 到 Admin SP 需要用 SID 驗證？.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/無法識別的方法調用.md",
