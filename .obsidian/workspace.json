@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/GlobalRange 的金鑰機制.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/MBR.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GlobalRange 的金鑰機制"
+              "title": "MBR"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/GlobalRange 的金鑰機制.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/MBR.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of GlobalRange 的金鑰機制"
+              "title": "Outline of MBR"
             }
           },
           {
@@ -207,6 +207,7 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/GlobalRange 的金鑰機制.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/為什麼 Revert SP 後要斷掉 Session.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/KeepGlobalRangeKey.md",
@@ -234,7 +235,6 @@
     "程式設計/Git/如何設定SSH連線.md",
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/Git/如何移動標籤.md",
-    "程式設計/Git/同步原作專案進度.md",
     "attachments/Pasted image 20250226071710.png",
     "技術資料/SMBus/Sample Code",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
