@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Untitled.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Cell Block.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "Cell Block"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/Untitled.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/Cell Block.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline of Cell Block"
             }
           },
           {
@@ -208,7 +208,7 @@
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
     "暫存內容/未命名.md",
-    "技術資料/NVMe/NVMe-OPAL/Untitled.md",
+    "技術資料/NVMe/NVMe-OPAL/Cell Block.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/MBR.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/GlobalRange 的金鑰機制.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
