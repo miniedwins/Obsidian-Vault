@@ -54,9 +54,9 @@
 
 ### 🔩 結論整理
 
-|層級|名稱|類型|關係|
-|---|---|---|---|
-|SP|Locking SP|一個 Security Provider|管理整個 Storage Policy|
-|Table|ACE Table|Object Table|SP 內的一張表|
-|Row|ACE_Admin (UID = 0000000800000002h)|Object|ACE Table 的一筆資料|
-|Column|BooleanExpr / Columns / Name|屬性欄位 (Attribute)|該 Object 的成員，不是獨立 Object（除非內容為 UID）|
+| 層級     | 名稱                                  | 類型                   | 關係                                  |
+| ------ | ----------------------------------- | -------------------- | ----------------------------------- |
+| SP     | Locking SP                          | 一個 Security Provider | 管理整個 Storage Policy                 |
+| Table  | ACE Table                           | Object Table         | SP 內的一張表                            |
+| Row    | ACE_Admin (UID = 0000000800000002h) | Object               | ACE Table 的一筆資料                     |
+| Column | BooleanExpr / Columns / Name        | 屬性欄位 (Attribute)     | 該 Object 的成員，不是獨立 Object（除非內容為 UID） |
