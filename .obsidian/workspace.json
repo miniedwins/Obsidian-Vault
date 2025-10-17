@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Overlapping Locking Ranges.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Cell Block"
+              "title": "Overlapping Locking Ranges"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Overlapping Locking Ranges.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Cell Block"
+              "title": "Outline of Overlapping Locking Ranges"
             }
           },
           {
@@ -207,11 +207,12 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Overlapping Locking Ranges.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Byte Table vs Object Table 差異.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block 2.md",
     "技術資料/NVMe/NVMe-OPAL/取得權限 (Take Ownership).md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
     "技術資料/NVMe/NVMe-OPAL/測試案例解析/Error Test Cases.md",
     "暫存內容/未命名.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/MBR.md",
@@ -233,7 +234,6 @@
     "程式設計/Python/Pandas/填補缺失的資料.md",
     "程式設計/Python/Pandas/重置 index.md",
     "程式設計/Python/Pandas/如何檢查資料為空.md",
-    "程式設計/重構/Feature Envy.md",
     "程式設計/重構",
     "attachments/Pasted image 20250226071710.png",
     "技術資料/SMBus/Sample Code",
