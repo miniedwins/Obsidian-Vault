@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
+                "file": "暫存內容/MBR Shadowing for Multiple Namespaces.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Locking Range"
+              "title": "MBR Shadowing for Multiple Namespaces"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "LockOnReset",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -84,8 +84,7 @@
               "title": "書籤"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -153,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
+                "file": "暫存內容/MBR Shadowing for Multiple Namespaces.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Locking Range"
+              "title": "Outline of MBR Shadowing for Multiple Namespaces"
             }
           },
           {
@@ -208,6 +207,10 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
+    "暫存內容/MBR Shadowing for Multiple Namespaces.md",
+    "技術資料/NVMe/NVMe-OPAL/測試計畫/Multiple Namespaces",
+    "技術資料/NVMe/NVMe-OPAL/測試計畫",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/無法識別的方法調用.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/為什麼 Revert SP 後要斷掉 Session.md",
@@ -232,8 +235,6 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/KeepGlobalRangeKey.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Overlapping Locking Ranges.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
-    "技術資料/NVMe/NVMe-OPAL/問題.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Byte Table vs Object Table 差異.md",
     "程式設計/Python/自動測試/Pytest",
     "程式設計/重構",
     "attachments/Pasted image 20250226071710.png",
@@ -253,8 +254,6 @@
     "暫存/attachments",
     "暫存",
     "技術資料/NVMe/NVMe-MI/attachments",
-    "技術資料/MCTP/attachments",
-    "技術資料/SMBus/Commands",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
