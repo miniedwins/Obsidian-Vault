@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "暫存內容/MBR Shadowing for Multiple Namespaces.md",
+                "file": "暫存內容/TCG OPAL for Multiple Namespaces.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MBR Shadowing for Multiple Namespaces"
+              "title": "TCG OPAL for Multiple Namespaces"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "暫存內容/MBR Shadowing for Multiple Namespaces.md",
+                "file": "暫存內容/TCG OPAL for Multiple Namespaces.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of MBR Shadowing for Multiple Namespaces"
+              "title": "Outline of TCG OPAL for Multiple Namespaces"
             }
           },
           {
@@ -208,7 +208,7 @@
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
-    "暫存內容/MBR Shadowing for Multiple Namespaces.md",
+    "暫存內容/TCG OPAL for Multiple Namespaces.md",
     "技術資料/NVMe/NVMe-OPAL/測試計畫/Multiple Namespaces",
     "技術資料/NVMe/NVMe-OPAL/測試計畫",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/類別權限（Class Authorities）、憑證（Credentials） 和 認證（Authentication）.md",
