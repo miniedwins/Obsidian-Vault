@@ -15,4 +15,7 @@
 If no namespace exists, then attempts to modify non-Global Range Locking objects SHALL fail with a status of INVALID_PARAMETER. Other operations on non-Global Range Locking objects (e.g., Get, Next) SHALL operate as indicated in the applicable SSC specification.
 
 Q1 : 如果不存在 NS，先前所指定的 Locking Range 是控制器是否需要刪除 ?
-A1 : 從上述說明來看，刪除 NS 曾經設定的 Locking Range 應該會保留不被控制器刪除。
+A1 : 從上述說明來看，刪除既有的 NS，曾經設定的 Locking Range 應該會保留，不被控制器刪除。
+
+Q2 : 如果 NS 不存在，是否可以設定 Locking Range ?
+A2 : 
