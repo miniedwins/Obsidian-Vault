@@ -11,11 +11,9 @@
 ## 問題討論
 ### TCG Storage Interface Interactions Specification (SIIS)
 
-#### 6.7.1.2.2 Non-Global Range Locking object Interactions
-If no namespace exists, then attempts to modify non-Global Range Locking objects SHALL fail with a status of INVALID_PARAMETER. Other operations on non-Global Range Locking objects (e.g., Get, Next) SHALL operate as indicated in the applicable SSC specification.
+### TCG_Storage_Configurable_Locking_for_NVMe_Namespaces
 
-Q1 : 如果不存在 NS，先前所指定的 Locking Range 是控制器是否需要刪除 ?
-A1 : 從上述說明來看，刪除既有的 NS，曾經設定的 Locking Range 應該會保留，不被控制器刪除。
-
-Q2 : 如果 NS 不存在，是否可以設定 Locking Range ?
-A2 : 
+#### Deassign Method Operation
+Q1 : 移除 Deassigning a Namespace Non-Global Range Locking object
+	a. 是否會變成 Namespace Global Locking Range ?
+	b. 若是變成 Namespace Global Locking Range，應該會是使用同一把 NGLR 金鑰
