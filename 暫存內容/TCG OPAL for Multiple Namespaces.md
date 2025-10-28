@@ -172,5 +172,5 @@ Namespace Global Range 他的 ActiveKey 還會使用相同一把金鑰嗎 ?
 ### 後續需要解決的問題
 1. 如何區別回傳的錯誤 ( TCG OPAL 或是 NVMe Error )
 2. 測試 CNL 需要測試軟體需要維護一個 Locking Table
-3. 如何將所有的核心測試方法整理成一個 Q&A
-4. 可不可以取得 ActiveKey Object Value，觀察是否在 Assign 或是 Deassign 的時候發生變化 
+3. 如何將需要的命令 Assign and Deassign Method 做出來
+4. 如何將所有的核心測試方法整理成一個 Q&A
