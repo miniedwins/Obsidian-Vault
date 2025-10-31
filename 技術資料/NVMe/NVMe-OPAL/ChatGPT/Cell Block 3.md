@@ -208,9 +208,9 @@
 
 ## ✅ 五、簡化理解表
 
-|操作對象|0x00 (Table)|0x01 (startRow)|0x02 (endRow)|備註|
-|---|---|---|---|---|
-|SP|✅ 可有|✅ 可有|✅ 可有|明確指定 Table 與範圍|
-|Bytes Table|❌ 不可有|可省略 (預設首列)|可省略 (預設末列)|用 RowNumber|
-|Object Table|❌ 不可有|✅ 必填 (Object UID)|❌ 不可有|針對特定 Object|
-|Object|❌ 不可有|❌ 不可有|❌ 不可有|context 已隱含 row|
+| 操作對象         | 0x00 (Table) | 0x01 (startRow)   | 0x02 (endRow) | 備註              |
+| ------------ | ------------ | ----------------- | ------------- | --------------- |
+| SP           | ✅ 可有         | ✅ 可有              | ✅ 可有          | 明確指定 Table 與範圍  |
+| Bytes Table  | ❌ 不可有        | 可省略 (預設首列)        | 可省略 (預設末列)    | 用 RowNumber     |
+| Object Table | ❌ 不可有        | ✅ 必填 (Object UID) | ❌ 不可有         | 針對特定 Object     |
+| Object       | ❌ 不可有        | ❌ 不可有             | ❌ 不可有         | context 已隱含 row |
