@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
+                "file": "程式設計/重構/Data Class (壞味道).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shadow MBR"
+              "title": "Data Class (壞味道)"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
+                "file": "程式設計/重構/Data Class (壞味道).md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Shadow MBR"
+              "title": "Outline of Data Class (壞味道)"
             }
           },
           {
@@ -207,6 +207,16 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "程式設計/Git/遠端分支操作方法.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/Git/rebase 操作方法.md",
+    "程式設計/Git/修改已提交的紀錄.md",
+    "暫存內容/PCIe Class Code.md",
+    "程式設計/單元測試/單元測試命名方法.md",
+    "程式設計/重構/Data Clump (資料泥團).md",
+    "程式設計/單元測試",
+    "程式設計/重構/Data Class (壞味道).md",
+    "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Multiple Namespaces.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block 3.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
@@ -216,7 +226,6 @@
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
-    "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Untitled",
     "技術資料/NVMe/NVMe-OPAL/OPAL",
     "技術資料/NVMe/NVMe-OPAL/CNL",
@@ -225,7 +234,6 @@
     "技術資料/NVMe/NVMe-OPAL-CNL",
     "技術資料/NVMe/NVMe-OPAL/CNL",
     "暫存內容/未命名.md",
-    "暫存內容/PCIe Class Code.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
     "技術資料/NVMe/NVMe-OPAL/測試計畫/Multiple Namespaces",
     "技術資料/NVMe/NVMe-OPAL/測試計畫",
@@ -234,15 +242,7 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/為什麼 Revert SP 後要斷掉 Session.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/為什麼 Open Session 到 Admin SP 需要用 SID 驗證？.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Table.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Session Startup.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/SMUID.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Security Provider.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Secure Messaging Packet.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/SP and Session Manager Layer 的區別.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Host Session Manager.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/ComPacket Packet Subpacket.md",
     "程式設計/Python/自動測試/Pytest",
-    "程式設計/重構",
     "attachments/Pasted image 20250226071710.png",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
     "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
