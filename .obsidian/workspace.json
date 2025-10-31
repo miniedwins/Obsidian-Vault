@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "問題"
+              "title": "Cell Block 3"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block 3.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 問題"
+              "title": "Outline of Cell Block 3"
             }
           },
           {
@@ -207,8 +207,11 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/Sedutil 程式功能需求.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block 3.md",
+    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block 2.md",
     "技術資料/NVMe/NVMe-OPAL/問題.md",
+    "技術資料/NVMe/NVMe-OPAL/Sedutil 程式功能需求.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Multiple Namespaces.md",
@@ -238,9 +241,6 @@
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/SP and Session Manager Layer 的區別.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Host Session Manager.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/ComPacket Packet Subpacket.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Communication Layer.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Communication Infrastructure.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Changing RangeStart and RangeLength Values.md",
     "程式設計/Python/自動測試/Pytest",
     "程式設計/重構",
     "attachments/Pasted image 20250226071710.png",
