@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "問題"
+              "title": "Persistent Event"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/問題.md",
+                "file": "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 問題"
+              "title": "Outline of Persistent Event"
             }
           },
           {
@@ -207,6 +207,16 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event Log Size.md",
+    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
+    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Dataset Management.md",
+    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+    "技術資料/NVMe/NVMe-OPAL/問題.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
@@ -223,20 +233,10 @@
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Cell Block.md",
-    "程式設計/重構/Data Class (壞味道).md",
-    "程式設計/Git/遠端分支操作方法.md",
-    "程式設計/Git/同步原作專案進度.md",
-    "程式設計/Git/rebase 操作方法.md",
-    "程式設計/Git/修改已提交的紀錄.md",
-    "暫存內容/PCIe Class Code.md",
-    "程式設計/單元測試/單元測試命名方法.md",
-    "程式設計/重構/Data Clump (資料泥團).md",
     "程式設計/單元測試",
     "技術資料/NVMe/NVMe-OPAL/CNL/Untitled",
     "技術資料/NVMe/NVMe-OPAL/OPAL",
