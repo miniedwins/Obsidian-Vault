@@ -1,0 +1,47 @@
+
+# Test Title
+Format Namespace with Crypto Erase  
+When Namespace Global Range Has No Associated Non-Global Range
+
+---
+
+## Test Purpose
+Verify that executing **Format Namespace with Crypto Erase (SES=0x002)**  
+successfully completes and updates the encryption key  
+**when the Namespace Global Range has no associated Non-Global Range**.
+
+---
+
+## Preconditions
+- NS1 / NS2 / NS3 exist and are accessible.
+- Each Namespace contains **only a Global Range**.
+- No Non-Global Range is associated with any Namespace.
+- All Namespaces are in Read/Write unlocked state.
+
+## Environment Setup Reference
+See: OPAL_LockingRange_BaseSetup.md
+
+
+## Test Steps
+1. Write test data Data(A) to NS1 / NS2 / NS3
+2. Format each Namespace with Crypto Erase
+3. Read back data from each Namespace
+
+## Expected Result
+
+### Step 2
+- Controller shall return **SUCCESS** for all Format commands.
+
+### Step 3
+- Data read from each Namespace matches *Data(A)*.
+- Crypto Erase updates encryption keys without affecting user data
+  when only a Global Range exists.
+
+## Appendix A: Namespace & Locking Range Setup Procedure
+(以下為通用測試環境建立流程，非本測試驗證範圍)
+
+1. Initialize OPAL
+2. Create Namespace
+3. Assign Global Ranges
+4. Assign Non-Global Ranges
+5. Set Locking Range State
