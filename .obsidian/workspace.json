@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/AI/測試紀錄/測試案例審查標準.md",
+                "file": "技術資料/AI/Context Engineering/測試模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "測試案例審查標準"
+              "title": "測試模板"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/AI/測試紀錄/測試案例審查標準.md",
+                "file": "技術資料/AI/Context Engineering/測試模板.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 測試案例審查標準"
+              "title": "Outline of 測試模板"
             }
           },
           {
@@ -207,22 +207,22 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "技術資料/AI/Context Engineering/Claude Code 產生的 Context.md",
+    "技術資料/AI/Test Case/成熟的測試案例.md",
+    "技術資料/AI/Test Case/成熟的測試案例.md",
+    "技術資料/AI/Test Case/專業測試語.md",
+    "技術資料/AI/Test Case/測試案例審查標準.md",
     "暫存內容/範例筆記.md",
     "暫存內容/PCIe Class Code.md",
-    "技術資料/AI/Context Engineering/Claude Code 產生的 Context.md",
     "技術資料/AI",
-    "技術資料/AI/Context Engineering/模板.md",
-    "技術資料/AI/測試紀錄/測試案例審查標準 - 最終版.md",
+    "技術資料/AI/Context Engineering/測試模板.md",
+    "技術資料/AI/Test Case/測試案例審查標準 - 最終版.md",
     "暫存內容/測試紀錄/Untitled 1.md",
-    "技術資料/AI/測試紀錄/成熟的測試案例1.md",
-    "技術資料/AI/測試紀錄/專業測試語.md",
     "技術資料/AI/Context Engineering",
-    "技術資料/AI/測試紀錄/測試案例審查標準.md",
-    "技術資料/AI/測試紀錄/成熟的測試案例2.md",
     "技術資料/Prompt/測試提示詞.md",
     "技術資料/Prompt",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
-    "技術資料/AI/測試紀錄",
+    "技術資料/AI/Test Case",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/Communication Layer.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
