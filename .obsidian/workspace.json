@@ -207,8 +207,9 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
+    "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
+    "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
     "技術資料/MCTP/MCTP Packet Fields.md",
     "技術資料/MCTP/Message Assembly.md",
@@ -236,7 +237,6 @@
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
     "技術資料/NVMe/NVMe-OPAL/ChatGPT/MBR.md",
-    "技術資料/NVMe/NVMe-OPAL/CNL/Multiple Namespaces.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
