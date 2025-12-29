@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/NVMe/BaseSpec/Controller Initialization.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Controller Initialization 的反向連結"
+              "title": "Backlinks for Revert"
             }
           },
           {
@@ -181,16 +181,27 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "030a3a84da616045",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 263.5
+    "width": 263.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,8 +218,9 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
+    "Untitled.canvas",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
+    "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
     "技術資料/MCTP/MCTP Packet Fields.md",
@@ -236,7 +248,6 @@
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/MBR.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
@@ -253,7 +264,6 @@
     "技術資料/MCTP/attachments/Pasted image 20250619112614.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250710153234.png",
     "技術資料/NVMe/NVMe-MI/attachments/Pasted image 20250711141407.png",
-    "Untitled.canvas",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
