@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "人工智慧/Prompts/優化調整內容.md",
+                "file": "人工智慧/Prompts/程式設計/Python 開發工程師.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "優化調整內容"
+              "title": "Python 開發工程師"
             }
           }
         ]
@@ -218,16 +218,18 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "人工智慧/Prompts/程式設計/程式專案輸出格式.md",
+    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
+    "人工智慧/Prompts/程式設計/專業測試工程師.md",
+    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
+    "人工智慧/Prompts/vscode example.md",
+    "人工智慧/Prompts/優化調整內容.md",
     "人工智慧/Prompts/提示詞問題.md",
     "人工智慧/Prompts/測試提示詞.md",
-    "人工智慧/Prompts/程式設計/專業測試工程師.md",
-    "人工智慧/Prompts/程式設計/程式專案輸出格式.md",
     "人工智慧/AI/Test Case/成熟的測試案例.md",
-    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "人工智慧/AI/Context Engineering/測試模板.md",
     "人工智慧/AI/Test Case/test steps.md",
     "人工智慧/Prompts/程式設計",
-    "人工智慧/Prompts/優化調整內容.md",
     "暫存內容/Untitled.md",
     "人工智慧/Prompts",
     "人工智慧",
@@ -249,9 +251,7 @@
     "暫存內容/測試紀錄/Untitled 1.md",
     "人工智慧/AI/Context Engineering",
     "技術資料/Prompt",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Locking Range.md",
     "人工智慧/AI/Test Case",
-    "技術資料/NVMe/NVMe-OPAL/ChatGPT/Communication Layer.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
