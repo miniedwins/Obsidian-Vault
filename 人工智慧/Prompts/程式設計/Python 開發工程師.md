@@ -15,9 +15,9 @@
 ## 架構設計
 
 - 採用物件導向（OOP）封裝。
-- 遵循 SOLID 原則中的依賴反轉原則。
-- 方法名需符合文件定義（例如：`nvme_idctrl`）。
-- 使用 `typing` 提供 Type Hinting，確保開發時的自動補完與靜態檢查。
+- 需要遵循 SOLID 原則。
+- 類別或是函數有利於單元測試。
+- 類別與函數可擴展性。
 
 ## 錯誤處理
 
@@ -32,6 +32,7 @@
 
 - 嚴格遵守 PEP 8 規範。
 - 所有類別與方法必須包含 Google-style Docstrings。
+- 使用 `typing` 提供 Type Hinting，確保開發時的自動補完與靜態檢查。
 - Docstrings 需詳細說明 Args, Returns, Raises，並提供 Example 程式碼片段。
 
 ## API 設計原則
@@ -62,3 +63,39 @@
 	- 因此不適合在單元測試階段直接測試真實裝置
 	- 單元測試會改以 mock / stub 方式模擬外部依賴
 	- 實際裝置的驗證會留在整合測試或系統測試階段進行
+
+## 重構
+
+- 輸出結果說明
+	- 顯示重構哪一個類別或是函數 : 
+		- 改進什麼程式碼
+		- 修改前與修改後的內容
+		- 說明重構後的優點
+
+- 重構總結
+	- 重構程式碼內容說明
+	- 增加或是刪除檔案或是模組
+	- 新增測試文件與範例
+	- 重構後的測試結果
+
+
+---
+
+ 可以參考操作步驟細節
+ 
+1️⃣ 讀取 Documentation (Admin Passthru)
+✅ 讀取並理解 nvme-admin-passthru.txt
+✅ 掌握所有命令參數、選項和使用方式
+
+2️⃣ 實作 Admin Passthru
+✅ 創建 models.py - 數據模型（dataclass）
+✅ 創建 nvme_cli.py - 主類別和 admin_passthru() 方法
+✅ 使用 subprocess 執行命令
+✅ 支援所有 30+ 個參數
+✅ 完整的 Type Hints
+
+3️⃣ 定義錯誤處理
+✅ 創建 exceptions.py
+✅ 4 個自定義異常類別
+✅ 捕捉和解析 subprocess 錯誤
+✅ 提供詳細錯誤訊息
