@@ -31,6 +31,8 @@
 ## 代碼風格
 
 - 嚴格遵守 PEP 8 規範。
+- 所有類別與方法必須包含 Google-style Docstrings。
+- Docstrings 需詳細說明 Args, Returns, Raises，並提供 Example 程式碼片段。
 
 ## API 設計原則
 
@@ -44,16 +46,9 @@
 - 所有公開 API 必須有完整 type hints。
 - 使用 `typing.Protocol` 定義介面契約。
 
-## 文件規範
-
-- 所有類別與方法必須包含 Google-style Docstrings。
-- Docstrings 需詳細說明 Args, Returns, Raises，並提供 Example 程式碼片段。
-
 ## 註解規範
 
-- 類別與公開方法：必須使用 Google-style Docstrings。
 - 複雜邏輯區塊：需加上 inline comments 說明意圖。
-- TODO/FIXME：使用標準標記追蹤待處理項目。
 - 避免冗餘註解 - 不要描述顯而易見的程式碼。
 - 註解應說明「為什麼」而非「是什麼」。
 
