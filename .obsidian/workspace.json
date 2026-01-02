@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "人工智慧/Prompts/程式設計/Python 開發工程師.md",
-                "mode": "source",
-                "source": false
+                "file": "人工智慧/Prompts/程式設計/NET 8.0 應用層測試專家.md",
+                "mode": "preview",
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Python 開發工程師"
+              "title": "NET 8.0 應用層測試專家"
             }
           }
         ]
@@ -181,22 +181,22 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "git-view"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
-            "id": "030a3a84da616045",
+            "id": "46896ab311c824a7",
             "type": "leaf",
             "state": {
               "type": "mermaid-toolbar-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "mermaid-toolbar-view"
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -218,13 +218,14 @@
   },
   "active": "1180e1b140244a94",
   "lastOpenFiles": [
+    "人工智慧/Prompts/優化調整內容.md",
+    "人工智慧/Prompts/程式設計/NET 8.0 應用層測試專家.md",
+    "人工智慧/Prompts/測試提示詞.md",
+    "人工智慧/Prompts/思考整理.md",
+    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
+    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
     "人工智慧/Prompts/程式設計/專業測試工程師.md",
     "人工智慧/Prompts/程式設計/程式專案輸出格式.md",
-    "人工智慧/Prompts/思考整理.md",
-    "人工智慧/Prompts/測試提示詞.md",
-    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
-    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
-    "人工智慧/Prompts/優化調整內容.md",
     "人工智慧/Prompts/vscode example.md",
     "人工智慧/AI/Test Case/成熟的測試案例.md",
     "人工智慧/AI/Context Engineering/測試模板.md",
@@ -248,7 +249,6 @@
     "技術資料/AI/Test Case/測試案例審查標準 - 最終版.md",
     "暫存內容/PCIe Class Code.md",
     "人工智慧/AI",
-    "暫存內容/測試紀錄/Untitled 1.md",
     "人工智慧/AI/Context Engineering",
     "技術資料/Prompt",
     "人工智慧/AI/Test Case",
