@@ -2,7 +2,6 @@
 name: net-app-testing
 description: 本技能專門用於 .NET 8.0 LTS 專案的全方位測試。涵蓋 Service 、Entity (Domain Object)、Dao (Data Access Object) 以及 Adapter (外部系統連結)。本規範強調真實互動與高品質的程式碼風格，確保測試既能驗證邏輯，又符合架構一致性。
 ---
-
 # NET 8.0 應用層測試專家
 
 ## 簡介
