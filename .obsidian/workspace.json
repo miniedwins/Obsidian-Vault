@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "06f007cc9bb16843",
+        "id": "53f843bd4ab60914",
         "type": "tabs",
         "children": [
           {
-            "id": "1180e1b140244a94",
+            "id": "f082885e768b4d69",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "人工智慧/Prompts/測試提示詞.excalidraw.md",
-                "mode": "source",
-                "source": false
+                "file": "attachments/Pasted image 20250226071710.png"
               },
-              "icon": "lucide-file",
-              "title": "測試提示詞.excalidraw"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250226071710"
             }
           }
         ]
@@ -217,19 +215,25 @@
       "obsidian-excalidraw-plugin:新建繪圖檔案": false
     }
   },
-  "active": "1180e1b140244a94",
+  "active": "f082885e768b4d69",
   "lastOpenFiles": [
-    "人工智慧/Prompts/測試提示詞.excalidraw.md",
+    "Demo/測試提示詞.excalidraw.md",
     "人工智慧/Prompts/測試提示詞.md",
-    "人工智慧/AI/Test Case/成熟的測試案例.md",
+    "人工智慧/Prompts/優化調整內容.md",
     "attachments/Pasted image 20250226071710.png",
+    "Demo",
+    "人工智慧/Prompts/Drawing 2026-01-02 10.27.44.excalidraw.md",
+    "人工智慧/Prompts/template.excalidraw.md",
+    "Excalidraw/Drawing 2026-01-02 10.29.59.excalidraw.md",
+    "Excalidraw",
+    "人工智慧/Prompts/測試提示詞.excalidraw.md",
+    "人工智慧/AI/Test Case/成熟的測試案例.md",
     "Obsidian/測試.md",
     "Obsidian/點選文字連結到 URL.md",
     "Obsidian/如何使用註腳格式.md",
     "人工智慧/Prompts/思考整理.md",
     "人工智慧/Prompts/程式設計/skills/net-app-testing.md",
     "人工智慧/Prompts/程式設計/skills",
-    "人工智慧/Prompts/優化調整內容.md",
     "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "人工智慧/Prompts/程式設計/Python 開發工程師.md",
     "人工智慧/Prompts/程式設計/專業測試工程師.md",
@@ -246,11 +250,6 @@
     "Untitled.canvas",
     "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
-    "技術資料/MCTP/MCTP Packet Fields.md",
-    "技術資料/MCTP/Message Assembly.md",
-    "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
-    "技術資料/MCTP/MCTP Message Type.md",
     "人工智慧/AI",
     "人工智慧/AI/Context Engineering",
     "技術資料/Prompt",
@@ -259,8 +258,6 @@
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
-    "程式設計/單元測試",
-    "技術資料/NVMe/NVMe-OPAL/CNL/Untitled",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
     "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
     "技術資料/MCTP/attachments/Pasted image 20250619112614.png",
