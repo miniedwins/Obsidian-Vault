@@ -13,15 +13,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Canvas/吞葡萄新聞分析.canvas",
+                "file": "Canvas/未命名.canvas",
                 "viewState": {
-                  "x": 180,
-                  "y": 290,
-                  "zoom": -1.003455558636219
+                  "x": 293.92001023655166,
+                  "y": 396.6280822265571,
+                  "zoom": -1
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "吞葡萄新聞分析"
+              "title": "未命名"
             }
           }
         ]
@@ -220,9 +220,10 @@
       "obsidian-excalidraw-plugin:新建繪圖檔案": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "75a759fc92350cba",
   "lastOpenFiles": [
     "Canvas/吞葡萄新聞分析.canvas",
+    "Canvas/未命名.canvas",
     "Canvas/ai.canvas",
     "Canvas/吞葡萄新聞分析 - 複製.canvas",
     "未命名.md",
