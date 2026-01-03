@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "1fcbae4ca1386a64",
+        "id": "6104266b3cace118",
         "type": "tabs",
         "children": [
           {
-            "id": "c1898c7e1a052a7e",
+            "id": "75a759fc92350cba",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "人工智慧/Prompts/程式設計/skills/net-app-testing.md",
-                "mode": "source",
-                "source": false
+                "file": "Canvas/吞葡萄新聞分析.canvas",
+                "viewState": {
+                  "x": 180,
+                  "y": 290,
+                  "zoom": -1.003455558636219
+                }
               },
-              "icon": "lucide-file",
-              "title": "net-app-testing"
+              "icon": "lucide-layout-dashboard",
+              "title": "吞葡萄新聞分析"
             }
           }
         ]
@@ -217,16 +220,25 @@
       "obsidian-excalidraw-plugin:新建繪圖檔案": false
     }
   },
-  "active": "c1898c7e1a052a7e",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "Canvas/吞葡萄新聞分析.canvas",
+    "Canvas/ai.canvas",
+    "Canvas/吞葡萄新聞分析 - 複製.canvas",
+    "未命名.md",
+    "Excalidraw/Drawing 2026-01-03 16.30.19.excalidraw.md",
+    "Canvas/Drawing 2026-01-03 16.31.07.excalidraw.md",
+    "Canvas/ai.canvas.md",
+    "未命名 1.base",
+    "未命名.base",
+    "人工智慧/Prompts/程式設計/skills/net-app-testing.md",
+    "Canvas/hgh.md",
     "人工智慧/Prompts/程式設計/Python 開發工程師.md",
     "人工智慧/Prompts/測試提示詞.md",
     "人工智慧/Prompts/優化調整內容.md",
     "人工智慧/Prompts/思考整理.md",
     "人工智慧/Prompts/健康新聞視覺化提示詞.md",
-    "人工智慧/Prompts/程式設計/skills/net-app-testing.md",
     "人工智慧/Prompts/程式設計/專業測試工程師.md",
-    "Canvas/吞葡萄新聞分析.canvas",
     "attachments/Pasted image 20250226071710.png",
     "Excalidraw/Drawing 2026-01-02 10.53.27.excalidraw.md",
     "Excalidraw",
@@ -246,18 +258,10 @@
     "人工智慧/Prompts/程式設計/skills",
     "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "人工智慧/Prompts/程式設計/程式專案輸出格式.md",
-    "人工智慧/Prompts/vscode example.md",
-    "人工智慧/AI/Context Engineering/測試模板.md",
-    "人工智慧/AI/Test Case/test steps.md",
     "人工智慧/Prompts/程式設計",
-    "暫存內容/Untitled.md",
     "人工智慧/Prompts",
     "人工智慧",
-    "暫存內容/範例筆記.md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
     "Untitled.canvas",
-    "人工智慧/AI",
-    "人工智慧/AI/Context Engineering",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
