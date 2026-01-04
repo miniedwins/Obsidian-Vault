@@ -11,17 +11,14 @@
             "id": "75a759fc92350cba",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Canvas/未命名.canvas",
-                "viewState": {
-                  "x": 293.92001023655166,
-                  "y": 396.6280822265571,
-                  "zoom": -1
-                }
+                "file": "人工智慧/Prompts/程式設計/專業測試工程師.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名"
+              "icon": "lucide-file",
+              "title": "專業測試工程師"
             }
           }
         ]
@@ -222,8 +219,13 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
-    "Canvas/吞葡萄新聞分析.canvas",
+    "人工智慧/Prompts/優化調整內容.md",
+    "人工智慧/Prompts/程式設計/專業測試工程師.md",
+    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
+    "人工智慧/Prompts/程式設計/資深 Python 架構師.md",
+    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "Canvas/未命名.canvas",
+    "Canvas/吞葡萄新聞分析.canvas",
     "Canvas/ai.canvas",
     "Canvas/吞葡萄新聞分析 - 複製.canvas",
     "未命名.md",
@@ -234,12 +236,9 @@
     "未命名.base",
     "人工智慧/Prompts/程式設計/skills/net-app-testing.md",
     "Canvas/hgh.md",
-    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
     "人工智慧/Prompts/測試提示詞.md",
-    "人工智慧/Prompts/優化調整內容.md",
     "人工智慧/Prompts/思考整理.md",
     "人工智慧/Prompts/健康新聞視覺化提示詞.md",
-    "人工智慧/Prompts/程式設計/專業測試工程師.md",
     "attachments/Pasted image 20250226071710.png",
     "Excalidraw/Drawing 2026-01-02 10.53.27.excalidraw.md",
     "Excalidraw",
@@ -257,7 +256,6 @@
     "Obsidian/點選文字連結到 URL.md",
     "Obsidian/如何使用註腳格式.md",
     "人工智慧/Prompts/程式設計/skills",
-    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "人工智慧/Prompts/程式設計/程式專案輸出格式.md",
     "人工智慧/Prompts/程式設計",
     "人工智慧/Prompts",
