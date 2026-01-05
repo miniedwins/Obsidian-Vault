@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "人工智慧/Prompts/程式設計/Python 開發工程師.md",
+                "file": "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Python 開發工程師"
+              "title": "End-to-end Data Protection"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 263.5
+    "width": 358.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -219,9 +219,17 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
+    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
+    "技術資料/NVMe/NVMe-Base/Device Self Test/Device Self-Test.md",
+    "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
+    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
+    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
     "人工智慧/Prompts/程式設計/專業測試工程師.md",
     "人工智慧/Prompts/程式設計/資深 Python 架構師.md",
-    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
     "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "人工智慧/Prompts/優化調整內容.md",
     "Canvas/未命名.canvas",
@@ -247,16 +255,8 @@
     "Demo/測試提示詞.excalidraw.md",
     "Canvas",
     "人工智慧/Prompts/Drawing 2026-01-02 10.27.44.excalidraw.md",
-    "人工智慧/Prompts/template.excalidraw.md",
-    "Excalidraw/Drawing 2026-01-02 10.29.59.excalidraw.md",
     "藍圖/Excalidraw",
-    "人工智慧/Prompts/測試提示詞.excalidraw.md",
-    "人工智慧/AI/Test Case/成熟的測試案例.md",
-    "Obsidian/測試.md",
-    "Obsidian/點選文字連結到 URL.md",
-    "Obsidian/如何使用註腳格式.md",
     "人工智慧/Prompts/程式設計/skills",
-    "人工智慧/Prompts/程式設計/程式專案輸出格式.md",
     "人工智慧/Prompts/程式設計",
     "人工智慧/Prompts",
     "人工智慧",
