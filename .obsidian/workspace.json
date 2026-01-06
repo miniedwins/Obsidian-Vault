@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
+                "file": "程式設計/Git/Git Commit Message 格式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Namespace Management"
+              "title": "Git Commit Message 格式"
             }
           }
         ]
@@ -219,10 +219,11 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
+    "程式設計/Git/Git Commit Message 格式.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
-    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/Device Self-Test.md",
@@ -253,7 +254,6 @@
     "Excalidraw",
     "藍圖/Excalidraw/template.excalidraw.md",
     "藍圖",
-    "Demo/測試提示詞.excalidraw.md",
     "Canvas",
     "藍圖/Excalidraw",
     "人工智慧/Prompts/程式設計/skills",
