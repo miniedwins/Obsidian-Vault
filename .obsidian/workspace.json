@@ -186,7 +186,7 @@
             }
           },
           {
-            "id": "46896ab311c824a7",
+            "id": "65eb6a2a737c2586",
             "type": "leaf",
             "state": {
               "type": "mermaid-toolbar-view",
@@ -200,8 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 263.5,
-    "collapsed": true
+    "width": 263.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -217,10 +216,11 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "75a759fc92350cba",
+  "active": "65eb6a2a737c2586",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
+    "未命名.base",
     "程式設計/Git/Git Commit Message 格式.md",
+    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
@@ -243,7 +243,6 @@
     "Canvas/Drawing 2026-01-03 16.31.07.excalidraw.md",
     "Canvas/ai.canvas.md",
     "未命名 1.base",
-    "未命名.base",
     "人工智慧/Prompts/程式設計/skills/net-app-testing.md",
     "Canvas/hgh.md",
     "人工智慧/Prompts/測試提示詞.md",
@@ -252,7 +251,6 @@
     "attachments/Pasted image 20250226071710.png",
     "Excalidraw/Drawing 2026-01-02 10.53.27.excalidraw.md",
     "Excalidraw",
-    "藍圖/Excalidraw/template.excalidraw.md",
     "藍圖",
     "Canvas",
     "藍圖/Excalidraw",
