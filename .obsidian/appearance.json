@@ -9,5 +9,6 @@
   "enabledCssSnippets": [
     "custom-code",
     "code-font"
-  ]
+  ],
+  "baseFontSizeAction": false
 }

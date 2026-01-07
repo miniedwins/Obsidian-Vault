@@ -1,12 +1,29 @@
-/* Code block font size */
-.markdown-preview-view pre code,
-.cm-s-obsidian pre code {
+/* ===== Code block (Editor + Preview) ===== */
+
+/* 編輯模式：code block */
+.markdown-source-view .cm-content pre code {
   font-family: "JetBrains Mono", monospace;
-  font-size: 14px;
+  font-size: 10px;
+  line-height: 1.5;
 }
 
-/* Inline code */
-.markdown-preview-view code,
-.cm-s-obsidian span.cm-inline-code {
+/* 預覽模式：code block */
+.markdown-preview-view pre code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* ===== Inline code ===== */
+
+/* 編輯模式：inline code */
+.markdown-source-view span.cm-inline-code {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.95em;
+}
+
+/* 預覽模式：inline code */
+.markdown-preview-view code {
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.95em;
 }
