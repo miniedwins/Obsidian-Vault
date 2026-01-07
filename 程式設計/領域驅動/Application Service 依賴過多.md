@@ -152,7 +152,7 @@ public class PlaceOrderService {
 public class OrderPlacedEventHandler {
     private final InventoryService inventoryService;
     private final EmailService emailService;
-    
+    `~~~~`
     public void handle(OrderPlacedEvent event) {
         inventoryService.reserveItems(event.getOrderId());
         emailService.sendConfirmation(event.getOrderId());
