@@ -5,10 +5,11 @@
   "interfaceFontFamily": "微軟正黑體",
   "textFontFamily": "JetBrains Mono,Fira Code,微軟正黑體",
   "baseFontSize": 16,
-  "monospaceFontFamily": "Fira Code,JetBrains Mono",
+  "monospaceFontFamily": "JetBrains Mono,Fira Code",
   "enabledCssSnippets": [
     "custom-code",
-    "code-font"
+    "code-font",
+    "code-block-style"
   ],
   "baseFontSizeAction": false
 }
