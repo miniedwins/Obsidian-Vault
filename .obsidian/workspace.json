@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "人工智慧/Prompts/任務管理/prompts.md",
-                "mode": "preview",
+                "file": "人工智慧/Prompts/任務管理/forms.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "prompts"
+              "title": "forms"
             }
           }
         ],
@@ -105,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "人工智慧/Prompts/任務管理/prompts.md",
+                "file": "人工智慧/Prompts/任務管理/forms.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for prompts"
+              "title": "Backlinks for forms"
             }
           },
           {
@@ -124,12 +124,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "人工智慧/Prompts/任務管理/prompts.md",
+                "file": "人工智慧/Prompts/任務管理/forms.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from prompts"
+              "title": "Outgoing links from forms"
             }
           },
           {
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "人工智慧/Prompts/任務管理/prompts.md",
+                "file": "人工智慧/Prompts/任務管理/forms.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of prompts"
+              "title": "Outline of forms"
             }
           },
           {
@@ -210,9 +210,9 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "人工智慧/Prompts/任務管理/current-tasks.md",
     "人工智慧/Prompts/任務管理/forms.md",
     "人工智慧/Prompts/任務管理/prompts.md",
-    "人工智慧/Prompts/任務管理/current-tasks.md",
     "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "人工智慧/Prompts/任務管理/tasks.md",
     "人工智慧/Prompts/任務管理",
