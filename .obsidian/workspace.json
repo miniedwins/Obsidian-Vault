@@ -184,19 +184,9 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "65eb6a2a737c2586",
-            "type": "leaf",
-            "state": {
-              "type": "mermaid-toolbar-view",
-              "state": {},
-              "icon": "trident-custom",
-              "title": "Mermaid Toolbar"
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -220,8 +210,10 @@
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
     "Canvas/吞葡萄新聞分析.canvas",
-    "程式設計/領域驅動/Application and Domain Service 設計原則.md",
+    "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
+    "Excalidraw",
     "程式設計/領域驅動/Application Service 依賴過多.md",
+    "程式設計/領域驅動/Application and Domain Service 設計原則.md",
     "程式設計/領域驅動/Domain Service 可以參考另一個 Domain Service.md",
     "程式設計/領域驅動/Entity 可以參考其他 Entity.md",
     "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
@@ -246,12 +238,10 @@
     "Canvas/未命名.canvas",
     "未命名.base",
     "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "Canvas/ai.canvas",
     "Canvas/吞葡萄新聞分析 - 複製.canvas",
     "未命名 1.base",
     "attachments/Pasted image 20250226071710.png",
-    "Excalidraw",
     "藍圖",
     "Canvas",
     "藍圖/Excalidraw",
