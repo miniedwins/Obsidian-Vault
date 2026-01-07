@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "人工智慧/Prompts/程式提示詞調整.md",
+                "file": "人工智慧/Prompts/任務管理/prompts.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "程式提示詞調整"
+              "title": "prompts"
             }
           }
         ]
@@ -190,8 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 263.5,
-    "collapsed": true
+    "width": 263.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -210,8 +209,15 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "人工智慧/Prompts/任務管理/tasks.md",
+    "人工智慧/Prompts/任務管理/prompts.md",
+    "人工智慧/Prompts/任務管理/forms.md",
+    "人工智慧/Prompts/任務管理/current-tasks.md",
+    "人工智慧/Prompts/任務管理",
+    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
+    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
+    "人工智慧/Prompts/程式設計/Untitled.md",
     "人工智慧/Prompts/思考整理.md",
-    "人工智慧/Prompts/程式提示詞調整.md",
     "暫存內容/NVMe Study (暫存).md",
     "暫存內容/Untitled.md",
     "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
@@ -235,13 +241,7 @@
     "Canvas/Untitled.canvas",
     "Canvas/Untitled.md",
     "程式設計/領域驅動/Application and Domain Service 設計原則.md",
-    "程式設計/領域驅動/Application Service 依賴過多.md",
-    "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "Excalidraw",
-    "程式設計/領域驅動/Entity 可以參考其他 Entity.md",
-    "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
-    "程式設計/領域驅動/Domain Primitive.md",
-    "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
     "Canvas/未命名.canvas",
     "未命名.base",
     "Canvas/ai.canvas",
@@ -254,7 +254,6 @@
     "人工智慧/Prompts/程式設計/skills",
     "人工智慧/Prompts/程式設計",
     "人工智慧/Prompts",
-    "人工智慧",
     "Untitled.canvas",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
