@@ -177,8 +177,6 @@ public class OrderPlacedEventHandler {
 
 ## 推薦做法
 
-java
-
 ```java
 // ✅ 好的設計:職責單一,依賴精簡
 public class CreateOrderService {

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/領域驅動/Application Service 依賴過多.md",
+                "file": "程式設計/領域驅動/Application and Domain Service 設計原則.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Application Service 依賴過多"
+              "title": "Application and Domain Service 設計原則"
             }
           }
         ]
@@ -209,12 +209,12 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "程式設計/領域驅動/Application Service 依賴過多.md",
+    "程式設計/領域驅動/Domain Service 可以參考另一個 Domain Service.md",
+    "程式設計/領域驅動/Application and Domain Service 設計原則.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "Excalidraw",
-    "程式設計/領域驅動/Application Service 依賴過多.md",
-    "程式設計/領域驅動/Application and Domain Service 設計原則.md",
-    "程式設計/領域驅動/Domain Service 可以參考另一個 Domain Service.md",
     "程式設計/領域驅動/Entity 可以參考其他 Entity.md",
     "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
     "程式設計/領域驅動/Domain Primitive.md",

@@ -480,9 +480,7 @@ Application Service 的職責是 **「流程編排」**。它的代碼應該相�
 
 在 Domain Layer 定義一個標準的介面，所有的折扣規則（無論是會員、季節性、折價券）都必須遵守這個契約。
 
-Java
-
-```
+```Java
 // Domain Layer
 public interface DiscountStrategy {
     // 判斷該策略是否適用於此訂單
