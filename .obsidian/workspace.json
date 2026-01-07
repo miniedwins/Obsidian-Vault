@@ -11,14 +11,17 @@
             "id": "75a759fc92350cba",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "程式設計/領域驅動/Application and Domain Service 設計原則.md",
-                "mode": "source",
-                "source": false
+                "file": "Canvas/吞葡萄新聞分析.canvas",
+                "viewState": {
+                  "x": 180,
+                  "y": 290,
+                  "zoom": -1.1451167078598101
+                }
               },
-              "icon": "lucide-file",
-              "title": "Application and Domain Service 設計原則"
+              "icon": "lucide-layout-dashboard",
+              "title": "吞葡萄新聞分析"
             }
           }
         ]
@@ -209,10 +212,12 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "Canvas/Untitled.canvas",
+    "Canvas/Untitled.md",
+    "Canvas/吞葡萄新聞分析.canvas",
+    "程式設計/領域驅動/Application and Domain Service 設計原則.md",
     "程式設計/領域驅動/Application Service 依賴過多.md",
     "程式設計/領域驅動/Domain Service 可以參考另一個 Domain Service.md",
-    "程式設計/領域驅動/Application and Domain Service 設計原則.md",
-    "Canvas/吞葡萄新聞分析.canvas",
     "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "Excalidraw",
     "程式設計/領域驅動/Entity 可以參考其他 Entity.md",
@@ -237,7 +242,6 @@
     "程式設計/Git/Git Commit Message 格式.md",
     "Canvas/未命名.canvas",
     "未命名.base",
-    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
     "Canvas/ai.canvas",
     "Canvas/吞葡萄新聞分析 - 複製.canvas",
     "未命名 1.base",
