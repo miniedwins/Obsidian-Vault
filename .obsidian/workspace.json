@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
-                "mode": "preview",
+                "file": "人工智慧/Prompts/程式提示詞調整.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Initialization"
+              "title": "程式提示詞調整"
             }
           }
         ]
@@ -210,6 +210,11 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "人工智慧/Prompts/思考整理.md",
+    "人工智慧/Prompts/程式提示詞調整.md",
+    "暫存內容/NVMe Study (暫存).md",
+    "暫存內容/Untitled.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
@@ -237,11 +242,6 @@
     "程式設計/領域驅動/DeepSeek 解釋/分層架構重構後的系統設計解析.md",
     "程式設計/領域驅動/Domain Primitive.md",
     "程式設計/領域驅動/DeepSeek 解釋/DAO and DO 概念.md",
-    "程式設計/重構/Data Clump (資料泥團).md",
-    "程式設計/重構/Data Class (壞味道).md",
-    "程式設計/單元測試/單元測試命名方法.md",
-    "程式設計/Python/自動測試/Pytest/命令模式操作/當發生錯誤停止測試.md",
-    "程式設計/Python/視窗操作/PyAutoGUI/定位圖片座標.md",
     "Canvas/未命名.canvas",
     "未命名.base",
     "Canvas/ai.canvas",
