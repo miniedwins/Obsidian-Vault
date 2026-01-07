@@ -8,8 +8,7 @@
   "monospaceFontFamily": "JetBrains Mono,Fira Code",
   "enabledCssSnippets": [
     "custom-code",
-    "code-font",
-    "code-block-style"
+    "code-font"
   ],
   "baseFontSizeAction": false
 }
