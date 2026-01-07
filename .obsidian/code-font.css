@@ -1,0 +1,12 @@
+/* Code block font size */
+.markdown-preview-view pre code,
+.cm-s-obsidian pre code {
+  font-size: 14px;   /* 改成你要的大小 */
+  line-height: 1.5;
+}
+
+/* Inline code */
+.markdown-preview-view code,
+.cm-s-obsidian span.cm-inline-code {
+  font-size: 0.95em;
+}
