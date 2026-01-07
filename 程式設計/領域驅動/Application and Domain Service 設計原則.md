@@ -444,3 +444,170 @@ public class OrderApplicationService {  // 改這個名字
     // ...
 }
 ```
+
+===========================================================================
+
+Application Service 萬一我有很多個折價券 , 或是會員折扣, 這些算是業務邏輯嗎 ? ( 它們是有季節性的 ) 我要放在 Application service 還是 Domain Service
+
+這是一個非常典型且重要的架構決策點。
+
+直接回答你的問題： **這絕對是「業務邏輯」，而且絕對「不能」放在 Application Service。**
+
+這些邏輯應該放在 **Domain Layer**，但由於它們具有「多樣性」和「季節性（易變性）」，單純寫死在 `OrderPricingService` 裡也會很難維護。
+
+這時候你需要引入 **策略模式 (Strategy Pattern)** 或 **規格模式 (Specification Pattern)**。
+
+---
+
+### 1. 為什麼不能放在 Application Service？
+
+Application Service 的職責是 **「流程編排」**。它的代碼應該相對穩定，不應該因為行銷部門決定「下週二舉辦萬聖節活動」而需要修改代碼。
+
+如果你把折扣邏輯寫在 AS：
+
+- **違反開閉原則 (OCP)**：每次規則改變都要改 AS，AS 會變得非常脆弱。
+    
+- **邏輯洩漏**：折扣計算是核心商業價值，不是流程控制。
+    
+- **難以測試**：要在 AS 層級測試各種複雜的折扣組合非常痛苦。
+    
+
+### 2. 架構師的建議方案：Domain Service + 策略模式
+
+針對這種「會隨時間改變」、「有多種規則疊加」的業務邏輯，我們通常會這樣設計：
+
+#### 第一步：定義折扣策略介面 (Interface)
+
+在 Domain Layer 定義一個標準的介面，所有的折扣規則（無論是會員、季節性、折價券）都必須遵守這個契約。
+
+Java
+
+```
+// Domain Layer
+public interface DiscountStrategy {
+    // 判斷該策略是否適用於此訂單
+    boolean isApplicable(Order order, Customer customer);
+    
+    // 計算折扣金額
+    Money calculateDiscount(Order order, Customer customer);
+    
+    // 優先級 (決定先算哪個折扣，例如先扣會員再扣折價券)
+    int priority();
+}
+```
+
+#### 第二步：實作具體的業務規則
+
+這些類別也是 Domain Layer 的一部分。你可以隨意新增、刪除，而不會影響到主要的 Service。
+
+```Java
+// 實作 1: VIP 會員折扣 (長期規則)
+public class VipMemberDiscountStrategy implements DiscountStrategy {
+    public boolean isApplicable(Order order, Customer customer) {
+        return customer.isVIP();
+    }
+    public Money calculateDiscount(Order order, Customer customer) {
+        return order.getSubtotal().multiply(0.1); // 9折
+    }
+    public int priority() { return 10; }
+}
+
+// 實作 2: 聖誕節大促銷 (季節性規則)
+// 可以透過設定檔或資料庫開關來控制是否生效
+public class ChristmasDiscountStrategy implements DiscountStrategy {
+    private final Clock clock; // 注入時間避免依賴
+    
+    public boolean isApplicable(Order order, Customer customer) {
+        LocalDate today = LocalDate.now(clock);
+        return today.getMonth() == Month.DECEMBER && order.getTotalAmount().isGreaterThan(Money.of(2000));
+    }
+    public Money calculateDiscount(Order order, Customer customer) {
+        return Money.of(200); // 滿2000折200
+    }
+    public int priority() { return 20; }
+}
+```
+
+#### 第三步：進化後的 Domain Service
+
+你的 `OrderPricingService` 不再寫死 `if-else`，而是變成一個 **「策略執行器」**。
+
+
+```Java
+public class OrderPricingService {
+    // 這裡注入所有的策略實作 (Spring 可以自動注入 List<DiscountStrategy>)
+    private final List<DiscountStrategy> discountStrategies; 
+
+    public OrderPricingService(List<DiscountStrategy> discountStrategies) {
+        this.discountStrategies = discountStrategies;
+    }
+
+    public Money calculateFinalPrice(Order order, Customer customer) {
+        Money currentPrice = order.getSubtotal();
+        
+        // 1. 根據優先級排序策略
+        List<DiscountStrategy> sortedStrategies = discountStrategies.stream()
+            .sorted(Comparator.comparingInt(DiscountStrategy::priority))
+            .collect(Collectors.toList());
+
+        // 2. 逐一應用策略
+        for (DiscountStrategy strategy : sortedStrategies) {
+            if (strategy.isApplicable(order, customer)) {
+                Money discount = strategy.calculateDiscount(order, customer);
+                currentPrice = currentPrice.subtract(discount);
+                
+                // 可以在這裡加入邏輯紀錄使用了哪個優惠，方便後續顯示給使用者
+                order.addAppliedDiscount(strategy.getName(), discount);
+            }
+        }
+        
+        // 防止負數
+        return currentPrice.isNegative() ? Money.ZERO : currentPrice;
+    }
+}
+```
+
+---
+
+### 3. Application Service 該做什麼？
+
+在這種架構下，Application Service 的工作依然是 **「協調」**：
+
+1. 從 Repository 撈出訂單。
+    
+2. 從 Repository 撈出 **「當下有效的」** 折價券列表 (如果這不是寫在 Code 裡，而是存在 DB 的話)。
+    
+3. 呼叫 `pricingService.calculateFinalPrice(...)`。
+    
+4. 保存。
+    
+```Java
+// Application Service
+@Transactional
+public void calculateOrderPrice(String orderId) {
+    Order order = orderRepo.findById(orderId);
+    Customer customer = customerRepo.findById(order.getCustomerId());
+    
+    // 如果策略是動態的（存在 DB 裡的規則），這裡可能需要撈出規則
+    // 但如果策略是寫成 Java Class 的 (如上面的例子)，則不需要這步
+    
+    // 純粹計算，完全不關心現在是聖誕節還是春節，細節都在策略裡
+    Money finalPrice = pricingService.calculateFinalPrice(order, customer);
+    
+    order.confirm(finalPrice);
+    orderRepo.save(order);
+}
+```
+
+### 總結
+
+面對複雜且易變的折扣邏輯：
+
+1. **Application Service**：**只負責流程**。絕對不要放 `if (isChristmas)` 這種邏輯。
+    
+2. **Domain Service**：**負責計算的骨架**。它遍歷所有規則，但不包含具體規則的細節。
+    
+3. **Strategy Classes (Domain Objects)**：**負責具體邏輯**。每一個折扣規則（會員、折價券、季節活動）都是一個獨立的小類別。
+    
+
+**這樣做的好處：** 明年你要加一個「端午節折扣」，你只需要 **新增一個 Class (`DragonBoatFestivalStrategy`)**，完全不用去改 Application Service 或 Domain Service 的程式碼，系統非常穩健且易於擴充。

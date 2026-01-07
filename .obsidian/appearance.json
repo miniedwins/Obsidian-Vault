@@ -3,9 +3,9 @@
   "theme": "obsidian",
   "cssTheme": "Blue Topaz",
   "interfaceFontFamily": "微軟正黑體",
-  "textFontFamily": "Fira Code,微軟正黑體",
+  "textFontFamily": "JetBrains Mono,Fira Code,微軟正黑體",
   "baseFontSize": 16,
-  "monospaceFontFamily": "Fira Code",
+  "monospaceFontFamily": "Fira Code,JetBrains Mono",
   "enabledCssSnippets": [
     "custom-code",
     "code-font"
