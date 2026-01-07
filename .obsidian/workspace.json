@@ -13,15 +13,15 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Canvas/吞葡萄新聞分析.canvas",
+                "file": "Canvas/domain_event.canvas",
                 "viewState": {
-                  "x": 180,
-                  "y": 290,
-                  "zoom": -1.1451167078598101
+                  "x": 425.5439773184401,
+                  "y": 370.5699423199967,
+                  "zoom": -1.4898052676808158
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "吞葡萄新聞分析"
+              "title": "domain_event"
             }
           }
         ]
@@ -212,9 +212,10 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "Canvas/吞葡萄新聞分析.canvas",
+    "Canvas/domain_event.canvas",
     "Canvas/Untitled.canvas",
     "Canvas/Untitled.md",
-    "Canvas/吞葡萄新聞分析.canvas",
     "程式設計/領域驅動/Application and Domain Service 設計原則.md",
     "程式設計/領域驅動/Application Service 依賴過多.md",
     "程式設計/領域驅動/Domain Service 可以參考另一個 Domain Service.md",
