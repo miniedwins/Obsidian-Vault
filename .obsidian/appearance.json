@@ -7,6 +7,7 @@
   "baseFontSize": 16,
   "monospaceFontFamily": "Fira Code",
   "enabledCssSnippets": [
-    "custom-code"
+    "custom-code",
+    "code-font"
   ]
 }

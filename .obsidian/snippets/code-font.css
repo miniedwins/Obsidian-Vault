@@ -1,8 +1,8 @@
 /* Code block font size */
 .markdown-preview-view pre code,
 .cm-s-obsidian pre code {
-  font-size: 14px;   /* 改成你要的大小 */
-  line-height: 1.5;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
 }
 
 /* Inline code */
