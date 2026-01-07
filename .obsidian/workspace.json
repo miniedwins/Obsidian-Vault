@@ -200,7 +200,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 263.5
+    "width": 263.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -216,7 +217,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "65eb6a2a737c2586",
+  "active": "75a759fc92350cba",
   "lastOpenFiles": [
     "未命名.base",
     "程式設計/Git/Git Commit Message 格式.md",
