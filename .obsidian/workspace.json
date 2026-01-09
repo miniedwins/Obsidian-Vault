@@ -202,19 +202,17 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "obsidian-git:Open Git source control": false,
-      "mermaid-tools:Open Mermaid Toolbar": false,
       "workspaces:Manage workspace layouts": false
     }
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
     "人工智慧/Prompts/任務管理/current-tasks.md",
-    "人工智慧/Prompts/任務管理/forms.md",
     "人工智慧/Prompts/任務管理/prompts.md",
-    "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "人工智慧/Prompts/任務管理/tasks.md",
+    "人工智慧/Prompts/任務管理/forms.md",
+    "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "人工智慧/Prompts/任務管理",
     "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
     "人工智慧/Prompts/程式設計/Python 開發工程師.md",
