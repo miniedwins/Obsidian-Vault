@@ -10,7 +10,7 @@
 1. 廣播查詢 (Discovery)    
     - 用預設廣播地址（0x61h，依 SMBus 規範）詢問線上有哪些 ARP-capable devices。        
 2. 收集 UDID    
-    - ARP-capable devices 回覆自己的 UDID (128-bit unique identifier)。        
+    - ARP-capable devices 回覆自己的 UDID (128-bit unique identifier)。 
     - ARP Controller 確認裝置 ( Slave ) 身份
 3. 分配新地址 (Assign Address)    
     - 給每個裝置分配一個唯一的 7-bit SMBus 地址。        
