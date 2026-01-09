@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/PCIe/PCIe 裝置識別碼.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PCIe 裝置識別碼"
+              "title": "Forced Quiescence Processing"
             }
           }
         ],
@@ -89,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.5
+    "width": 323.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/PCIe/PCIe 裝置識別碼.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of PCIe 裝置識別碼"
+              "title": "Outline of Forced Quiescence Processing"
             }
           },
           {
@@ -207,37 +207,38 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "75a759fc92350cba",
   "lastOpenFiles": [
-    "技術資料/PCIe/PCIe Class Code.md",
-    "技術資料/SMBus/ACK and NACK.md",
-    "技術資料/SMBus/Arbitration ( 仲裁機制 ).md",
-    "技術資料/SMBus/ARP Capable Device.md",
-    "技術資料/SMBus/ARP Command.md",
-    "技術資料/SMBus/ARP Controller.md",
-    "技術資料/SMBus/AV and AR flags.md",
-    "技術資料/SMBus/Notify ARP Controller.md",
-    "技術資料/SMBus/Packet Error Code ( PEC ).md",
-    "技術資料/SMBus/PEC Sample Code.md",
-    "技術資料/SMBus/PTA ( Persistent Target Address ).md",
-    "技術資料/SMBus/Address Resolution Protocol (ARP).md",
-    "技術資料/SMBus/Internal state of ARP-capable.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
+    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
+    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
+    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
+    "技術資料/NVMe/NVMe-Base/Dataset Management.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+    "技術資料/MCTP/Endpoint Discovery.md",
+    "技術資料/MCTP/Endpoint ID.md",
+    "技術資料/MCTP/MCTP Packet Fields.md",
+    "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
+    "技術資料/MCTP/MCTP Message Type.md",
+    "技術資料/MCTP/MCTP Control Message.md",
+    "技術資料/MCTP/Message Assembly.md",
+    "技術資料/MCTP/Maximum Message Size.md",
+    "技術資料/MCTP/Generic MCTP Message Fields.md",
+    "技術資料/MCTP/Endpoint ID Retention.md",
+    "技術資料/MCTP/Drop Packets.md",
+    "技術資料/I2C/I2C的工作原理與技術分析.md",
+    "暫存內容/attachments/Pasted image 20241127081953.png",
     "Canvas/吞葡萄新聞分析.canvas",
-    "Canvas/eventbus_architecture.md",
     "Canvas/domain_event.canvas",
-    "人工智慧/Prompts/任務管理/forms.md",
-    "人工智慧/Prompts/任務管理/current-tasks.md",
-    "人工智慧/Prompts/任務管理/prompts.md",
-    "人工智慧/Prompts/任務管理/tasks.md",
-    "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "人工智慧/Prompts/任務管理",
-    "人工智慧/Prompts/程式設計/Claude Code 產生的 Context.md",
-    "人工智慧/Prompts/程式設計/Python 開發工程師.md",
-    "人工智慧/Prompts/程式設計/Untitled.md",
-    "人工智慧/Prompts/思考整理.md",
-    "暫存內容/NVMe Study (暫存).md",
-    "暫存內容/Untitled.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "Canvas/domain_event.png",
     "Canvas/highlight.png",
     "Canvas/Untitled.canvas",
@@ -261,7 +262,6 @@
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
     "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
-    "技術資料/MCTP/attachments/Pasted image 20250619112614.png",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
