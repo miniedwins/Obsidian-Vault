@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
-                "mode": "source",
+                "file": "Canvas/eventbus_architecture.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Forced Quiescence Processing"
+              "title": "eventbus_architecture"
             }
           }
         ],
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
+                "file": "Canvas/eventbus_architecture.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Forced Quiescence Processing"
+              "title": "Outline of eventbus_architecture"
             }
           },
           {
@@ -209,6 +209,7 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
     "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
@@ -234,7 +235,6 @@
     "技術資料/MCTP/Generic MCTP Message Fields.md",
     "技術資料/MCTP/Endpoint ID Retention.md",
     "技術資料/MCTP/Drop Packets.md",
-    "技術資料/I2C/I2C的工作原理與技術分析.md",
     "暫存內容/attachments/Pasted image 20241127081953.png",
     "Canvas/吞葡萄新聞分析.canvas",
     "Canvas/domain_event.canvas",
