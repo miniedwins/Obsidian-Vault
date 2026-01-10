@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/重構/Data Clump (資料泥團).md",
+                "file": "技術資料/Other/IEEE EUI, OUI, and CID.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Clump (資料泥團)"
+              "title": "IEEE EUI, OUI, and CID"
             }
           }
         ],
@@ -209,6 +209,15 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "程式設計/Git/Git Commit Message 格式.md",
+    "程式設計/Git/遠端分支操作方法.md",
+    "程式設計/Git/修改已提交的紀錄.md",
+    "程式設計/Git/建立第一個版本控制.md",
+    "程式設計/Git/如何設定SSH連線.md",
+    "程式設計/Git/如何設定命令縮寫.md",
+    "程式設計/Git/如何移動標籤.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/重構/Data Clump (資料泥團).md",
     " - 複製.gitattributes",
     "程式設計/重構/Feature Envy.md",
     "程式設計/重構/Data Class (壞味道).md",
@@ -227,14 +236,6 @@
     "作業系統/Linux/套件/nvmecli.md",
     "作業系統/Linux/套件/libnvme.md",
     "作業系統/Linux/套件/json-c.md",
-    "作業系統/Linux/核心/手動安裝 linux 核心.md",
-    "作業系統/Linux/虛擬機/qemu/如何編譯 qemu.md",
-    "作業系統/Linux/虛擬機/openbmc/建構 EVB-AST2600.md",
-    "作業系統/Linux/Shell/取得命令行輸入的參數.md",
-    "作業系統/Windows/Modern Standby/Win11 安裝 Modern Standby.md",
-    "人工智慧/Prompts/程式設計/專業測試工程師.md",
-    "人工智慧/AI/Test Case/成熟的測試案例.md",
-    "Canvas/eventbus_architecture.md",
     "暫存內容/attachments/Pasted image 20241127081953.png",
     "Canvas/吞葡萄新聞分析.canvas",
     "Canvas/domain_event.canvas",
@@ -254,7 +255,6 @@
     "藍圖/Excalidraw",
     "人工智慧/Prompts/程式設計/skills",
     "人工智慧/Prompts/程式設計",
-    "人工智慧/Prompts",
     "Untitled.canvas",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
