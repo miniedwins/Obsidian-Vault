@@ -11,14 +11,12 @@
             "id": "75a759fc92350cba",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "技術資料/MCTP/Terminate Assembly and Drop Message.md",
-                "mode": "preview",
-                "source": false
+                "file": "技術資料/SATA/attachments/Pasted image 20250415074822.png"
               },
-              "icon": "lucide-file",
-              "title": "Terminate Assembly and Drop Message"
+              "icon": "lucide-image",
+              "title": "Pasted image 20250415074822"
             }
           }
         ],
@@ -207,8 +205,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "75a759fc92350cba",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
+    "暫存內容/NVMe Study (暫存).md",
+    "暫存內容/BMC.md",
+    "暫存內容/aaa/assets/BMC/file-20260110202334605.png",
+    "暫存內容/aaa/assets/BMC",
+    "暫存內容/aaa/assets",
+    "技術資料/MCTP/Terminate Assembly and Drop Message.md",
+    "暫存內容/aaa",
     "程式設計/單元測試/單元測試命名方法.md",
     "程式設計/重構/Data Class (壞味道).md",
     "技術資料/Other/IEEE EUI, OUI, and CID.md",
@@ -223,7 +228,6 @@
     "程式設計/重構/Data Clump (資料泥團).md",
     " - 複製.gitattributes",
     "程式設計/重構/Feature Envy.md",
-    "技術資料/MCTP/Terminate Assembly and Drop Message.md",
     "技術資料/MCTP/Endpoint ID.md",
     "技術資料/MCTP/Endpoint Discovery.md",
     "技術資料/MCTP/Drop Packets.md",
@@ -234,8 +238,6 @@
     "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定混合讀寫比例.md",
     "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/設定不同 IO 大小的百分比.md",
     "作業系統/Linux/指令/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
-    "作業系統/Linux/套件/nvmecli.md",
-    "作業系統/Linux/套件/libnvme.md",
     "暫存內容/attachments/Pasted image 20241127081953.png",
     "Canvas/吞葡萄新聞分析.canvas",
     "Canvas/domain_event.canvas",
@@ -252,16 +254,12 @@
     "attachments/Pasted image 20250226071710.png",
     "藍圖",
     "Canvas",
-    "藍圖/Excalidraw",
-    "人工智慧/Prompts/程式設計/skills",
-    "人工智慧/Prompts/程式設計",
     "Untitled.canvas",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250226070520.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153043.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250221153007.png",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/attachments/Pasted image 20250225071237.png",
     "技術資料/MCTP/attachments/Pasted image 20250620165945.png",
-    "技術資料/MCTP/attachments/Pasted image 20250619142254.png",
     "未命名.canvas",
     "doxygen.canvas",
     "未命名 1.canvas"
