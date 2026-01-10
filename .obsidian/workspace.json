@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/Other/IEEE EUI, OUI, and CID.md",
+                "file": "技術資料/MCTP/Terminate Assembly and Drop Message.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IEEE EUI, OUI, and CID"
+              "title": "Terminate Assembly and Drop Message"
             }
           }
         ],
@@ -209,6 +209,9 @@
   },
   "active": "75a759fc92350cba",
   "lastOpenFiles": [
+    "程式設計/單元測試/單元測試命名方法.md",
+    "程式設計/重構/Data Class (壞味道).md",
+    "技術資料/Other/IEEE EUI, OUI, and CID.md",
     "程式設計/Git/Git Commit Message 格式.md",
     "程式設計/Git/遠端分支操作方法.md",
     "程式設計/Git/修改已提交的紀錄.md",
@@ -220,8 +223,6 @@
     "程式設計/重構/Data Clump (資料泥團).md",
     " - 複製.gitattributes",
     "程式設計/重構/Feature Envy.md",
-    "程式設計/重構/Data Class (壞味道).md",
-    "程式設計/單元測試/單元測試命名方法.md",
     "技術資料/MCTP/Terminate Assembly and Drop Message.md",
     "技術資料/MCTP/Endpoint ID.md",
     "技術資料/MCTP/Endpoint Discovery.md",
@@ -235,7 +236,6 @@
     "作業系統/Linux/指令/FIO/Standard/等待任務執行完，再繼續執行下一個任務.md",
     "作業系統/Linux/套件/nvmecli.md",
     "作業系統/Linux/套件/libnvme.md",
-    "作業系統/Linux/套件/json-c.md",
     "暫存內容/attachments/Pasted image 20241127081953.png",
     "Canvas/吞葡萄新聞分析.canvas",
     "Canvas/domain_event.canvas",
