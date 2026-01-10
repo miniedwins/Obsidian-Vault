@@ -1,1 +1,6 @@
-{}
+{
+  "blue-topaz-theme@@color-scheme-options": "color-scheme-options-simplicity-topaz",
+  "Blue-Topaz-Codebox-Highlight@@code-theme-selection": "code-theme-bt-default",
+  "blue-topaz-theme@@layout-style-options": "layout-style-options-default",
+  "Blue-Topaz-Codebox-Highlight@@code-box-style-option": "codebox-frosted-glass"
+}
