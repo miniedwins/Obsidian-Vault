@@ -1,7 +1,7 @@
 {
   "accentColor": "",
-  "theme": "system",
-  "cssTheme": "Obsidian Nord",
+  "theme": "obsidian",
+  "cssTheme": "Blue Topaz",
   "interfaceFontFamily": "微軟正黑體",
   "textFontFamily": "微軟正黑體,Fira Code,JetBrains Mono",
   "baseFontSize": 16,
