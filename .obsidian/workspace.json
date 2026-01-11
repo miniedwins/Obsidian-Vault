@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/套件管理/Poetry.md",
-                "mode": "source",
+                "file": "程式設計/Git/建立第一個版本控制.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Poetry"
+              "title": "建立第一個版本控制"
             }
           }
         ]
@@ -208,6 +208,9 @@
   },
   "active": "8954f62c5b2e076b",
   "lastOpenFiles": [
+    "程式設計/Git/遠端分支操作方法.md",
+    "程式設計/Git/Git Commit Message 格式.md",
+    "程式設計/Python/套件管理/Poetry.md",
     "程式設計/Python/自動測試/pytest.mark.usefixtures.md",
     "程式設計/Makefile/make.md",
     "程式設計/Git/如何設定SSH連線.md",
@@ -215,7 +218,6 @@
     "程式設計/Git/如何設定命令縮寫.md",
     "程式設計/Git/修改已提交的紀錄.md",
     "程式設計/Git/如何移動標籤.md",
-    "程式設計/Git/遠端分支操作方法.md",
     "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
     "程式設計/C 語言/常見問題處理/無法找到共享函式庫.md",
     "程式設計/領域驅動/Application Service 依賴過多.md",
@@ -232,9 +234,7 @@
     "程式設計/領域驅動/DeepSeek 解釋/中介軟體抽象（Middleware ACL）的設計解析與實戰.md",
     "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "Canvas/eventbus_architecture.md",
-    "Obsidian/如何使用註腳格式.md",
     "Canvas/吞葡萄新聞分析.canvas",
-    "Obsidian/點選文字連結到 URL.md",
     "技術資料/SATA/attachments/Pasted image 20250415074822.png",
     "暫存內容/aaa/assets/BMC/file-20260110202334605.png",
     "暫存內容/aaa/assets/BMC",
