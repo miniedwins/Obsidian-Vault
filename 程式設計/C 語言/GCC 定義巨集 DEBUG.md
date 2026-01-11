@@ -1,4 +1,3 @@
-# GCC 定義巨集 DEBUG
 
 ```c
 #include <stdio.h>

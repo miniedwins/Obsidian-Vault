@@ -3,14 +3,14 @@
 /* 編輯模式：code block */
 .markdown-source-view .cm-content pre code {
   font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
 /* 預覽模式：code block */
 .markdown-preview-view pre code {
   font-family: "JetBrains Mono", monospace;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
