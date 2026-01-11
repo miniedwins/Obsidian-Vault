@@ -4,5 +4,6 @@
   "blue-topaz-theme@@layout-style-options": "layout-style-options-default",
   "Blue-Topaz-Codebox-Highlight@@code-box-style-option": "codebox-frosted-glass",
   "minimal-advanced@@cursor": "default",
-  "minimal-style@@blockquote-size": "13"
+  "minimal-style@@blockquote-size": "13",
+  "minimal-style@@code-size": "1"
 }

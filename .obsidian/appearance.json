@@ -11,5 +11,5 @@
     "code-font",
     "code-block-style"
   ],
-  "baseFontSizeAction": false
+  "baseFontSizeAction": true
 }
