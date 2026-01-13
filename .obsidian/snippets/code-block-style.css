@@ -27,3 +27,14 @@
   font-family: "JetBrains Mono", monospace;
   font-size: 0.95em;
 }
+
+/* 移除預覽模式的連結底線 */
+.markdown-preview-view a {
+  text-decoration: none;
+}
+
+/* 移除編輯模式（Live Preview）的連結底線 */
+.cm-s-obsidian span.cm-link,
+.cm-s-obsidian span.cm-url {
+  text-decoration: none;
+}

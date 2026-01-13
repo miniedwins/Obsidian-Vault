@@ -25,12 +25,14 @@
             "id": "e0c859c7eca91197",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103951289.png"
+                "file": "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "file-20260113103951289"
+              "icon": "lucide-file",
+              "title": "Deallocation Read Behavior"
             }
           }
         ],
@@ -221,13 +223,19 @@
   },
   "active": "e0c859c7eca91197",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103951289.png",
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior",
-    "技術資料/NVMe/NVMe-Base/assets",
     "技術資料/NVMe/NVMe-Base/Deallocated.md",
     "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103642951.png",
+    "技術資料/NVMe/NVMe-Base/Controller Level Reset.md",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Controller Reset.md",
+    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113104059992.png",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113104041102.png",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior",
+    "技術資料/NVMe/NVMe-Base/assets",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103951289.png",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103642951.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/attachments/sanitize/sanitize_cmd_dw10.png",
     "技術資料/NVMe/NVMe-Base/attachments/host_controlled_thermal_management/thermal_management_termperature.png",
@@ -251,9 +259,6 @@
     "程式設計/C 語言/GCC 定義巨集 DEBUG.md",
     "程式設計/C 語言/常見問題處理/無法引用 O_DIRECT.md",
     "程式設計/領域驅動/Domain Service 可以參考另一個 Domain Service.md",
-    "程式設計/領域驅動/Entity 可以參考其他 Entity.md",
-    "程式設計/C 語言/常見問題處理/無法找到共享函式庫.md",
-    "程式設計/C 語言/建立靜態與共享函式庫.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "技術資料/SATA/attachments/Pasted image 20250415074822.png",
     "暫存內容/aaa/assets/BMC/file-20260110202334605.png",
@@ -261,11 +266,8 @@
     "暫存內容/aaa/assets",
     "暫存內容/aaa",
     " - 複製.gitattributes",
-    "暫存內容/attachments/Pasted image 20241127081953.png",
     "Canvas/domain_event.canvas",
     "人工智慧/Prompts/任務管理",
-    "Canvas/domain_event.png",
-    "Canvas/highlight.png",
     "Canvas/Untitled.canvas",
     "Excalidraw",
     "Canvas/未命名.canvas",
