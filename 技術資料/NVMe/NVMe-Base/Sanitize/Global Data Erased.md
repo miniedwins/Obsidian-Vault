@@ -1,0 +1,3 @@
+
+
+If a namespace sanitize operation has been performed on every namespace that exists in the NVM subsystem and no user data has been written to any of those namespaces since each namespace sanitize operation completed successfully, then the Global Data Erased bit (refer to Figure 302) in the Sanitize Status log page for the sanitization target of the NVM subsystem shall not be set ‘1’ as a result of successfully completing those namespace sanitize operations
