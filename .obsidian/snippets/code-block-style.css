@@ -28,13 +28,15 @@
   font-size: 0.95em;
 }
 
-/* 移除預覽模式的連結底線 */
-.markdown-preview-view a {
-  text-decoration: none;
+/* 移除閱讀模式與編輯模式下的連結底線 */
+.markdown-rendered .internal-link, 
+.markdown-source-view.mod-cm6 .cm-underline,
+.internal-link {
+    text-decoration: none !important;
 }
 
-/* 移除編輯模式（Live Preview）的連結底線 */
-.cm-s-obsidian span.cm-link,
-.cm-s-obsidian span.cm-url {
-  text-decoration: none;
+/* 針對新版 Obsidian 的全域變數設定 */
+body {
+    --link-decoration: none;
+    --link-decoration-hover: none;
 }

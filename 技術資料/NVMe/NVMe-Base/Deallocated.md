@@ -1,30 +1,20 @@
 ## 1. 什麼是 Deallocated / Unwritten Logical Block
 
-以下情況的 Logical Block 會被視為 **deallocated 或 unwritten**：
+從未被寫過的邏輯區塊 (unwritten logical lock)，對主機而言就是一個乾淨的邏輯區塊該定義可以被稱為  deallocated / unwritten Logic Block。一旦該 LBA 被寫入下控制器就不再視為 deallocated。
 
-- 從來沒有被寫入過
-    
-- 使用以下指令被回收（deallocate）：
-    
-    - Dataset Management
-        
-    - Write Zeroes
-        
-    - Sanitize
-        
+若是要將已寫過的邏輯區塊被收回收 ( TRIM )，需要使用已下命令 :
+- Dataset Management
+- Write Zeroes
+- Sanitize
 
 ---
 ## 2. 讀取行為由 Error Recovery Feature 決定
 
 Host 可透過 **Error Recovery feature** 控制讀取這類 LBA 時的行為。
-
 關鍵控制位元：
-
 - **DULBE (Deallocated or Unwritten Logical Block Error Enable)**
     
----
-
-## 3. DULBE = 1（啟用錯誤）
+### DULBE = 1（啟用錯誤）
 
 當 DULBE 設為 1 時：
 
@@ -43,15 +33,13 @@ Host 可透過 **Error Recovery feature** 控制讀取這類 LBA 時的行為。
     - **Deallocated or Unwritten Logical Block**
         
 
-📌 這是「嚴格模式」
-
 ---
 
-## 4. DULBE = 0（不啟用錯誤）
+### DULBE = 0（不啟用錯誤）
 
 若未啟用錯誤，controller **仍可回傳資料**，但資料內容由 **DRB** 決定。
 
-#### DRB（Deallocation Read Behavior）設定
+DRB（Deallocation Read Behavior）設定
 
 | DRB 值  | 回傳資料內容                         |
 | ------ | ------------------------------ |
