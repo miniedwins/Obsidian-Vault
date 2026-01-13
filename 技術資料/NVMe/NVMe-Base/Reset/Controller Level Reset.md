@@ -4,11 +4,11 @@
 常規復位（Conventional Reset）和功能級復位（Function Level Reset, FLR）是根據 PCI Express 規範定義的復位方法，**它們也都會觸發 NVMe 控製器級復位（Controller Level Reset）**
 
 ## 觸發重置的三種方法
-1. [[NVM Subsystem Reset]] 
+1. [[../NVM Subsystem Reset]] 
 2. [[Controller Reset]]
 3. Transport Specific Reset Types ( PCIe )
-	* [[Conventional Reset]]
-	* [[Function Level Reset]]
+	* [[../../../PCIe/System Reset/Conventional Reset]]
+	* [[../../../PCIe/System Reset/Function Level Reset]]
 
 ## 重置的流程
 當發生重置後，控制器與主機端如何執行後續的動作，如下所述 : 
@@ -33,8 +33,8 @@
 	* There are no exceptions
 
 > **補充說明 :** 
-> 1. [[Memory Based Transport]]
-> 2. [[Message Based Transport]]
+> 1. [[../Memory Based Transport]]
+> 2. [[../Message Based Transport]]
 
 ### 主機端流程
 * **( 原文 ) Update transport specific state and controller property state as appropriate**
