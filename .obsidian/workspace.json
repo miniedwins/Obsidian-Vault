@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Deallocated.md",
+                "file": "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Deallocated"
+              "title": "Deallocation Read Behavior"
             }
           }
         ]
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Deallocated.md",
+                "file": "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Deallocated"
+              "title": "Outgoing links from Deallocation Read Behavior"
             }
           },
           {
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Deallocated.md",
+                "file": "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Deallocated"
+              "title": "Outline of Deallocation Read Behavior"
             }
           },
           {
@@ -207,12 +207,15 @@
   },
   "active": "8954f62c5b2e076b",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Deallocated.md",
     "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior",
+    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior ( DRB )",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download.md",
     "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
     "技術資料/NVMe/NVMe-Base/Memory Based Transport.md",
     "技術資料/NVMe/NVMe-Base/Persistent Memory Region.md",
     "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
@@ -232,13 +235,11 @@
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Command.md",
     "技術資料/NVMe/NVMe-Base/Sanitize",
-    "技術資料/NVMe/NVMe-Base/Deallocated.md",
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113104041102.png",
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113104059992.png",
+    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113142243475.png",
     "暫存內容/未命名.md",
     "技術資料/NVMe/NVMe-Base/Controller Property.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior",
     "技術資料/NVMe/NVMe-Base/assets",
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103951289.png",
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103642951.png",
@@ -247,7 +248,6 @@
     "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
     "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
-    "技術資料/NVMe/NVMe-Base/telemetry.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "暫存內容/aaa/assets/BMC",
     "暫存內容/aaa/assets",
@@ -256,7 +256,6 @@
     "Canvas/domain_event.canvas",
     "人工智慧/Prompts/任務管理",
     "Canvas/Untitled.canvas",
-    "Excalidraw",
     "Canvas/未命名.canvas",
     "Canvas/ai.canvas",
     "Canvas/吞葡萄新聞分析 - 複製.canvas",
