@@ -44,3 +44,123 @@ CMB 是 SSD 控制器內部的一塊記憶體，可用於存放指令隊列或�
     
 
 **這對您的測試有什麼意義？** 如果您在進行 Sanitize 測試時，發現某些區塊在執行後變成了 **Bad Blocks** 或 **Uncorrectable Error**，且再也無法被格式化或寫入，這不一定是 SSD 壞了，很可能是它在執行這項規範：因為該區塊抹除失敗，它選擇「自殘」來保證資料安全。
+
+---
+
+### 1. 「指令完成」不等於「執行完成」
+
+這是最容易產生誤解的地方。規範明確指出，Sanitize 是一個**背景作業**：
+
+- **階段一：指令完成 (Command Completion)** 當你下達 Sanitize 指令後，控制器會立刻回傳 `Successful Completion (00h)`。**這不代表資料已經清空**，僅代表控制器「收到指令並準備好開始搬磚了」。
+    
+- **階段二：背景執行 (Background Operation)** 控制器在後台默默進行 Block Erase、Overwrite 或 Crypto Erase。
+    
+- **階段三：真正完成 (Operation Completion)** 這需要透過查詢 **Sanitize Status log page** 或等待 **Asynchronous Event (AER)** 來確認。
+    
+
+---
+
+### 2. 多樣化的完成通知機制
+
+規範列出了三種主動通知（Asynchronous Events）的方式，讓主機（Host）不必一直輪詢（Polling）：
+
+- **一般完成 (Sanitize Operation Completed)：** 正常清理結束。
+    
+- **異常完成 (Unexpected Deallocation)：** 清理過程中發生了預期之外的空間釋放。
+    
+- **進入驗證狀態 (Entered Media Verification State)：** 如果指令有要求執行後的驗證（Verification），這會通知主機：「我洗完了，現在開始檢查有沒有洗乾淨」。
+    
+
+**注意 NSID 的差異：**
+
+- 如果對象是 **Subsystem**（全機）：參數會清零 (`0h`)。
+    
+- 如果對象是 **Namespace**（單一分區）：參數會顯示該分區的 `NSID`。
+    
+
+---
+
+### 3. 通訊路徑的限制 (Reporting Rules)
+
+這段話解釋了「誰下令，誰負責通知」：
+
+- **Admin Queue 下令：** 只有收到指令的那個 Controller 會發出通知。
+    
+- **Management Endpoint (MI) 下令：** 如果是透過帶外管理（Out-of-band）下指令，任何 Controller 都**不會**發出 AER 通知。
+    
+
+---
+
+### 4. 嚴格的「防呆」保護機制
+
+規範最後一段強調了 **Atomic Logic (原子性邏輯)**：
+
+- 如果 Sanitize 指令在初始檢查階段就失敗（例如參數錯誤、狀態不允許），控制器**絕對不能**開始背景作業。
+    
+- 此時，**不准**修改 Log Page，更重要的是，**不准改動任何使用者資料**。 這保證了系統不會在錯誤的狀態下意外地毀損資料。
+
+---
+### 1. 誰啟動，誰負責：異步事件 (AER) 的回報邏輯
+
+NVMe 裝置通常有多個控制器（Controllers）或不同的管理路徑。規範規定了通知的對象必須精確：
+
+- **透過 Admin Submission Queue (In-band)：**
+    
+    - 如果你是從作業系統（例如 Linux 裡的 `nvme-cli`）下達指令，這屬於「帶內（In-band）」操作。
+        
+    - **規則：** 只有「接收到該指令」的那個控制器負責發出通知（AER）。其他控制器保持安靜。
+        
+- **透過 Management Endpoint (Out-of-band)：**
+    
+    - 如果你是透過伺服器板子上的 BMC (Baseboard Management Controller) 經由 SMBus/I3C（NVMe-MI 規範）下達指令，這屬於「帶外（Out-of-band）」操作。
+        
+    - **規則：** **完全不會**透過任何控制器發出 AER。管理端必須自己去輪詢（Polling）Sanitize Status Log 來確認進度。
+        
+
+---
+
+### 2. 啟動的「生死門」：狀態碼與執行邏輯
+
+這是一段非常嚴格的「安全鎖」描述，確保不會在錯誤的情況下誤刪資料或搞亂 Log Page。
+
+#### **情況 A：指令回傳 Successful Completion (00h)**
+
+這代表控制器已經檢查完所有參數（如：指令選項正確、硬碟沒有被鎖定、沒有正在進行的其他衝突作業）。
+
+- **後續動作：** 控制器會**開始**在背景執行 Sanitize。
+    
+
+#### **情況 B：指令回傳非 00h (Failure)**
+
+如果指令因為任何原因失敗（例如參數錯誤、權限不足）：
+
+- **絕對禁止啟動：** 控制器**不得**開始任何 Sanitize 作業。
+    
+- **保持 Log 原始狀態：** `Sanitize Status Log Page` 必須維持在收到這條失敗指令前的狀態，不可以更新進度或狀態碼。
+    
+- **資料保護：** 最重要的一點，**絕對不可以更動任何使用者資料**。
+    
+
+---
+
+### 3. 給測試人員/開發者的實務建議
+
+如果您正在撰寫測試腳本或驗證韌體，這段文字指出了三個關鍵測試點：
+
+1. **負面測試 (Negative Test)：**
+    
+    - 嘗試發送一個帶有錯誤參數的 Sanitize 指令（例如無效的選項組合）。
+        
+    - **預期結果：** 指令回傳錯誤碼，且 `Sanitize Status Log` 的內容**不應發生任何變化**，原有的資料也必須完整無缺。
+        
+2. **多路徑回報驗證：**
+    
+    - 在多控制器（Dual-port）的環境下，從 Controller A 下指令。
+        
+    - **預期結果：** 只有 Controller A 應該跳出「Sanitize Operation Completed」的異步事件，Controller B 不應該收到。
+        
+3. **NVMe-MI 測試：**
+    
+    - 透過帶外管理介面執行 Sanitize。
+        
+    - **預期結果：** 確認主機端的驅動程式**沒有**收到任何 AER，必須手動讀取 Log Page 才能確認完成。
