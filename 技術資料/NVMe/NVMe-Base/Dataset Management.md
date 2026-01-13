@@ -37,7 +37,7 @@ Dataset Management (DSM) : 由主機來設定參數以及執行 `dsm` 命令，�
 
 ###  DULBE
 
-* (原文翻譯) 當主機讀取 deallocated or unwritten block，控制器根據 Deallocate Logical Block Features (Bits 2:0) 設定，當讀取到 deallocated or unwritten block，控制器應該需要回傳那一種數值，這個設定可以由 Identify Namesapce Data Structure 取得。
+* (原文翻譯) 當主機讀取 deallocated or unwritten block，控制器根據 Deallocate Logical Block Features (Bits 2:0) 設定，當讀取到 deallocated or unwritten block，控制器應該需要回傳那一種數值，這個設定可以由 Identify Namespace Data Structure 取得。
 * (說明) 主要是說若是主機去讀取一個 deallocated or unwritten block，控制器會根據 DLFEAT 設定，然後回傳一個固定的值
 
 回覆下列其中一種數值 : 
