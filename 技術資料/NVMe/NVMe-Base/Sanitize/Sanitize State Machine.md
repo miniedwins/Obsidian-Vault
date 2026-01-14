@@ -18,13 +18,9 @@
 
 說明 : 在 Processing 狀態下，控制器會強行暫停（Suspend）所有自動電源管理。**唯有進入 Idle State 後**，控制器才被允許恢復（Resume）這些省電機制。
 
----
-
-### **NVMe Sanitize：Idle State 技術筆記**
-
 **Idle State** 是 NVM 子系統或特定 Namespace 的基礎狀態，代表當前沒有任何清理作業（Sanitize Operation）正在進行。在進入此狀態前，控制器會確保所有的背景媒體銷毀動作已完全停止。
 
-#### **一、 進入 Idle State 的三種路徑**
+**進入 Idle State 的三種路徑**
 
 根據規範 8.1.26.4.1，裝置處於此狀態代表符合以下任一條件：
 
@@ -35,4 +31,12 @@
 - **失敗後強制退出 (僅限 Unrestricted)：** * 上一次操作在「非受限模式」（AUSE 位元設為 '1'）下失敗。
     
     - 主機隨後發送了 **Exit Failure Mode** (SANACT = 001b) 指令，成功讓狀態機從 Unrestricted Failure 轉移至 Idle。
-        
+
+
+## Media Verification State
+
+
+## Post-Verification State
+
+
+
