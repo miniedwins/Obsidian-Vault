@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Operation Restrictions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sanitize State Machine"
+              "title": "Sanitize Operation Restrictions"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Operation Restrictions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Sanitize State Machine"
+              "title": "Outline of Sanitize Operation Restrictions"
             }
           },
           {
@@ -207,12 +207,13 @@
   },
   "active": "8954f62c5b2e076b",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Operation Restrictions.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitization Operation Scope.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
     "技術資料/NVMe/NVMe-Base/Deallocated.md",
@@ -248,7 +249,6 @@
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103951289.png",
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103642951.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
-    "技術資料/NVMe/NVMe-Base/attachments/host_controlled_thermal_management/thermal_management_termperature.png",
     "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
     "Canvas/吞葡萄新聞分析.canvas",
