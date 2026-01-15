@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/需要整理的資訊.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sanitize State Machine"
+              "title": "需要整理的資訊"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/需要整理的資訊.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Sanitize State Machine"
+              "title": "Outline of 需要整理的資訊"
             }
           },
           {
@@ -208,11 +208,12 @@
   "active": "8954f62c5b2e076b",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitization Operation Scope.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/需要整理的資訊.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Command.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Operation Restrictions.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Memory Region.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+    "技術資料/NVMe/NVMe-Base/Persistent Memory Region.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets",
@@ -250,7 +251,6 @@
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior/file-20260113103642951.png",
     "技術資料/NVMe/NVMe-Base/Controller Shutdown/Controller Shutdown.md",
     "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "暫存內容/aaa/assets/BMC",
     "暫存內容/aaa/assets",
