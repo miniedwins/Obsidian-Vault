@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Status Log Page.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sanitize Status Log Page"
+              "title": "Sanitize State Machine"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Status Log Page.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Sanitize Status Log Page"
+              "title": "Outline of Sanitize State Machine"
             }
           },
           {
@@ -207,8 +207,8 @@
   },
   "active": "8954f62c5b2e076b",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Status Log Page.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/需要整理的資訊.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Log Status.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Command.md",

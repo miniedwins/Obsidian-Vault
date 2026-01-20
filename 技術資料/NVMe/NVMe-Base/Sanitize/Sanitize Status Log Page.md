@@ -1,7 +1,11 @@
 
+If the NSID specified in the NSID field specifies an unallocated NSID, then the command shall be aborted with a status code of Invalid Namespace or Format.
+
+> 當指定 Unallocated NSID 取得 Sanitize Status Log Page，控制器會 Abort 該命令並且返回 **Invalid Namespace or Format  status code**。
+
 If the NSID field specifies a namespace as the sanitization target and an NVM subsystem sanitize operation is in progress, then the command shall be aborted with a status code of Sanitize In Progress.
 
->當指定的 NSID 正在執行 Sanitize，NVM 子系統會拒絕取得 Sanitize Log Page。
+>當指定的 NSID 正在執行 Sanitize，若是指定該 NSID ( Sanitization Target ) 取得 Sanitize Log Page，控制器會 Abort 該命令並且回傳 **Sanitize In Progress Status Code**。
 
 If the NSID field specifies a namespace as the sanitization target and the NVM subsystem is in the Restricted Failure state or the Unrestricted Failure state, then the command shall be aborted with a status code of Sanitize Failed.
 
