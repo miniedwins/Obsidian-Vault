@@ -37,17 +37,41 @@
 
 ### Transition Restricted Processing : Idle
 
-無論有沒有支援 **Sanitize Namespace Command**，執行完 Sanitize 命令回到 IDLE 狀態，控制器都會設定 [Global Data Erased](Global%20Data%20Erased.md) ( GDE =1)，這裡觀點必須要用 NVM 子系統來看所有 Namespaces。
+核心摘要：當 Sanitize 作業完成並由 Restricted Processing 轉移至 Idle 狀態時，Sanitize Log Page 的狀態更新取決於「清理的目標範圍 (Sanitization Target)」**。
 
-**Sanitization target is the NVM subsystem**
+#### **1. 情境 A：Target is NVM Subsystem**
 
-- 若是沒有支援 Sanitize Namespace Command ( 即使支援 Multi-Namespace ) 也就是全域不指定 NSID，控制器也會將所有的 NSIDs 資料全部清除。
+在此情境下，無論控制器是否支援 `Sanitize Namespace Command`，[Global Data Erased](Global%20Data%20Erased.md) (GDE)位元皆會被設定為 `1`。這表示從 NVM Subsystem 的全域視角來看，所有使用者資料皆已被清除。
 
-- 若是有支援 Sanitize Namespace Command，NVM 子系統底下有多少個 NSID，它們的資料都會一個一個被清除，因此 Global Data Erased 會被設定。
+- **若不支援 Sanitize Namespace Command：**
+    
+    - 控制器僅能執行全域清理。
+        
+    - **結果：** `GDE` 設為 `1`，且 Subsystem 的 `SANS` 回復為 `0h` (Idle)。
+        
+- **若支援 Sanitize Namespace Command：**
+    
+    - 雖然支援指定 Namespace 清理，但本次指令是針對「全域」執行。
+        
+    - **結果：**
+        
+        1. **全域旗標：** `GDE` 設為 `1`。
+            
+        2. **個別旗標：** 系統內**所有**存在的 Namespace，其  Namespace Data Erased (NDE) 皆會被聯動設定為 `1`（因為全域被清空，自然包含所有局部）。
+            
+        3. **狀態復歸：** 全域與所有 Namespace 的 `SANS` 欄位皆回復為 `0h` (Idle)。
 
-**Sanitization target is a namespace**
+#### **2. 情境 B：Target is a Namespace**
 
+在此情境下，僅針對指定的 Namespace 進行狀態更新，不會影響 GDE。
 
+- **結果：**
+    
+    1. 該特定 Namespace 的 `NDE` 設為 `1`。
+        
+    2. 該特定 Namespace 的 `SANS` 回復為 `0h` (Idle)。
+        
+    3. **注意：** 此時 `GDE` 維持不變（除非該動作同時滿足了 GDE 的定義，但通常單一清理不觸發全域旗標）。
 
 ## Media Verification State
 
