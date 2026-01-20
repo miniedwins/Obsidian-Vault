@@ -33,6 +33,28 @@
     - 主機隨後發送了 **Exit Failure Mode** (SANACT = 001b) 指令，成功讓狀態機從 Unrestricted Failure 轉移至 Idle。
 
 
+## Restricted Processing State
+
+### Transition Restricted Processing : Idle
+
+**Sanitization target is the NVM subsystem**
+
+- If the Sanitize Namespace command is not supported :
+
+	- (1) Set the Global Data Erased ( GDE ) bit to‘1’ in the Sanitize Status log page for the NVM subsystem; and
+	 
+	- (2) Set the Sanitize State ( SANS ) field to 0h ( i.e., Idle state ) in the Sanitize Status log page for the NVM subsystem
+	
+- If the Sanitize Namespace command is supported :
+
+>這邊有有沒有支援 Sanitize Namespace  command 都會設定 Global Data Erased ( GDE ) 該位元為 `1`
+>
+
+
+**Sanitization target is a namespace**
+
+
+
 ## Media Verification State
 
 
