@@ -82,6 +82,8 @@
 
 根據規範針對 **Target is a Subsystem or Namespace** 在 **Restricted Failure (受限失敗)** 狀態下的定義，最後真正「可以執行」並且不會被拒絕 ( Abort ) 的命令。其它不可執行的命令，例如 : 101b ( Exit Media Verification State )，則控制器需要回傳錯誤訊息 ( Sanitize Failed Status Code )。
 
+這些規範定義，主要是給主機「重新」再一次進行清理 ( Sanitize ) 或是直接退出 Unrestricted Failure State 回到 Idle 狀態的方法或是手段。
+
 - **Target is Subsystem**
 	- 001b ( Exit Failure Mode )
 	- 010b ( Start a Block Erase sanitize operation )
@@ -92,7 +94,7 @@
 	- 001b ( Exit Failure Mode )
 	- 100b ( Start a Crypto Erase sanitize operation )
 
-上述這些規範與執行命令，主要是給主機「重新再執行」Sanitzie 的方法，例如 : 再一次的進行 Start a Block Erase 直到執行成功，或是直接執行退出 ( Exit Failure Mode ) 回到 Idle 狀態，
+>備註 :  只有 Unrestricted Sanitize 發生錯誤進入到 Unrestricted Failure State 狀態下，才可以執行Exit Failure Mode 退出 Unrestricted Failure State。
 
 ## Media Verification State
 
