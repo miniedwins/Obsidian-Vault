@@ -37,19 +37,13 @@
 
 ### Transition Restricted Processing : Idle
 
+無論有沒有支援 **Sanitize Namespace Command**，執行完 Sanitize 命令回到 IDLE 狀態，控制器都會設定 [Global Data Erased](Global%20Data%20Erased.md) ( GDE =1)，這裡觀點必須要用 NVM 子系統來看所有 Namespaces。
+
 **Sanitization target is the NVM subsystem**
 
-- If the Sanitize Namespace command is not supported :
+- 若是沒有支援 Sanitize Namespace Command ( 即使支援 Multi-Namespace ) 也就是全域不指定 NSID，控制器也會將所有的 NSIDs 資料全部清除。
 
-	- (1) Set the Global Data Erased ( GDE ) bit to‘1’ in the Sanitize Status log page for the NVM subsystem; and
-	 
-	- (2) Set the Sanitize State ( SANS ) field to 0h ( i.e., Idle state ) in the Sanitize Status log page for the NVM subsystem
-	
-- If the Sanitize Namespace command is supported :
-
->這邊有有沒有支援 Sanitize Namespace  command 都會設定 Global Data Erased ( GDE ) 該位元為 `1`
->
-
+- 若是有支援 Sanitize Namespace Command，NVM 子系統底下有多少個 NSID，它們的資料都會一個一個被清除，因此 Global Data Erased 會被設定。
 
 **Sanitization target is a namespace**
 
