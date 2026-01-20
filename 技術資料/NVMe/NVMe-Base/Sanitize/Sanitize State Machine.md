@@ -73,11 +73,28 @@
         
     3. **注意：** 此時 `GDE` 維持不變（除非該動作同時滿足了 GDE 的定義，但通常單一清理不觸發全域旗標）。
 
-## Media Verification State
 
+## Restricted Failure State
 
-## Post-Verification State
 
 
 ## Unrestricted Failure State
 
+根據規範針對 **Target is a Subsystem or Namespace** 在 **Restricted Failure (受限失敗)** 狀態下的定義，最後真正「可以執行」並且不會被拒絕 ( Abort ) 的命令。
+
+- **Target is Subsystem**
+	- 001b ( Exit Failure Mode )
+	- 010b ( Start a Block Erase sanitize operation )
+	- 011b ( Start an Overwrite sanitize operation )
+	- 100b ( Start a Crypto Erase sanitize operation )
+
+- **Target is Namespace**
+	- 001b ( Exit Failure Mode )
+	- 100b ( Start a Crypto Erase sanitize operation )
+
+其它不可執行的命令，控制器並需要返回錯誤狀態 ( Sanitize Failed Status Code )。
+
+## Media Verification State
+
+
+## Post-Verification State
