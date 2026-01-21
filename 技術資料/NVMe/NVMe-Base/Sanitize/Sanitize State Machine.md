@@ -84,20 +84,14 @@
 
 這些是主機可以用來「重試」並試圖修復失敗狀態的手段：
 
-- **Target is Subsystem**
-    
-    - 010b ( Start a Block Erase sanitize operation )
-        
-    - 011b ( Start an Overwrite sanitize operation )
-        
+- **Target is Subsystem**    
+    - 010b ( Start a Block Erase sanitize operation )        
+    - 011b ( Start an Overwrite sanitize operation )        
     - 100b ( Start a Crypto Erase sanitize operation )
         
-- **Target is Namespace**
-    
-    - 010b ( Start a Block Erase sanitize operation )
-        
-    - 011b ( Start an Overwrite sanitize operation )
-        
+- **Target is Namespace**    
+    - 010b ( Start a Block Erase sanitize operation )        
+    - 011b ( Start an Overwrite sanitize operation )        
     - 100b ( Start a Crypto Erase sanitize operation )
         
 ### 被禁止的命令 (Aborted Commands)
@@ -106,30 +100,24 @@
 
 **1. Target is Subsystem** (全域清理失敗時)
 
-- 001b (Exit Failure Mode) : 
-		
+- 001b ( Exit Failure Mode ) : 		
     - Status Code : Sanitize Failed。
         
-- 101b (Exit Media Verification State) :
-           
+- 101b ( Exit Media Verification State ) :           
     - Status Code : Invalid Field in Command。
         
-- AUSE bit = '1' (Unrestricted Completion):
-            
+- AUSE bit = '1' ( Unrestricted Completion ):            
     - Status Code : Sanitize Failed。
         
 **2. Target is Namespace** (單一 Namespace 清理失敗時)
 
-- 001b (Exit Failure Mode):
-            
+- 001b ( Exit Failure Mode ):            
     - Status Code : Sanitize Namespace Failed。
         
-- 101b (Exit Media Verification State):
-           
+- 101b ( Exit Media Verification State ):           
     - Status Code : Invalid Field in Command。
         
-- AUSE bit = '1' (Unrestricted Completion):
-            
+- AUSE bit = '1' ( Unrestricted Completion ):            
     - Status Code : Sanitize Namespace Failed。
         
 > **備註 (Note) :** 相比 Unrestricted Failure State 最大的不同在於，**Restricted Failure State 不允許使用 `001b (Exit Failure Mode)`**。
@@ -156,5 +144,39 @@
 
 ## Media Verification State
 
+簡單回答：**驗證工作主要是由「主機 (Host)」來執行，且必須由主機「手動」下令退出。**
 
+以下是詳細的技術邏輯解析：
+
+### 1. 是由控制器驗證？還是主機端驗證？
+
+答案是：**控制器負責「開放權限」，主機負責「讀取檢查」。**
+
+- **控制器的角色 (開門者)：** 當控制器進入 **Media Verification State** 時，它內部的清理工作（Block Erase / Overwrite）其實已經結束了。控制器此時的任務是**「解除讀取鎖定」**，允許主機讀取 User Data 區域（這在 Sanitize Processing 階段是被禁止的）。
+    
+- **主機的角色 (檢查者)：** 這個狀態是專門留給主機 (Host Software / User) 的「檢查時間」。主機可以發送 Read 指令去抽查 LBA，確認讀回來的資料是否符合預期（例如全 00、全 FF，或特定的 Pattern）。
+    
+
+**為什麼不是控制器自己驗證就好？** 控制器在 `Restricted Processing` 階段結束前，其實已經做過底層的物理驗證（例如 Check Erase Status）。如果底層物理抹除失敗，它早就跳去 `Restricted Failure` 了。 會設定 `EMVS=1` 進入這個狀態，通常是為了符合某些資安規範（如軍規、政府規範），要求**外部稽核者（主機）** 必須親自確認資料已銷毀。
+
+---
+
+### 2. 驗證後需不需要手動執行 Exit Media Verification State ?
+
+答案是：**是，絕對需要手動執行。**
+
+一旦您在 Sanitize 指令中設定了 `EMVS = 1` (Enter Media Verification State)，控制器進入此狀態後就會**停在那裡等待**，不會自動跳轉。
+
+- **等待什麼？** 等待主機發送 **Exit Media Verification State (SANACT = 101b)** 的指令。
+    
+- **流程如下：**
+    
+    1. 主機讀取資料，確認清理乾淨。
+        
+    2. 主機發送 `Sanitize Command`，將 `SANACT` 設為 `101b`。
+        
+    3. 控制器收到指令，狀態機才會離開 `Media Verification State`，轉移到 `Post-Verification Deallocation` 或 `Idle`。
+        
+
+**如果您不發送這個指令會怎樣？** 控制器會一直卡在 **Media Verification State**。 在此狀態下，雖然您可以讀取資料，但您無法對 Namespace 進行一般的寫入操作（Write），也無法開始新的 Sanitize（除非是特定允許的重試指令）。硬碟在邏輯上仍處於「Sanitize 尚未完成」的階段。
 ## Post-Verification State
