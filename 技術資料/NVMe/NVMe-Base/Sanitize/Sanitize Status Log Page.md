@@ -1,4 +1,6 @@
 
+
+
 每一個 NSID 都會擁有自己的 Sanitize Status log page。
 
 If the NSID specified in the NSID field specifies an unallocated NSID, then the command shall be aborted with a status code of Invalid Namespace or Format.
