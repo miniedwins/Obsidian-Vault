@@ -102,22 +102,37 @@
         
 ### 被禁止的命令 (Aborted Commands)
 
-以下指令在此狀態下會被強制拒絕，因為受限模式不允許半途而廢或降低標準：
+在此狀態下，控制器會拒絕以下指令。請注意 **Target is Subsystem** 與 **Target is Namespace** 回傳的 Status Code 差異：
 
-1. **Exit Failure Mode (001b):** 禁止放棄。
-    
-    - 回傳狀態碼: **Sanitize Failed** (針對 Subsystem) 或 **Sanitize Namespace Failed** (針對 Namespace)。
-        
-2. **Exit Media Verification State (101b):** 邏輯無效。
-    
-    - 回傳狀態碼: **Invalid Field in Command**。
-        
-3. **AUSE bit set to '1' (Unrestricted Mode):** 禁止改用寬容模式。
-    
-    - 回傳狀態碼: **Sanitize Failed** 或 **Sanitize Namespace Failed**。
-        
+**1. Target is Subsystem** (全域清理失敗時)
 
-> **備註 (Note):** 與 Unrestricted Failure State 最大的不同在於，**Restricted Failure State 不允許使用 `001b (Exit Failure Mode)`**。
+- 001b (Exit Failure Mode) : 
+		
+    - Status Code : Sanitize Failed。
+        
+- 101b (Exit Media Verification State) :
+           
+    - Status Code : Invalid Field in Command。
+        
+- AUSE bit = '1' (Unrestricted Completion):
+            
+    - Status Code : Sanitize Failed。
+        
+**2. Target is Namespace** (單一 Namespace 清理失敗時)
+
+- 001b (Exit Failure Mode):
+            
+    - Status Code : Sanitize Namespace Failed。
+        
+- 101b (Exit Media Verification State):
+           
+    - Status Code : Invalid Field in Command。
+        
+- AUSE bit = '1' (Unrestricted Completion):
+            
+    - Status Code : Sanitize Namespace Failed。
+        
+> **備註 (Note) :** 相比 Unrestricted Failure State 最大的不同在於，**Restricted Failure State 不允許使用 `001b (Exit Failure Mode)`**。
 > 
 > 唯一的恢復方式 (Failure Recovery) 是發送一個新的 Sanitize Command，並且必須將 **AUSE bit 設定為 '0'** (維持受限模式)，直到資料真正被銷毀成功才能回到 Idle 狀態。
 
