@@ -76,11 +76,54 @@
 
 ## Restricted Failure State
 
+控制器在此狀態下**嚴格禁止**執行任何「退出失敗 (Exit Failure Mode)」的指令。主機**唯一的出路**，就是發送一個合法的 Sanitize 指令來「重試」，直到清理作業成功為止。
 
+此外，重試時必須嚴格遵守 **AUSE = 0** (Restricted Completion Mode) 的設定。
+
+### 可以執行的命令 (Allowed Commands)
+
+這些是主機可以用來「重試」並試圖修復失敗狀態的手段：
+
+- **Target is Subsystem**
+    
+    - 010b ( Start a Block Erase sanitize operation )
+        
+    - 011b ( Start an Overwrite sanitize operation )
+        
+    - 100b ( Start a Crypto Erase sanitize operation )
+        
+- **Target is Namespace**
+    
+    - 010b ( Start a Block Erase sanitize operation )
+        
+    - 011b ( Start an Overwrite sanitize operation )
+        
+    - 100b ( Start a Crypto Erase sanitize operation )
+        
+### 被禁止的命令 (Aborted Commands)
+
+以下指令在此狀態下會被強制拒絕，因為受限模式不允許半途而廢或降低標準：
+
+1. **Exit Failure Mode (001b):** 禁止放棄。
+    
+    - 回傳狀態碼: **Sanitize Failed** (針對 Subsystem) 或 **Sanitize Namespace Failed** (針對 Namespace)。
+        
+2. **Exit Media Verification State (101b):** 邏輯無效。
+    
+    - 回傳狀態碼: **Invalid Field in Command**。
+        
+3. **AUSE bit set to '1' (Unrestricted Mode):** 禁止改用寬容模式。
+    
+    - 回傳狀態碼: **Sanitize Failed** 或 **Sanitize Namespace Failed**。
+        
+
+> **備註 (Note):** 與 Unrestricted Failure State 最大的不同在於，**Restricted Failure State 不允許使用 `001b (Exit Failure Mode)`**。
+> 
+> 唯一的恢復方式 (Failure Recovery) 是發送一個新的 Sanitize Command，並且必須將 **AUSE bit 設定為 '0'** (維持受限模式)，直到資料真正被銷毀成功才能回到 Idle 狀態。
 
 ## Unrestricted Failure State
 
-根據規範針對 **Target is a Subsystem or Namespace** 在 **Restricted Failure (受限失敗)** 狀態下的定義，最後真正「可以執行」並且不會被拒絕 ( Abort ) 的命令。其它不可執行的命令，例如 : 101b ( Exit Media Verification State )，則控制器需要回傳錯誤訊息 ( Sanitize Failed Status Code )。
+根據規範針對 **Target is a Subsystem or Namespace** 在 **Restricted Failure (受限失敗)** 狀態下的定義，最後真正「可以執行」並且不會被拒絕 ( Abort ) 的命令。其它不可執行的命令，例如 : 101b ( Exit Media Verification State )，則控制器需要回傳狀態碼 ( Sanitize Failed Status Code )。
 
 這些規範定義，主要是給主機「重新」再一次進行清理 ( Sanitize ) 或是直接退出 Unrestricted Failure State 回到 Idle 狀態的方法或是手段。
 
