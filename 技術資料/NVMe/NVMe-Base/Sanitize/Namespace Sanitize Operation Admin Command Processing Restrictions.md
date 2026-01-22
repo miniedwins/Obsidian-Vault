@@ -1,6 +1,6 @@
 
 這裡分為兩種限制，一個是針對所有 Controllers，另外一個是針對 Controller 有連結 Namespaces
-規範當執行 Sanitize Operation，需要拒絕 Admin 命令以避免影響 Namespace 屬性或功能。
+當 Sanitize Operation 正在執行時，需要 Abort Admin 命令以避免影響 Namespace 屬性或功能。
 
 保持一個基本原則 : 
 - (1) 如果命令中 `NSID` 指定為該正在清理的 Namespace ID。
