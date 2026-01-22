@@ -14,11 +14,11 @@
 1. 這個機制會破壞了物理抹除的原始痕跡（覆蓋了案發現場），導致無法進行數位鑑識。
 2. 每一次的執行都會複寫資料到 NAND 所有區域，相對 NAND 使用壽命會所減少。
 
-## 使用情境
+## 可能使用情境
 
 ### 情境 A ( EMVS=0 )
 
-**保留讀取路徑**：控制器寫入合法的 00 與 ECC，主機可順利讀取不報錯。
+控制器寫入合法的 0x00 資料 與 ECC，主機可順利讀取不報錯。
 
 - Identify Controller ( SANICAP )
 	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
@@ -30,8 +30,9 @@
 > 無法證明是否真的執行過 Block Erase ( 證據被覆蓋 )。
 
 ### 情境 B ( EMVS=1 )
-    
-**解鎖讀取權限**：允許主機透過 LBA 讀取來觀察抹除後的物理狀態。
+
+設定 **NODMMAS=1**，會不會因為 **EMVS=1** 而導致控制器不會寫入合法的 0x00 資料與 ECC？
+這樣的設定可能會有互相衝突的狀況發生
 
 - Identify Controller ( SANICAP )
 	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
@@ -40,4 +41,6 @@
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **1**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
 
-> 雖然 ECC 是錯的，但驗證模式允許讀取原始資料 ( Raw 0xFF )，讓主機親眼確認物理抹除的結果。
+>備註：
+>- 情境 A : SPEC 有明確定義
+>- 情境 B : 尚未確定
