@@ -31,8 +31,9 @@
 
 ### 情境 B ( EMVS=1 )
 
-設定 **NODMMAS=1**，會不會因為 **EMVS=1** 而導致控制器不會寫入合法的 0x00 資料與 ECC？
-這樣的設定可能會有互相衝突的狀況發生
+驗證模式允許讀取原始資料 ( Raw Data 0xFF )，讓主機確認物理抹除的結果。
+
+> 備註：**NODMMAS** 被設定為 **1**，因此這個情境暫時無法確認是否正確。
 
 - Identify Controller ( SANICAP )
 	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
@@ -41,6 +42,7 @@
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **1**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
 
->備註：
->- 情境 A : SPEC 有明確定義
->- 情境 B : 尚未確定
+>附錄 A.3 : 有提到設定 EMVS=1，控制器不會重新寫入資料。
+>
+>**A.3 Integrity checks and No-Deallocate After Sanitize**
+>Because the command that caused entry to the Media Verification state specified the Enter Media Verification State (EMVS) bit set to ‘1’, the controller does not perform the additional media modification described in this section.
