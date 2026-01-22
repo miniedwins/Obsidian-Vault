@@ -18,7 +18,7 @@
 
 ### 情境 A ( EMVS=0 )
 
->控制器寫入合法的 00 與 ECC，主機可順利讀取不報錯，但無法證明是否真的執行過 Block Erase ( 證據被覆蓋 )。
+**保留讀取路徑**：控制器寫入合法的 00 與 ECC，主機可順利讀取不報錯。
 
 - Identify Controller ( SANICAP )
 	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
@@ -27,9 +27,11 @@
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **0**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
 
-### 情境 B ( EMVS=1 )
+> 無法證明是否真的執行過 Block Erase ( 證據被覆蓋 )。
 
->保留物理抹除後的原始狀態 (Raw)。雖然 ECC 是錯的，但驗證模式允許讀取原始資料 ( Raw 0xFF )，讓主機親眼確認物理抹除的結果。
+### 情境 B ( EMVS=1 )
+    
+**解鎖讀取權限**：允許主機透過 LBA 讀取來觀察抹除後的物理狀態。
 
 - Identify Controller ( SANICAP )
 	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
@@ -38,3 +40,4 @@
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **1**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
 
+> 雖然 ECC 是錯的，但驗證模式允許讀取原始資料 ( Raw 0xFF )，讓主機親眼確認物理抹除的結果。
