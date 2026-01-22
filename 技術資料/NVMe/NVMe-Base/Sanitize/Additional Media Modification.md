@@ -16,25 +16,25 @@
 
 ## 使用情境
 
-分為兩個使用情境，主要參數影響的是 **EMVS=0/1** ，表示是否要進入Enter Media Verification State
-這個參數會影響主機對於資料驗證的結果與行為。
+### 情境 A ( EMVS=0 )
+
+>控制器寫入合法的 00 與 ECC，主機可順利讀取不報錯，但無法證明是否真的執行過 Block Erase ( 證據被覆蓋 )。
 
 - Identify Controller ( SANICAP )
 	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
 
-### 情境 A ( EMVS=0 )
 - Sanitize – Command Dword 10  :
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **0**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
 
->  - 寫入合法的 00 與 ECC。
->  - 主機可順利讀取不報錯，但無法證明是否真的執行過 Block Erase ( 證據被覆蓋 )。
-
 ### 情境 B ( EMVS=1 )
+
+>保留物理抹除後的原始狀態 (Raw)。雖然 ECC 是錯的，但驗證模式允許讀取原始資料 ( Raw 0xFF )，讓主機親眼確認物理抹除的結果。
+
+- Identify Controller ( SANICAP )
+	- **NODMMAS** ( No-Deallocate Modifies Media After Sanitize ) 欄位必須是 **10b**。
+
 - Sanitize – Command Dword 10  :
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **1**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
-
->- 保留物理抹除後的原始狀態 (Raw)。
->- 雖然 ECC 是錯的，但驗證模式允許讀取原始資料 ( Raw 0xFF )，讓主機親眼確認物理抹除的結果。
 
