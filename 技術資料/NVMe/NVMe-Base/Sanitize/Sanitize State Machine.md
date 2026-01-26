@@ -1,7 +1,40 @@
+## 概要說明
 
+Sanitize 的運作並非單純的線性流程，而是一個具備「容錯選擇」與「持久性保證」的狀態循環。整個流程由三個核心部分組成：
 
+1. **清除路徑 (Processing Path) :** 選擇哪一個路徑 **Restricted** 或是 **Unrestricted** 進行物理清除。
+2. **驗證階段 (Verification)：** (可選) 在物理清除後，並且停留在這個階段，讓主機檢查結果。
+3. **收尾階段 (Deallocation)：** 清除邏輯映射 ( Deallocate Logic Block )，確保資料無法被再次存取。
 
 ![](assets/Sanitize%20State%20Machine/file-20260114103744498.png)
+
+## 階段運作過程說明
+
+### IDLE State
+定義：等待主機發送 Sanitize Command。
+進入條件：Sanitize 未執行，或上一次 Sanitize 已完全結束（已處理成功或失敗後的最終狀態）。
+
+### Sanitize Process
+這是真正對 NVM 媒體執行物理清除（Block Erase / Crypto Erase / Overwrite）的執行階段。根據主機對 **「完成承諾」** 的要求不同，分為兩種處理路徑 Restricted Processing 以及 Unrestricted Processing。
+
+決定進入哪一條路徑，取決於 Sanitize 命令中的 **`AUSE` (Allow Unrestricted Sanitize Exit)** 設定。這代表了主機對這次清除任務的態度：
+
+#### Restricted Processing
+定義：安全性的清除，**必須執行到成功為止**，不接受中途放棄。
+特性：若途中斷電或重置，控制器重啟後**必須自動恢復**並繼續執行，直到成功才能離開此狀態。
+進入條件：AUSE = 0
+
+#### Unrestricted Processing
+定義：安全性的清除，若發生意外或失敗，**允許放棄並退出**。
+特性：若途中斷電或重置，Sanitize 流程視為 **已取消 (Canceled)**，控制器直接回到 Idle 狀態。 
+進入條件：AUSE = 1 
+
+### Media Verification State
+定義：這是 Sanitize 流程中唯一允許主機在資料銷毀後進行鑑識。
+特性：
+
+
+### Post Verification Deallocation
 
 ## IDLE State
 
