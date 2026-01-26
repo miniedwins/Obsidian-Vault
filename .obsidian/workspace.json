@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Response Mode.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Additional Media Modification.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "No-Deallocate Response Mode"
+              "title": "Additional Media Modification"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 317.5
+    "width": 349.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Response Mode.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Additional Media Modification.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of No-Deallocate Response Mode"
+              "title": "Outline of Additional Media Modification"
             }
           },
           {
@@ -207,34 +207,34 @@
   },
   "active": "c50971f410fbfe77",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Inhibited.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Allow Unrestricted Sanitize Exit.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Additional Media Modification.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Media Verification Canceled.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Failure Handling.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Sanitize Operation Admin Command Processing Restrictions.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate After Sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Response Mode.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitization Operation Scope.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Asynchronous Event.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Failure Handling.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/需要整理的資訊.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Status Log Page.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Log Status.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitization Operation Scope.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Inhibited.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Response Mode.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Reset.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Command.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Capabilities.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Additional Media Modification.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate.md",
     "Enter Media Verification State.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Command.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Enter Media Verification State.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/需要整理的資訊.md",
     "Canvas/Untitled.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "Canvas/eventbus_architecture.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Capabilities.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/NDI.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/NODMMAS.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Media Verification Canceled.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets",
     "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior",
