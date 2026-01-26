@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Global Data Erased"
+              "title": "Sanitize State Machine"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
+                "file": "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Global Data Erased"
+              "title": "Outline of Sanitize State Machine"
             }
           },
           {
@@ -207,6 +207,11 @@
   },
   "active": "c50971f410fbfe77",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Sanitize Operation Admin Command Processing Restrictions.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Data Erased.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Reset.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/NODRM.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Failure Handling.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Additional Media Modification.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate.md",
@@ -221,17 +226,12 @@
     "Canvas/eventbus_architecture.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Log Status.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Reset.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/NODRM.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitization Operation Scope.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Capabilities.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Sanitize Operation Admin Command Processing Restrictions.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/NDI.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/NODMMAS.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Media Verification Canceled.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Asynchronous Event.md",
     "技術資料/NVMe/NVMe-Base/Persistent Memory Region.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine",
