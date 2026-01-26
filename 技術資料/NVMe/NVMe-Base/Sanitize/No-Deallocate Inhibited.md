@@ -8,11 +8,3 @@
 
 **參數定義：**
 - 定義於  Identify Controller ( Sanitize Capabilities )。
-
-**備註說明：**
-- **NDI** 設定會根據 `NADS=1` 以及 `NODRM=0/1` 相關設定有連動關係，產生不一樣的結果。
-- 詳細說明需要參考 **NODRM**。
-
-> **參考：** 
-> **NDAS：**[No-Deallocate After Sanitize](No-Deallocate%20After%20Sanitize.md)
-> **NODRM：**[No-Deallocate Response Mode](No-Deallocate%20Response%20Mode.md)

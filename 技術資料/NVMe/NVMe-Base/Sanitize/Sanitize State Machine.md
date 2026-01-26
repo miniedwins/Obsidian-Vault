@@ -3,7 +3,6 @@
 
 ![](assets/Sanitize%20State%20Machine/file-20260114103744498.png)
 
-
 ## IDLE State
 
 **Exit Failure Mode 是一個「安全」的指令**：
