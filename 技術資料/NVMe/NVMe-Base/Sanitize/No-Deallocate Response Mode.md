@@ -1,42 +1,19 @@
-當我們要求 SSD 在 Sanitize 後 **保留 L2P 映射 (NDAS=1)**，若是 SSD 的 Identify 設定 **(NDI=1)** 時，就會發生衝突。
+當我們要求 SSD 在 Sanitize 後 **保留 L2P 映射 (NDAS=1)**，若是 SSD 的 Identify 設定 **(NDI=1)** ，表示禁止 No-Deallocate 就會發生衝突。
 
-為了避免 SSD 不正常的命令造成的錯誤，NVMe 設計了一個參數 **NODRM** 來決定這時候該如何處理。
+為了避免 SSD 因為發生命令衝突造成的錯誤，設計了一個參數 **NODRM** 來決定這時候該如何處理。
 
-#### **1. 三個關鍵角色**
+## NODRM 模式說明
 
-- **NDAS (我要求的)**：主機下指令說「Sanitize 後請保留映射」。
-    
-- **NDI (No-Deallocate Inhibited)**：SSD 舉手投降說「抱歉，我只要 Sanitize 就一定會清除映射」。
-    
-- **NODRM (No-Deallocate Response Mode)**：預先設定好的處理原則，告訴 SSD 當上述兩者衝突時該聽誰的。
-    
+這時候控制器會去查看 **NODRM** 的設定值：
 
-#### **2. 衝突時的兩種結局 (當 NDAS=1 且 NDI=1)**
-
-這時候 SSD 會去查看 **NODRM** 的設定值：
-
-- **NODRM = 0 (Error Mode)**
-    
-    - **指令：** 「既然你做不到保留映射，那就**別做了**。」
-        
+- **NODRM = 0 (Error Mode)**    
+    - **指令：** 「既然你做不到保留映射，那就**別做了**。」        
     - **結果：** SSD 直接拒絕指令，回傳錯誤 (`Invalid Field in Command`)。什麼都沒清。
         
 - **NODRM = 1 ( Warning Mode)**
-    
-    - **指令：** 「雖然你做不到保留映射，但**還是幫我清資料吧**，映射被刪掉就算了。」
-        
-    - **結果：** SSD 執行 Sanitize 並強制清除映射。
-        
+    - **指令：** 「雖然你做不到保留映射，但**還是幫我清資料吧**，映射被刪掉就算了。」        
+    - **結果：** SSD 執行 Sanitize 並強制清除映射。        
     - **紀錄：** 任務成功，但在 Log 中標記「發生意外的 Deallocate (`Sanitized Unexpected Deallocate`)」告知主機。
-
-
-
-
-
-
-
-
-
 
 
 簡單來說：
