@@ -30,6 +30,12 @@ Sanitize 的運作並非單純的線性流程，而是一個具備「容錯選�
 特性：若途中斷電或重置，Sanitize 流程視為 **已取消 (Canceled)**，控制器直接回到 Idle 狀態。 
 進入條件：AUSE = 1 
 
+### Restricted Failure State
+
+
+### Unrestricted Failure State
+
+
 ### Media Verification State
 定義：這是 Sanitize 流程中唯一允許主機在資料銷毀後進行鑑識。
 特性：允許主機讀取 User Data 區域，驗證資料是否正確被清除。
@@ -40,11 +46,11 @@ Sanitize 的運作並非單純的線性流程，而是一個具備「容錯選�
 這個狀態是專門留給主機 ( Host Software / User ) 的「檢查時間」。主機可以發送 Read 指令去抽查 LBA，確認讀回來的資料是否符合預期（例如全 00、全 FF，或特定的 Pattern）。
 
 ### Post Verification Deallocation
-定義：控制器將所有使用者資料 (User Data) 區域執行 Deallocation。
+定義：控制器將所有使用者資料區域執行 Deallocation。
 特性：若途中斷電或重置後不會回到 Idle，而是會繼續執行 Deallocation 動作，直到全部完成。
 進入條件：
 - 必須經由 **Media Verification State** 完成後進入。
-- 主機發送指令退出驗證後進入。
+- 主機發送指令 **Exit Failure Mode** 退出驗證後進入。
 
 ## IDLE State
 
