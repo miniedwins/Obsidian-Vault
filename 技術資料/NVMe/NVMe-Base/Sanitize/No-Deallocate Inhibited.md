@@ -1,4 +1,5 @@
 ## 概要說明
+
 **NDI ( No-Deallocate Inhibited )** 
 表示當執行 Sanitize 命令完成後，控制器是否 **禁止或是啟用** No-Deallocate。
 

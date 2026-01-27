@@ -1,4 +1,5 @@
 ## 概要說明
+
 **NADS ( No-Deallocate After Sanitize )**
 主機發出 **Sanitize (NADS=1)** 命令完成後，要求控制器不要進行 **Deallocate Logic Blocks**。
 
