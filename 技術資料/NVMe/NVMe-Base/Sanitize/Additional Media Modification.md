@@ -43,7 +43,8 @@
 	- **EMVS** ( Enter Media Verification State ) bit 必須是 **1**。
 	- **NDAS** ( No-Deallocate After Sanitize ) bit 必須設為 **1**。
 
->附錄 A.3 : 有提到設定 EMVS=1，控制器不會重新寫入資料。
->
+
+⚠️ *附錄 A.3 : 有提到設定 EMVS=1，控制器不會重新寫入資料，這件事情不確定可行。*
+
 >**A.3 Integrity checks and No-Deallocate After Sanitize**
 >Because the command that caused entry to the Media Verification state specified the Enter Media Verification State (EMVS) bit set to ‘1’, the controller does not perform the additional media modification described in this section.
