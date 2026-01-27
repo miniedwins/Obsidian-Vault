@@ -31,10 +31,22 @@ Sanitize 的運作並非單純的線性流程，而是一個具備「容錯選�
 進入條件：AUSE = 1 
 
 ### Restricted Failure State
+#### 定義
+當 Sanitize 操作在 AUSE = 0 下執行，卻因錯誤（如硬體故障、電源中斷後無法恢復等）導致無法完成時，控制器所進入的保護狀態。
 
+#### 特性
+為了確保資料安全，此狀態下控制器通常會**拒絕**大部分的 NVM 指令（除了取得 Log 或重新發送 Sanitize 指令外），防止未清除乾淨的資料被存取。
+
+無法透過簡單的 Reset 離開。必須重新發送一個合法的 Sanitize 指令（且 AUSE 通常須仍設為 0）並成功執行，才能解除此狀態。
+
+#### 進入條件
+- 從 Restricted Processing 進入：物理清除過程中發生失敗。
+- 從 Post-Verification Deallocation 進入：Deallocation 階段發生失敗。
 
 ### Unrestricted Failure State
-
+定義：
+特性：
+進入條件： 
 
 ### Media Verification State
 定義：這是 Sanitize 流程中唯一允許主機在資料銷毀後進行鑑識。
