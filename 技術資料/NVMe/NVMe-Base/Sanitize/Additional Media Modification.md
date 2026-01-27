@@ -1,7 +1,8 @@
 ## 概要說明
+
 當 Sanitize ( 例如 :  Block Erase ) 完成後，控制器自動將被抹除的區域重新寫入合法的資料樣式（如全 0x00 加上正確的 ECC）。
 
-為了讓主機在設定 **No-Deallocate ( 保留映射 )** 時，讀取該區域不會因為 ECC Error 而報錯，能順利讀到資料。
+為了讓主機在設定 **No-Deallocate ( 保留映射 )** 時，在該區域 **Media Verification State** 讀取使用者資料，不會因為 ECC Error 而回報主機錯誤訊息 **( UNC )** ，才能夠順利讀到資料。
 
 ## 為什麼需要 Additional Media Modification
 

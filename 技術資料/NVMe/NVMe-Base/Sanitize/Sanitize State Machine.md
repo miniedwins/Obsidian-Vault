@@ -5,62 +5,102 @@ Sanitize 的運作並非單純的線性流程，而是一個具備「容錯選�
 1. **清除路徑 (Processing Path) :** 選擇哪一個路徑 **Restricted** 或是 **Unrestricted** 進行物理清除。
 2. **驗證階段 (Verification)：** (可選) 在物理清除後，並且停留在這個階段，讓主機檢查結果。
 3. **收尾階段 (Deallocation)：** 清除邏輯映射 ( Deallocate Logic Block )，確保資料無法被再次存取。
-4. **結束階段 (IDLE)：** 整個流程清理完成後 ( 已成功或是失敗 )，最終需要回到 **IDLE** 階段。
+4. **結束階段 (IDLE)：** 整個流程清理完成後 ( 成功或是失敗退出 )，最終需要回到 **IDLE** 階段。
 
 ![](assets/Sanitize%20State%20Machine/file-20260114103744498.png)
 
 ## 階段運作過程說明
 
 ### IDLE State
-定義：等待主機發送 Sanitize Command。
-進入條件：Sanitize 未執行，或上一次 Sanitize 已完全結束（已處理成功或失敗後的最終狀態）。
+
+#### 定義
+等待主機發送 Sanitize Command。
+
+#### 進入條件
+Sanitize 未執行，或上一次 Sanitize 已完全結束（已處理成功或失敗後的最終狀態）。
 
 ### Sanitize Process
+
 這是真正對 NVM 媒體執行物理清除（Block Erase / Crypto Erase / Overwrite）的執行階段。根據主機對 **「完成」** 的要求不同，分為兩種處理路徑 Restricted Processing 以及 Unrestricted Processing。
 
 決定進入哪一條路徑，取決於 Sanitize 命令中的 **`AUSE` (Allow Unrestricted Sanitize Exit)** 設定。這代表了主機對這次清除任務的態度，如下所述：
 
 #### Restricted Processing
-定義：安全性的清除，**必須執行到成功為止**，不接受中途放棄。
-特性：若途中斷電或重置，控制器重啟後**必須自動恢復**並繼續執行，直到成功才能離開此狀態。
-進入條件：AUSE = 0
 
-#### Unrestricted Processing
-定義：安全性的清除，若發生意外或失敗，**允許放棄並退出**。
-特性：若途中斷電或重置，Sanitize 流程視為 **已取消 (Canceled)**，控制器直接回到 Idle 狀態。 
-進入條件：AUSE = 1 
-
-### Restricted Failure State
 #### 定義
-當 Sanitize 操作在 AUSE = 0 下執行，卻因錯誤（如硬體故障、電源中斷後無法恢復等）導致無法完成時，控制器所進入的保護狀態。
+安全性的清除，**必須執行到成功為止**，不接受中途放棄。
 
 #### 特性
-為了確保資料安全，此狀態下控制器通常會**拒絕**大部分的 NVM 指令（除了取得 Log 或重新發送 Sanitize 指令外），防止未清除乾淨的資料被存取。
+若途中斷電或重置，控制器重啟後**必須自動恢復**並繼續執行，直到成功才能離開此狀態。
 
-無法透過簡單的 Reset 離開。必須重新發送一個合法的 Sanitize 指令（且 AUSE 通常須仍設為 0）並成功執行，才能解除此狀態。
+#### 進入條件
+SPEC 要求設定 AUSE = 0，表示進入 Restricted Processing。
+
+#### Unrestricted Processing
+
+#### 定義
+安全性的清除，若發生意外或失敗，**允許放棄並退出**。
+
+#### 特性
+若途中斷電或重置，Sanitize 流程視為 **已取消 (Canceled)**，控制器直接回到 Idle 狀態。 
+
+#### 進入條件
+SPEC 要求設定 AUSE = 1，表示進入 Unrestricted Processing。
+
+### Restricted Failure State
+
+#### 定義
+當 Sanitize 操作在 **AUSE = 0** 下執行，卻因錯誤（如硬體故障、電源中斷後無法恢復等）導致無法完成時，控制器所進入的保護狀態。
+
+#### 特性
+- 為了確保資料安全，此狀態下控制器通常會**拒絕**大部分的 NVM 指令（除了取得 Log 或重新發送 Sanitize 指令外），防止未清除乾淨的資料被存取。
+
+- 無法透過簡單的 Reset 離開。必須重新發送一個合法的 Sanitize 指令（且 AUSE 通常須仍設為 0）並成功執行，才能解除此狀態。
 
 #### 進入條件
 - 從 Restricted Processing 進入：物理清除過程中發生失敗。
 - 從 Post-Verification Deallocation 進入：Deallocation 階段發生失敗。
 
 ### Unrestricted Failure State
-定義：
-特性：
-進入條件： 
+
+#### 定義
+當 Sanitize 操作在 **AUSE = 1** 下執行，卻因錯誤導致無法完成時，控制器所進入的狀態。
+
+#### 特性
+- 雖然 Sanitize 失敗，主機可以發送 Sanitize 命令 **Exit Failure Mode** 退出狀態。
+- 主機可以重新發送 Sanitize 命令，再一次嘗試執行物理清除動作。
+
+#### 進入條件
+- 從 Restricted Processing 進入：物理清除過程中發生失敗。
+- 從 Post-Verification Deallocation 進入：Deallocation 階段發生失敗。
 
 ### Media Verification State
-定義：這是 Sanitize 流程中唯一允許主機在資料銷毀後進行鑑識。
-特性：允許主機讀取 User Data 區域，驗證資料是否正確被清除。
-進入條件：EMVS = 1
 
-當控制器進入 **Media Verification State** 時，它內部的物理清理工作已經結束了。控制器此時的任務是「解除讀取鎖定」，允許主機讀取 User Data 區域（這在 Sanitize Processing 階段是被禁止的）。
+#### 定義
+這是 Sanitize 流程中唯一允許主機在資料銷毀後進行鑑識。
 
-這個狀態是專門留給主機 ( Host Software / User ) 的「檢查時間」。主機可以發送 Read 指令去抽查 LBA，確認讀回來的資料是否符合預期（例如全 00、全 FF，或特定的 Pattern）。
+當控制器進入 **Media Verification State** 時，它內部的物理清理工作已經結束了。控制器此時的任務，允許主機讀取使用者資料區域（這在 Sanitize Processing 階段是被禁止的）。
+
+這裡說的**允許主機讀取使用者資料區域**，是指主機透過 NVM Read 命令讀取 LBA，控制器在這個階段 不會拋出 **Uncorrectable Error** 錯誤。
+
+##### 為什麼不會拋出錯誤？
+需要參考 : [Additional Media Modification](Additional%20Media%20Modification.md)
+
+#### 特性
+專門留給主機發送 Read 指令去驗證資料，確認從真實物理 LBA 讀回來的資料，是否符合預期（例如全 00、全 FF，或特定的 Pattern）。
+
+#### 進入條件
+主機執行 Sanitize 命令需要設定參數 EMVS = 1，才可以在完物理清理工作完成後進入該狀態。
 
 ### Post Verification Deallocation
-定義：控制器將所有使用者資料區域執行 Deallocation。
-特性：若途中斷電或重置後不會回到 Idle，而是會繼續執行 Deallocation 動作，直到全部完成。
-進入條件：
+
+#### 定義
+控制器將所有使用者資料區域執行 Deallocation。
+
+#### 特性
+若途中斷電或重置後不會回到 Idle，而是會繼續執行 Deallocation 動作，直到全部完成。
+
+#### 進入條件
 - 必須經由 **Media Verification State** 完成後進入。
 - 主機發送指令 **Exit Failure Mode** 退出驗證後進入。
 
