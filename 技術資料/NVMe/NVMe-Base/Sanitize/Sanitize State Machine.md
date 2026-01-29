@@ -81,10 +81,7 @@ SPEC 要求設定 AUSE = 1，表示進入 Unrestricted Processing。
 
 當控制器進入 **Media Verification State** 時，它內部的物理清理工作已經結束了。控制器此時的任務，允許主機讀取使用者資料區域（這在 Sanitize Processing 階段是被禁止的）。
 
-這裡說的**允許主機讀取使用者資料區域**，是指主機透過 NVM Read 命令讀取 LBA，控制器在這個階段 不會拋出 **Uncorrectable Error** 錯誤。
-
-##### 為什麼不會拋出錯誤？
-需要參考 : [Additional Media Modification](Additional%20Media%20Modification.md)
+當主機透過 NVM Read 命令讀取 LBA，控制器在這個階段不會拋出 **Uncorrectable Error** 錯誤。 為什麼不會拋出錯誤？可以參考 : [Additional Media Modification](Additional%20Media%20Modification.md)
 
 #### 特性
 專門留給主機發送 Read 指令去驗證資料，確認從真實物理 LBA 讀回來的資料，是否符合預期（例如全 00、全 FF，或特定的 Pattern）。
