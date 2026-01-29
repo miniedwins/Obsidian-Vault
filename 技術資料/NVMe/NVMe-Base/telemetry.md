@@ -1,13 +1,17 @@
 ## 概要說明
-Telemetry log 主要讓開發商收集內部資料去改善產品功能與穩定性。Telemetry 資料的收集方式可以透過兩種方法取得 initiated by the host or by the controller，資料會存放在 `Telemetry Host-Initiated` and `Telemetry Controller-Initiated` log page，因此我們可以透過 `get-log` 命令方式取得 telemetry 資料。由於要收集資料的方法與內容是由開發商所指定，所以無法得知資料內容的格式。
+Telemetry log 主要讓開發商收集內部資料去改善產品功能與穩定性。Telemetry 資料的收集方式可以透過兩種方法取得 Initiated by the host or by the controller，資料會存放在 `Telemetry Host-Initiated` and `Telemetry Controller-Initiated` log page。
 
-Telemetry data 定義兩個資料結構，`Host-Initiated` 以及 `Controller-Initiated` 彼此之間相互獨立，描述不同 log data 資訊，所以分開是很合理的。資料結構前 512 Bytes 代表 Header 資訊內容 (可由 get-log page 命令取得)，而之後都是表示 `data log`，這些都是由 Data Blocks (ex : Telemetry Host-Initiated Data Block 1...n) 所組成的，每一個 block 空間大小為 512 Bytes。
+因此我們可以透過 `get-log` 命令方式取得 telemetry 資料。由於要收集資料的方法與內容是由開發商所指定，所以無法得知資料內容的格式。
+
+Telemetry data 定義兩個資料結構，`Host-Initiated` 以及 `Controller-Initiated` 彼此之間相互獨立，描述不同 log data 資訊，所以分開是很合理的。資料結構前 512 Bytes 代表 Header 資訊內容 ( Get-log page 命令取得 )，而之後都是表示 `data log`。
+
+這些都是由 Data Blocks (ex : Telemetry Host-Initiated Data Block 1...n) 所組成的，每一個 block 空間大小為 512 Bytes。
 
 `Data Blocks` 範圍分成三個 Telemetry Data Areas small (Area 1) / medium (Area 2) / largest (Area 3)，每個 Phrase Area 它們的 Blocks 範圍不一樣 ，但是開始的位置都是在 Telemetry Data Block 1，當這三個 Phrase Blocks 空間已滿的時候，就會覆蓋先前的舊資訊，此時 Data Generation Number will increase 1。
 
 下列範例圖示，也就是前面說提到的 `Phrease Area`， 每個 Data Area 有不同的 Block Number 範圍，這些都是由廠商所自訂，包含需要收集什麼資料也是由開發商所指定。Data Area 1, Data Area 2, Data Area 3 都有相同 Telemetry Data (Block 1 to Block 65 )，Data Area 2 and Data Area 3 都有相同 Telemetry Data (Block 65 to Block 1000 )，Data Area 3 則擁有所有完整的 Telemetry Data。
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/telemetry_data_areas.png)
+![](assets/Telemetry/file-20260129162603295.png)
 
 ## 如何執行命令
 
@@ -21,13 +25,11 @@ Controller Attributes (CTRATT) :
   * 1 : Support
   * 0 : Don't Support
 
-![](https://github.com/miniedwins/learning/blob/main/nvme/pic/identify_controller/Identify_Controller_LPA.png)
+![](assets/Telemetry/file-20260129162715397.png)
 
 ~~~shell
 nvme id-ctrl | grep lpa
 ~~~
-
-
 
 ### 讀取 Initialed Header (Ctrl)
 
@@ -68,7 +70,6 @@ hexdump -C -n 512 telemetry_ctrl_header_log
 根據該資料結構來看 Log Identifier : 0x08，OUI Identifier : 0xec6f0b，Data Area 1, 2, 3 block size 皆為 0x339f。
 
 ![](https://github.com/miniedwins/learning/blob/main/nvme/pic/log_page/log_page_telemetry_controller_initiated.png)
-
 
 
 ### 如何取得 telemetry log page

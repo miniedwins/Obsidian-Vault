@@ -51,6 +51,7 @@ set-feature:0x06 (Volatile Write Cache), value:0x00000001, cdw12:00000000, save:
 $ nvme set-feature -f 0x06 -v 0x00 /dev/nvme0
 set-feature:0x06 (Volatile Write Cache), value:00000000, cdw12:00000000, save:0
 ~~~
+
 ### 查詢當前的狀態
 
 取得 **Write Cache** 功能是否啟用或停用
