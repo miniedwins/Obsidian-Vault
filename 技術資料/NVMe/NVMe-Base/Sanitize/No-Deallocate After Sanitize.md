@@ -17,5 +17,5 @@
 
 > **參考：**
 > **NDI：** [No-Deallocate Inhibited](No-Deallocate%20Inhibited.md)    
-> **NODRM：** **[No-Deallocate Response Mode](No-Deallocate%20Response%20Mode.md)
+> **NODRM：** [No-Deallocate Response Mode](No-Deallocate%20Response%20Mode.md)
  
