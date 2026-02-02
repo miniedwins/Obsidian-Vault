@@ -9,8 +9,8 @@
 因此當執行命令與控制器有沒有支援 **No-Deallocate** 產生不一致的行為的時候，NVMe 設計了一個參數 **NODRM** 來決定這時候該怎麼處理。
 
 > **參數定義：**
-> **NDI：** 位於 Identify Controller (Sanitize Capabilities)。   
-> **NODRM：** 位於 Sanitize Config Command (Dword 11)。
+> - **NDI：** 位於 Identify Controller (Sanitize Capabilities)。   
+> - **NODRM：** 位於 Sanitize Config Command (Dword 11)。
 
 ## NODRM 模式說明
 
@@ -22,5 +22,5 @@
     - **紀錄：** Sanitize Status Log Page 中標記「Sanitized Unexpected Deallocate」告知主機。
 
 > **參考：**
-> **NDI：** [No-Deallocate Inhibited](No-Deallocate%20Inhibited.md)
-> **NADS：** [No-Deallocate After Sanitize](No-Deallocate%20After%20Sanitize.md)
+> - **NDI：** [No-Deallocate Inhibited](No-Deallocate%20Inhibited.md)
+> - **NADS：** [No-Deallocate After Sanitize](No-Deallocate%20After%20Sanitize.md)
