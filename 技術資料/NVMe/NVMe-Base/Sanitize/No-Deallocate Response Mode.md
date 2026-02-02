@@ -21,6 +21,6 @@
     - **結果：** SSD 執行 Sanitize 並強制清除映射。        
     - **紀錄：** Sanitize Status Log Page 中標記「Sanitized Unexpected Deallocate」告知主機。
 
-> **參考：** 
-> **NDI：** [No-Deallocate Inhibited](No-Deallocate%20Inhibited.md) 
+> **參考：**
+> **NDI：** [No-Deallocate Inhibited](No-Deallocate%20Inhibited.md)
 > **NADS：** [No-Deallocate After Sanitize](No-Deallocate%20After%20Sanitize.md)
