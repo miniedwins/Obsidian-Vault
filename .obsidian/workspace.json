@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
+                "file": "技術資料/NVMe/NVMe-Base/Telemetry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Self-Test Log"
+              "title": "Telemetry"
             }
           }
         ],
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
+                "file": "技術資料/NVMe/NVMe-Base/Telemetry.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Self-Test Log"
+              "title": "Outline of Telemetry"
             }
           },
           {
@@ -222,6 +222,7 @@
   },
   "active": "d5976381036d4d7b",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
     "技術資料/NVMe/NVMe-Base/Device Self Test/Device Self-Test.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
@@ -243,7 +244,6 @@
     "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
     "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
-    "技術資料/NVMe/NVMe-Base/Device Self Test/Self-Test Log.md",
     "技術資料/NVMe/NVMe-Base/Asynchronous Event Request/Asynchronous Event Request.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
