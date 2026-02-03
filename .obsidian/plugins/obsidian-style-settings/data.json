@@ -3,7 +3,8 @@
   "Blue-Topaz-Codebox-Highlight@@code-theme-selection": "code-theme-bt-default",
   "blue-topaz-theme@@layout-style-options": "layout-style-options-default",
   "Blue-Topaz-Codebox-Highlight@@code-box-style-option": "codebox-frosted-glass",
-  "minimal-advanced@@cursor": "default",
-  "minimal-style@@base@@dark": "#22E2F7",
-  "minimal-style@@bg2@@light": "#FADCDC"
+  "minimal-advanced@@cursor": "pointer",
+  "minimal-advanced@@animations": "default",
+  "things-style@@default-font-color": false,
+  "things-style@@mobile-black-background": false
 }
