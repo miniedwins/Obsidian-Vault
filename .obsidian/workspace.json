@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Error Recovery.md",
+                "file": "技術資料/NVMe/NVMe-Base/Deallocated or Unwritten Logical Blocks.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Error Recovery"
+              "title": "Deallocated or Unwritten Logical Blocks"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Error Recovery.md",
+                "file": "技術資料/NVMe/NVMe-Base/Deallocated or Unwritten Logical Blocks.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Error Recovery"
+              "title": "Outline of Deallocated or Unwritten Logical Blocks"
             }
           },
           {
@@ -207,6 +207,7 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-Base/Error Recovery.md",
     "技術資料/NVMe/NVMe-Base/Deallocated or Unwritten Logical Blocks.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
@@ -237,7 +238,6 @@
     "技術資料/NVMe/NVMe-ZNS/attachments/zone_characteristics.png",
     "程式設計/Python/自動測試/Pytest/應用場景/測試結束後執行清理操作.md",
     "程式設計/Python/自動測試/Pytest/應用場景/當發生錯誤停止測試.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
     "技術資料/NVMe/NVMe-Base/assets/Telemetry/file-20260129162715397.png",
     "技術資料/NVMe/NVMe-Base/assets/Telemetry/file-20260129162603295.png",
