@@ -8,7 +8,7 @@
 
 為了解決是否要進行 `Deallocate` 或是 `No-Deallocate`，因此 NVMe SPEC 設計了一個參數 **NODRM** 來決定控制器這個時候該怎麼處理。
 
-> **參數定義：**
+> **參考：**
 > - **NDI ：** 位於 Identify Controller (Sanitize Capabilities)。   
 > - **NODRM ：** 位於 Sanitize Config Command (Dword 11)。
 
