@@ -1,9 +1,9 @@
 {
-  "accentColor": "",
+  "accentColor": "#6f60be",
   "theme": "obsidian",
-  "cssTheme": "Obsidian Nord",
+  "cssTheme": "Blue Topaz",
   "interfaceFontFamily": "微軟正黑體",
-  "textFontFamily": "微軟正黑體,Fira Code,JetBrains Mono",
+  "textFontFamily": "JetBrains Mono,微軟正黑體,Fira Code",
   "baseFontSize": 16,
   "monospaceFontFamily": "JetBrains Mono,Fira Code",
   "enabledCssSnippets": [
