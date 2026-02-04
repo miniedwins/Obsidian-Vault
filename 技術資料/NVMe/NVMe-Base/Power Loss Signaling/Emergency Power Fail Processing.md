@@ -9,8 +9,8 @@
 3. 並行或順序執行以下操作：
 	- 依據 Port Communication ( Enable  or Disable )規則處理與其他設備的通訊。
 	- 準備電源丟失處理流程
-		- ( 原文 ) : prepare for power loss in a manner that may or may not allow command processing to resume quickly in the event of power loss and then power resumption
-		- ( 說明 ) : 控制器在電源丟失（Power Loss）前的準備方式，可能會影響電源恢復（Power Resumption）後命令處理的恢復速度。
+		- (原文) : prepare for power loss in a manner that may or may not allow command processing to resume quickly in the event of power loss and then power resumption
+		- (說明) : 控制器在電源丟失（Power Loss）前的準備方式，可能會影響電源恢復（Power Resumption）後命令處理的恢復速度。
 	- 進入 `EPF Complete` 狀態（表明 EPF 完成）。
 		- 若進入 EPF Complete Port Enabled，則 PCIe 端口仍可保持活動。
 		- 若進入 EPF Complete Port Disabled，則 PCIe 端口將被關閉。
