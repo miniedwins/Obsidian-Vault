@@ -6,4 +6,4 @@ Deallocation Read Behavior（DRB）欄位用來表示，當主機讀取一個已
 
 **參數定義：**
 - 位於 Identify – Namespace Data Structure, NVM Command Set
-- Bits 02:00 –  Deallocation Read Behavior
+- Bits 02:00 – Deallocation Read Behavior
