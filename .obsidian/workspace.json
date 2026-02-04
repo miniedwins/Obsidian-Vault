@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Deallocated or Unwritten Logical Blocks.md",
+                "file": "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Deallocated or Unwritten Logical Blocks"
+              "title": "End-to-end Data Protection"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Deallocated or Unwritten Logical Blocks.md",
+                "file": "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Deallocated or Unwritten Logical Blocks"
+              "title": "Outline of End-to-end Data Protection"
             }
           },
           {
@@ -208,20 +208,24 @@
   "active": "0055b9a060732120",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-Base/Error Recovery.md",
+    "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Reset.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Modifies Media After Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Deallocated or Unwritten Logical Blocks.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitization Operation Scope.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Response Mode.md",
+    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
+    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate After Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Dataset Management.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Global Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Data Erased.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Sanitize Operation Admin Command Processing Restrictions.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Inhibited.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate After Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Asynchronous Event.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Enter Media Verification State.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Exit Failure Mode.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Allow Unrestricted Sanitize Exit.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Failure Handling.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Response Mode.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Modifies Media After Sanitize.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Persistent Event.md",
     "技術資料/NVMe/NVMe-Base/Persistent Event Log/Supported Events Bitmap.md",
     "程式設計/NVMe/libnvme/nvme_get_log.md",
@@ -230,14 +234,10 @@
     "程式設計/NVMe/Untitled.canvas",
     "程式設計/Python/自動測試/Pytest/應用場景/讀取使用者設定的 INI 檔案.md",
     "程式設計/NVMe",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Reset.md",
-    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize Status Log Page.md",
     "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
     "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
     "技術資料/NVMe/NVMe-ZNS/attachments/zone_characteristics.png",
-    "程式設計/Python/自動測試/Pytest/應用場景/測試結束後執行清理操作.md",
-    "程式設計/Python/自動測試/Pytest/應用場景/當發生錯誤停止測試.md",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
     "技術資料/NVMe/NVMe-Base/assets/Telemetry/file-20260129162715397.png",
     "技術資料/NVMe/NVMe-Base/assets/Telemetry/file-20260129162603295.png",
