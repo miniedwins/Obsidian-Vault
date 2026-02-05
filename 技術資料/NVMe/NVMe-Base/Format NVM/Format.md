@@ -24,23 +24,23 @@ SES 設定分為三個類型，其中有兩種類型可以將所有資料清除�
 	- 刪除加密用的密鑰，從而清除所有用戶資料。
 	- 密鑰已被刪除無法回復原始數據，因此速度快並且不需要更動當前所有內容。
 
-![[Pasted image 20241213141643.png]]
+![[attachments/Pasted image 20241213141643.png]]
 
 ## 操作範圍 (Operation Scope)
 低階格式化會**影響所有命名空間或是特定命名空間**，控制器會根據 Namespace Identify Ctrl 欄位中的 **Format NVM Attributes ( FNA )** 欄位決定操作範圍。
 
-![[Pasted image 20241213142445.png]]
+![[attachments/Pasted image 20241213142445.png]]
 
 **FNA 支援命名空間範圍說明 :** 
 - 主要區分是否支援所有的命名空間或是特定命名空間，取決於此欄位的配置和命令參數 ( SES )。
 - 位元 Bit 2 有沒有支援加密刪除 **( Cryptographic Erase )** 功能。
 - 若是位元 Bit 3 設為 `1`，位元 Bit 0 需設為 `0`。
 
-![[Pasted image 20241213142801.png]]
+![[attachments/Pasted image 20241213142801.png]]
 
 以下是 `FNA` ( Format NVM Attributes ) 欄位與 `NSID` 對應命名空間範圍：
 
-![[Pasted image 20241213143554.png]]
+![[attachments/Pasted image 20241213143554.png]]
 
 ## 執行注意事項
 ### (1) 指令執行中的限制

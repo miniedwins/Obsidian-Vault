@@ -1,4 +1,4 @@
-# 基本介紹
+## 基本介紹
 
 **Volatile Write Cache** 啟用時，寫入的資料可能暫時停留在控制器的快取中 ( DRAM or SRAM )，而未立即寫入到 NAND FLASH。因此Flush 命令主要功能是，當主機需要將快取的資料寫回 **NAND FLASH** 就會發出 Flush 命令，並且指定所有或是特定命名空間 ( Namespace ) 的相關資料 ( Data and Metadata )，寫入到 **NAND FLASH**，以確保資料的持久性。
 

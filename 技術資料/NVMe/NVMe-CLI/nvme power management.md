@@ -59,7 +59,7 @@ $ sudo nvme get-feature -f 0x0c /dev/nvme0
 
 執行結果 : 
 - Current value : `0x000001` 取得目前的狀態是被啟用的。
-* APST 狀態結構表，[[Autonomous Power State Transitions#Idle Time Prior to Transition（ITPT）|ITPT]]  以及 [[#Idle Transition Power State （ITPS）|ITPS]] 總共 64 Bits (8 Bytes)。
+* APST 狀態結構表，[[Autonomous Power State Transitions#Idle Time Prior to Transition（ITPT）|ITPT]] 以及 [[#Idle Transition Power State （ITPS）|ITPS]] 總共 64 Bits (8 Bytes)。
 * 控制器回傳的值
 	* 會根據支援多少個 `NPSS` 數量，當前 NPSS= 4（PS0-PS4）。
 	* 返回的 APST Entry（8Bytes）* NPSS = 40 Bytes。
@@ -76,14 +76,14 @@ get-feature:0xc (Autonomous Power State Transition), Current value:0x000001
 
 ## 設定啟用或停用 APST
 
-說明 :  `value=1` 設定啟用 APST。
+說明 : `value=1` 設定啟用 APST。
 
 ```shell
 $ sudo nvme set-feature -f 0x0c /dev/nvme0 -v 0x01
 # set-feature:0c (Autonomous Power State Transition), value:00000001
 ```
 
-說明 :  `value=0` 設定停用 APST。
+說明 : `value=0` 設定停用 APST。
 
 ```shell
 $ sudo nvme set-feature -f 0x0c /dev/nvme0 -v 0x00

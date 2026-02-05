@@ -16,7 +16,7 @@ TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令�
     
 - **Heavy Throttle**（溫度超過 TMT2）：控製器可能會採取更強的限制措施，如進一步降低頻率。當溫度下降到 TMT1 以下時，停止所有限制動作，控製器恢復正常狀態。
 
-![[hctm_example.png]]
+![[../attachments/host_controlled_thermal_management/hctm_example.png]]
 
 那麼要如何設定 `TMT1` 以及 `TMT2` 溫度閥值 ? 如下圖所示，主機端是透過 **Set-Feature ( HCTM )** 命令設定溫度。不過要注意的是計量溫度的單位是 **克耳文 ( Kelvin )**，但是我們使用的計量單位是**攝氏 ( Celsius )**，因此設定時需要對溫度做單位轉換。
 
@@ -31,11 +31,11 @@ TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令�
 	- 當前 TMT2 = 80 若是設定 TMT1 = 85
 	- 當前 TMT1 = 70 若是設定 TMT2 = 65 
 
-![[host_controlled_thermal_management.png]]
+![[../attachments/host_controlled_thermal_management/host_controlled_thermal_management.png]]
 
 另外值得要注意的是，`TMT1` 以及 `TMT2` 溫度閥值是有限定值，我們可以透過 `Identify Ctrl` 資料結構表取得最小與最大溫度的設定值 **( MNTMT and MXTMT )**，當設定溫度超過所表示的限定值，控制器則會拒絕該命令請求，並且回覆主機端錯誤訊息 ( Invalid Field in Command )。
 
-![[thermal_management_termperature.png]]
+![[../attachments/host_controlled_thermal_management/thermal_management_termperature.png]]
 
 # 執行命令與操作
 ## 檢查是否支援 HCTM
@@ -46,7 +46,7 @@ TM ( Thermal Management Temperature )** 它是一個就是 `Set-Feature` 命令�
 	- Bit 0 : 0 ( Not Supported )
 	- Bit 1-15  ( Reserved )
 
-![[host_ctrl_thermal_management_attrs.png]]
+![[../attachments/host_controlled_thermal_management/host_ctrl_thermal_management_attrs.png]]
 
 從命令回報的結果得知 HCTMA = 1 ，代表控制器有支援 HCTM。
 

@@ -1,11 +1,11 @@
 # 概要說明
 `Temperature Threshold` 主要目的是用來設定溫度感測器，控製器可以在 **SMART 健康資訊日誌** 中報告**最多九個感測器溫度**，包括一個綜合溫度（Composite Temperature ) 以及八個溫度感測器。對於每個感測器，都會有對應的**過溫閾值**（Over Temperature Threshold）和 **低溫閾值**（Under Temperature Threshold）。
 
-![[temperature_threshold.png]]
+![[../attachments/host_controlled_thermal_management/temperature_threshold.png]]
 
 當溫度超過或是等於主機端所設定的**過溫閾值**，或者低於或等於**低溫閾值**時，SMART 健康資訊日誌中的關鍵警告欄位（Critical Warning field）的第二位會被設定為 **"1"**。這種情況可能會觸發一個**非同步事件**，通知主機發生了溫度異常。
 
-![[smart_health_critical_warning.png]]
+![[../attachments/host_controlled_thermal_management/smart_health_critical_warning.png]]
 
 控製器必須為 **綜合溫度（Composite Temperature）** 實現**過溫閾值**（Over Temperature Threshold）和 **低溫閾值（Under Temperature Threshold）**。它的預設值，可以透過 `Identify Ctrl` 結構表找到 `WCTEMP` 以及 `CCTEMP`。
 
@@ -15,7 +15,7 @@
 > 1. 沒有實現溫度感測器，若是設定溫度感測器1，則命令無效
 > 2. NVMe-CLI SMART 日誌不會顯示，那是因為預設 0xFFFF 的關係嗎 
 
-![[composite_termperature_threshold.png]]
+![[../attachments/host_controlled_thermal_management/composite_termperature_threshold.png]]
 
 # 執行命令操作
 ## 取得當前綜合溫度

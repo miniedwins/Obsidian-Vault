@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Host Memory Buffer"
+              "title": "nvme sanitize"
             }
           }
         ]
@@ -88,7 +88,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 417.5
+    "width": 373.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+                "file": "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Host Memory Buffer"
+              "title": "Outline of nvme sanitize"
             }
           },
           {
@@ -190,7 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 249.5
+    "width": 264.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,55 +207,55 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
-    "技術資料/NVMe/NVMe-Base/Format Secure Erase.md",
-    "技術資料/NVMe/NVMe-Base/Message Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Temperature Threshold.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry.md",
-    "技術資料/NVMe/NVMe-Base/Question.md",
-    "技術資料/NVMe/NVMe-Base/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-CLI/nvme subsystem reset.md",
+    "技術資料/NVMe/NVMe-CLI/nvme persistent event log.md",
+    "技術資料/NVMe/NVMe-CLI/nvme namesapce management.md",
+    "技術資料/NVMe/NVMe-CLI/nvme management interface.md",
+    "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
+    "技術資料/NVMe/NVMe-CLI/nvme device self test.md",
+    "技術資料/NVMe/NVMe-CLI/nvme controller thermal management.md",
+    "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
     "技術資料/NVMe/NVMe-Base/Persistent Memory Region.md",
-    "技術資料/NVMe/NVMe-Base/Outstanding Command.md",
-    "技術資料/NVMe/NVMe-Base/NVM Subsystem Reset.md",
-    "技術資料/NVMe/NVMe-Base/Host Controlled Thermal Management.md",
-    "技術資料/NVMe/NVMe-Base/Error Recovery.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Data Erased.md",
-    "技術資料/NVMe/NVMe-Base/Format NVM/format nvm.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Sanitize State Machine.md",
-    "技術資料/NVMe/NVMe-Base/End-to-end Data Protection.md",
-    "技術資料/NVMe/NVMe-Base/Deallocation Read Behavior.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate Inhibited.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/Namespace Sanitize Operation Admin Command Processing Restrictions.md",
-    "技術資料/NVMe/NVMe-Base/Sanitize/No-Deallocate After Sanitize.md",
-    "程式設計/NVMe/nvme-cli",
-    "程式設計/NVMe/libnvme",
+    "技術資料/NVMe/NVMe-Base/Controller Property.md",
+    "技術資料/NVMe/NVMe-Base/Other/Outstanding Command.md",
+    "技術資料/NVMe/NVMe-Base/Other/Memory Based Transport.md",
+    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
+    "技術資料/NVMe/NVMe-Base/Other",
+    "技術資料/NVMe/NVMe-Base/Other/PRP Entry and List.md",
+    "技術資料/NVMe/NVMe-Base/Temperature Threshold/Host Controlled Thermal Management.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download/Firmware Image Download.md",
+    "技術資料/NVMe/NVMe-Base/Firmware Image Download",
+    "技術資料/NVMe/NVMe-Base/Dataset Management/Dataset Management.md",
+    "技術資料/NVMe/NVMe-Base/Dataset Management",
+    "技術資料/NVMe/NVMe-Base/E2E Data Protection/End-to-end Data Protection.md",
+    "技術資料/NVMe/NVMe-Base/E2E Data Protection",
+    "技術資料/NVMe/NVMe-Base/Temperature Threshold/Temperature Threshold.md",
+    "技術資料/NVMe/NVMe-Base/Temperature Threshold",
+    "技術資料/NVMe/NVMe-Base/Telemetry/Telemetry.md",
+    "技術資料/NVMe/NVMe-Base/Telemetry/assets/Telemetry",
+    "技術資料/NVMe/NVMe-Base/Telemetry/assets",
+    "技術資料/NVMe/NVMe-Base/Telemetry",
+    "技術資料/NVMe/NVMe-Base/Deallocation/Deallocated or Unwritten Logical Blocks.md",
+    "技術資料/NVMe/NVMe-Base/Host Memory Buffer/Host Memory Buffer.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
+    "技術資料/NVMe/NVMe-Base/Power Management/Power Management.md",
+    "技術資料/NVMe/NVMe-Base/Deallocation/assets/Deallocation Read Behavior",
+    "技術資料/NVMe/NVMe-Base/Deallocation/assets",
     "程式設計/NVMe/Untitled.canvas",
-    "程式設計/NVMe",
     "技術資料/NVMe/NVMe-ZNS/attachments/zone_characteristics.png",
     "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
-    "技術資料/NVMe/NVMe-Base/assets/Telemetry/file-20260129162715397.png",
-    "技術資料/NVMe/NVMe-Base/assets/Telemetry/file-20260129162603295.png",
+    "技術資料/NVMe/NVMe-Base/Telemetry/assets/Telemetry/file-20260205144703141.png",
+    "技術資料/NVMe/NVMe-Base/Telemetry/assets/Telemetry/file-20260205144703136.png",
     "技術資料/NVMe/NVMe-Base/attachments/telemetry/telemetry_data_areas.png",
     "技術資料/NVMe/NVMe-Base/attachments/telemetry/telemetry_controller_initiated.png",
-    "技術資料/NVMe/NVMe-Base/assets/Telemetry",
     "Canvas/吞葡萄新聞分析.canvas",
-    "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine",
-    "技術資料/NVMe/NVMe-Base/Sanitize/assets",
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior",
-    "技術資料/NVMe/NVMe-Base/assets/Deallocation Read Behavior ( DRB )",
     "技術資料/NVMe/NVMe-Base/Untitled.canvas",
-    "技術資料/NVMe/NVMe-Base/Reset",
     "技術資料/NVMe/NVMe-Base/attachments/sanitize/sanitize_capabilities.png",
     "技術資料/NVMe/NVMe-Base/attachments/sanitize/sanitize_cmd_dw10.png",
     "技術資料/NVMe/NVMe-Base/attachments/sanitize/sanitize_cmd_dw11.png",
     "技術資料/NVMe/NVMe-Base/attachments/sanitize/sanitize_status.png",
-    "技術資料/NVMe/NVMe-Base/Sanitize",
     "Canvas/domain_event.canvas",
     "Canvas/Untitled.canvas",
     "Canvas/未命名.canvas",

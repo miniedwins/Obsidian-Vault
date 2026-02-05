@@ -15,7 +15,7 @@ Autonomous Power State Transitions（APST）是 NVMe 提供的一種自動省電
 ![[Pasted image 20250311074058.png]]
 
 備註 : 
->Controller Idle : 控制器被認為是空閒狀態，並且沒有任何未完成的命令在 I/O Submission Queue 當中，也就是沒有 [[Outstanding Command]]。
+>Controller Idle : 控制器被認為是空閒狀態，並且沒有任何未完成的命令在 I/O Submission Queue 當中，也就是沒有 [[../Other/Outstanding Command]]。
 
 ## 補充說明
 ### APSTE 以及 NOPPME 之間交互作用
