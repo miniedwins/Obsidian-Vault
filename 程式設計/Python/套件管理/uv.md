@@ -122,3 +122,66 @@ $ uv add pandas>=2.3.3
 - **等義於：** `>= 2.3.3`（沒有上限）    
 - **允許範圍：** 會安裝目前最新的版本，可能是 `2.4.0`、`2.5.0`，甚至是未來的 `3.0.0`。    
 - **核心邏輯：** 只設下限，不設上限。這在開發初期很方便，但風險較高，因為當 Pandas 發布 `3.0.0` 這種可能有「破壞性改動（Breaking Changes）」的大版本時，你的程式碼可能會噴錯。
+
+## 更新套件操作
+
+```shell
+$ uv sync (照著 lock 檔做，不更新版本)
+$ uv lock --upgrade (pyproject.toml 限制內全部升級到最高)
+$ uv lock --upgrade-package <name> (只升級特定套件)
+```
+
+你想看看如果你現在執行更新，`uv` 預計會幫你把哪些套件升級到什麼版本嗎？你可以執行 `uv lock --upgrade --dry-run` 來預覽，它不會真的改動任何檔案。
+
+
+## 手動修改 pyproject.toml 檔
+
+如果把其中有 dependency-groups 表格中的 pytest 那一行刪除：
+
+```shell
+[project]
+name = "uv-lab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+]
+```
+
+這時候必須執行 `uv lock` 指令，讓 uv.lock 檔的內容與 pyproject.toml 檔一致：
+
+```shell
+PS C:\Users\edwin\Desktop\src\study\uv-lab> uv lock
+Resolved 1 package in 12ms
+Removed colorama v0.4.6
+Removed exceptiongroup v1.3.1
+Removed iniconfig v2.3.0
+Removed packaging v26.0
+Removed pluggy v1.6.0   
+Removed pygments v2.19.2
+Removed pytest v9.0.2   
+Removed tomli v2.4.0    
+Removed typing-extensions v4.15.0
+```
+
+要依照 uv.lock 內容增刪套件，就必須再執行 `uv sync` 讓實際的 Python 環境與 uv.lock 檔的內容一致：
+
+```shell
+PS C:\Users\edwin\Desktop\src\study\uv-lab> uv sync
+Resolved 1 package in 3ms
+Uninstalled 9 packages in 116ms
+ - colorama==0.4.6
+ - exceptiongroup==1.3.1
+ - iniconfig==2.3.0
+ - packaging==26.0
+ - pluggy==1.6.0
+ - pygments==2.19.2
+ - pytest==9.0.2
+ - tomli==2.4.0
+ - typing-extensions==4.15.0
+```

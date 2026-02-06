@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/套件管理/uv.md",
+                "file": "技術資料/NVMe/NVMe-Base/Telemetry/Telemetry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "uv"
+              "title": "Telemetry"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/套件管理/uv.md",
+                "file": "技術資料/NVMe/NVMe-Base/Telemetry/Telemetry.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of uv"
+              "title": "Outline of Telemetry"
             }
           },
           {
@@ -207,10 +207,16 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
-    "程式設計/Python/套件管理/Untitled.md",
     "程式設計/Python/套件管理/uv.md",
-    "程式設計/C 語言/常見問題處理/無法找到共享函式庫.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
+    "程式設計/Python/Pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
+    "程式設計/C 語言/常見問題處理/無法引用 O_DIRECT.md",
     "程式設計/Python/數值轉換/converter.md",
+    "程式設計/Python/自動測試/pytest.mark.usefixtures.md",
+    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
+    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
+    "程式設計/Python/套件管理/Untitled.md",
+    "程式設計/C 語言/常見問題處理/無法找到共享函式庫.md",
     "程式設計/單元測試/單元測試命名方法.md",
     "程式設計/重構/Feature Envy.md",
     "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
@@ -227,12 +233,6 @@
     "技術資料/SMBus/PEC Sample Code.md",
     "技術資料/NVMe/NVMe-Base/Power Management/Autonomous Power State Transitions.md",
     "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power State Permissive Mode.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Non-Operational Power States.md",
-    "技術資料/NVMe/NVMe-Base/Power Management/Power Management.md",
-    "技術資料/NVMe/NVMe-CLI/nvme sanitize.md",
-    "技術資料/NVMe/NVMe-CLI/nvme subsystem reset.md",
-    "技術資料/NVMe/NVMe-CLI/nvme persistent event log.md",
-    "技術資料/NVMe/NVMe-CLI/nvme namesapce management.md",
     "技術資料/NVMe/NVMe-Base/Other",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download",
     "技術資料/NVMe/NVMe-Base/Dataset Management",
