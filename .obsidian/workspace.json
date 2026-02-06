@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
+                "file": "程式設計/Python/套件管理/uv.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Namespace Management"
+              "title": "uv"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
+                "file": "程式設計/Python/套件管理/uv.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Namespace Management"
+              "title": "Outline of uv"
             }
           },
           {
@@ -207,6 +207,14 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
+    "程式設計/單元測試/單元測試命名方法.md",
+    "程式設計/重構/Feature Envy.md",
+    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
+    "程式設計/C 語言/時間戳轉換 (timestamp).md",
+    "程式設計/C 語言/建立靜態與共享函式庫.md",
+    "程式設計/C 語言/GCC 定義巨集 DEBUG.md",
+    "程式設計/C 語言/名詞解釋/function returning type.md",
+    "技術資料/NVMe/NVMe-Base/Namespace Management/Namespace Management.md",
     "技術資料/SMBus/ARP Controller.md",
     "技術資料/SMBus/AV and AR flags.md",
     "技術資料/SMBus/Internal state of ARP-capable.md",
@@ -225,15 +233,7 @@
     "技術資料/NVMe/NVMe-CLI/nvme end-to-end protection.md",
     "技術資料/NVMe/NVMe-CLI/nvme device self test.md",
     "技術資料/NVMe/NVMe-CLI/nvme controller thermal management.md",
-    "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
-    "技術資料/NVMe/NVMe-Base/Persistent Memory Region.md",
-    "技術資料/NVMe/NVMe-Base/Controller Property.md",
-    "技術資料/NVMe/NVMe-Base/Other/Outstanding Command.md",
-    "技術資料/NVMe/NVMe-Base/Other/Memory Based Transport.md",
-    "技術資料/NVMe/NVMe-Base/Controller Initialization/Controller Initialization.md",
     "技術資料/NVMe/NVMe-Base/Other",
-    "技術資料/NVMe/NVMe-Base/Other/PRP Entry and List.md",
-    "技術資料/NVMe/NVMe-Base/Temperature Threshold/Host Controlled Thermal Management.md",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download",
     "技術資料/NVMe/NVMe-Base/Dataset Management",
     "技術資料/NVMe/NVMe-Base/E2E Data Protection",
