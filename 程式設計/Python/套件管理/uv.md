@@ -7,7 +7,7 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 ```
 
 初始化專案
-uv init uv-demo (不指定版本會使用最新版本)
+uv init uv-demo (不指定版本會使用最新版)
 uv init uv-demo --python 3.10
 
 安裝 Python 版本 
