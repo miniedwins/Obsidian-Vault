@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "Telemetry"
             }
+          },
+          {
+            "id": "2cf054eeba7c3045",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.11.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.11.7"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -205,7 +218,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "0055b9a060732120",
+  "active": "2cf054eeba7c3045",
   "lastOpenFiles": [
     "程式設計/Python/套件管理/uv.md",
     "程式設計/Python/Pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
