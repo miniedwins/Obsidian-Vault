@@ -33,7 +33,7 @@ uv init uv-demo --python 3.10 (指定安裝特定的版本)
 ```shell
 $ uv python install
 $ uv python install 3.10 (指定安裝特定的版本)
-$ uv python install 3.10 3.11 (安裝多個版本)
+$ uv python install 3.10 3.11 (安裝多個版本, 可以進行多版本測試)
 ```
 
 ## 移除 Python 版本
@@ -186,7 +186,7 @@ Uninstalled 9 packages in 116ms
  - typing-extensions==4.15.0
 ```
 
-## 管理的 Python 專案到另一台電腦
+## 管理專案到另一台電腦
 
 複製 UV 專案中的關鍵檔案到新的專案目錄資料夾中。
 
@@ -195,10 +195,16 @@ Uninstalled 9 packages in 116ms
 - `.python-version`
 - `source code` 
 
-進入專案目錄中**開啟終端機**，執行同步指令。
+進入專案目錄中**開啟終端機**，執行同步指令 `uv sync`。
 
 ```shell
 PS C:\Users\edwin\Desktop\src\study\uv-lab> uv sync
 Resolved 18 packages in 1ms
 Audited 15 packages in 1ms
 ```
+
+根據 `pyproject.toml`：
+
+1. 自動建立 venv
+2. 自動建立 lockfile
+3. 自動安裝依賴套件
