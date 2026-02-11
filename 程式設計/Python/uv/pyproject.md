@@ -1,5 +1,5 @@
 
-## Linter
+
 ```shell
 # --- Ruff 設定 (包含 PEP8, 排序, 格式化) ---
 [tool.ruff]
@@ -30,6 +30,10 @@ ignore = []
 combine-as-imports = true
 lines-after-imports = 2
 
+[tool.ruff.format]
+# Formatter-specific setting
+quote-style = "single"
+
 # --- Pyright 設定 (靜態型別檢查) ---
 [tool.pyright]
 include = ["src"]
@@ -48,4 +52,3 @@ venv = ".venv"
 package = true
 ```
 
-## pyright
