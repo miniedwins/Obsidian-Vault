@@ -131,8 +131,7 @@ $ uv lock --upgrade (pyproject.toml 限制內全部升級到最高)
 $ uv lock --upgrade-package <name> (只升級特定套件)
 ```
 
-你想看看如果你現在執行更新，`uv` 預計會幫你把哪些套件升級到什麼版本嗎？你可以執行 `uv lock --upgrade --dry-run` 來預覽，它不會真的改動任何檔案。
-
+若是想看看執行更新套件，但是它不會真的改動任何檔案，你可以執行 `uv lock --upgrade --dry-run` 來預覽。
 
 ## 手動修改 pyproject.toml 檔
 
