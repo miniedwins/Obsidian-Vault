@@ -185,3 +185,20 @@ Uninstalled 9 packages in 116ms
  - tomli==2.4.0
  - typing-extensions==4.15.0
 ```
+
+## 管理的 Python 專案到另一台電腦
+
+複製 UV 專案中的關鍵檔案到新的專案目錄資料夾中。
+
+- `pyproject.toml`
+- `uv.lock`
+- `.python-version`
+- `source code` 
+
+進入專案目錄中**開啟終端機**，執行同步指令。
+
+```shell
+PS C:\Users\edwin\Desktop\src\study\uv-lab> uv sync
+Resolved 18 packages in 1ms
+Audited 15 packages in 1ms
+```
