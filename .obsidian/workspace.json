@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "程式設計/Python/套件管理/uv.md",
+                "file": "程式設計/Python/套件管理/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "uv"
+              "title": "Untitled"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "程式設計/Python/套件管理/uv.md",
+                "file": "程式設計/Python/套件管理/Untitled.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of uv"
+              "title": "Outline of Untitled"
             }
           },
           {
@@ -207,12 +207,13 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
+    "程式設計/Python/套件管理/uv.md",
+    "程式設計/Python/套件管理/Untitled.md",
     "程式設計/單元測試/單元測試命名方法.md",
     "程式設計/Python/檔案操作/pathlib/獲取目錄內所有的檔案.md",
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/自動測試/pytest.mark.usefixtures.md",
     "程式設計/Python/自動測試/Pytest/指定標記 (Markers) 測試.md",
-    "程式設計/Python/套件管理/uv.md",
     "暫存內容/NVMe Study (暫存).md",
     "暫存內容/未命名.md",
     "技術資料/NVMe/NVMe-Base/Telemetry/Telemetry.md",
@@ -222,7 +223,6 @@
     "程式設計/Python/數值轉換/converter.md",
     "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
     "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
-    "程式設計/Python/套件管理/Untitled.md",
     "程式設計/C 語言/常見問題處理/無法找到共享函式庫.md",
     "程式設計/重構/Feature Envy.md",
     "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
