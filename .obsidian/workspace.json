@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
+                "file": "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Revert"
+              "title": "Ubuntu 登入自動執行腳本"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
+                "file": "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Revert"
+              "title": "Outline of Ubuntu 登入自動執行腳本"
             }
           },
           {
@@ -207,8 +207,17 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
+    "作業系統/Linux/系統/如何調整 ASPM Policy.md",
+    "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
+    "作業系統/Linux/套件/nvmecli.md",
+    "作業系統/Linux/套件/libnvme.md",
+    "作業系統/Linux/套件/json-c.md",
+    "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/磁碟偏移量設定 (Offset).md",
+    "作業系統/Linux/指令/I2C/i2c-tools.md",
+    "作業系統/Linux/指令/IPMI/ipmitool.md",
+    "作業系統/Linux/指令/PCIe/lspci 命令操作.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
+    "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
     "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
@@ -225,15 +234,6 @@
     "暫存內容/NVMe Study (暫存).md",
     "暫存內容/未命名.md",
     "技術資料/NVMe/NVMe-Base/Telemetry/Telemetry.md",
-    "程式設計/Python/pydantic/別名處理 (Alias)/處理返回的字段名稱與程式碼對應.md",
-    "程式設計/Python/pydantic/別名處理 (Alias)/使用生成器處理大量別名.md",
-    "程式設計/C 語言/常見問題處理/無法引用 O_DIRECT.md",
-    "程式設計/Python/數值轉換/converter.md",
-    "程式設計/Python/雜湊值/計算檔案的 MD5 雜湊值.md",
-    "程式設計/Python/雜湊值/計算 MD5 雜湊值.md",
-    "程式設計/C 語言/常見問題處理/無法找到共享函式庫.md",
-    "程式設計/重構/Feature Envy.md",
-    "程式設計/C 語言/設定位元組對齊 (Padding aligns structure).md",
     "技術資料/NVMe/NVMe-Base/Other",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download",
     "技術資料/NVMe/NVMe-Base/Dataset Management",
