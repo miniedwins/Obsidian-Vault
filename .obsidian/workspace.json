@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
+                "file": "作業系統/Linux/指令/APU PDU 電源設定.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ubuntu 登入自動執行腳本"
+              "title": "APU PDU 電源設定"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
+                "file": "作業系統/Linux/指令/APU PDU 電源設定.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ubuntu 登入自動執行腳本"
+              "title": "Outline of APU PDU 電源設定"
             }
           },
           {
@@ -207,11 +207,14 @@
   },
   "active": "0055b9a060732120",
   "lastOpenFiles": [
-    "作業系統/Linux/系統/如何調整 ASPM Policy.md",
     "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
+    "作業系統/Linux/指令/APU PDU 電源設定.md",
+    "作業系統/Linux/Bash 腳本/使用 shift 解析參數.md",
     "作業系統/Linux/套件/nvmecli.md",
     "作業系統/Linux/套件/libnvme.md",
     "作業系統/Linux/套件/json-c.md",
+    "作業系統/Linux/核心/如何獨立編譯核心模組.md",
+    "作業系統/Linux/系統/如何調整 ASPM Policy.md",
     "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/磁碟偏移量設定 (Offset).md",
     "作業系統/Linux/指令/I2C/i2c-tools.md",
     "作業系統/Linux/指令/IPMI/ipmitool.md",
@@ -231,9 +234,6 @@
     "程式設計/Python/檔案操作/pathlib/建立多層目錄結構.md",
     "程式設計/Python/test/pytest.mark.usefixtures.md",
     "程式設計/Python/test/Pytest/指定標記 (Markers) 測試.md",
-    "暫存內容/NVMe Study (暫存).md",
-    "暫存內容/未命名.md",
-    "技術資料/NVMe/NVMe-Base/Telemetry/Telemetry.md",
     "技術資料/NVMe/NVMe-Base/Other",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download",
     "技術資料/NVMe/NVMe-Base/Dataset Management",

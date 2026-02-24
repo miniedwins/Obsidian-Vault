@@ -11,9 +11,6 @@ gnome-terminal --maximize -- bash -c "sudo /home/user/test.sh; exec bash"
 
 - `exec bash`: 腳本執行完後保持視窗開啟，不自動關閉。
 
-
-
-
 ### 2. 免密碼權限設定
 
 若要讓腳本自動執行而不彈出密碼要求，請執行：
