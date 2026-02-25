@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/OPAL/Manufactured-Inactive to Manufactured.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RevertSP"
+              "title": "Manufactured-Inactive to Manufactured"
             }
           }
         ],
@@ -103,7 +103,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 311.5
+    "width": 369.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -167,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/OPAL/Manufactured-Inactive to Manufactured.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of RevertSP"
+              "title": "Outline of Manufactured-Inactive to Manufactured"
             }
           },
           {
@@ -222,9 +222,17 @@
   },
   "active": "6bb8669165e7a9c1",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/CNL/Shadow MBR.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
+    "技術資料/NVMe/NVMe-OPAL/OPAL/Manufactured-Inactive to Manufactured.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
+    "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
+    "技術資料/NVMe/NVMe-OPAL/OPA-CNL/Multiple Namespaces.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
+    "技術資料/NVMe/NVMe-OPAL/OPA-CNL/Shadow MBR.md",
+    "技術資料/NVMe/NVMe-OPAL/OPA-CNL/RevertSP.md",
+    "Canvas/eventbus_architecture.md",
+    "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
+    "Canvas/吞葡萄新聞分析.canvas",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "作業系統/Linux/指令/IPMI 操作命令.md",
     "作業系統/Linux/指令/I2C 命令.md",
@@ -242,14 +250,6 @@
     "作業系統/Linux/套件/json-c.md",
     "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "作業系統/Linux/指令/FIO/Standard/IO 讀寫方法/磁碟偏移量設定 (Offset).md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
-    "技術資料/NVMe/NVMe-OPAL/CNL/RevertSP.md",
-    "Canvas/eventbus_architecture.md",
-    "Canvas/吞葡萄新聞分析.canvas",
-    "暫存內容/BMC.md",
-    "程式設計/Python/uv/pyproject.md",
-    "程式設計/Python/uv/uv.md",
-    "程式設計/單元測試/單元測試命名方法.md",
     "技術資料/NVMe/NVMe-Base/Other",
     "技術資料/NVMe/NVMe-Base/Firmware Image Download",
     "技術資料/NVMe/NVMe-Base/Dataset Management",

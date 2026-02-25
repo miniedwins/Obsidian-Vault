@@ -7,7 +7,6 @@
 - 可對任何生命週期狀態的 Manufactured SP 執行，若 SP 處於 Manufactured-Inactive 狀態則無影響。
 - 必須在 Admin SP 的 Read-Write session 內執行，且必須在非交易（non-transaction）狀態下立即還原。
 - 若對 Admin SP 本身執行 Revert，TPer 會在回報狀態後立即終止 session，並可能準備 CloseSession 方法供主機檢索。
-- Revert 方法的 MethodID 為 0x00 00 00 06 00 00 02 02。
 
 ## Effects of Revert
 - 成功執行 Revert 方法後，會產生以下效果：
