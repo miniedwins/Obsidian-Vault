@@ -112,7 +112,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header )
 回傳 no further data。
 
 #### 參數說明
-MaxSubPackets :  TPer 宣告的最大可接受封包數量。
+MaxSubPackets: TPer 宣告的最大可接受封包數量。
 
 #### 測試行為
 1. 寫入資料到 Data Store Table
