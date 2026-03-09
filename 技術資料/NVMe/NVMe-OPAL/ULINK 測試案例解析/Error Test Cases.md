@@ -4,7 +4,7 @@
 #### 測試說明
 1. 驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」且該錯位發生在「方法呼叫範圍之外 (Outside of Method)」時，是否會正確地啟動防呆機制強制中斷會話 (Abort Session)。
 
-2. 測試會刻意將一個 End List Token 放置於 Call Token 之前來觸發異常。
+2. 測試會刻意將一個 **End List Token** 放在開頭的 **Call Token** 之前來觸發異常。
 
 #### 期望結果
 1. 包含錯位 Token 的指令將無法獲得正常的 Method 執行回應
@@ -71,11 +71,9 @@
 
 ![[Pasted image 20250519141449.png]]
 
-返回執行結果 no further data，但是官方測試案例則表示回傳 NOT_AUTHORIZED。
+返回執行結果為 NOT_AUTHORIZED。
 
-這邊猜測應該是 no further data 比較會是對的。因為測試身份是使用 Admin1 去調用不存在的Invoking ID，因此不應該回傳未授權 ( NOT_AUTHORIZED ) 的狀態。
-
-![[Pasted image 20250519144343.png]]
+![](assets/Error%20Test%20Cases/file-20260309170541528.png)
 
 ### 測試案例 (2)
 #### 測試說明 
@@ -85,18 +83,17 @@
 回傳 NOT_AUTHORIZED or SUCCESS 以及 Empty Result List。
 
 #### 測試行為
-1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Anybody 的身份作為授權者。
+1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Anybody 的身份作為授權者 (Admins 權限才可以檢索 DataStore內容)。
 2. 調用 Get method on Invoking UID of 00 00 10 01 00 00 00 00 ( DataStore table )
 
 ![[Pasted image 20250519152137.png]]
 
-返回執行結果 NOT_AUTHORIZED。
+返回執行結果為 NOT_AUTHORIZED。
 
 ![[Pasted image 20250519152226.png]]
 
 ### 測試案例 (3)
 #### 測試說明 
-
 
 #### 期望結果
 回傳 SUCCESS and only returns the CharSet, TryLimit, and Tries column values。 
