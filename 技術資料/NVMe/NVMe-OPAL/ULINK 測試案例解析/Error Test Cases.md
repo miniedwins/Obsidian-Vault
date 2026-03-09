@@ -17,6 +17,17 @@
 
 ![](assets/Error%20Test%20Cases/file-20260309111255531.png)
 
+
+## ETC-06: Unexpected Token in Method Header – Regular Session
+
+#### 測試說明
+
+#### 期望結果
+回傳 NOT_AUTHORIZED。
+
+#### 測試行為
+
+
 ## ETC-10 Invalid Invoking ID - Get
 
 ### 測試案例 (1)
