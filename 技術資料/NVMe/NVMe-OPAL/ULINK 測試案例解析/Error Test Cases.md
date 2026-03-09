@@ -8,7 +8,7 @@
 回傳 ABORT SESSION
 
 #### 測試行為
-1. 設定 User1 Authority = False (這是以一個方式作為驗證手段的行為)
+1. 設定 User1 Authority = False (以一個簡單的設定方式作為驗證手段)
 2. 設定 Payload 內容把，最後的 **End list Token** 放在了 **Call Token** 之前，因此造成了 Token 錯位，也就是 Unexpected Token。
 
 ![](assets/Error%20Test%20Cases/file-20260309111224464.png)
