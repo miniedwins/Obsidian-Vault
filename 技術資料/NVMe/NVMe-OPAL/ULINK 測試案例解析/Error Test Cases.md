@@ -1,4 +1,15 @@
 
+## ETC-05: Unexpected Token Outside of Method – Regular Session
+
+#### 測試說明
+驗證當硬碟遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地啟動防呆機制並強制中止連線。
+
+#### 期望結果
+
+#### 測試行為
+1. Payload 內容把最後的 End list Token 放在了 Call Token 之前，因此造成了 Token 錯位 
+2. IF-RECV 讀取到的會是 TPer Close Session
+
 ## ETC-10 Invalid Invoking ID - Get
 
 ### 測試案例 (1)

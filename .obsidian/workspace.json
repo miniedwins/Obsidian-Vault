@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "18125ebd04f969ee",
+        "id": "3c1ebc085cfcbfa1",
         "type": "tabs",
         "children": [
           {
-            "id": "8b8536a0d0ca284c",
+            "id": "04af4a4e2459eda3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "作業系統/Linux/指令/I2C 命令.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "I2C 命令"
+              "title": "Error Test Cases"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "作業系統/Linux/指令/I2C 命令.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of I2C 命令"
+              "title": "Outline of Error Test Cases"
             }
           },
           {
@@ -205,8 +205,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "8b8536a0d0ca284c",
+  "active": "04af4a4e2459eda3",
   "lastOpenFiles": [
+    "作業系統/Linux/指令/I2C 命令.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Manufactured-Inactive to Manufactured.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
@@ -220,7 +221,6 @@
     "Excalidraw/Drawing 2026-01-07 13.50.38.excalidraw.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "作業系統/Linux/指令/IPMI 操作命令.md",
-    "作業系統/Linux/指令/I2C 命令.md",
     "作業系統/Linux/系統/Ubuntu 登入自動執行腳本.md",
     "作業系統/Linux/指令/移除或重新掃描 PCIe 裝置.md",
     "作業系統/Linux/指令/diff 檔案比較.md",
