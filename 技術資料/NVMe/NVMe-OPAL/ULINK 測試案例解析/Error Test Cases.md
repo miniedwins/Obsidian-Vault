@@ -27,12 +27,10 @@
 
 #### 測試說明
 
-
 #### 期望結果
 回傳 NOT_AUTHORIZED。
 
 #### 測試行為
-
 
 ## ETC-10 Invalid Invoking ID - Get
 
