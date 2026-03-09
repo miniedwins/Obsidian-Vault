@@ -7,8 +7,9 @@
 #### 期望結果
 
 #### 測試行為
-1. Payload 內容把最後的 End list Token 放在了 Call Token 之前，因此造成了 Token 錯位 
-2. IF-RECV 讀取到的會是 TPer Close Session
+1. Payload 內容把最後的 End list Token 放在了 Call Token 之前，因此造成了 Token 錯位。
+
+2. IF-RECV 讀取到的會是 TPer Close Session。
 
 ## ETC-10 Invalid Invoking ID - Get
 
