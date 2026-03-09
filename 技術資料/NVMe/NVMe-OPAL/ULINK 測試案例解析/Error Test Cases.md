@@ -32,6 +32,29 @@
 
 #### 測試行為
 
+## ETC-07: Unexpected Token Outside of Method – Control Session
+
+#### 測試說明
+
+#### 期望結果
+
+#### 測試行為
+
+## ETC-08: Unexpected Token in the Method Parameter List – Control Session
+
+#### 測試說明
+
+#### 期望結果
+
+#### 測試行為
+
+## ETC-09: Exceeding Transaction Limit
+#### 測試說明
+
+#### 期望結果
+
+#### 測試行為
+
 ## ETC-10 Invalid Invoking ID - Get
 
 ### 測試案例 (1)
@@ -50,7 +73,7 @@
 
 返回執行結果 no further data，但是官方測試案例則表示回傳 NOT_AUTHORIZED。
 
-這邊猜測應該是 no further data 比較會是對的。因為測試身份是使用  Admin1 去調用不存在的Invoking ID，因此不應該回傳未授權 ( NOT_AUTHORIZED ) 的狀態。
+這邊猜測應該是 no further data 比較會是對的。因為測試身份是使用 Admin1 去調用不存在的Invoking ID，因此不應該回傳未授權 ( NOT_AUTHORIZED ) 的狀態。
 
 ![[Pasted image 20250519144343.png]]
 
