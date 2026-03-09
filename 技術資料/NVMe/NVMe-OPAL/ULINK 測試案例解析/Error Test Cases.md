@@ -2,7 +2,8 @@
 ## ETC-05: Unexpected Token Outside of Method – Regular Session
 
 #### 測試說明
-驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地啟動防呆機制並強制中止連線。
+驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地處理不正確的錯誤。
+測試會在將 Call Token 之前放入一個 End list Token 來驗證錯
 
 #### 期望結果
 回傳 ABORT SESSION
@@ -21,6 +22,7 @@
 ## ETC-06: Unexpected Token in Method Header – Regular Session
 
 #### 測試說明
+驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地啟動防呆機制並強制中止連線。
 
 #### 期望結果
 回傳 NOT_AUTHORIZED。
