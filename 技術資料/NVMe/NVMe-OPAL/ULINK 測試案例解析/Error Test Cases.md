@@ -2,16 +2,18 @@
 ## ETC-05: Unexpected Token Outside of Method – Regular Session
 
 #### 測試說明
-驗證當硬碟遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地啟動防呆機制並強制中止連線。
+驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地啟動防呆機制並強制中止連線。
 
 #### 期望結果
+回傳 ABORT SESSION
 
 #### 測試行為
-1. Payload 內容把最後的 End list Token 放在了 Call Token 之前，因此造成了 Token 錯位，也就是 Unexpected Token。
+1. 設定 User1 Authority = False (這是以一個方式作為驗證手段的行為)
+2. 設定 Payload 內容把，最後的 **End list Token** 放在了 **Call Token** 之前，因此造成了 Token 錯位，也就是 Unexpected Token。
 
 ![](assets/Error%20Test%20Cases/file-20260309111224464.png)
 
-2. 主機使用 IF-RECV 再去讀取結果會是 TPer Close Session。
+2. 然後主機發送 IF-RECV 命令讀取執行結果，回傳的會是 TPer Close Session。
 
 ![](assets/Error%20Test%20Cases/file-20260309111255531.png)
 
