@@ -2,15 +2,19 @@
 ## ETC-05: Unexpected Token Outside of Method – Regular Session
 
 #### 測試說明
-驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地處理不正確的錯誤。
-測試會在將 Call Token 之前放入一個 End list Token 
+1. 驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」且該錯位發生在「方法呼叫範圍之外 (Outside of Method)」時，是否會正確地啟動防呆機制強制中斷會話 (Abort Session)。
+
+2. 測試會刻意將一個 End List Token 放置於 Call Token 之前來觸發異常。
 
 #### 期望結果
-回傳 ABORT SESSION
+1. 包含錯位 Token 的指令將無法獲得正常的 Method 執行回應
+2. `IF-RECV` 會讀取到空封包 (“All Response(s) returned - no further data”)或是收到由 TPer 發出的 `CloseSession` 通知 (代表連線已被強制中斷)。
+3. 該異常封包內的 Set 方法將被 TPer 捨棄，設定不會生效。
 
 #### 測試行為
-1. 設定 User1 Authority = False (以一個簡單的設定方式作為驗證手段)
-2. 設定 Payload 內容把，最後的 **End list Token** 放在了 **Call Token** 之前，因此造成了 Token 錯位，也就是 Unexpected Token。
+1. **前置確認**：開啟正常連線，確認 User1 Authority 的 Enabled 欄位狀態為 `TRUE`。
+2. **觸發異常**：發送一個嘗試將 User1 Enabled 設為 `FALSE` 的 Payload，但刻意將一個 **End List Token** 放在開頭的 **Call Token** 之前，製造 Unexpected Token 錯位。
+3. **接收結果**：透過 `IF-RECV` 讀取緩衝區，驗證是否收到空封包或 `CloseSession`。
 
 ![](assets/Error%20Test%20Cases/file-20260309111224464.png)
 
@@ -22,7 +26,7 @@
 ## ETC-06: Unexpected Token in Method Header – Regular Session
 
 #### 測試說明
-驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」時，是否會正確地啟動防呆機制並強制中止連線。
+
 
 #### 期望結果
 回傳 NOT_AUTHORIZED。
