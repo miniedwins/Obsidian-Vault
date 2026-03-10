@@ -201,7 +201,9 @@ MaxSubPackets: TPer 宣告的最大可接受封包數量。
 ## ETC-15: Exceed TPer Properties – Control Session
 
 #### 測試說明
-驗證在 Control Session 狀態下 (沒建立Session=TSN|HSN)，調用 Properties Method 帶有多個 Subpacket (MaxSubPackets + 1)，當主機去發送 **IF-RECV** 收結果時，只能回傳一個長度為 0 的空封包 (All Response(s) returned - no further data)。
+驗證在 Control Session 狀態下 (沒建立Session=TSN|HSN)，調用 Properties Method 帶有多個 Subpacket (MaxSubPackets + 1)。
+
+當主機去發送 **IF-RECV** 收結果時，只能回傳一個長度為 0 的空封包 (All Response(s) returned - no further data)。
 
 > 為什麼測試要調用 Properties Method ? 
 > 說明: 符合在 Ctrl Session 狀態下測試，不需要建立連線 (Session)。
