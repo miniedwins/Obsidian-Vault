@@ -119,8 +119,10 @@
 ### 測試案例 (4)
 
 #### 測試說明
+這個是測試 ACL Table 表格中不存在的組合，例如: 呼叫一個 InvokingID/MethodID，但是該UID 在表格中並沒有提到可以使用 Get MethodID 去檢索這個 Object。
 
 #### 期望結果
+回傳 NOT_AUTHORIZED。
 
 #### 測試行為
 
