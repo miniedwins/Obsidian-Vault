@@ -3,7 +3,6 @@
 
 #### 測試說明
 1. 驗證當 TPer 遇到「Token 錯位（也就是格式錯誤）」且該錯位發生在「方法呼叫範圍之外 (Outside of Method)」時，是否會正確地啟動防呆機制強制中斷會話 (Abort Session)。
-
 2. 測試會刻意將一個 **End List Token** 放在開頭的 **Call Token** 之前來觸發異常。
 
 #### 期望結果
@@ -14,11 +13,10 @@
 #### 測試行為
 1. **前置確認**：開啟正常連線，確認 User1 Authority 的 Enabled 欄位狀態為 `TRUE`。
 2. **觸發異常**：發送一個嘗試將 User1 Enabled 設為 `FALSE` 的 Payload，但刻意將一個 **End List Token** 放在開頭的 **Call Token** 之前，製造 Unexpected Token 錯位。
-3. **接收結果**：透過 `IF-RECV` 讀取緩衝區，驗證是否收到空封包或 `CloseSession`。
 
 ![](assets/Error%20Test%20Cases/file-20260309111224464.png)
 
-2. 然後主機發送 IF-RECV 命令讀取執行結果，回傳的會是 TPer Close Session。
+3. **接收結果**：透過 `IF-RECV` 讀取緩衝區，驗證是否收到空封包或 `CloseSession`。
 
 ![](assets/Error%20Test%20Cases/file-20260309111255531.png)
 
@@ -50,6 +48,8 @@
 
 ## ETC-09: Exceeding Transaction Limit
 #### 測試說明
+1. 這是測試兩次傳送 IF-SEND 命令
+2. 基本最大傳送會是設定為1次
 
 #### 期望結果
 
@@ -94,6 +94,7 @@
 
 ### 測試案例 (3)
 #### 測試說明 
+1. 這個測試驗證的是登入者的權限，去讀取一個 Object Tabel，但是該 ACE 表格有限定誰可以讀取的權限，以及這個表格是否有限定那些欄位一定是無法讀取，若是無法讀取則會不回傳，可以讀取的則會回傳
 
 #### 期望結果
 回傳 SUCCESS and only returns the CharSet, TryLimit, and Tries column values。 
@@ -104,8 +105,7 @@
 
 ![[Pasted image 20250520074422.png]]
 
-3. Data Payload 會帶有要取得 CharSet, TryLimit, and Tries 相關欄位資訊。04h 06h 應該有表示
- C_PIN Table Description 欄位的 Column Number 範圍 ***（目前尚未確定）***。
+3. Data Payload 會帶有要取得 CharSet, TryLimit, and Tries 相關欄位資訊。
 
 ![[Pasted image 20250520074444.png]]
 
