@@ -119,7 +119,7 @@
 ### 測試案例 (4)
 
 #### 測試說明
-這個是測試 ACL Table 表格中不存在的組合，例如: 呼叫一個 InvokingID/MethodID，但是該UID 在表格中並沒有提到可以使用 Get MethodID 去檢索這個 Object。
+這個是測試 ACL Table 表格中不存在的組合，例如: 呼叫一個 InvokingID/MethodID，但是該UID 在表格中並沒有提到可以使用 Get MethodID 去取得這個該 Object Table。
 
 #### 期望結果
 回傳 NOT_AUTHORIZED。
@@ -127,7 +127,7 @@
 #### 測試行為
 
 ---
-### ETC-11 Invalid Invoking ID – Non-Get
+## ETC-11 Invalid Invoking ID – Non-Get
 #### 測試說明
 1. 此測試是要驗證調用 LockingInfo table 不存在的 Invoking ID。
 2. 該測試所調用的是 Set Method。
@@ -148,7 +148,20 @@
 ![[Pasted image 20250407092621.png]]
 
 ---
-### ETC-13 Malformed ComPacket Header Regular Session
+
+
+## ETC-12 Authorization
+
+#### 測試說明
+驗證登入權限為 Anybody，設定 User1 欄位 Authority=Enable，來測試沒有權限操作該表格的登入者，是否因為沒有權限而被拒絕。
+
+#### 期望結果
+回傳 NOT_AUTHORIZED。
+
+#### 測試行為
+
+
+## ETC-13 Malformed ComPacket Header Regular Session
 #### 測試說明
 此測試是要驗證 **ComPacket 的長度超過 `MaxComPacketSize-20`** 時，TPer 的處理行為是否正確。
 
@@ -167,7 +180,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header )
 ![[Pasted image 20250407073546.png]]
 
 ---
-### ETC-14 Exceed TPer Properties Regular Session
+## ETC-14 Exceed TPer Properties Regular Session
 #### 測試說明
 此測試是要模擬主機端發送 MaxSubPackets + 1 時，也就是 Packet 帶有多個 SubPacket。
 
