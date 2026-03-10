@@ -197,3 +197,12 @@ MaxSubPackets: TPer 宣告的最大可接受封包數量。
 ![[Pasted image 20250407062258.png]]
 
 ---
+
+## ETC-15: Exceed TPer Properties – Control Session
+
+#### 測試說明
+該測試沒有使用建立 Session
+
+#### 期望結果
+
+#### 測試行為
