@@ -207,7 +207,8 @@ MaxSubPackets: TPer 宣告的最大可接受封包數量。
 > 說明: 符合在 Ctrl Session 狀態下測試，不需要建立連線 (Session)。
 
 #### 期望結果
-1. 回傳一個長度為 0 的空封包 (All Response(s) returned - no further data)。
-2. 不會有 CloseSession! (ETC-14: 主機收結果時，會直接拿到 CloseSession)。
+1. 回傳結果一個長度為 0 的空封包 (All Response(s) returned - no further data)並不會回傳 CloseSession。 
+
+> 備註: 回傳的結果並不會收到 Close Seesion，可能是基於沒有建立 Regular Session。
 
 #### 測試行為
