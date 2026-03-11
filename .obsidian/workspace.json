@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-12 TPer Reset.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-13 Authenticate.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SPF-12 TPer Reset"
+              "title": "SPF-13 Authenticate"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-12 TPer Reset.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-13 Authenticate.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SPF-12 TPer Reset"
+              "title": "Outline of SPF-13 Authenticate"
             }
           },
           {
@@ -207,8 +207,9 @@
   },
   "active": "04af4a4e2459eda3",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-11 Stack Reset.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-12 TPer Reset.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-13 Authenticate.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-11 Stack Reset.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-08 RevertSP.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-07 Host Session Number (HSN).md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-05 Tries Reset on Power Cycle.md",
@@ -250,7 +251,6 @@
     "作業系統/Linux/指令/移除或重新掃描 PCIe 裝置.md",
     "作業系統/Linux/指令/diff 檔案比較.md",
     "作業系統/Linux/其它/APC PDU SNMP 電源設定.md",
-    "作業系統/Linux/指令/PCIe/lspci 命令操作.md",
     "作業系統/Linux/其它",
     "技術資料/NVMe/NVMe-Base/Other",
     "程式設計/NVMe/Untitled.canvas",
