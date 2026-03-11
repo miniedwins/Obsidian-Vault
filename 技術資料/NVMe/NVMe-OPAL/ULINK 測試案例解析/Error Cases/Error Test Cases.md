@@ -14,11 +14,11 @@
 1. **前置確認**：開啟正常連線，確認 User1 Authority 的 Enabled 欄位狀態為 `TRUE`。
 2. **觸發異常**：發送一個嘗試將 User1 Enabled 設為 `FALSE` 的 Payload，但刻意將一個 **End List Token** 放在開頭的 **Call Token** 之前，製造 Unexpected Token 錯位。
 
-![](assets/Error%20Test%20Cases/file-20260309111224464.png)
+![](assets/Error%20Test%20Cases/file-20260311110038422.png)
 
 3. **接收結果**：透過 `IF-RECV` 讀取緩衝區，驗證是否收到空封包或 `CloseSession`。
 
-![](assets/Error%20Test%20Cases/file-20260309111255531.png)
+![](assets/Error%20Test%20Cases/file-20260311110038425.png)
 
 
 ## ETC-06: Unexpected Token in Method Header – Regular Session
@@ -69,11 +69,11 @@
 2. 調用無效的 Invoking UID : 00 00 08 01 AA BB CC DDh ( UNKNOWN )
 3. 調用有效的 Method UID : 00 00 00 06 00 00 00 17h ( Set )
 
-![[Pasted image 20250519141449.png]]
+![[../attachments/Pasted image 20250519141449.png]]
 
 返回執行結果為 NOT_AUTHORIZED。
 
-![](assets/Error%20Test%20Cases/file-20260309170541528.png)
+![](assets/Error%20Test%20Cases/file-20260311110038418.png)
 
 ### 測試案例 (2)
 #### 測試說明 
@@ -86,11 +86,11 @@
 1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Anybody 的身份作為授權者 (Admins 權限才可以檢索 DataStore內容)。
 2. 調用 Get method on Invoking UID of 00 00 10 01 00 00 00 00 ( DataStore table )
 
-![[Pasted image 20250519152137.png]]
+![[../attachments/Pasted image 20250519152137.png]]
 
 返回執行結果為 NOT_AUTHORIZED。
 
-![[Pasted image 20250519152226.png]]
+![[../attachments/Pasted image 20250519152226.png]]
 
 ### 測試案例 (3)
 #### 測試說明 
@@ -103,18 +103,18 @@
 1. 啟動了一個 Session，使用的是 Locking SP（安全提供者）的 UID，並以 Admin1（管理者1）的身份作為授權者。
 2. 調用 Get method on Invoking UID of 00 00 00 0B 00 01 00 01 ( C_PIN_Admin1 )
 
-![[Pasted image 20250520074422.png]]
+![[../attachments/Pasted image 20250520074422.png]]
 
 3. Data Payload 會帶有要取得 CharSet, TryLimit, and Tries 相關欄位資訊。
 
-![[Pasted image 20250520074444.png]]
+![[../attachments/Pasted image 20250520074444.png]]
 
 返回執行結果可以取得 C_PIN Table Description（CharSet, TryLimit, and Tries）。
 
-![[Pasted image 20250520072911.png]]
+![[../attachments/Pasted image 20250520072911.png]]
 
 
-![[Pasted image 20250520073304.png]]
+![[../attachments/Pasted image 20250520073304.png]]
 
 ### 測試案例 (4)
 
@@ -141,11 +141,11 @@
 
 備註 : 官方測試案例所調用的是無效的 UID of 00 00 08 01 00 00 00 05。
 
-![[Pasted image 20250407092200.png]]
+![[../attachments/Pasted image 20250407092200.png]]
 
 返回執行結果 NOT_AUTHORIZED。
 
-![[Pasted image 20250407092621.png]]
+![[../attachments/Pasted image 20250407092621.png]]
 
 ---
 
@@ -177,7 +177,7 @@ Data Pay Load = 10A6h - 20Bytes ( ComPacket Header )
 - 不太清楚為什要用 MaxComPacketSize - 20 作為 Data Pay Load。
 - ComPacket 封包會因為 Payload 大小而最終導致超過 MaxComPacket Size，符合測試案例。
 
-![[Pasted image 20250407073546.png]]
+![[../attachments/Pasted image 20250407073546.png]]
 
 ---
 ## ETC-14 Exceed TPer Properties Regular Session
@@ -194,7 +194,7 @@ MaxSubPackets: TPer 宣告的最大可接受封包數量。
 1. 寫入資料到 Data Store Table
 2. 發送多個 Subpacket 封包 ( Subpacket 1  +Subpacket 2 )
 
-![[Pasted image 20250407062258.png]]
+![[../attachments/Pasted image 20250407062258.png]]
 
 ---
 

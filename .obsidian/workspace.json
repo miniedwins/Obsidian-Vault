@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-02 IF-RECV Behavior Tests.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Error Test Cases"
+              "title": "SPF-02 IF-RECV Behavior Tests"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-02 IF-RECV Behavior Tests.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Error Test Cases"
+              "title": "Outline of SPF-02 IF-RECV Behavior Tests"
             }
           },
           {
@@ -207,15 +207,24 @@
   },
   "active": "04af4a4e2459eda3",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/assets/Error Test Cases/file-20260309170541528.png",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/Error Test Cases.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-02 IF-RECV Behavior Tests.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests/file-20260311110730055.png",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038418.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250519144343.png",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250519141449.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250407092621.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250407073546.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250407092200.png",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/assets/Error Test Cases/file-20260309111255531.png",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/assets/Error Test Cases/file-20260309111224464.png",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038425.png",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038422.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/assets/Error Test Cases",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/assets",
     "作業系統/Linux/指令/I2C 命令.md",
@@ -223,7 +232,6 @@
     "技術資料/NVMe/NVMe-OPAL/OPAL/Manufactured-Inactive to Manufactured.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
     "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/OPA-CNL/Multiple Namespaces.md",
     "技術資料/NVMe/NVMe-OPAL/OPA-CNL/Shadow MBR.md",
     "技術資料/NVMe/NVMe-OPAL/OPA-CNL/RevertSP.md",
@@ -243,18 +251,9 @@
     "作業系統/Linux/套件/nvmecli.md",
     "作業系統/Linux/套件/libnvme.md",
     "作業系統/Linux/套件/json-c.md",
-    "作業系統/Linux/核心/如何獨立編譯核心模組.md",
     "技術資料/NVMe/NVMe-Base/Other",
-    "技術資料/NVMe/NVMe-Base/Firmware Image Download",
-    "技術資料/NVMe/NVMe-Base/Dataset Management",
-    "技術資料/NVMe/NVMe-Base/E2E Data Protection",
-    "技術資料/NVMe/NVMe-Base/Temperature Threshold",
-    "技術資料/NVMe/NVMe-Base/Telemetry/assets/Telemetry",
-    "技術資料/NVMe/NVMe-Base/Telemetry/assets",
     "程式設計/NVMe/Untitled.canvas",
     "技術資料/NVMe/NVMe-ZNS/attachments/zone_characteristics.png",
-    "技術資料/NVMe/NVMe-Base/Sanitize/assets/Sanitize State Machine/file-20260114103744498.png",
-    "技術資料/NVMe/NVMe-Base/Telemetry/assets/Telemetry/file-20260205144703141.png",
     "技術資料/NVMe/NVMe-Base/Untitled.canvas",
     "Canvas/domain_event.canvas",
     "Canvas/Untitled.canvas",
