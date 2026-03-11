@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-04 Tries Reset.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-05 Tries Reset on Power Cycle.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SPF-04 Tries Reset"
+              "title": "SPF-05 Tries Reset on Power Cycle"
             }
           }
         ]
@@ -152,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-04 Tries Reset.md",
+                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-05 Tries Reset on Power Cycle.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SPF-04 Tries Reset"
+              "title": "Outline of SPF-05 Tries Reset on Power Cycle"
             }
           },
           {
@@ -207,8 +207,9 @@
   },
   "active": "04af4a4e2459eda3",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-03 TryLimit.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-04 Tries Reset.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-03 TryLimit.md",
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-05 Tries Reset on Power Cycle.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-02 IF-RECV Behavior Tests.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/Error Test Cases.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
@@ -251,7 +252,6 @@
     "().md",
     "作業系統/Linux/Bash 腳本/使用 shift 解析參數.md",
     "作業系統/Linux/套件/nvmecli.md",
-    "作業系統/Linux/套件/libnvme.md",
     "技術資料/NVMe/NVMe-Base/Other",
     "程式設計/NVMe/Untitled.canvas",
     "技術資料/NVMe/NVMe-ZNS/attachments/zone_characteristics.png",
