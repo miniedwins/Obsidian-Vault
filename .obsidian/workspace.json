@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/SANBaze/SANBlaze 腳本核心機制實戰筆記.md",
+                "file": "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
                 "mode": "source",
                 "source": false
               },
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "技術資料/SANBaze/SANBlaze 腳本核心機制實戰筆記.md",
+                "file": "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "技術資料/SANBaze/SANBlaze 腳本核心機制實戰筆記.md",
+                "file": "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/SANBaze/SANBlaze 腳本核心機制實戰筆記.md",
+                "file": "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -205,14 +205,14 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4e24df3295ed24a3",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
-    "技術資料/SANBaze/SANBlaze 腳本核心機制實戰筆記.md",
+    "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
     "技術資料/SANBaze/開發與編譯環境.md",
     "技術資料/SANBaze/進階與硬體控制.md",
     "技術資料/SANBaze/測試執行與自動化架構.md",
     "英文學習/長句結構解析/as assigned.md",
-    "技術資料/SANBaze",
+    "技術資料/SANBlaze",
     "英文學習/長句結構解析",
     "英文學習",
     "().md",
