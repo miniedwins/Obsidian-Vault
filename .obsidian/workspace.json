@@ -8,33 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "f4689660ea27b15e",
+            "id": "e5aeac91d8a3411d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
+                "file": "Daily_AI_Tech/20260401_ai_tech.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SANBlaze 腳本核心機制實戰筆記"
-            }
-          },
-          {
-            "id": "e5aeac91d8a3411d",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.12.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.12.7"
+              "title": "20260401_ai_tech"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -165,12 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Daily_AI_Tech/20260401_ai_tech.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 20260401_ai_tech"
             }
           },
           {
@@ -219,8 +207,8 @@
   },
   "active": "e5aeac91d8a3411d",
   "lastOpenFiles": [
-    "技術資料/SANBlaze/Python 電源控制 API 實戰手冊.md",
     "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
+    "技術資料/SANBlaze/Python 電源控制 API 實戰手冊.md",
     "技術資料/SANBaze/開發與編譯環境.md",
     "技術資料/SANBaze/進階與硬體控制.md",
     "技術資料/SANBaze/測試執行與自動化架構.md",
