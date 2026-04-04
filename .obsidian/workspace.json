@@ -37,12 +37,14 @@
             "id": "eb8f9b7fe12f3192",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.12.7"
+                "file": "技術資料/MCTP/Drop Packets.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "發行記錄 1.12.7"
+              "icon": "lucide-file",
+              "title": "Drop Packets"
             }
           }
         ],
@@ -177,12 +179,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "技術資料/MCTP/Drop Packets.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大綱"
+              "title": "Drop Packets 的大綱"
             }
           },
           {
@@ -231,6 +234,14 @@
   },
   "active": "eb8f9b7fe12f3192",
   "lastOpenFiles": [
+    "技術資料/MCTP/Endpoint Discovery.md",
+    "技術資料/MCTP/Endpoint ID.md",
+    "技術資料/MCTP/Endpoint ID Retention.md",
+    "程式設計/Python/test/pytest.mark.usefixtures.md",
+    "程式設計/Python/Pydantic/驗證器 (Validator)/AfterValidator.md",
+    "程式設計/Git/同步原作專案進度.md",
+    "程式設計/領域驅動/Entity 可以參考其他 Entity.md",
+    "程式設計/單元測試/單元測試命名方法.md",
     "Daily_AI_Tech/20260401_ai_tech.md",
     "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
     "技術資料/SANBlaze/Python 電源控制 API 實戰手冊.md",
@@ -252,7 +263,6 @@
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-04 Tries Reset.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-03 TryLimit.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/Error Test Cases.md",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Template.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests/file-20260311110730055.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets",
@@ -269,13 +279,6 @@
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038425.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038422.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/assets/Error Test Cases",
-    "作業系統/Linux/指令/I2C 命令.md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/Revert.md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/Manufactured-Inactive to Manufactured.md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/Discovery.md",
-    "技術資料/NVMe/NVMe-OPAL/OPAL/RevertSP.md",
-    "技術資料/NVMe/NVMe-OPAL/OPA-CNL/Multiple Namespaces.md",
-    "技術資料/NVMe/NVMe-OPAL/OPA-CNL/Shadow MBR.md",
     "Canvas/吞葡萄新聞分析.canvas",
     "程式設計/NVMe/Untitled.canvas",
     "技術資料/NVMe/NVMe-ZNS/attachments/zone_characteristics.png",
