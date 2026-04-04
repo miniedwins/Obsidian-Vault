@@ -32,9 +32,21 @@
               "icon": "lucide-book-up",
               "title": "發行記錄 1.11.7"
             }
+          },
+          {
+            "id": "eb8f9b7fe12f3192",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "發行記錄 1.12.7"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -101,7 +113,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 217.5
+    "width": 391.5
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -217,7 +229,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "000d1ba1f40cec7e",
+  "active": "eb8f9b7fe12f3192",
   "lastOpenFiles": [
     "Daily_AI_Tech/20260401_ai_tech.md",
     "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
