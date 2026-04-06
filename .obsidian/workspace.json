@@ -4,50 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "08ffc19a0442e86c",
+        "id": "2c143ed60d12020a",
         "type": "tabs",
         "children": [
           {
-            "id": "e5aeac91d8a3411d",
+            "id": "275a52bd7cb76e33",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "未命名.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "未命名"
-            }
-          },
-          {
-            "id": "000d1ba1f40cec7e",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.11.7"
-              },
-              "icon": "lucide-book-up",
-              "title": "發行記錄 1.11.7"
-            }
-          },
-          {
-            "id": "eb8f9b7fe12f3192",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "人工智慧/skills/development/python-guidelines/SKILL.md",
+                "file": "人工智慧/skills/development/code-analysis-knowledge-doc/SKILL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "SKILL"
             }
+          },
+          {
+            "id": "3d985823ddfda262",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "未命名 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "未命名 1"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -178,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.md",
+                "file": "未命名 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "未命名 的大綱"
+              "title": "未命名 1 的大綱"
             }
           },
           {
@@ -231,18 +220,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e5aeac91d8a3411d",
+  "active": "3d985823ddfda262",
   "lastOpenFiles": [
+    "assets/未命名 1/file-20260406121459072.md",
+    "assets/未命名 1",
+    "未命名 1.md",
+    "人工智慧/skills/development/code-analysis-knowledge-doc/SKILL.md",
+    "人工智慧/skills/development/code-analysis-knowledge-doc/assets/SKILL/file-20260406121445554.md",
+    "人工智慧/skills/development/code-analysis-knowledge-doc/assets/SKILL",
+    "人工智慧/skills/development/code-analysis-knowledge-doc/assets",
+    "人工智慧/skills/development/python-guidelines/SKILL.md",
+    "未命名.md",
     "assets/未命名/file-20260406114546303.md",
     "assets/未命名",
     "assets",
-    "未命名.md",
-    "人工智慧/skills/development/python-guidelines/SKILL.md",
     "人工智慧/skills/development/python-guidelines/assets/SKILL/file-20260406114524476.md",
     "人工智慧/skills/development/python-guidelines/assets/SKILL",
     "人工智慧/skills/development/python-guidelines/assets",
     "人工智慧/skills/development/python-guidelines/scraper_summarizer.py",
-    "人工智慧/skills/development/code-analysis-knowledge-doc/SKILL.md",
     "人工智慧/skills/development/python-guidelines/references/testing.md",
     "人工智慧/skills/development/python-guidelines/references/linting.md",
     "人工智慧/skills/development/python-guidelines/references/env.md",
@@ -261,15 +256,9 @@
     "Daily_AI_Tech/20260401_ai_tech.md",
     "技術資料/SANBlaze/SANBlaze 腳本核心機制實戰筆記.md",
     "技術資料/SANBlaze/Python 電源控制 API 實戰手冊.md",
-    "技術資料/SANBaze/開發與編譯環境.md",
-    "技術資料/SANBaze/進階與硬體控制.md",
-    "技術資料/SANBaze/測試執行與自動化架構.md",
     "技術資料/SANBlaze",
     "英文學習/長句結構解析",
-    "英文學習",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests/file-20260311110730055.png",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests",
-    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038418.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250519144343.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250519141449.png",
