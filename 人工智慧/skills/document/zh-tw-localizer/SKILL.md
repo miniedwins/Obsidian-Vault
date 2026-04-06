@@ -37,18 +37,21 @@ allowed-tools:
 該技能依賴內部腳本 `scripts/localizer.py`，其參數說明如下：
 
 **預覽清單 (Dry Run)**
+
 ```bash
 # 輸出範例: 一張包含 [舊檔名 | 建議新檔名] 的 Markdown 表格。
 python scripts/localizer.py --dir "C:\Path" --ext ".mp4" --preview
 ```
 
-**正式執行 (Apply)**
+**正式執行 (Apply)
+**
 ```bash
 # 正式對檔案進行重新命名
 python scripts/localizer.py --dir "C:\Path" --ext ".mp4" --apply
 ```
 
 **指定僅進行簡繁轉換 (S2T Only)**
+
 ```bash
 # 僅將簡體中文檔名轉為繁體，跳過純英文/日文翻譯
 python scripts/localizer.py --dir "C:\Path" --mode s2t --preview
