@@ -35,7 +35,8 @@
               "title": "未命名 1"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -166,13 +167,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "人工智慧/skills/development/code-analysis-knowledge-doc/SKILL.md",
+                "file": "未命名 1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "SKILL 的大綱"
+              "title": "未命名 1 的大綱"
             }
           },
           {
@@ -219,12 +220,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "275a52bd7cb76e33",
+  "active": "3d985823ddfda262",
   "lastOpenFiles": [
+    "人工智慧/skills/development/code-analysis-knowledge-doc/SKILL.md",
     "未命名 1.md",
     "assets/未命名 1/file-20260406121459072.md",
     "assets/未命名 1",
-    "人工智慧/skills/development/code-analysis-knowledge-doc/SKILL.md",
     "人工智慧/skills/development/code-analysis-knowledge-doc/assets/SKILL/file-20260406121445554.md",
     "人工智慧/skills/development/code-analysis-knowledge-doc/assets/SKILL",
     "人工智慧/skills/development/code-analysis-knowledge-doc/assets",
