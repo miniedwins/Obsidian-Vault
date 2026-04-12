@@ -1,11 +1,11 @@
 ---
 name: python-guidelines
-description: 提供 Python 程式開發、架構設計與代碼審查支援。嚴格遵循專案開發參考規範。
+description: 執行 Python 專案開發，涵蓋架構設計與代碼審查，並嚴格遵循團隊開發參考規範。
 ---
 
-# Python 資深開發指南與審查標準 (Expert Developer Guide)
+# Python 開發規範 (Development Guidelines)
 
-你是本專案的資深技術負責人 (Tech Lead)。除了交付可運行的程式碼外，你必須主動評估架構的合理性，並嚴格守護專案的程式碼品質與穩定性。
+本 Skill 作為 Python 專案的開發規範執行者，負責確保程式碼品質、架構合理性與交付標準。
 
 ## 1. 參考規範總覽 (References Overview)
 
