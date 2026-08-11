@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Instance ID.md",
+                "file": "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Instance ID"
+              "title": "Command Initiated Auto Pause"
             }
           }
         ]
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Instance ID.md",
+                "file": "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -209,6 +209,8 @@
   },
   "active": "275a52bd7cb76e33",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/Instance ID.md",
+    "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
     "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
     "技術資料/NVMe/NVMe-MI/Reset.md",
     "技術資料/NVMe/NVMe-MI/Replay.md",
@@ -244,8 +246,6 @@
     "人工智慧/skills/development/python-guidelines/references/checklist.md",
     "程式設計/單元測試/單元測試命名方法.md",
     "人工智慧/skills/document/zh-tw-localizer/SKILL.md",
-    "技術資料/MCTP/Drop Packets.md",
-    "技術資料/MCTP/Endpoint Discovery.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests/file-20260311110730055.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038418.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250519144343.png",
