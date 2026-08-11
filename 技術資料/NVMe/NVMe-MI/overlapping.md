@@ -64,3 +64,31 @@
 - 此時，**第一筆命令已接收的暫存資料會被無情丟棄 (Dropped)**，而這個新收到的 SOM 封包則會被保留，並以此為起點，**重新啟動一個全新的訊息重組程序**來處理第二筆命令。
 
 ---
+根據 NVMe-MI 與 MCTP 規範，在您設定的假設條件下（**相同 Command Slot、相同 Message Tag，且第一筆命令已處於 Processing State**），第二筆命令的處理機制會因協議層級而有不同的規範與實作定義：
+
+### 1. NVMe-MI 規範層面：屬於「未定義行為 (Undefined Behavior)」
+
+- **行為未定義**：根據 NVMe-MI 1.2e 規範第 4.2 節，**在同一個 Command Slot 接收到兩個或多個重疊的 Command Message（Overlapping Command Messages），其行為是「未定義（Undefined）」的**。
+- **通常行為（拋棄第二筆）**：雖然規範定義為 Undefined，但它同時指出，若此重疊行為導致端點（Management Endpoint）決定丟棄其中一筆 Command Message，這將被歸類為「向非空閒命令槽發送命令訊息」的錯誤（Command Message to non-Idle Command Slot, **CMNICS**）。為了保護正在執行（Process State）的第一筆命令，**裝置的常見實作通常是「靜默丟棄第二筆新命令」，並繼續處理第一筆命令**。
+- **錯誤旗標記錄**：當發生此情況時，Management Endpoint 會在後續的 Get State Control Primitive 回傳狀態中，將 **CMNICS 狀態位元（Get State Response 中的 Bit 3）精確地設為 '1'**。
+- **發送端限制**：規範明文規定，管理控制器（BMC）**不應該**在尚未收到前一筆命令的回應訊息（Response Message）之前，向同一個 Command Slot 發送新的 Command Message。
+
+---
+
+### 2. 協定層級差異釐清：為什麼此時「不適用」MCTP 的強制中斷機制？
+
+您可能會聯想到 MCTP 基礎規範中「收到全新 start 封包時會強行拋棄舊封包」的自我恢復機制：
+
+- **MCTP 的丟棄舊包機制**：MCTP Base Specification 規定，若**「訊息重組正在進行中（Message assembly in progress）」**（即 NVMe-MI 的 **Receive State**），此時若收到同一個 Message Tag 且 SOM=1 的新 start 封包，會強制終止原來的組包，丟棄已接收的舊碎包，並重新開始重組新訊息。
+- **Processing State 的差異**：但在您的假設中，第一筆命令已經處於 **Processing State (Process)**。這代表第一筆命令在 MCTP 層級**已經重組完畢並通過 MIC 驗證**，組包狀態機已經結束。此時新進來的 SOM=1 封包會被直接識別為「全新的一筆 Command Message」，這就完全落入了 NVMe-MI 的 **Overlapping Command 條款（行為未定義 / 觸發 CMNICS）**，而非 MCTP 的組包中斷條款。
+
+---
+
+### 給測試與開發工程師的建議
+
+在實際開發 BMC 韌體或撰寫 Conformance 測試腳本時，若遇到第二筆重疊命令發送：
+
+1. **單一槽限制**：同一個 Command Slot 在同一時間只能有一筆 active 的 Command Message。
+2. **多工並行**：若需要並行（Concurrent）發送多筆命令而不想互相阻塞，BMC **必須使用不同的 Command Slot（分別發送到 Slot 0 與 Slot 1）**，此時不同 Slot 的 Command Messages 才會平行處理且互不干擾。
+
+📊 我可以為您整理一份關於 NVMe-MI Out-of-Band 錯誤處理與 Control Primitives 的快速參考指南，幫助您更輕鬆地進行除錯或撰寫測試腳本。
