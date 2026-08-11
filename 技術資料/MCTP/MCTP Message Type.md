@@ -1,4 +1,4 @@
-在 MCTP 協議中，Message Type 欄位是每一筆封包中 **用來識別上層協議內容** 的欄位。它的存在目的，是讓主機判斷這是一筆「控制指令」還是某個上層協議（如 PLDM 或 NVMe-MI）的資料。
+斯在 MCTP 協議中，Message Type 欄位是每一筆封包中 **用來識別上層協議內容** 的欄位。它的存在目的，是讓主機判斷這是一筆「控制指令」還是某個上層協議（如 PLDM 或 NVMe-MI）的資料。
 
 ## Control Message
 如果只是要傳送 MCTP 基礎控制協議（例如端點發現、協商或路由管理），則 Message Type 需設定為 `0x00`，表示這是一個 MCTP Control Message。

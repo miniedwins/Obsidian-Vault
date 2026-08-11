@@ -17,7 +17,7 @@
 ## 並行處理能力 ( Parallel )
 - 每個 Command Slot 獨立運作，可同時處理兩條獨立的 Command Message 流。    
 - 若一個 NVM Subsystem 有 **N 個 Management Endpoint**：    
-    - 每個 Endpoint 2 個 Slot → 最多可同時處理 **2N 筆 Command Message**。        
+    - 每個 Endpoint 2 個 Slot → 最多可同時處理 **2N 筆 Command Message**。       
     - 各 Endpoint 之間的命令服務互不影響，可並行處理。
 
 ## 範例說明
@@ -106,8 +106,7 @@
 ### 注意事項
 ( 原文 ) : The behavior of receiving two or more overlapping Command Messages to the same Command Slot is undefined. If this results in the Management Endpoint discarding a Command Message, then this is considered receiving a Command Message to a non-Idle Command Slot (CMNICS)
 
-( 說明 ) :  若 Controller 傳送兩條重疊的命令 ( 相同 Slot 未完成又重送新命令 )，Controller 會根據
-第一筆命令有沒有完全收完來處理，處理如下 : 
+( 說明 ) :  若 Controller 傳送兩條重疊的命令 ( 相同 Slot 未完成又重送新命令 )，Controller 會根據第一筆命令有沒有完全收完來處理，處理如下 : 
 
 - 第一筆命令完全收完，第二筆命令會丟棄 ( silently discard )。
 - 第一筆命令沒有完全收完，然後第二筆命令進來，丟棄一筆命令並且處理第二筆命令。
