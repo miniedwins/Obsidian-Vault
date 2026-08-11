@@ -1,91 +1,80 @@
-以下為您整理並修正筆誤與排版混淆後，**Test 7.3 Case 1 至 Case 4** 的完整測試目標、測試流程與預期觀測結果對照表：
+
+#### **Case 1: Get State Control Primitive 請求與清除機制驗證**
+
+- **測試目標**： 驗證 Get State Control Primitive 請求在不同 **Clear Error State Flags (CESF)** 設定值（1 與 0）下的交互驗證，並確認 Management Endpoint State (MES) 的錯誤清除機制是否正確運作。
+- **測試流程**：
+    1. 執行 MCTP 初始化。
+    2. 發送 **Get Endpoint ID** 控制訊息以獲取端點 ID。
+    3. 發送 **Get State Control Primitive** 請求，並將 **CESF (Clear Error State Flags) 位元設為 1**，記錄回傳的 MES 狀態。
+    4. 再次發送 **Get State Control Primitive** 請求，並將 **CESF 位元設為 0**，記錄並比對回傳的 MES 狀態。
+- **預期觀測結果**：
+    1. 步驟 3 與步驟 4 的 Get State 請求皆應成功完成。
+    2. 在步驟 3 (CESF = 1) 執行後，MES 中的 Error State Flags (Bits 14:03) 應被**原子性 (Atomically) 清除為 0h**。
+    3. 步驟 4 (CESF = 0) 回傳的 MES 暫存器中，**Bits 14:03 應保持為 0h**，且不應被修改。
 
 ---
 
-### **Test 7.3 – NVMe-MI Get State Primitive Response (FYI)**
+#### **Case 2: NVM Subsystem Reset 後清除 Management Endpoint State 暫存器位元**
 
-#### **Case 1: NVMe-MI Get State Primitive Response**
-
-- **測試目標 (Test Purpose)：**  
-    驗證待測物（DUT）的管理端點（Management Endpoint）是否支援 `Get State` 控制原型（Control Primitive），以及其對「清除錯誤狀態旗標（CESF = 1）」與「僅讀取旗標（CESF = 0）」的回應機制是否正確符合規範。
-- **測試流程 (Test Procedure)：**
-    1. 進行 MCTP 初始化。
-    2. 發送 `Get Endpoint ID` 指令。
-    3. 發送 `Get State` 控制原型請求，並將 **CESF (Clear Error State Flags) 位元設為 1**。
-    4. 發送第二次 `Get State` 控制原型請求，同樣將 **CESF 設為 1**。
-    5. 發送一個具有**無效標頭版本 (Bad Header Version)** 的 `Get Endpoint ID` 封包。
-    6. 發送 `Get State` 請求，並將 **CESF 設為 0**（僅讀取不清除）。
-    7. 發送 `Get State` 請求，並將 **CESF 設為 1**（讀取並清除）。
-    8. 發送 `Get State` 請求，並將 **CESF 設為 0**。
-    9. 依序重複上述流程，但改為發送以下異常條件封包以誘發對應的錯誤旗標：
-        - 發送無 SOM 且無 EOM 標記的 `Get Endpoint ID` 中間封包（Middle Packet）。
-        - 發送無效目的端 ID 的封包（Destination Endpoint ID = 0x11）。
-        - 發送錯誤 Tag 所有者（Tag Owner = 01b）的封包。
-        - 發送錯誤 MIC (CRC) 檢驗碼的 `Read NVMe-MI Data Structure` 指令。
-        - 發送錯誤 LCRC 的 `Read NVMe-MI Data Structure` 指令（僅適用於 PCIe VDM 傳輸）。
-- **預期觀測結果 (Observable Results)：**
-    1. 待測物在遭遇上述異常條件封包時，必須依規格書規定靜默丟棄（Drop）封包，但必須在**管理端點狀態（Management Endpoint State, MES）資料結構中，精確地將對應的錯誤旗標位元（Bits 13:6）標記為 1**。
-    2. 當發送 **CESF = 0** 的 `Get State` 請求時，回傳的狀態中對應的錯誤旗標必須依然為 1。
-    3. 當發送 **CESF = 1** 的 `Get State` 請求後，錯誤旗標必須隨即被**原子性地重置為 0**，並在後續 CESF = 0 的讀取中確認旗標已皆成功清除為 0h。
+- **測試目標**： 驗證當發生 **NVM Subsystem Reset** 時，Management Endpoint State (MES) 暫存器中除了 **Bit 14 (NSSRO - NVM Subsystem Reset Occurred) 被設為 1** 以外，其餘位元皆會被清除為 0。
+- **測試流程**：
+    1. 執行 MCTP 初始化。
+    2. 發送 **Read NVMe-MI Data Structure** 指令（將 **DTYP 設為 00h - NVM Subsystem Information**），讀取並記錄 NNSC (Capabilities) 欄位中的 **Status Reporting Enhancements (SRE)** 是否支援（若 SRE 欄位未設為 1 則此測試不適用）。
+    3. 執行 **NVM Subsystem Reset**。
+    4. 向 Management Endpoint Command Slot 0 發送 **Get State Control Primitive** 請求（Tag = 0x01, MEB = 1），記錄回傳的 MES 數據結構。
+    5. 執行 **Management Endpoint Reset**。
+    6. 再次發送相同的 **Get State Control Primitive** 請求，記錄並驗證 MES 數據。
+- **預期觀測結果**：
+    1. 在步驟 4 接收到的 MES 暫存器中，**Bit 14 (NSSRO) 必須精確設為 1**。
+    2. **Bit 15 與 Bits 13:0 必須全部清除為 0**。
 
 ---
 
-#### **Case 2: MES Bits Cleared on NVM Subsystem Reset**
+#### **Case 3: Management Endpoint State 暫存器錯誤旗標更新與清除驗證**
 
-_(原規範書將此流程誤植於 Case 1 的預期結果中，此處已校正回獨立 Case 2)_
-
-- **測試目標 (Test Purpose)：**  
-    驗證發生 **NVM Subsystem Reset (子系統重置)** 時，Management Endpoint State (MES) 資料結構中除了 **Bit 14 (NSSRO - NVM Subsystem Reset Occurred)** 之外的所有狀態旗標與錯誤位元是否都能被正確初始化清除。
-- **測試流程 (Test Procedure)：**
-    1. 進行 MCTP 初始化。
-    2. 發送 `Read NVMe-MI Data Structure` 指令 (DTYP = 0x00)，記錄 `NNSC` (NVM Subsystem Capabilities) 的欄位值。_(若不支援 Status Reporting Enhancements 則此 Case 不適用)_。
-    3. **執行 NVM Subsystem Reset (子系統重置)**。
-    4. 發送 `Get State` 控制原型請求至 Command Slot 0（Header 的 MEB 設為 0x01），記錄並驗證返回的 MES 資料結構。
-    5. 執行 `Management Endpoint Reset`。
-    6. 再次發送 `Get State` 請求並記錄 MES 狀態。
-- **預期觀測結果 (Observable Results)：**
-    1. 驗證在 NVM Subsystem Reset 之後，MES 資料結構中的 **Bit 14 (NSSRO) 必須被正確設為 1**。
-    2. 驗證 MES 的 **Bit 15 (Pause Flag) 與 Bits 13:0 必須皆成功被清除為 0**。
-
----
-
-#### **Case 3: MES Expected Error Updates**
-
-- **測試目標 (Test Purpose)：**  
-    驗證 Management Endpoint 在遭遇**各種實體層與傳輸層的封包錯誤**時，是否能在 MES 結構中的對應位元（Bits 13:6）**正確且精確地將錯誤狀態更新標記為 1**，並能透過 CESF 順利重置清除。
-- **測試流程 (Test Procedure)：**
-    1. 進行 MCTP 初始化並讀取 `Read NVMe-MI Data Structure` 以確認 SRE 與 NNSC 支援度。
-    2. 發送初始的 `Get State` 請求，記錄乾淨的 MES 狀態。
-    3. 傳送 `Get State` 請求，並將 Clear Error State Flags (CESF) 設為 0。
-    4. 發送一個包含無效設定的 `Configuration Get` 指令（如：不支援的配置識別碼 0x1234）。
-    5. 發送 `Configuration Get` 指令（Config ID = 01h）並故意將 Tag Owner (TO) 欄位設為 1b。
-    6. 在短時間內隨機發送 10 次 `Configuration Get` 指令以模擬網路延遲與序號亂序。
-    7. 發送 `SOM = 0b` 且 `EOM = 0b` 的異常中間封包，且其 Payload 大小不等於起頭封包的 Payload 大小。
-    8. 發送 `Configuration Get` 指令並將 Destination Endpoint ID 設為無效的 0xFF。
-    9. 發送 `Configuration Get` 指令並將 Header Version 欄位設為無效的 0xF。
-    10. 發送 `Configuration Get` (Config ID = 03h) 取得 TU Size，再發送一個傳輸大小不符的配置指令。
-    11. 發送 `Get State` 控制原型請求（MEB 設為 0x01）並記錄回傳的 MES。
-    12. 發送 `Get State` 控制原型請求，並將 Clear Error State Flags (CESF) 設為 1。
-- **預期觀測結果 (Observable Results)：**
-    1. 除了正常的 `Get State` 之外，所有發送的異常指令皆應回傳對應的錯誤狀態回應（如：Invalid Parameter、Bad Header 等）。
-    2. 驗證 MES 中記錄各種錯誤狀態的 **Bits 13:6 皆成功被標記為 1**，證明包含：BPOPL (壞封包/物理層錯誤)、BUEMT (錯誤Message Tag)、OSPSN (序號不連續)、ITU (錯誤傳輸單元)、UDSTID (未知目的端 ID)、BHVS (錯誤標頭版本)、UTUNT (不支援傳輸單元) 等錯誤均被精確記錄。
-    3. 驗證 MES 的值成功被複製回傳至控制原型回應的 `Control Primitive Specific Response` 欄位中。
-    4. 驗證在執行 CESF = 1 的清除請求後，MES 中的 **Bits 14:03 被成功重置清除為 0**。
+- **測試目標**： 驗證當待測物 (DUT) 在面對各種格式錯誤或異常的 MCTP 封包時，**MES 暫存器位元 13:6** 是否會被正確且精確地設置為 1，並能透過 CESF = 1 原子性清除。
+- **測試流程**：
+    1. 執行 MCTP 初始化，並發送 **Read NVMe-MI Data Structure (DTYP = 00h)** 確認裝置支援 SRE。
+    2. 發送 **Get State Control Primitive** 請求（MEB = 1, CESF = 0），確認初始 MES 暫存器狀態。
+    3. 依序注入下列 MCTP 與 NVMe-MI **異常/壞封包 (Error Stimulus)**：
+        - 發送無效的 **Configuration Get** 請求（使用保留的 Configuration ID，如 0x1234）。
+        - 發送 **Configuration Get** 請求（將 Tag Owner 位元誤設為 1）。
+        - 以隨機時間間隔（100ms 至 500ms）發送 10 次 Configuration Get 指令以模擬網路延遲與**封包序號不連續 (Out-of-Sequence)**。
+        - 刻意發送**無效目的端 ID (Destination EID)**、**錯誤傳輸單元大小 (Transmission Unit)**、**壞標頭版本 (Header Version)** 等異常封包。
+    4. 發送 **Get State Control Primitive** 請求，記錄 MES 暫存器狀態。
+    5. 發送 **Get State Control Primitive** 請求，並將 **CESF 位元設為 1**，等待並記錄回傳回應。
+- **預期觀測結果**：
+    1. 步驟 3 中除了正常的 Get State 外，所有異常命令都必須由 DUT **正確識別並回傳對應的錯誤狀態**（如 Bad Packet, Out-of-Sequence, Unknown Destination ID, Bad Header Version, Unsupported TU 等）。
+    2. 在步驟 4 讀取的 MES 數據中，對應的錯誤旗標位元（**Bits 13:6**：包含 BPOPL、BUEMT、OSPSN、ITU、UDSTID、BHVS、UTUNT 等）**必須被正確設置為 1**。
+    3. 步驟 5 (CESF = 1) 回傳的數據中，原先 MES 的狀態值被正確複製到回應的 CPSR 欄位；隨後，MES 暫存器中的 **Bits 14:03 應被原子性清除為 0h**。
 
 ---
 
-#### **Case 4: NVM Subsystem Reset Clears CCSF Data Structure**
+#### **Case 4: NVM Subsystem Reset 清除 CCSF 數據結構驗證**
 
-- **測試目標 (Test Purpose)：**  
-    驗證執行 **NVM Subsystem Reset** 後，複合控制器狀態旗標 (Composite Controller Status Flags, CCSF) 資料結構中，除了硬體初始化狀態 (`HwInit`) 與重置發生記錄 (`NSSRO`) 外，其餘所有的狀態旗標（例如 Ready 位元）是否都會被成功**清除重置為 0**。
-- **測試流程 (Test Procedure)：**
-    1. 進行 MCTP 初始化並記錄 NNSC。
-    2. 執行 **Controller Level Reset (CLR，控制器層級重置)**，將 CCSF 中的 Ready (RDY) 位元設為 1。
-    3. 發送 `Configuration Get` 讀取 `Health Status Change` (Config ID = 02h)，確認 CCSF 暫存器中至少有一個狀態位元被設為 1。若皆為 0 則跳過此測試。
-    4. **執行 NVM Subsystem Reset (子系統重置)**。
-    5. 再次發送 `Configuration Get` 讀取 `Health Status Change` (Config ID = 02h)，比對重置前後的暫存器旗標。
-- **預期觀測結果 (Observable Results)：**
-    1. 驗證在執行 NVM Subsystem Reset 後，除了 `HwInit` 和 `NSSRO` 這兩個必要的初始化旗標外，**CCSF 欄位中的其餘所有狀態旗標皆必須成功被清除為 0**。
+- **測試目標**： 驗證當發生 **NVM Subsystem Reset** 時，Composite Controller Status Flags (CCSF) 暫存器除了 HwInit 與 NSSRO 位元以外，其餘位元皆會被清除為 0。
+- **測試流程**：
+    1. 執行 MCTP 初始化。
+    2. 發送 **Read NVMe-MI Data Structure (DTYP = 00h)**，記錄並確認支援 SRE。
+    3. 執行一次 **Controller Level Reset**，藉此將 CCSF 數據結構中的 **Ready (RDY) 位元設置為 1**。
+    4. 對 **Health Status Change (Configuration Identifier 02h)** 發送 **Configuration Get** 請求，確認 CCSF 至少有一個狀態位元被設為 1。
+    5. 發送 **Reset 指令（RSTTYP = 00h - Reset NVM Subsystem）** 觸發 NVM Subsystem Reset。
+    6. 再次發送對 **Health Status Change (CID = 02h)** 的 **Configuration Get** 請求，讀取 CCSF 狀態。
+- **預期觀測結果**：
+    1. 步驟 5 的 NVM Subsystem Reset 成功觸發。
+    2. 在步驟 6 讀取的 CCSF 狀態中，驗證除了 **HwInit** 與 **NSSRO** 位元外，其餘所有狀態位元**皆必須被清零 (0)**。
 
 ---
 
+#### **Case 5: 起始 Controller ID 超出最大範圍與 Persistent Event Log (PEL) 寫入驗證**
+
+- **測試目標**： 驗證當對 DUT 發送 Controller Health Status Poll 命令且 **Starting Controller ID (SCTLID)** 超出最大支援 Controller ID 時，DUT 是否會回傳 **Invalid Parameter** 錯誤，且 PEL 欄位能精確指出錯誤位置，並寫入 **Persistent Event Log (PEL)**。
+- **測試流程**：
+    1. 執行 MCTP 初始化。
+    2. 向 DUT 發送 **Controller Health Status Poll** 指令，故意將 **Starting Controller ID (SCTLID)** 欄位設置為**大於系統最大 Controller ID 的無效值**。
+    3. 向 DUT 發送 **Get Log Page** 指令以讀取 **Persistent Event Log (LID = 0x0Dh)**。
+- **預期觀測結果**：
+    1. 在步驟 2 中，DUT 必須回傳 **Invalid Parameter** 錯誤，且回傳的 Parameter Error Location (PEL) 欄位應**精確指出無效 parameter 是 SCTLID 欄位**。
+    2. 在步驟 3 的 Persistent Event Log (LID = 0x0Dh) 中，應能觀測到**對應的參數錯誤事件已被成功記錄**於 Log 數據中。
+
+---
