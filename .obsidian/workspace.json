@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Clear Error State Flags.md",
+                "file": "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 7.3 NVMe-MI Get State Primitive Response.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Clear Error State Flags"
+              "title": "Test 7.3 NVMe-MI Get State Primitive Response"
             }
           }
         ]
@@ -90,7 +90,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 391.5
+    "width": 254.30001831054688
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -154,7 +154,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Clear Error State Flags.md",
+                "file": "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 7.3 NVMe-MI Get State Primitive Response.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -209,8 +209,11 @@
   },
   "active": "275a52bd7cb76e33",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Clear Error State Flags.md",
+    "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 7.3 NVMe-MI Get State Primitive Response.md",
+    "技術資料/NVMe/UNH-IOL/NVMe-CLI",
+    "技術資料/NVMe/UNH-IOL",
+    "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
     "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
@@ -241,11 +244,8 @@
     "assets",
     "人工智慧/skills/development/python-guidelines/assets/SKILL/file-20260406114524476.md",
     "人工智慧/skills/development/python-guidelines/assets/SKILL",
-    "人工智慧/skills/development/python-guidelines/assets",
-    "人工智慧/skills/development/python-guidelines/scraper_summarizer.py",
     "人工智慧/skills/development/python-guidelines/references/testing.md",
     "人工智慧/skills/development/python-guidelines/references/linting.md",
-    "人工智慧/skills/development/python-guidelines/references/env.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/assets/SPF-02 IF-RECV Behavior Tests/file-20260311110730055.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/assets/Error Test Cases/file-20260311110038418.png",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/attachments/Pasted image 20250519144343.png",
