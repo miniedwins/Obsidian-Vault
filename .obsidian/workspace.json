@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
+                "file": "技術資料/NVMe/NVMe-MI/Controller Health Data Structure 機制.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Controller Health Status Poll"
+              "title": "Controller Health Data Structure 機制"
             }
           }
         ],
@@ -225,8 +225,16 @@
   },
   "active": "c1e25b462d7f742e",
   "lastOpenFiles": [
-    "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 8.5 – NVMe-MI Controller Health Status Poll.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
+    "技術資料/NVMe/NVMe-MI/Controller Health Data Structure 機制.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
+    "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 8.5 – NVMe-MI Controller Health Status Poll.md",
     "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 8.5 Case 1 & 2.md",
     "技術資料/NVMe/NVMe-MI/Response Message Format.md",
     "技術資料/NVMe/NVMe-MI/Response Replay Offset.md",
@@ -243,16 +251,8 @@
     "技術資料/NVMe/NVMe-MI/overlapping.md",
     "技術資料/NVMe/NVMe-MI/Pause.md",
     "技術資料/NVMe/NVMe-MI/Instance ID.md",
-    "技術資料/NVMe/NVMe-MI/PORTID.md",
-    "技術資料/NVMe/NVMe-MI/Replay.md",
-    "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 7.3 NVMe-MI Get State Primitive Response.md",
-    "技術資料/NVMe/NVMe-MI/Clear Error State Flags.md",
     "技術資料/NVMe/UNH-IOL/NVMe-CLI",
     "技術資料/NVMe/UNH-IOL",
-    "技術資料/NVMe/NVMe-MI/Control Primitive Define.md",
-    "技術資料/NVMe/NVMe-MI/Packet Assembly into Messages.md",
-    "技術資料/NVMe/NVMe-MI/Reset.md",
-    "暫存內容/未命名.md",
     "未命名.canvas",
     "未命名 1.base",
     "未命名.base",
