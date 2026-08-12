@@ -25,12 +25,14 @@
             "id": "c1e25b462d7f742e",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.6"
+                "file": "技術資料/NVMe/NVMe-MI/Response Message Format.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.13.6"
+              "icon": "lucide-file",
+              "title": "Response Message Format"
             }
           }
         ],
@@ -223,16 +225,19 @@
   },
   "active": "c1e25b462d7f742e",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/Response Replay Offset.md",
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
+    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
+    "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
+    "技術資料/NVMe/NVMe-MI/Invalid Command and Data Length.md",
+    "技術資料/NVMe/NVMe-MI/Management Endpoint Buffer.md",
+    "技術資料/NVMe/NVMe-MI/More Processing Required.md",
+    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
+    "技術資料/NVMe/NVMe-MI/Parameter Error Location.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Undefined Behavior.md",
-    "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
     "技術資料/NVMe/NVMe-MI/overlapping.md",
-    "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
     "技術資料/NVMe/NVMe-MI/Pause.md",
-    "技術資料/NVMe/NVMe-MI/Invalid Command and Data Length.md",
-    "技術資料/NVMe/NVMe-MI/More Processing Required.md",
-    "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
     "技術資料/NVMe/NVMe-MI/Instance ID.md",
     "技術資料/NVMe/NVMe-MI/PORTID.md",
     "技術資料/NVMe/NVMe-MI/Replay.md",
@@ -248,9 +253,6 @@
     "暫存內容/NVMe Study (暫存).md",
     "程式設計/領域驅動/Application Service 依賴過多.md",
     "作業系統/Linux/其它/APC PDU SNMP 電源設定.md",
-    "assets/未命名 1/file-20260406121459072.md",
-    "assets/未命名/file-20260406114546303.md",
-    "2026-04-12.md",
     "未命名.canvas",
     "未命名 1.base",
     "未命名.base",
