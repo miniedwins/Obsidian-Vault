@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "overlapping"
             }
+          },
+          {
+            "id": "c1e25b462d7f742e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.13.6"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -208,7 +221,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "275a52bd7cb76e33",
+  "active": "c1e25b462d7f742e",
   "lastOpenFiles": [
     "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Undefined Behavior.md",
