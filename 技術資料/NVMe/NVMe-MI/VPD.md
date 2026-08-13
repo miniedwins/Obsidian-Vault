@@ -52,3 +52,60 @@
 ---
 
 🧩 我可以為您整理一份 VPD (FRU Information) 的通用標頭與各 Area 的完整欄位結構對照表，方便您的韌體團隊在實作解析程式時直接作為參考。
+
+
+這兩個問題涉及的是 NVMe-MI 規格書中 **VPD（Vital Product Data，重要產品資料）** 的底層格式。由於 NVMe-MI 的 VPD 是完全遵循 **IPMI Platform Management FRU Information Storage Definition 規範**，因此這兩點都與該 FRU 格式標準有關。
+
+以下為您進行詳細的工程解析：
+
+---
+
+### 1. 「This field indicates the length of the Product Info Area in multiples of 8 bytes」是什麼意思？
+
+這句話的意思是：**`PALEN` 欄位中所填寫的數值，其單位為「8 個位元組（8 bytes）」**。
+
+- **實際計算方式：** \[\text{產品資訊區（Product Info Area）的實際總長度（Bytes）} = \text{PALEN 的數值} \times 8\]
+    
+- **具體範例：**
+    
+    - 如果 `PALEN` 欄位寫入的值是 `02h`（十進位 2），代表此區域實際長度為 \(2 \times 8 = 16\) bytes。
+    - 如果 `PALEN` 欄位寫入的值是 `05h`（十進位 5），代表此區域實際長度為 \(5 \times 8 = 40\) bytes。
+- **為什麼要這樣設計？** 這是 IPMI FRU 規範為了**記憶體對齊（Alignment）**而做出的強制規定。不僅是長度（Length），就連 VPD 通用標頭（Common Header）中指向各個 Area 的**起始偏移量（Starting Offset）**，也全部都是以 **8 位元組的倍數** 來表示。 這種固定對齊方式能讓微控制器（如 BMC 或是 SSD 控制器內部的 Management Endpoint）在定址與資料搬移時，硬體處理效率最高。
+    
+
+---
+
+### 2. `C1h`（End of Record, EOR）是從哪裡得知的？
+
+**`C1h` 寫死在規格書中，代表「欄位結束標記（End of Record）」**。您之所以能「得知」它，主要是基於以下兩點：
+
+#### 來源一：規格書的明文規定（標準定義）
+
+在 NVMe-MI 規格書中關於 **Product Info Area Factory Default Values** 的表格內，最後一個資料欄位（排在 Checksum 之前）有明確定義：
+
+> **`C1h`** — **End of Record (EOR)**: A value of **`C1h`** in this field indicates the end of record.
+
+#### 來源二：IPMI FRU 的 Type/Length 位元組編碼邏輯
+
+在 FRU 格式中，每個資料欄位的開頭都是一個 **Type/Length（類型/長度）位元組**：
+
+- **Bit [7:6]** 代表 **Type Code（編碼類型）**。
+- **Bit [5:0]** 代表 **Number of Data Bytes（資料長度）**。
+
+當我們把 **`C1h`** 展開成二進位時，它是 **`1100_0001b`**：
+
+- **Bit [7:6] = `11b`**：在規範中代表 **ASCII** 編碼類型。
+- **Bit [5:0] = `000001b` (01h)**：這通常代表後面接著 1 個 byte 的資料。
+
+然而，**IPMI FRU 規範在此處做了一個特殊例外定義**：在 Product Info Area 的變長欄位串接過程中，一旦 Parser（解析器）讀到 Type/Length 位元組的值為 **`C1h`**，它就**不再代表任何資料欄位**，而是被賦予了特殊的**終止語意（Sentinel Value）**——「**後面已經沒有其他 FRU 欄位了，此區域到此結束**」。
+
+#### 📝 Product Info Area 末尾的實際資料配置順序：
+
+1. **各種產品資訊欄位**（如 Manufacturer Name, Product Name 等，各自帶有 Type/Length）。
+2. **`C1h`**（結束符號，宣告欄位結束）。
+3. **`00h` 填充位元組**（Padding）：由於 PALEN 規定總長度必須是 8 的倍數，因此在 `C1h` 之後，韌體必須填入適當數量的 `00h` 進行補齊。
+4. **`PICHK`**（1 byte Checksum）：擺在整個區域的最後 1 個 byte 進行校驗。
+
+---
+
+📊 如果您正在開發或除錯 VPD 燒錄工具，我可以為您提供一個標準 VPD Product Info Area（含 `C1h`、Padding 與 Checksum）的實際 16 進位 Byte 陣列範例與計算過程。
