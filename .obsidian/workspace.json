@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "Inband"
             }
+          },
+          {
+            "id": "752bcd70e06e6f1b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.13.7"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -223,7 +235,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c1e25b462d7f742e",
+  "active": "752bcd70e06e6f1b",
   "lastOpenFiles": [
     "技術資料/NVMe/SANBlaze/SMBus.md",
     "技術資料/NVMe/SANBlaze/Inband.md",
