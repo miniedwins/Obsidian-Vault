@@ -228,3 +228,39 @@
 ---
 
 📝 我可以為您提供一個 Board Info Area 或 Chassis Info Area 的結構與解析對照，協助您的團隊完整實作整套 VPD 解析器。
+
+
+簡單來說，**「NVMe 儲存裝置（NVMe Storage Device）」本身是一個大分類，在規格書中它被細分為「是 FRU」與「不是 FRU（Non-FRU）」兩種類型**。
+
+規格書對這兩者的定義與區分如下：
+
+### 1. 什麼是「NVMe Storage Device FRU」？
+
+根據 NVMe-MI 規格書定義，**FRU（Field-Replaceable Unit，現場可更換單元）** 是指**可以由終端用戶或技術人員直接拆卸並更換，而不需要更換整個系統**的實體組件、裝置或配件。
+
+- **標準範例**：U.2 PCIe SSD、M.2 模組、PCIe 插卡（CEM Add-in Card）。
+- 這些日常隨插即拔、壞了就換一顆的 SSD，在規格上都屬於 **FRU**。
+
+### 2. 什麼是「不是 FRU」的 NVMe Storage Device？
+
+有些 NVMe 儲存裝置在設計上是**無法被單獨更換的**。
+
+- **標準範例**：規格書中提到的 **Integrated（整合式）** 裝置，例如直接焊接（Soldered down）在系統主機板上的 BGA 封裝 SSD。
+- 因為這種 SSD 已經和主機板融為一體，一旦損壞，無法在不更換整張主機板（或整個系統）的情況下單獨更換它。因此在規格上，它們被歸類為 **Non-FRU**。
+
+---
+
+### 💡 為什麼規格書要特別區分這兩者？
+
+這個區分直接決定了 **VPD（Vital Product Data，重要產品資料）與實體 FRU Information Device 的硬體配置是否為強制性**：
+
+- **如果是 FRU 裝置（如 U.2、M.2 SSD）**：
+    - **強制要求（shall）** 必須配備一個容量介於 256 到 4,096（或更新版本最高至 65,536）位元組的實體 **FRU Information Device**（例如獨立的 EEPROM 晶片）來儲存 VPD 資訊。
+- **如果不是 FRU 裝置（如焊接式 BGA SSD）或 NVMe Enclosures（機殼）**：
+    - VPD 的內容與實體 FRU Information Device 的配置，在規格上皆屬於**可選的（Optional，非強制）**。
+
+因此，並非所有 NVMe Storage 都不是 FRU，而是**只有像「Integrated」這種焊死在板子上的內嵌式 NVMe 儲存裝置，在規格定義中才不被視為 FRU**。
+
+---
+
+🔍 如果您需要，我也可以為您進一步說明 NVMe-MI 規格中，這兩種裝置在 Topology MultiRecord 拓撲結構描述上的差異。

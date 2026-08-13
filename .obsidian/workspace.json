@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/VPD.md",
+                "file": "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VPD"
+              "title": "MCTP Over SMBus Packet Format"
             }
           }
         ],
@@ -169,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/overlapping.md",
+                "file": "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -225,10 +225,11 @@
   },
   "active": "c1e25b462d7f742e",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-MI/Response Message Format.md",
-    "技術資料/NVMe/NVMe-MI/VPD.md",
-    "技術資料/NVMe/NVMe-MI/Response Replay Offset.md",
+    "技術資料/MCTP/MCTP Message Type.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Fields.md",
+    "技術資料/NVMe/NVMe-MI/VPD.md",
+    "技術資料/NVMe/NVMe-MI/Response Message Format.md",
+    "技術資料/NVMe/NVMe-MI/Response Replay Offset.md",
     "技術資料/NVMe/NVMe-MI/NVMe-MI Message Spanning Multiple MCTP Packets.md",
     "技術資料/NVMe/NVMe-MI/More Processing Required.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Changed Flags.md",
@@ -250,7 +251,6 @@
     "技術資料/NVMe/NVMe-MI/Parameter Error Location.md",
     "技術資料/NVMe/NVMe-MI/Control Primitive Command.md",
     "技術資料/NVMe/NVMe-MI/Undefined Behavior.md",
-    "技術資料/NVMe/NVMe-MI/overlapping.md",
     "技術資料/NVMe/UNH-IOL/NVMe-CLI",
     "技術資料/NVMe/UNH-IOL",
     "未命名.canvas",
