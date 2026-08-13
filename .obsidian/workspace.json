@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/SANBlaze/NVMe-MI Python Module Analysis.md",
+                "file": "技術資料/NVMe/SANBlaze/Inband.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "NVMe-MI Python Module Analysis"
+              "title": "Inband"
             }
           }
         ],
@@ -169,7 +169,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "技術資料/NVMe/SANBlaze/NVMe-MI Python Module Analysis.md",
+                "file": "技術資料/NVMe/SANBlaze/Inband.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
@@ -223,10 +223,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "7b78dabe3315ad92",
+  "active": "c1e25b462d7f742e",
   "lastOpenFiles": [
-    "技術資料/NVMe/SANBlaze/多個封包.md",
+    "技術資料/NVMe/SANBlaze/SMBus.md",
+    "技術資料/NVMe/SANBlaze/Inband.md",
     "技術資料/NVMe/SANBlaze/NVMe-MI Python Module Analysis.md",
+    "技術資料/NVMe/SANBlaze/多個封包.md",
     "技術資料/NVMe/SANBlaze",
     "技術資料/NVMe/NVMe-MI/python code",
     "技術資料/NVMe/NVMe-MI/Out-of-Band Message Servicing Model.md",
@@ -251,8 +253,6 @@
     "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
     "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 8.5 – NVMe-MI Controller Health Status Poll.md",
     "技術資料/NVMe/UNH-IOL/NVMe-CLI/Test 8.5 Case 1 & 2.md",
-    "技術資料/NVMe/NVMe-MI/Command Initiated Auto Pause.md",
-    "技術資料/NVMe/NVMe-MI/Invalid Command and Data Length.md",
     "技術資料/NVMe/UNH-IOL/NVMe-CLI",
     "技術資料/NVMe/UNH-IOL",
     "未命名.canvas",
