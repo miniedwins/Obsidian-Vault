@@ -109,3 +109,122 @@
 ---
 
 📊 如果您正在開發或除錯 VPD 燒錄工具，我可以為您提供一個標準 VPD Product Info Area（含 `C1h`、Padding 與 Checksum）的實際 16 進位 Byte 陣列範例與計算過程。
+
+這份關於 NVMe-MI Conformance 測試與 VPD（Vital Product Data）結構的提問，切中了底層韌體在解析 IPMI FRU 格式時最核心的實作細節。
+
+以下為您進行逐項的工程解析與計算說明：
+
+---
+
+### 1. 第一個 Byte 是 Type/Length Byte Format？只有 Product Info Area 需要表示嗎？其他 Area 不用？
+
+**答案是：「不是。」第一個 Byte 不是 Type/Length，且其他部分 Area 也需要使用 Type/Length。**
+
+- **Product Info Area 的開頭並非 Type/Length：** 根據規格書，Product Info Area 的前 3 個位元組（Bytes 0, 1, 2）是**固定格式的標頭（Fixed Header）**，並非 Type/Length 格式：
+    
+    - **Byte 0**: `IPMIVER` (IPMI Format Version Number) = 固定為 `01h`。
+    - **Byte 1**: `PALEN` (Product Info Area Length) = 此區域總長度（以 8 位元組為單位）。
+    - **Byte 2**: `LCODE` (Language Code) = 固定為 `19h`（代表 English）。
+    
+    真正的第一個 Type/Length 位元組是從 **Byte 3** 的 `MNTL`（Manufacturer Name Type/Length）才開始。
+    
+- **其他 Area 是否需要表示（使用 Type/Length）？** **是的，其他 Area 也需要使用。** 根據 IPMI FRU 標準規範，除了 Product Info Area 之外，**Chassis Info Area（機殼資訊區）** 與 **Board Info Area（主機板資訊區）** 內部的 variable-length（可變長度）文字欄位（例如：機殼序號、主機板製造商、主機板產品名稱等），也都必須完全使用相同的 Type/Length 格式來包裝。
+    
+    - _註：只有 Common Header（通用標頭）、Internal Use Area（內部使用區）以及 MultiRecord Area（多重紀錄區） 不使用這種 Type/Length 格式。_
+
+---
+
+### 2. 第二個 Byte 才是 Product Info Area Data？
+
+**答案是：「不是。」**
+
+如上所述：
+
+- **第二個 Byte（Byte 1）** 是 **`PALEN`**，用來表示整個 Product Info Area 的長度。
+- **第三個 Byte（Byte 2）** 是 **`LCODE`**，表示語言。
+- 真正的 Product Info Area **第一個資料欄位（Manufacturer Name）的文字 Data**，是從 **Byte 4** 開始，並由 Byte 3 的 `MNTL`（Type/Length Byte）來決定它的長度。
+
+---
+
+### 3. Product Info Area Data 每個欄位都有不同的長度，要怎麼 Parsing？
+
+解析（Parsing）的邏輯是利用指標（Pointer）進行**「動態跳躍步進」**。因為每個欄位前都固定帶有一個 **Type/Length Byte**，Parser 必須動態讀取長度，然後移動指標。
+
+#### Type/Length Byte 格式定義：
+
+- **Bit [7:6] (Type Code)**：固定為 `11b`，在 NVMe-MI 中代表 ASCII 編碼。
+- **Bit [5:0] (Number of Data Bytes, NDB)**：代表後面緊跟著的資料位元組長度。
+
+#### 🛠️ 解析演算法步驟：
+
+1. 跳過前 3 個固定位元組（Bytes 0~2），將讀取指標 `Ptr` 設為 `3`（指向第一個 Type/Length Byte，即 `MNTL`）。
+2. **進入 Parsing 迴圈：**
+    - 讀取當前 `Ptr` 位置的位元組，記為 `TL`。
+    - **檢查終止條件**：若 `TL == C1h`（End of Record, EOR），代表變長欄位已全部結束，直接跳出迴圈。
+    - 若非 `C1h`，計算此欄位的資料長度：`Length = TL & 0x3F`（取出低 6 位元元組，即 NDB）。
+    - 取出變長欄位資料：從 `Ptr + 1` 開始讀取 `Length` 個位元組，即為該欄位的字串資料（如 `MNAME`）。
+    - **更新指標**：`Ptr = Ptr + 1 + Length`（指標移至下一個欄位的 Type/Length Byte）。
+3. 迴圈結束後，剩下的空間為 `00h` 填充位元組（Padding），而整個 Area 的**最後一個位元組**則是 Checksum（`PICHK`）。
+
+---
+
+### 4. Product Info Area (PICHK): 這段話是什麼意思？有沒有範例計算？
+
+#### 規格書這段話的工程白話譯：
+
+1. **PICHK 校验和（Checksum）** 的計算範圍是：**除了 `PICHK` 自己以外，整個 Product Info Area 的所有位元組**。
+2. 計算方式為：將這些位元組的 8-bit 數值全部加總，取其模數 256（`modulo 256`，即只保留最後的 8-bit 累加值），然後對該總和取 **2 的補數（2's complement）**。
+3. 驗證方式：當您把「計算出來的 Checksum」與「除本身外的所有位元組總和」再次相加並模數 256 時，**結果必須為 `00h`**。
+
+---
+
+#### 🧮 範例計算：
+
+假設我們有一個極簡的 Product Info Area，設定 `PALEN = 2`（代表總長度為 \(2 \times 8 = 16\) 位元組）。 我們寫入以下資料：
+
+- Manufacturer Name = `"ABC"`（長度 3，Type/Length = `C3h`）
+- Product Name = `"XY"`（長度 2，Type/Length = `C2h`）
+- 其餘欄位皆為空（Type/Length = `00h`）
+
+這 16 個位元組在記憶體中的實際配置如下（最後一個 Byte 15 為 `PICHK`）：
+
+|偏移量 (Dec)|欄位名稱|寫入數值 (Hex)|說明|
+|:--|:--|:--|:--|
+|**Byte 0**|`IPMIVER`|`01h`|固定值|
+|**Byte 1**|`PALEN`|`02h`|總長度 = 16 單位|
+|**Byte 2**|`LCODE`|`19h`|語言為英文|
+|**Byte 3**|`MNTL`|`C3h`|Type/Length (ASCII, 3 bytes)|
+|**Byte 4**|`MNAME`|`41h`|'A'|
+|**Byte 5**|`MNAME`|`42h`|'B'|
+|**Byte 6**|`MNAME`|`43h`|'C'|
+|**Byte 7**|`PNTL`|`C2h`|Type/Length (ASCII, 2 bytes)|
+|**Byte 8**|`PNAME`|`58h`|'X'|
+|**Byte 9**|`PNAME`|`59h`|'Y'|
+|**Byte 10**|`PPMNNTL`|`00h`|空欄位|
+|**Byte 11**|`PVTL`|`00h`|空欄位|
+|**Byte 12**|`PSNTL`|`00h`|空欄位|
+|**Byte 13**|`EOR`|`C1h`|欄位結束標記|
+|**Byte 14**|`Padding`|`00h`|填充位元組|
+|**Byte 15**|`PICHK`|**待計算**|擺在最後 1 byte 的 Checksum|
+
+#### 第一步：加總 Byte 0 至 Byte 14 的數值
+
+\[\text{Sum} = 01\text{h} + 02\text{h} + 19\text{h} + C3\text{h} + 41\text{h} + 42\text{h} + 43\text{h} + C2\text{h} + 58\text{h} + 59\text{h} + 00\text{h} + 00\text{h} + 00\text{h} + C1\text{h} + 00\text{h}\]
+
+我們轉換為十進位計算： \[\text{Sum} = 1 + 2 + 25 + 195 + 65 + 66 + 67 + 194 + 88 + 89 + 0 + 0 + 0 + 193 + 0 = 985\]
+
+#### 第二步：進行 Modulo 256（取 8-bit 餘數）
+
+\[985 \pmod{256} = 217 \implies D9\text{h}\] _(十六進位表示：\(3D9\text{h} \implies\) 去除溢位後只保留低位元組 \(\implies D9\text{h}\))_
+
+#### 第三步：求 2 的補數（二進位反轉加 1，或直接以 256 減去該值）
+
+\[\text{Checksum (PICHK)} = (256 - 217) \pmod{256} = 39 \implies 27\text{h}\]
+
+#### 🔍 第四步：驗證結果
+
+將 Byte 0 至 Byte 14 的總和與我們求出的 Checksum `27h` 相加： \[D9\text{h} + 27\text{h} = 100\text{h}\] \[100\text{h} \pmod{256} = 00\text{h}\] 結果完全符合規格書「相加後模數 256 必須為 0h」的要求。因此，此範例的 **`PICHK` 欄位應填入 `27h`**。
+
+---
+
+📝 我可以為您提供一個 Board Info Area 或 Chassis Info Area 的結構與解析對照，協助您的團隊完整實作整套 VPD 解析器。
