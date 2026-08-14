@@ -337,3 +337,61 @@ NVMe 規格小組之所以把這段字寫得如此繞口，是為了**防止多�
 ---
 
 🔍 您是否需要我為您規劃一組針對 `7Eh` 在寫入重複 Type 時觸發的「Replace」行為，以及 `7Dh` 寫入重複 Type 時觸發的「Add Multiple」行為的 Conformance 測試對照封包？
+
+
+這是一個在閱讀測試規範（Test Plan）時非常經典且常見的疑惑。
+
+看似矛盾，但實際上**完全沒有矛盾**。這裡存在兩個規格書與測試設計上的技術細節，只要釐清這兩點，您就會發現這個測試步驟的設計非常合理：
+
+---
+
+### 原因一：`GDHM = 1` 並不代表控制器會生成「所有」的 Element Types
+
+根據 **NVMe Base Specification** 中關於 `GDHM`（Generate Default Host Metadata）的定義，當主機下達 `GDHM = 1` 時，控制器**並非**被強制要求把規格書定義的所有 Element Types（從 `01h` 到 `1Fh`）通通生成出來。
+
+規格書中明確給予了控制器韌體極大的彈性：
+
+> _“The controller is allowed to return: (控制器允許回傳：)_
+> 
+> - - **no vendor specific strings** (不回傳任何廠商專屬字串)*
+> - - **vendor specific strings created for a subset of the defined Element Types** (僅針對已定義 Element Types 中的**「子集 / 部分」*_生成字串)_
+> - - **vendor specific strings created for each of the defined Element Types** (針對所有已定義的 Element Types 生成字串)”*
+
+在實際的 SSD 韌體實作中，絕大多數廠商都只會實作預設生成 2~3 個最基本的 Descriptor（例如 `01h` OS Controller Name, `02h` OS Name），絕對不會把所有的類型（如顯卡驅動、當機紀錄等）全部塞滿。
+
+因此，在步驟 3 執行完 `GDHM = 1` 之後，讀出來的 Host Metadata List 裡面**依然會存在大量的「空白（未生成）Element Types」**。
+
+---
+
+### 原因二：步驟 4 中「不存在（Non-existent）」的精確技術定義
+
+測試步驟 4 中所說的「**Element Type set to a value that does not exist...**」，其技術定義是指：
+
+> **「指定一個『當前並不存在於步驟 3 讀回的 Descriptor 列表』中的 Element Type」**。 _（而不是指規格書裡不存在的無效 Type）_
+
+這也是為什麼步驟 4 的最後一句話特別備註：
+
+> **`"The Get Feature responses can be used to determine a non-existent Element Type."`**（主機可以使用步驟 3 的 Get Feature 回應，來判定哪一個 Element Type 目前不存在。）
+
+#### 🛠️ 測試儀器（如 Teledyne LeCroy）的實際執行邏輯：
+
+1. **步驟 3**：測試儀向 SSD 發送 `Get Feature (GDHM = 1)`。
+2. **SSD 回傳**：SSD 吐出一個資料結構，裡面因為 `GDHM=1`，自動生成了 **2 筆**資料：
+    - `Type = 01h` (OS Controller Name)
+    - `Type = 02h` (OS Name)
+3. **步驟 4 (測試儀判定)**：測試儀解析這個結構，發現雖然有 `01h` 與 `02h`，但 **`Type = 10h` (Host-Determined Failure Record) 此時在列表中「不存在」**。
+4. **步驟 4 (發送指令)**：測試儀故意挑選這個當前不存在的 `Type = 10h`，發送 `Set Features`，並將 **`EA` 設為 `00b` (Add/Replace Entry)**。
+5. **預期結果驗證**：驗證 SSD 控制器在收到一個「目前不存在的 Type」且「動作為 Add/Replace (EA=00b)」時，是否能依照規格書要求，**在 4 KiB 空間中自動「新建 (Create)」** 出這個 `Type = 10h` 的 Descriptor。
+
+---
+
+### 💡 總結
+
+1. **`GDHM = 1` 只會讓控制器生成它「想主動提供」的預設子集（通常只有 1~3 個 Type），所以一定會有剩下的空白 Type**。
+2. **測試儀會先去「看」哪些 Type 空著，然後挑一個空著的 Type 去下達 `Set Features (EA = 00b)`，以此驗證 SSD 的「動態建立新條目」功能是否正常**。
+
+這兩個步驟之間環環相扣，非但沒有矛盾，反而是非常嚴謹的動態測試腳本設計！
+
+---
+
+📊 您是否需要我為您規劃一組在測試 Case 4 時，測試儀器在步驟 3 與步驟 4 之間進行動態解析並挑選「空白 Element Type」的 Python 測試虛擬邏輯？
