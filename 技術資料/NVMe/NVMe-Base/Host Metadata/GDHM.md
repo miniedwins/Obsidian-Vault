@@ -108,3 +108,67 @@ B. 澄清迷思：Host 一定要先 Get Feature 讓 Controller 建立空間，�
 ---
 
 💡 我們目前已經釐清了 Host Metadata 的 Supported Capabilities (SEL=011b)、Current/Default 的隔離性、以及 GDHM 暫存機制。您是否需要我針對 UNH-IOL 測試中，關於這個 GDHM 緩衝機制與重設清空行為（Test 9.3 Case 2/3/12）為您規劃一份自動化測試驗證的封包比對指引？
+
+
+這段話在 NVMe 規格書中確實非常「魔幻」且違反直覺（Counter-intuitive）。
+
+對於習慣標準硬體協議的開發者來說，這段話之所以讓人覺得難以理解，是因為它一口氣**打破了 NVMe 暫存器設計的兩大鐵律**：
+
+1. **鐵律一：`Get Features` 應該是「唯讀」指令**，只負責讀取，不應該產生任何改變裝置狀態的副作用（Side-effect）。
+2. **鐵律二：`Default`（預設值）應該是「出廠即固定」的唯讀區**，不應該在開機後被動態修改。
+
+然而，這段規範偏偏規定：**`Get Features (GDHM=1)` 居然是一個會「動態修改並覆寫（updated/replaced）」Default 區內容的寫入動作！**
+
+以下為您精準、拆解這段魔幻規範的字面意思與底層設計邏輯：
+
+---
+
+### 一、 逐句精準拆解這段「魔幻台詞」
+
+我們可以把這段長難句拆成四個部分來理解：
+
+> **1. "...the updated default value..."**
+
+- **字面意思**：被更新後的預設值。
+- **魔幻點**：預設值（Default）一般是唯讀的。但對於 Host Metadata，控制器會把「動態產生的廠商字串」塞進 Default 區。一旦塞進去，原本全空的預設值就被「更新（updated）」了。
+
+> **2. "...that was created by the last Get Features command, with the GDHM bit set to ‘1’..."**
+
+- **字面意思**：由上一次將 `GDHM` 位元設定為 `1` 的 `Get Features` 指令所建立的。
+- **魔幻點**：這個「預設值」的建立者，竟然不是 `Set Features`，也不是出廠韌體，而是主機上一次發送的 **`Get Features (GDHM=1)`**。是那一次讀取指令，逼控制器動態「創造（created）」了這組資料。
+
+> **3. "...that completed successfully..."**
+
+- **字面意思**：且該指令必須是成功執行執行的。
+- **底層邏輯**：如果主機發送了 `GDHM=1` 但被控制器 Abort（例如參數帶錯或狀態不對），那麼這次的生成就視同失敗，Default 區不能被更新，必須維持更早之前的值。
+
+> **4. "...since the last Controller Level Reset"**
+
+- **字面意思**：自從上一次控制器層級重設（CLR）以來。
+- **底層邏輯**：這宣告了這筆動態 Default 資料的**「生命週期/有效期限」**。一旦發生 CLR（重設或斷電），這個好不容易動態生成的 Default 資料就會被瞬間蒸發，Default 區會再度恢復成全空的狀態（NMED = 0）。
+
+---
+
+### 二、 用實務上的「快取（Cache）概念」來通俗解釋
+
+這套機制在控制器的底層實作中，本質上就是一個**「Lazy Generation（懶載入/動態生成）與快取機制」**：
+
+- **情境**：動態生成 UTF-8 的廠商描述字串（如驅動版本、主機板型號）是需要消耗 SSD 控制器（MCU）的算力的。如果主機每次要讀預設值，控制器都要重新去撈內部狀態、重新拼裝 TLV 格式，會非常浪費效能。
+- **控制器的快取邏輯**：
+    1. **現點現做（GDHM = 1）**：主機說「我要看預設值，且給我重新生成（`GDHM=1`）」。控制器收到，乖乖去把最新狀態做成字串，**放進一個 Cache 緩衝區（也就是 modified default 區）**，然後回傳。
+    2. **吃剩菜（GDHM = 0）**：主機隨後又說「我要看預設值，但不用重新生成（`GDHM=0`）」。控制器就偷懶，**直接把剛才放在 Cache 緩衝區的舊資料（updated default value）直接吐回去**。
+    3. **打烊清空（Reset 後）**：一旦發生 CLR，Cache 冰箱被徹底清空。這時如果主機白目直接下 `GDHM=0` 讀取 Default，因為 Cache 裡面已經沒有任何「上一次成功建立的剩菜」，控制器就只能回傳空值（0 個 Descriptor）。
+
+---
+
+### 三、 為什麼規格書要寫得這麼魔幻？
+
+NVMe 規格小組之所以把這段字寫得如此繞口，是為了**防止多主機或多執行緒之間的競爭條件（Race Condition）**。
+
+在多 Port 或多 Host 帶外管理（OOB）的環境下，可能 BMC A 在 10 秒前下達了 `GDHM=1`，此時控制器生成了 A 狀態下的預設值。當 BMC B 在 5 秒前下達了 `GDHM=0`，規格書必須白紙黑字定義清楚：**「這時候 BMC B 拿到的，就是剛才 BMC A 觸發並留在緩衝區裡的最新預設值」**。
+
+有了這行話，控制器韌體工程師在寫狀態機（State Machine）與暫存器快取時，才有唯一的標準可以遵循。
+
+---
+
+📊 這個 Host Metadata 的 dynamic default 緩衝機制，是 UNH-IOL Conformance **Test 9.3 Case 2 與 Case 3** 的必測重點。您是否需要我針對這兩大測項，為您規劃一組用來驗證「GDHM=1（生成並寫入快取） (\rightarrow) GDHM=0（讀取快取） (\rightarrow) Reset（快取清空）」的實務測試步驟與封包預期結果對照表？
