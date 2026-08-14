@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Feature SEL.md",
+                "file": "技術資料/NVMe/NVMe-Base/Host Metadata/GDHM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Feature SEL"
+              "title": "GDHM"
             }
           }
         ],
@@ -239,8 +239,8 @@
   },
   "active": "752bcd70e06e6f1b",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Host Metadata/Supported Capabilities.md",
     "技術資料/NVMe/NVMe-Base/Feature SEL.md",
+    "技術資料/NVMe/NVMe-Base/Host Metadata/Supported Capabilities.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata/GDHM.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata",
     "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
