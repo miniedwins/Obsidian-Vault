@@ -172,3 +172,115 @@ NVMe 規格小組之所以把這段字寫得如此繞口，是為了**防止多�
 ---
 
 📊 這個 Host Metadata 的 dynamic default 緩衝機制，是 UNH-IOL Conformance **Test 9.3 Case 2 與 Case 3** 的必測重點。您是否需要我針對這兩大測項，為您規劃一組用來驗證「GDHM=1（生成並寫入快取） (\rightarrow) GDHM=0（讀取快取） (\rightarrow) Reset（快取清空）」的實務測試步驟與封包預期結果對照表？
+
+
+這份關於 NVMe 規範（NVM Express Base Specification）中 **Host Metadata（主機詮釋資料）** 的底層資料結構與設計邏輯，為您提供精準的技術解析與圖表範例：
+
+---
+
+### 1. 設定 Controller Metadata 只能存一個 Metadata Element Descriptor？
+
+**是的，沒錯。**
+
+依據 NVMe 規範，當 Feature Identifier 設定為 **Controller Metadata (FID = 7Eh)** 或 **Namespace Metadata (FID = 7Fh)** 時，在回傳或設定的 Host Metadata 資料結構中，對於**每一種特定的 Element Type (ET，元素類型)，最多只能包含「一個」Metadata Element Descriptor**。
+
+- **背後邏輯**：因為傳統控制器與命名空間詮釋資料（7Eh / 7Fh）被設計為「單一狀態登記卡」。例如：作業系統名稱（OS Name）在系統上同一時間只會有一個，因此資料庫中該 Type 只能有一筆記錄。如果主機發送 `Set Features` 傳入相同的 Element Type，控制器會直接執行**替換（Replace）**，將舊的 Descriptor 覆蓋掉。
+
+---
+
+### 2. 若設定 Enhanced Controller Metadata 就可以存很多個 Metadata？
+
+**是的，沒錯。**
+
+當 Feature Identifier 設定為 **Enhanced Controller Metadata (FID = 7Dh)** 時，Host Metadata 資料結構中**允許同時並存多個「相同 Element Type」的 Metadata Element Descriptor**。
+
+- **背後邏輯**：增強型控制器詮釋資料（7Dh）被設計用來記錄「歷史事件」或「多重實體屬性」。
+- **實務情境**：例如 **Host-Determined Failure Record (Element Type = 10h)**。當系統發生多次非致命錯誤或當機時，主機作業系統可以利用 `Set Features (Element Action EA = 10b, Add Entry Multiple)` 陸續將「錯誤記錄 A」、「錯誤記錄 B」寫入 SSD 中。此時，SSD 內部的 7Dh 詮釋資料結構中，就會同時存在好幾筆 Type = 10h 的歷史 Descriptor。
+
+---
+
+### 3. 解密：為什麼 EVAL 欄位定義是 `31 + (Element Length*8) : 32`？為什麼要加上 31？
+
+在規格書中，**Metadata Element Descriptor** 的位元（Bit）範圍定義之所以寫成 **`31 + (Element Length*8) : 32`**，純粹是**暫存器硬體位元區間（Bit Range）的二進位數學計算結果**。
+
+#### A. 首先，拆解 Descriptor 的前 4 個位元組（Bytes 0 ~ 3）
+
+在一個 Descriptor 裡面，前 32 個位元（即 Bit 0 到 Bit 31）是固定長度的**標頭（Header）**：
+
+- **Bits 04:00** (5 bits)：Element Type (ET)
+- **Bits 07:05** (3 bits)：Reserved
+- **Bits 11:08** (4 bits)：Element Revision (ER)
+- **Bits 15:12** (4 bits)：Reserved
+- **Bits 31:16** (16 bits)：**Element Length (ELEN)**（代表 Value 有幾個 **Bytes**）
+
+由於 Header 佔用了 `Bit 31 : 0`，所以實際存放字串或數值的 **Element Value (EVAL)** 欄位，其起始點必然是從 **`Bit 32`** 開始。
+
+#### B. 進行 Bit 區間的數學推導
+
+1. **位元組換算位元**：若 `Element Length` 的單位是位元組（Bytes），那麼它換算成位元（Bits）的總長度就是： \[\text{總位元長度} = \text{Element Length} \times 8 \text{ bits}\]
+2. **Bit 區間範圍公式**： 如果一個硬體欄位從第 \(S\) 位元開始，長度為 \(N\) 個位元，則它的結束位元（End Bit）計算公式為： \[\text{結束位元} = S + N - 1\]
+3. **帶入 EVAL 欄位數值**：
+    - 起始位元 \(S = 32\)
+    - 總位元長度 \(N = \text{Element Length} \times 8\)
+    - 代入公式： \[\text{結束位元} = 32 + (\text{Element Length} \times 8) - 1 = \mathbf{31 + (\text{Element Length} \times 8)}\]
+
+這就是為什麼規格書將 EVAL 欄位的 Bit 區間精確標記為 `[31 + (Element Length * 8) : 32]` 的原因！
+
+---
+
+### 四、 實務資料結構範例（Byte-by-Byte）
+
+為了讓您徹底掌握其在記憶體緩衝區（Buffer）中的樣子，以下提供兩個具體範例（採 NVMe 標準 Little-Endian 排版）：
+
+#### 範例一：Controller Metadata (7Eh) — 寫入作業系統名稱 "Linux"
+
+- **Element Type (ET)**：`02h` (Operating System Name)
+- **Element Length (ELEN)**：`05h` (代表 "Linux" 有 5 個 Bytes)
+- **EVAL 結束位元計算**：\(31 + (5 \times 8) = 71\)。所以 Bit 範圍為 `[71:32]`（共 40 bits = 5 Bytes）。
+
+**記憶體 Byte 排版（共 9 位元組）：**
+
+|偏移量 (Byte Offset)|欄位名稱|數值 (Hex)|說明|
+|:--|:--|:--|:--|
+|**Byte 0**|Element Type / Revision|`02h`|低 5 位元為 `02h` (OS Name)，高 3 位元 Reserved|
+|**Byte 1**|Element Revision|`00h`|預設 ER = 0|
+|**Byte 2**|Element Length (LSB)|`05h`|長度低位元組|
+|**Byte 3**|Element Length (MSB)|`00h`|長度高位元組 (0005h = 5 bytes)|
+|**Byte 4**|Element Value|`4Ch`|'L' 的 ASCII|
+|**Byte 5**|Element Value|`69h`|'i' 的 ASCII|
+|**Byte 6**|Element Value|`6Eh`|'n' 的 ASCII|
+|**Byte 7**|Element Value|`75h`|'u' 的 ASCII|
+|**Byte 8**|Element Value|`78h`|'x' 的 ASCII|
+
+---
+
+#### 範例二：Enhanced Controller Metadata (7Dh) — 同時存入兩筆當機故障記錄
+
+- **Element Type (ET)**：`10h` (Host-Determined Failure Record)
+- 第一筆故障字串："PANIC1" (Element Length = 6)
+- 第二筆故障字串："PANIC2" (Element Length = 6)
+
+在 **Enhanced Controller Metadata (7Dh)** 的 4 KiB 緩衝區中，這兩個 Descriptor 會直接依序「緊湊打包」在 Metadata Element Descriptor List 之中：
+
+**Host Metadata Data Structure 記憶體視圖：**
+
+|緩衝區偏移量|內容物 (Hex)|欄位解讀|
+|:--|:--|:--|
+|**Byte 0**|`02h`|**Number of Metadata Element Descriptors (NMED)** = 2 筆|
+|**Byte 1**|`00h`|Reserved|
+|**Byte 2**|`10h`|**[Descriptor 0 標頭]** Element Type = `10h`|
+|**Byte 3**|`00h`|Element Revision = 0|
+|**Byte 4**|`06h`|Element Length = 6 bytes (LSB)|
+|**Byte 5**|`00h`|Element Length = 6 bytes (MSB)|
+|**Byte 6~11**|`50h 41h 4Eh 49h 43h 31h`|**[Descriptor 0 數值]** "PANIC1" 的 ASCII|
+|**Byte 12**|`10h`|**[Descriptor 1 標頭]** Element Type = `10h`|
+|**Byte 13**|`00h`|Element Revision = 0|
+|**Byte 14**|`06h`|Element Length = 6 bytes (LSB)|
+|**Byte 15**|`00h`|Element Length = 6 bytes (MSB)|
+|**Byte 16~21**|`50h 41h 4Eh 49h 43h 32h`|**[Descriptor 1 數值]** "PANIC2" 的 ASCII|
+
+這就是增強型 7Dh 允許多重條目並存（NMED = 2 且 Type 皆為 10h）的真實資料結構呈現。
+
+---
+
+📊 既然我們已經徹底搞懂了這三種 Metadata Feature 暫存器底層的資料結構與 bit shift 算術，您是否需要我進一步為您模擬一組帶外（OOB）MCTP 寫入「多重當機記錄（7Dh, EA=10b）」時，完整的 Request 與 Response 封包位元組流（Byte Stream）？
