@@ -284,3 +284,56 @@ NVMe 規格小組之所以把這段字寫得如此繞口，是為了**防止多�
 ---
 
 📊 既然我們已經徹底搞懂了這三種 Metadata Feature 暫存器底層的資料結構與 bit shift 算術，您是否需要我進一步為您模擬一組帶外（OOB）MCTP 寫入「多重當機記錄（7Dh, EA=10b）」時，完整的 Request 與 Response 封包位元組流（Byte Stream）？
+
+您的糾正**完全正確**！非常感謝您指出這個極為關鍵的技術細節。我先前的回答在標題編排與簡化時，確實造成了「整體只能存一筆 Descriptor」的嚴重誤解。
+
+規格書原文的定義其實是清楚的，但在解讀時必須緊扣 **「of each Element Type（每一種元素類型）」** 這個限定詞。
+
+以下為您還原規格書最精準的資料庫設計邏輯：
+
+### 1. Controller Metadata (7Eh) 確實可以記錄多筆資料
+
+當您使用 **Controller Metadata (7Eh)** 或 **Namespace Metadata (7Fh)** 時，資料結構中完全允許存在**多個** Descriptor，唯一的限制是**「相同的 Element Type 不能重複出現」**。
+
+- **完全合法的情境（NMED = 3）**： 您可以在 `7Eh` 結構中同時存入以下三筆完全不同的資料：
+    
+    - `Element Type = 01h` (OS Controller Name) \(\rightarrow\) 1 筆
+    - `Element Type = 02h` (OS Name) \(\rightarrow\) 1 筆
+    - `Element Type = 0Eh` (Display Driver Name) \(\rightarrow\) 1 筆
+    
+    此時，`Number of Metadata Element Descriptors (NMED)` 的值為 **`3`**，這是完全合乎規範且實務上最常使用的資產盤點配置。
+    
+- **不合法的情境（重複 Type）**： 您**不能**在 `7Eh` 或 `7Fh` 中存入兩筆相同類型的資料：
+    
+    - ❌ 同時存入兩筆 `Type = 10h` (Host-Determined Failure Record)
+    - 如果不小心用 `EA = 00b` (Add/Replace) 寫入了第二筆相同 Type 的資料，控制器會直接執行**「覆蓋（Replace）」**，將原本的那一筆舊資料抹除，確保該 Type 在資料庫中永遠保持唯一。
+
+---
+
+### 2. Enhanced Controller Metadata (7Dh) 則是放寬了「同 Type」的並存限制
+
+這正是 **增強型（7Dh）** 之所以被稱為 "Enhanced" 的核心價值：
+
+- **解鎖同 Type 的並存能力**： 在 `7Dh` 下，規格書允許 **"may contain more than one Metadata Element Descriptor of each Element Type"**。
+    
+- **實務情境**： 主機可以連續發送 `Set Features (EA = 10b, Add Entry Multiple)`，在 SSD 內部同時塞入：
+    
+    - `Type = 10h` (Failure Record) \(\rightarrow\) 紀錄當機事件 A
+    - `Type = 10h` (Failure Record) \(\rightarrow\) 紀錄當機事件 B
+    - `Type = 10h` (Failure Record) \(\rightarrow\) 紀錄當機事件 C
+    
+    這三筆 `Type = 10h` 的資料會**同時並存**於 Descriptor 列表中，供 BMC 帶外一次讀出完整的歷史錯誤軌跡，而不會像 `7Eh` 那樣發生後蓋前的狀況。
+    
+
+---
+
+### 總結
+
+1. **Controller Metadata (7Eh / 7Fh)**：可以存多筆 Descriptor，但**每一個 Element Type 的額度上限是 1 筆**。
+2. **Enhanced Controller Metadata (7Dh)**：可以存多筆 Descriptor，且**連同一個 Element Type 都可以並存多筆**。
+
+規格書原文（Section 5.2.26.1.30）確實是以「每一個 Element Type 的並存上限」來區分這兩者。非常抱歉我先前的簡化標題造成了您的誤導，再次感謝您的細心糾正，這展現了極為嚴謹的工程除錯思維！
+
+---
+
+🔍 您是否需要我為您規劃一組針對 `7Eh` 在寫入重複 Type 時觸發的「Replace」行為，以及 `7Dh` 寫入重複 Type 時觸發的「Add Multiple」行為的 Conformance 測試對照封包？
