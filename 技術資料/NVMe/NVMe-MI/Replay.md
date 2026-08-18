@@ -75,3 +75,33 @@
 ---
 
 📊 如果您正在開發或測試 `Replay` 功能，我可以幫您整理一份 UNH-IOL Conformance 中關於 Test 7.4 (Replay) 與 Test 7.5 (RRO) 的測試流程與預期判定準則，方便您進行韌體除錯。
+
+在 NVMe-MI 規範中，**如果這段期間內沒有新的命令進來，規格書中並沒有定義任何「重播（Replay）緩衝區的時間過期機制（Timeout）」**。
+
+也就是說，只要不滿足清除條件，不論間隔時間超過多久（例如超過數分鐘或數小時），您都可以隨時發送 `Replay` 控制原語（Control Primitive）來要求重傳上一次的 Response 封包。
+
+---
+
+### Replay 緩衝區的生命週期與清除條件
+
+裝置中的命令槽（Command Slot）會一直將最後一次成功處理的 Response 訊息完整保留在暫存區中，直到以下**三種事件之一**發生，該緩衝區才會被宣告失效或清空：
+
+1. **收到新的命令（New Command Message）**： 當該 Command Slot 接收到新的 Request 訊息的第一個封包（SOM = 1）時，裝置會判定開始新的傳輸任務，進而覆蓋或清空該 Slot 的舊暫存資料。
+2. **發送了 Abort 控制原語（Abort Control Primitive）**： 主機一旦對該 Command Slot 發送 `Abort`，裝置在成功回應 Abort 後，**會強制將該 Slot 緩衝區中待命重播的 Response 徹底丟棄（discard）**，使其無法再進行 Replay。
+3. **發生任何重置（Reset）**： 包含 NVM Subsystem Reset、Management Endpoint Reset、或者是實體層的 2-Wire/PCIe 重置（Assertion of Reset），都會將 Command Slot 初始化為初始狀態並清空緩衝區。
+
+若在上述事件發生後仍強行發送 Replay，裝置將會回覆成功但將回應中的 `RR (Response Replay)` 位元設為 `0`，代表已無 Response 可供重播。
+
+---
+
+### 觀念釐清：MCTP `MT4` 的 5~6 秒限制是否適用於 Replay？
+
+在 MCTP 基礎傳輸層規範中，有一個 **`MT4` 參數（Instance ID Expiration Interval，實例 ID 到期時間）定義為 5 至 6 秒**。
+
+- **`MT4` 的作用**：它是用來限制同一個 Request 的 Instance ID 追蹤時間。如果主機在 5 秒內沒有收到回應，該次傳輸的 ID 就會失效。
+- **為什麼 Replay 不受此限**：因為 **`Replay Control Primitive` 本身在實體層上是一個「全新發送的單封包控制訊息」**。主機發送 Replay 時會使用新的 Msg Tag 與新的 Control Primitive Tag。
+- **結論**：Replay 不需要沿用舊命令的 Instance ID，因此**完全不會受到 `MT4`（5~6秒）時間限制的約束**。在實務上，即使在等待更改傳輸大小（Transmission Unit Size）等耗時設定後，再發起 Replay 依然在協議層面是可被裝置接收的（儘管更改設定後 Replay 會導致未定義行為）。
+
+---
+
+📊 請問您目前正在撰寫的自動化測試腳本中，是否有遇到即使在無新命令、無重置的情形下 Replay 仍失敗（RR=0）的現象？我可以協助您對照 Conformance Test（例如 Test 7.4 或 Test 7.5）的測試步驟來找出原因。
