@@ -100,3 +100,30 @@
 ---
 
 📊 針對這個 Undefined 的行為，在 UNH-IOL Conformance 測試（例如 Test 8.5 Case 3/4）中，有很多邊界測項需要驗證，您需要我為您梳理對應的測試腳本檢驗邏輯嗎？
+
+**是的，完全正確！**
+
+只要將 **`Report All (ALL) = 1`**，不論您在 Dword 1 中有沒有設定健康狀態篩選旗標（如 `CTEMP`, `PDLU`, `SPARE` 等），回傳的所有健康欄位**保證全部都會是最新、且有效的即時數值**。
+
+---
+
+### 規格書底層邏輯解析
+
+1. **過濾機制完全忽略 Dword 1 旗標**： 當 `ALL = 1` 時，裝置在決定「要回傳哪些 Controller 的健康數據結構」時，會**完全忽略** Dword 1 中的所有 Error Selection 篩選位元（`CWARN`, `SPARE`, `PDLU`, `CTEMP`, `CSTS`）。它只會依據實體 Controller ID 與 Function 類型（PF/VF）的選擇條件，來決定哪些 Controller 需要被回傳。
+    
+2. **強制所有欄位皆為有效最新值（Shall be Valid）**： 根據 NVMe-MI 規範，只要 `Report All` 設為 `1`，回傳的 Controller Health Data Structure (CHDS) 內部所有健康欄位（包括 `CWARN`, `SPARE`, `PDLU`, `CTEMP` 與 `CSTS`）**都必須是有效的即時數值（shall be valid）**，不論對應的 Dword 1 篩選位元是被設為 `0` 還是 `1`。此處的 "Valid" 在規格書中即代表同步自該控制器內部最新 SMART/Health Log Page 的實時即時數據。
+    
+
+---
+
+### 相比之下：當 `Report All (ALL) = 0` 時
+
+如果 `ALL = 0`，過濾機制會生效。此時只有被勾選為 `1` 的欄位才會回傳最新值；**而未被勾選為 `1` 的欄位，其回傳內容在規範中被明確定義為「未定義（Undefined）」**。這代表裝置可能會在那些未選中的欄位中塞入隨機殘留值、`00h` 或 `FFh`。
+
+### 總結工程結論
+
+在實務監控開發或 Conformance 測試時，只要下達 **`ALL = 1`**，您拿到的 CHDS 欄位資訊就保證是該 Controller 此時此刻**最完整、且最即時更新**的健康畫像，完全不需要理會 Dword 1 的篩選旗標設定。
+
+---
+
+📊 您需要我協助您確認這項行為在 UNH-IOL Conformance 測試規範中，Test 8.5 Case 5 (Data Verification) 是如何透過對照 SMART Log 來進行驗證的嗎？
