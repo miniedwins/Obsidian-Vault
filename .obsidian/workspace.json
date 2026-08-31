@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/Response Message Format.md",
+                "file": "技術資料/NVMe/NVMe-MI/Message Integrity Check.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Response Message Format"
+              "title": "Message Integrity Check"
             }
           }
         ],
@@ -239,6 +239,8 @@
   },
   "active": "752bcd70e06e6f1b",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/Response Message Format.md",
+    "技術資料/NVMe/NVMe-MI/Message Integrity Check.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Data Structure 機制.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Changed Flags.md",
@@ -263,8 +265,6 @@
     "技術資料/MCTP/Message Assembly.md",
     "技術資料/MCTP/MCTP Packet Fields.md",
     "技術資料/MCTP/MCTP Over SMBus Packet Format.md",
-    "技術資料/MCTP/MCTP Message Type.md",
-    "技術資料/MCTP/Terminate Assembly and Drop Message.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata",
     "技術資料/NVMe/SANBlaze",
     "技術資料/NVMe/NVMe-MI/python code",
