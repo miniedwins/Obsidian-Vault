@@ -75,7 +75,7 @@
                 "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "檔案瀏覽器"
             }
           },
           {
@@ -119,7 +119,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 200
   },
   "right": {
     "id": "f8f1861296dce550",
@@ -226,18 +226,18 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "workspaces:Manage workspace layouts": false,
-      "bases:Create new base": false,
+      "switcher:開啟快速切換": false,
+      "graph:查看關聯圖": false,
+      "canvas:建立新畫布": false,
+      "daily-notes:開啟今天的每日筆記": false,
+      "templates:插入模板": false,
+      "command-palette:開啟命令面板": false,
+      "workspaces:管理工作區配置": false,
+      "bases:建立新的 base": false,
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "752bcd70e06e6f1b",
+  "active": "7b78dabe3315ad92",
   "lastOpenFiles": [
     "技術資料/MCTP/MCTP Packet Fields.md",
     "技術資料/MCTP/MCTP Message Type.md",
