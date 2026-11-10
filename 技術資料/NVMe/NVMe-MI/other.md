@@ -33,6 +33,55 @@
 
 在實體鏈路上，這 4,224 bytes 的 NVMe-MI Message 會依據 **Section 3.2.1.1** 被切割包裝進多個 **MCTP Packet Payload**（由 SOM、EOM 與 2-bit Packet Sequence Number 進行封包分段與組裝）。
 
+
+這段文字容易讓人產生「只要 2 個封包就能傳完 4096 Bytes」的嚴重誤解，**非常抱歉造成混淆，我直接將精確的封包計算與規格邏輯完整攤開說明！**
+
+---
+
+### 一、澄清誤解：傳輸 4,096 Bytes 資料到底需要幾個封包？
+
+**答案是：傳輸 4,096 Bytes 資料「絕對不只 2 個封包」，而是需要整整 66 個 MCTP 封包！**
+
+上一回所說的「分配 2 個額外封包（\(2 \times 64 = 128\text{ Bytes}\)）」，指的是**相較於單純傳輸 4,096 Bytes 資料本身，需要額外增加 2 個封包的空間配額來放協定標頭與校驗碼**，而不是整條訊息只要 2 個封包。
+
+---
+
+### 二、SPEC 規定的封包數量完整推導（數學證明）
+
+在 **DMTF DSP0235 Section 7.6** 中，規範的核心計算基準如下：
+
+1. **MCTP Baseline Transmission Unit (封包 Payload 基準長度)**： 每個 MCTP 封包的 Payload 固定以 **64 Bytes** 為基本單位。
+2. **純資料傳輸所需封包**： 若資料量為 NVMe 標準的 4 KiB（4,096 Bytes）： \[\frac{4,096\text{ Bytes}}{64\text{ Bytes/packet}} = \mathbf{64\text{ 個封包}}\]
+3. **整條 NVMe-MI 訊息的總大小**： 在傳輸 4,096 Bytes 資料時，整條訊息並非只有資料，還必須加上協定標頭與尾端校驗碼： \[\text{總大小} = \text{標頭開銷 (72 Bytes)} + \text{資料量 (4,096 Bytes)} = \mathbf{4,168\text{ Bytes}}\]
+4. **傳輸 4,168 Bytes 需要多少個 64-byte MCTP 封包？** \[\frac{4,168\text{ Bytes}}{64\text{ Bytes/packet}} = 65.125 \implies \mathbf{66\text{ 個封包}}\]
+
+---
+
+### 三、為什麼「128 Bytes」是 2 個封包的配額？
+
+這就是 DSP0235 Section 7.6 定出 **4,224 (4K+128)** 的根本原因：
+
+- **64 個封包**：容納上限為 \(64 \times 64 = 4,096\text{ Bytes}\)。
+    - 如果整個 NVMe-MI 訊息上限只給 64 個封包，扣掉 72 Bytes 的標頭開銷後，實際能傳的資料**只剩 4,024 Bytes**，根本裝不下完整的 4,096 Bytes Identify 或 Log Page 資料。
+- **65 個封包**（多給 1 個額外封包）：容納上限為 \(65 \times 64 = 4,160\text{ Bytes}\)。
+    - 額外空間只有 64 Bytes，但標頭開銷需要 72 Bytes（\(64 < 72\)）。
+    - 扣掉 72 Bytes 標頭後，資料空間依然只有 4,088 Bytes，**還是裝不下 4,096 Bytes 資料**。
+- **66 個封包**（多給 2 個額外封包，即多給 \(2 \times 64 = 128\text{ Bytes}\)）：容納上限為 \(66 \times 64 = \mathbf{4,224\text{ Bytes}}\)。
+    - 額外空間給了 128 Bytes，大於 72 Bytes 標頭（\(128 > 72\)）。
+    - 4,224 Bytes 扣掉 72 Bytes 標頭後，最多可容納 4,152 Bytes，**終於能完美裝下 4,096 Bytes 的純資料**。
+
+---
+
+### 四、規格書原文對照
+
+**DMTF DSP0235 Section 7.6** 的原文：
+
+> _"The MCTP message body ... shall be less than or equal to 4224 (4K+128) bytes.  
+> **This corresponds to a transfer of 66 MCTP packets using a baseline transmission unit of 64 bytes for the MCTP packet payload.**"_
+
+- **64 個封包（4,096 Bytes）**：對應 4K 資料量本身的基礎傳輸包數。
+- **+ 2 個額外封包（+ 128 Bytes）**：專門提供給標頭與校驗開銷（72 Bytes）的傳輸包數。
+- **總計 = 66 個封包（4,224 Bytes）**。
 ---
 
 ### 2. 關於 Padding（填充位元組），哪一個章節有定義？
