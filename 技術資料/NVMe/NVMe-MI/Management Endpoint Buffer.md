@@ -66,76 +66,81 @@ MEB 的設計提供了一套靈活的快取與分段機制，而 MEB Read 則是
 
 ===========================================================================
 
-### 1. NVMe-MI Message 的 4,224 bytes 是由哪些組裝出來的？
-
-#### (1) 數值的根本來源（4 KiB + 128 Bytes）
-
-依據 **NVMe-MI 規格書（Revision 1.2e）Section 3.1** 與 **Section 1.8.15**，以及 DMTF **DSP0235（NVMe Management Messages over MCTP Binding Specification）** 的定義：
-
-- 帶外（Out-of-Band）單一 NVMe-MI Message 的最大長度上限為 **4,224 bytes**（即 **4 KiB + 128 bytes = 4,096 + 128**）。
-- **設計由來**：**4,096 bytes** 是為了完整容納標準 NVMe 4KB Page / Payload 資料轉移；**128 bytes** 則是保留給傳輸層協定封裝的各項 Header、SQE/CQE 欄位與 CRC 檢驗碼（Overhead）。
+在 NVMe-MI 規範（NVM Express Management Interface Specification）中，**Management Endpoint Buffer Read**（Opcode `0Ah`）與 **Management Endpoint Buffer Write**（Opcode `0Bh`）是專門用於**帶外管理（Out-of-Band, OOB）**的關鍵命令。
 
 ---
 
-#### (2) NVMe-MI Message 的三個核心組裝區塊
+### 一、 主要用途（Primary Purpose）
 
-依據 **Section 3.1.1、Figure 18（NVMe-MI Message）** 與 **Section 4.2.3**，一個完整的 NVMe-MI Message 包含三個部分：
-
-\[\mathbf{4,224\text{ Bytes}} = \mathbf{4\text{ Bytes (Header)}} + \mathbf{4,216\text{ Bytes (Message Data)}} + \mathbf{4\text{ Bytes (MIC)}}\]
-
-1. **NVMe-MI Message Header（4 Bytes，Dword 0）**
-    - 定義於 **Figure 19**：
-        - **Byte 0**：`MCTPD`（Message Type = 4h，IC bit = 1）。
-        - **Byte 1**：`NMP`（ROR 請求/回應旗標、NMIMT 訊息類型、CSI Command Slot ID）。
-        - **Byte 2**：`CIAP`（自動暫停）與 `MEB`（是否啟用緩衝區）。
-        - **Byte 3**：保留位元（Reserved）。
-2. **Message Data / Message Body（最大 4,216 Bytes，Bytes 4 至 N-1）**
-    - **在 Request Message（請求訊息）中**：最大容量為 **4,216 bytes**（4,224 − 4 − 4）。
-        - 以最具代表性的 **NVMe Admin Command Request（Figure 117 / Figure 118）** 為例：
-            - **Admin 封裝與 SQE 欄位（共 64 Bytes，等同標準 NVMe SQE 大小）**：包含 Opcode、Command Flags、Controller ID、SQEDW1、DOFST（Data Offset）、DLEN（Data Length）、SQEDW10 ~ SQEDW15。
-            - **NVMe Request Data**：最大為 **4,096 Bytes**（Figure 118 明確規定：`DLEN > 4,096` 時必須報錯 `Invalid Parameter`）。
-            - **協定邊界預留**：56 Bytes。
-    - **在 Response Message（回應訊息）中**：最大容量為 **4,215 Bytes**（扣除 Byte 4 的 1-byte Status 欄位：4,224 − 4 − 1 − 4）。
-3. **Message Integrity Check（MIC，4 Bytes，Bytes N 至 N+3）**
-    - 定義於 **Section 3.1.1.1**，帶外傳輸強制使用 **32-bit CRC-32C（Castagnoli，多項式 `1EDC6F41h`）** 作為訊息結尾校驗。
-
-在實體鏈路上，這 4,224 bytes 的 NVMe-MI Message 會依據 **Section 3.2.1.1** 被切割包裝進多個 **MCTP Packet Payload**（由 SOM、EOM 與 2-bit Packet Sequence Number 進行封包分段與組裝）。
+1. **突破 MCTP / NVMe-MI 單一訊息 4,224 位元組的大小限制**：
+    - 在帶外機制下，NVMe-MI 訊息（透過 MCTP 傳輸）的 Message Body 最大上限為 **4,224 位元組**。扣除 4 位元組標頭（Header）與 4 位元組 MIC 後，單一 Request Message 最多僅能夾帶 **4,216 位元組** 的資料。
+    - 當需要傳輸**大型資料**時（例如：動輒數十 KB 的 NVMe Admin **Get Log Page** 如 Telemetry Log、Persistent Event Log，或是 Enclosure 的大型 **SES Receive / SES Send** 診斷頁面），無法在單一訊息中直接傳輸完畢。
+2. **作為大容量資料交換的中介緩衝區（Intermediate Buffer）**：
+    - 規範在 Management Endpoint 內定義了一個獨立的 **Management Endpoint Buffer (MEB)**。
+    - 外部管理控制器（Management Controller，例如 BMC）可以藉由 `Management Endpoint Buffer Read` 與 `Management Endpoint Buffer Write`，以分段（Chunking）、任意位移與長度的方式，逐步寫入或讀出超過 4,224 位元組的資料。
 
 ---
 
-### 2. 關於 Padding（填充位元組），哪一個章節有定義？
+### 二、 寫入甚麼？（Write 的用途與內容）
 
-#### (1) `Optionally Supported Command List` 資料結構**本身沒有定義 Padding 欄位**
+MEB 的寫入主要有兩種途徑：
 
-查看 **NVMe-MI 規格書 Section 5.7.5（Optionally Supported Command List Response Data）** 及 **Figure 100**： 規格書條文載明：
-
-> _"The Optionally Supported Command List data structure shall contain no more than 2,047 commands and **shall be minimally sized** (e.g., the data structure size is 2 bytes if there are no optionally supported commands and the data structure size is 4 bytes if there is one optionally supported command)."_
-
-這表示：
-
-- 當 `NUMCMD = 6` 時，該資料結構的規格法定長度就是： \[\text{NUMCMD (2 bytes)} + 6 \times \text{Command Entry (2 bytes)} = \mathbf{14\text{ bytes}}\]
-- **Figure 100 只有定義到 `Command N`，結構內完全沒有定義任何結尾的 Padding 欄位**。
+1. **透過 `Management Endpoint Buffer Write` 命令由 BMC 寫入**：
+    - **寫入內容**：由 BMC 透過此命令的 **Request Data** 載入資料。
+    - **用途**：通常是即將交給 SSD/Enclosure 執行的命令所需之大型輸入資料（例如 SES Send 的 Control Diagnostic Page、韌體映像檔分段等）。
+    - **操作方式**：BMC 在命令的 NVMe Management Dwords 中指定：
+        - **Data Offset (DOFST)**：寫入 MEB 的起始位移量。
+        - **Data Length (DLEN)**：本次寫入的長度。
+        - 支援任意順序寫入、部分覆蓋或分段填入。
+2. **由特定命令執行完成後自動寫入**：
+    - 當 BMC 發送一個會產生輸出資料的命令（例如 `Get Log Page` 或 `SES Receive`），並在訊息標頭將 **MEB 位元設為 1** 時，該命令的回應封包**不會**附帶 Response Data，而是由 Management Endpoint 直接將產生的回傳資料寫入 MEB（從偏移量 0 開始）。
 
 ---
 
-#### (2) 數據結尾多出的 `00 00`（補成 16 bytes）在規格書中的章節依據
+### 三、 讀取甚麼？（Read 的用途與內容）
 
-如果這段 16 bytes 是來自實際測試或指令接收，這 2 個 bytes 的 0 是由以下章節的規則產生的：
+1. **透過 `Management Endpoint Buffer Read` 命令由 BMC 讀出**：
+    - **讀取內容**：讀取先前儲存在 MEB 中的暫存資料，最常見的是**命令執行後的龐大回傳結果**（如 Telemetry Log、PEL 或大型 SES Status Diagnostic Page）。
+    - **用途**：將暫存在 SSD 端 MEB 中的完整數據分批讀回 BMC 本地端處理。
+    - **操作方式**：BMC 在命令中指定：
+        - **Data Offset (DOFST)**：讀取 MEB 的起始位移量。
+        - **Data Length (DLEN)**：本次請求讀取的長度（不得超過單一 Response Data 上限）。
+    - **回傳形式**：Management Endpoint 會將 MEB 指定範圍內的內容包裝在 `Management Endpoint Buffer Read` 的 **Response Data** 中回傳給 BMC。
 
-##### 情況 A：若指令是走頻內通道（In-Band Tunneling NVMe-MI Receive）
+---
 
-- **明確定義章節**：**NVMe-MI Specification Section 4.3.2.1（Figure 54: NVMe-MI Receive Command Response Message to NVMe Admin Command CQE Mapping Table）**。
-- **規格書原文**：
-    
-    > _"Response Data is placed by the NVMe Controller into the data buffer pointed to by DPTR. **If the Response Data size is not dword granular, then the Response Data shall be padded with the minimum number of bytes cleared to 0h to make the Response Data dword granular.**"_
-    
-- **說明**：由於 14 bytes 不是 Dword（4 bytes）的倍數，NVMe 控制器在將資料寫入主機記憶體（DPTR）時，**強制規定必須在尾端補齊最少數量的 `0h`（即 2 個 bytes 的 `00 00`）使其達到 16 bytes（4 Dwords 對齊）**。
+### 四、 典型運作流程範例（以讀取大型 Log 為例）
 
-##### 情況 B：若指令是走帶外通道（Out-of-Band MCTP）
+```
+ [BMC / Management Controller]                     [Management Endpoint / SSD]
+             |                                                  |
+             |--- 1. NVMe Admin Command (Get Log Page) -------->| (標頭 MEB bit = 1)
+             |       (要求讀取大型 Telemetry Log)                 |
+             |                                                  | [SSD 將 Log 資料存入 MEB]
+             |<-- 2. Success Response (無 RESPD 資料) -----------|
+             |                                                  |
+             |--- 3. MEB Read (DOFST=0, DLEN=4096) ------------>|
+             |<-- 4. Response Data (回傳前 4KB) -----------------|
+             |                                                  |
+             |--- 5. MEB Read (DOFST=4096, DLEN=4096) --------->|
+             |<-- 6. Response Data (回傳次 4KB) -----------------|
+             |                     ...                          |
+```
 
-- **明確定義章節**：**NVMe-MI Specification Section 3.2.1.1（Packet Assembly into Messages）**。
-- **規格書原文**：
-    
-    > _"The MCTP Transmission Unit size of the last packet in a Request Message or Response Message (i.e., the one with the EOM bit set in the MCTP header) shall be the smallest size required to transfer the MCTP Packet Payload for that Packet **with no additional padding beyond any padding required by the physical medium-specific trailer**"_
-    
-- **說明**：在帶外傳輸中，NVMe-MI 協定層**禁止額外添加 payload padding**，回傳的 Response Data Length 就是 14 bytes。如果抓包工具或軟體 Buffer 傾印出 16 bytes，那是因為上位機測試程式或底層驅動在配置記憶體結構時習慣以 4-byte/Dword 邊界對齊配置，結尾讀出來的 `00 00` 是緩衝區原本的零值殘留，而非裝置在 NVMe-MI 層送出的有效資料。
+---
+
+### 五、 重要特性與限制
+
+1. **僅限帶外（Out-of-Band）使用**：
+    - 在 In-Band Tunneling（透過主機 NVMe-MI Send/Receive）中，MEB Read/Write 為 **Prohibited（禁止使用）**，因為 In-Band 可直接使用主機端記憶體 DMA (PRP/SGL)。
+2. **Endpoint 專屬且非持久**：
+    - MEB 專屬於單一 Management Endpoint，不可跨 Endpoint 共享。
+    - 當 Management Endpoint Reset 時，MEB 內容會被**清空為 0h**。
+3. **命令支援度查詢**：
+    - 可透過 `Read NVMe-MI Data Structure`：
+        - `DTYP = 01h`（Port Information）：查詢該 Port 是否支援 MEB 及其大小（`Management Endpoint Buffer Size` 欄位）。
+        - `DTYP = 05h`（MEB Command Support List）：查詢該 Endpoint 支援哪些命令搭配 MEB 使用。
+4. **Sanitize 安全機制**：
+    - MEB 在安全層面被視為快取（Cache）。當 SSD 啟動 Sanitize（安全清除）時，MEB 會立即被**抹除為 0h**。若隨後嘗試讀取已被清空的 MEB，會收到狀態碼 `22h: Management Endpoint Buffer Cleared Due to Sanitize`。
+
+💡 是否需要我進一步解析特定命令（如 `Get Log Page` 或 `SES Send/Receive`）在封包層級如何配置 MEB 欄位與 Dword 參數？
