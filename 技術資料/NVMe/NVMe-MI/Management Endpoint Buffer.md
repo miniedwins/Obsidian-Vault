@@ -144,3 +144,78 @@ MEB 的寫入主要有兩種途徑：
     - MEB 在安全層面被視為快取（Cache）。當 SSD 啟動 Sanitize（安全清除）時，MEB 會立即被**抹除為 0h**。若隨後嘗試讀取已被清空的 MEB，會收到狀態碼 `22h: Management Endpoint Buffer Cleared Due to Sanitize`。
 
 💡 是否需要我進一步解析特定命令（如 `Get Log Page` 或 `SES Send/Receive`）在封包層級如何配置 MEB 欄位與 Dword 參數？
+
+在沒有 **MEB（Management Endpoint Buffer）** 的情況下，**完全可以正常進行大於 4096 Bytes 的韌體上傳與 Get Log Page 讀取**。
+
+MEB 的主要用途是輔助那些「原生協定不支援分段偏移（Offset/Chunking）」的大型資料傳輸（例如 SES Diagnostic Pages）。而 NVMe Admin 指令集中的 **Firmware Image Download** 與 **Get Log Page** 本身就具備完整的**分段與偏移機制**，因此僅需依循 NVMe 規格切成不大於 4096 Bytes 的區塊分次發送即可。
+
+---
+
+### 一、 韌體上傳（Firmware Image Download）的處理方式
+
+在 NVMe 規格中，韌體本來就允許透過多次 `Firmware Image Download`（Opcode `11h`）指令分批下載到控制器。
+
+#### 1. 核心欄位配置（NVMe Base Spec & NVMe-MI Out-of-Band）
+
+每次發送帶外（Out-of-Band）NVMe Admin Command 請求時：
+
+- **`NUMD` (Command Dword 10)**：本次傳輸的 Dword 數量（0's based）。最大傳輸量為 4096 Bytes（即 1024 Dwords，`NUMD = 0x3FF`）。
+- **`OFST` (Command Dword 11)**：本次傳輸在整個韌體映像檔中的 **Dword 偏移量**（Offset in Dwords）。第一包從 `0h` 開始，後續包依傳輸量累加。
+- **`DLEN` (NVMe-MI Admin Command Header Bytes 35:32)**：填入本次 Request Data 的實際位元組長度（不可大於 4,096，且需 4-byte 對齊）。
+- **`MEB` 位元 (NVMe-MI Header Byte 2, Bit 0)**：設為 `0b`，表示資料直接包含在本次 NVMe-MI Message 的 Request Data 中。
+
+#### 2. 標準傳輸流程
+
+1. **查詢粒度限制**：先透過 `Identify Controller` 讀取 `FWUG`（Firmware Update Granularity）欄位，確保每次切片大小與偏移量符合控制器要求的粒度與對齊（通常為 4 KiB 對齊）。
+2. **分段發送**：
+    - **第 1 次 FID**：`OFST = 0`，`NUMD = 1023` (4096 Bytes)，`DLEN = 4096`。
+    - **第 2 次 FID**：`OFST = 1024`（即 4096 Bytes / 4），`NUMD = 1023`，`DLEN = 4096`。
+    - **第 N 次 FID**：傳輸剩餘的位元組直到整份韌體下載完成。
+3. **提交與啟用**：所有分段下載完畢後，管理控制器（BMC）發送一個 `Firmware Commit`（Opcode `10h`）指令指定 Slot 並進行啟用。
+
+---
+
+### 二、 讀取大於 4096 Bytes 的日誌（Get Log Page）
+
+NVMe 的 `Get Log Page`（Opcode `02h`）提供了 64 位元的日誌位元組偏移欄位（LPOL / LPOU），因此即使日誌（如 Telemetry Log、Persistent Event Log）高達數百 KB 甚至數 MB，管理端只需透過 **分頁查詢（Paging / Windowing）** 即可完整取回。
+
+#### 1. 核心欄位配置
+
+- **`LPOL` / `LPOU` (Command Dwords 12 & 13)**：**Log Page Offset Lower / Upper**，指定要從該 Log Page 的第幾個 **Byte Offset** 開始讀取（必須為 4 位元組對齊）。
+- **`NUMDL` / `NUMDU` (Command Dwords 10 & 11)**：欲讀取的 Dword 數量（0's based），每次最多請求 1024 Dwords（4096 Bytes）。
+- **`DOFST` (NVMe-MI Admin Command Header Bytes 31:28)**：設為 `0h`。
+- **`DLEN` (NVMe-MI Admin Command Header Bytes 35:32)**：設為期望回傳的 Response Data 長度（如 `4096`）。
+- **`MEB` 位元**：設為 `0b`，控制器會將日誌資料直接包在 NVMe-MI Response Data 中回傳。
+
+#### 2. 標準讀取流程（以讀取 16 KiB Log Page 為例）
+
+1. **第 1 次查詢**：`LPOL = 0`，`NUMDL = 1023`，`DLEN = 4096` \(\rightarrow\) 收到 Bytes 0 ~ 4095。
+2. **第 2 次查詢**：`LPOL = 4096`，`NUMDL = 1023`，`DLEN = 4096` \(\rightarrow\) 收到 Bytes 4096 ~ 8191。
+3. **第 3 次查詢**：`LPOL = 8192`，`NUMDL = 1023`，`DLEN = 4096` \(\rightarrow\) 收到 Bytes 8192 ~ 12287。
+4. **第 4 次查詢**：`LPOL = 12288`，`NUMDL = 1023`，`DLEN = 4096` \(\rightarrow\) 收到 Bytes 12288 ~ 16383。
+5. BMC 端接收完各區塊後，依偏移順序組合為完整的日誌檔案。
+
+> **重要注意事項（針對動態日誌如 Telemetry Log）**：
+> 
+> 1. **512-Byte 對齊**：Telemetry Log 要求 `LPOL` 與傳輸長度必須為 512 位元組（Data Block）的整數倍。
+> 2. **日誌一致性校驗**：讀取 Telemetry 時，建議將 CDW10 的 `RAE`（Retain Asynchronous Event）設為 `1`，並比對每次回傳 Header 中的 `Telemetry Data Generation Number`，確保分批讀取期間底層資料未被刷新。
+
+---
+
+### 三、 為什麼 NVMe-MI 還需要設計 MEB？
+
+既然可以分段傳輸，MEB 存在的意義是什麼？
+
+|比較項目|原生支援分段（不需要 MEB）|需依賴 MEB（若 > 4096 Bytes）|
+|:--|:--|:--|
+|**典型指令**|`Firmware Image Download``Get Log Page``VPD Read / Write` (自帶 DOFST/DLEN)|`SES Send``SES Receive`|
+|**傳輸限制根源**|MCTP Base Spec 單一訊息上限 4,224 Bytes（扣除標頭後 Data 最多 4,096 Bytes）|SES-3 規範之 Diagnostic Pages 原生**沒有** Dword Offset 機制|
+|**處理方式**|透過指令內的 **Offset** 分段傳送或讀取（多次 Command-Response 循環）|必須先將整份資料寫入 MEB 或由 MEB 產出，再透過 `MEB Read / Write` 分批搬移|
+|**規格強制性**|不論有無 MEB，所有支援 OOB Admin 的裝置皆能執行|若 Out-of-Band 欲支援 SES，規格強制**必須**支援 MEB|
+
+### 總結
+
+在沒有 MEB 的架構下，上傳韌體與讀取日誌是完全合規且標準的做法：
+
+- **韌體上傳**：將韌體拆為每包 \(\le 4096\) Bytes，透過遞增 `OFST` 發送多個 `Firmware Image Download`，最後發送 `Firmware Commit`。
+- **日誌讀取**：以 4096 Bytes 為單位，透過遞增 `LPOL/LPOU` 發送多個 `Get Log Page` 進行分頁讀取並於 BMC 端重組。

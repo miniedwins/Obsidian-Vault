@@ -120,3 +120,5 @@
     > _"The MCTP Transmission Unit size of the last packet in a Request Message or Response Message (i.e., the one with the EOM bit set in the MCTP header) shall be the smallest size required to transfer the MCTP Packet Payload for that Packet **with no additional padding beyond any padding required by the physical medium-specific trailer**"_
     
 - **說明**：在帶外傳輸中，NVMe-MI 協定層**禁止額外添加 payload padding**，回傳的 Response Data Length 就是 14 bytes。如果抓包工具或軟體 Buffer 傾印出 16 bytes，那是因為上位機測試程式或底層驅動在配置記憶體結構時習慣以 4-byte/Dword 邊界對齊配置，結尾讀出來的 `00 00` 是緩衝區原本的零值殘留，而非裝置在 NVMe-MI 層送出的有效資料。
+
+
