@@ -335,9 +335,63 @@ NVMe-MI 規格書在第 5.3.1 節（Filtering by Controller Type）中，對於�
 \[\text{該控制器會被納入回傳} \iff (\text{控制器類型相符}) \text{ 且 } (\text{指定的健康變更旗標有觸發})\]
 
 1. 如果您的 DUT 是普通單控制器 SSD，請務必在指令中勾選：**`INCF = 1`**。
-2. 如果您的 DUT 是虛擬化 SSD 的主控制器，請務必在指令中勾選：**`INCPF = 1`**。
+2. 如果您的 DUT 是虛擬化 SSD 的主控制器，請務必在指令 中勾選：**`INCPF = 1`**。
 3. 如果這三個位元（`INCVF`、`INCPF`、`INCF`）全部都保持為 `0`，則不論硬體類型為何，都會因為未勾選任何「白名單」而被全部排除，返回空的 RENT = 0 回應。
 
 ---
 
 📊 我可以為您提供一份適用於普通 SSD 與 SR-IOV SSD 的帶外健康輪詢（Controller Health Status Poll）標準 Request 封包二進制/十六進制欄位填寫對照表，方便您直接核對您的自動化測試腳本。
+
+
+===========================================================================
+
+在 NVMe-MI 規格書（Revision 1.2e）中，**Figure 78: Controller Health Status Poll – NVMe Management Dword 0** 定義了控制器健康狀態輪詢的過濾與選擇機制。針對您提出的三個問題，依據規範解析如下：
+
+---
+
+### 1. INCVF 與 INCPF 如何區別 Virtual（虛擬）與 Physical（實體）？
+
+在 NVMe 與 PCIe SR-IOV（Single Root I/O Virtualization）架構下，控制器的 PCI 介面類型區分如下：
+
+- **INCPF（Include SR-IOV Physical Functions，Bit 25）**：
+    - **定義**：對應於 **SR-IOV Physical Function (PF)** 的 NVMe 控制器。
+    - **角色特性**：PF 是完整的 PCIe 實體功能，支援 SR-IOV Extended Capability，具備完整的 PCI 設定空間（Configuration Space），能管理並分配硬體資源給 VF。在 NVMe 架構中，通常對應於 **Primary Controller（主要控制器）**。
+- **INCVF（Include SR-IOV Virtual Functions，Bit 26）**：
+    - **定義**：對應於 **SR-IOV Virtual Function (VF)** 的 NVMe 控制器。
+    - **角色特性**：VF 是由 PF 衍生出的輕量化 PCIe 虛擬功能，僅包含必要的資料傳輸資源，受其關聯的 PF 控管。在 NVMe 架構中，通常對應於 **Secondary Controller（次要控制器）**，其 Virtual Function Number（VFN）大於 0。
+- **實作容錯規範**：若將 INCPF 或 INCVF 設為 `1`，但 NVM Subsystem 內部並不存在 SR-IOV PF 或 VF，規格明訂**不得視為錯誤（It is not an error）**。
+
+---
+
+### 2. 執行 Controller Health Status Poll，如何判定 INCVF / INCPF 控制器發生「變動」？
+
+判定控制器狀態是否變動，主要依賴 NVMe-MI 的 **Controller Health Status Changed Flags（CHSCF，控制器健康狀態變動旗標）** 與輪詢回傳機制：
+
+1. **內部變動偵測（CHSCF 旗標置位）**：
+    - 每個控制器（無論是 PF 還是 VF）在內部都維護一組獨立的 **CHSCF（2 Bytes）**。
+    - 當該控制器的健康資料結構（CHDS，如 CSTS、CTEMP、PDLU、SPARE、CWARN）發生狀態轉換時（例如臨界警告由 0 變 1，或溫度/備用空間改變），對應的變動旗標即會被硬體置為 `1`。
+2. **條件輪詢判定（Report All = 0 時）**：
+    - 當發送 Controller Health Status Poll 且 **Report All（ALL, Bit 31）清零為 `0`** 時，裝置會根據 **Controller Type（INCPF、INCVF）** 與 **變動篩選位元（DW1 的 CSTS、CTEMP、PDLU、SPARE、CWARN）** 進行交集過濾。
+    - **判定依據**：若對應的 PF 或 VF 控制器發生了請求監控的健康狀態變更，該控制器的健康資料結構（CHDS）才會被放進 Response Data 中，且回應標頭中的 **RENT（Response Entries）** 會大於 `0`；若沒有任何變動，回傳的 RENT 即為 `0`（Response Data 為空）。
+    - 每個回傳的 CHDS 均包含 **CTLID（Controller ID）**，Management Controller 可藉此精確辨別是哪一個 PF 或 VF 控制器發生變更。
+3. **主動重置機制（Clear Changed Flags, CCF）**：
+    - 若在發送 Poll 指令時將 **NVMe Management Dword 1 的 CCF（Bit 31）設為 `1`**，則成功回傳 CHDS 的控制器，其內部的變動旗標（CHSCF）會被自動清零，以便下一次偵測新的變更。
+4. **全域快照比對（Report All = 1 時）**：
+    - 若將 ALL 設為 `1`，只要型態符合 INCPF/INCVF，不論有無變動均會強制回傳 CHDS，此時則需由管理端軟體自行與前一次快照數值進行比對。
+
+---
+
+### 3. 萬一選的是 INCF，會不會「連動」INCVF / INCPF？
+
+**完全不會連動。**
+
+依據 NVMe-MI 規格書 Section 5.3.1 _Filtering by Controller Type_：
+
+- **INCF（Include PCI Functions，Bit 24）** 專門定義為 **non-SR-IOV PCI Functions（非 SR-IOV 的傳統標準 PCI 功能）**。
+- 規範明確將控制器劃分為三種獨立且互斥的類型過濾維度：
+    1. `INCF`（Bit 24）：只納入 **non-SR-IOV PCI Function** 控制器。
+    2. `INCPF`（Bit 25）：只納入 **SR-IOV Physical Function (PF)** 控制器。
+    3. `INCVF`（Bit 26）：只納入 **SR-IOV Virtual Function (VF)** 控制器。
+- **過濾行為**：每個欄位都是獨立的開關（Enable Bit）。當只有 `INCF = 1`，而 `INCPF = 0` 且 `INCVF = 0` 時，回應資料（Response Data）中**只會包含 non-SR-IOV PCI 控制器**，所有的 SR-IOV PF 與 VF 控制器會被**強制排除（Excluded）**，兩者絕不會因為啟用 INCF 而被一併回傳或連動清除旗標。
+
+🔍 需要我進一步為您整理 Controller Health Data Structure (CHDS) 各欄位與 Changed Flags (CHSCF) 位元的完整映射對照表嗎？
