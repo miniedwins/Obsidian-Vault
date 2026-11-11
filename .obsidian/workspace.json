@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/FQ and EPF.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Power Loss Signaling Config"
+              "title": "FQ and EPF"
             }
           }
         ]
@@ -210,10 +210,12 @@
   },
   "active": "275a52bd7cb76e33",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/FQ and EPF.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Changed Flags.md",
@@ -234,8 +236,6 @@
     "技術資料/NVMe/NVMe-MI/Transmission Unit Size.md",
     "技術資料/NVMe/NVMe-MI/重送機制.md",
     "技術資料/NVMe/NVMe-MI/PORTID.md",
-    "技術資料/NVMe/NVMe-Base/Volatile Write Cache.md",
-    "技術資料/NVMe/NVMe-Base/Feature SEL.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata",
     "技術資料/NVMe/SANBlaze",
     "技術資料/NVMe/NVMe-MI/python code",
