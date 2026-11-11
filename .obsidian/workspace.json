@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-MI/封包重組機制.md",
+                "file": "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "封包重組機制"
+              "title": "Controller Health Status Poll"
             }
           }
         ]
@@ -210,6 +210,8 @@
   },
   "active": "275a52bd7cb76e33",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-MI/Controller Health Status Changed Flags.md",
+    "技術資料/NVMe/NVMe-MI/封包重組機制.md",
     "技術資料/NVMe/NVMe-MI/overlapping.md",
     "技術資料/NVMe/SANBlaze/Inband.md",
     "技術資料/NVMe/NVMe-MI/SES.md",
@@ -234,8 +236,6 @@
     "人工智慧/skills/document/zh-tw-localizer/SKILL.md",
     "人工智慧/temp_data/Test Case/成熟的測試案例.md",
     "技術資料/MCTP/Drop Packets.md",
-    "暫存內容/NVMe Study (暫存).md",
-    "程式設計/Python/uv/uv.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata",
     "技術資料/NVMe/SANBlaze",
     "技術資料/NVMe/NVMe-MI/python code",
