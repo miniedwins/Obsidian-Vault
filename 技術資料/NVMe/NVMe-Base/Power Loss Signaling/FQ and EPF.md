@@ -158,3 +158,157 @@ NVMe 規範**並未對主機端訂定強制超時時間（No timeout defined for
 ---
 
 🔍 是否需要進一步查詢 PSD 資料結構中 FQVT / EPFVT 的位元定義，或是多控制器子系統（Dual-port / Multi-controller）在處理 PLA 訊號聚合時的詳細握手要求？
+
+===========================================================================
+
+在 **NVMe Base Specification** 與 **NVMe over PCIe Transport Specification** 中，這兩點握手與狀態轉移行為的章節與段落出處如下：
+
+---
+
+### 1. 「PLN Assert 後，PLA 也要做 Assert」的出處
+
+此行為在 **NVMe Base 規範的狀態機與流程定義**，以及 **PCIe Transport 規範的實體/邏輯訊號對應** 中皆有明確規範：
+
+#### (1) 《NVM Express Base Specification Revision 2.3》
+
+- **Section 8.2.5.1.2 PLS Ready State（及 Figure 721: PLS Ready State Transition Conditions）**：
+    - 明訂當控制器在 `PLS Ready` 狀態下，若 **`the PLN variable transitions from Deasserted to Asserted`**，狀態機會立即跳轉進入 **`FQ Processing`** 或 **`EPF Processing`**（Port Enabled / Disabled）。
+- **Section 8.2.5.2 Forced Quiescence Processing**：
+    - 規範在控制器進入 `FQ Processing` 後，必須執行的**第一步動作（Action 1）**：
+        
+        > _"If the controller enters the FQ Processing state, then the controller shall perform the following actions in sequence:_  
+        > **1. set the PLA variable, if supported, to Asserted-FQ (refer to Figure 719);**"
+        
+- **Section 8.2.5.3 Emergency Power Fail Processing**：
+    - 規範在控制器進入 `EPF Processing` 後，同樣必須執行的**第一步動作（Action 1）**：
+        
+        > _"If the controller enters the EPF Processing Port Disabled state or the EPF Processing Port Enabled state... then the controller shall perform the following actions in sequence:_  
+        > **1. set the PLA variable, if supported, to the value specified in Figure 719 for that state (i.e., Asserted-EPF-Disabled or Asserted-EPF-Enabled);**"
+        
+
+#### (2) 《NVMe over PCIe Transport Specification Revision 1.4》
+
+- **Section 3.8.7 Power Loss Signaling Support (Optional)**：
+    - 說明了主機實體接腳 `PLN#` 與控制器的 `PLA#` 訊號映射關係：
+        
+        > - _"If the PLN# signal is asserted at the PCIe interface, then the PLN variable shall be set to Asserted in all controllers in the domain."_
+        > - _"If the PLA variable is supported and one or more controllers in the domain set the PLA variable to Asserted-FQ [或 Asserted-EPF-Enabled / Asserted-EPF-Disabled], then the PLA# signal, if supported, shall be asserted at the PCIe interface."_
+        
+
+---
+
+### 2. 「PLA 完成後 Deassert，PLN 也要做 Deassert」的出處
+
+這部分分為兩個階段：**控制器端的 PLA 拉回 Deasserted**，以及**主機端在什麼條件/章節規定下需要將 PLN 拉回 Deasserted**。
+
+#### (1) 控制器完成資料保存後將 PLA 拉回 Deasserted
+
+- **Section 8.2.5.2 Forced Quiescence Processing（第 4、5 步）**：
+    
+    > _"4. enter the FQ Complete state (refer to Figure 722); and_  
+    > **5. set the PLA variable to Deasserted (refer to Figure 719).**"
+    
+- **Section 8.2.5.3 Emergency Power Fail Processing（第 4、5 步）**：
+    
+    > _"4. enter either the EPF Complete Port Enabled state... or the EPF Complete Port Disabled state...; and_  
+    > **5. set the PLA variable, if supported, to Deasserted (refer to Figure 719).**"
+    
+- **PCIe Transport Spec Section 3.8.7**：
+    
+    > _"If the PLA variable is supported and all controllers in the domain set the PLA variable to Deasserted, then the PLA# signal, if supported, shall be deasserted at the PCIe interface."_
+    
+
+#### (2) 主機端將 PLN 拉回 Deasserted（免斷電復原的唯一條件）
+
+規範指出，如果主機端在收到 PLA 拉回 Deasserted 後確認不需實體斷電，主機必須將 PLN Deasserted 才能讓控制器解除凍結：
+
+- **Section 8.2.5.1.4 FQ Complete State（及 Figure 723: FQ Complete State Transition Conditions）**：
+    - 明訂控制器從 `FQ Complete` 轉移回正常 `PLS Ready` 的條件：
+        
+        > **State Transition:** `FQ Complete` \(\to\) `PLS Ready`  
+        > **Transition Condition:** **`The PLN variable is set to Deasserted.`**
+        
+- **Section 8.2.5.2 內文敘述**：
+    
+    > _"If the PLN variable is set to Asserted and is then set to Deasserted without an intervening loss of main power, Controller Level Reset, or shutdown (refer to Figure 718), then the controller resumes fetching and processing commands."_
+    
+- **PCIe Transport Spec Section 3.8.7**：
+    
+    > _"If the PLN# signal is deasserted at the PCIe interface, then the PLN variable shall be set to Deasserted in all controllers in the domain."_
+    
+    - 並在該節後段補充：為了避免多控制器（Multi-Controller）子系統的競態條件（Race condition），規範要求平台在拉起 PLN# 觸發後，必須確保所有控制器都完成 Assert 並轉為 Deassert 之後，主機才能取消（Deassert）訊號。
+
+_(註：若系統是處於「真實斷電」情況，主機與硬體在看到 PLA Deasserted 後便直接切斷電源，此時主機端不會再執行 PLN Deasserted。)_
+
+===========================================================================
+
+在 **NVMe Base Specification Revision 2.3（Section 8.2.5 Power Loss Signaling）** 中，對於 **FQ（Forced Quiescence）** 與 **EPF（Emergency Power Fail）** 在命令處理以及連接埠行為上的規範有極為明確且不同的定義。
+
+以下針對 FQ、EPF Port Disabled 與 EPF Port Enabled 的差異，以及這三個問題進行完整解析：
+
+---
+
+### 一、 核心概念：FQ 與 EPF（Disabled / Enabled）的差異
+
+|特性 / 模式|**FQ（Forced Quiescence，強制靜止）**|**EPF Port Disabled（緊急斷電 - 埠關閉）**|**EPF Port Enabled（緊急斷電 - 埠維持開啟）**|
+|:--|:--|:--|:--|
+|**設計目的**|預警性暫停／平滑暫停，電源可能恢復|致命性即刻斷電，極速備份|致命性即刻斷電，但保留主機重置/通訊管道|
+|**連接埠通訊能力**|**維持運作**（Port Communication Processed = Yes）|**完全關閉**（Port Communication Processed = No，PCIe Link 不活躍）|**維持運作**（Port Communication Processed = Yes）|
+|**新命令擷取**|**停止擷取**（Stop fetching）|**停止擷取**（Stop fetching）|**停止擷取**（Stop fetching）|
+|**已擷取的命令處理**|**完成處理（執行）** 並回報 CQE|**全數直接丟棄（Discard）**|**全數直接丟棄（Discard）**|
+
+---
+
+### 二、 三大問題針對性解答
+
+#### 1. 所有命令都拋掉嗎？
+
+- **FQ 模式：不會拋掉。**
+    - 尚未擷取的命令：保留在主機記憶體的 Submission Queue（SQ）中，控制器暫停讀取（Stop fetching）。
+    - 已經擷取的命令：控制器會**善後處理完畢**並發出完成報告（CQE），不會平白丟失。
+- **EPF 模式（無論 Disabled 還是 Enabled）：未完成的指令全數拋掉！**
+    - 控制器進入 EPF 狀態時，規範明訂：控制器必須**停止擷取新命令**，並**直接丟棄所有已擷取但未完成的命令**。
+
+---
+
+#### 2. 已經擷取的命令要執行還是拋掉？
+
+- **FQ 模式：要執行！**
+    - 規範在 Section 8.2.5.2 明訂：進入 `FQ Processing` 狀態後，控制器應當**完成所有先前已擷取命令的處理（complete processing of all previously fetched commands）**，並向 Completion Queue（CQ）回報 CQE（例如 Successful Completion，或因故中止並回報相應狀態）。
+- **EPF 模式：直接拋掉（Discard）！**
+    - 規範在 Section 8.2.5.3 明文強制規定：
+        
+        > _"Entry to the EPF Processing Port Disabled state or the EPF Processing Port Enabled state **shall cause the controller to discard commands that were fetched from a submission queue prior to entry to the state**..."_
+        
+    - 不管是從 SQ 擷取的命令，還是透過帶外管理介面（Management Endpoint）接收到的命令，**一律直接丟棄**。
+
+---
+
+#### 3. 已經擷取的命令，會執行嗎？
+
+- **在 FQ 模式下：會執行。**
+    - 控制器會花費最多不超過 **FQVT（Forced Quiescence Vault Time）** 的時間，將這些已經拿進來的命令寫入或執行完畢，確保資料落地並回填 CQE。
+- **在 EPF 模式下（包含 Disabled 與 Enabled）：完全不會執行！**
+    - 因為斷電迫在眉睫，內部備份電容（Hold-up Caps）的電力非常有限，SSD 必須在 **EPFVT（Emergency Power Fail Vault Time）** 內全力將內部的揮發性寫入快取（Volatile Write Cache / DRAM）刷入 NAND Flash（Vaulting）。
+    - 因此，控制器**絕不浪費時間和電量去執行手頭上尚未執行的 I/O 指令**，全部直接拋棄，也不會向主機回傳 CQE。
+
+---
+
+### 三、 EPF 的「Port Disabled」與「Port Enabled」關鍵差異
+
+既然在 EPF 模式下**兩者都會把命令拋掉**，那這兩個狀態的差異到底在哪？
+
+1. **EPF Processing Port Disabled**：
+    
+    - **硬體隔離**：SSD 會直接關閉實體連接埠（在 PCIe 介面下會讓 PCIe Link 變為 Inactive）。
+    - **無法軟體復原**：主機無法再透過該 Port 下達 Controller Level Reset（CLR）或關機通知。
+    - **唯一脫離條件**：此狀態若要重啟，**必須等實體重新上電循環（Power is cycled）**，狀態機才會回到 `PLS Not Ready`。
+2. **EPF Processing Port Enabled**：
+    
+    - **通訊暢通**：雖然內部命令照樣全部拋掉，但 **PCIe Link 與連接埠通訊保持開啟**。
+    - **支援免拔電軟體復原**：若這次 EPF 只是系統電源告警而最後沒有實體斷電，主機可以透過現有的連接埠發送 **Controller Level Reset（CLR）**（例如將 `CC.EN` 設為 0）或發起關機（`CSTS.SHST != 00b`），強制讓狀態機退出 `EPF Complete` 並轉移至 `PLS Not Ready`。
+    - 主機隨後可重新配置 `CC.EN = 1` 重新初始化控制器，並等待 **EPFRT（Recovery Time）** 結束後即可恢復正常服務。
+
+---
+
+🔍 如果需要進一步了解在 EPF 拋棄指令後，主機端作業系統或驅動程式（Driver）該如何進行指令重試（Retry）與通訊中斷復原（Communication Loss Handling），我很樂意為您整理！
