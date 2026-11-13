@@ -11,5 +11,6 @@
     "code-font",
     "code-block-style"
   ],
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "showRibbon": true
 }
