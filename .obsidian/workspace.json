@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/Error Test Cases.md",
+                "file": "技術資料/NVMe/NVMe-MI/NVM Subsystem Health Data Structure.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Error Test Cases"
+              "title": "NVM Subsystem Health Data Structure"
             }
           }
         ]
@@ -210,6 +210,8 @@
   },
   "active": "275a52bd7cb76e33",
   "lastOpenFiles": [
+    "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Error Cases/Error Test Cases.md",
+    "技術資料/NVMe/NVMe-MI/NVM Subsystem Health Data Structure.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-02 IF-RECV Behavior Tests.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-03 TryLimit.md",
     "技術資料/NVMe/NVMe-OPAL/ULINK 測試案例解析/Functionality/SPF-11 Stack Reset.md",
@@ -234,8 +236,6 @@
     "技術資料/NVMe/NVMe-MI/SES.md",
     "技術資料/NVMe/NVMe-MI/Management Endpoint Buffer.md",
     "技術資料/NVMe/NVMe-MI/other.md",
-    "技術資料/NVMe/NVMe-MI/Mutiple Packets Assembly.md",
-    "技術資料/MCTP/MCTP Packet Fields.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata",
     "技術資料/NVMe/SANBlaze",
     "技術資料/NVMe/NVMe-MI/python code",
