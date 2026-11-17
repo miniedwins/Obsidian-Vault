@@ -312,3 +312,74 @@ _(註：若系統是處於「真實斷電」情況，主機與硬體在看到 PL
 ---
 
 🔍 如果需要進一步了解在 EPF 拋棄指令後，主機端作業系統或驅動程式（Driver）該如何進行指令重試（Retry）與通訊中斷復原（Communication Loss Handling），我很樂意為您整理！
+
+===========================================================================
+
+**不會**。當控制器進入 **FQ（Forced Quiescence，強制靜止）** 處理時，**不會**去更改 `CSTS.SHST`（Shutdown Status）的狀態。
+
+規格書中關於 FQ 與 `CSTS.SHST` 的機制與規範說明如下：
+
+---
+
+### 1. `CSTS.SHST` 的變更觸發條件是專屬於 Shutdown
+
+根據 NVM Express Base Specification 的定義，`CSTS.SHST`（Shutdown Status）僅用於回報**關機處理（Shutdown Processing）**的進度與狀態，且**僅由以下三種操作觸發**：
+
+- 主機寫入 Controller Configuration 的 `CC.SHN` 欄位（Normal 或 Abrupt Shutdown Notification）。
+- 主機寫入 NVM Subsystem Shutdown 暫存器的 `NSSD.NSSC` 欄位。
+- 透過帶外 Management Endpoint 收到並處理 NVMe-MI 的 `Shutdown` 指令。
+
+### 2. FQ 屬於 Power Loss Signaling (PLS) 機制，使用 PLA 回報
+
+- FQ（Forced Quiescence）屬於 **Power Loss Signaling（PLS）** 機制的一種模式。
+- 當主機/傳輸層發出斷電警告時，是透過傳輸層變數 **`PLN`（Power Loss Notification）** 設為 _Asserted_ 來通知控制器。
+- 控制器進入 `FQ Processing` 狀態後，依規定會將 **`PLA`（Power Loss Acknowledge）** 變數設為 **`Asserted-FQ`**，並停止從所有 SQ 抓取新指令、完成已抓取的指令並為斷電做好內部準備，**過程中完全不涉及修改 `CSTS.SHST` 暫存器**。
+
+### 3. FQ 處理與 `CSTS.SHST` 的互斥與轉移關係
+
+規格中 FQ 與 `CSTS.SHST` 的關係反而有明確的互斥規定：
+
+1. **進入 FQ 的前提是 `CSTS.SHST == 00b`**：只有在控制器處於 `PLS Ready` 狀態（此時 `CSTS.SHST` 必須為 `00b`，即正常運作且未進入關機）時，收到 PLN 才會轉換進入 `FQ Processing`。如果 `CSTS.SHST` 不為 `00b`，控制器會直接忽略 PLN 的狀態變化。
+2. **若在 FQ 期間 `CSTS.SHST` 改變，會中止 FQ**：在 `FQ Processing` 狀態期間，若發生了關機事件導致 `CSTS.SHST` 變為非 `00b`（或發生 Controller Level Reset），控制器會立刻跳離 FQ 處理並轉移至 `PLS Not Ready` 狀態，且**必須中止 Forced Quiescence 處理**。
+
+---
+
+**總結**： 進入 FQ 處理期間，`CSTS.SHST` 會繼續維持原本的狀態（正常情況下為 `00b`，Normal operation），狀態回報是由 **`PLA = Asserted-FQ`** 負責，兩者屬於不同層級與目的之狀態機制。
+
+---
+
+🔍 如果您正在設計或驗證 Power Loss Signaling 的 Conformance 測試，我可以進一步整理 FQ Processing 與 Emergency Power Fail (EPF) 在各狀態轉移條件下的比對細節。
+
+===========================================================================
+**沒錯，在進入與執行 FQ（Forced Quiescence，強制靜止）期間，Host 不會去更改 `CC.SHN`（Shutdown Notification）。**
+
+這兩者在 NVMe 規格書中屬於完全獨立、且彼此互斥的電源處理機制：
+
+---
+
+### 1. 觸發管道與通訊機制完全不同
+
+- **Shutdown 流程**：是由 Host 透過寫入控制器暫存器 **`CC.SHN`**（01b 為 Normal，10b 為 Abrupt）來發起關機通知，控制器則透過更新 **`CSTS.SHST`** 暫存器（01b → 10b）來回報處理進度。
+- **FQ 流程（屬於 Power Loss Signaling, PLS）**：是由主機或傳輸層透過 **`PLN`（Power Loss Notification）** 變數（通常為硬體訊號，如 PCIe 側波腳位或傳輸層通道）設為 _Asserted_ 來通知控制器即將斷電。控制器則透過 **`PLA`（Power Loss Acknowledge）** 變數回報 _Asserted-FQ_。**整個過程完全不透過 `CC.SHN` 來啟動或握手。**
+
+---
+
+### 2. 規格限制：若 Host 更改 `CC.SHN`，會導致 FQ 被中止（Abort）
+
+NVMe Base Specification 對 PLS 與關機狀態有非常嚴格的互斥定義：
+
+1. **進入 FQ 的前提條件**：控制器必須處於 `PLS Ready` 狀態，其條件之一就是 **`CSTS.SHST` 必須為 `00b`（即未處於 Shutdown 狀態）**。
+2. **FQ 期間若發生關機**：在 `FQ Processing` 狀態期間，如果 Host 寫入 `CC.SHN` 觸發關機，導致 `CSTS.SHST` 變為非 `00b`（例如 `01b` Shutdown in progress），控制器將**立即強制跳離 FQ 處理**（轉移到 `PLS Not Ready` 狀態），且規格書明文規定：**控制器必須中止（shall abort）Forced Quiescence 處理**。
+
+---
+
+### 3. 設計場景的本質差異
+
+- **`CC.SHN`（Shutdown Processing）**：屬於作業系統/驅動層級的「預期內關機」。Host 會先停發 I/O、刪除 I/O 佇列、寫入 `CC.SHN`，並等待控制器將快取完全寫入介質。
+- **FQ / PLS（Power Loss Signaling）**：屬於硬體/平台偵測到即將斷電（Impending Power Loss）時的「緊急靜止機制」。需要在毫秒級的電容續航時間（`FQVT`, Forced Quiescence Vault Time）內快速停收指令並將資料刷入介質，因此走的是專門的 `PLN` / `PLA` 訊號通道，而非一般暫存器輪詢。
+
+**總結來說**：Host 觸發 FQ 時是透過傳輸層的 `PLN`，**不會也不應該去修改 `CC.SHN`**；若 Host 在此時修改了 `CC.SHN`，反而會把進行中的 FQ 處理強制打斷。
+
+---
+
+💡 若您在驗證 PLS 與 Shutdown 的交互場景，我可以為您整理兩者同時發生或重疊時，控制器在 NVMe 狀態機上的優先順序與行為矩陣。

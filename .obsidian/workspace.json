@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "技術資料/NVMe/NVMe-Base/Untitled.md",
+                "file": "技術資料/NVMe/NVMe-Base/Power Loss Signaling/FQ and EPF.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "FQ and EPF"
             }
           }
         ]
@@ -210,8 +210,10 @@
   },
   "active": "275a52bd7cb76e33",
   "lastOpenFiles": [
-    "技術資料/NVMe/NVMe-Base/LogPage LIDSP.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
+    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-Base/Untitled.md",
+    "技術資料/NVMe/NVMe-Base/LogPage LIDSP.md",
     "技術資料/NVMe/NVMe-Base/Subsystem Shutdown/Subsystem Shutdown.md",
     "技術資料/NVMe/NVMe-MI/NVM Subsystem Health Data Structure.md",
     "技術資料/NVMe/NVMe-Base/Subsystem Shutdown",
@@ -230,8 +232,6 @@
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Emergency Power Fail Processing.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Poll.md",
     "技術資料/NVMe/NVMe-MI/Controller Health Status Changed Flags.md",
     "技術資料/NVMe/NVMe-MI/封包重組機制.md",
