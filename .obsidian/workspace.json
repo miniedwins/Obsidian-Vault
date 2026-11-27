@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "暫存內容/重構執行審核提示詞.md",
+                "file": "暫存內容/PLN PLA Command.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "重構執行審核提示詞"
+              "title": "PLN PLA Command"
             }
           }
         ]
@@ -210,9 +210,11 @@
   },
   "active": "b553ff637574cc81",
   "lastOpenFiles": [
+    "暫存內容/BMC.md",
+    "暫存內容/PLN PLA Command.md",
+    "暫存內容/重構執行審核提示詞.md",
     "暫存內容/AI 使用程式問題.md",
     "暫存內容/code-review.md",
-    "暫存內容/重構執行審核提示詞.md",
     "暫存內容/重構計畫審核提示詞.md",
     "暫存內容/NVMe Study (暫存).md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Forced Quiescence Processing.md",
@@ -235,8 +237,6 @@
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling Config.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Acknowledge.md",
     "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Notification.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Power Loss Signaling.md",
-    "技術資料/NVMe/NVMe-Base/Power Loss Signaling/Namespace Status.md",
     "技術資料/NVMe/NVMe-Base/Host Metadata",
     "技術資料/NVMe/SANBlaze",
     "技術資料/NVMe/NVMe-MI/python code",
